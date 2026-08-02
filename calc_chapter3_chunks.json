@@ -1,0 +1,474 @@
+[
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "definition",
+    "title": "Definition 3.1: Parametric Equations",
+    "content": "A curve in the plane can be described by \\textbf{parametric equations}:\n\\[\n\\boxed{x = f(t), \\quad y = g(t)}\n\\]\nwhere $t$ is called the \\textbf{parameter}.\n\nAs $t$ varies over an interval, the point $(x(t), y(t))$ traces out a curve in the $xy$-plane.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Examples of Parametric Curves:}}\n\\begin{itemize}\n    \\item \\textbf{Circle:} $x = r\\cos t$, $y = r\\sin t$ (parameter $t$ is angle)\n    \\item \\textbf{Projectile motion:} $x = v_0t$, $y = h_0 + v_yt - \\frac{1}{2}gt^2$\n    \\item \\textbf{Cycloid:} $x = r(t - \\sin t)$, $y = r(1 - \\cos t)$\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Why Use Parametric Equations?}}\n\\begin{itemize}\n    \\item Some curves cannot be expressed as $y = f(x)$ (e.g., circles, closed curves)\n    \\item Natural for describing motion (time as parameter)\n    \\item Multiple $y$ values for same $x$ value allowed\n    \\item Easier to describe complex curves\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "theorem",
+    "title": "Theorem 3.1: Derivative of Parametric Equations",
+    "content": "If $x = f(t)$ and $y = g(t)$ are differentiable functions of $t$, then the derivative $\\dfrac{dy}{dx}$ is given by:\n\n\\[\n\\boxed{\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{g'(t)}{f'(t)}}\n\\]\n\nprovided that $\\dfrac{dx}{dt} \\neq 0$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Intuition:}}\n\nUsing the chain rule:\n\\[\n\\frac{dy}{dx} = \\frac{dy}{dt} \\cdot \\frac{dt}{dx} = \\frac{dy/dt}{dx/dt}\n\\]\n\nWe're finding how $y$ changes with respect to $x$, but computing it through the parameter $t$.\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important:}}\n\\begin{itemize}\n    \\item This is NOT $\\dfrac{dy}{dx} = \\dfrac{y}{x}$ !\n    \\item Don't forget to differentiate with respect to $t$ first\n    \\item The denominator is $\\dfrac{dx}{dt}$, not just $x$\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "example",
+    "title": "Example 1: Basic Parametric Differentiation",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ if $x = t^2$ and $y = t^3$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $\\dfrac{dx}{dt}$ and $\\dfrac{dy}{dt}$\n\n\\begin{align*}\n\\frac{dx}{dt} &= 2t \\\\\n\\frac{dy}{dt} &= 3t^2\n\\end{align*}\n\n\\textbf{Step 2:} Apply the parametric derivative formula\n\n\\begin{align*}\n\\frac{dy}{dx} &= \\frac{dy/dt}{dx/dt} \\\\\n&= \\frac{3t^2}{2t} \\\\\n&= \\frac{3t}{2}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = \\frac{3t}{2}}\n\n\\textcolor{green}{\\textbf{Verification:}} We can eliminate the parameter:\n\\begin{align*}\nx &= t^2 \\implies t = \\sqrt{x} \\\\\ny &= t^3 = (\\sqrt{x})^3 = x^{3/2}\n\\end{align*}\n\nDirect differentiation: $\\dfrac{dy}{dx} = \\dfrac{3}{2}x^{1/2} = \\dfrac{3}{2}\\sqrt{x} = \\dfrac{3}{2}\\sqrt{t^2} = \\dfrac{3t}{2}$ \\textcolor{green}{\\checkmark}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Note:}} The answer is in terms of the parameter $t$, which is perfectly valid!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "example",
+    "title": "Example 2: Parametric Derivative at a Point",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ at $t = 1$ if $x = t^2 + 1$ and $y = 2t^3 - t$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find the derivatives with respect to $t$\n\n\\begin{align*}\n\\frac{dx}{dt} &= 2t \\\\\n\\frac{dy}{dt} &= 6t^2 - 1\n\\end{align*}\n\n\\textbf{Step 2:} Apply the formula\n\n\\begin{align*}\n\\frac{dy}{dx} &= \\frac{dy/dt}{dx/dt} \\\\\n&= \\frac{6t^2 - 1}{2t}\n\\end{align*}\n\n\\textbf{Step 3:} Evaluate at $t = 1$\n\n\\begin{align*}\n\\left.\\frac{dy}{dx}\\right|_{t=1} &= \\frac{6(1)^2 - 1}{2(1)} \\\\\n&= \\frac{6 - 1}{2} \\\\\n&= \\frac{5}{2}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\left.\\frac{dy}{dx}\\right|_{t=1} = \\frac{5}{2}}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Geometric Meaning:}} At $t = 1$, the point is $(2, 1)$ and the slope of the tangent line is $\\frac{5}{2}$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "example",
+    "title": "Example 3: Second Derivative of Parametric Equations",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{d^2y}{dx^2}$ if $x = t + \\dfrac{1}{t}$ and $y = t - \\dfrac{1}{t}$.\n\n(From 2024 past paper, Q2 part b)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nFor parametric equations, the second derivative is:\n\\[\n\\frac{d^2y}{dx^2} = \\frac{d}{dx}\\left(\\frac{dy}{dx}\\right) = \\frac{d/dt\\left(\\frac{dy}{dx}\\right)}{dx/dt}\n\\]\n\n\\textbf{Step 1:} Find $\\dfrac{dy}{dx}$\n\nFirst find the derivatives:\n\\begin{align*}\n\\frac{dx}{dt} &= 1 - \\frac{1}{t^2} = \\frac{t^2 - 1}{t^2} \\\\\n\\frac{dy}{dt} &= 1 + \\frac{1}{t^2} = \\frac{t^2 + 1}{t^2}\n\\end{align*}\n\nTherefore:\n\\begin{align*}\n\\frac{dy}{dx} &= \\frac{dy/dt}{dx/dt} \\\\\n&= \\frac{(t^2 + 1)/t^2}{(t^2 - 1)/t^2} \\\\\n&= \\frac{t^2 + 1}{t^2 - 1}\n\\end{align*}\n\n\\textbf{Step 2:} Find $\\dfrac{d}{dt}\\left(\\dfrac{dy}{dx}\\right)$\n\nUse quotient rule:\n\\begin{align*}\n\\frac{d}{dt}\\left(\\frac{t^2 + 1}{t^2 - 1}\\right) &= \\frac{(t^2 - 1)(2t) - (t^2 + 1)(2t)}{(t^2 - 1)^2} \\\\\n&= \\frac{2t(t^2 - 1 - t^2 - 1)}{(t^2 - 1)^2} \\\\\n&= \\frac{2t(-2)}{(t^2 - 1)^2} \\\\\n&= \\frac{-4t}{(t^2 - 1)^2}\n\\end{align*}\n\n\\textbf{Step 3:} Divide by $\\dfrac{dx}{dt}$\n\n\\begin{align*}\n\\frac{d^2y}{dx^2} &= \\frac{d/dt(dy/dx)}{dx/dt} \\\\\n&= \\frac{-4t/(t^2 - 1)^2}{(t^2 - 1)/t^2} \\\\\n&= \\frac{-4t}{(t^2 - 1)^2} \\cdot \\frac{t^2}{t^2 - 1} \\\\\n&= \\frac{-4t^3}{(t^2 - 1)^3}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{d^2y}{dx^2} = \\frac{-4t^3}{(t^2 - 1)^3}}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} Second derivatives in parametric form can get quite complex! Always simplify carefully.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "example",
+    "title": "Example 4: Tangent Line to Parametric Curve",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the equation of the tangent line to the curve $x = \\cos^3 t$, $y = \\sin^3 t$ at $t = \\dfrac{\\pi}{4}$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find the point on the curve\n\nAt $t = \\dfrac{\\pi}{4}$:\n\\begin{align*}\nx &= \\cos^3\\left(\\frac{\\pi}{4}\\right) = \\left(\\frac{1}{\\sqrt{2}}\\right)^3 = \\frac{1}{2\\sqrt{2}} = \\frac{\\sqrt{2}}{4} \\\\\ny &= \\sin^3\\left(\\frac{\\pi}{4}\\right) = \\left(\\frac{1}{\\sqrt{2}}\\right)^3 = \\frac{\\sqrt{2}}{4}\n\\end{align*}\n\nPoint: $\\left(\\dfrac{\\sqrt{2}}{4}, \\dfrac{\\sqrt{2}}{4}\\right)$\n\n\\textbf{Step 2:} Find the slope\n\n\\begin{align*}\n\\frac{dx}{dt} &= 3\\cos^2 t \\cdot (-\\sin t) = -3\\cos^2 t \\sin t \\\\\n\\frac{dy}{dt} &= 3\\sin^2 t \\cdot \\cos t = 3\\sin^2 t \\cos t\n\\end{align*}\n\n\\begin{align*}\n\\frac{dy}{dx} &= \\frac{3\\sin^2 t \\cos t}{-3\\cos^2 t \\sin t} \\\\\n&= \\frac{\\sin t}{-\\cos t} \\\\\n&= -\\tan t\n\\end{align*}\n\nAt $t = \\dfrac{\\pi}{4}$:\n\\[\n\\frac{dy}{dx} = -\\tan\\left(\\frac{\\pi}{4}\\right) = -1\n\\]\n\n\\textbf{Step 3:} Write tangent line equation\n\nUsing point-slope form:\n\\begin{align*}\ny - \\frac{\\sqrt{2}}{4} &= -1\\left(x - \\frac{\\sqrt{2}}{4}\\right) \\\\\ny - \\frac{\\sqrt{2}}{4} &= -x + \\frac{\\sqrt{2}}{4} \\\\\ny &= -x + \\frac{\\sqrt{2}}{2}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{y = -x + \\frac{\\sqrt{2}}{2}}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Note:}} This curve is actually an astroid, which has the Cartesian equation $x^{2/3} + y^{2/3} = 1$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "definition",
+    "title": "Definition 3.2: Arc Length of Parametric Curves",
+    "content": "The arc length of a parametric curve $x = f(t)$, $y = g(t)$ from $t = a$ to $t = b$ is:\n\n\\[\n\\boxed{L = \\int_a^b \\sqrt{\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2} \\, dt}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Intuition:}}\n\nThe infinitesimal arc length element is:\n\\[\nds = \\sqrt{(dx)^2 + (dy)^2} = \\sqrt{\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2} \\, dt\n\\]\n\nWe integrate this to get total length.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Relationship to Speed:}}\n\nIf $t$ represents time, then $\\sqrt{\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2}$ is the speed of a particle moving along the curve.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "example",
+    "title": "Example 5: Arc Length of Astroid",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the length of the astroid $x = \\cos^3 t$, $y = \\sin^3 t$ for $0 \\leq t \\leq \\pi$.\n\n(From 2022 past paper, Q6 part a - modified)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $\\dfrac{dx}{dt}$ and $\\dfrac{dy}{dt}$\n\n\\begin{align*}\n\\frac{dx}{dt} &= 3\\cos^2 t \\cdot (-\\sin t) = -3\\cos^2 t \\sin t \\\\\n\\frac{dy}{dt} &= 3\\sin^2 t \\cdot \\cos t = 3\\sin^2 t \\cos t\n\\end{align*}\n\n\\textbf{Step 2:} Compute $\\left(\\dfrac{dx}{dt}\\right)^2 + \\left(\\dfrac{dy}{dt}\\right)^2$\n\n\\begin{align*}\n\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2 &= 9\\cos^4 t \\sin^2 t + 9\\sin^4 t \\cos^2 t \\\\\n&= 9\\cos^2 t \\sin^2 t(\\cos^2 t + \\sin^2 t) \\\\\n&= 9\\cos^2 t \\sin^2 t\n\\end{align*}\n\n\\textbf{Step 3:} Set up the arc length integral\n\n\\begin{align*}\nL &= \\int_0^\\pi \\sqrt{9\\cos^2 t \\sin^2 t} \\, dt \\\\\n&= \\int_0^\\pi 3|\\cos t \\sin t| \\, dt \\\\\n&= 3\\int_0^\\pi |\\cos t \\sin t| \\, dt\n\\end{align*}\n\nSince $\\cos t \\sin t \\geq 0$ on $[0, \\pi/2]$ and $\\cos t \\sin t \\leq 0$ on $[\\pi/2, \\pi]$:\n\n\\begin{align*}\nL &= 3\\int_0^{\\pi/2} \\cos t \\sin t \\, dt - 3\\int_{\\pi/2}^\\pi \\cos t \\sin t \\, dt\n\\end{align*}\n\n\\textbf{Step 4:} Evaluate using substitution\n\nUse $\\sin t \\cos t = \\dfrac{1}{2}\\sin(2t)$:\n\n\\begin{align*}\nL &= 3\\int_0^{\\pi/2} \\frac{1}{2}\\sin(2t) \\, dt - 3\\int_{\\pi/2}^\\pi \\frac{1}{2}\\sin(2t) \\, dt \\\\\n&= \\frac{3}{2}\\left[-\\frac{1}{2}\\cos(2t)\\right]_0^{\\pi/2} - \\frac{3}{2}\\left[-\\frac{1}{2}\\cos(2t)\\right]_{\\pi/2}^\\pi \\\\\n&= \\frac{3}{4}[-\\cos\\pi + \\cos 0] - \\frac{3}{4}[-\\cos(2\\pi) + \\cos\\pi] \\\\\n&= \\frac{3}{4}[1 + 1] - \\frac{3}{4}[-1 - 1] \\\\\n&= \\frac{3}{4}(2) + \\frac{3}{4}(2) \\\\\n&= \\frac{3}{2} + \\frac{3}{2} \\\\\n&= 3\n\\end{align*}\n\n\\textbf{Answer:} The length of the astroid from $t = 0$ to $t = \\pi$ is \\boxed{3 \\text{ units}}\n\n\\textcolor{green}{\\textbf{Note:}} The full astroid (one complete loop) from $t = 0$ to $t = 2\\pi$ would have length $6$ units.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Parametric Differentiation",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 3.1 Summary: Parametric Differentiation}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 3.1 Summary: Parametric Differentiation}}\n\n\\textbf{Key Formulas:}\n\n\\textbf{First Derivative:}\n\\[\n\\boxed{\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}}\n\\]\n\n\\textbf{Second Derivative:}\n\\[\n\\boxed{\\frac{d^2y}{dx^2} = \\frac{d/dt(dy/dx)}{dx/dt}}\n\\]\n\n\\textbf{Arc Length:}\n\\[\n\\boxed{L = \\int_a^b \\sqrt{\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2} \\, dt}\n\\]\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Problem-Solving Steps:}}\n\n\\begin{enumerate}\n    \\item Find $\\dfrac{dx}{dt}$ and $\\dfrac{dy}{dt}$ separately\n    \\item Use the formula $\\dfrac{dy}{dx} = \\dfrac{dy/dt}{dx/dt}$\n    \\item Simplify the result\n    \\item If finding second derivative, differentiate $\\dfrac{dy}{dx}$ with respect to $t$, then divide by $\\dfrac{dx}{dt}$\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Writing $\\dfrac{dy}{dx} = \\dfrac{y}{x}$ instead of $\\dfrac{dy/dt}{dx/dt}$\n    \\item Forgetting to use chain rule when differentiating parametric equations\n    \\item Not simplifying before taking second derivative\n    \\item Mixing up numerator and denominator in the parametric derivative formula\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Quick Check:}} Can you state the parametric derivative formula from memory?\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Related Rates",
+    "type": "definition",
+    "title": "Definition 3.3: Related Rates",
+    "content": "In a \\textbf{related rates problem}, we are given:\n\\begin{itemize}\n    \\item A relationship (equation) between two or more quantities\n    \\item The rate of change of one quantity with respect to time\n    \\item We need to find the rate of change of another quantity\n\\end{itemize}\n\n\\textbf{General Strategy:}\n\\begin{enumerate}\n    \\item Draw a diagram (if applicable)\n    \\item Identify all variables and what's given/unknown\n    \\item Write an equation relating the variables\n    \\item Differentiate both sides with respect to time $t$ (using implicit differentiation and chain rule)\n    \\item Substitute known values\n    \\item Solve for the unknown rate\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Insight:}}\n\nWhen we differentiate with respect to time, every variable that depends on time gets differentiated using the chain rule:\n\\begin{itemize}\n    \\item $\\dfrac{d}{dt}(x) = \\dfrac{dx}{dt}$ (often written as $x'$ or $\\dot{x}$)\n    \\item $\\dfrac{d}{dt}(x^2) = 2x\\dfrac{dx}{dt}$\n    \\item $\\dfrac{d}{dt}(xy) = x\\dfrac{dy}{dt} + y\\dfrac{dx}{dt}$ (product rule)\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important:}}\n\\begin{itemize}\n    \\item Don't substitute numerical values until AFTER differentiating\n    \\item Be careful with units (consistent units throughout)\n    \\item Positive/negative signs indicate direction of change\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Related Rates",
+    "type": "example",
+    "title": "Example 6: Expanding Circle",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} The radius of a circle is increasing at a rate of 2 cm/s. How fast is the area increasing when the radius is 5 cm?\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Identify what's given and what we need to find\n\nGiven: $\\dfrac{dr}{dt} = 2$ cm/s (radius increasing)\n\nFind: $\\dfrac{dA}{dt}$ when $r = 5$ cm (rate of change of area)\n\n\\textbf{Step 2:} Write the relationship between variables\n\nFor a circle: $A = \\pi r^2$\n\n\\textbf{Step 3:} Differentiate both sides with respect to $t$\n\n\\begin{align*}\n\\frac{dA}{dt} &= \\frac{d}{dt}(\\pi r^2) \\\\\n&= \\pi \\cdot 2r \\cdot \\frac{dr}{dt} \\\\\n&= 2\\pi r \\frac{dr}{dt}\n\\end{align*}\n\n\\textbf{Step 4:} Substitute known values\n\nWhen $r = 5$ cm and $\\dfrac{dr}{dt} = 2$ cm/s:\n\n\\begin{align*}\n\\frac{dA}{dt} &= 2\\pi (5)(2) \\\\\n&= 20\\pi \\\\\n&\\approx 62.83 \\text{ cm}^2\\text{/s}\n\\end{align*}\n\n\\textbf{Answer:} The area is increasing at \\boxed{20\\pi \\approx 62.83 \\text{ cm}^2\\text{/s}} when $r = 5$ cm.\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Interpretation:}} As the radius increases, the area increases even faster (proportional to $r$). At $r = 10$ cm, the area would be increasing at $40\\pi$ cm²/s!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Related Rates",
+    "type": "example",
+    "title": "Example 7: Ladder Sliding Down a Wall",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} A 10-meter ladder is leaning against a wall. The bottom of the ladder is sliding away from the wall at a rate of 1 m/s. How fast is the top of the ladder sliding down the wall when the bottom is 6 meters from the wall?\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Draw a diagram and label variables\n\nLet:\n\\begin{itemize}\n    \\item $x$ = distance from wall to bottom of ladder (horizontal)\n    \\item $y$ = height of top of ladder on wall (vertical)\n    \\item $L = 10$ m = length of ladder (constant)\n\\end{itemize}\n\nGiven: $\\dfrac{dx}{dt} = 1$ m/s (bottom moving away from wall)\n\nFind: $\\dfrac{dy}{dt}$ when $x = 6$ m\n\n\\textbf{Step 2:} Write equation relating variables\n\nBy Pythagorean theorem:\n\\[\nx^2 + y^2 = L^2 = 100\n\\]\n\n\\textbf{Step 3:} Differentiate with respect to $t$\n\n\\begin{align*}\n\\frac{d}{dt}(x^2 + y^2) &= \\frac{d}{dt}(100) \\\\\n2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} &= 0\n\\end{align*}\n\nSimplify:\n\\[\nx\\frac{dx}{dt} + y\\frac{dy}{dt} = 0\n\\]\n\n\\textbf{Step 4:} Find $y$ when $x = 6$\n\n\\begin{align*}\n6^2 + y^2 &= 100 \\\\\ny^2 &= 64 \\\\\ny &= 8 \\text{ m} \\quad \\text{(positive since on wall)}\n\\end{align*}\n\n\\textbf{Step 5:} Substitute and solve for $\\dfrac{dy}{dt}$\n\n\\begin{align*}\n6(1) + 8\\frac{dy}{dt} &= 0 \\\\\n8\\frac{dy}{dt} &= -6 \\\\\n\\frac{dy}{dt} &= -\\frac{6}{8} = -\\frac{3}{4} \\text{ m/s}\n\\end{align*}\n\n\\textbf{Answer:} The top of the ladder is sliding down at \\boxed{-\\frac{3}{4} = -0.75 \\text{ m/s}}\n\nThe negative sign indicates the height is decreasing (sliding down).\n\n\\textcolor{green}{\\textbf{Check:}} Units work out: m/s is correct for velocity.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Related Rates",
+    "type": "example",
+    "title": "Example 8: Expanding Sphere",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} A spherical balloon is being inflated at a rate of 100 cm³/s. How fast is the radius increasing when the radius is 10 cm?\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Identify variables\n\nGiven: $\\dfrac{dV}{dt} = 100$ cm³/s (volume increasing)\n\nFind: $\\dfrac{dr}{dt}$ when $r = 10$ cm\n\n\\textbf{Step 2:} Relate variables\n\nVolume of sphere: $V = \\dfrac{4}{3}\\pi r^3$\n\n\\textbf{Step 3:} Differentiate with respect to $t$\n\n\\begin{align*}\n\\frac{dV}{dt} &= \\frac{d}{dt}\\left(\\frac{4}{3}\\pi r^3\\right) \\\\\n&= \\frac{4}{3}\\pi \\cdot 3r^2 \\cdot \\frac{dr}{dt} \\\\\n&= 4\\pi r^2 \\frac{dr}{dt}\n\\end{align*}\n\n\\textbf{Step 4:} Solve for $\\dfrac{dr}{dt}$\n\n\\[\n\\frac{dr}{dt} = \\frac{1}{4\\pi r^2} \\cdot \\frac{dV}{dt}\n\\]\n\n\\textbf{Step 5:} Substitute values\n\nWhen $r = 10$ cm and $\\dfrac{dV}{dt} = 100$ cm³/s:\n\n\\begin{align*}\n\\frac{dr}{dt} &= \\frac{100}{4\\pi (10)^2} \\\\\n&= \\frac{100}{400\\pi} \\\\\n&= \\frac{1}{4\\pi} \\\\\n&\\approx 0.0796 \\text{ cm/s}\n\\end{align*}\n\n\\textbf{Answer:} The radius is increasing at \\boxed{\\frac{1}{4\\pi} \\approx 0.08 \\text{ cm/s}} when $r = 10$ cm.\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Observation:}} As the balloon gets larger, the same volume increase causes a smaller change in radius because the surface area is larger.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Related Rates",
+    "type": "example",
+    "title": "Example 9: Water Tank Problem",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Water is draining from a conical tank at a rate of 2 m³/min. The tank has height 10 m and radius 5 m at the top. How fast is the water level dropping when the water is 6 m deep?\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Set up variables\n\nLet:\n\\begin{itemize}\n    \\item $h$ = height of water (depth)\n    \\item $r$ = radius of water surface\n    \\item $V$ = volume of water\n\\end{itemize}\n\nGiven: $\\dfrac{dV}{dt} = -2$ m³/min (negative because draining)\n\nFind: $\\dfrac{dh}{dt}$ when $h = 6$ m\n\n\\textbf{Step 2:} Relate $r$ and $h$\n\nBy similar triangles (cone proportions):\n\\[\n\\frac{r}{h} = \\frac{5}{10} = \\frac{1}{2} \\implies r = \\frac{h}{2}\n\\]\n\n\\textbf{Step 3:} Write volume formula\n\nVolume of cone: $V = \\dfrac{1}{3}\\pi r^2 h$\n\nSubstitute $r = \\dfrac{h}{2}$:\n\\begin{align*}\nV &= \\frac{1}{3}\\pi \\left(\\frac{h}{2}\\right)^2 h \\\\\n&= \\frac{1}{3}\\pi \\cdot \\frac{h^2}{4} \\cdot h \\\\\n&= \\frac{\\pi h^3}{12}\n\\end{align*}\n\n\\textbf{Step 4:} Differentiate with respect to $t$\n\n\\begin{align*}\n\\frac{dV}{dt} &= \\frac{\\pi}{12} \\cdot 3h^2 \\cdot \\frac{dh}{dt} \\\\\n&= \\frac{\\pi h^2}{4} \\cdot \\frac{dh}{dt}\n\\end{align*}\n\n\\textbf{Step 5:} Solve for $\\dfrac{dh}{dt}$\n\n\\[\n\\frac{dh}{dt} = \\frac{4}{\\pi h^2} \\cdot \\frac{dV}{dt}\n\\]\n\n\\textbf{Step 6:} Substitute values\n\nWhen $h = 6$ m and $\\dfrac{dV}{dt} = -2$ m³/min:\n\n\\begin{align*}\n\\frac{dh}{dt} &= \\frac{4}{\\pi (6)^2} \\cdot (-2) \\\\\n&= \\frac{-8}{36\\pi} \\\\\n&= -\\frac{2}{9\\pi} \\\\\n&\\approx -0.071 \\text{ m/min}\n\\end{align*}\n\n\\textbf{Answer:} The water level is dropping at \\boxed{\\frac{2}{9\\pi} \\approx 0.071 \\text{ m/min}} when $h = 6$ m.\n\nThe negative sign indicates the height is decreasing.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Related Rates",
+    "type": "example",
+    "title": "Example 10: Distance Between Moving Objects",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Car A is traveling north at 60 km/h and car B is traveling west at 80 km/h. Both cars are approaching an intersection. At a certain moment, car A is 0.5 km south of the intersection and car B is 0.6 km east of the intersection. How fast is the distance between the cars changing at that moment?\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Set up coordinates and variables\n\nLet:\n\\begin{itemize}\n    \\item $x$ = distance of car B from intersection (east)\n    \\item $y$ = distance of car A from intersection (south)\n    \\item $z$ = distance between the two cars\n\\end{itemize}\n\nGiven:\n\\begin{itemize}\n    \\item $\\dfrac{dy}{dt} = -60$ km/h (negative: moving north, decreasing $y$)\n    \\item $\\dfrac{dx}{dt} = -80$ km/h (negative: moving west, decreasing $x$)\n    \\item At the moment: $y = 0.5$ km, $x = 0.6$ km\n\\end{itemize}\n\nFind: $\\dfrac{dz}{dt}$\n\n\\textbf{Step 2:} Relate variables using Pythagorean theorem\n\n\\[\nz^2 = x^2 + y^2\n\\]\n\n\\textbf{Step 3:} Find $z$ at the given moment\n\n\\begin{align*}\nz^2 &= (0.6)^2 + (0.5)^2 \\\\\n&= 0.36 + 0.25 \\\\\n&= 0.61 \\\\\nz &= \\sqrt{0.61} \\approx 0.781 \\text{ km}\n\\end{align*}\n\n\\textbf{Step 4:} Differentiate with respect to $t$\n\n\\begin{align*}\n2z\\frac{dz}{dt} &= 2x\\frac{dx}{dt} + 2y\\frac{dy}{dt}\n\\end{align*}\n\nSimplify:\n\\[\nz\\frac{dz}{dt} = x\\frac{dx}{dt} + y\\frac{dy}{dt}\n\\]\n\n\\textbf{Step 5:} Substitute values\n\n\\begin{align*}\n\\sqrt{0.61} \\cdot \\frac{dz}{dt} &= 0.6(-80) + 0.5(-60) \\\\\n0.781 \\cdot \\frac{dz}{dt} &= -48 - 30 \\\\\n0.781 \\cdot \\frac{dz}{dt} &= -78 \\\\\n\\frac{dz}{dt} &= \\frac{-78}{0.781} \\\\\n&\\approx -99.87 \\text{ km/h}\n\\end{align*}\n\n\\textbf{Answer:} The distance between the cars is decreasing at approximately \\boxed{100 \\text{ km/h}}\n\nThe negative sign indicates they are getting closer (distance decreasing).\n\n\\textcolor{green}{\\textbf{Reality Check:}} This makes sense! Both cars are heading toward the intersection, so they're approaching each other rapidly.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Related Rates",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 3.2 Summary: Related Rates}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 3.2 Summary: Related Rates}}\n\n\\textbf{General Problem-Solving Strategy:}\n\n\\begin{enumerate}\n    \\item \\textbf{Draw and label:} Sketch the situation with variables\n    \\item \\textbf{Identify:} What's given (rates) and what's unknown\n    \\item \\textbf{Relate:} Write equation connecting all variables\n    \\item \\textbf{Differentiate:} Use implicit differentiation with respect to $t$\n    \\item \\textbf{Don't substitute early:} Differentiate first, then substitute\n    \\item \\textbf{Solve:} Find the unknown rate\n    \\item \\textbf{Check:} Units and reasonableness of answer\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Common Relationships:}}\n\n\\begin{center}\n\\begin{tabular}{|p{4cm}|p{5cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Situation} & \\textbf{Key Formula} \\\\\n\\hline\nCircle & $A = \\pi r^2$ \\\\\n\\hline\nSphere & $V = \\frac{4}{3}\\pi r^3$, $S = 4\\pi r^2$ \\\\\n\\hline\nCone & $V = \\frac{1}{3}\\pi r^2 h$ \\\\\n\\hline\nRight Triangle & $a^2 + b^2 = c^2$ \\\\\n\\hline\nSimilar Triangles & $\\frac{a}{b} = \\frac{c}{d}$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Substituting values before differentiating\n    \\item Forgetting negative signs (direction matters!)\n    \\item Not using chain rule when differentiating\n    \\item Mixing up which rate is given and which is unknown\n    \\item Unit inconsistencies\n    \\item Not relating variables correctly before differentiating\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Sign Convention:}}\n\\begin{itemize}\n    \\item Positive rate: quantity is increasing\n    \\item Negative rate: quantity is decreasing\n    \\item Always interpret the sign in context of the problem\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "definition",
+    "title": "Definition 3.4: Higher Order Derivatives",
+    "content": "If $f$ is a differentiable function, then its \\textbf{derivative} $f'$ is also a function. If $f'$ is differentiable, we can take its derivative to get the \\textbf{second derivative}:\n\n\\[\n\\boxed{f''(x) = \\frac{d}{dx}[f'(x)] = \\frac{d^2f}{dx^2}}\n\\]\n\nContinuing this process:\n\n\\textbf{Third derivative:}\n\\[\nf'''(x) = \\frac{d^3f}{dx^3}\n\\]\n\n\\textbf{Fourth derivative:}\n\\[\nf^{(4)}(x) = \\frac{d^4f}{dx^4}\n\\]\n\n\\textbf{$n$-th derivative:}\n\\[\nf^{(n)}(x) = \\frac{d^nf}{dx^n}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Notation Variations:}}\n\nFor $y = f(x)$:\n\\begin{align*}\n\\text{First derivative: } & f'(x), \\, y', \\, \\frac{dy}{dx}, \\, \\frac{df}{dx}, \\, Df \\\\\n\\text{Second derivative: } & f''(x), \\, y'', \\, \\frac{d^2y}{dx^2}, \\, D^2f \\\\\n\\text{Third derivative: } & f'''(x), \\, y''', \\, \\frac{d^3y}{dx^3}, \\, D^3f \\\\\n\\text{Higher orders: } & f^{(n)}(x), \\, y^{(n)}, \\, \\frac{d^ny}{dx^n}, \\, D^nf\n\\end{align*}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} After the third derivative, we use the notation $f^{(4)}$, $f^{(5)}$, etc., not $f''''$ (too many primes!).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "example",
+    "title": "Example 11: Computing Higher Derivatives",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the first four derivatives of $f(x) = x^5 - 3x^4 + 2x^2 - 5$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{First derivative:}\n\\begin{align*}\nf'(x) &= 5x^4 - 12x^3 + 4x\n\\end{align*}\n\n\\textbf{Second derivative:}\n\\begin{align*}\nf''(x) &= 20x^3 - 36x^2 + 4\n\\end{align*}\n\n\\textbf{Third derivative:}\n\\begin{align*}\nf'''(x) &= 60x^2 - 72x\n\\end{align*}\n\n\\textbf{Fourth derivative:}\n\\begin{align*}\nf^{(4)}(x) &= 120x - 72\n\\end{align*}\n\n\\textbf{Fifth derivative:}\n\\begin{align*}\nf^{(5)}(x) &= 120\n\\end{align*}\n\n\\textbf{Sixth derivative and beyond:}\n\\begin{align*}\nf^{(6)}(x) &= 0 \\\\\nf^{(n)}(x) &= 0 \\quad \\text{for all } n \\geq 6\n\\end{align*}\n\n\\textbf{Answer:} \n\\begin{align*}\nf'(x) &= \\boxed{5x^4 - 12x^3 + 4x} \\\\\nf''(x) &= \\boxed{20x^3 - 36x^2 + 4} \\\\\nf'''(x) &= \\boxed{60x^2 - 72x} \\\\\nf^{(4)}(x) &= \\boxed{120x - 72}\n\\end{align*}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Pattern:}} For polynomial of degree $n$, the $n$-th derivative is constant, and all higher derivatives are zero.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "example",
+    "title": "Example 12: Higher Derivatives of Exponential and Trig Functions",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the $n$-th derivative for:\n\n(a) $f(x) = e^x$\n\n(b) $g(x) = \\sin x$\n\n(c) $h(x) = \\cos x$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} For $f(x) = e^x$:\n\n\\begin{align*}\nf'(x) &= e^x \\\\\nf''(x) &= e^x \\\\\nf'''(x) &= e^x \\\\\n&\\vdots \\\\\nf^{(n)}(x) &= e^x\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f^{(n)}(x) = e^x \\text{ for all } n \\geq 1}\n\nThe exponential function is its own derivative!\n\n\\vspace{0.3cm}\n\\textbf{(b)} For $g(x) = \\sin x$:\n\n\\begin{align*}\ng'(x) &= \\cos x \\\\\ng''(x) &= -\\sin x \\\\\ng'''(x) &= -\\cos x \\\\\ng^{(4)}(x) &= \\sin x \\\\\ng^{(5)}(x) &= \\cos x \\\\\n&\\vdots\n\\end{align*}\n\nThe pattern repeats every 4 derivatives:\n\n\\textbf{Answer:} \n\\[\n\\boxed{g^{(n)}(x) = \\begin{cases}\n\\sin x, & n \\equiv 0 \\pmod{4} \\\\\n\\cos x, & n \\equiv 1 \\pmod{4} \\\\\n-\\sin x, & n \\equiv 2 \\pmod{4} \\\\\n-\\cos x, & n \\equiv 3 \\pmod{4}\n\\end{cases}}\n\\]\n\n\\vspace{0.3cm}\n\\textbf{(c)} For $h(x) = \\cos x$:\n\n\\begin{align*}\nh'(x) &= -\\sin x \\\\\nh''(x) &= -\\cos x \\\\\nh'''(x) &= \\sin x \\\\\nh^{(4)}(x) &= \\cos x \\\\\nh^{(5)}(x) &= -\\sin x \\\\\n&\\vdots\n\\end{align*}\n\n\\textbf{Answer:} Pattern repeats every 4 derivatives:\n\\[\n\\boxed{h^{(n)}(x) = \\begin{cases}\n\\cos x, & n \\equiv 0 \\pmod{4} \\\\\n-\\sin x, & n \\equiv 1 \\pmod{4} \\\\\n-\\cos x, & n \\equiv 2 \\pmod{4} \\\\\n\\sin x, & n \\equiv 3 \\pmod{4}\n\\end{cases}}\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "definition",
+    "title": "Definition 3.5: Physical Interpretation of Higher Derivatives",
+    "content": "In physics and mechanics, derivatives with respect to time have special meanings:\n\n\\textbf{Position, Velocity, Acceleration:}\n\nIf $s(t)$ is the position of an object at time $t$:\n\n\\textbf{First derivative (velocity):}\n\\[\nv(t) = s'(t) = \\frac{ds}{dt}\n\\]\n\n\\textbf{Second derivative (acceleration):}\n\\[\na(t) = v'(t) = s''(t) = \\frac{d^2s}{dt^2}\n\\]\n\n\\textbf{Third derivative (jerk):}\n\\[\nj(t) = a'(t) = s'''(t) = \\frac{d^3s}{dt^3}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{What is Jerk?}}\n\n\\textbf{Jerk} measures the rate of change of acceleration. It's what you feel when:\n\\begin{itemize}\n    \\item An elevator starts or stops suddenly\n    \\item A car accelerates or brakes abruptly\n    \\item A roller coaster changes acceleration\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Question from 2024 Past Paper:}}\n\n\"What is jerk? Why is the jerk during free fall zero?\" (Q1 part v)\n\n\\textbf{Answer:} During free fall, acceleration is constant ($a = -g$), so $j = \\dfrac{da}{dt} = 0$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "example",
+    "title": "Example 13: Position Velocity Acceleration and Jerk",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} A particle moves along a line with position function $s(t) = t^4 - 8t^3 + 24t^2 - 32t + 10$ meters, where $t$ is in seconds.\n\n(a) Find the velocity, acceleration, and jerk functions.\n\n(b) Find the velocity and acceleration at $t = 2$ seconds.\n\n(c) When is the jerk zero?\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Find $v(t)$, $a(t)$, and $j(t)$\n\n\\textbf{Velocity:}\n\\begin{align*}\nv(t) &= s'(t) = 4t^3 - 24t^2 + 48t - 32\n\\end{align*}\n\n\\textbf{Acceleration:}\n\\begin{align*}\na(t) &= v'(t) = s''(t) = 12t^2 - 48t + 48\n\\end{align*}\n\n\\textbf{Jerk:}\n\\begin{align*}\nj(t) &= a'(t) = s'''(t) = 24t - 48\n\\end{align*}\n\n\\textbf{Answer:}\n\\begin{align*}\nv(t) &= \\boxed{4t^3 - 24t^2 + 48t - 32 \\text{ m/s}} \\\\\na(t) &= \\boxed{12t^2 - 48t + 48 \\text{ m/s}^2} \\\\\nj(t) &= \\boxed{24t - 48 \\text{ m/s}^3}\n\\end{align*}\n\n\\vspace{0.3cm}\n\\textbf{(b)} Evaluate at $t = 2$\n\n\\begin{align*}\nv(2) &= 4(2)^3 - 24(2)^2 + 48(2) - 32 \\\\\n&= 32 - 96 + 96 - 32 \\\\\n&= 0 \\text{ m/s}\n\\end{align*}\n\n\\begin{align*}\na(2) &= 12(2)^2 - 48(2) + 48 \\\\\n&= 48 - 96 + 48 \\\\\n&= 0 \\text{ m/s}^2\n\\end{align*}\n\n\\textbf{Answer:} At $t = 2$ seconds: \\boxed{v = 0 \\text{ m/s}, \\, a = 0 \\text{ m/s}^2}\n\nThe particle is momentarily at rest with zero acceleration.\n\n\\vspace{0.3cm}\n\\textbf{(c)} When is jerk zero?\n\n\\begin{align*}\nj(t) &= 0 \\\\\n24t - 48 &= 0 \\\\\nt &= 2 \\text{ seconds}\n\\end{align*}\n\n\\textbf{Answer:} Jerk is zero at \\boxed{t = 2 \\text{ s}}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Interpretation:}} At $t = 2$ seconds, the particle is at rest, has zero acceleration, and zero jerk. This is a very special point in the motion!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "definition",
+    "title": "Definition 3.6: Concavity and Second Derivative",
+    "content": "The second derivative provides information about the \\textbf{concavity} of a function:\n\n\\textbf{Concave Up:} $f''(x) > 0$\n\\begin{itemize}\n    \\item Graph curves upward (like $\\cup$)\n    \\item Function is \"holding water\"\n    \\item Slope is increasing\n\\end{itemize}\n\n\\textbf{Concave Down:} $f''(x) < 0$\n\\begin{itemize}\n    \\item Graph curves downward (like $\\cap$)\n    \\item Function is \"spilling water\"\n    \\item Slope is decreasing\n\\end{itemize}\n\n\\textbf{Inflection Point:} A point where concavity changes\n\\begin{itemize}\n    \\item Occurs where $f''(x) = 0$ or $f''(x)$ is undefined\n    \\item Must verify that $f''$ changes sign\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Visual Guide:}}\n\\begin{itemize}\n    \\item If $f''(x) > 0$: tangent lines lie below the curve\n    \\item If $f''(x) < 0$: tangent lines lie above the curve\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "example",
+    "title": "Example 14: Finding Inflection Points",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} For $f(x) = 2x^3 - 3x^2 - 12x$:\n\n(a) Find the inflection point(s).\n\n(b) Determine where the function is concave up and concave down.\n\n(From 2024 past paper, Q2 part a)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Find inflection points\n\n\\textbf{Step 1:} Find the second derivative\n\n\\begin{align*}\nf'(x) &= 6x^2 - 6x - 12 \\\\\nf''(x) &= 12x - 6\n\\end{align*}\n\n\\textbf{Step 2:} Set $f''(x) = 0$\n\n\\begin{align*}\n12x - 6 &= 0 \\\\\n12x &= 6 \\\\\nx &= \\frac{1}{2}\n\\end{align*}\n\n\\textbf{Step 3:} Verify that concavity changes\n\nTest points around $x = \\frac{1}{2}$:\n\nFor $x = 0$ (left of $\\frac{1}{2}$): $f''(0) = -6 < 0$ (concave down)\n\nFor $x = 1$ (right of $\\frac{1}{2}$): $f''(1) = 12 - 6 = 6 > 0$ (concave up)\n\nConcavity changes! \\textcolor{green}{\\checkmark}\n\n\\textbf{Step 4:} Find the $y$-coordinate\n\n\\begin{align*}\nf\\left(\\frac{1}{2}\\right) &= 2\\left(\\frac{1}{2}\\right)^3 - 3\\left(\\frac{1}{2}\\right)^2 - 12\\left(\\frac{1}{2}\\right) \\\\\n&= 2 \\cdot \\frac{1}{8} - 3 \\cdot \\frac{1}{4} - 6 \\\\\n&= \\frac{1}{4} - \\frac{3}{4} - 6 \\\\\n&= -\\frac{1}{2} - 6 \\\\\n&= -\\frac{13}{2}\n\\end{align*}\n\n\\textbf{Answer (a):} Inflection point at \\boxed{\\left(\\frac{1}{2}, -\\frac{13}{2}\\right)}\n\n\\vspace{0.3cm}\n\\textbf{(b)} Intervals of concavity\n\nFrom our analysis:\n\n\\textbf{Concave down:} $f''(x) < 0$ when $12x - 6 < 0$, i.e., $x < \\frac{1}{2}$\n\nInterval: \\boxed{\\left(-\\infty, \\frac{1}{2}\\right)}\n\n\\textbf{Concave up:} $f''(x) > 0$ when $12x - 6 > 0$, i.e., $x > \\frac{1}{2}$\n\nInterval: \\boxed{\\left(\\frac{1}{2}, \\infty\\right)}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "theorem",
+    "title": "Theorem 3.2: Second Derivative Test for Extrema",
+    "content": "Let $f$ be twice differentiable and suppose $f'(c) = 0$.\n\n\\textbf{If $f''(c) > 0$:} $f$ has a \\textbf{local minimum} at $x = c$\n\n\\textbf{If $f''(c) < 0$:} $f$ has a \\textbf{local maximum} at $x = c$\n\n\\textbf{If $f''(c) = 0$:} Test is \\textbf{inconclusive} (could be min, max, or neither)\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Intuition:}}\n\\begin{itemize}\n    \\item $f''(c) > 0$ means concave up at critical point → local minimum\n    \\item $f''(c) < 0$ means concave down at critical point → local maximum\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Requirement:}} This test only works at critical points where $f'(c) = 0$!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "example",
+    "title": "Example 15: Using Second Derivative Test",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find and classify all local extrema of $f(x) = x^4 - 4x^3 + 6$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find critical points\n\n\\begin{align*}\nf'(x) &= 4x^3 - 12x^2 = 4x^2(x - 3)\n\\end{align*}\n\nSet $f'(x) = 0$:\n\\[\n4x^2(x - 3) = 0 \\implies x = 0 \\text{ or } x = 3\n\\]\n\nCritical points: $x = 0$ and $x = 3$\n\n\\textbf{Step 2:} Find second derivative\n\n\\begin{align*}\nf''(x) &= 12x^2 - 24x = 12x(x - 2)\n\\end{align*}\n\n\\textbf{Step 3:} Apply second derivative test\n\n\\textbf{At $x = 0$:}\n\\[\nf''(0) = 12(0)(0 - 2) = 0\n\\]\n\nTest is inconclusive! Need first derivative test or further analysis.\n\n\\textbf{At $x = 3$:}\n\\[\nf''(3) = 12(3)(3 - 2) = 12(3)(1) = 36 > 0\n\\]\n\nSince $f''(3) > 0$, there is a \\textbf{local minimum} at $x = 3$.\n\n\\textbf{Step 4:} Find function values\n\n\\begin{align*}\nf(0) &= 0 - 0 + 6 = 6 \\\\\nf(3) &= 81 - 108 + 6 = -21\n\\end{align*}\n\n\\textbf{Step 5:} Analyze $x = 0$ using first derivative test\n\nCheck sign of $f'(x) = 4x^2(x - 3)$ around $x = 0$:\n\\begin{itemize}\n    \\item For $x = -1$: $f'(-1) = 4(1)(-4) = -16 < 0$ (decreasing)\n    \\item For $x = 1$: $f'(1) = 4(1)(-2) = -8 < 0$ (decreasing)\n\\end{itemize}\n\nNo sign change → $x = 0$ is \\textbf{neither a max nor min} (inflection point).\n\n\\textbf{Answer:} \n\\begin{itemize}\n    \\item Local minimum at \\boxed{(3, -21)}\n    \\item No local maximum\n    \\item $x = 0$ is not an extremum\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Higher Order Derivatives and Applications",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 3.3 Summary}} {Higher Order",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 3.3 Summary}}\n\n\\textbf{Higher Order Derivatives:}\n\\begin{align*}\nf''(x) &= \\frac{d^2f}{dx^2} = \\frac{d}{dx}[f'(x)] \\\\\nf'''(x) &= \\frac{d^3f}{dx^3} \\\\\nf^{(n)}(x) &= \\frac{d^nf}{dx^n}\n\\end{align*}\n\n\\textbf{Physical Interpretations:}\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Derivative} & \\textbf{Name} & \\textbf{Meaning} \\\\\n\\hline\n$s'(t)$ & Velocity & Rate of change of position \\\\\n\\hline\n$s''(t)$ & Acceleration & Rate of change of velocity \\\\\n\\hline\n$s'''(t)$ & Jerk & Rate of change of acceleration \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Concavity:}\n\\begin{itemize}\n    \\item $f''(x) > 0$ → Concave up ($\\cup$)\n    \\item $f''(x) < 0$ → Concave down ($\\cap$)\n    \\item $f''(x) = 0$ and changes sign → Inflection point\n\\end{itemize}\n\n\\textbf{Second Derivative Test:}\n\\begin{itemize}\n    \\item $f'(c) = 0$ and $f''(c) > 0$ → Local minimum\n    \\item $f'(c) = 0$ and $f''(c) < 0$ → Local maximum\n    \\item $f'(c) = 0$ and $f''(c) = 0$ → Inconclusive\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Confusing inflection points with extrema\n    \\item Forgetting to verify sign change for inflection points\n    \\item Using second derivative test when $f'(c) \\neq 0$\n    \\item Not checking that $f''$ actually exists at the point\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Newton-Raphson Method",
+    "type": "definition",
+    "title": "Definition 3.7: Newton-Raphson Method",
+    "content": "To find a root of the equation $f(x) = 0$, start with an initial guess $x_0$ and generate a sequence of approximations using:\n\n\\[\n\\boxed{x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}}\n\\]\n\nfor $n = 0, 1, 2, 3, \\ldots$\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\\begin{enumerate}\n    \\item Start at point $(x_n, f(x_n))$ on the curve\n    \\item Draw the tangent line at this point\n    \\item Find where the tangent line crosses the $x$-axis\n    \\item This $x$-intercept becomes $x_{n+1}$ (next approximation)\n    \\item Repeat the process\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{The Formula Derivation:}}\n\nThe tangent line at $(x_n, f(x_n))$ has equation:\n\\[\ny - f(x_n) = f'(x_n)(x - x_n)\n\\]\n\nSetting $y = 0$ (to find $x$-intercept):\n\\begin{align*}\n-f(x_n) &= f'(x_n)(x - x_n) \\\\\nx - x_n &= -\\frac{f(x_n)}{f'(x_n)} \\\\\nx &= x_n - \\frac{f(x_n)}{f'(x_n)}\n\\end{align*}\n\nThis gives us $x_{n+1}$.\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Requirements:}}\n\\begin{itemize}\n    \\item $f'(x_n) \\neq 0$ (tangent line not horizontal)\n    \\item Good initial guess $x_0$ (close to actual root)\n    \\item Function should be \"well-behaved\" near the root\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Newton-Raphson Method",
+    "type": "example",
+    "title": "Example 16: Newton-Raphson Method - Basic Application",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Use Newton-Raphson method to approximate $\\sqrt{2}$ (i.e., solve $x^2 - 2 = 0$) starting with $x_0 = 1$. Find three iterations.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Set up the function and its derivative\n\n\\begin{align*}\nf(x) &= x^2 - 2 \\\\\nf'(x) &= 2x\n\\end{align*}\n\n\\textbf{Step 2:} Write the iteration formula\n\n\\begin{align*}\nx_{n+1} &= x_n - \\frac{f(x_n)}{f'(x_n)} \\\\\n&= x_n - \\frac{x_n^2 - 2}{2x_n} \\\\\n&= x_n - \\frac{x_n}{2} + \\frac{1}{x_n} \\\\\n&= \\frac{x_n}{2} + \\frac{1}{x_n} \\\\\n&= \\frac{x_n^2 + 2}{2x_n}\n\\end{align*}\n\n\\textbf{Step 3:} Perform iterations\n\n\\textbf{Iteration 0:} $x_0 = 1$ (given)\n\n\\textbf{Iteration 1:}\n\\begin{align*}\nx_1 &= \\frac{x_0^2 + 2}{2x_0} = \\frac{1 + 2}{2(1)} = \\frac{3}{2} = 1.5\n\\end{align*}\n\n\\textbf{Iteration 2:}\n\\begin{align*}\nx_2 &= \\frac{x_1^2 + 2}{2x_1} = \\frac{(1.5)^2 + 2}{2(1.5)} = \\frac{2.25 + 2}{3} = \\frac{4.25}{3} \\approx 1.41667\n\\end{align*}\n\n\\textbf{Iteration 3:}\n\\begin{align*}\nx_3 &= \\frac{x_2^2 + 2}{2x_2} = \\frac{(1.41667)^2 + 2}{2(1.41667)} \\\\\n&\\approx \\frac{2.00694 + 2}{2.83334} \\approx \\frac{4.00694}{2.83334} \\approx 1.41421\n\\end{align*}\n\n\\textbf{Answer:} \n\\begin{align*}\nx_1 &= \\boxed{1.5} \\\\\nx_2 &= \\boxed{1.41667} \\\\\nx_3 &= \\boxed{1.41421}\n\\end{align*}\n\n\\textcolor{green}{\\textbf{Verification:}} $\\sqrt{2} = 1.41421356...$, so $x_3$ is accurate to 5 decimal places after just 3 iterations!\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Observation:}} The method converges very quickly - this is called \"quadratic convergence.\"\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Newton-Raphson Method",
+    "type": "example",
+    "title": "Example 17: Newton-Raphson with Four Decimal Places",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Use Newton-Raphson method to approximate a root of $e^x - 3x = 0$ up to four decimal places, starting with $x_0 = 0$.\n\n(From 2024 past paper, Q3 part a)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Set up the function and derivative\n\n\\begin{align*}\nf(x) &= e^x - 3x \\\\\nf'(x) &= e^x - 3\n\\end{align*}\n\n\\textbf{Step 2:} Write iteration formula\n\n\\begin{align*}\nx_{n+1} &= x_n - \\frac{f(x_n)}{f'(x_n)} \\\\\n&= x_n - \\frac{e^{x_n} - 3x_n}{e^{x_n} - 3}\n\\end{align*}\n\n\\textbf{Step 3:} Perform iterations starting with $x_0 = 0$\n\n\\textbf{Iteration 0:} $x_0 = 0$\n\n\\textbf{Iteration 1:}\n\\begin{align*}\nf(0) &= e^0 - 3(0) = 1 - 0 = 1 \\\\\nf'(0) &= e^0 - 3 = 1 - 3 = -2 \\\\\nx_1 &= 0 - \\frac{1}{-2} = 0 - (-0.5) = 0.5\n\\end{align*}\n\n\\textbf{Iteration 2:}\n\\begin{align*}\nf(0.5) &= e^{0.5} - 3(0.5) = 1.6487 - 1.5 = 0.1487 \\\\\nf'(0.5) &= e^{0.5} - 3 = 1.6487 - 3 = -1.3513 \\\\\nx_2 &= 0.5 - \\frac{0.1487}{-1.3513} = 0.5 + 0.1100 = 0.6100\n\\end{align*}\n\n\\textbf{Iteration 3:}\n\\begin{align*}\nf(0.6100) &= e^{0.61} - 3(0.61) = 1.8404 - 1.83 = 0.0104 \\\\\nf'(0.6100) &= e^{0.61} - 3 = 1.8404 - 3 = -1.1596 \\\\\nx_3 &= 0.61 - \\frac{0.0104}{-1.1596} = 0.61 + 0.0090 = 0.6190\n\\end{align*}\n\n\\textbf{Iteration 4:}\n\\begin{align*}\nf(0.6190) &= e^{0.619} - 3(0.619) = 1.8572 - 1.857 = 0.0002 \\\\\nf'(0.6190) &= e^{0.619} - 3 = 1.8572 - 3 = -1.1428 \\\\\nx_4 &= 0.619 - \\frac{0.0002}{-1.1428} = 0.619 + 0.0002 = 0.6192\n\\end{align*}\n\n\\textbf{Iteration 5:}\n\\begin{align*}\nx_5 &\\approx 0.6192\n\\end{align*}\n\nSince $x_4$ and $x_5$ agree to 4 decimal places, we stop.\n\n\\textbf{Answer:} The root is approximately \\boxed{x \\approx 0.6192} (to 4 decimal places)\n\n\\textcolor{green}{\\textbf{Verification:}} $f(0.6192) = e^{0.6192} - 3(0.6192) \\approx 0.000003 \\approx 0$ \\textcolor{green}{\\checkmark}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Newton-Raphson Method",
+    "type": "example",
+    "title": "Example 18: Finding Multiple Roots",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} The equation $x^3 - 2x - 5 = 0$ has one real root. Use Newton-Raphson method with $x_0 = 2$ to approximate it to 4 decimal places.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Set up the functions\n\n\\begin{align*}\nf(x) &= x^3 - 2x - 5 \\\\\nf'(x) &= 3x^2 - 2\n\\end{align*}\n\n\\textbf{Step 2:} Iteration formula\n\n\\[\nx_{n+1} = x_n - \\frac{x_n^3 - 2x_n - 5}{3x_n^2 - 2}\n\\]\n\n\\textbf{Step 3:} Perform iterations\n\n\\textbf{$x_0 = 2$:}\n\n\\textbf{Iteration 1:}\n\\begin{align*}\nf(2) &= 8 - 4 - 5 = -1 \\\\\nf'(2) &= 12 - 2 = 10 \\\\\nx_1 &= 2 - \\frac{-1}{10} = 2.1\n\\end{align*}\n\n\\textbf{Iteration 2:}\n\\begin{align*}\nf(2.1) &= (2.1)^3 - 2(2.1) - 5 = 9.261 - 4.2 - 5 = 0.061 \\\\\nf'(2.1) &= 3(2.1)^2 - 2 = 13.23 - 2 = 11.23 \\\\\nx_2 &= 2.1 - \\frac{0.061}{11.23} = 2.1 - 0.0054 = 2.0946\n\\end{align*}\n\n\\textbf{Iteration 3:}\n\\begin{align*}\nf(2.0946) &\\approx 0.0003 \\\\\nf'(2.0946) &\\approx 11.1575 \\\\\nx_3 &= 2.0946 - \\frac{0.0003}{11.1575} \\approx 2.0946\n\\end{align*}\n\nConvergence achieved!\n\n\\textbf{Answer:} \\boxed{x \\approx 2.0946}\n\n\\textcolor{green}{\\textbf{Check:}} $f(2.0946) = (2.0946)^3 - 2(2.0946) - 5 \\approx 0.0001 \\approx 0$ \\textcolor{green}{\\checkmark}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Newton-Raphson Method",
+    "type": "definition",
+    "title": "Definition 3.8: When Newton-Raphson Method Fails",
+    "content": "The Newton-Raphson method may fail or converge slowly when:\n\n\\textbf{1. Poor Initial Guess:}\n\\begin{itemize}\n    \\item $x_0$ is far from the actual root\n    \\item May converge to a different root\n    \\item May oscillate or diverge\n\\end{itemize}\n\n\\textbf{2. $f'(x_n) = 0$ or very small:}\n\\begin{itemize}\n    \\item Division by zero or near-zero\n    \\item Tangent line nearly horizontal\n    \\item Next iterate may jump very far\n\\end{itemize}\n\n\\textbf{3. Multiple Roots:}\n\\begin{itemize}\n    \\item At multiple roots, $f'(x) = 0$\n    \\item Convergence is slower (linear instead of quadratic)\n\\end{itemize}\n\n\\textbf{4. Cycles:}\n\\begin{itemize}\n    \\item Iterations may cycle between values\n    \\item Never converge to a root\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{How to Improve:}}\n\\begin{itemize}\n    \\item Choose better initial guess (graph the function first)\n    \\item Use a different method if Newton-Raphson fails\n    \\item Check for convergence (iterations should get closer)\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Newton-Raphson Method",
+    "type": "example",
+    "title": "Example 19: Convergence Analysis",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} For $f(x) = x^2 - 4$, starting with $x_0 = 1$, show the first three Newton-Raphson iterations and discuss convergence.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Set up\n\n\\begin{align*}\nf(x) &= x^2 - 4 \\\\\nf'(x) &= 2x \\\\\nx_{n+1} &= x_n - \\frac{x_n^2 - 4}{2x_n} = \\frac{x_n^2 + 4}{2x_n}\n\\end{align*}\n\n\\textbf{Step 2:} Iterations\n\n\\textbf{$x_0 = 1$:}\n\\[\nx_1 = \\frac{1 + 4}{2} = 2.5\n\\]\n\n\\textbf{$x_1 = 2.5$:}\n\\[\nx_2 = \\frac{6.25 + 4}{5} = \\frac{10.25}{5} = 2.05\n\\]\n\n\\textbf{$x_2 = 2.05$:}\n\\[\nx_3 = \\frac{(2.05)^2 + 4}{2(2.05)} = \\frac{4.2025 + 4}{4.1} = \\frac{8.2025}{4.1} \\approx 2.0006\n\\]\n\n\\textbf{Step 3:} Analysis\n\nThe sequence: $1 \\to 2.5 \\to 2.05 \\to 2.0006 \\to ...$\n\nConverging to $x = 2$ (since $f(2) = 4 - 4 = 0$).\n\n\\textbf{Convergence table:}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Iteration} & \\textbf{$x_n$} & \\textbf{Error} $|x_n - 2|$ \\\\\n\\hline\n0 & 1.0000 & 1.0000 \\\\\n\\hline\n1 & 2.5000 & 0.5000 \\\\\n\\hline\n2 & 2.0500 & 0.0500 \\\\\n\\hline\n3 & 2.0006 & 0.0006 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Answer:} The method converges \\textbf{rapidly} (quadratically) to the root $x = 2$.\n\n\\textcolor{green}{\\textbf{Note:}} Each iteration roughly squares the error, which is characteristic of quadratic convergence.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Newton-Raphson Method",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 3.4 Summary: Newton-Raphson Method}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 3.4 Summary: Newton-Raphson Method}}\n\n\\textbf{The Formula:}\n\\[\n\\boxed{x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}}\n\\]\n\n\\textbf{Algorithm Steps:}\n\\begin{enumerate}\n    \\item Choose initial guess $x_0$ (close to actual root)\n    \\item Compute $f(x_n)$ and $f'(x_n)$\n    \\item Calculate $x_{n+1} = x_n - \\dfrac{f(x_n)}{f'(x_n)}$\n    \\item Repeat until desired accuracy achieved\n    \\item Stop when $|x_{n+1} - x_n| < \\epsilon$ (tolerance)\n\\end{enumerate}\n\n\\textbf{Advantages:}\n\\begin{itemize}\n    \\item Very fast convergence (quadratic)\n    \\item Works for many types of equations\n    \\item Simple to implement\n\\end{itemize}\n\n\\textbf{Disadvantages:}\n\\begin{itemize}\n    \\item Requires derivative\n    \\item May not converge with poor initial guess\n    \\item Fails when $f'(x_n) = 0$\n    \\item May converge to wrong root\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important Tips:}}\n\\begin{itemize}\n    \\item Always check convergence (iterations getting closer)\n    \\item Graph the function to find good starting point\n    \\item Stop when successive iterates agree to desired decimal places\n    \\item Be careful with rounding during calculations\n    \\item Verify your answer by substituting into original equation\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Exam Pattern:}}\n\nPast papers typically ask for:\n\\begin{itemize}\n    \\item 3-5 iterations\n    \\item Accuracy to 4 decimal places\n    \\item Show all working clearly\n    \\item State the iteration formula first\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 1: Basic Parametric Derivatives",
+    "content": "Find $\\dfrac{dy}{dx}$ for each parametric curve:\n\n(a) $x = t^2 - 1$, \\quad $y = t^3 + t$\n\n(b) $x = 3\\cos t$, \\quad $y = 3\\sin t$\n\n(c) $x = e^t$, \\quad $y = e^{-t}$\n\n(d) $x = t - \\sin t$, \\quad $y = 1 - \\cos t$\n\n(e) $x = \\ln t$, \\quad $y = t^2 + 1$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 2: Parametric Derivative at a Point",
+    "content": "(a) Find $\\dfrac{dy}{dx}$ at $t = \\dfrac{\\pi}{4}$ for the curve:\n\\[\nx = \\sin t, \\quad y = \\cos t\n\\]\n\n(b) Find the slope of the tangent to:\n\\[\nx = t^2 + 1, \\quad y = t^3 - 3t\n\\]\nat $t = 2$.\n\n(c) Find $\\dfrac{dy}{dx}$ at $t = 1$ for:\n\\[\nx = 2t - 1, \\quad y = t^2 + 3t - 2\n\\]\n\n(d) For the curve $x = e^t\\cos t$, $y = e^t\\sin t$, find the slope at $t = 0$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 3: Second Derivative of Parametric Equations",
+    "content": "(a) Find $\\dfrac{d^2y}{dx^2}$ for:\n\\[\nx = t^2, \\quad y = t^3\n\\]\n\n(b) Find $\\dfrac{d^2z}{dx^2}$ as a function of $t$ if:\n\\[\nx = t + \\frac{1}{t}, \\quad z = t - \\frac{1}{t}\n\\]\n(From 2024 past paper, Q2 part b)\n\n(c) Find $\\dfrac{d^2y}{dx^2}$ for the parametric curve:\n\\[\nx = \\cos t, \\quad y = \\sin t\n\\]\nand verify that it gives the correct concavity for the unit circle.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 4: Tangent Lines to Parametric Curves",
+    "content": "(a) Find the equation of the tangent line to:\n\\[\nx = \\cos^3 t, \\quad y = \\sin^3 t\n\\]\nat $t = \\dfrac{\\pi}{4}$.\n\n(b) Find the equation of the tangent line to:\n\\[\nx = t^2, \\quad y = t^3 - t\n\\]\nat the point where $t = 2$.\n\n(c) For the curve $x = 1 + \\sqrt{t}$, $y = e^{t^2}$, find the tangent line at $t = 0$.\n\n(d) Find all values of $t$ where the tangent line to:\n\\[\nx = t - \\sin t, \\quad y = 1 - \\cos t\n\\]\nis horizontal.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 5: Arc Length of Parametric Curves",
+    "content": "(a) Find the arc length of the curve:\n\\[\nx = \\cos^3 t, \\quad y = \\sin^3 t, \\quad 0 \\leq t \\leq \\pi\n\\]\n\n(b) Find the length of the curve:\n\\[\nx = t\\cos t, \\quad y = t\\sin t, \\quad 0 \\leq t \\leq 1\n\\]\n\n(c) For the parametric curve:\n\\[\nx = 3t^2, \\quad y = 2t^3, \\quad 0 \\leq t \\leq 1\n\\]\nSet up (but do not necessarily evaluate) the arc length integral.\n\n(d) Show that the circumference of a circle of radius $r$ given by:\n\\[\nx = r\\cos t, \\quad y = r\\sin t, \\quad 0 \\leq t \\leq 2\\pi\n\\]\nis $2\\pi r$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 6: Surface Area of Parametric Curves",
+    "content": "(a) Find the area of the surface generated by revolving the curve:\n\\[\ny = 2\\sqrt{x}, \\quad 1 \\leq x \\leq 2\n\\]\nabout the $x$-axis.\n\n(From 2022 past paper, Q3 part a)\n\n(b) For the astroid $x = \\cos^3 t$, $y = \\sin^3 t$, find $\\dfrac{dy}{dx}$ and simplify as much as possible.\n\n(c) Find the length of the astroid:\n\\[\nx = \\cos^3 t, \\quad y = \\sin^3 t, \\quad 0 \\leq t \\leq \\pi\n\\]\nSet up the integral and evaluate.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 7: Expanding and Shrinking Shapes",
+    "content": "(a) The radius of a circle is increasing at 3 cm/s. How fast is the area increasing when the radius is 8 cm?\n\n(b) A square's side length is decreasing at 2 m/s. How fast is the area decreasing when the side is 10 m?\n\n(c) The volume of a cube is increasing at 300 cm³/s. How fast is the side length increasing when the side is 10 cm?\n\n(d) A circular oil slick is expanding. Its radius is increasing at 2 m/min. How fast is the area of the oil slick increasing when the radius is 50 m?\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 8: Spheres and Balloons",
+    "content": "(a) A spherical balloon is being inflated at 100 cm³/s. How fast is the radius increasing when the radius is 5 cm?\n\n(b) A snowball is melting. Its volume is decreasing at 1 cm³/min. How fast is the radius decreasing when the radius is 2 cm?\n\n(c) A spherical ball bearing is manufactured with radius 0.5 cm. If the radius can vary by at most 0.02 cm, by how much can the volume vary? (Use differentials)\n\n(d) The surface area of a sphere is $S = 4\\pi r^2$. If the radius is increasing at 2 cm/s, how fast is the surface area increasing when $r = 3$ cm?\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 9: Ladder and Wall Problems",
+    "content": "(a) A 13-meter ladder leans against a wall. The bottom slides away at 2 m/s. How fast is the top sliding down when the bottom is 5 m from the wall?\n\n(b) A ladder 10 meters long leans against a vertical wall. The bottom is sliding away at 1 m/s. Find the rate at which:\n\\begin{itemize}\n    \\item The top is sliding down when the bottom is 6 m from the wall\n    \\item The angle between the ladder and the wall is changing at the same instant\n\\end{itemize}\n\n(c) A person 1.8 m tall walks away from a 6 m lamppost at 1.2 m/s. How fast is the tip of their shadow moving?\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 10: Conical and Cylindrical Tanks",
+    "content": "(a) Water drains from a conical tank (height 10 m, radius 5 m at top) at 2 m³/min. How fast is the water level falling when the water is 6 m deep?\n\n(b) Water fills a cylindrical tank (radius 3 m) at 2 m³/min. How fast is the water level rising?\n\n(c) A conical paper cup (height 10 cm, radius 3 cm at top) is being filled at 2 cm³/s. How fast is the water level rising when the water is 5 cm deep?\n\n(d) Sand falls onto a conical pile at 10 cm³/s. The height always equals the diameter. How fast is the height increasing when $h = 5$ cm?\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 11: Moving Objects and Distances",
+    "content": "(a) Two cars approach an intersection. Car A moves north at 60 km/h and car B moves west at 80 km/h. When car A is 0.5 km south and car B is 0.6 km east of the intersection, how fast is the distance between them changing?\n\n(b) A boat moves away from a dock at 3 m/s. A rope attached to the bow passes over a pulley 4 m above the dock. How fast is the rope being pulled when the boat is 3 m from below the pulley?\n\n(c) Two particles move on the $x$-axis. Particle A has position $x_A = t^2$ and particle B has position $x_B = 2t + 5$. At what rate is the distance between them changing at $t = 3$?\n\n(d) A kite is 100 m above the ground. The wind carries it horizontally at 8 m/s. How fast is the string being let out when the string is 125 m long?\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 12: Angles and Trigonometric Rates",
+    "content": "(a) A searchlight rotates at 2 revolutions/minute. A wall is 100 m from the searchlight. How fast is the light beam moving along the wall when the beam makes a $45°$ angle with the wall?\n\n(b) The angle of elevation of the sun decreases at a rate of $0.25°$/min. How fast does the shadow of a 10-meter pole lengthen when the elevation is $60°$?\n\n(c) A camera tracks a rocket launched vertically. The camera is 1000 m from the launch pad. The rocket rises at 300 m/s. How fast must the camera angle increase when the rocket is 1000 m high?\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 13: Computing Higher Derivatives",
+    "content": "Find the second derivative $f''(x)$ for:\n\n(a) $f(x) = x^5 - 3x^4 + 2x - 7$\n\n(b) $f(x) = x^2 \\sin x$\n\n(c) $f(x) = \\dfrac{x}{x^2 + 1}$\n\n(d) $f(x) = \\ln(x^2 + 1)$\n\n(e) $f(x) = e^x \\cos x$\n\n(f) $f(x) = \\sqrt{x^2 + 4}$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 14: Implicit Second Derivatives",
+    "content": "Find $\\dfrac{d^2y}{dx^2}$ using implicit differentiation:\n\n(a) $x^2 + y^2 = 25$\n\n(b) $x^2 + y^4 = 4$\n\n(c) $x^2 + y^4 = 16$\n\n(From 2025 past paper, Q3)\n\n(d) $xy + y^2 = 3$\n\n(e) $\\sin(x+y) = x$ \n\n(Show all steps including finding $\\dfrac{dy}{dx}$ first)\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 15: Velocity Acceleration and Jerk",
+    "content": "(a) The position of a particle is $s(t) = t^4 - 8t^3 + 24t^2 - 32t + 10$ meters.\n\\begin{itemize}\n    \\item Find velocity $v(t)$, acceleration $a(t)$, and jerk $j(t)$\n    \\item When is the particle at rest?\n    \\item When is acceleration zero?\n    \\item When is jerk zero?\n\\end{itemize}\n\n(b) What is jerk? Why is the jerk during free fall zero? Explain fully.\n\n(From 2024 past paper, Q1 part v)\n\n(c) A particle moves with acceleration $a(t) = 3t - 2$ m/s². If $v(0) = 4$ m/s and $s(0) = 1$ m, find the position function $s(t)$.\n\n(d) During free fall, a particle has position $s(t) = -4.9t^2 + 20t + 50$ m. Find velocity and acceleration, and confirm that jerk is zero.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 16: Concavity and Inflection Points",
+    "content": "For each function, find:\n\\begin{itemize}\n    \\item Intervals where the function is concave up\n    \\item Intervals where the function is concave down\n    \\item All inflection points\n\\end{itemize}\n\n(a) $f(x) = x^3 - 3x^2 + 4$\n\n(b) $f(x) = 2x^3 - 3x^2 - 12x$ (From 2024 past paper, Q2)\n\n(c) $f(x) = x^4 - 4x^3$\n\n(d) $h(x) = -x^3 + 2x^2$ (From 2023 past paper, Q3 part b - increasing/decreasing)\n\n(e) $f(x) = x^2 e^{-x}$\n\n(f) $f(x) = \\ln(x^2 + 1)$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 17: Increasing and Decreasing Functions",
+    "content": "Find the intervals where the following functions are increasing and decreasing:\n\n(a) $f(x) = x^3(4-x)$ (From 2022 past paper, Q5 part a)\n\n(b) $h(x) = -x^3 + 2x^2$ (From 2023 past paper, Q3 part b)\n\n(c) $f(x) = 2x^3 - 3x^2 - 12x + 1$ (From 2024 past paper Q5 - related)\n\n(d) $g(x) = x^4 - 4x^3 + 4x^2$\n\n(e) $f(x) = xe^{-x}$\n\n(f) $f(x) = \\dfrac{x^2}{x^2 + 1}$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 18: Second Derivative Test",
+    "content": "Use the second derivative test to find and classify all local extrema:\n\n(a) $f(x) = x^3 - 6x^2 + 9x + 1$\n\n(b) $f(x) = 2x^3 - 3x^2 - 12x + 1$\n\nFind:\n\\begin{itemize}\n    \\item All critical points\n    \\item Local maxima and minima\n    \\item Inflection points\n    \\item Intervals of concavity\n\\end{itemize}\n\n(c) $f(x) = x^4 - 2x^2 + 3$\n\n(d) $f(x) = xe^{-x}$\n\n(e) $f(x) = x + \\dfrac{4}{x}$ on $(0, \\infty)$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 19: Newton-Raphson -- Standard Applications",
+    "content": "Use Newton-Raphson method to find the indicated root to 4 decimal places:\n\n(a) $x^2 - 3 = 0$ (i.e., approximate $\\sqrt{3}$), with $x_0 = 1.5$.\n\nShow the iteration formula and at least 4 iterations.\n\n(b) $x^3 - 2 = 0$ (i.e., approximate $\\sqrt[3]{2}$), with $x_0 = 1$.\n\n(c) $e^x - 3x = 0$ with $x_0 = 0$.\n\n(From 2024 past paper, Q3 part a)\n\n(d) $x^3 - 2x - 5 = 0$ with $x_0 = 2$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 20: Newton-Raphson -- Trigonometric and Exponential Equations",
+    "content": "Use Newton-Raphson method to approximate the root to 4 decimal places:\n\n(a) $\\cos x = x$ with $x_0 = 1$ (find the fixed point).\n\n(b) $e^x + x = 3$ with $x_0 = 0$.\n\n(c) $\\sin x = x - 1$ with $x_0 = 2$.\n\n(d) $\\ln x + x = 2$ with $x_0 = 1$.\n\nShow clearly:\n\\begin{itemize}\n    \\item The function $f(x)$ and $f'(x)$\n    \\item The iteration formula\n    \\item At least 4 iterations in a table\n    \\item Final approximate answer\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 21: Newton-Raphson -- Error Analysis and Convergence",
+    "content": "(a) For $f(x) = x^2 - 2$ with $x_0 = 1$, perform 5 iterations and compare with exact answer $\\sqrt{2} = 1.41421356...$\n\nCalculate the absolute error at each step and observe the rate of convergence.\n\n(b) Starting with $x_0 = 1$, apply Newton-Raphson to $f(x) = x^3 - x - 1$. Show 4 iterations.\n\n(c) For $f(x) = x^2$, explain why Newton-Raphson converges slowly (or fails) to the root $x = 0$.\n\n(d) For $f(x) = x^3 - 3x^2 + 3x - 1$, the root is $x = 1$ (triple root). Starting with $x_0 = 0.5$, show 5 iterations and explain why convergence is slow.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 22: Newton-Raphson -- Setting Up and Solving",
+    "content": "(a) Show that the Newton-Raphson formula for finding $\\sqrt[n]{a}$ (i.e., solving $x^n - a = 0$) is:\n\\[\nx_{n+1} = \\frac{(n-1)x_n^n + a}{n \\cdot x_n^{n-1}}\n\\]\n\n(b) Use the formula from part (a) with $n = 3$ to find $\\sqrt[3]{10}$ to 4 decimal places. Start with $x_0 = 2$.\n\n(c) The equation $\\ln x = \\dfrac{1}{x}$ has a root near $x = 1.76$. Use Newton-Raphson with $x_0 = 1.76$ to refine to 4 decimal places.\n\n(d) Show that if $f(x) = x^2 - c$ for some constant $c > 0$, then Newton-Raphson gives:\n\\[\nx_{n+1} = \\frac{1}{2}\\left(x_n + \\frac{c}{x_n}\\right)\n\\]\n\nThis is the \\textbf{Babylonian method} for computing square roots!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 23: Mixed Differentiation Techniques",
+    "content": "(a) A particle moves with position $s(t) = \\sin^2 t$. Find velocity and acceleration.\n\n(b) For the parametric curve $x = t^2$, $y = t^3$:\n\\begin{itemize}\n    \\item Find $\\dfrac{dy}{dx}$ and $\\dfrac{d^2y}{dx^2}$\n    \\item Find the equation of the tangent line at $t = 1$\n    \\item Find the inflection point(s) of the curve\n\\end{itemize}\n\n(c) Water fills a hemispherical bowl of radius $R$ at rate $Q$ m³/s. If the volume of water when height is $h$ is $V = \\pi h^2\\left(R - \\dfrac{h}{3}\\right)$, find $\\dfrac{dh}{dt}$ in terms of $h$, $R$, and $Q$.\n\n(d) The radius of curvature of a curve is defined as:\n\\[\n\\kappa = \\left|\\frac{d^2y/dx^2}{\\left[1 + (dy/dx)^2\\right]^{3/2}}\\right|\n\\]\n\nFind the curvature of $y = x^2$ at the origin.\n\n(From 2022 past paper, Q1 part vi -- curvature concept)\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 24: Proving Identities Using Derivatives",
+    "content": "(a) If $f(x) = \\ln(1 + \\sqrt{1-x})$, prove that:\n\\[\n4x(1-x)f''(x) + 2(2-3x)f'(x) + 1 = 0\n\\]\n(From 2024 past paper, Q6 part a)\n\n(b) If $y = A\\sin(\\omega t) + B\\cos(\\omega t)$ where $A$, $B$, and $\\omega$ are constants, show that:\n\\[\n\\frac{d^2y}{dt^2} + \\omega^2 y = 0\n\\]\n\nThis is the equation of simple harmonic motion!\n\n(c) If $y = e^{ax}\\cos(bx)$, find $y'$ and $y''$, then show:\n\\[\ny'' - 2ay' + (a^2 + b^2)y = 0\n\\]\n\n(d) For $y = x^n$ where $n$ is a positive integer, show that:\n\\[\ny^{(n)} = n! \\quad \\text{(constant)}\n\\]\n\nand\n\n\\[\ny^{(n+1)} = y^{(n+2)} = \\cdots = 0\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "example",
+    "title": "Problem 25: Comprehensive Challenge Problems",
+    "content": "(a) A ladder 10 m long rests against a vertical wall. Let $\\theta$ be the angle the ladder makes with the floor. If the bottom slides at 1 m/s, how fast is $\\theta$ decreasing when the bottom is 5 m from the wall?\n\n(b) Use the parametric form of the circle ($x = r\\cos t$, $y = r\\sin t$) and parametric differentiation to find the slope of the tangent to the circle at the point $(r\\cos t_0, r\\sin t_0)$. Confirm this matches the result obtained by implicit differentiation of $x^2 + y^2 = r^2$.\n\n(c) A particle moves along the curve $y = x^3 - 3x$. At what points does the velocity vector make a $45°$ angle with the $x$-axis? (Hint: slope = $\\tan 45° = 1$)\n\n(d) Apply Newton-Raphson method to find the root of $f(x) = x^3 - x - 1$ starting with:\n\\begin{itemize}\n    \\item $x_0 = 1.5$: Show 4 iterations\n    \\item $x_0 = -1$: Show what happens (does it converge?)\n\\end{itemize}\n\nCompare the two cases and discuss what this tells us about the importance of initial guess.\n\n(e) For the curve given parametrically by:\n\\[\nx = 2\\cos t, \\quad y = \\sin(2t)\n\\]\n\\begin{itemize}\n    \\item Find $\\dfrac{dy}{dx}$\n    \\item Find all $t$ values where the tangent is horizontal\n    \\item Find all $t$ values where the tangent is vertical\n    \\item Find the Cartesian equation of this curve by eliminating $t$\n\\end{itemize}\n\n\\vspace{1cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 3 - Parametric Differentiation",
+    "section": "Practice Exercises - Chapter 3",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Chapter 3 Practice Problem Summary}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Chapter 3 Practice Problem Summary}}\n\n\\textbf{Topic Coverage:}\n\n\\begin{center}\n\\begin{tabular}{|p{5cm}|p{3cm}|p{4cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Topic} & \\textbf{Problems} & \\textbf{Exam Relevance} \\\\\n\\hline\nParametric Differentiation & 1--6 & Medium \\\\\n\\hline\nRelated Rates & 7--12 & Medium \\\\\n\\hline\nHigher Derivatives & 13--15 & High \\\\\n\\hline\nConcavity \\& Inflection & 16--18 & Very High \\\\\n\\hline\nNewton-Raphson & 19--22 & High \\\\\n\\hline\nMixed \\& Proofs & 23--25 & Advanced \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\vspace{0.3cm}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Past Paper Connections:}}\n\n\\begin{center}\n\\begin{tabular}{|p{3cm}|p{9cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Past Paper} & \\textbf{Related Problems} \\\\\n\\hline\n2021 & Problem 2(a), Problem 4(a) \\\\\n\\hline\n2022 & Problem 5(a), Problem 6(a), Problem 17(a) \\\\\n\\hline\n2023 & Problem 14(c), Problem 16(d), Problem 17(b) \\\\\n\\hline\n2024 & Problem 3(b), Problem 15(b), Problem 16(b), Problem 19(c), Problem 24(a) \\\\\n\\hline\n2025 & Problem 14(c), Problem 17(c) \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\vspace{0.3cm}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Study Strategy for Chapter 3:}}\n\n\\begin{enumerate}\n    \\item \\textbf{Parametric (Problems 1--6):} Practice converting to Cartesian when possible to verify answers\n    \\item \\textbf{Related Rates (Problems 7--12):} Always draw a diagram! Label all variables before writing equations\n    \\item \\textbf{Higher Derivatives (Problems 13--18):} Remember the sign chart method for concavity\n    \\item \\textbf{Newton-Raphson (Problems 19--22):} Practice showing work in table format (as expected in exams)\n    \\item \\textbf{Mixed Problems (23--25):} These require combining multiple techniques\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Most Frequently Tested in Exams:}}\n\\begin{itemize}\n    \\item \\textcolor{red}{\\textbf{Concavity and inflection points}} (appears every year!)\n    \\item \\textcolor{red}{\\textbf{Increasing/decreasing intervals}} (appears every year!)\n    \\item \\textcolor{red}{\\textbf{Second derivative test}} (very frequent)\n    \\item \\textcolor{orange}{\\textbf{Newton-Raphson}} (appears most years)\n    \\item \\textcolor{orange}{\\textbf{Higher derivatives and proofs}} (frequently)\n    \\item \\textcolor{primaryblue}{\\textbf{Related rates}} (appears occasionally)\n    \\item \\textcolor{primaryblue}{\\textbf{Parametric differentiation}} (appears occasionally)\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Self-Assessment Checklist:}}\n\nBefore the exam, make sure you can:\n\\begin{itemize}\n    \\item[$\\square$] Find $\\dfrac{dy}{dx}$ and $\\dfrac{d^2y}{dx^2}$ for parametric equations\n    \\item[$\\square$] Set up and solve related rates problems from a diagram\n    \\item[$\\square$] Find and classify concavity intervals and inflection points\n    \\item[$\\square$] Apply second derivative test to classify extrema\n    \\item[$\\square$] Perform Newton-Raphson iterations to desired accuracy\n    \\item[$\\square$] Prove differential identities using higher derivatives\n    \\item[$\\square$] Interpret velocity, acceleration, and jerk physically\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Final Exam Preparation Tip:}}\n\nReview the following worked examples from Chapter 3 before your exam:\n\\begin{itemize}\n    \\item \\textbf{Example 3:} Second derivative of parametric equations (2024 paper)\n    \\item \\textbf{Example 9:} Water tank related rates\n    \\item \\textbf{Example 14:} Finding inflection points (2024 paper)\n    \\item \\textbf{Example 17:} Newton-Raphson with $e^x - 3x = 0$ (2024 paper)\n    \\item \\textbf{Example 19:} Convergence analysis\n\\end{itemize}"
+  }
+]

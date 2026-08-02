@@ -1,0 +1,922 @@
+[
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vectors in 2D and 3D",
+    "type": "definition",
+    "title": "Definition 6.1: Vectors",
+    "content": "A \\textbf{vector} is a quantity that has both magnitude (length) and direction. We represent vectors geometrically by directed line segments (arrows).\n\n\\textbf{Component Form in 2D:}\n\\[\n\\vec{v} = \\langle v_1, v_2 \\rangle \\quad \\text{or} \\quad \\vec{v} = v_1\\vec{i} + v_2\\vec{j}\n\\]\n\nwhere $\\vec{i} = \\langle 1, 0 \\rangle$ and $\\vec{j} = \\langle 0, 1 \\rangle$ are the standard unit vectors.\n\n\\textbf{Component Form in 3D:}\n\\[\n\\vec{v} = \\langle v_1, v_2, v_3 \\rangle \\quad \\text{or} \\quad \\vec{v} = v_1\\vec{i} + v_2\\vec{j} + v_3\\vec{k}\n\\]\n\nwhere $\\vec{i} = \\langle 1, 0, 0 \\rangle$, $\\vec{j} = \\langle 0, 1, 0 \\rangle$, $\\vec{k} = \\langle 0, 0, 1 \\rangle$ are standard unit vectors.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Notation:}}\n\\begin{itemize}\n    \\item Boldface: $\\mathbf{v}$ or arrow: $\\vec{v}$ or $\\overrightarrow{v}$\n    \\item Components: $v_1, v_2, v_3$ (or $v_x, v_y, v_z$)\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Position Vector:}}\n\nThe vector from the origin $O$ to point $P(x, y, z)$ is:\n\\[\n\\overrightarrow{OP} = \\langle x, y, z \\rangle\n\\]\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % 2D vector visualization\n    \\begin{scope}[shift={(0,0)}]\n        % Axes\n        \\draw[->] (0, 0) -- (3, 0) node[right] {$x$};\n        \\draw[->] (0, 0) -- (0, 2.5) node[above] {$y$};\n        \n        % Vector\n        \\draw[->, very thick, primaryblue] (0, 0) -- (2.5, 1.5) node[midway, above left] {$\\vec{v}$};\n        \n        % Components\n        \\draw[dashed, red] (2.5, 0) -- (2.5, 1.5);\n        \\draw[dashed, red] (0, 1.5) -- (2.5, 1.5);\n        \n        % Labels\n        \\draw[<->, darkgreen] (0, -0.3) -- (2.5, -0.3) node[midway, below] {$v_1$};\n        \\draw[<->, darkgreen] (2.8, 0) -- (2.8, 1.5) node[midway, right] {$v_2$};\n        \n        \\node at (1.5, -1) {\\textbf{2D Vector: } $\\vec{v} = \\langle v_1, v_2 \\rangle$};\n    \\end{scope}\n    \n    % 3D vector visualization\n    \\begin{scope}[shift={(6,0)}]\n        % 3D axes\n        \\draw[->] (0, 0) -- (2.5, 0) node[right] {$x$};\n        \\draw[->] (0, 0) -- (0, 2.5) node[above] {$y$};\n        \\draw[->] (0, 0) -- (-0.7, -0.7) node[below left] {$z$};\n        \n        % Vector in 3D\n        \\draw[->, very thick, primaryblue] (0, 0) -- (2, 1.5) node[above right] {$\\vec{v}$};\n        \n        % Projection lines\n        \\draw[dashed] (2, 0) -- (2, 1.5);\n        \\draw[dashed] (0, 1.5) -- (2, 1.5);\n        \n        \\node at (1.5, -1) {\\textbf{3D Vector: } $\\vec{v} = \\langle v_1, v_2, v_3 \\rangle$};\n    \\end{scope}\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vectors in 2D and 3D",
+    "type": "definition",
+    "title": "Definition 6.2: Magnitude (Length) of a Vector",
+    "content": "The \\textbf{magnitude} (or \\textbf{length} or \\textbf{norm}) of a vector $\\vec{v}$ is denoted $|\\vec{v}|$ or $\\|\\vec{v}\\|$.\n\n\\textbf{In 2D:}\n\\[\n\\boxed{|\\vec{v}| = \\sqrt{v_1^2 + v_2^2}}\n\\]\n\n\\textbf{In 3D:}\n\\[\n\\boxed{|\\vec{v}| = \\sqrt{v_1^2 + v_2^2 + v_3^2}}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Properties:}}\n\\begin{itemize}\n    \\item $|\\vec{v}| \\geq 0$ (always non-negative)\n    \\item $|\\vec{v}| = 0$ if and only if $\\vec{v} = \\vec{0}$ (zero vector)\n    \\item $|\\vec{v}|$ represents the distance from the origin to the point $(v_1, v_2, v_3)$\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Distance Between Two Points:}}\n\nThe distance between points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$ is:\n\\[\nd(P, Q) = |\\overrightarrow{PQ}| = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vectors in 2D and 3D",
+    "type": "example",
+    "title": "Example 1: Finding Magnitude",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the magnitude of each vector:\n\n(a) $\\vec{v} = \\langle 3, -4 \\rangle$\n\n(b) $\\vec{w} = \\langle 1, 2, -2 \\rangle$\n\n(c) $\\vec{u} = 2\\vec{i} - 3\\vec{j} + 6\\vec{k}$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Using the 2D magnitude formula:\n\\[\n|\\vec{v}| = \\sqrt{3^2 + (-4)^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5\n\\]\n\n\\textbf{Answer (a):} \\boxed{|\\vec{v}| = 5}\n\n\\vspace{0.3cm}\n\\textbf{(b)} Using the 3D magnitude formula:\n\\[\n|\\vec{w}| = \\sqrt{1^2 + 2^2 + (-2)^2} = \\sqrt{1 + 4 + 4} = \\sqrt{9} = 3\n\\]\n\n\\textbf{Answer (b):} \\boxed{|\\vec{w}| = 3}\n\n\\vspace{0.3cm}\n\\textbf{(c)} First write in component form: $\\vec{u} = \\langle 2, -3, 6 \\rangle$\n\n\\[\n|\\vec{u}| = \\sqrt{2^2 + (-3)^2 + 6^2} = \\sqrt{4 + 9 + 36} = \\sqrt{49} = 7\n\\]\n\n\\textbf{Answer (c):} \\boxed{|\\vec{u}| = 7}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vectors in 2D and 3D",
+    "type": "definition",
+    "title": "Definition 6.3: Direction of a Vector",
+    "content": "The \\textbf{direction} of a vector $\\vec{v}$ is specified by:\n\n\\textbf{1. Unit Vector:}\n\nA \\textbf{unit vector} in the direction of $\\vec{v}$ is:\n\\[\n\\boxed{\\hat{v} = \\frac{\\vec{v}}{|\\vec{v}|} = \\frac{1}{|\\vec{v}|}\\vec{v}}\n\\]\n\nThis has magnitude 1 and points in the same direction as $\\vec{v}$.\n\n\\textbf{2. Direction Angles (in 3D):}\n\nThe angles $\\alpha$, $\\beta$, $\\gamma$ that $\\vec{v}$ makes with the positive $x$-, $y$-, and $z$-axes:\n\\[\n\\cos \\alpha = \\frac{v_1}{|\\vec{v}|}, \\quad \\cos \\beta = \\frac{v_2}{|\\vec{v}|}, \\quad \\cos \\gamma = \\frac{v_3}{|\\vec{v}|}\n\\]\n\nThese are called \\textbf{direction cosines}.\n\n\\textbf{3. Direction Angles Property:}\n\\[\n\\cos^2 \\alpha + \\cos^2 \\beta + \\cos^2 \\gamma = 1\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Note:}}\n\nThe unit vector $\\hat{v} = \\langle \\cos\\alpha, \\cos\\beta, \\cos\\gamma \\rangle$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vectors in 2D and 3D",
+    "type": "example",
+    "title": "Example 2: Finding Unit Vectors",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the unit vector in the direction of $\\vec{v} = \\langle 2, -1, 2 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find the magnitude\n\n\\[\n|\\vec{v}| = \\sqrt{2^2 + (-1)^2 + 2^2} = \\sqrt{4 + 1 + 4} = \\sqrt{9} = 3\n\\]\n\n\\textbf{Step 2:} Divide by magnitude\n\n\\[\n\\hat{v} = \\frac{\\vec{v}}{|\\vec{v}|} = \\frac{1}{3}\\langle 2, -1, 2 \\rangle = \\left\\langle \\frac{2}{3}, -\\frac{1}{3}, \\frac{2}{3} \\right\\rangle\n\\]\n\n\\textbf{Answer:} \\boxed{\\hat{v} = \\left\\langle \\frac{2}{3}, -\\frac{1}{3}, \\frac{2}{3} \\right\\rangle}\n\n\\textbf{Verification:} $|\\hat{v}| = \\sqrt{\\frac{4}{9} + \\frac{1}{9} + \\frac{4}{9}} = \\sqrt{\\frac{9}{9}} = 1$ \\textcolor{green}{\\checkmark}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vectors in 2D and 3D",
+    "type": "example",
+    "title": "Example 3: Vector Between Two Points",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the vector from $P(1, 2, 3)$ to $Q(4, -1, 5)$ and its magnitude.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find the vector\n\n\\[\n\\overrightarrow{PQ} = \\langle 4-1, -1-2, 5-3 \\rangle = \\langle 3, -3, 2 \\rangle\n\\]\n\n\\textbf{Step 2:} Find magnitude\n\n\\[\n|\\overrightarrow{PQ}| = \\sqrt{3^2 + (-3)^2 + 2^2} = \\sqrt{9 + 9 + 4} = \\sqrt{22}\n\\]\n\n\\textbf{Answer:} \n\\begin{itemize}\n    \\item Vector: \\boxed{\\overrightarrow{PQ} = \\langle 3, -3, 2 \\rangle}\n    \\item Distance: \\boxed{d(P, Q) = \\sqrt{22}}\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Note:}} The magnitude $|\\overrightarrow{PQ}|$ is the distance between $P$ and $Q$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vectors in 2D and 3D",
+    "type": "definition",
+    "title": "Definition 6.4: Special Vectors",
+    "content": "\\textbf{Zero Vector:}\n\\[\n\\vec{0} = \\langle 0, 0, 0 \\rangle\n\\]\nHas magnitude 0 and no specific direction.\n\n\\textbf{Standard Unit Vectors:}\n\\begin{align*}\n\\vec{i} &= \\langle 1, 0, 0 \\rangle \\quad \\text{(along positive $x$-axis)} \\\\\n\\vec{j} &= \\langle 0, 1, 0 \\rangle \\quad \\text{(along positive $y$-axis)} \\\\\n\\vec{k} &= \\langle 0, 0, 1 \\rangle \\quad \\text{(along positive $z$-axis)}\n\\end{align*}\n\nAny vector can be written as:\n\\[\n\\vec{v} = v_1\\vec{i} + v_2\\vec{j} + v_3\\vec{k}\n\\]\n\n\\textbf{Parallel Vectors:}\n\nTwo non-zero vectors $\\vec{u}$ and $\\vec{v}$ are \\textbf{parallel} if:\n\\[\n\\vec{v} = c\\vec{u} \\quad \\text{for some scalar } c \\neq 0\n\\]\n\nIf $c > 0$: same direction; if $c < 0$: opposite directions.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vectors in 2D and 3D",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.1 Summary: Vectors in",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.1 Summary: Vectors in 2D and 3D}}\n\n\\textbf{Component Form:}\n\\begin{align*}\n\\text{2D:} \\quad & \\vec{v} = \\langle v_1, v_2 \\rangle = v_1\\vec{i} + v_2\\vec{j} \\\\\n\\text{3D:} \\quad & \\vec{v} = \\langle v_1, v_2, v_3 \\rangle = v_1\\vec{i} + v_2\\vec{j} + v_3\\vec{k}\n\\end{align*}\n\n\\textbf{Magnitude:}\n\\[\n\\boxed{|\\vec{v}| = \\sqrt{v_1^2 + v_2^2 + v_3^2}}\n\\]\n\n\\textbf{Unit Vector:}\n\\[\n\\boxed{\\hat{v} = \\frac{\\vec{v}}{|\\vec{v}|}}\n\\]\n\n\\textbf{Vector Between Points:}\n\\[\n\\overrightarrow{PQ} = \\langle x_2-x_1, y_2-y_1, z_2-z_1 \\rangle\n\\]\n\n\\textbf{Distance Formula:}\n\\[\nd(P, Q) = |\\overrightarrow{PQ}| = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}\n\\]\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Forgetting to take square root when finding magnitude\n    \\item Sign errors when finding vector between two points (order matters!)\n    \\item Not checking that unit vectors have magnitude 1\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Quick Check:}} A unit vector always has magnitude equal to 1.\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Operations",
+    "type": "definition",
+    "title": "Definition 6.5: Vector Addition",
+    "content": "Given $\\vec{u} = \\langle u_1, u_2, u_3 \\rangle$ and $\\vec{v} = \\langle v_1, v_2, v_3 \\rangle$:\n\n\\textbf{Addition:}\n\\[\n\\boxed{\\vec{u} + \\vec{v} = \\langle u_1 + v_1, u_2 + v_2, u_3 + v_3 \\rangle}\n\\]\n\nAdd corresponding components.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\n\\textbf{1. Triangle Method:} Place tail of $\\vec{v}$ at head of $\\vec{u}$. The sum $\\vec{u} + \\vec{v}$ goes from tail of $\\vec{u}$ to head of $\\vec{v}$.\n\n\\textbf{2. Parallelogram Method:} Place both vectors at the same initial point. The sum is the diagonal of the parallelogram formed.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Properties:}}\n\\begin{itemize}\n    \\item \\textbf{Commutative:} $\\vec{u} + \\vec{v} = \\vec{v} + \\vec{u}$\n    \\item \\textbf{Associative:} $(\\vec{u} + \\vec{v}) + \\vec{w} = \\vec{u} + (\\vec{v} + \\vec{w})$\n    \\item \\textbf{Identity:} $\\vec{v} + \\vec{0} = \\vec{v}$\n    \\item \\textbf{Inverse:} $\\vec{v} + (-\\vec{v}) = \\vec{0}$\n\\end{itemize}\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Vector addition visualization\n    \\begin{scope}[shift={(0,0)}]\n        % Vectors\n        \\draw[->, very thick, primaryblue] (0, 0) -- (2, 0.5) node[midway, below] {$\\vec{u}$};\n        \\draw[->, very thick, accentorange] (2, 0.5) -- (3.5, 2) node[midway, right] {$\\vec{v}$};\n        \\draw[->, very thick, darkgreen] (0, 0) -- (3.5, 2) node[midway, above left] {$\\vec{u} + \\vec{v}$};\n        \n        \\node at (1.75, -0.7) {\\textbf{Triangle Method}};\n    \\end{scope}\n    \n    % Parallelogram method\n    \\begin{scope}[shift={(6,0)}]\n        % Vectors from origin\n        \\draw[->, very thick, primaryblue] (0, 0) -- (2, 0.5) node[midway, below] {$\\vec{u}$};\n        \\draw[->, very thick, accentorange] (0, 0) -- (1.5, 1.5) node[midway, left] {$\\vec{v}$};\n        \n        % Parallelogram\n        \\draw[dashed] (2, 0.5) -- (3.5, 2);\n        \\draw[dashed] (1.5, 1.5) -- (3.5, 2);\n        \n        % Sum\n        \\draw[->, very thick, darkgreen] (0, 0) -- (3.5, 2) node[midway, above left] {$\\vec{u} + \\vec{v}$};\n        \n        \\node at (1.75, -0.7) {\\textbf{Parallelogram Method}};\n    \\end{scope}\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Operations",
+    "type": "definition",
+    "title": "Definition 6.6: Scalar Multiplication",
+    "content": "Given a vector $\\vec{v} = \\langle v_1, v_2, v_3 \\rangle$ and scalar $c$:\n\n\\textbf{Scalar Multiplication:}\n\\[\n\\boxed{c\\vec{v} = \\langle cv_1, cv_2, cv_3 \\rangle}\n\\]\n\nMultiply each component by $c$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\\begin{itemize}\n    \\item If $c > 0$: $c\\vec{v}$ has the same direction as $\\vec{v}$, but length is scaled by $|c|$\n    \\item If $c < 0$: $c\\vec{v}$ has the opposite direction, length scaled by $|c|$\n    \\item If $c = 0$: $c\\vec{v} = \\vec{0}$\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Properties:}}\n\\begin{itemize}\n    \\item $c(\\vec{u} + \\vec{v}) = c\\vec{u} + c\\vec{v}$ (distributive)\n    \\item $(c + d)\\vec{v} = c\\vec{v} + d\\vec{v}$ (distributive)\n    \\item $(cd)\\vec{v} = c(d\\vec{v})$ (associative)\n    \\item $1\\vec{v} = \\vec{v}$\n    \\item $|c\\vec{v}| = |c||\\vec{v}|$\n\\end{itemize}\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.1]\n    % Scalar multiplication visualization\n    \\draw[->] (-0.5, 0) -- (5, 0) node[right] {$x$};\n    \\draw[->] (0, -1) -- (0, 2.5) node[above] {$y$};\n    \n    % Original vector\n    \\draw[->, very thick, primaryblue] (0, 0) -- (1.5, 1) node[above] {$\\vec{v}$};\n    \n    % 2v\n    \\draw[->, very thick, darkgreen] (0, 0) -- (3, 2) node[above] {$2\\vec{v}$};\n    \n    % -v\n    \\draw[->, very thick, accentorange] (0, 0) -- (-1.5, -1) node[below] {$-\\vec{v}$};\n    \n    % 0.5v\n    \\draw[->, very thick, red] (0, 0) -- (0.75, 0.5) node[right] {$\\frac{1}{2}\\vec{v}$};\n    \n    \\node[align=center] at (2.5, -1.5) {\\textbf{Scalar Multiplication}\\\\Different scalars change length and direction};\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Operations",
+    "type": "example",
+    "title": "Example 4: Vector Addition and Scalar Multiplication",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Given $\\vec{u} = \\langle 2, -1, 3 \\rangle$ and $\\vec{v} = \\langle -1, 4, 2 \\rangle$, find:\n\n(a) $\\vec{u} + \\vec{v}$\n\n(b) $\\vec{u} - \\vec{v}$\n\n(c) $3\\vec{u}$\n\n(d) $2\\vec{u} - 3\\vec{v}$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Add corresponding components:\n\\[\n\\vec{u} + \\vec{v} = \\langle 2 + (-1), -1 + 4, 3 + 2 \\rangle = \\langle 1, 3, 5 \\rangle\n\\]\n\n\\textbf{Answer (a):} \\boxed{\\langle 1, 3, 5 \\rangle}\n\n\\vspace{0.3cm}\n\\textbf{(b)} Subtract corresponding components:\n\\[\n\\vec{u} - \\vec{v} = \\langle 2 - (-1), -1 - 4, 3 - 2 \\rangle = \\langle 3, -5, 1 \\rangle\n\\]\n\n\\textbf{Answer (b):} \\boxed{\\langle 3, -5, 1 \\rangle}\n\n\\vspace{0.3cm}\n\\textbf{(c)} Multiply each component by 3:\n\\[\n3\\vec{u} = \\langle 3(2), 3(-1), 3(3) \\rangle = \\langle 6, -3, 9 \\rangle\n\\]\n\n\\textbf{Answer (c):} \\boxed{\\langle 6, -3, 9 \\rangle}\n\n\\vspace{0.3cm}\n\\textbf{(d)} Combine operations:\n\\begin{align*}\n2\\vec{u} - 3\\vec{v} &= 2\\langle 2, -1, 3 \\rangle - 3\\langle -1, 4, 2 \\rangle \\\\\n&= \\langle 4, -2, 6 \\rangle - \\langle -3, 12, 6 \\rangle \\\\\n&= \\langle 4-(-3), -2-12, 6-6 \\rangle \\\\\n&= \\langle 7, -14, 0 \\rangle\n\\end{align*}\n\n\\textbf{Answer (d):} \\boxed{\\langle 7, -14, 0 \\rangle}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Operations",
+    "type": "definition",
+    "title": "Definition 6.7: Vector Subtraction",
+    "content": "\\textbf{Subtraction:}\n\\[\n\\boxed{\\vec{u} - \\vec{v} = \\vec{u} + (-\\vec{v}) = \\langle u_1 - v_1, u_2 - v_2, u_3 - v_3 \\rangle}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\n$\\vec{u} - \\vec{v}$ is the vector from the head of $\\vec{v}$ to the head of $\\vec{u}$ (when both start at the same point).\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Formula:}}\n\nThe vector from point $A$ to point $B$ is:\n\\[\n\\overrightarrow{AB} = \\vec{b} - \\vec{a}\n\\]\n\nwhere $\\vec{a}$ and $\\vec{b}$ are position vectors of $A$ and $B$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Operations",
+    "type": "example",
+    "title": "Example 5: Finding a Parallel Vector",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find a vector of length 10 that is parallel to $\\vec{v} = \\langle 3, -4, 0 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find the unit vector in the direction of $\\vec{v}$\n\n\\begin{align*}\n|\\vec{v}| &= \\sqrt{3^2 + (-4)^2 + 0^2} = \\sqrt{9 + 16} = 5 \\\\\n\\hat{v} &= \\frac{\\vec{v}}{|\\vec{v}|} = \\frac{1}{5}\\langle 3, -4, 0 \\rangle = \\left\\langle \\frac{3}{5}, -\\frac{4}{5}, 0 \\right\\rangle\n\\end{align*}\n\n\\textbf{Step 2:} Scale to desired length\n\n\\[\n\\vec{w} = 10\\hat{v} = 10\\left\\langle \\frac{3}{5}, -\\frac{4}{5}, 0 \\right\\rangle = \\langle 6, -8, 0 \\rangle\n\\]\n\n\\textbf{Verification:} $|\\vec{w}| = \\sqrt{36 + 64 + 0} = \\sqrt{100} = 10$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Answer:} \\boxed{\\vec{w} = \\langle 6, -8, 0 \\rangle}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Note:}} Another valid answer is $-\\vec{w} = \\langle -6, 8, 0 \\rangle$ (opposite direction, same length).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Operations",
+    "type": "example",
+    "title": "Example 6: Linear Combinations",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Express $\\vec{w} = \\langle 7, -1, 10 \\rangle$ as a linear combination of $\\vec{u} = \\langle 1, 2, 1 \\rangle$ and $\\vec{v} = \\langle 2, -1, 3 \\rangle$.\n\nThat is, find $a$ and $b$ such that $\\vec{w} = a\\vec{u} + b\\vec{v}$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Set up the equation\n\n\\[\n\\langle 7, -1, 10 \\rangle = a\\langle 1, 2, 1 \\rangle + b\\langle 2, -1, 3 \\rangle\n\\]\n\n\\textbf{Step 2:} Write component equations\n\n\\begin{align*}\na + 2b &= 7 \\quad \\text{($x$-component)} \\\\\n2a - b &= -1 \\quad \\text{($y$-component)} \\\\\na + 3b &= 10 \\quad \\text{($z$-component)}\n\\end{align*}\n\n\\textbf{Step 3:} Solve the system\n\nFrom equation 1: $a = 7 - 2b$\n\nSubstitute into equation 2:\n\\begin{align*}\n2(7 - 2b) - b &= -1 \\\\\n14 - 4b - b &= -1 \\\\\n-5b &= -15 \\\\\nb &= 3\n\\end{align*}\n\nThen: $a = 7 - 2(3) = 1$\n\n\\textbf{Step 4:} Verify with third equation\n\n\\[\na + 3b = 1 + 3(3) = 1 + 9 = 10 \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n\\textbf{Answer:} \\boxed{\\vec{w} = \\vec{u} + 3\\vec{v}}\n\nThat is, $a = 1$ and $b = 3$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Operations",
+    "type": "theorem",
+    "title": "Theorem 6.1: Properties of Vector Operations",
+    "content": "Let $\\vec{u}$, $\\vec{v}$, $\\vec{w}$ be vectors and $c$, $d$ be scalars.\n\n\\textbf{Addition Properties:}\n\\begin{align*}\n1. \\quad & \\vec{u} + \\vec{v} = \\vec{v} + \\vec{u} && \\text{(commutative)} \\\\\n2. \\quad & (\\vec{u} + \\vec{v}) + \\vec{w} = \\vec{u} + (\\vec{v} + \\vec{w}) && \\text{(associative)} \\\\\n3. \\quad & \\vec{u} + \\vec{0} = \\vec{u} && \\text{(identity)} \\\\\n4. \\quad & \\vec{u} + (-\\vec{u}) = \\vec{0} && \\text{(inverse)}\n\\end{align*}\n\n\\textbf{Scalar Multiplication Properties:}\n\\begin{align*}\n5. \\quad & c(\\vec{u} + \\vec{v}) = c\\vec{u} + c\\vec{v} && \\text{(distributive)} \\\\\n6. \\quad & (c + d)\\vec{u} = c\\vec{u} + d\\vec{u} && \\text{(distributive)} \\\\\n7. \\quad & c(d\\vec{u}) = (cd)\\vec{u} && \\text{(associative)} \\\\\n8. \\quad & 1\\vec{u} = \\vec{u} && \\text{(identity)}\n\\end{align*}\n\n\\textbf{Magnitude Properties:}\n\\begin{align*}\n9. \\quad & |c\\vec{u}| = |c||\\vec{u}| \\\\\n10. \\quad & |\\vec{u} + \\vec{v}| \\leq |\\vec{u}| + |\\vec{v}| && \\text{(triangle inequality)}\n\\end{align*}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Operations",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.2 Summary: Vector Operations}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.2 Summary: Vector Operations}}\n\n\\textbf{Vector Addition:}\n\\[\n\\boxed{\\vec{u} + \\vec{v} = \\langle u_1 + v_1, u_2 + v_2, u_3 + v_3 \\rangle}\n\\]\n\n\\textbf{Scalar Multiplication:}\n\\[\n\\boxed{c\\vec{v} = \\langle cv_1, cv_2, cv_3 \\rangle}\n\\]\n\n\\textbf{Vector Subtraction:}\n\\[\n\\boxed{\\vec{u} - \\vec{v} = \\langle u_1 - v_1, u_2 - v_2, u_3 - v_3 \\rangle}\n\\]\n\n\\textbf{Key Properties:}\n\\begin{itemize}\n    \\item Addition is commutative and associative\n    \\item $|c\\vec{v}| = |c||\\vec{v}|$\n    \\item To find vector of specific length in direction of $\\vec{v}$: $L\\left(\\frac{\\vec{v}}{|\\vec{v}|}\\right)$\n\\end{itemize}\n\n\\textbf{Geometric Interpretations:}\n\\begin{itemize}\n    \\item Addition: Triangle or parallelogram method\n    \\item Scalar multiplication: Stretching/shrinking and possibly reversing direction\n    \\item Subtraction: Vector from head of second to head of first\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Confusing $\\vec{u} - \\vec{v}$ with $\\vec{v} - \\vec{u}$ (order matters!)\n    \\item Not distributing scalar multiplication to all components\n    \\item Forgetting absolute value when computing $|c\\vec{v}| = |c||\\vec{v}|$\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Quick Check:}} \n\\begin{itemize}\n    \\item $\\vec{u} + \\vec{v} = \\vec{v} + \\vec{u}$ (commutative)\n    \\item $2\\vec{v}$ has same direction as $\\vec{v}$ but twice the length\n    \\item $-\\vec{v}$ has opposite direction and same length as $\\vec{v}$\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "definition",
+    "title": "Definition 6.8: Dot Product",
+    "content": "Given $\\vec{u} = \\langle u_1, u_2, u_3 \\rangle$ and $\\vec{v} = \\langle v_1, v_2, v_3 \\rangle$:\n\n\\textbf{Algebraic Definition:}\n\\[\n\\boxed{\\vec{u} \\cdot \\vec{v} = u_1v_1 + u_2v_2 + u_3v_3}\n\\]\n\nMultiply corresponding components and add.\n\n\\textbf{Geometric Definition:}\n\\[\n\\boxed{\\vec{u} \\cdot \\vec{v} = |\\vec{u}||\\vec{v}|\\cos\\theta}\n\\]\n\nwhere $\\theta$ is the angle between $\\vec{u}$ and $\\vec{v}$ (with $0 \\leq \\theta \\leq \\pi$).\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Fact:}}\n\nThe dot product is a \\textbf{scalar}, not a vector!\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In 2D:}}\n\\[\n\\vec{u} \\cdot \\vec{v} = u_1v_1 + u_2v_2\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "example",
+    "title": "Example 7: Computing Dot Products",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the dot product:\n\n(a) $\\vec{u} = \\langle 2, 3, -1 \\rangle$ and $\\vec{v} = \\langle 1, -2, 4 \\rangle$\n\n(b) $\\vec{a} = 3\\vec{i} - 2\\vec{j} + \\vec{k}$ and $\\vec{b} = \\vec{i} + 4\\vec{j} - 2\\vec{k}$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Using the algebraic definition:\n\\begin{align*}\n\\vec{u} \\cdot \\vec{v} &= (2)(1) + (3)(-2) + (-1)(4) \\\\\n&= 2 - 6 - 4 \\\\\n&= -8\n\\end{align*}\n\n\\textbf{Answer (a):} \\boxed{-8}\n\n\\vspace{0.3cm}\n\\textbf{(b)} First write in component form:\n\n$\\vec{a} = \\langle 3, -2, 1 \\rangle$ and $\\vec{b} = \\langle 1, 4, -2 \\rangle$\n\n\\begin{align*}\n\\vec{a} \\cdot \\vec{b} &= (3)(1) + (-2)(4) + (1)(-2) \\\\\n&= 3 - 8 - 2 \\\\\n&= -7\n\\end{align*}\n\n\\textbf{Answer (b):} \\boxed{-7}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "theorem",
+    "title": "Theorem 6.2: Properties of the Dot Product",
+    "content": "Let $\\vec{u}$, $\\vec{v}$, $\\vec{w}$ be vectors and $c$ be a scalar.\n\n\\begin{enumerate}\n    \\item $\\vec{u} \\cdot \\vec{v} = \\vec{v} \\cdot \\vec{u}$ \\hfill (commutative)\n    \n    \\item $\\vec{u} \\cdot (\\vec{v} + \\vec{w}) = \\vec{u} \\cdot \\vec{v} + \\vec{u} \\cdot \\vec{w}$ \\hfill (distributive)\n    \n    \\item $(c\\vec{u}) \\cdot \\vec{v} = c(\\vec{u} \\cdot \\vec{v}) = \\vec{u} \\cdot (c\\vec{v})$\n    \n    \\item $\\vec{v} \\cdot \\vec{v} = |\\vec{v}|^2$ \\hfill (magnitude squared)\n    \n    \\item $\\vec{0} \\cdot \\vec{v} = 0$\n    \n    \\item $\\vec{u} \\cdot \\vec{v} = 0$ if and only if $\\vec{u} \\perp \\vec{v}$ or $\\vec{u} = \\vec{0}$ or $\\vec{v} = \\vec{0}$\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Standard Unit Vectors:}}\n\\begin{align*}\n\\vec{i} \\cdot \\vec{i} = \\vec{j} \\cdot \\vec{j} = \\vec{k} \\cdot \\vec{k} &= 1 \\\\\n\\vec{i} \\cdot \\vec{j} = \\vec{i} \\cdot \\vec{k} = \\vec{j} \\cdot \\vec{k} &= 0\n\\end{align*}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "definition",
+    "title": "Definition 6.9: Angle Between Vectors",
+    "content": "The angle $\\theta$ between two non-zero vectors $\\vec{u}$ and $\\vec{v}$ is found from:\n\\[\n\\boxed{\\cos\\theta = \\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{u}||\\vec{v}|}}\n\\]\n\nTherefore:\n\\[\n\\boxed{\\theta = \\arccos\\left(\\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{u}||\\vec{v}|}\\right)}\n\\]\n\nwhere $0 \\leq \\theta \\leq \\pi$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Special Cases:}}\n\\begin{itemize}\n    \\item $\\theta = 0$: vectors point in same direction ($\\vec{u} \\cdot \\vec{v} = |\\vec{u}||\\vec{v}|$)\n    \\item $\\theta = \\pi/2$: vectors are perpendicular ($\\vec{u} \\cdot \\vec{v} = 0$)\n    \\item $\\theta = \\pi$: vectors point in opposite directions ($\\vec{u} \\cdot \\vec{v} = -|\\vec{u}||\\vec{v}|$)\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important:}}\n\nThe angle between vectors is always between $0$ and $\\pi$ (not $2\\pi$).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "example",
+    "title": "Example 8: Finding Angle Between Vectors",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the angle between $\\vec{u} = \\langle 1, 2, 2 \\rangle$ and $\\vec{v} = \\langle 2, 1, -2 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Compute the dot product\n\n\\[\n\\vec{u} \\cdot \\vec{v} = (1)(2) + (2)(1) + (2)(-2) = 2 + 2 - 4 = 0\n\\]\n\n\\textbf{Step 2:} Find magnitudes\n\n\\begin{align*}\n|\\vec{u}| &= \\sqrt{1^2 + 2^2 + 2^2} = \\sqrt{9} = 3 \\\\\n|\\vec{v}| &= \\sqrt{2^2 + 1^2 + (-2)^2} = \\sqrt{9} = 3\n\\end{align*}\n\n\\textbf{Step 3:} Apply the formula\n\n\\[\n\\cos\\theta = \\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{u}||\\vec{v}|} = \\frac{0}{3 \\cdot 3} = 0\n\\]\n\n\\[\n\\theta = \\arccos(0) = \\frac{\\pi}{2}\n\\]\n\n\\textbf{Answer:} \\boxed{\\theta = \\frac{\\pi}{2} = 90°}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Conclusion:}} The vectors are \\textbf{perpendicular} (orthogonal).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "definition",
+    "title": "Definition 6.10: Orthogonal Vectors",
+    "content": "Two vectors $\\vec{u}$ and $\\vec{v}$ are \\textbf{orthogonal} (perpendicular) if and only if:\n\\[\n\\boxed{\\vec{u} \\cdot \\vec{v} = 0}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Note:}}\n\nThe zero vector $\\vec{0}$ is considered orthogonal to every vector.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Notation:}}\n\nWe write $\\vec{u} \\perp \\vec{v}$ to indicate that $\\vec{u}$ and $\\vec{v}$ are orthogonal.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "example",
+    "title": "Example 9: Testing for Orthogonality",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Determine if the following pairs of vectors are orthogonal:\n\n(a) $\\vec{u} = \\langle 2, -3, 1 \\rangle$ and $\\vec{v} = \\langle 3, 2, 0 \\rangle$\n\n(b) $\\vec{a} = \\langle 1, 1, 1 \\rangle$ and $\\vec{b} = \\langle 2, -1, -1 \\rangle$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Compute dot product:\n\\[\n\\vec{u} \\cdot \\vec{v} = (2)(3) + (-3)(2) + (1)(0) = 6 - 6 + 0 = 0\n\\]\n\nSince $\\vec{u} \\cdot \\vec{v} = 0$: \\boxed{\\text{Yes, orthogonal}}\n\n\\vspace{0.3cm}\n\\textbf{(b)} Compute dot product:\n\\[\n\\vec{a} \\cdot \\vec{b} = (1)(2) + (1)(-1) + (1)(-1) = 2 - 1 - 1 = 0\n\\]\n\nSince $\\vec{a} \\cdot \\vec{b} = 0$: \\boxed{\\text{Yes, orthogonal}}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "definition",
+    "title": "Definition 6.11: Orthogonal Projection",
+    "content": "The \\textbf{orthogonal projection} of $\\vec{u}$ onto $\\vec{v}$ is the vector:\n\\[\n\\boxed{\\text{proj}_{\\vec{v}}\\vec{u} = \\left(\\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{v}|^2}\\right)\\vec{v} = \\left(\\frac{\\vec{u} \\cdot \\vec{v}}{\\vec{v} \\cdot \\vec{v}}\\right)\\vec{v}}\n\\]\n\n\\textbf{Scalar Component:}\n\nThe scalar component of $\\vec{u}$ in the direction of $\\vec{v}$ is:\n\\[\n\\boxed{\\text{comp}_{\\vec{v}}\\vec{u} = \\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{v}|} = |\\vec{u}|\\cos\\theta}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Relationship:}}\n\\[\n\\text{proj}_{\\vec{v}}\\vec{u} = \\left(\\text{comp}_{\\vec{v}}\\vec{u}\\right) \\cdot \\frac{\\vec{v}}{|\\vec{v}|}\n\\]\n\nThe projection is the component times the unit vector in direction of $\\vec{v}$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\n$\\text{proj}_{\\vec{v}}\\vec{u}$ is the \"shadow\" of $\\vec{u}$ on $\\vec{v}$.\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Projection visualization\n    \\draw[->] (0, 0) -- (4, 0) node[right] {$x$};\n    \\draw[->] (0, 0) -- (0, 3) node[above] {$y$};\n    \n    % Vector v (base)\n    \\draw[->, very thick, primaryblue] (0, 0) -- (3.5, 0.7) node[below right] {$\\vec{v}$};\n    \n    % Vector u\n    \\draw[->, very thick, accentorange] (0, 0) -- (2, 2.5) node[above] {$\\vec{u}$};\n    \n    % Projection\n    \\draw[->, very thick, darkgreen] (0, 0) -- (2.1, 0.42) node[below] {$\\text{proj}_{\\vec{v}}\\vec{u}$};\n    \n    % Perpendicular component\n    \\draw[dashed, red] (2.1, 0.42) -- (2, 2.5);\n    \n    % Right angle\n    \\draw (2.1, 0.42) -- (2.2, 0.5) -- (2.1, 0.58);\n    \n    % Angle\n    \\draw[->] (0.8, 0) arc (0:51:0.8) node[midway, right] {\\small $\\theta$};\n    \n    \\node[align=center] at (2, -0.8) {\\textbf{Orthogonal Projection}\\\\$\\text{proj}_{\\vec{v}}\\vec{u}$ is parallel to $\\vec{v}$};\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "example",
+    "title": "Example 10: Computing Projections",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the projection of $\\vec{u} = \\langle 3, 4, -1 \\rangle$ onto $\\vec{v} = \\langle 2, 1, 2 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Compute $\\vec{u} \\cdot \\vec{v}$\n\n\\[\n\\vec{u} \\cdot \\vec{v} = (3)(2) + (4)(1) + (-1)(2) = 6 + 4 - 2 = 8\n\\]\n\n\\textbf{Step 2:} Compute $|\\vec{v}|^2$\n\n\\[\n|\\vec{v}|^2 = 2^2 + 1^2 + 2^2 = 4 + 1 + 4 = 9\n\\]\n\n\\textbf{Step 3:} Apply projection formula\n\n\\begin{align*}\n\\text{proj}_{\\vec{v}}\\vec{u} &= \\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{v}|^2}\\vec{v} \\\\\n&= \\frac{8}{9}\\langle 2, 1, 2 \\rangle \\\\\n&= \\left\\langle \\frac{16}{9}, \\frac{8}{9}, \\frac{16}{9} \\right\\rangle\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\text{proj}_{\\vec{v}}\\vec{u} = \\left\\langle \\frac{16}{9}, \\frac{8}{9}, \\frac{16}{9} \\right\\rangle}\n\n\\textbf{Scalar component:}\n\\[\n\\text{comp}_{\\vec{v}}\\vec{u} = \\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{v}|} = \\frac{8}{3}\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "example",
+    "title": "Example 11: Application -- Work",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} A force $\\vec{F} = \\langle 3, 4, 0 \\rangle$ N is applied to an object, causing it to move from point $A(1, 1, 0)$ to point $B(4, 5, 0)$. Find the work done.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find displacement vector\n\n\\[\n\\vec{d} = \\overrightarrow{AB} = \\langle 4-1, 5-1, 0-0 \\rangle = \\langle 3, 4, 0 \\rangle\n\\]\n\n\\textbf{Step 2:} Work formula\n\nWork is defined as:\n\\[\nW = \\vec{F} \\cdot \\vec{d}\n\\]\n\n\\textbf{Step 3:} Compute\n\n\\[\nW = \\langle 3, 4, 0 \\rangle \\cdot \\langle 3, 4, 0 \\rangle = 9 + 16 + 0 = 25\n\\]\n\n\\textbf{Answer:} \\boxed{W = 25 \\text{ J (joules)}}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Physical Interpretation:}} The dot product gives the component of force in the direction of motion times the distance traveled.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Dot Product",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.3 Summary: Dot Product}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.3 Summary: Dot Product}}\n\n\\textbf{Dot Product Formula:}\n\\[\n\\boxed{\\vec{u} \\cdot \\vec{v} = u_1v_1 + u_2v_2 + u_3v_3 = |\\vec{u}||\\vec{v}|\\cos\\theta}\n\\]\n\n\\textbf{Angle Between Vectors:}\n\\[\n\\boxed{\\cos\\theta = \\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{u}||\\vec{v}|}}\n\\]\n\n\\textbf{Orthogonality Test:}\n\\[\n\\boxed{\\vec{u} \\perp \\vec{v} \\iff \\vec{u} \\cdot \\vec{v} = 0}\n\\]\n\n\\textbf{Projection:}\n\\[\n\\boxed{\\text{proj}_{\\vec{v}}\\vec{u} = \\left(\\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{v}|^2}\\right)\\vec{v}}\n\\]\n\n\\textbf{Scalar Component:}\n\\[\n\\boxed{\\text{comp}_{\\vec{v}}\\vec{u} = \\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{v}|}}\n\\]\n\n\\textcolor{red}{\\textbf{Exam Alert:}} Orthogonal projections appear \\textbf{frequently} in past papers!\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Using $|\\vec{v}|$ instead of $|\\vec{v}|^2$ in projection formula\n    \\item Forgetting that dot product produces a scalar, not a vector\n    \\item Confusing projection (vector) with scalar component (number)\n    \\item Computing angle outside range $[0, \\pi]$\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Key Applications:}}\n\\begin{itemize}\n    \\item Finding angles between vectors\n    \\item Testing for perpendicularity\n    \\item Computing projections\n    \\item Calculating work: $W = \\vec{F} \\cdot \\vec{d}$\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "definition",
+    "title": "Definition 6.12: Cross Product",
+    "content": "Given $\\vec{u} = \\langle u_1, u_2, u_3 \\rangle$ and $\\vec{v} = \\langle v_1, v_2, v_3 \\rangle$:\n\n\\textbf{Algebraic Definition:}\n\\[\n\\boxed{\\vec{u} \\times \\vec{v} = \\langle u_2v_3 - u_3v_2, u_3v_1 - u_1v_3, u_1v_2 - u_2v_1 \\rangle}\n\\]\n\n\\textbf{Determinant Form:}\n\\[\n\\boxed{\\vec{u} \\times \\vec{v} = \\begin{vmatrix}\n\\vec{i} & \\vec{j} & \\vec{k} \\\\\nu_1 & u_2 & u_3 \\\\\nv_1 & v_2 & v_3\n\\end{vmatrix}}\n\\]\n\nExpand along the first row:\n\\[\n\\vec{u} \\times \\vec{v} = \\vec{i}\\begin{vmatrix} u_2 & u_3 \\\\ v_2 & v_3 \\end{vmatrix} - \\vec{j}\\begin{vmatrix} u_1 & u_3 \\\\ v_1 & v_3 \\end{vmatrix} + \\vec{k}\\begin{vmatrix} u_1 & u_2 \\\\ v_1 & v_2 \\end{vmatrix}\n\\]\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important:}}\n\nThe cross product is defined \\textbf{only in $\\mathbb{R}^3$}! It does not exist in 2D.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Result:}}\n\n$\\vec{u} \\times \\vec{v}$ is a \\textbf{vector} (unlike dot product which is scalar).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "example",
+    "title": "Example 12: Computing Cross Product",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\vec{u} \\times \\vec{v}$ where $\\vec{u} = \\langle 2, 1, -1 \\rangle$ and $\\vec{v} = \\langle 1, 3, 2 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Method 1: Using the formula directly}\n\n\\begin{align*}\n\\vec{u} \\times \\vec{v} &= \\langle u_2v_3 - u_3v_2, u_3v_1 - u_1v_3, u_1v_2 - u_2v_1 \\rangle \\\\\n&= \\langle (1)(2) - (-1)(3), (-1)(1) - (2)(2), (2)(3) - (1)(1) \\rangle \\\\\n&= \\langle 2 + 3, -1 - 4, 6 - 1 \\rangle \\\\\n&= \\langle 5, -5, 5 \\rangle\n\\end{align*}\n\n\\textbf{Method 2: Using determinant}\n\n\\[\n\\vec{u} \\times \\vec{v} = \\begin{vmatrix}\n\\vec{i} & \\vec{j} & \\vec{k} \\\\\n2 & 1 & -1 \\\\\n1 & 3 & 2\n\\end{vmatrix}\n\\]\n\n\\begin{align*}\n&= \\vec{i}\\begin{vmatrix} 1 & -1 \\\\ 3 & 2 \\end{vmatrix} - \\vec{j}\\begin{vmatrix} 2 & -1 \\\\ 1 & 2 \\end{vmatrix} + \\vec{k}\\begin{vmatrix} 2 & 1 \\\\ 1 & 3 \\end{vmatrix} \\\\\n&= \\vec{i}(2 + 3) - \\vec{j}(4 + 1) + \\vec{k}(6 - 1) \\\\\n&= 5\\vec{i} - 5\\vec{j} + 5\\vec{k} \\\\\n&= \\langle 5, -5, 5 \\rangle\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\vec{u} \\times \\vec{v} = \\langle 5, -5, 5 \\rangle}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "theorem",
+    "title": "Theorem 6.3: Properties of Cross Product",
+    "content": "Let $\\vec{u}$, $\\vec{v}$, $\\vec{w}$ be vectors and $c$ be a scalar.\n\n\\textbf{1. Anti-commutative:}\n\\[\n\\vec{u} \\times \\vec{v} = -(\\vec{v} \\times \\vec{u})\n\\]\n\n\\textbf{2. Distributive:}\n\\[\n\\vec{u} \\times (\\vec{v} + \\vec{w}) = \\vec{u} \\times \\vec{v} + \\vec{u} \\times \\vec{w}\n\\]\n\n\\textbf{3. Scalar multiplication:}\n\\[\n(c\\vec{u}) \\times \\vec{v} = c(\\vec{u} \\times \\vec{v}) = \\vec{u} \\times (c\\vec{v})\n\\]\n\n\\textbf{4. Perpendicularity:}\n\\[\n\\vec{u} \\times \\vec{v} \\perp \\vec{u} \\quad \\text{and} \\quad \\vec{u} \\times \\vec{v} \\perp \\vec{v}\n\\]\n\n\\textbf{5. Parallel vectors:}\n\\[\n\\vec{u} \\times \\vec{v} = \\vec{0} \\iff \\vec{u} \\text{ and } \\vec{v} \\text{ are parallel (or one is } \\vec{0}\\text{)}\n\\]\n\n\\textbf{6. Magnitude:}\n\\[\n|\\vec{u} \\times \\vec{v}| = |\\vec{u}||\\vec{v}|\\sin\\theta\n\\]\n\nwhere $\\theta$ is the angle between $\\vec{u}$ and $\\vec{v}$.\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Warning:}}\n\nThe cross product is \\textbf{NOT associative}: $\\vec{u} \\times (\\vec{v} \\times \\vec{w}) \\neq (\\vec{u} \\times \\vec{v}) \\times \\vec{w}$ in general.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "example",
+    "title": "Example 13: Verifying Perpendicularity",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Verify that $\\vec{u} \\times \\vec{v}$ from Example 12 is perpendicular to both $\\vec{u}$ and $\\vec{v}$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nFrom Example 12: $\\vec{u} = \\langle 2, 1, -1 \\rangle$, $\\vec{v} = \\langle 1, 3, 2 \\rangle$, $\\vec{u} \\times \\vec{v} = \\langle 5, -5, 5 \\rangle$\n\n\\textbf{Check 1:} $(\\vec{u} \\times \\vec{v}) \\cdot \\vec{u}$\n\n\\[\n\\langle 5, -5, 5 \\rangle \\cdot \\langle 2, 1, -1 \\rangle = 10 - 5 - 5 = 0 \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n\\textbf{Check 2:} $(\\vec{u} \\times \\vec{v}) \\cdot \\vec{v}$\n\n\\[\n\\langle 5, -5, 5 \\rangle \\cdot \\langle 1, 3, 2 \\rangle = 5 - 15 + 10 = 0 \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n\\textbf{Conclusion:} $\\vec{u} \\times \\vec{v}$ is perpendicular to both $\\vec{u}$ and $\\vec{v}$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "definition",
+    "title": "Definition 6.13: Geometric Interpretation of Cross Product",
+    "content": "\\textbf{Direction:} $\\vec{u} \\times \\vec{v}$ is perpendicular to both $\\vec{u}$ and $\\vec{v}$, following the \\textbf{right-hand rule}:\n\\begin{itemize}\n    \\item Point fingers of right hand along $\\vec{u}$\n    \\item Curl them toward $\\vec{v}$\n    \\item Thumb points in direction of $\\vec{u} \\times \\vec{v}$\n\\end{itemize}\n\n\\textbf{Magnitude:}\n\\[\n|\\vec{u} \\times \\vec{v}| = |\\vec{u}||\\vec{v}|\\sin\\theta\n\\]\n\nThis equals the area of the parallelogram with sides $\\vec{u}$ and $\\vec{v}$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Area Interpretation:}}\n\\[\n\\text{Area of parallelogram} = |\\vec{u} \\times \\vec{v}|\n\\]\n\\[\n\\text{Area of triangle} = \\frac{1}{2}|\\vec{u} \\times \\vec{v}|\n\\]\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.1]\n    % Parallelogram formed by two vectors\n    \\begin{scope}[shift={(0,0)}]\n        % Vectors\n        \\draw[->, very thick, primaryblue] (0, 0) -- (3, 0.5) node[below] {$\\vec{u}$};\n        \\draw[->, very thick, accentorange] (0, 0) -- (1.5, 2) node[left] {$\\vec{v}$};\n        \n        % Parallelogram\n        \\draw[dashed] (3, 0.5) -- (4.5, 2.5);\n        \\draw[dashed] (1.5, 2) -- (4.5, 2.5);\n        \n        % Cross product (out of page)\n        \\draw[->, very thick, darkgreen] (2.25, 1.25) -- (2.25, 3) node[above] {$\\vec{u} \\times \\vec{v}$};\n        \\node[darkgreen] at (2.8, 2.5) {$\\perp$ to both};\n        \n        \\node at (2.5, -0.8) {\\textbf{Cross Product Direction}};\n    \\end{scope}\n    \n    % Area interpretation\n    \\begin{scope}[shift={(7,0)}]\n        % Parallelogram\n        \\draw[fill=primaryblue!20] (0, 0) -- (2.5, 0.5) -- (4, 2.5) -- (1.5, 2) -- cycle;\n        \n        % Vectors\n        \\draw[->, very thick, primaryblue] (0, 0) -- (2.5, 0.5) node[midway, below] {$\\vec{u}$};\n        \\draw[->, very thick, accentorange] (0, 0) -- (1.5, 2) node[midway, left] {$\\vec{v}$};\n        \n        \\node at (2, 1.2) {$A = |\\vec{u} \\times \\vec{v}|$};\n        \n        \\node at (2, -0.8) {\\textbf{Area = Magnitude}};\n    \\end{scope}\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "example",
+    "title": "Example 14: Finding Area of Parallelogram",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the area of the parallelogram with vertices at $P(1, 0, 1)$, $Q(2, 3, 1)$, $R(3, 5, 2)$, and $S(2, 2, 2)$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find two adjacent sides as vectors\n\n\\begin{align*}\n\\overrightarrow{PQ} &= \\langle 2-1, 3-0, 1-1 \\rangle = \\langle 1, 3, 0 \\rangle \\\\\n\\overrightarrow{PS} &= \\langle 2-1, 2-0, 2-1 \\rangle = \\langle 1, 2, 1 \\rangle\n\\end{align*}\n\n\\textbf{Step 2:} Compute cross product\n\n\\[\n\\overrightarrow{PQ} \\times \\overrightarrow{PS} = \\begin{vmatrix}\n\\vec{i} & \\vec{j} & \\vec{k} \\\\\n1 & 3 & 0 \\\\\n1 & 2 & 1\n\\end{vmatrix}\n\\]\n\n\\begin{align*}\n&= \\vec{i}(3 - 0) - \\vec{j}(1 - 0) + \\vec{k}(2 - 3) \\\\\n&= 3\\vec{i} - \\vec{j} - \\vec{k} \\\\\n&= \\langle 3, -1, -1 \\rangle\n\\end{align*}\n\n\\textbf{Step 3:} Find magnitude\n\n\\[\n|\\overrightarrow{PQ} \\times \\overrightarrow{PS}| = \\sqrt{3^2 + (-1)^2 + (-1)^2} = \\sqrt{9 + 1 + 1} = \\sqrt{11}\n\\]\n\n\\textbf{Answer:} \\boxed{\\text{Area} = \\sqrt{11} \\text{ square units}}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "definition",
+    "title": "Definition 6.14: Scalar Triple Product",
+    "content": "The \\textbf{scalar triple product} of vectors $\\vec{u}$, $\\vec{v}$, $\\vec{w}$ is:\n\\[\n\\boxed{\\vec{u} \\cdot (\\vec{v} \\times \\vec{w})}\n\\]\n\nThis can be computed as a determinant:\n\\[\n\\vec{u} \\cdot (\\vec{v} \\times \\vec{w}) = \\begin{vmatrix}\nu_1 & u_2 & u_3 \\\\\nv_1 & v_2 & v_3 \\\\\nw_1 & w_2 & w_3\n\\end{vmatrix}\n\\]\n\n\\textbf{Geometric Interpretation:}\n\n$|\\vec{u} \\cdot (\\vec{v} \\times \\vec{w})|$ is the volume of the parallelepiped with edges $\\vec{u}$, $\\vec{v}$, $\\vec{w}$.\n\n\\textbf{Properties:}\n\\begin{itemize}\n    \\item $\\vec{u} \\cdot (\\vec{v} \\times \\vec{w}) = \\vec{v} \\cdot (\\vec{w} \\times \\vec{u}) = \\vec{w} \\cdot (\\vec{u} \\times \\vec{v})$ (cyclic)\n    \\item $\\vec{u} \\cdot (\\vec{v} \\times \\vec{w}) = 0 \\iff$ vectors are coplanar\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "example",
+    "title": "Example 15: Volume Using Scalar Triple Product",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the volume of the parallelepiped determined by $\\vec{u} = \\langle 1, 2, 0 \\rangle$, $\\vec{v} = \\langle 0, 1, 3 \\rangle$, and $\\vec{w} = \\langle 2, 0, 1 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Compute scalar triple product using determinant\n\n\\[\n\\vec{u} \\cdot (\\vec{v} \\times \\vec{w}) = \\begin{vmatrix}\n1 & 2 & 0 \\\\\n0 & 1 & 3 \\\\\n2 & 0 & 1\n\\end{vmatrix}\n\\]\n\n\\textbf{Step 2:} Expand (using first row)\n\n\\begin{align*}\n&= 1\\begin{vmatrix} 1 & 3 \\\\ 0 & 1 \\end{vmatrix} - 2\\begin{vmatrix} 0 & 3 \\\\ 2 & 1 \\end{vmatrix} + 0\\begin{vmatrix} 0 & 1 \\\\ 2 & 0 \\end{vmatrix} \\\\\n&= 1(1 - 0) - 2(0 - 6) + 0 \\\\\n&= 1 + 12 \\\\\n&= 13\n\\end{align*}\n\n\\textbf{Step 3:} Volume is absolute value\n\n\\[\nV = |\\vec{u} \\cdot (\\vec{v} \\times \\vec{w})| = |13| = 13\n\\]\n\n\\textbf{Answer:} \\boxed{V = 13 \\text{ cubic units}}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cross Product and Applications",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.4 Summary: Cross Product}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.4 Summary: Cross Product}}\n\n\\textbf{Cross Product Formula:}\n\\[\n\\boxed{\\vec{u} \\times \\vec{v} = \\begin{vmatrix}\n\\vec{i} & \\vec{j} & \\vec{k} \\\\\nu_1 & u_2 & u_3 \\\\\nv_1 & v_2 & v_3\n\\end{vmatrix}}\n\\]\n\n\\textbf{Key Properties:}\n\\begin{itemize}\n    \\item $\\vec{u} \\times \\vec{v} = -\\vec{v} \\times \\vec{u}$ (anti-commutative)\n    \\item $\\vec{u} \\times \\vec{v} \\perp \\vec{u}$ and $\\vec{u} \\times \\vec{v} \\perp \\vec{v}$\n    \\item $|\\vec{u} \\times \\vec{v}| = |\\vec{u}||\\vec{v}|\\sin\\theta$\n    \\item $\\vec{u} \\times \\vec{v} = \\vec{0} \\iff \\vec{u} \\parallel \\vec{v}$\n\\end{itemize}\n\n\\textbf{Applications:}\n\\begin{align*}\n\\text{Area of parallelogram:} \\quad & |\\vec{u} \\times \\vec{v}| \\\\\n\\text{Area of triangle:} \\quad & \\frac{1}{2}|\\vec{u} \\times \\vec{v}| \\\\\n\\text{Volume of parallelepiped:} \\quad & |\\vec{u} \\cdot (\\vec{v} \\times \\vec{w})|\n\\end{align*}\n\n\\textbf{Standard Cross Products:}\n\\begin{align*}\n\\vec{i} \\times \\vec{j} &= \\vec{k}, \\quad \\vec{j} \\times \\vec{k} = \\vec{i}, \\quad \\vec{k} \\times \\vec{i} = \\vec{j} \\\\\n\\vec{j} \\times \\vec{i} &= -\\vec{k}, \\quad \\vec{k} \\times \\vec{j} = -\\vec{i}, \\quad \\vec{i} \\times \\vec{k} = -\\vec{j}\n\\end{align*}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Forgetting the minus sign on the $\\vec{j}$ component in determinant expansion\n    \\item Thinking cross product is commutative (it's anti-commutative!)\n    \\item Trying to use cross product in 2D (only defined in 3D)\n    \\item Confusing $\\vec{u} \\times \\vec{v}$ with $\\vec{u} \\cdot \\vec{v}$ (vector vs. scalar)\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Quick Check:}}\n\\begin{itemize}\n    \\item $\\vec{i} \\times \\vec{j} = \\vec{k}$ (right-hand rule)\n    \\item Cross product result is perpendicular to both original vectors\n    \\item Magnitude equals area of parallelogram\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Functions and Parametric Curves",
+    "type": "definition",
+    "title": "Definition 6.15: Vector Function",
+    "content": "A \\textbf{vector function} (or \\textbf{vector-valued function}) is a function that assigns a vector to each value of a parameter $t$ in its domain.\n\n\\textbf{In 2D:}\n\\[\n\\vec{r}(t) = \\langle f(t), g(t) \\rangle = f(t)\\vec{i} + g(t)\\vec{j}\n\\]\n\n\\textbf{In 3D:}\n\\[\n\\boxed{\\vec{r}(t) = \\langle f(t), g(t), h(t) \\rangle = f(t)\\vec{i} + g(t)\\vec{j} + h(t)\\vec{k}}\n\\]\n\nwhere $f$, $g$, and $h$ are called the \\textbf{component functions}.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\nAs $t$ varies, the tip of the vector $\\vec{r}(t)$ traces out a curve $C$ in space. The curve is called the \\textbf{graph} of $\\vec{r}(t)$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Parametric Equations:}}\n\nThe component form gives the parametric equations:\n\\[\nx = f(t), \\quad y = g(t), \\quad z = h(t)\n\\]\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.1]\n    % Parametric curve visualization\n    \\draw[->] (0, 0) -- (5, 0) node[right] {$x$};\n    \\draw[->] (0, 0) -- (0, 3.5) node[above] {$y$};\n    \n    % Curve\n    \\draw[primaryblue, very thick, domain=0:4.5, samples=100, smooth] plot (\\x, {0.1*\\x*\\x});\n    \n    % Position vectors at different t values\n    \\draw[->, accentorange, thick] (0, 0) -- (1, 0.1) node[above right] {$\\vec{r}(t_1)$};\n    \\draw[->, accentorange, thick] (0, 0) -- (2.5, 0.625) node[above right] {$\\vec{r}(t_2)$};\n    \\draw[->, accentorange, thick] (0, 0) -- (4, 1.6) node[above right] {$\\vec{r}(t_3)$};\n    \n    % Points on curve\n    \\filldraw[red] (1, 0.1) circle (2pt);\n    \\filldraw[red] (2.5, 0.625) circle (2pt);\n    \\filldraw[red] (4, 1.6) circle (2pt);\n    \n    % Parameter labels\n    \\node at (1, -0.4) {\\small $t_1$};\n    \\node at (2.5, -0.4) {\\small $t_2$};\n    \\node at (4, -0.4) {\\small $t_3$};\n    \n    \\node[primaryblue] at (4.5, 2.5) {Curve $C$};\n    \\node[align=center] at (2.5, -1.2) {\\textbf{Vector Function Traces a Curve}};\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Functions and Parametric Curves",
+    "type": "example",
+    "title": "Example 16: Graphing a Vector Function",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Describe the curve traced by $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$ for $t \\geq 0$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Identify parametric equations\n\n\\begin{align*}\nx &= \\cos t \\\\\ny &= \\sin t \\\\\nz &= t\n\\end{align*}\n\n\\textbf{Step 2:} Analyze the $xy$-projection\n\nFrom $x^2 + y^2 = \\cos^2 t + \\sin^2 t = 1$, the projection onto the $xy$-plane is a circle of radius 1.\n\n\\textbf{Step 3:} Include the $z$-component\n\nAs $t$ increases from 0 to $\\infty$:\n\\begin{itemize}\n    \\item $(x, y)$ traces around the unit circle\n    \\item $z = t$ increases linearly\n\\end{itemize}\n\n\\textbf{Answer:} The curve is a \\textbf{circular helix} (spiral) that winds around the $z$-axis.\n\n\\textbf{Key points:}\n\\begin{itemize}\n    \\item At $t = 0$: $(1, 0, 0)$\n    \\item At $t = \\pi/2$: $(0, 1, \\pi/2)$\n    \\item At $t = \\pi$: $(-1, 0, \\pi)$\n    \\item At $t = 2\\pi$: $(1, 0, 2\\pi)$\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Visualization:}} The helix rises while circling the $z$-axis with constant radius 1.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Functions and Parametric Curves",
+    "type": "example",
+    "title": "Example 17: Finding a Vector Function for a Curve",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find a vector function that represents the curve of intersection of:\n\\begin{itemize}\n    \\item Cylinder: $x^2 + y^2 = 4$\n    \\item Plane: $z = x + y$\n\\end{itemize}\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Parametrize the cylinder\n\nUse $x = 2\\cos t$ and $y = 2\\sin t$ (circle of radius 2).\n\n\\textbf{Step 2:} Find $z$ from the plane equation\n\n\\begin{align*}\nz &= x + y \\\\\n&= 2\\cos t + 2\\sin t \\\\\n&= 2(\\cos t + \\sin t)\n\\end{align*}\n\n\\textbf{Step 3:} Write vector function\n\n\\[\n\\vec{r}(t) = \\langle 2\\cos t, 2\\sin t, 2(\\cos t + \\sin t) \\rangle\n\\]\n\nfor $0 \\leq t \\leq 2\\pi$.\n\n\\textbf{Answer:} \\boxed{\\vec{r}(t) = \\langle 2\\cos t, 2\\sin t, 2\\cos t + 2\\sin t \\rangle}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Functions and Parametric Curves",
+    "type": "definition",
+    "title": "Definition 6.16: Limits and Continuity",
+    "content": "\\textbf{Limit of a Vector Function:}\n\\[\n\\boxed{\\lim_{t \\to a} \\vec{r}(t) = \\left\\langle \\lim_{t \\to a} f(t), \\lim_{t \\to a} g(t), \\lim_{t \\to a} h(t) \\right\\rangle}\n\\]\n\nprovided each component limit exists.\n\n\\textbf{Continuity:}\n\n$\\vec{r}(t)$ is \\textbf{continuous} at $t = a$ if:\n\\[\n\\lim_{t \\to a} \\vec{r}(t) = \\vec{r}(a)\n\\]\n\nThis means each component function is continuous at $a$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Domain:}}\n\nThe domain of $\\vec{r}(t)$ is the intersection of the domains of its component functions.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Functions and Parametric Curves",
+    "type": "example",
+    "title": "Example 18: Limits and Continuity",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\displaystyle \\lim_{t \\to 0} \\vec{r}(t)$ where $\\vec{r}(t) = \\left\\langle \\frac{\\sin t}{t}, t^2 - 1, e^t \\right\\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCompute the limit of each component:\n\n\\textbf{Component 1:}\n\\[\n\\lim_{t \\to 0} \\frac{\\sin t}{t} = 1\n\\]\n\n\\textbf{Component 2:}\n\\[\n\\lim_{t \\to 0} (t^2 - 1) = 0 - 1 = -1\n\\]\n\n\\textbf{Component 3:}\n\\[\n\\lim_{t \\to 0} e^t = e^0 = 1\n\\]\n\n\\textbf{Answer:} \\boxed{\\lim_{t \\to 0} \\vec{r}(t) = \\langle 1, -1, 1 \\rangle}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Functions and Parametric Curves",
+    "type": "definition",
+    "title": "Definition 6.17: Common Space Curves",
+    "content": "\\textbf{1. Line:}\n\\[\n\\vec{r}(t) = \\vec{r}_0 + t\\vec{v}\n\\]\n\nwhere $\\vec{r}_0$ is a point on the line and $\\vec{v}$ is the direction vector.\n\n\\textbf{2. Circle (in $xy$-plane):}\n\\[\n\\vec{r}(t) = \\langle a\\cos t, a\\sin t, 0 \\rangle\n\\]\n\nCircle of radius $a$ centered at origin.\n\n\\textbf{3. Helix:}\n\\[\n\\vec{r}(t) = \\langle a\\cos t, a\\sin t, bt \\rangle\n\\]\n\nCircular helix with radius $a$ and pitch determined by $b$.\n\n\\textbf{4. Ellipse:}\n\\[\n\\vec{r}(t) = \\langle a\\cos t, b\\sin t, 0 \\rangle\n\\]\n\nEllipse with semi-axes $a$ and $b$.\n\n\\textbf{5. Parabola:}\n\\[\n\\vec{r}(t) = \\langle t, t^2, 0 \\rangle\n\\]\n\nStandard parabola in $xy$-plane.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Vector Functions and Parametric Curves",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.5 Summary: Vector Functions}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.5 Summary: Vector Functions}}\n\n\\textbf{Vector Function:}\n\\[\n\\boxed{\\vec{r}(t) = \\langle f(t), g(t), h(t) \\rangle}\n\\]\n\n\\textbf{Parametric Equations:}\n\\[\nx = f(t), \\quad y = g(t), \\quad z = h(t)\n\\]\n\n\\textbf{Limit:}\n\\[\n\\lim_{t \\to a} \\vec{r}(t) = \\left\\langle \\lim_{t \\to a} f(t), \\lim_{t \\to a} g(t), \\lim_{t \\to a} h(t) \\right\\rangle\n\\]\n\n\\textbf{Common Curves:}\n\\begin{itemize}\n    \\item Line: $\\vec{r}(t) = \\vec{r}_0 + t\\vec{v}$\n    \\item Circle: $\\vec{r}(t) = \\langle a\\cos t, a\\sin t, 0 \\rangle$\n    \\item Helix: $\\vec{r}(t) = \\langle a\\cos t, a\\sin t, bt \\rangle$\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Confusing vector function with scalar function\n    \\item Not checking domain restrictions for each component\n    \\item Forgetting that limits are computed component-wise\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Key Insight:}} Vector functions parametrize curves in space, giving position as a function of time or parameter.\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "definition",
+    "title": "Definition 6.18: Derivative of a Vector Function",
+    "content": "The \\textbf{derivative} of $\\vec{r}(t) = \\langle f(t), g(t), h(t) \\rangle$ is:\n\\[\n\\boxed{\\vec{r}'(t) = \\lim_{\\Delta t \\to 0} \\frac{\\vec{r}(t + \\Delta t) - \\vec{r}(t)}{\\Delta t}}\n\\]\n\n\\textbf{Component-wise:}\n\\[\n\\boxed{\\vec{r}'(t) = \\langle f'(t), g'(t), h'(t) \\rangle}\n\\]\n\n\\textbf{Alternative Notations:}\n\\[\n\\vec{r}'(t) = \\frac{d\\vec{r}}{dt} = \\dot{\\vec{r}}(t)\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\n$\\vec{r}'(t)$ is the \\textbf{tangent vector} to the curve at the point $\\vec{r}(t)$. It points in the direction of motion along the curve.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Physical Interpretation:}}\n\nIf $\\vec{r}(t)$ represents position at time $t$, then:\n\\begin{itemize}\n    \\item $\\vec{r}'(t) = \\vec{v}(t)$ is the velocity vector\n    \\item $|\\vec{r}'(t)|$ is the speed\n\\end{itemize}\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Tangent vector visualization\n    \\draw[->] (0, 0) -- (5, 0) node[right] {$x$};\n    \\draw[->] (0, 0) -- (0, 3) node[above] {$y$};\n    \n    % Curve\n    \\draw[blue, very thick, domain=0.5:4.5, samples=100, smooth] \n        plot (\\x, {0.3*sin(10*\\x r) + 1.5});\n    \n    % Point on curve\n    \\filldraw[red] (2.5, 1.8) circle (2pt) node[above left] {$\\vec{r}(t)$};\n    \n    % Position vector\n    \\draw[->, accentorange, thick] (0, 0) -- (2.5, 1.8);\n    \n    % Tangent vector\n    \\draw[->, darkgreen, very thick] (2.5, 1.8) -- (3.5, 2.3) node[above right] {$\\vec{r}'(t)$};\n    \n    \\node[align=center] at (2.5, -0.8) {\\textbf{Tangent Vector}\\\\$\\vec{r}'(t)$ points in direction of motion};\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "example",
+    "title": "Example 19: Computing Derivatives",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\vec{r}'(t)$ and $\\vec{r}''(t)$ for $\\vec{r}(t) = \\langle t^2, e^t, \\sin t \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{First derivative:} Differentiate each component\n\n\\[\n\\vec{r}'(t) = \\langle 2t, e^t, \\cos t \\rangle\n\\]\n\n\\textbf{Second derivative:} Differentiate $\\vec{r}'(t)$\n\n\\[\n\\vec{r}''(t) = \\langle 2, e^t, -\\sin t \\rangle\n\\]\n\n\\textbf{Answer:}\n\\begin{align*}\n\\vec{r}'(t) &= \\boxed{\\langle 2t, e^t, \\cos t \\rangle} \\\\\n\\vec{r}''(t) &= \\boxed{\\langle 2, e^t, -\\sin t \\rangle}\n\\end{align*}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Interpretation:}} $\\vec{r}'(t)$ is velocity, $\\vec{r}''(t)$ is acceleration.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "theorem",
+    "title": "Theorem 6.4: Differentiation Rules for Vector Functions",
+    "content": "Let $\\vec{u}(t)$ and $\\vec{v}(t)$ be differentiable vector functions, $c$ a scalar, and $f(t)$ a scalar function.\n\n\\begin{enumerate}\n    \\item $\\dfrac{d}{dt}[c\\vec{u}(t)] = c\\vec{u}'(t)$\n    \n    \\item $\\dfrac{d}{dt}[\\vec{u}(t) + \\vec{v}(t)] = \\vec{u}'(t) + \\vec{v}'(t)$\n    \n    \\item $\\dfrac{d}{dt}[f(t)\\vec{u}(t)] = f'(t)\\vec{u}(t) + f(t)\\vec{u}'(t)$ \\hfill (product rule)\n    \n    \\item $\\dfrac{d}{dt}[\\vec{u}(t) \\cdot \\vec{v}(t)] = \\vec{u}'(t) \\cdot \\vec{v}(t) + \\vec{u}(t) \\cdot \\vec{v}'(t)$ \\hfill (dot product)\n    \n    \\item $\\dfrac{d}{dt}[\\vec{u}(t) \\times \\vec{v}(t)] = \\vec{u}'(t) \\times \\vec{v}(t) + \\vec{u}(t) \\times \\vec{v}'(t)$ \\hfill (cross product)\n    \n    \\item $\\dfrac{d}{dt}[\\vec{u}(f(t))] = \\vec{u}'(f(t))f'(t)$ \\hfill (chain rule)\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Warning:}}\n\nIn rule 5, order matters for cross products! Don't switch the order of $\\vec{u}'(t) \\times \\vec{v}(t)$ and $\\vec{u}(t) \\times \\vec{v}'(t)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "example",
+    "title": "Example 20: Using Differentiation Rules",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} If $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$, show that $\\vec{r}(t) \\cdot \\vec{r}'(t) = t$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $\\vec{r}'(t)$\n\n\\[\n\\vec{r}'(t) = \\langle -\\sin t, \\cos t, 1 \\rangle\n\\]\n\n\\textbf{Step 2:} Compute dot product\n\n\\begin{align*}\n\\vec{r}(t) \\cdot \\vec{r}'(t) &= \\langle \\cos t, \\sin t, t \\rangle \\cdot \\langle -\\sin t, \\cos t, 1 \\rangle \\\\\n&= (\\cos t)(-\\sin t) + (\\sin t)(\\cos t) + t(1) \\\\\n&= -\\sin t \\cos t + \\sin t \\cos t + t \\\\\n&= t\n\\end{align*}\n\n\\textbf{Answer:} $\\vec{r}(t) \\cdot \\vec{r}'(t) = t$ \\textcolor{green}{\\checkmark}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Alternative using product rule:}}\n\n\\begin{align*}\n\\frac{d}{dt}[\\vec{r}(t) \\cdot \\vec{r}(t)] &= 2\\vec{r}(t) \\cdot \\vec{r}'(t) \\\\\n\\frac{d}{dt}[|\\vec{r}(t)|^2] &= 2\\vec{r}(t) \\cdot \\vec{r}'(t) \\\\\n\\frac{d}{dt}[\\cos^2 t + \\sin^2 t + t^2] &= 2\\vec{r}(t) \\cdot \\vec{r}'(t) \\\\\n2t &= 2\\vec{r}(t) \\cdot \\vec{r}'(t) \\\\\nt &= \\vec{r}(t) \\cdot \\vec{r}'(t)\n\\end{align*}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "definition",
+    "title": "Definition 6.19: Unit Tangent Vector",
+    "content": "The \\textbf{unit tangent vector} to a curve at a point is:\n\\[\n\\boxed{\\vec{T}(t) = \\frac{\\vec{r}'(t)}{|\\vec{r}'(t)|}}\n\\]\n\nThis is a unit vector in the direction of $\\vec{r}'(t)$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Properties:}}\n\\begin{itemize}\n    \\item $|\\vec{T}(t)| = 1$ (unit vector)\n    \\item $\\vec{T}(t)$ is tangent to the curve\n    \\item Points in direction of increasing $t$\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "example",
+    "title": "Example 21: Finding Unit Tangent Vector",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the unit tangent vector to $\\vec{r}(t) = \\langle t^2, 2t, \\ln t \\rangle$ at $t = 1$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $\\vec{r}'(t)$\n\n\\[\n\\vec{r}'(t) = \\left\\langle 2t, 2, \\frac{1}{t} \\right\\rangle\n\\]\n\n\\textbf{Step 2:} Evaluate at $t = 1$\n\n\\[\n\\vec{r}'(1) = \\langle 2, 2, 1 \\rangle\n\\]\n\n\\textbf{Step 3:} Find magnitude\n\n\\[\n|\\vec{r}'(1)| = \\sqrt{4 + 4 + 1} = \\sqrt{9} = 3\n\\]\n\n\\textbf{Step 4:} Compute unit tangent vector\n\n\\[\n\\vec{T}(1) = \\frac{\\vec{r}'(1)}{|\\vec{r}'(1)|} = \\frac{1}{3}\\langle 2, 2, 1 \\rangle = \\left\\langle \\frac{2}{3}, \\frac{2}{3}, \\frac{1}{3} \\right\\rangle\n\\]\n\n\\textbf{Answer:} \\boxed{\\vec{T}(1) = \\left\\langle \\frac{2}{3}, \\frac{2}{3}, \\frac{1}{3} \\right\\rangle}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "definition",
+    "title": "Definition 6.20: Integral of a Vector Function",
+    "content": "The \\textbf{indefinite integral} of $\\vec{r}(t) = \\langle f(t), g(t), h(t) \\rangle$ is:\n\\[\n\\boxed{\\int \\vec{r}(t) \\, dt = \\left\\langle \\int f(t) \\, dt, \\int g(t) \\, dt, \\int h(t) \\, dt \\right\\rangle + \\vec{C}}\n\\]\n\nwhere $\\vec{C}$ is a constant vector.\n\nThe \\textbf{definite integral} is:\n\\[\n\\boxed{\\int_a^b \\vec{r}(t) \\, dt = \\left\\langle \\int_a^b f(t) \\, dt, \\int_a^b g(t) \\, dt, \\int_a^b h(t) \\, dt \\right\\rangle}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Point:}}\n\nIntegration is done component-wise, just like differentiation.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Fundamental Theorem:}}\n\\[\n\\int_a^b \\vec{r}'(t) \\, dt = \\vec{r}(b) - \\vec{r}(a)\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "example",
+    "title": "Example 22: Integrating Vector Functions",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find:\n\n(a) $\\displaystyle \\int \\langle 2t, \\cos t, e^t \\rangle \\, dt$\n\n(b) $\\displaystyle \\int_0^1 \\langle t^2, t, 1 \\rangle \\, dt$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Integrate each component:\n\n\\begin{align*}\n\\int \\langle 2t, \\cos t, e^t \\rangle \\, dt &= \\left\\langle \\int 2t \\, dt, \\int \\cos t \\, dt, \\int e^t \\, dt \\right\\rangle \\\\\n&= \\langle t^2, \\sin t, e^t \\rangle + \\vec{C}\n\\end{align*}\n\n\\textbf{Answer (a):} \\boxed{\\langle t^2, \\sin t, e^t \\rangle + \\vec{C}}\n\n\\vspace{0.3cm}\n\\textbf{(b)} Integrate and evaluate:\n\n\\begin{align*}\n\\int_0^1 \\langle t^2, t, 1 \\rangle \\, dt &= \\left\\langle \\int_0^1 t^2 \\, dt, \\int_0^1 t \\, dt, \\int_0^1 1 \\, dt \\right\\rangle \\\\\n&= \\left\\langle \\left[\\frac{t^3}{3}\\right]_0^1, \\left[\\frac{t^2}{2}\\right]_0^1, [t]_0^1 \\right\\rangle \\\\\n&= \\left\\langle \\frac{1}{3}, \\frac{1}{2}, 1 \\right\\rangle\n\\end{align*}\n\n\\textbf{Answer (b):} \\boxed{\\left\\langle \\frac{1}{3}, \\frac{1}{2}, 1 \\right\\rangle}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "example",
+    "title": "Example 23: Initial Value Problem",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\vec{r}(t)$ if $\\vec{r}'(t) = \\langle 6t, 3t^2, 2 \\rangle$ and $\\vec{r}(0) = \\langle 1, -1, 3 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Integrate $\\vec{r}'(t)$\n\n\\begin{align*}\n\\vec{r}(t) &= \\int \\langle 6t, 3t^2, 2 \\rangle \\, dt \\\\\n&= \\langle 3t^2, t^3, 2t \\rangle + \\vec{C}\n\\end{align*}\n\nwhere $\\vec{C} = \\langle C_1, C_2, C_3 \\rangle$ is a constant vector.\n\n\\textbf{Step 2:} Apply initial condition\n\n\\[\n\\vec{r}(0) = \\langle 0, 0, 0 \\rangle + \\vec{C} = \\langle 1, -1, 3 \\rangle\n\\]\n\nTherefore: $\\vec{C} = \\langle 1, -1, 3 \\rangle$\n\n\\textbf{Step 3:} Write final answer\n\n\\[\n\\vec{r}(t) = \\langle 3t^2, t^3, 2t \\rangle + \\langle 1, -1, 3 \\rangle = \\langle 3t^2 + 1, t^3 - 1, 2t + 3 \\rangle\n\\]\n\n\\textbf{Answer:} \\boxed{\\vec{r}(t) = \\langle 3t^2 + 1, t^3 - 1, 2t + 3 \\rangle}\n\n\\textbf{Verification:} \n\\begin{itemize}\n    \\item $\\vec{r}'(t) = \\langle 6t, 3t^2, 2 \\rangle$ \\textcolor{green}{\\checkmark}\n    \\item $\\vec{r}(0) = \\langle 1, -1, 3 \\rangle$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Derivatives and Integrals of Vector Functions",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.6 Summary: Derivatives and",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.6 Summary: Derivatives and Integrals}}\n\n\\textbf{Derivative:}\n\\[\n\\boxed{\\vec{r}'(t) = \\langle f'(t), g'(t), h'(t) \\rangle}\n\\]\n\n\\textbf{Unit Tangent Vector:}\n\\[\n\\boxed{\\vec{T}(t) = \\frac{\\vec{r}'(t)}{|\\vec{r}'(t)|}}\n\\]\n\n\\textbf{Indefinite Integral:}\n\\[\n\\boxed{\\int \\vec{r}(t) \\, dt = \\left\\langle \\int f(t) \\, dt, \\int g(t) \\, dt, \\int h(t) \\, dt \\right\\rangle + \\vec{C}}\n\\]\n\n\\textbf{Definite Integral:}\n\\[\n\\boxed{\\int_a^b \\vec{r}(t) \\, dt = \\left\\langle \\int_a^b f(t) \\, dt, \\int_a^b g(t) \\, dt, \\int_a^b h(t) \\, dt \\right\\rangle}\n\\]\n\n\\textbf{Product Rules:}\n\\begin{align*}\n\\frac{d}{dt}[\\vec{u} \\cdot \\vec{v}] &= \\vec{u}' \\cdot \\vec{v} + \\vec{u} \\cdot \\vec{v}' \\\\\n\\frac{d}{dt}[\\vec{u} \\times \\vec{v}] &= \\vec{u}' \\times \\vec{v} + \\vec{u} \\times \\vec{v}'\n\\end{align*}\n\n\\textbf{Physical Interpretations:}\n\\begin{itemize}\n    \\item $\\vec{r}(t)$: position\n    \\item $\\vec{r}'(t) = \\vec{v}(t)$: velocity\n    \\item $\\vec{r}''(t) = \\vec{a}(t)$: acceleration\n    \\item $|\\vec{r}'(t)|$: speed\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Forgetting to include constant vector $\\vec{C}$ in indefinite integrals\n    \\item Not differentiating/integrating all components\n    \\item Order errors in cross product differentiation\n    \\item Forgetting that $\\vec{T}(t)$ must be a unit vector\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Key Insight:}} Differentiation and integration of vector functions work component-wise, just like scalar functions.\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "definition",
+    "title": "Definition 6.21: Vector Equation of a Line",
+    "content": "A line $L$ in $\\mathbb{R}^3$ that passes through point $P_0(x_0, y_0, z_0)$ and is parallel to vector $\\vec{v} = \\langle a, b, c \\rangle$ has \\textbf{vector equation}:\n\\[\n\\boxed{\\vec{r}(t) = \\vec{r}_0 + t\\vec{v}}\n\\]\n\nwhere $\\vec{r}_0 = \\langle x_0, y_0, z_0 \\rangle$ is the position vector of $P_0$.\n\nEquivalently:\n\\[\n\\boxed{\\vec{r}(t) = \\langle x_0, y_0, z_0 \\rangle + t\\langle a, b, c \\rangle}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Components:}}\n\\begin{itemize}\n    \\item $\\vec{r}_0$: position vector of a point on the line\n    \\item $\\vec{v}$: direction vector (parallel to the line)\n    \\item $t$: parameter ($-\\infty < t < \\infty$)\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Note:}}\n\nDifferent values of $t$ give different points on the line:\n\\begin{itemize}\n    \\item $t = 0$: gives point $P_0$\n    \\item $t > 0$: points in direction of $\\vec{v}$\n    \\item $t < 0$: points in opposite direction\n\\end{itemize}\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Line in 3D space (projected)\n    \\draw[->] (0, 0) -- (5, 0) node[right] {$x$};\n    \\draw[->] (0, 0) -- (0, 3) node[above] {$y$};\n    \\draw[->] (0, 0) -- (-0.7, -0.7) node[below left] {$z$};\n    \n    % Line\n    \\draw[primaryblue, very thick] (0.5, 0.5) -- (4.5, 2.5);\n    \n    % Point P_0\n    \\filldraw[red] (2, 1.2) circle (2pt) node[above left] {$P_0$};\n    \n    % Position vector r_0\n    \\draw[->, accentorange, thick] (0, 0) -- (2, 1.2) node[midway, above] {$\\vec{r}_0$};\n    \n    % Direction vector v\n    \\draw[->, darkgreen, very thick] (2, 1.2) -- (3.5, 2) node[midway, right] {$\\vec{v}$};\n    \n    % Another point\n    \\filldraw[blue] (3.5, 2) circle (2pt) node[above right] {$P_0 + t\\vec{v}$};\n    \n    \\node[align=center] at (2.5, -1.2) {\\textbf{Line: } $\\vec{r}(t) = \\vec{r}_0 + t\\vec{v}$};\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "definition",
+    "title": "Definition 6.22: Parametric Equations of a Line",
+    "content": "The \\textbf{parametric equations} of the line are obtained by writing out components:\n\\[\n\\boxed{\\begin{cases}\nx = x_0 + at \\\\\ny = y_0 + bt \\\\\nz = z_0 + ct\n\\end{cases}}\n\\]\n\nwhere $(x_0, y_0, z_0)$ is a point on the line and $\\langle a, b, c \\rangle$ is the direction vector.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Interpretation:}}\n\nEach coordinate is a linear function of the parameter $t$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "example",
+    "title": "Example 24: Finding Parametric Equations",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find parametric equations for the line through $P(1, 2, -1)$ parallel to $\\vec{v} = \\langle 3, -2, 4 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Given:}\n\\begin{itemize}\n    \\item Point: $(x_0, y_0, z_0) = (1, 2, -1)$\n    \\item Direction: $\\langle a, b, c \\rangle = \\langle 3, -2, 4 \\rangle$\n\\end{itemize}\n\n\\textbf{Parametric equations:}\n\\[\n\\begin{cases}\nx = 1 + 3t \\\\\ny = 2 - 2t \\\\\nz = -1 + 4t\n\\end{cases}\n\\]\n\n\\textbf{Vector form:}\n\\[\n\\vec{r}(t) = \\langle 1, 2, -1 \\rangle + t\\langle 3, -2, 4 \\rangle\n\\]\n\n\\textbf{Answer:} \\boxed{\\begin{cases}\nx = 1 + 3t \\\\\ny = 2 - 2t \\\\\nz = -1 + 4t\n\\end{cases}}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "definition",
+    "title": "Definition 6.23: Symmetric Equations of a Line",
+    "content": "If $a \\neq 0$, $b \\neq 0$, and $c \\neq 0$, we can solve the parametric equations for $t$ and equate:\n\\[\n\\boxed{\\frac{x - x_0}{a} = \\frac{y - y_0}{b} = \\frac{z - z_0}{c}}\n\\]\n\nThese are the \\textbf{symmetric equations} of the line.\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Special Cases:}}\n\nIf one direction component is zero (e.g., $a = 0$), write:\n\\[\nx = x_0, \\quad \\frac{y - y_0}{b} = \\frac{z - z_0}{c}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Advantage:}}\n\nSymmetric form doesn't explicitly show the parameter $t$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Disadvantage:}}\n\nCannot be used if any direction component is zero (without modification).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "example",
+    "title": "Example 25: Line Through Two Points",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find parametric and symmetric equations for the line through $P(2, 1, 0)$ and $Q(4, -1, 3)$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find direction vector\n\n\\[\n\\vec{v} = \\overrightarrow{PQ} = \\langle 4-2, -1-1, 3-0 \\rangle = \\langle 2, -2, 3 \\rangle\n\\]\n\n\\textbf{Step 2:} Use point $P$ and direction $\\vec{v}$ for parametric equations\n\n\\[\n\\begin{cases}\nx = 2 + 2t \\\\\ny = 1 - 2t \\\\\nz = 0 + 3t\n\\end{cases}\n\\]\n\n\\textbf{Step 3:} Convert to symmetric form\n\nSolve each equation for $t$:\n\\begin{align*}\nt &= \\frac{x - 2}{2} \\\\\nt &= \\frac{y - 1}{-2} \\\\\nt &= \\frac{z - 0}{3}\n\\end{align*}\n\nEquate:\n\\[\n\\frac{x - 2}{2} = \\frac{y - 1}{-2} = \\frac{z}{3}\n\\]\n\n\\textbf{Answer:}\n\\begin{itemize}\n    \\item Parametric: \\boxed{\\begin{cases}\n    x = 2 + 2t \\\\\n    y = 1 - 2t \\\\\n    z = 3t\n    \\end{cases}}\n    \\item Symmetric: \\boxed{\\frac{x - 2}{2} = \\frac{y - 1}{-2} = \\frac{z}{3}}\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "definition",
+    "title": "Definition 6.24: Parallel and Perpendicular Lines",
+    "content": "Two lines $L_1$ and $L_2$ with direction vectors $\\vec{v}_1$ and $\\vec{v}_2$ are:\n\n\\textbf{Parallel:} if $\\vec{v}_1 = k\\vec{v}_2$ for some scalar $k$\n\\[\nL_1 \\parallel L_2 \\iff \\vec{v}_1 \\parallel \\vec{v}_2\n\\]\n\n\\textbf{Perpendicular:} if $\\vec{v}_1 \\cdot \\vec{v}_2 = 0$\n\\[\nL_1 \\perp L_2 \\iff \\vec{v}_1 \\perp \\vec{v}_2\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Skew Lines:}}\n\nIn $\\mathbb{R}^3$, two lines can be:\n\\begin{itemize}\n    \\item Intersecting (cross at a point)\n    \\item Parallel (same direction, don't meet)\n    \\item Skew (not parallel, don't intersect)\n\\end{itemize}\n\nSkew lines are lines that are not parallel but don't intersect (they \"miss\" each other in 3D space).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "example",
+    "title": "Example 26: Testing for Parallel Lines",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Determine if the lines are parallel:\n\\begin{align*}\nL_1: \\quad & x = 1 + 2t, \\quad y = -1 + 3t, \\quad z = 2 - t \\\\\nL_2: \\quad & x = 3 - 4s, \\quad y = 2 - 6s, \\quad z = 1 + 2s\n\\end{align*}\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Identify direction vectors\n\n\\begin{align*}\n\\vec{v}_1 &= \\langle 2, 3, -1 \\rangle \\\\\n\\vec{v}_2 &= \\langle -4, -6, 2 \\rangle\n\\end{align*}\n\n\\textbf{Step 2:} Check if one is a scalar multiple of the other\n\n\\[\n\\vec{v}_2 = -2\\vec{v}_1 = -2\\langle 2, 3, -1 \\rangle = \\langle -4, -6, 2 \\rangle \\quad \\checkmark\n\\]\n\n\\textbf{Answer:} \\boxed{\\text{Yes, the lines are parallel}}\n\nSince $\\vec{v}_2 = -2\\vec{v}_1$, the direction vectors are parallel.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "example",
+    "title": "Example 27: Finding Intersection Point",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Determine if the lines intersect, and if so, find the point of intersection:\n\\begin{align*}\nL_1: \\quad & x = 1 + t, \\quad y = 2 + 2t, \\quad z = 1 - t \\\\\nL_2: \\quad & x = 3 - s, \\quad y = 1 + s, \\quad z = s\n\\end{align*}\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Set coordinates equal (different parameters!)\n\n\\begin{align*}\n1 + t &= 3 - s \\quad \\text{(x-coordinates)} \\\\\n2 + 2t &= 1 + s \\quad \\text{(y-coordinates)} \\\\\n1 - t &= s \\quad \\text{(z-coordinates)}\n\\end{align*}\n\n\\textbf{Step 2:} Solve the system\n\nFrom equation 3: $s = 1 - t$\n\nSubstitute into equation 1:\n\\begin{align*}\n1 + t &= 3 - (1 - t) \\\\\n1 + t &= 2 + t \\\\\n1 &= 2 \\quad \\text{(contradiction!)}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\text{The lines do not intersect (they are skew)}}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Note:}} Since we got a contradiction, the lines are skew (they don't meet and aren't parallel).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Lines in $\\mathbb{R",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.7 Summary: Lines in",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.7 Summary: Lines in $\\mathbb{R}^3$}}\n\n\\textbf{Vector Form:}\n\\[\n\\boxed{\\vec{r}(t) = \\vec{r}_0 + t\\vec{v}}\n\\]\n\n\\textbf{Parametric Form:}\n\\[\n\\boxed{\\begin{cases}\nx = x_0 + at \\\\\ny = y_0 + bt \\\\\nz = z_0 + ct\n\\end{cases}}\n\\]\n\n\\textbf{Symmetric Form:}\n\\[\n\\boxed{\\frac{x - x_0}{a} = \\frac{y - y_0}{b} = \\frac{z - z_0}{c}}\n\\]\n\n(provided $a, b, c \\neq 0$)\n\n\\textbf{Line Through Two Points:}\n\nDirection vector: $\\vec{v} = \\overrightarrow{PQ} = \\langle x_2 - x_1, y_2 - y_1, z_2 - z_1 \\rangle$\n\n\\textbf{Parallel Lines:} $\\vec{v}_1 = k\\vec{v}_2$\n\n\\textbf{Perpendicular Lines:} $\\vec{v}_1 \\cdot \\vec{v}_2 = 0$\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Using the same parameter for both lines when testing intersection\n    \\item Forgetting to check all three coordinate equations\n    \\item Trying to use symmetric form when a direction component is zero\n    \\item Concluding lines don't intersect when they're actually parallel\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Testing Intersection:}} Set parametric equations equal (use different parameters!) and solve. If solution exists and satisfies all three equations, lines intersect.\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Planes in $\\mathbb{R",
+    "type": "definition",
+    "title": "Definition 6.25: Equation of a Plane",
+    "content": "A plane in $\\mathbb{R}^3$ that contains point $P_0(x_0, y_0, z_0)$ and has \\textbf{normal vector} $\\vec{n} = \\langle a, b, c \\rangle$ has equation:\n\n\\textbf{Vector Form:}\n\\[\n\\boxed{\\vec{n} \\cdot (\\vec{r} - \\vec{r}_0) = 0}\n\\]\n\n\\textbf{Scalar Form (Standard Equation):}\n\\[\n\\boxed{a(x - x_0) + b(y - y_0) + c(z - z_0) = 0}\n\\]\n\n\\textbf{General Form:}\n\\[\n\\boxed{ax + by + cz + d = 0}\n\\]\n\nwhere $d = -(ax_0 + by_0 + cz_0)$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Concept:}}\n\nThe normal vector $\\vec{n} = \\langle a, b, c \\rangle$ is perpendicular to every vector in the plane.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Derivation:}}\n\nIf $P(x, y, z)$ is any point on the plane, then $\\overrightarrow{P_0P}$ lies in the plane, so:\n\\[\n\\vec{n} \\cdot \\overrightarrow{P_0P} = 0\n\\]\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Plane in 3D (represented as parallelogram)\n    \\draw[->] (0, 0) -- (4, 0) node[right] {$x$};\n    \\draw[->] (0, 0) -- (0, 3) node[above] {$y$};\n    \\draw[->] (0, 0) -- (-0.7, -0.7) node[below left] {$z$};\n    \n    % Plane (as shaded region)\n    \\fill[primaryblue!20] (1, 0.5) -- (3.5, 0.5) -- (4, 2.5) -- (1.5, 2.5) -- cycle;\n    \\draw[primaryblue, thick] (1, 0.5) -- (3.5, 0.5) -- (4, 2.5) -- (1.5, 2.5) -- cycle;\n    \n    % Point P_0\n    \\filldraw[red] (2.5, 1.5) circle (2pt) node[left] {$P_0$};\n    \n    % Normal vector\n    \\draw[->, darkgreen, very thick] (2.5, 1.5) -- (2.5, 3) node[above] {$\\vec{n}$};\n    \\node[darkgreen] at (3, 2.8) {$\\perp$ to plane};\n    \n    % Vector in plane\n    \\draw[->, accentorange] (2.5, 1.5) -- (3.5, 2) node[midway, below] {in plane};\n    \n    \\node[align=center] at (2.5, -1) {\\textbf{Plane: } $\\vec{n} \\cdot (\\vec{r} - \\vec{r}_0) = 0$};\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Planes in $\\mathbb{R",
+    "type": "example",
+    "title": "Example 28: Finding Equation of a Plane",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find an equation of the plane through $P(1, 2, 3)$ with normal vector $\\vec{n} = \\langle 2, -1, 4 \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Method 1: Scalar form}\n\nUsing $a(x - x_0) + b(y - y_0) + c(z - z_0) = 0$:\n\n\\[\n2(x - 1) + (-1)(y - 2) + 4(z - 3) = 0\n\\]\n\nExpand:\n\\begin{align*}\n2x - 2 - y + 2 + 4z - 12 &= 0 \\\\\n2x - y + 4z - 12 &= 0\n\\end{align*}\n\n\\textbf{Method 2: General form directly}\n\n$d = -(2 \\cdot 1 + (-1) \\cdot 2 + 4 \\cdot 3) = -(2 - 2 + 12) = -12$\n\nSo: $2x - y + 4z - 12 = 0$\n\n\\textbf{Answer:} \\boxed{2x - y + 4z = 12} or \\boxed{2x - y + 4z - 12 = 0}\n\n\\textbf{Verification:} Point $(1, 2, 3)$ satisfies: $2(1) - 2 + 4(3) = 2 - 2 + 12 = 12$ \\textcolor{green}{\\checkmark}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Planes in $\\mathbb{R",
+    "type": "example",
+    "title": "Example 29: Plane Through Three Points",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find an equation of the plane through $P(1, 0, 2)$, $Q(2, 1, 1)$, and $R(0, 2, 3)$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find two vectors in the plane\n\n\\begin{align*}\n\\overrightarrow{PQ} &= \\langle 2-1, 1-0, 1-2 \\rangle = \\langle 1, 1, -1 \\rangle \\\\\n\\overrightarrow{PR} &= \\langle 0-1, 2-0, 3-2 \\rangle = \\langle -1, 2, 1 \\rangle\n\\end{align*}\n\n\\textbf{Step 2:} Find normal vector using cross product\n\n\\[\n\\vec{n} = \\overrightarrow{PQ} \\times \\overrightarrow{PR} = \\begin{vmatrix}\n\\vec{i} & \\vec{j} & \\vec{k} \\\\\n1 & 1 & -1 \\\\\n-1 & 2 & 1\n\\end{vmatrix}\n\\]\n\n\\begin{align*}\n&= \\vec{i}(1 + 2) - \\vec{j}(1 - 1) + \\vec{k}(2 + 1) \\\\\n&= 3\\vec{i} - 0\\vec{j} + 3\\vec{k} \\\\\n&= \\langle 3, 0, 3 \\rangle\n\\end{align*}\n\n\\textbf{Step 3:} Use point $P(1, 0, 2)$ and normal $\\vec{n} = \\langle 3, 0, 3 \\rangle$\n\n\\begin{align*}\n3(x - 1) + 0(y - 0) + 3(z - 2) &= 0 \\\\\n3x - 3 + 3z - 6 &= 0 \\\\\n3x + 3z &= 9 \\\\\nx + z &= 3\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{x + z = 3}\n\n\\textbf{Verification:} Check that all three points satisfy the equation:\n\\begin{itemize}\n    \\item $P(1, 0, 2)$: $1 + 2 = 3$ \\textcolor{green}{\\checkmark}\n    \\item $Q(2, 1, 1)$: $2 + 1 = 3$ \\textcolor{green}{\\checkmark}\n    \\item $R(0, 2, 3)$: $0 + 3 = 3$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Planes in $\\mathbb{R",
+    "type": "definition",
+    "title": "Definition 6.26: Parallel and Perpendicular Planes",
+    "content": "Two planes with normal vectors $\\vec{n}_1$ and $\\vec{n}_2$ are:\n\n\\textbf{Parallel:} if $\\vec{n}_1 = k\\vec{n}_2$ for some scalar $k$\n\\[\n\\text{Plane}_1 \\parallel \\text{Plane}_2 \\iff \\vec{n}_1 \\parallel \\vec{n}_2\n\\]\n\n\\textbf{Perpendicular:} if $\\vec{n}_1 \\cdot \\vec{n}_2 = 0$\n\\[\n\\text{Plane}_1 \\perp \\text{Plane}_2 \\iff \\vec{n}_1 \\perp \\vec{n}_2\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Angle Between Planes:}}\n\nThe angle $\\theta$ between two planes is the angle between their normal vectors:\n\\[\n\\cos\\theta = \\frac{|\\vec{n}_1 \\cdot \\vec{n}_2|}{|\\vec{n}_1||\\vec{n}_2|}\n\\]\n\n(We use absolute value to get the acute angle.)\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Planes in $\\mathbb{R",
+    "type": "example",
+    "title": "Example 30: Parallel and Perpendicular Planes",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Determine if the planes are parallel, perpendicular, or neither:\n\n(a) $2x - y + 3z = 5$ and $4x - 2y + 6z = 1$\n\n(b) $x + 2y - z = 3$ and $2x - y + 2z = 7$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Identify normal vectors:\n\n\\begin{align*}\n\\vec{n}_1 &= \\langle 2, -1, 3 \\rangle \\\\\n\\vec{n}_2 &= \\langle 4, -2, 6 \\rangle\n\\end{align*}\n\nCheck if one is a multiple of the other:\n\\[\n\\vec{n}_2 = 2\\vec{n}_1 = 2\\langle 2, -1, 3 \\rangle = \\langle 4, -2, 6 \\rangle \\quad \\checkmark\n\\]\n\n\\textbf{Answer (a):} \\boxed{\\text{Parallel}}\n\n\\vspace{0.3cm}\n\\textbf{(b)} Identify normal vectors:\n\n\\begin{align*}\n\\vec{n}_1 &= \\langle 1, 2, -1 \\rangle \\\\\n\\vec{n}_2 &= \\langle 2, -1, 2 \\rangle\n\\end{align*}\n\nCheck dot product:\n\\[\n\\vec{n}_1 \\cdot \\vec{n}_2 = (1)(2) + (2)(-1) + (-1)(2) = 2 - 2 - 2 = -2 \\neq 0\n\\]\n\nNot perpendicular. Check if parallel:\n\\[\n\\vec{n}_2 \\neq k\\vec{n}_1 \\text{ for any scalar } k\n\\]\n\n\\textbf{Answer (b):} \\boxed{\\text{Neither parallel nor perpendicular}}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Planes in $\\mathbb{R",
+    "type": "definition",
+    "title": "Definition 6.27: Line-Plane Intersection",
+    "content": "To find where a line intersects a plane:\n\n\\textbf{Method:}\n\\begin{enumerate}\n    \\item Write line in parametric form: $x = x_0 + at$, $y = y_0 + bt$, $z = z_0 + ct$\n    \\item Substitute into plane equation $Ax + By + Cz + D = 0$\n    \\item Solve for parameter $t$\n    \\item Substitute $t$ back into parametric equations\n\\end{enumerate}\n\n\\textbf{Special Cases:}\n\\begin{itemize}\n    \\item If solution for $t$ exists: line intersects plane at one point\n    \\item If $0 = 0$ (identity): line lies in the plane\n    \\item If $0 = k$ (contradiction): line is parallel to plane, no intersection\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Planes in $\\mathbb{R",
+    "type": "example",
+    "title": "Example 31: Line-Plane Intersection",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the point where the line $x = 1 + 2t$, $y = -1 + t$, $z = 3 - t$ intersects the plane $x + y + z = 5$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Substitute parametric equations into plane equation\n\n\\[\n(1 + 2t) + (-1 + t) + (3 - t) = 5\n\\]\n\n\\textbf{Step 2:} Solve for $t$\n\n\\begin{align*}\n1 + 2t - 1 + t + 3 - t &= 5 \\\\\n2t + 3 &= 5 \\\\\n2t &= 2 \\\\\nt &= 1\n\\end{align*}\n\n\\textbf{Step 3:} Find intersection point by substituting $t = 1$\n\n\\begin{align*}\nx &= 1 + 2(1) = 3 \\\\\ny &= -1 + 1 = 0 \\\\\nz &= 3 - 1 = 2\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{(3, 0, 2)}\n\n\\textbf{Verification:} $3 + 0 + 2 = 5$ \\textcolor{green}{\\checkmark}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Planes in $\\mathbb{R",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.8 Summary: Planes in",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.8 Summary: Planes in $\\mathbb{R}^3$}}\n\n\\textbf{Equation of a Plane:}\n\\[\n\\boxed{a(x - x_0) + b(y - y_0) + c(z - z_0) = 0}\n\\]\n\nor in general form:\n\\[\n\\boxed{ax + by + cz + d = 0}\n\\]\n\nwhere $\\vec{n} = \\langle a, b, c \\rangle$ is the normal vector.\n\n\\textbf{Plane Through Three Points:}\n\\begin{enumerate}\n    \\item Find two vectors in the plane: $\\overrightarrow{PQ}$ and $\\overrightarrow{PR}$\n    \\item Normal vector: $\\vec{n} = \\overrightarrow{PQ} \\times \\overrightarrow{PR}$\n    \\item Use any of the three points with the normal vector\n\\end{enumerate}\n\n\\textbf{Parallel Planes:} $\\vec{n}_1 = k\\vec{n}_2$\n\n\\textbf{Perpendicular Planes:} $\\vec{n}_1 \\cdot \\vec{n}_2 = 0$\n\n\\textbf{Line-Plane Intersection:}\n\\begin{itemize}\n    \\item Substitute line's parametric equations into plane equation\n    \\item Solve for parameter $t$\n    \\item Substitute back to find point\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Using a direction vector instead of normal vector for plane\n    \\item Sign errors when expanding plane equation\n    \\item Not verifying that computed points satisfy the equation\n    \\item Confusing parallel lines with parallel planes (different tests!)\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Key Insight:}} The normal vector is perpendicular to the plane, while direction vectors lie in the plane. For lines, we use direction vectors; for planes, we use normal vectors.\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cylindrical and Spherical Coordinates",
+    "type": "definition",
+    "title": "Definition 6.28: Cylindrical Coordinates",
+    "content": "\\textbf{Cylindrical coordinates} $(r, \\theta, z)$ of a point $P$ in $\\mathbb{R}^3$ are defined as:\n\n\\begin{itemize}\n    \\item $r$: distance from $P$ to the $z$-axis (radial distance) $(r \\geq 0)$\n    \\item $\\theta$: angle in the $xy$-plane from the positive $x$-axis $(0 \\leq \\theta < 2\\pi)$\n    \\item $z$: height above the $xy$-plane (same as Cartesian $z$)\n\\end{itemize}\n\n\\textbf{Conversion from Cylindrical to Cartesian:}\n\\[\n\\boxed{\\begin{cases}\nx = r\\cos\\theta \\\\\ny = r\\sin\\theta \\\\\nz = z\n\\end{cases}}\n\\]\n\n\\textbf{Conversion from Cartesian to Cylindrical:}\n\\[\n\\boxed{\\begin{cases}\nr = \\sqrt{x^2 + y^2} \\\\\n\\theta = \\arctan\\left(\\frac{y}{x}\\right) \\\\\nz = z\n\\end{cases}}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Interpretation:}}\n\nCylindrical coordinates extend polar coordinates $(r, \\theta)$ from 2D to 3D by adding the $z$-coordinate.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{When to Use:}}\n\nCylindrical coordinates are ideal for:\n\\begin{itemize}\n    \\item Cylinders\n    \\item Surfaces with circular cross-sections\n    \\item Problems with rotational symmetry about the $z$-axis\n\\end{itemize}\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.1]\n    % Cylindrical coordinates visualization\n    \\draw[->] (0, 0) -- (4, 0) node[right] {$x$};\n    \\draw[->] (0, 0) -- (0, 3.5) node[above] {$y$};\n    \\draw[->] (0, 0) -- (-1, -1) node[below left] {$z$};\n    \n    % Point P\n    \\filldraw[red] (2.5, 2) circle (2pt) node[above right] {$P(r, \\theta, z)$};\n    \n    % Projection to xy-plane\n    \\filldraw[blue] (2.5, 0) circle (1.5pt);\n    \\draw[dashed, blue] (2.5, 2) -- (2.5, 0);\n    \n    % r (radial distance)\n    \\draw[->, primaryblue, thick] (0, 0) -- (2.5, 0) node[midway, below] {$r$};\n    \n    % z (height)\n    \\draw[<->, darkgreen, thick] (3, 0) -- (3, 2) node[midway, right] {$z$};\n    \n    % theta (angle)\n    \\draw[->] (0.8, 0) arc (0:50:0.8) node[midway, right] {$\\theta$};\n    \n    % Circle in xy-plane\n    \\draw[primaryblue, dashed] (0, 0) circle (2.5);\n    \n    \\node[align=center] at (1.5, -1.5) {\\textbf{Cylindrical Coordinates}\\\\$(r, \\theta, z)$};\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cylindrical and Spherical Coordinates",
+    "type": "example",
+    "title": "Example 32: Converting Cylindrical to Cartesian",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Convert the cylindrical coordinates $(4, \\frac{\\pi}{3}, 5)$ to Cartesian coordinates.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nGiven: $r = 4$, $\\theta = \\frac{\\pi}{3}$, $z = 5$\n\n\\textbf{Apply conversion formulas:}\n\n\\begin{align*}\nx &= r\\cos\\theta = 4\\cos\\frac{\\pi}{3} = 4 \\cdot \\frac{1}{2} = 2 \\\\\ny &= r\\sin\\theta = 4\\sin\\frac{\\pi}{3} = 4 \\cdot \\frac{\\sqrt{3}}{2} = 2\\sqrt{3} \\\\\nz &= z = 5\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{(2, 2\\sqrt{3}, 5)}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cylindrical and Spherical Coordinates",
+    "type": "example",
+    "title": "Example 33: Converting Cartesian to Cylindrical",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Convert the Cartesian point $(-3, 3, 7)$ to cylindrical coordinates.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nGiven: $x = -3$, $y = 3$, $z = 7$\n\n\\textbf{Step 1:} Find $r$\n\n\\[\nr = \\sqrt{x^2 + y^2} = \\sqrt{(-3)^2 + 3^2} = \\sqrt{9 + 9} = \\sqrt{18} = 3\\sqrt{2}\n\\]\n\n\\textbf{Step 2:} Find $\\theta$\n\nSince $x = -3 < 0$ and $y = 3 > 0$, the point is in the second quadrant.\n\n\\[\n\\tan\\theta = \\frac{y}{x} = \\frac{3}{-3} = -1\n\\]\n\nIn the second quadrant: $\\theta = \\pi - \\frac{\\pi}{4} = \\frac{3\\pi}{4}$\n\n\\textbf{Step 3:} $z$ remains the same\n\n\\[\nz = 7\n\\]\n\n\\textbf{Answer:} \\boxed{\\left(3\\sqrt{2}, \\frac{3\\pi}{4}, 7\\right)}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cylindrical and Spherical Coordinates",
+    "type": "definition",
+    "title": "Definition 6.29: Spherical Coordinates",
+    "content": "\\textbf{Spherical coordinates} $(\\rho, \\theta, \\phi)$ of a point $P$ in $\\mathbb{R}^3$ are defined as:\n\n\\begin{itemize}\n    \\item $\\rho$: distance from $P$ to the origin $(\\rho \\geq 0)$\n    \\item $\\theta$: same angle as in cylindrical coordinates $(0 \\leq \\theta < 2\\pi)$\n    \\item $\\phi$: angle from the positive $z$-axis down to $\\overrightarrow{OP}$ $(0 \\leq \\phi \\leq \\pi)$\n\\end{itemize}\n\n\\textbf{Conversion from Spherical to Cartesian:}\n\\[\n\\boxed{\\begin{cases}\nx = \\rho\\sin\\phi\\cos\\theta \\\\\ny = \\rho\\sin\\phi\\sin\\theta \\\\\nz = \\rho\\cos\\phi\n\\end{cases}}\n\\]\n\n\\textbf{Conversion from Cartesian to Spherical:}\n\\[\n\\boxed{\\begin{cases}\n\\rho = \\sqrt{x^2 + y^2 + z^2} \\\\\n\\theta = \\arctan\\left(\\frac{y}{x}\\right) \\\\\n\\phi = \\arccos\\left(\\frac{z}{\\sqrt{x^2 + y^2 + z^2}}\\right)\n\\end{cases}}\n\\]\n\n\\textbf{Relationship to Cylindrical:}\n\\[\n\\boxed{r = \\rho\\sin\\phi, \\quad z = \\rho\\cos\\phi, \\quad \\rho = \\sqrt{r^2 + z^2}}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{When to Use:}}\n\nSpherical coordinates are ideal for:\n\\begin{itemize}\n    \\item Spheres\n    \\item Cones\n    \\item Problems with symmetry about the origin\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Convention Note:}}\n\nSome books use $\\phi$ for the azimuthal angle and $\\theta$ for the polar angle (opposite of our convention). Always check which convention is being used!\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Spherical coordinates visualization\n    \\draw[->] (0, 0) -- (4, 0) node[right] {$x$};\n    \\draw[->] (0, 0) -- (0, 3.5) node[above] {$z$};\n    \\draw[->] (0, 0) -- (-1.2, -1.2) node[below left] {$y$};\n    \n    % Point P\n    \\filldraw[red] (2, 2.5) circle (2pt) node[above right] {$P(\\rho, \\theta, \\phi)$};\n    \n    % rho (distance from origin)\n    \\draw[->, primaryblue, very thick] (0, 0) -- (2, 2.5) node[midway, left] {$\\rho$};\n    \n    % Projection to xy-plane\n    \\filldraw[blue] (2, 0) circle (1.5pt);\n    \\draw[dashed, blue] (2, 2.5) -- (2, 0);\n    \n    % phi (angle from z-axis)\n    \\draw[->] (0, 1.5) arc (90:52:1.5) node[midway, left] {$\\phi$};\n    \n    % theta (angle in xy-plane)\n    \\draw[->] (0.8, 0) arc (0:45:0.8) node[midway, right] {$\\theta$};\n    \n    % r (projection onto xy-plane)\n    \\draw[darkgreen, dashed] (0, 0) -- (2, 0);\n    \n    \\node[align=center] at (2, -1.5) {\\textbf{Spherical Coordinates}\\\\$(\\rho, \\theta, \\phi)$};\n\\end{tikzpicture}\n\\end{center}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cylindrical and Spherical Coordinates",
+    "type": "example",
+    "title": "Example 34: Converting Spherical to Cartesian",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Convert the spherical coordinates $(6, \\frac{\\pi}{4}, \\frac{\\pi}{3})$ to Cartesian coordinates.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nGiven: $\\rho = 6$, $\\theta = \\frac{\\pi}{4}$, $\\phi = \\frac{\\pi}{3}$\n\n\\textbf{Apply conversion formulas:}\n\n\\begin{align*}\nx &= \\rho\\sin\\phi\\cos\\theta = 6\\sin\\frac{\\pi}{3}\\cos\\frac{\\pi}{4} \\\\\n&= 6 \\cdot \\frac{\\sqrt{3}}{2} \\cdot \\frac{\\sqrt{2}}{2} = \\frac{6\\sqrt{6}}{4} = \\frac{3\\sqrt{6}}{2}\n\\end{align*}\n\n\\begin{align*}\ny &= \\rho\\sin\\phi\\sin\\theta = 6\\sin\\frac{\\pi}{3}\\sin\\frac{\\pi}{4} \\\\\n&= 6 \\cdot \\frac{\\sqrt{3}}{2} \\cdot \\frac{\\sqrt{2}}{2} = \\frac{3\\sqrt{6}}{2}\n\\end{align*}\n\n\\begin{align*}\nz &= \\rho\\cos\\phi = 6\\cos\\frac{\\pi}{3} = 6 \\cdot \\frac{1}{2} = 3\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\left(\\frac{3\\sqrt{6}}{2}, \\frac{3\\sqrt{6}}{2}, 3\\right)}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cylindrical and Spherical Coordinates",
+    "type": "example",
+    "title": "Example 35: Describing Surfaces",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Describe the surfaces given by these equations:\n\n(a) Cylindrical: $r = 3$\n\n(b) Cylindrical: $\\theta = \\frac{\\pi}{6}$\n\n(c) Spherical: $\\rho = 5$\n\n(d) Spherical: $\\phi = \\frac{\\pi}{4}$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $r = 3$ in cylindrical coordinates\n\nThis means the distance from the $z$-axis is constant (3 units).\n\n\\textbf{Answer (a):} \\boxed{\\text{Circular cylinder of radius 3 about the } z\\text{-axis}}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $\\theta = \\frac{\\pi}{6}$ in cylindrical coordinates\n\nThe angle in the $xy$-plane is constant.\n\n\\textbf{Answer (b):} \\boxed{\\text{Half-plane through the } z\\text{-axis at angle } \\frac{\\pi}{6}}\n\n\\vspace{0.3cm}\n\\textbf{(c)} $\\rho = 5$ in spherical coordinates\n\nDistance from origin is constant (5 units).\n\n\\textbf{Answer (c):} \\boxed{\\text{Sphere of radius 5 centered at the origin}}\n\n\\vspace{0.3cm}\n\\textbf{(d)} $\\phi = \\frac{\\pi}{4}$ in spherical coordinates\n\nAngle from positive $z$-axis is constant ($45°$).\n\n\\textbf{Answer (d):} \\boxed{\\text{Cone with vertex at origin, opening angle } 45°}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Cylindrical and Spherical Coordinates",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.9 Summary: Coordinate Systems}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.9 Summary: Coordinate Systems}}\n\n\\textbf{Cylindrical $(r, \\theta, z)$:}\n\\[\n\\boxed{\\begin{cases}\nx = r\\cos\\theta \\\\\ny = r\\sin\\theta \\\\\nz = z\n\\end{cases}} \\qquad\n\\boxed{\\begin{cases}\nr = \\sqrt{x^2 + y^2} \\\\\n\\theta = \\arctan(y/x) \\\\\nz = z\n\\end{cases}}\n\\]\n\n\\textbf{Spherical $(\\rho, \\theta, \\phi)$:}\n\\[\n\\boxed{\\begin{cases}\nx = \\rho\\sin\\phi\\cos\\theta \\\\\ny = \\rho\\sin\\phi\\sin\\theta \\\\\nz = \\rho\\cos\\phi\n\\end{cases}} \\qquad\n\\boxed{\\begin{cases}\n\\rho = \\sqrt{x^2 + y^2 + z^2} \\\\\n\\theta = \\arctan(y/x) \\\\\n\\phi = \\arccos(z/\\rho)\n\\end{cases}}\n\\]\n\n\\textbf{Common Surfaces:}\n\\begin{center}\n\\begin{tabular}{|p{3cm}|p{4.5cm}|p{4.5cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Surface} & \\textbf{Cylindrical} & \\textbf{Spherical} \\\\\n\\hline\nCylinder & $r = a$ & $\\rho\\sin\\phi = a$ \\\\\n\\hline\nSphere & $r^2 + z^2 = a^2$ & $\\rho = a$ \\\\\n\\hline\nCone & $z = kr$ & $\\phi = \\text{const}$ \\\\\n\\hline\nPlane $z = c$ & $z = c$ & $\\rho\\cos\\phi = c$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Confusing $r$ (cylindrical) with $\\rho$ (spherical)\n    \\item Wrong quadrant for $\\theta$ when converting from Cartesian\n    \\item Using degrees instead of radians\n    \\item Confusing angle conventions (check which is used!)\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Curves in Space",
+    "type": "definition",
+    "title": "Definition 6.30: Arc Length",
+    "content": "If a smooth curve $C$ is given by $\\vec{r}(t) = \\langle f(t), g(t), h(t) \\rangle$ for $a \\leq t \\leq b$, then the \\textbf{arc length} of $C$ is:\n\\[\n\\boxed{L = \\int_a^b |\\vec{r}'(t)| \\, dt = \\int_a^b \\sqrt{[f'(t)]^2 + [g'(t)]^2 + [h'(t)]^2} \\, dt}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Interpretation:}}\n\nArc length measures the actual distance traveled along the curve from $t = a$ to $t = b$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Speed:}}\n\nThe speed at time $t$ is $|\\vec{r}'(t)|$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Arc Length Function:}}\n\nThe arc length from $t = a$ to $t = s$ is:\n\\[\ns(t) = \\int_a^t |\\vec{r}'(u)| \\, du\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Curves in Space",
+    "type": "example",
+    "title": "Example 36: Computing Arc Length",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the length of the curve $\\vec{r}(t) = \\langle 2t, t^2, \\frac{1}{3}t^3 \\rangle$ from $t = 0$ to $t = 3$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $\\vec{r}'(t)$\n\n\\[\n\\vec{r}'(t) = \\langle 2, 2t, t^2 \\rangle\n\\]\n\n\\textbf{Step 2:} Find $|\\vec{r}'(t)|$\n\n\\begin{align*}\n|\\vec{r}'(t)| &= \\sqrt{2^2 + (2t)^2 + (t^2)^2} \\\\\n&= \\sqrt{4 + 4t^2 + t^4} \\\\\n&= \\sqrt{(t^2 + 2)^2} \\\\\n&= t^2 + 2\n\\end{align*}\n\n\\textbf{Step 3:} Integrate\n\n\\begin{align*}\nL &= \\int_0^3 (t^2 + 2) \\, dt \\\\\n&= \\left[\\frac{t^3}{3} + 2t\\right]_0^3 \\\\\n&= \\frac{27}{3} + 6 - 0 \\\\\n&= 9 + 6 \\\\\n&= 15\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{L = 15 \\text{ units}}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Curves in Space",
+    "type": "definition",
+    "title": "Definition 6.31: Curvature",
+    "content": "The \\textbf{curvature} $\\kappa$ of a curve at a point measures how sharply the curve bends at that point.\n\n\\textbf{Formula 1 (using arc length parameter):}\n\\[\n\\boxed{\\kappa = \\left|\\frac{d\\vec{T}}{ds}\\right|}\n\\]\n\nwhere $\\vec{T}$ is the unit tangent vector and $s$ is arc length.\n\n\\textbf{Formula 2 (using parameter $t$):}\n\\[\n\\boxed{\\kappa(t) = \\frac{|\\vec{T}'(t)|}{|\\vec{r}'(t)|}}\n\\]\n\n\\textbf{Formula 3 (practical formula):}\n\\[\n\\boxed{\\kappa(t) = \\frac{|\\vec{r}'(t) \\times \\vec{r}''(t)|}{|\\vec{r}'(t)|^3}}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Interpretation:}}\n\\begin{itemize}\n    \\item $\\kappa = 0$: curve is a straight line at that point\n    \\item Large $\\kappa$: curve bends sharply\n    \\item Small $\\kappa$: curve bends gently\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Radius of Curvature:}}\n\\[\n\\rho = \\frac{1}{\\kappa}\n\\]\n\nThis is the radius of the \"best-fit\" circle at that point.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Curves in Space",
+    "type": "example",
+    "title": "Example 37: Computing Curvature",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the curvature of the helix $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $\\vec{r}'(t)$ and $\\vec{r}''(t)$\n\n\\begin{align*}\n\\vec{r}'(t) &= \\langle -\\sin t, \\cos t, 1 \\rangle \\\\\n\\vec{r}''(t) &= \\langle -\\cos t, -\\sin t, 0 \\rangle\n\\end{align*}\n\n\\textbf{Step 2:} Compute cross product $\\vec{r}'(t) \\times \\vec{r}''(t)$\n\n\\[\n\\vec{r}'(t) \\times \\vec{r}''(t) = \\begin{vmatrix}\n\\vec{i} & \\vec{j} & \\vec{k} \\\\\n-\\sin t & \\cos t & 1 \\\\\n-\\cos t & -\\sin t & 0\n\\end{vmatrix}\n\\]\n\n\\begin{align*}\n&= \\vec{i}(0 + \\sin t) - \\vec{j}(0 + \\cos t) + \\vec{k}(\\sin^2 t + \\cos^2 t) \\\\\n&= \\langle \\sin t, -\\cos t, 1 \\rangle\n\\end{align*}\n\n\\textbf{Step 3:} Find magnitudes\n\n\\begin{align*}\n|\\vec{r}'(t) \\times \\vec{r}''(t)| &= \\sqrt{\\sin^2 t + \\cos^2 t + 1} = \\sqrt{2} \\\\\n|\\vec{r}'(t)| &= \\sqrt{\\sin^2 t + \\cos^2 t + 1} = \\sqrt{2}\n\\end{align*}\n\n\\textbf{Step 4:} Apply curvature formula\n\n\\[\n\\kappa(t) = \\frac{|\\vec{r}'(t) \\times \\vec{r}''(t)|}{|\\vec{r}'(t)|^3} = \\frac{\\sqrt{2}}{(\\sqrt{2})^3} = \\frac{\\sqrt{2}}{2\\sqrt{2}} = \\frac{1}{2}\n\\]\n\n\\textbf{Answer:} \\boxed{\\kappa = \\frac{1}{2}} (constant curvature)\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Interpretation:}} The helix has constant curvature $\\frac{1}{2}$ at every point.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Curves in Space",
+    "type": "definition",
+    "title": "Definition 6.32: Special Space Curves",
+    "content": "\\textbf{1. Circular Helix:}\n\\[\n\\vec{r}(t) = \\langle a\\cos t, a\\sin t, bt \\rangle\n\\]\nProperties:\n\\begin{itemize}\n    \\item Projects to circle of radius $a$ in $xy$-plane\n    \\item Rises at constant rate $b$ (pitch)\n    \\item Constant curvature: $\\kappa = \\frac{a}{a^2 + b^2}$\n\\end{itemize}\n\n\\textbf{2. Twisted Cubic (Space Curve):}\n\\[\n\\vec{r}(t) = \\langle t, t^2, t^3 \\rangle\n\\]\n\n\\textbf{3. Astroid (when projected to a plane):}\n\nIn the $xy$-plane:\n\\[\n\\vec{r}(t) = \\langle a\\cos^3 t, a\\sin^3 t \\rangle\n\\]\n\nThis is a star-shaped curve with four cusps.\n\n\\textbf{Arc length of astroid:}\n\\[\nL = 6a \\quad \\text{(one complete loop)}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Properties:}}\n\nThe astroid is the path traced by a point on a small circle rolling inside a larger circle (with radius ratio 4:1).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Curves in Space",
+    "type": "example",
+    "title": "Example 38: Arc Length of Astroid",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the arc length of one loop of the astroid $\\vec{r}(t) = \\langle \\cos^3 t, \\sin^3 t \\rangle$ for $0 \\leq t \\leq 2\\pi$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $\\vec{r}'(t)$\n\n\\begin{align*}\n\\vec{r}'(t) &= \\langle -3\\cos^2 t \\sin t, 3\\sin^2 t \\cos t \\rangle\n\\end{align*}\n\n\\textbf{Step 2:} Find $|\\vec{r}'(t)|$\n\n\\begin{align*}\n|\\vec{r}'(t)| &= \\sqrt{9\\cos^4 t \\sin^2 t + 9\\sin^4 t \\cos^2 t} \\\\\n&= 3\\sqrt{\\cos^4 t \\sin^2 t + \\sin^4 t \\cos^2 t} \\\\\n&= 3\\sqrt{\\cos^2 t \\sin^2 t(\\cos^2 t + \\sin^2 t)} \\\\\n&= 3|\\cos t \\sin t| \\\\\n&= 3|\\sin t \\cos t|\n\\end{align*}\n\n\\textbf{Step 3:} Set up integral (using symmetry)\n\nDue to symmetry, we can compute for one quarter $(0 \\to \\frac{\\pi}{2})$ and multiply by 4:\n\n\\begin{align*}\nL &= 4\\int_0^{\\pi/2} 3\\sin t \\cos t \\, dt \\\\\n&= 12\\int_0^{\\pi/2} \\sin t \\cos t \\, dt \\\\\n&= 12 \\cdot \\frac{1}{2}\\int_0^{\\pi/2} \\sin(2t) \\, dt \\\\\n&= 6\\left[-\\frac{1}{2}\\cos(2t)\\right]_0^{\\pi/2} \\\\\n&= 6 \\cdot \\frac{1}{2}[1 - (-1)] \\\\\n&= 3 \\cdot 2 \\\\\n&= 6\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{L = 6 \\text{ units}} (for $a = 1$)\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{General:}} For astroid with parameter $a$: $L = 6a$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Curves in Space",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 6.10 Summary: Curves in",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 6.10 Summary: Curves in Space}}\n\n\\textbf{Arc Length:}\n\\[\n\\boxed{L = \\int_a^b |\\vec{r}'(t)| \\, dt}\n\\]\n\n\\textbf{Curvature:}\n\\[\n\\boxed{\\kappa(t) = \\frac{|\\vec{r}'(t) \\times \\vec{r}''(t)|}{|\\vec{r}'(t)|^3}}\n\\]\n\n\\textbf{Key Formulas:}\n\\begin{itemize}\n    \\item Speed: $|\\vec{r}'(t)|$\n    \\item Unit tangent: $\\vec{T}(t) = \\frac{\\vec{r}'(t)}{|\\vec{r}'(t)|}$\n    \\item Radius of curvature: $\\rho = \\frac{1}{\\kappa}$\n\\end{itemize}\n\n\\textbf{Special Curves:}\n\\begin{itemize}\n    \\item Helix: $\\vec{r}(t) = \\langle a\\cos t, a\\sin t, bt \\rangle$ (constant curvature)\n    \\item Astroid: $\\vec{r}(t) = \\langle a\\cos^3 t, a\\sin^3 t \\rangle$ (arc length $6a$)\n    \\item Twisted cubic: $\\vec{r}(t) = \\langle t, t^2, t^3 \\rangle$\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Forgetting to take magnitude of $\\vec{r}'(t)$ in arc length\n    \\item Sign errors in cross product for curvature\n    \\item Not using symmetry to simplify arc length integrals\n    \\item Confusing curvature with radius of curvature\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Key Insight:}} Curvature measures how sharply a curve bends; arc length measures total distance along the curve.\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 1: Magnitude and Direction",
+    "content": "(a) Find the magnitude of $\\vec{v} = \\langle 2, -3, 6 \\rangle$.\n\n(b) Find a unit vector in the direction of $\\vec{u} = \\langle 4, -4, 2 \\rangle$.\n\n(c) Find the direction cosines of $\\vec{w} = \\langle 3, 4, 0 \\rangle$.\n\n(d) Find a vector of length 10 parallel to $\\vec{v} = \\langle 1, 2, 2 \\rangle$.\n\n(e) Find the distance between points $P(2, -1, 3)$ and $Q(5, 3, -1)$.\n\n(f) Find the midpoint between $A(1, 4, -2)$ and $B(3, -2, 6)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 2: Vectors Between Points",
+    "content": "(a) Find the vector from $P(1, 2, -1)$ to $Q(3, 0, 4)$.\n\n(b) Given points $A(2, 1, 3)$, $B(4, 0, 1)$, and $C(6, -1, -1)$, show that these three points are collinear.\n\n(c) Find all points on the $z$-axis that are 5 units from point $P(3, 4, 0)$.\n\n(d) Find the point $P$ such that $\\overrightarrow{OP}$ is parallel to $\\vec{v} = \\langle 2, -1, 3 \\rangle$ and $|\\overrightarrow{OP}| = 7$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 3: Special Vectors",
+    "content": "(a) Express $\\vec{v} = \\langle 3, -2, 5 \\rangle$ in terms of the standard unit vectors $\\vec{i}$, $\\vec{j}$, $\\vec{k}$.\n\n(b) Find scalars $a$ and $b$ such that $\\langle 6, -2, 4 \\rangle = a\\langle 2, 1, -1 \\rangle + b\\langle 1, -2, 3 \\rangle$.\n\n(c) Determine if vectors $\\vec{u} = \\langle 2, -3, 1 \\rangle$ and $\\vec{v} = \\langle -4, 6, -2 \\rangle$ are parallel.\n\n(d) Find two unit vectors perpendicular to $\\vec{v} = \\langle 1, 1, 0 \\rangle$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 4: Vector Arithmetic",
+    "content": "Given $\\vec{u} = \\langle 3, -1, 2 \\rangle$, $\\vec{v} = \\langle 1, 4, -2 \\rangle$, and $\\vec{w} = \\langle -2, 0, 3 \\rangle$:\n\n(a) Find $2\\vec{u} - 3\\vec{v}$\n\n(b) Find $|\\vec{u} + \\vec{v}|$\n\n(c) Find a vector $\\vec{x}$ such that $2\\vec{x} + \\vec{u} = 3\\vec{v} - \\vec{w}$\n\n(d) Verify that $|\\vec{u} + \\vec{v}| \\leq |\\vec{u}| + |\\vec{v}|$ (triangle inequality)\n\n(e) Find scalars $a$ and $b$ such that $\\vec{w} = a\\vec{u} + b\\vec{v}$ (if possible)\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 5: Linear Combinations",
+    "content": "(a) Express $\\langle 7, -3, 10 \\rangle$ as a linear combination of $\\vec{u} = \\langle 1, 2, 1 \\rangle$ and $\\vec{v} = \\langle 2, -1, 3 \\rangle$.\n\n(b) Determine if $\\vec{w} = \\langle 5, 1, 4 \\rangle$ can be written as a linear combination of $\\vec{u} = \\langle 1, 0, 1 \\rangle$ and $\\vec{v} = \\langle 0, 1, 1 \\rangle$.\n\n(c) Find the position vector $\\vec{r}$ such that $\\vec{r} = 2\\vec{a} - 3\\vec{b}$ where $\\vec{a}$ and $\\vec{b}$ are position vectors of points $A(1, 2, 3)$ and $B(-1, 1, 2)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 6: Dot Product Calculations",
+    "content": "(a) Find $\\vec{u} \\cdot \\vec{v}$ where $\\vec{u} = \\langle 2, -3, 4 \\rangle$ and $\\vec{v} = \\langle 1, 2, -1 \\rangle$.\n\n(b) Find the angle between $\\vec{u} = \\langle 1, 2, 2 \\rangle$ and $\\vec{v} = \\langle 2, 1, -2 \\rangle$.\n\n(c) Determine if $\\vec{a} = \\langle 3, -1, 2 \\rangle$ and $\\vec{b} = \\langle 1, 5, -2 \\rangle$ are orthogonal.\n\n(d) Find $k$ such that $\\vec{u} = \\langle 2, k, -3 \\rangle$ and $\\vec{v} = \\langle k, 1, 2 \\rangle$ are perpendicular.\n\n(e) Verify that $\\vec{u} \\cdot (\\vec{v} + \\vec{w}) = \\vec{u} \\cdot \\vec{v} + \\vec{u} \\cdot \\vec{w}$ for specific vectors.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 7: Orthogonal Projections",
+    "content": "(a) Find the projection of $\\vec{u} = \\langle 3, 4, -1 \\rangle$ onto $\\vec{v} = \\langle 2, 1, 2 \\rangle$.\n\n(b) Find the scalar component of $\\vec{a} = \\langle 1, 2, 3 \\rangle$ in the direction of $\\vec{b} = \\langle 2, -1, 2 \\rangle$.\n\n(c) Decompose $\\vec{u} = \\langle 4, 1, 5 \\rangle$ into components parallel and perpendicular to $\\vec{v} = \\langle 1, 2, 1 \\rangle$.\n\n(d) Find the work done by force $\\vec{F} = \\langle 3, -2, 4 \\rangle$ N moving an object from $P(1, 0, 2)$ to $Q(4, 3, 5)$.\n\n(e) A force of 50 N acts at angle $30°$ to the direction of motion. If the object moves 10 m, find the work done.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 8: Applications of Dot Product",
+    "content": "(a) Show that the triangle with vertices $A(1, 0, 1)$, $B(2, 3, 1)$, and $C(3, 2, 4)$ is a right triangle.\n\n(b) Find the angle at vertex $B$ in triangle $ABC$ where $A(1, 1, 2)$, $B(3, -1, 4)$, $C(0, 2, 1)$.\n\n(c) Determine if vectors $\\vec{u} = \\langle 1, 2, -1 \\rangle$, $\\vec{v} = \\langle 2, 1, 3 \\rangle$, and $\\vec{w} = \\langle 3, -1, 1 \\rangle$ form an orthogonal set.\n\n(d) Find a vector orthogonal to both $\\vec{u} = \\langle 1, 1, 0 \\rangle$ and $\\vec{v} = \\langle 0, 1, 1 \\rangle$ using projections.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 9: Cross Product Calculations",
+    "content": "(a) Find $\\vec{u} \\times \\vec{v}$ where $\\vec{u} = \\langle 1, 3, -2 \\rangle$ and $\\vec{v} = \\langle 2, -1, 4 \\rangle$.\n\n(b) Verify that $\\vec{u} \\times \\vec{v}$ is perpendicular to both $\\vec{u}$ and $\\vec{v}$ from part (a).\n\n(c) Find $|\\vec{u} \\times \\vec{v}|$ where $\\vec{u} = \\langle 2, 0, -1 \\rangle$ and $\\vec{v} = \\langle 1, 3, 2 \\rangle$.\n\n(d) Verify that $\\vec{u} \\times \\vec{v} = -(\\vec{v} \\times \\vec{u})$ for specific vectors.\n\n(e) Find a unit vector perpendicular to both $\\vec{a} = \\langle 1, 2, 1 \\rangle$ and $\\vec{b} = \\langle 2, 1, -1 \\rangle$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 10: Geometric Applications",
+    "content": "(a) Find the area of the parallelogram with adjacent sides $\\vec{u} = \\langle 2, 1, 0 \\rangle$ and $\\vec{v} = \\langle 1, 3, 2 \\rangle$.\n\n(b) Find the area of triangle $ABC$ where $A(1, 0, 2)$, $B(3, 1, 0)$, and $C(2, 4, 1)$.\n\n(c) Find the volume of the parallelepiped determined by vectors $\\vec{u} = \\langle 1, 2, 3 \\rangle$, $\\vec{v} = \\langle 2, 1, 0 \\rangle$, and $\\vec{w} = \\langle 0, 1, 2 \\rangle$.\n\n(d) Determine if vectors $\\vec{a} = \\langle 1, 2, 1 \\rangle$, $\\vec{b} = \\langle 2, 1, 3 \\rangle$, and $\\vec{c} = \\langle 3, 3, 4 \\rangle$ are coplanar.\n\n(e) Find the distance from point $P(1, 0, 2)$ to the line through $Q(0, 1, 1)$ with direction $\\vec{v} = \\langle 1, 1, -1 \\rangle$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 11: Mixed Products",
+    "content": "(a) Compute $\\vec{u} \\cdot (\\vec{v} \\times \\vec{w})$ where $\\vec{u} = \\langle 1, 2, 0 \\rangle$, $\\vec{v} = \\langle 0, 1, 3 \\rangle$, $\\vec{w} = \\langle 2, 0, 1 \\rangle$.\n\n(b) Verify the identity $(\\vec{u} \\times \\vec{v}) \\cdot \\vec{w} = \\vec{u} \\cdot (\\vec{v} \\times \\vec{w})$ for specific vectors.\n\n(c) Find the volume of tetrahedron with vertices $O(0, 0, 0)$, $A(2, 1, 0)$, $B(1, 3, 1)$, $C(0, 1, 4)$.\n\n\\textit{Hint: Volume = $\\frac{1}{6}|\\vec{OA} \\cdot (\\vec{OB} \\times \\vec{OC})|$}\n\n(d) Show that $\\vec{u} \\times (\\vec{v} \\times \\vec{w}) \\neq (\\vec{u} \\times \\vec{v}) \\times \\vec{w}$ using specific vectors.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 12: Vector Function Basics",
+    "content": "(a) Find $\\vec{r}'(t)$ and $\\vec{r}''(t)$ for $\\vec{r}(t) = \\langle t^2, e^t, \\sin t \\rangle$.\n\n(b) Find $\\displaystyle \\lim_{t \\to 0} \\vec{r}(t)$ where $\\vec{r}(t) = \\left\\langle \\frac{\\sin t}{t}, t^2 + 1, e^{2t} \\right\\rangle$.\n\n(c) Find the unit tangent vector $\\vec{T}(t)$ for $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$ at $t = \\frac{\\pi}{4}$.\n\n(d) Evaluate $\\displaystyle \\int_0^1 \\langle 2t, 3t^2, e^t \\rangle \\, dt$.\n\n(e) Find $\\vec{r}(t)$ if $\\vec{r}'(t) = \\langle 6t, 2, 3t^2 \\rangle$ and $\\vec{r}(0) = \\langle 1, 2, -1 \\rangle$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 13: Calculus of Vector Functions",
+    "content": "(a) Find $\\dfrac{d}{dt}[\\vec{u}(t) \\cdot \\vec{v}(t)]$ where $\\vec{u}(t) = \\langle t, t^2, t^3 \\rangle$ and $\\vec{v}(t) = \\langle \\cos t, \\sin t, t \\rangle$.\n\n(b) Find $\\dfrac{d}{dt}[\\vec{u}(t) \\times \\vec{v}(t)]$ for $\\vec{u}(t) = \\langle t, 1, t^2 \\rangle$ and $\\vec{v}(t) = \\langle 2t, t, 1 \\rangle$.\n\n(c) If $|\\vec{r}(t)|$ is constant, show that $\\vec{r}(t) \\perp \\vec{r}'(t)$.\n\n(d) Find $\\displaystyle \\int \\langle te^{t^2}, \\cos(2t), t^{-1} \\rangle \\, dt$ for $t > 0$.\n\n(e) Solve the initial value problem: $\\vec{r}''(t) = \\langle 0, 0, -g \\rangle$, $\\vec{r}'(0) = \\langle v_0\\cos\\alpha, v_0\\sin\\alpha, 0 \\rangle$, $\\vec{r}(0) = \\vec{0}$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 14: Space Curves",
+    "content": "(a) Describe the curve given by $\\vec{r}(t) = \\langle 2\\cos t, 2\\sin t, 3 \\rangle$ for $0 \\leq t \\leq 2\\pi$.\n\n(b) Find a vector function for the curve of intersection of the cylinder $x^2 + y^2 = 4$ and plane $z = x + 2$.\n\n(c) Sketch and identify the curve $\\vec{r}(t) = \\langle t, t^2, 0 \\rangle$.\n\n(d) Find the point where the curves $\\vec{r}_1(t) = \\langle t, 1-t, 3+t^2 \\rangle$ and $\\vec{r}_2(s) = \\langle 3-s, s-2, s^2 \\rangle$ intersect (if they do).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 15: Equations of Lines",
+    "content": "(a) Find parametric equations for the line through $P(2, 1, 3)$ parallel to $\\vec{v} = \\langle 1, -2, 4 \\rangle$.\n\n(b) Find symmetric equations for the line through $P(1, 0, -1)$ and $Q(3, 2, 4)$.\n\n(c) Find parametric equations for the line through $(3, -1, 2)$ perpendicular to the plane $2x - y + 3z = 5$.\n\n(d) Convert the symmetric equations $\\frac{x-1}{2} = \\frac{y+3}{-1} = \\frac{z}{4}$ to parametric form.\n\n(e) Find vector equation of the line passing through $(1, 2, 3)$ parallel to the $y$-axis.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 16: Line Relationships",
+    "content": "(a) Determine if the lines are parallel, perpendicular, or neither:\n\\[\nL_1: \\quad x = 2 + t, \\; y = 1 - 2t, \\; z = 3t\n\\]\n\\[\nL_2: \\quad x = 1 - 2s, \\; y = 3 + 4s, \\; z = 2 - 6s\n\\]\n\n(b) Find the acute angle between the lines:\n\\[\nL_1: \\quad \\frac{x-1}{2} = \\frac{y}{3} = \\frac{z+1}{1}\n\\]\n\\[\nL_2: \\quad \\frac{x+2}{1} = \\frac{y-1}{2} = \\frac{z}{-1}\n\\]\n\n(c) Show that the lines $x = 1 + t$, $y = 2 - t$, $z = 3 + 2t$ and $x = 3 - s$, $y = 1 + s$, $z = -1 + 4s$ are skew.\n\n(d) Find the distance between parallel lines if they exist in part (a).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 17: Line Intersections",
+    "content": "(a) Determine if the lines intersect. If so, find the point of intersection:\n\\[\nL_1: \\quad x = 1 + 2t, \\; y = 3 - t, \\; z = 4 + t\n\\]\n\\[\nL_2: \\quad x = 5 - s, \\; y = 1 + 2s, \\; z = 7 - 2s\n\\]\n\n(b) Find equations of the line through $(2, 1, 0)$ that intersects and is perpendicular to the line $x = 1 + t$, $y = 2t$, $z = 3 - t$.\n\n(c) Find the shortest distance from point $P(3, 1, 2)$ to the line $\\vec{r}(t) = \\langle 1, 2, 1 \\rangle + t\\langle 2, 1, -1 \\rangle$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 18: Equations of Planes",
+    "content": "(a) Find an equation of the plane through $P(2, 1, 3)$ with normal vector $\\vec{n} = \\langle 1, -2, 3 \\rangle$.\n\n(b) Find an equation of the plane through points $P(1, 0, 2)$, $Q(2, 1, 1)$, and $R(0, 2, 3)$.\n\n(c) Find an equation of the plane containing the line $x = 1 + t$, $y = 2 - t$, $z = 3 + 2t$ and the point $(0, 1, 4)$.\n\n(d) Find an equation of the plane through $(1, 2, 3)$ parallel to the plane $2x - y + 3z = 5$.\n\n(e) Find the plane through $(2, 1, 0)$ perpendicular to the line of intersection of planes $x + y + z = 1$ and $x - y + 2z = 3$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 19: Plane Relationships",
+    "content": "(a) Determine if the planes are parallel, perpendicular, or neither:\n\\[\nP_1: \\quad 2x - y + 3z = 5\n\\]\n\\[\nP_2: \\quad 4x - 2y + 6z = 1\n\\]\n\n(b) Find the acute angle between the planes $x + y + z = 1$ and $x - 2y + 3z = 4$.\n\n(c) Find the distance from point $P(1, 2, 3)$ to the plane $2x - 2y + z = 5$.\n\n(d) Find an equation of the plane that passes through the point $(1, 0, 2)$ and is perpendicular to both planes $x + y + z = 1$ and $x - y + z = 0$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 20: Special Planes",
+    "content": "(a) Find the equation of the plane through the origin parallel to the plane containing points $(1, 0, 0)$, $(0, 1, 0)$, and $(0, 0, 1)$.\n\n(b) Find the equation of the plane that contains the lines:\n\\[\nL_1: \\quad x = 1 + t, \\; y = t, \\; z = 2 - t\n\\]\n\\[\nL_2: \\quad x = 1 + 2s, \\; y = s, \\; z = 2 + s\n\\]\n\n(c) Find the equation of the plane equidistant from points $P(2, 1, 0)$ and $Q(0, 3, 2)$.\n\n(d) Find the trace of the plane $2x - 3y + z = 6$ in each coordinate plane.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 21: Line-Plane Intersections",
+    "content": "(a) Find the point where the line $x = 1 + 2t$, $y = 3 - t$, $z = 4 + 3t$ intersects the plane $x + y + z = 10$.\n\n(b) Determine if the line $\\vec{r}(t) = \\langle 2, 1, 3 \\rangle + t\\langle 1, -1, 2 \\rangle$ is parallel to, lies in, or intersects the plane $x - y + z = 4$.\n\n(c) Find the angle between the line $x = t$, $y = 1 + t$, $z = 2 - t$ and the plane $2x + y - z = 5$.\n\n(d) Find symmetric equations for the line through $(3, 1, 2)$ parallel to the line of intersection of planes $x + y - z = 2$ and $2x - y + 3z = 1$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 22: Plane-Plane Intersections",
+    "content": "(a) Find parametric equations for the line of intersection of planes $x + y - z = 1$ and $2x - y + 3z = 4$.\n\n(b) Determine if the three planes intersect at a single point:\n\\[\nx + y + z = 6, \\quad 2x - y + z = 3, \\quad x + 2y - z = 0\n\\]\n\n(c) Find the distance between the parallel planes $2x - y + 3z = 5$ and $2x - y + 3z = 10$.\n\n(d) Find the equation of the plane through the line of intersection of $x + y + z = 1$ and $x - y + 2z = 3$ that passes through the origin.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 23: Complex Intersections",
+    "content": "(a) Find the point of intersection of the line $\\frac{x-1}{2} = \\frac{y+1}{3} = \\frac{z-2}{-1}$ and the plane $3x - 2y + z = 10$.\n\n(b) Find the line of intersection of the planes $x + 2y - z = 3$ and $2x - y + 3z = 1$, and find where this line intersects the $xy$-plane.\n\n(c) Determine if the line $x = 1 + t$, $y = 2t$, $z = 3 - t$ intersects both planes $x + y + z = 6$ and $x - y = 1$.\n\n(d) Find the distance from the line $\\vec{r}(t) = \\langle 1, 0, 2 \\rangle + t\\langle 1, 1, -1 \\rangle$ to the plane $2x - y + z = 4$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 24: Cylindrical Coordinates",
+    "content": "(a) Convert the point $(3, 3\\sqrt{3}, 5)$ from Cartesian to cylindrical coordinates.\n\n(b) Convert the point $(4, \\frac{2\\pi}{3}, -2)$ from cylindrical to Cartesian coordinates.\n\n(c) Describe the surface $r = 4$ in cylindrical coordinates.\n\n(d) Convert the equation $x^2 + y^2 = 9$ to cylindrical coordinates.\n\n(e) Find the cylindrical coordinates of the point with Cartesian coordinates $(-2, 2, 1)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 25: Spherical Coordinates",
+    "content": "(a) Convert the point $(2, 2\\sqrt{3}, 4)$ from Cartesian to spherical coordinates.\n\n(b) Convert the point $(6, \\frac{\\pi}{4}, \\frac{\\pi}{3})$ from spherical to Cartesian coordinates.\n\n(c) Describe the surface $\\rho = 3$ in spherical coordinates.\n\n(d) Convert the equation $x^2 + y^2 + z^2 = 16$ to spherical coordinates.\n\n(e) Describe the surface $\\phi = \\frac{\\pi}{3}$ in spherical coordinates.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 26: Mixed Coordinate Systems",
+    "content": "(a) Convert the cylindrical equation $r = 2\\sin\\theta$ to Cartesian form.\n\n(b) Convert the spherical equation $\\rho = 4\\cos\\phi$ to cylindrical and then to Cartesian form.\n\n(c) A point has cylindrical coordinates $(2, \\frac{\\pi}{6}, 3)$. Find its spherical coordinates.\n\n(d) Describe the cone $z = \\sqrt{x^2 + y^2}$ in both cylindrical and spherical coordinates.\n\n(e) Find the volume of the region bounded by $z = \\sqrt{x^2 + y^2}$ and $z = 2$ using appropriate coordinates.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 27: Arc Length",
+    "content": "(a) Find the length of the curve $\\vec{r}(t) = \\langle 2t, t^2, \\frac{2}{3}t^3 \\rangle$ from $t = 0$ to $t = 3$.\n\n(b) Find the arc length function for $\\vec{r}(t) = \\langle e^t\\cos t, e^t\\sin t, e^t \\rangle$ starting at $t = 0$.\n\n(c) Find the length of one turn of the helix $\\vec{r}(t) = \\langle 3\\cos t, 3\\sin t, 4t \\rangle$ from $t = 0$ to $t = 2\\pi$.\n\n(d) Parametrize the line segment from $(1, 0, 2)$ to $(3, 4, -1)$ using arc length as parameter.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 28: Curvature",
+    "content": "(a) Find the curvature of $\\vec{r}(t) = \\langle t, t^2, t^3 \\rangle$ at $t = 1$.\n\n(b) Find the curvature of the circle $\\vec{r}(t) = \\langle 5\\cos t, 5\\sin t, 0 \\rangle$.\n\n(c) Find the point on the curve $\\vec{r}(t) = \\langle t, t^2, 0 \\rangle$ where the curvature is maximum.\n\n(d) Show that the curvature of a straight line is zero.\n\n(e) Find the radius of curvature of $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$ at any point.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 29: Special Curves",
+    "content": "(a) Find the arc length of the astroid $x = a\\cos^3 t$, $y = a\\sin^3 t$ for one complete loop $(0 \\leq t \\leq 2\\pi)$.\n\n(b) Verify that the helix $\\vec{r}(t) = \\langle a\\cos t, a\\sin t, bt \\rangle$ has constant curvature $\\kappa = \\frac{a}{a^2 + b^2}$.\n\n(c) For the twisted cubic $\\vec{r}(t) = \\langle t, t^2, t^3 \\rangle$, find where the curvature is minimum.\n\n(d) Find the curvature of the curve of intersection of the cylinder $x^2 + y^2 = 4$ and the plane $z = x$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 30: Applications",
+    "content": "(a) A particle moves along the curve $\\vec{r}(t) = \\langle t^2, 2t, \\ln t \\rangle$ for $t > 0$. Find its velocity, speed, and acceleration at $t = 1$.\n\n(b) Find the tangential and normal components of acceleration for a particle with position $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$.\n\n(c) A particle moves with constant speed along the curve $\\vec{r}(t) = \\langle e^t\\cos t, e^t\\sin t, e^t \\rangle$. Is this possible? Explain.\n\n(d) Find the osculating circle (circle of curvature) for $\\vec{r}(t) = \\langle t, t^2, 0 \\rangle$ at $t = 0$.\n\n\\vspace{1cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 6 - Vectors in 2D and 3D",
+    "section": "Practice Exercises",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Chapter 6 Practice Problems --",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Chapter 6 Practice Problems -- Summary}}\n\n\\textbf{Coverage by Topic:}\n\n\\begin{center}\n\\begin{tabular}{|p{4.5cm}|p{2.5cm}|p{4.5cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Topic} & \\textbf{Problems} & \\textbf{Exam Frequency} \\\\\n\\hline\nDot Product \\& Projections & 6--8 & \\textcolor{red}{\\textbf{Frequent}} \\\\\n\\hline\nCross Product & 9--11 & \\textcolor{red}{\\textbf{Frequent}} \\\\\n\\hline\nLines in $\\mathbb{R}^3$ & 15--17 & High \\\\\n\\hline\nPlanes in $\\mathbb{R}^3$ & 18--20 & High \\\\\n\\hline\nIntersections & 21--23 & High \\\\\n\\hline\nVector Functions & 12--14 & Medium-High \\\\\n\\hline\nCoordinate Systems & 24--26 & Medium \\\\\n\\hline\nCurvature & 27--30 & Medium \\\\\n\\hline\nVector Basics & 1--3 & Medium \\\\\n\\hline\nVector Operations & 4--5 & Medium \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+  }
+]

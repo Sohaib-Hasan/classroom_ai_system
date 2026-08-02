@@ -1,0 +1,834 @@
+[
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "definition",
+    "title": "Definition 2.1: The Derivative (First Principles)",
+    "content": "The \\textbf{derivative} of a function $f$ at a point $x = a$ is defined as:\n\\[\n\\boxed{f'(a) = \\lim_{h \\to 0} \\frac{f(a + h) - f(a)}{h}}\n\\]\n\nprovided this limit exists.\n\n\\textbf{Alternative form:}\n\\[\n\\boxed{f'(a) = \\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Terminology:}}\n\\begin{itemize}\n    \\item If the limit exists, we say $f$ is \\textbf{differentiable} at $x = a$\n    \\item $f'(a)$ is read as \"$f$ prime of $a$\"\n    \\item The process of finding $f'(a)$ is called \\textbf{differentiation}\n    \\item Other notations: $\\dfrac{df}{dx}\\bigg|_{x=a}$, $\\dfrac{dy}{dx}\\bigg|_{x=a}$, $Df(a)$\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{The Difference Quotient:}}\n\nThe expression $\\dfrac{f(a+h) - f(a)}{h}$ is called the \\textbf{difference quotient}. It represents:\n\\begin{itemize}\n    \\item Numerator: Change in function value (rise)\n    \\item Denominator: Change in input value (run)\n    \\item Quotient: Average rate of change\n\\end{itemize}\n\nTaking the limit as $h \\to 0$ gives the \\textbf{instantaneous rate of change}.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "definition",
+    "title": "Definition 2.2: The Derivative as a Function",
+    "content": "If $f$ is differentiable at every point in its domain, we can define the \\textbf{derivative function} $f'(x)$:\n\\[\n\\boxed{f'(x) = \\lim_{h \\to 0} \\frac{f(x + h) - f(x)}{h}}\n\\]\n\n\\textbf{Common Notations:}\n\\begin{align*}\nf'(x) &= \\frac{df}{dx} = \\frac{dy}{dx} = \\frac{d}{dx}[f(x)] = Df(x) = D_x f(x)\n\\end{align*}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Understanding the Notation:}}\n\\begin{itemize}\n    \\item $\\dfrac{dy}{dx}$: \"dee y dee x\" - Leibniz notation (most common)\n    \\item $f'(x)$: \"f prime of x\" - Lagrange notation\n    \\item $Df$: \"D of f\" - Operator notation\n    \\item The \"$d$\" represents an infinitesimally small change\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "example",
+    "title": "Example 1: Finding Derivative from First Principles (Linear Function)",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Use the definition of the derivative to find $f'(x)$ if $f(x) = 3x + 2$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Write the definition\n\\[\nf'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\n\\]\n\n\\textbf{Step 2:} Find $f(x + h)$\n\\begin{align*}\nf(x + h) &= 3(x + h) + 2 \\\\\n&= 3x + 3h + 2\n\\end{align*}\n\n\\textbf{Step 3:} Compute the difference quotient\n\\begin{align*}\n\\frac{f(x+h) - f(x)}{h} &= \\frac{(3x + 3h + 2) - (3x + 2)}{h} \\\\\n&= \\frac{3x + 3h + 2 - 3x - 2}{h} \\\\\n&= \\frac{3h}{h} \\\\\n&= 3 \\quad \\text{(for } h \\neq 0\\text{)}\n\\end{align*}\n\n\\textbf{Step 4:} Take the limit\n\\begin{align*}\nf'(x) &= \\lim_{h \\to 0} 3 \\\\\n&= 3\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = 3}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Interpretation:}} The derivative is constant and equals 3, which is the slope of the line $y = 3x + 2$. This makes sense: linear functions have constant rate of change!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "example",
+    "title": "Example 2: Derivative from First Principles (Quadratic Function)",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Use the definition to find $f'(x)$ if $f(x) = x^2$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Write the definition\n\\[\nf'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\n\\]\n\n\\textbf{Step 2:} Find $f(x + h)$\n\\begin{align*}\nf(x + h) &= (x + h)^2 \\\\\n&= x^2 + 2xh + h^2\n\\end{align*}\n\n\\textbf{Step 3:} Compute the difference quotient\n\\begin{align*}\n\\frac{f(x+h) - f(x)}{h} &= \\frac{(x^2 + 2xh + h^2) - x^2}{h} \\\\\n&= \\frac{x^2 + 2xh + h^2 - x^2}{h} \\\\\n&= \\frac{2xh + h^2}{h} \\\\\n&= \\frac{h(2x + h)}{h} \\\\\n&= 2x + h \\quad \\text{(for } h \\neq 0\\text{)}\n\\end{align*}\n\n\\textbf{Step 4:} Take the limit\n\\begin{align*}\nf'(x) &= \\lim_{h \\to 0} (2x + h) \\\\\n&= 2x + 0 \\\\\n&= 2x\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = 2x}\n\n\\textcolor{green}{\\textbf{Verification:}} At $x = 3$: $f'(3) = 2(3) = 6$. This means at the point $(3, 9)$ on $y = x^2$, the instantaneous rate of change is 6.\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Pattern:}} Notice that the derivative of $x^2$ is $2x$. This is a special case of the power rule!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "example",
+    "title": "Example 3: Derivative from First Principles (Reciprocal Function)",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $f'(x)$ if $f(x) = \\dfrac{1}{x}$ using first principles.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Write the definition\n\\[\nf'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\n\\]\n\n\\textbf{Step 2:} Find $f(x + h)$\n\\[\nf(x + h) = \\frac{1}{x + h}\n\\]\n\n\\textbf{Step 3:} Compute the difference quotient\n\\begin{align*}\n\\frac{f(x+h) - f(x)}{h} &= \\frac{\\frac{1}{x+h} - \\frac{1}{x}}{h}\n\\end{align*}\n\nSimplify the complex fraction (find common denominator in numerator):\n\\begin{align*}\n&= \\frac{\\frac{x - (x+h)}{x(x+h)}}{h} \\\\\n&= \\frac{\\frac{x - x - h}{x(x+h)}}{h} \\\\\n&= \\frac{\\frac{-h}{x(x+h)}}{h} \\\\\n&= \\frac{-h}{x(x+h)} \\cdot \\frac{1}{h} \\\\\n&= \\frac{-h}{hx(x+h)} \\\\\n&= \\frac{-1}{x(x+h)} \\quad \\text{(for } h \\neq 0\\text{)}\n\\end{align*}\n\n\\textbf{Step 4:} Take the limit\n\\begin{align*}\nf'(x) &= \\lim_{h \\to 0} \\frac{-1}{x(x+h)} \\\\\n&= \\frac{-1}{x(x+0)} \\\\\n&= \\frac{-1}{x^2} \\\\\n&= -\\frac{1}{x^2}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = -\\frac{1}{x^2}}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} The derivative is always negative, which makes sense because $f(x) = \\frac{1}{x}$ is decreasing on $(0, \\infty)$ and on $(-\\infty, 0)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "example",
+    "title": "Example 4: Derivative from First Principles (Square Root)",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $f'(x)$ if $f(x) = \\sqrt{x}$ using the definition.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Write the definition\n\\[\nf'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\n\\]\n\n\\textbf{Step 2:} Set up the difference quotient\n\\begin{align*}\nf'(x) &= \\lim_{h \\to 0} \\frac{\\sqrt{x+h} - \\sqrt{x}}{h}\n\\end{align*}\n\nThis gives $\\frac{0}{0}$ form. Use rationalization!\n\n\\textbf{Step 3:} Rationalize the numerator\n\nMultiply by conjugate:\n\\begin{align*}\n&= \\lim_{h \\to 0} \\frac{\\sqrt{x+h} - \\sqrt{x}}{h} \\cdot \\frac{\\sqrt{x+h} + \\sqrt{x}}{\\sqrt{x+h} + \\sqrt{x}} \\\\\n&= \\lim_{h \\to 0} \\frac{(\\sqrt{x+h})^2 - (\\sqrt{x})^2}{h(\\sqrt{x+h} + \\sqrt{x})} \\\\\n&= \\lim_{h \\to 0} \\frac{(x+h) - x}{h(\\sqrt{x+h} + \\sqrt{x})} \\\\\n&= \\lim_{h \\to 0} \\frac{h}{h(\\sqrt{x+h} + \\sqrt{x})} \\\\\n&= \\lim_{h \\to 0} \\frac{1}{\\sqrt{x+h} + \\sqrt{x}}\n\\end{align*}\n\n\\textbf{Step 4:} Evaluate the limit\n\\begin{align*}\nf'(x) &= \\frac{1}{\\sqrt{x+0} + \\sqrt{x}} \\\\\n&= \\frac{1}{\\sqrt{x} + \\sqrt{x}} \\\\\n&= \\frac{1}{2\\sqrt{x}}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = \\frac{1}{2\\sqrt{x}}}\n\n\\textcolor{green}{\\textbf{Verification:}} This can also be written as $f'(x) = \\frac{1}{2}x^{-1/2}$, which matches the power rule: $\\frac{d}{dx}(x^{1/2}) = \\frac{1}{2}x^{-1/2}$ \\textcolor{green}{\\checkmark}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Domain Note:}} $f'(x)$ is defined only for $x > 0$ (same as domain of $\\sqrt{x}$).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "definition",
+    "title": "Definition 2.3: Differentiability",
+    "content": "A function $f$ is \\textbf{differentiable at} $x = a$ if $f'(a)$ exists (i.e., the limit defining the derivative exists and is finite).\n\nA function is \\textbf{differentiable on an interval} if it is differentiable at every point in that interval.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Important Relationship:}}\n\n\\textbf{Theorem:} If $f$ is differentiable at $x = a$, then $f$ is continuous at $x = a$.\n\n\\textcolor{red}{\\textbf{Warning:}} The converse is NOT true! A function can be continuous but not differentiable.\n\n\\textbf{Example:} $f(x) = |x|$ is continuous at $x = 0$ but not differentiable there (sharp corner).\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{When is a function NOT differentiable?}}\n\\begin{itemize}\n    \\item At a corner or cusp (like $|x|$ at $x = 0$)\n    \\item At a discontinuity\n    \\item At a vertical tangent line\n    \\item Where the function is not defined\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "example",
+    "title": "Example 5: Testing Differentiability",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Determine if $f(x) = |x|$ is differentiable at $x = 0$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe need to check if $\\displaystyle\\lim_{h \\to 0} \\frac{f(0+h) - f(0)}{h}$ exists.\n\n\\textbf{Step 1:} Find $f(0)$\n\\[\nf(0) = |0| = 0\n\\]\n\n\\textbf{Step 2:} Check the right-hand derivative\n\nFor $h > 0$:\n\\begin{align*}\n\\lim_{h \\to 0^+} \\frac{f(0+h) - f(0)}{h} &= \\lim_{h \\to 0^+} \\frac{|h| - 0}{h} \\\\\n&= \\lim_{h \\to 0^+} \\frac{h}{h} \\quad \\text{(since } h > 0, |h| = h\\text{)} \\\\\n&= \\lim_{h \\to 0^+} 1 \\\\\n&= 1\n\\end{align*}\n\n\\textbf{Step 3:} Check the left-hand derivative\n\nFor $h < 0$:\n\\begin{align*}\n\\lim_{h \\to 0^-} \\frac{f(0+h) - f(0)}{h} &= \\lim_{h \\to 0^-} \\frac{|h| - 0}{h} \\\\\n&= \\lim_{h \\to 0^-} \\frac{-h}{h} \\quad \\text{(since } h < 0, |h| = -h\\text{)} \\\\\n&= \\lim_{h \\to 0^-} (-1) \\\\\n&= -1\n\\end{align*}\n\n\\textbf{Step 4:} Compare one-sided limits\n\nRight-hand derivative: $1$\n\nLeft-hand derivative: $-1$\n\nSince $1 \\neq -1$, the two-sided limit does not exist.\n\n\\textcolor{red}{\\textbf{Conclusion:}} $f(x) = |x|$ is \\textbf{NOT differentiable} at $x = 0$.\n\n\\textbf{Answer:} \\boxed{\\text{Not differentiable at } x = 0}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Geometric Interpretation:}} The graph of $|x|$ has a sharp corner at $x = 0$, so there's no unique tangent line there. The \"slope from the right\" is 1, and the \"slope from the left\" is $-1$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Concept of Differentiation",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 2.1 Summary}} {The Derivative",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 2.1 Summary}}\n\n\\textbf{The Derivative Definition:}\n\\[\n\\boxed{f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}}\n\\]\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Steps for Computing Derivatives from First Principles:}}\n\\begin{enumerate}\n    \\item Find $f(x + h)$ by substituting $x + h$ into the function\n    \\item Form the difference quotient: $\\dfrac{f(x+h) - f(x)}{h}$\n    \\item Simplify algebraically (factor, rationalize, combine fractions)\n    \\item Take the limit as $h \\to 0$\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Key Derivatives from First Principles:}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Function } $f(x)$ & \\textbf{Derivative } $f'(x)$ \\\\\n\\hline\n$c$ (constant) & $0$ \\\\\n\\hline\n$x$ & $1$ \\\\\n\\hline\n$x^2$ & $2x$ \\\\\n\\hline\n$x^n$ & $nx^{n-1}$ \\\\\n\\hline\n$\\dfrac{1}{x}$ & $-\\dfrac{1}{x^2}$ \\\\\n\\hline\n$\\sqrt{x}$ & $\\dfrac{1}{2\\sqrt{x}}$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important Facts:}}\n\\begin{itemize}\n    \\item Differentiable $\\implies$ Continuous\n    \\item Continuous $\\not\\!\\!\\!\\implies$ Differentiable\n    \\item Not differentiable at: corners, cusps, discontinuities, vertical tangents\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "definition",
+    "title": "Definition 2.4: Geometric Interpretation - Slope of Tangent Line",
+    "content": "The derivative $f'(a)$ represents the \\textbf{slope of the tangent line} to the graph of $y = f(x)$ at the point $(a, f(a))$.\n\n\\textbf{Tangent Line Equation:}\n\nThe equation of the tangent line to $y = f(x)$ at $x = a$ is:\n\\[\n\\boxed{y - f(a) = f'(a)(x - a)}\n\\]\n\nor in slope-intercept form:\n\\[\n\\boxed{y = f'(a)(x - a) + f(a)}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Understanding the Tangent Line:}}\n\\begin{itemize}\n    \\item The tangent line is the best linear approximation to the curve at that point\n    \\item It \"just touches\" the curve at $(a, f(a))$\n    \\item The slope $m = f'(a)$ tells us the direction and steepness\n    \\item If $f'(a) > 0$: function is increasing at $x = a$ (upward slope)\n    \\item If $f'(a) < 0$: function is decreasing at $x = a$ (downward slope)\n    \\item If $f'(a) = 0$: horizontal tangent (possible max/min/inflection)\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "example",
+    "title": "Example 6: Finding Tangent Line Equation",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the equation of the tangent line to $y = x^2$ at the point $(2, 4)$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find the derivative\n\nFrom Example 2, we know $f'(x) = 2x$.\n\n\\textbf{Step 2:} Find the slope at $x = 2$\n\\[\nf'(2) = 2(2) = 4\n\\]\n\nSo the slope of the tangent line is $m = 4$.\n\n\\textbf{Step 3:} Use point-slope form\n\nThe tangent line passes through $(2, 4)$ with slope $4$:\n\\begin{align*}\ny - 4 &= 4(x - 2) \\\\\ny - 4 &= 4x - 8 \\\\\ny &= 4x - 4\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{y = 4x - 4}\n\n\\textcolor{green}{\\textbf{Verification:}} \n\\begin{itemize}\n    \\item Does it pass through $(2, 4)$? $y = 4(2) - 4 = 4$ \\textcolor{green}{\\checkmark}\n    \\item Does it have slope 4? Yes \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Visualization:}} At $x = 2$, the parabola $y = x^2$ is rising with slope 4. The tangent line $y = 4x - 4$ has the same slope and touches the parabola at exactly $(2, 4)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "definition",
+    "title": "Definition 2.5: Normal Line",
+    "content": "The \\textbf{normal line} to a curve at a point is the line perpendicular to the tangent line at that point.\n\n\\textbf{Normal Line Equation:}\n\nIf the tangent line has slope $m = f'(a)$, the normal line has slope $m_{\\text{normal}} = -\\dfrac{1}{f'(a)}$ (negative reciprocal).\n\nThe equation of the normal line at $(a, f(a))$ is:\n\\[\n\\boxed{y - f(a) = -\\frac{1}{f'(a)}(x - a)}\n\\]\n\nprovided $f'(a) \\neq 0$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Perpendicular Slopes:}}\n\nTwo lines are perpendicular if and only if the product of their slopes is $-1$:\n\\[\nm_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}\n\\]\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Special Cases:}}\n\\begin{itemize}\n    \\item If $f'(a) = 0$ (horizontal tangent), the normal line is vertical: $x = a$\n    \\item If tangent line is vertical, the normal line is horizontal\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "example",
+    "title": "Example 7: Finding Normal Line Equation",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the equation of the normal line to the curve $y = x^2 - 3x + 2$ at $x = 1$.\n\n(Related to 2025 past paper, Q1 part viii)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find the point on the curve\n\nWhen $x = 1$:\n\\[\ny = 1^2 - 3(1) + 2 = 1 - 3 + 2 = 0\n\\]\n\nSo the point is $(1, 0)$.\n\n\\textbf{Step 2:} Find the derivative\n\\begin{align*}\nf(x) &= x^2 - 3x + 2 \\\\\nf'(x) &= 2x - 3\n\\end{align*}\n\n\\textbf{Step 3:} Find the slope of the tangent line at $x = 1$\n\\[\nf'(1) = 2(1) - 3 = 2 - 3 = -1\n\\]\n\n\\textbf{Step 4:} Find the slope of the normal line\n\nThe normal line is perpendicular to the tangent, so:\n\\[\nm_{\\text{normal}} = -\\frac{1}{f'(1)} = -\\frac{1}{-1} = 1\n\\]\n\n\\textbf{Step 5:} Write the equation of the normal line\n\nUsing point-slope form with point $(1, 0)$ and slope $1$:\n\\begin{align*}\ny - 0 &= 1(x - 1) \\\\\ny &= x - 1\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{y = x - 1}\n\n\\textcolor{green}{\\textbf{Check:}} The tangent line has slope $-1$ and the normal line has slope $1$. Product: $(-1)(1) = -1$ \\textcolor{green}{\\checkmark} (perpendicular!)\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "example",
+    "title": "Example 8: Horizontal Tangent Lines",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the point(s) on the curve $y = x^4 - 6x^2 + 4$ where the tangent line is horizontal.\n\n(From 2025 past paper, Q1 part iii)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThe tangent line is horizontal when $f'(x) = 0$.\n\n\\textbf{Step 1:} Find the derivative\n\\begin{align*}\nf(x) &= x^4 - 6x^2 + 4 \\\\\nf'(x) &= 4x^3 - 12x\n\\end{align*}\n\n\\textbf{Step 2:} Set the derivative equal to zero\n\\begin{align*}\n4x^3 - 12x &= 0 \\\\\n4x(x^2 - 3) &= 0 \\\\\n4x(x - \\sqrt{3})(x + \\sqrt{3}) &= 0\n\\end{align*}\n\nSolutions: $x = 0$, $x = \\sqrt{3}$, $x = -\\sqrt{3}$\n\n\\textbf{Step 3:} Find the corresponding $y$-coordinates\n\nFor $x = 0$:\n\\[\ny = 0^4 - 6(0)^2 + 4 = 4\n\\]\n\nFor $x = \\sqrt{3}$:\n\\[\ny = (\\sqrt{3})^4 - 6(\\sqrt{3})^2 + 4 = 9 - 18 + 4 = -5\n\\]\n\nFor $x = -\\sqrt{3}$:\n\\[\ny = (-\\sqrt{3})^4 - 6(-\\sqrt{3})^2 + 4 = 9 - 18 + 4 = -5\n\\]\n\n\\textbf{Answer:} The tangent line is horizontal at three points:\n\\[\n\\boxed{(0, 4), \\quad (\\sqrt{3}, -5), \\quad (-\\sqrt{3}, -5)}\n\\]\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Significance:}} These are critical points where the function may have local maxima or minima.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "definition",
+    "title": "Definition 2.6: Physical Interpretation - Rate of Change",
+    "content": "In physics and applied sciences, the derivative represents the \\textbf{instantaneous rate of change}.\n\n\\textbf{Common Physical Interpretations:}\n\n\\textbf{1. Velocity (Physics):}\n\nIf $s(t)$ is the position of an object at time $t$, then:\n\\[\n\\boxed{v(t) = s'(t) = \\frac{ds}{dt}}\n\\]\nis the \\textbf{velocity} (instantaneous rate of change of position).\n\n\\textbf{2. Acceleration (Physics):}\n\nIf $v(t)$ is the velocity at time $t$, then:\n\\[\n\\boxed{a(t) = v'(t) = \\frac{dv}{dt} = s''(t) = \\frac{d^2s}{dt^2}}\n\\]\nis the \\textbf{acceleration} (instantaneous rate of change of velocity).\n\n\\textbf{3. General Rate of Change:}\n\nFor any quantity $Q(t)$ depending on time:\n\\[\n\\boxed{\\frac{dQ}{dt} = \\text{instantaneous rate of change of } Q}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Sign Interpretation:}}\n\\begin{itemize}\n    \\item $v > 0$: moving forward (in positive direction)\n    \\item $v < 0$: moving backward (in negative direction)\n    \\item $v = 0$: instantaneously at rest\n    \\item $a > 0$: speeding up (if $v > 0$) or slowing down (if $v < 0$)\n    \\item $a < 0$: slowing down (if $v > 0$) or speeding up (if $v < 0$)\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "example",
+    "title": "Example 9: Velocity and Position",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} The position of a particle moving along a line is given by $s(t) = t^3 - 6t^2 + 9t$ meters, where $t$ is in seconds.\n\n(a) Find the velocity at time $t$.\n\n(b) When is the particle at rest?\n\n(c) Find the velocity at $t = 2$ seconds.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Find velocity function\n\nVelocity is the derivative of position:\n\\begin{align*}\nv(t) &= s'(t) \\\\\n&= \\frac{d}{dt}(t^3 - 6t^2 + 9t) \\\\\n&= 3t^2 - 12t + 9\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{v(t) = 3t^2 - 12t + 9 \\text{ m/s}}\n\n\\vspace{0.3cm}\n\\textbf{(b)} When is the particle at rest?\n\nThe particle is at rest when $v(t) = 0$:\n\\begin{align*}\n3t^2 - 12t + 9 &= 0 \\\\\n3(t^2 - 4t + 3) &= 0 \\\\\n3(t - 1)(t - 3) &= 0\n\\end{align*}\n\nSolutions: $t = 1$ or $t = 3$\n\n\\textbf{Answer:} The particle is at rest at \\boxed{t = 1 \\text{ s and } t = 3 \\text{ s}}\n\n\\vspace{0.3cm}\n\\textbf{(c)} Velocity at $t = 2$ seconds\n\\begin{align*}\nv(2) &= 3(2)^2 - 12(2) + 9 \\\\\n&= 12 - 24 + 9 \\\\\n&= -3\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{v(2) = -3 \\text{ m/s}}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Interpretation:}} At $t = 2$ seconds, the particle is moving backward (negative velocity) at 3 m/s.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "example",
+    "title": "Example 10: Velocity from Given Equation",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} The velocity of a moving object is given by $v(t) = 4t + 2$ (in meters per second). Find the total distance travelled from $t = 0$ to $t = 5$ seconds.\n\n(From 2025 past paper, Q1 part ix - concept question)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Understanding:} Distance travelled is related to the integral of velocity. However, since we haven't covered integration yet, we interpret this from the derivative perspective.\n\n\\textbf{Step 1:} Check if velocity changes sign\n\n$v(t) = 4t + 2$\n\nFor $t \\geq 0$: $v(t) = 4t + 2 \\geq 2 > 0$\n\nThe velocity is always positive, so the object always moves forward.\n\n\\textbf{Step 2:} Distance calculation concept\n\nWhen velocity is always positive (or always negative), the distance equals the absolute value of displacement.\n\nDistance $= \\displaystyle\\int_0^5 v(t) \\, dt = \\int_0^5 (4t + 2) \\, dt$\n\nUsing the antiderivative (which we'll learn in integration):\n\\begin{align*}\n\\text{Distance} &= \\left[2t^2 + 2t\\right]_0^5 \\\\\n&= [2(5)^2 + 2(5)] - [0] \\\\\n&= 50 + 10 \\\\\n&= 60\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{60 \\text{ meters}}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} This problem connects derivatives (velocity) to integrals (distance), which we'll formalize in Chapter 5.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "definition",
+    "title": "Definition 2.7: Average Rate of Change vs. Instantaneous Rate of Change",
+    "content": "\\textbf{Average Rate of Change:}\n\nThe average rate of change of $f(x)$ over the interval $[a, b]$ is:\n\\[\n\\boxed{\\text{Average Rate} = \\frac{f(b) - f(a)}{b - a}}\n\\]\n\nThis is the slope of the \\textbf{secant line} connecting $(a, f(a))$ and $(b, f(b))$.\n\n\\textbf{Instantaneous Rate of Change:}\n\nThe instantaneous rate of change at $x = a$ is:\n\\[\n\\boxed{\\text{Instantaneous Rate} = f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}}\n\\]\n\nThis is the slope of the \\textbf{tangent line} at $x = a$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Relationship:}}\n\nThe instantaneous rate of change is the limit of average rates of change as the interval shrinks to a point:\n\\[\nf'(a) = \\lim_{b \\to a} \\frac{f(b) - f(a)}{b - a}\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "example",
+    "title": "Example 11: Average vs. Instantaneous Rate of Change",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} For $f(x) = x^2$:\n\n(a) Find the average rate of change from $x = 1$ to $x = 3$.\n\n(b) Find the instantaneous rate of change at $x = 1$.\n\n(c) Find the instantaneous rate of change at $x = 3$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} Average rate of change from $x = 1$ to $x = 3$\n\\begin{align*}\n\\text{Average Rate} &= \\frac{f(3) - f(1)}{3 - 1} \\\\\n&= \\frac{9 - 1}{2} \\\\\n&= \\frac{8}{2} \\\\\n&= 4\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{4}\n\n\\vspace{0.3cm}\n\\textbf{(b)} Instantaneous rate at $x = 1$\n\nWe know $f'(x) = 2x$, so:\n\\[\nf'(1) = 2(1) = 2\n\\]\n\n\\textbf{Answer:} \\boxed{2}\n\n\\vspace{0.3cm}\n\\textbf{(c)} Instantaneous rate at $x = 3$\n\\[\nf'(3) = 2(3) = 6\n\\]\n\n\\textbf{Answer:} \\boxed{6}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Observation:}} The average rate of change (4) lies between the instantaneous rates at the endpoints (2 and 6). This is related to the Mean Value Theorem!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Geometrical and Physical Meaning of Derivatives",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 2.2 Summary}} {Geometric Interpretations:}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 2.2 Summary}}\n\n\\textbf{Geometric Interpretations:}\n\n\\begin{center}\n\\begin{tabular}{|p{5cm}|p{9cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Concept} & \\textbf{Meaning} \\\\\n\\hline\n$f'(a)$ & Slope of tangent line at $(a, f(a))$ \\\\\n\\hline\nTangent Line & $y - f(a) = f'(a)(x - a)$ \\\\\n\\hline\nNormal Line & $y - f(a) = -\\dfrac{1}{f'(a)}(x - a)$ (perpendicular to tangent) \\\\\n\\hline\n$f'(a) = 0$ & Horizontal tangent (possible max/min) \\\\\n\\hline\n$f'(a) > 0$ & Function increasing at $x = a$ \\\\\n\\hline\n$f'(a) < 0$ & Function decreasing at $x = a$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\vspace{0.3cm}\n\n\\textbf{Physical Interpretations:}\n\n\\begin{center}\n\\begin{tabular}{|p{5cm}|p{9cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{If $s(t)$ is...} & \\textbf{Then...} \\\\\n\\hline\nPosition & $v(t) = s'(t)$ is velocity \\\\\n\\hline\nVelocity & $a(t) = v'(t) = s''(t)$ is acceleration \\\\\n\\hline\nAny quantity $Q(t)$ & $Q'(t)$ is rate of change of $Q$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\vspace{0.3cm}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Key Formulas to Remember:}}\n\\begin{itemize}\n    \\item Tangent line: $y = f'(a)(x - a) + f(a)$\n    \\item Normal line slope: $m_n = -\\dfrac{1}{f'(a)}$\n    \\item Velocity: $v = \\dfrac{ds}{dt}$\n    \\item Acceleration: $a = \\dfrac{dv}{dt} = \\dfrac{d^2s}{dt^2}$\n    \\item Average rate: $\\dfrac{f(b) - f(a)}{b - a}$\n    \\item Instantaneous rate: $f'(a)$\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Confusing tangent line with normal line\n    \\item Forgetting negative reciprocal for perpendicular slopes\n    \\item Mixing up position, velocity, and acceleration\n    \\item Confusing average and instantaneous rates of change\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "theorem",
+    "title": "Theorem 2.1: The Power Rule",
+    "content": "If $f(x) = x^n$ where $n$ is any real number, then:\n\\[\n\\boxed{\\frac{d}{dx}(x^n) = nx^{n-1}}\n\\]\n\n\\textbf{Special Cases:}\n\\begin{itemize}\n    \\item If $f(x) = c$ (constant), then $f'(x) = 0$\n    \\item If $f(x) = x$, then $f'(x) = 1$\n    \\item If $f(x) = x^2$, then $f'(x) = 2x$\n    \\item If $f(x) = x^3$, then $f'(x) = 3x^2$\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "proof",
+    "title": "Proof of Power Rule (for positive integer $n$)",
+    "content": "\\textcolor{primaryblue}{\\textbf{Proof:}}\n\nWe prove this for $n$ a positive integer using the binomial theorem.\n\nLet $f(x) = x^n$. By definition:\n\\begin{align*}\nf'(x) &= \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\\\\n&= \\lim_{h \\to 0} \\frac{(x+h)^n - x^n}{h}\n\\end{align*}\n\n\\textbf{Step 1:} Expand $(x+h)^n$ using the binomial theorem:\n\\[\n(x+h)^n = x^n + nx^{n-1}h + \\frac{n(n-1)}{2}x^{n-2}h^2 + \\cdots + h^n\n\\]\n\n\\textbf{Step 2:} Substitute into the limit:\n\\begin{align*}\nf'(x) &= \\lim_{h \\to 0} \\frac{x^n + nx^{n-1}h + \\frac{n(n-1)}{2}x^{n-2}h^2 + \\cdots + h^n - x^n}{h} \\\\\n&= \\lim_{h \\to 0} \\frac{nx^{n-1}h + \\frac{n(n-1)}{2}x^{n-2}h^2 + \\cdots + h^n}{h}\n\\end{align*}\n\n\\textbf{Step 3:} Factor out $h$ from numerator:\n\\begin{align*}\n&= \\lim_{h \\to 0} \\frac{h\\left(nx^{n-1} + \\frac{n(n-1)}{2}x^{n-2}h + \\cdots + h^{n-1}\\right)}{h} \\\\\n&= \\lim_{h \\to 0} \\left(nx^{n-1} + \\frac{n(n-1)}{2}x^{n-2}h + \\cdots + h^{n-1}\\right)\n\\end{align*}\n\n\\textbf{Step 4:} Evaluate the limit as $h \\to 0$:\n\nAll terms with $h$ vanish:\n\\[\nf'(x) = nx^{n-1}\n\\]\n\n\\textcolor{green}{\\textbf{Conclusion:}} For positive integer $n$, $\\dfrac{d}{dx}(x^n) = nx^{n-1}$. \\qed\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} The proof can be extended to negative integers, rational numbers, and all real numbers using more advanced techniques.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "theorem",
+    "title": "Theorem 2.2: Constant Multiple Rule",
+    "content": "If $c$ is a constant and $f$ is differentiable, then:\n\\[\n\\boxed{\\frac{d}{dx}[cf(x)] = c \\cdot f'(x)}\n\\]\n\n\\textbf{In words:} The derivative of a constant times a function is the constant times the derivative of the function.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "theorem",
+    "title": "Theorem 2.3: Sum and Difference Rules",
+    "content": "If $f$ and $g$ are differentiable functions, then:\n\n\\textbf{Sum Rule:}\n\\[\n\\boxed{\\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)}\n\\]\n\n\\textbf{Difference Rule:}\n\\[\n\\boxed{\\frac{d}{dx}[f(x) - g(x)] = f'(x) - g'(x)}\n\\]\n\n\\textbf{In words:} The derivative of a sum (or difference) is the sum (or difference) of the derivatives.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "example",
+    "title": "Example 12: Using the Power Rule",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of each function:\n\n(a) $f(x) = x^5$\n\n(b) $g(x) = x^{10}$\n\n(c) $h(x) = x^{-3}$\n\n(d) $k(x) = \\sqrt[3]{x}$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $f(x) = x^5$\n\nUsing the power rule with $n = 5$:\n\\[\nf'(x) = 5x^{5-1} = 5x^4\n\\]\n\n\\textbf{Answer:} \\boxed{f'(x) = 5x^4}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $g(x) = x^{10}$\n\nUsing the power rule with $n = 10$:\n\\[\ng'(x) = 10x^{10-1} = 10x^9\n\\]\n\n\\textbf{Answer:} \\boxed{g'(x) = 10x^9}\n\n\\vspace{0.3cm}\n\\textbf{(c)} $h(x) = x^{-3}$\n\nUsing the power rule with $n = -3$:\n\\[\nh'(x) = -3x^{-3-1} = -3x^{-4} = -\\frac{3}{x^4}\n\\]\n\n\\textbf{Answer:} \\boxed{h'(x) = -\\frac{3}{x^4}}\n\n\\vspace{0.3cm}\n\\textbf{(d)} $k(x) = \\sqrt[3]{x} = x^{1/3}$\n\nUsing the power rule with $n = \\frac{1}{3}$:\n\\[\nk'(x) = \\frac{1}{3}x^{1/3 - 1} = \\frac{1}{3}x^{-2/3} = \\frac{1}{3x^{2/3}} = \\frac{1}{3\\sqrt[3]{x^2}}\n\\]\n\n\\textbf{Answer:} \\boxed{k'(x) = \\frac{1}{3\\sqrt[3]{x^2}}}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Pattern:}} Always reduce the exponent by 1 and multiply by the original exponent!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "example",
+    "title": "Example 13: Combining Basic Rules",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of:\n\n(a) $f(x) = 3x^4 + 2x^2 - 5x + 7$\n\n(b) $g(x) = 4x^3 - 6x^2 + 2$\n\n(c) $h(x) = \\dfrac{2}{x^3} + 5\\sqrt{x}$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $f(x) = 3x^4 + 2x^2 - 5x + 7$\n\nApply sum/difference and constant multiple rules:\n\\begin{align*}\nf'(x) &= \\frac{d}{dx}(3x^4) + \\frac{d}{dx}(2x^2) - \\frac{d}{dx}(5x) + \\frac{d}{dx}(7) \\\\\n&= 3 \\cdot 4x^3 + 2 \\cdot 2x - 5 \\cdot 1 + 0 \\\\\n&= 12x^3 + 4x - 5\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = 12x^3 + 4x - 5}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $g(x) = 4x^3 - 6x^2 + 2$\n\n\\begin{align*}\ng'(x) &= \\frac{d}{dx}(4x^3) - \\frac{d}{dx}(6x^2) + \\frac{d}{dx}(2) \\\\\n&= 4 \\cdot 3x^2 - 6 \\cdot 2x + 0 \\\\\n&= 12x^2 - 12x\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{g'(x) = 12x^2 - 12x}\n\n\\vspace{0.3cm}\n\\textbf{(c)} $h(x) = \\dfrac{2}{x^3} + 5\\sqrt{x}$\n\nFirst rewrite using exponents:\n\\[\nh(x) = 2x^{-3} + 5x^{1/2}\n\\]\n\nNow differentiate:\n\\begin{align*}\nh'(x) &= 2 \\cdot (-3)x^{-4} + 5 \\cdot \\frac{1}{2}x^{-1/2} \\\\\n&= -6x^{-4} + \\frac{5}{2}x^{-1/2} \\\\\n&= -\\frac{6}{x^4} + \\frac{5}{2\\sqrt{x}}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{h'(x) = -\\frac{6}{x^4} + \\frac{5}{2\\sqrt{x}}}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Key Technique:}} Always rewrite roots and fractions as powers before differentiating!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "example",
+    "title": "Example 14: Derivative Practice",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ for:\n\n(a) $y = x^5 + x$\n\n(b) $y = \\dfrac{x+1}{x-2}$ (we'll need quotient rule later, but try expanding first if possible)\n\n(c) $y = 2x^3 - 3x^2 - 12x + 1$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $y = x^5 + x$\n\n\\begin{align*}\n\\frac{dy}{dx} &= 5x^4 + 1\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = 5x^4 + 1}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $y = \\dfrac{x+1}{x-2}$\n\nFor this, we'll need the quotient rule (covered in Section 2.4). Let's note it for now.\n\n\\textbf{Answer:} (Requires quotient rule - see next section)\n\n\\vspace{0.3cm}\n\\textbf{(c)} $y = 2x^3 - 3x^2 - 12x + 1$\n\n\\begin{align*}\n\\frac{dy}{dx} &= 2(3x^2) - 3(2x) - 12(1) + 0 \\\\\n&= 6x^2 - 6x - 12\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = 6x^2 - 6x - 12}\n\n\\textcolor{green}{\\textbf{Note:}} This is related to past paper 2024 Q4(a) where we need to find inflection points!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "theorem",
+    "title": "Theorem 2.4: Derivatives of Trigonometric Functions",
+    "content": "The derivatives of the basic trigonometric functions are:\n\n\\[\n\\boxed{\\frac{d}{dx}(\\sin x) = \\cos x}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(\\cos x) = -\\sin x}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(\\tan x) = \\sec^2 x}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(\\cot x) = -\\csc^2 x}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(\\sec x) = \\sec x \\tan x}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(\\csc x) = -\\csc x \\cot x}\n\\]\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important:}} $x$ must be in radians for these formulas to be valid!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "proof",
+    "title": "Proof: Derivative of $\\sin x$",
+    "content": "\\textcolor{primaryblue}{\\textbf{Proof:}}\n\nWe prove $\\dfrac{d}{dx}(\\sin x) = \\cos x$ using first principles and trigonometric identities.\n\n\\textbf{Step 1:} Write the definition\n\\[\n\\frac{d}{dx}(\\sin x) = \\lim_{h \\to 0} \\frac{\\sin(x+h) - \\sin x}{h}\n\\]\n\n\\textbf{Step 2:} Use the sine addition formula\n\nRecall: $\\sin(x+h) = \\sin x \\cos h + \\cos x \\sin h$\n\n\\begin{align*}\n\\frac{d}{dx}(\\sin x) &= \\lim_{h \\to 0} \\frac{\\sin x \\cos h + \\cos x \\sin h - \\sin x}{h} \\\\\n&= \\lim_{h \\to 0} \\frac{\\sin x(\\cos h - 1) + \\cos x \\sin h}{h} \\\\\n&= \\lim_{h \\to 0} \\left[\\sin x \\cdot \\frac{\\cos h - 1}{h} + \\cos x \\cdot \\frac{\\sin h}{h}\\right]\n\\end{align*}\n\n\\textbf{Step 3:} Separate the limits\n\\[\n= \\sin x \\cdot \\lim_{h \\to 0} \\frac{\\cos h - 1}{h} + \\cos x \\cdot \\lim_{h \\to 0} \\frac{\\sin h}{h}\n\\]\n\n\\textbf{Step 4:} Evaluate using known limits\n\nFrom Chapter 1, we know:\n\\begin{itemize}\n    \\item $\\displaystyle\\lim_{h \\to 0} \\frac{\\sin h}{h} = 1$\n    \\item $\\displaystyle\\lim_{h \\to 0} \\frac{\\cos h - 1}{h} = 0$ (equivalent to $\\displaystyle\\lim_{h \\to 0} \\frac{1 - \\cos h}{h} = 0$)\n\\end{itemize}\n\nTherefore:\n\\[\n\\frac{d}{dx}(\\sin x) = \\sin x \\cdot 0 + \\cos x \\cdot 1 = \\cos x\n\\]\n\n\\textcolor{green}{\\textbf{Conclusion:}} $\\dfrac{d}{dx}(\\sin x) = \\cos x$ \\qed\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "example",
+    "title": "Example 15: Derivatives of Trigonometric Functions",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative:\n\n(a) $f(x) = 3\\sin x + 2\\cos x$\n\n(b) $g(x) = x^2 + \\tan x$\n\n(c) $h(x) = 5\\sin x - 4\\cos x + x^3$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $f(x) = 3\\sin x + 2\\cos x$\n\n\\begin{align*}\nf'(x) &= 3 \\cdot \\frac{d}{dx}(\\sin x) + 2 \\cdot \\frac{d}{dx}(\\cos x) \\\\\n&= 3\\cos x + 2(-\\sin x) \\\\\n&= 3\\cos x - 2\\sin x\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = 3\\cos x - 2\\sin x}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $g(x) = x^2 + \\tan x$\n\n\\begin{align*}\ng'(x) &= \\frac{d}{dx}(x^2) + \\frac{d}{dx}(\\tan x) \\\\\n&= 2x + \\sec^2 x\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{g'(x) = 2x + \\sec^2 x}\n\n\\vspace{0.3cm}\n\\textbf{(c)} $h(x) = 5\\sin x - 4\\cos x + x^3$\n\n\\begin{align*}\nh'(x) &= 5\\cos x - 4(-\\sin x) + 3x^2 \\\\\n&= 5\\cos x + 4\\sin x + 3x^2\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{h'(x) = 5\\cos x + 4\\sin x + 3x^2}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "theorem",
+    "title": "Theorem 2.5: Derivatives of Exponential and Logarithmic Functions",
+    "content": "\\textbf{Exponential Functions:}\n\n\\[\n\\boxed{\\frac{d}{dx}(e^x) = e^x}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(a^x) = a^x \\ln a \\quad (a > 0, a \\neq 1)}\n\\]\n\n\\textbf{Logarithmic Functions:}\n\n\\[\n\\boxed{\\frac{d}{dx}(\\ln x) = \\frac{1}{x} \\quad (x > 0)}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(\\log_a x) = \\frac{1}{x \\ln a} \\quad (x > 0, a > 0, a \\neq 1)}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Special Property:}}\n\nThe function $e^x$ is its own derivative! This makes $e$ the natural base for exponential functions.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "example",
+    "title": "Example 16: Exponential and Logarithmic Derivatives",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative:\n\n(a) $f(x) = 3e^x + x^2$\n\n(b) $g(x) = \\ln x + 2x$\n\n(c) $h(x) = e^x + \\ln x - 5x + 4$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $f(x) = 3e^x + x^2$\n\n\\begin{align*}\nf'(x) &= 3 \\cdot \\frac{d}{dx}(e^x) + \\frac{d}{dx}(x^2) \\\\\n&= 3e^x + 2x\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = 3e^x + 2x}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $g(x) = \\ln x + 2x$\n\n\\begin{align*}\ng'(x) &= \\frac{d}{dx}(\\ln x) + 2 \\cdot \\frac{d}{dx}(x) \\\\\n&= \\frac{1}{x} + 2\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{g'(x) = \\frac{1}{x} + 2}\n\n\\vspace{0.3cm}\n\\textbf{(c)} $h(x) = e^x + \\ln x - 5x + 4$\n\n\\begin{align*}\nh'(x) &= e^x + \\frac{1}{x} - 5\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{h'(x) = e^x + \\frac{1}{x} - 5}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Basic Rules of Differentiation",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 2.3 Summary: Basic Derivative",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 2.3 Summary: Basic Derivative Rules}}\n\n\\begin{center}\n\\begin{tabular}{|p{4cm}|p{5cm}|p{4cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Function} & \\textbf{Derivative} & \\textbf{Rule Name} \\\\\n\\hline\n$c$ (constant) & $0$ & Constant Rule \\\\\n\\hline\n$x^n$ & $nx^{n-1}$ & Power Rule \\\\\n\\hline\n$cf(x)$ & $cf'(x)$ & Constant Multiple \\\\\n\\hline\n$f(x) \\pm g(x)$ & $f'(x) \\pm g'(x)$ & Sum/Difference \\\\\n\\hline\n$\\sin x$ & $\\cos x$ & Trig \\\\\n\\hline\n$\\cos x$ & $-\\sin x$ & Trig \\\\\n\\hline\n$\\tan x$ & $\\sec^2 x$ & Trig \\\\\n\\hline\n$e^x$ & $e^x$ & Exponential \\\\\n\\hline\n$\\ln x$ & $\\dfrac{1}{x}$ & Logarithmic \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Differentiation Strategy:}}\n\\begin{enumerate}\n    \\item Rewrite roots and fractions as powers\n    \\item Apply sum/difference rule to break up the function\n    \\item Apply constant multiple rule\n    \\item Apply power rule, trig rules, or exp/log rules to each term\n    \\item Simplify your answer\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Forgetting the negative sign in $\\dfrac{d}{dx}(\\cos x) = -\\sin x$\n    \\item Writing $\\dfrac{d}{dx}(x^n) = x^{n-1}$ (forgot to multiply by $n$!)\n    \\item Using degrees instead of radians for trig functions\n    \\item Forgetting domain restrictions (e.g., $\\ln x$ only for $x > 0$)\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "theorem",
+    "title": "Theorem 2.6: The Product Rule",
+    "content": "If $f$ and $g$ are differentiable functions, then:\n\\[\n\\boxed{\\frac{d}{dx}[f(x) \\cdot g(x)] = f(x) \\cdot g'(x) + g(x) \\cdot f'(x)}\n\\]\n\n\\textbf{Alternative notation:}\n\\[\n(fg)' = fg' + gf'\n\\]\n\nor\n\\[\n\\frac{d}{dx}(uv) = u\\frac{dv}{dx} + v\\frac{du}{dx}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In Words:}}\n\nThe derivative of a product is: (first function)(derivative of second) + (second function)(derivative of first).\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Error:}}\n\n$(fg)' \\neq f'g'$ ! The derivative of a product is NOT the product of derivatives!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "proof",
+    "title": "Proof of the Product Rule",
+    "content": "\\textcolor{primaryblue}{\\textbf{Proof:}}\n\nLet $h(x) = f(x) \\cdot g(x)$. We use the definition of the derivative.\n\n\\textbf{Step 1:} Write the definition\n\\[\nh'(x) = \\lim_{h \\to 0} \\frac{h(x+h) - h(x)}{h}\n\\]\n\n\\textbf{Step 2:} Substitute $h(x) = f(x)g(x)$\n\\[\nh'(x) = \\lim_{h \\to 0} \\frac{f(x+h)g(x+h) - f(x)g(x)}{h}\n\\]\n\n\\textbf{Step 3:} Add and subtract $f(x+h)g(x)$ (clever trick!)\n\\begin{align*}\nh'(x) &= \\lim_{h \\to 0} \\frac{f(x+h)g(x+h) - f(x+h)g(x) + f(x+h)g(x) - f(x)g(x)}{h}\n\\end{align*}\n\n\\textbf{Step 4:} Factor and separate\n\\begin{align*}\n&= \\lim_{h \\to 0} \\frac{f(x+h)[g(x+h) - g(x)] + g(x)[f(x+h) - f(x)]}{h} \\\\\n&= \\lim_{h \\to 0} \\left[f(x+h) \\cdot \\frac{g(x+h) - g(x)}{h} + g(x) \\cdot \\frac{f(x+h) - f(x)}{h}\\right]\n\\end{align*}\n\n\\textbf{Step 5:} Evaluate the limits\n\nSince $f$ is differentiable, it's continuous, so $\\lim_{h \\to 0} f(x+h) = f(x)$.\n\n\\begin{align*}\nh'(x) &= \\lim_{h \\to 0} f(x+h) \\cdot \\lim_{h \\to 0} \\frac{g(x+h) - g(x)}{h} + g(x) \\cdot \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\\\\n&= f(x) \\cdot g'(x) + g(x) \\cdot f'(x)\n\\end{align*}\n\n\\textcolor{green}{\\textbf{Conclusion:}} $(fg)' = fg' + gf'$ \\qed\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "example",
+    "title": "Example 17: Using the Product Rule",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of $f(x) = x^2 \\sin x$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis is a product of two functions: $f(x) = x^2$ and $g(x) = \\sin x$.\n\n\\textbf{Step 1:} Identify the parts\n\\begin{align*}\nu &= x^2 \\quad \\implies \\quad u' = 2x \\\\\nv &= \\sin x \\quad \\implies \\quad v' = \\cos x\n\\end{align*}\n\n\\textbf{Step 2:} Apply the product rule\n\n$(uv)' = uv' + vu'$\n\n\\begin{align*}\n\\frac{d}{dx}(x^2 \\sin x) &= x^2 \\cdot \\frac{d}{dx}(\\sin x) + \\sin x \\cdot \\frac{d}{dx}(x^2) \\\\\n&= x^2 \\cdot \\cos x + \\sin x \\cdot 2x \\\\\n&= x^2 \\cos x + 2x \\sin x\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = x^2 \\cos x + 2x \\sin x}\n\n\\textcolor{green}{\\textbf{Check:}} We can factor: $f'(x) = x(x\\cos x + 2\\sin x)$ if needed.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "example",
+    "title": "Example 18: Product Rule with Exponential",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ if $y = e^x \\sin x$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Identify the factors\n\\begin{align*}\nu &= e^x \\quad \\implies \\quad u' = e^x \\\\\nv &= \\sin x \\quad \\implies \\quad v' = \\cos x\n\\end{align*}\n\n\\textbf{Step 2:} Apply product rule\n\\begin{align*}\n\\frac{dy}{dx} &= e^x \\cdot \\cos x + \\sin x \\cdot e^x \\\\\n&= e^x \\cos x + e^x \\sin x \\\\\n&= e^x(\\cos x + \\sin x)\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = e^x(\\cos x + \\sin x)}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Note:}} We factored out $e^x$ for a cleaner form.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "theorem",
+    "title": "Theorem 2.7: The Quotient Rule",
+    "content": "If $f$ and $g$ are differentiable functions and $g(x) \\neq 0$, then:\n\\[\n\\boxed{\\frac{d}{dx}\\left[\\frac{f(x)}{g(x)}\\right] = \\frac{g(x) \\cdot f'(x) - f(x) \\cdot g'(x)}{[g(x)]^2}}\n\\]\n\n\\textbf{Alternative notation:}\n\\[\n\\left(\\frac{u}{v}\\right)' = \\frac{vu' - uv'}{v^2}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Memory Aid - \"Lo-dee-hi minus hi-dee-lo over lo-lo\":}}\n\\begin{itemize}\n    \\item Lo (bottom) times dee-hi (derivative of top)\n    \\item Minus\n    \\item Hi (top) times dee-lo (derivative of bottom)\n    \\item All over\n    \\item Lo-lo (bottom squared)\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Order Matters!}}\n\nThe order in the numerator is crucial: $vu' - uv'$, NOT $uv' - vu'$!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "example",
+    "title": "Example 19: Using the Quotient Rule",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of $f(x) = \\dfrac{x+1}{x-2}$.\n\n(From 2025 past paper, Q1 part v)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Identify numerator and denominator\n\\begin{align*}\nu &= x + 1 \\quad \\implies \\quad u' = 1 \\\\\nv &= x - 2 \\quad \\implies \\quad v' = 1\n\\end{align*}\n\n\\textbf{Step 2:} Apply quotient rule\n\n$\\left(\\dfrac{u}{v}\\right)' = \\dfrac{vu' - uv'}{v^2}$\n\n\\begin{align*}\n\\frac{d}{dx}\\left(\\frac{x+1}{x-2}\\right) &= \\frac{(x-2)(1) - (x+1)(1)}{(x-2)^2} \\\\\n&= \\frac{x - 2 - x - 1}{(x-2)^2} \\\\\n&= \\frac{-3}{(x-2)^2}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = \\frac{-3}{(x-2)^2}}\n\n\\textcolor{green}{\\textbf{Observation:}} The derivative is always negative (since $(x-2)^2 > 0$), meaning this function is always decreasing where it's defined!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "example",
+    "title": "Example 20: Quotient Rule with Trigonometric Functions",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of $g(x) = \\dfrac{\\sin x}{1 + \\cos x}$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Identify parts\n\\begin{align*}\nu &= \\sin x \\quad \\implies \\quad u' = \\cos x \\\\\nv &= 1 + \\cos x \\quad \\implies \\quad v' = -\\sin x\n\\end{align*}\n\n\\textbf{Step 2:} Apply quotient rule\n\\begin{align*}\ng'(x) &= \\frac{(1 + \\cos x)(\\cos x) - (\\sin x)(-\\sin x)}{(1 + \\cos x)^2} \\\\\n&= \\frac{\\cos x + \\cos^2 x + \\sin^2 x}{(1 + \\cos x)^2}\n\\end{align*}\n\n\\textbf{Step 3:} Simplify using $\\sin^2 x + \\cos^2 x = 1$\n\\begin{align*}\ng'(x) &= \\frac{\\cos x + 1}{(1 + \\cos x)^2} \\\\\n&= \\frac{1 + \\cos x}{(1 + \\cos x)^2} \\\\\n&= \\frac{1}{1 + \\cos x}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{g'(x) = \\frac{1}{1 + \\cos x}}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Tip:}} Always look for simplification opportunities using trig identities!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "example",
+    "title": "Example 21: Quotient Rule - Another Example",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} If $f$ and $g$ are both differentiable, find $\\dfrac{d}{dx}\\left(\\dfrac{f(x)}{g(x)}\\right)$.\n\n(From 2024 past paper, Q1 part ix - statement of quotient rule)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis is asking us to state the quotient rule.\n\n\\textbf{Answer:} \n\\[\n\\boxed{\\frac{d}{dx}\\left(\\frac{f(x)}{g(x)}\\right) = \\frac{g(x) \\cdot f'(x) - f(x) \\cdot g'(x)}{[g(x)]^2}}\n\\]\n\nprovided $g(x) \\neq 0$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} \n\nThe derivative of a quotient equals:\n\\[\n\\frac{\\text{(bottom)(derivative of top)} - \\text{(top)(derivative of bottom)}}{\\text{(bottom)}^2}\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "example",
+    "title": "Example 22: Combining Product and Quotient Rules",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ if $y = \\dfrac{x^2 + 1}{x} \\cdot \\sin x$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis involves both a quotient and a product.\n\n\\textbf{Method 1:} Simplify first, then differentiate\n\nRewrite:\n\\[\ny = \\left(\\frac{x^2 + 1}{x}\\right) \\sin x = \\left(x + \\frac{1}{x}\\right) \\sin x = x\\sin x + \\frac{\\sin x}{x}\n\\]\n\nNow differentiate each term using product rule:\n\nFor $x\\sin x$:\n\\[\n\\frac{d}{dx}(x\\sin x) = x\\cos x + \\sin x\n\\]\n\nFor $\\dfrac{\\sin x}{x}$ (quotient rule):\n\\[\n\\frac{d}{dx}\\left(\\frac{\\sin x}{x}\\right) = \\frac{x\\cos x - \\sin x}{x^2}\n\\]\n\nTherefore:\n\\[\n\\frac{dy}{dx} = x\\cos x + \\sin x + \\frac{x\\cos x - \\sin x}{x^2}\n\\]\n\n\\textbf{Method 2:} Use product rule with $u = \\dfrac{x^2+1}{x}$ and $v = \\sin x$\n\nFirst find $u'$ using quotient rule:\n\\[\nu' = \\frac{x(2x) - (x^2+1)(1)}{x^2} = \\frac{2x^2 - x^2 - 1}{x^2} = \\frac{x^2 - 1}{x^2}\n\\]\n\nThen apply product rule:\n\\begin{align*}\n\\frac{dy}{dx} &= u \\cdot v' + v \\cdot u' \\\\\n&= \\frac{x^2+1}{x} \\cdot \\cos x + \\sin x \\cdot \\frac{x^2-1}{x^2}\n\\end{align*}\n\n\\textbf{Answer (simplified):} \\boxed{\\frac{dy}{dx} = x\\cos x + \\sin x + \\frac{x\\cos x - \\sin x}{x^2}}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} Both methods give the same answer (verify by simplifying!). Choose the method that seems easier for the given problem.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "example",
+    "title": "Example 23: Higher Derivatives",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{d^2x}{dt^2}$ if $x = \\sin t$.\n\n(From 2025 past paper, Q1 part x)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThe notation $\\dfrac{d^2x}{dt^2}$ means the second derivative (derivative of the derivative).\n\n\\textbf{Step 1:} Find the first derivative\n\\[\n\\frac{dx}{dt} = \\cos t\n\\]\n\n\\textbf{Step 2:} Find the second derivative (derivative of $\\cos t$)\n\\[\n\\frac{d^2x}{dt^2} = \\frac{d}{dt}(\\cos t) = -\\sin t\n\\]\n\n\\textbf{Answer:} \\boxed{\\frac{d^2x}{dt^2} = -\\sin t}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Physical Interpretation:}} If $x(t)$ is position, then $\\dfrac{dx}{dt}$ is velocity and $\\dfrac{d^2x}{dt^2}$ is acceleration!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Product and Quotient Rules",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 2.4 Summary}} {Product Rule:}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 2.4 Summary}}\n\n\\textbf{Product Rule:}\n\\[\n\\boxed{(fg)' = fg' + gf'}\n\\]\n\n\\textbf{Quotient Rule:}\n\\[\n\\boxed{\\left(\\frac{f}{g}\\right)' = \\frac{gf' - fg'}{g^2}}\n\\]\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{When to Use Which Rule:}}\n\n\\begin{center}\n\\begin{tabular}{|p{3cm}|p{5cm}|p{5cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Situation} & \\textbf{Rule} & \\textbf{Example} \\\\\n\\hline\nTwo functions multiplied & Product Rule & $x^2 \\sin x$ \\\\\n\\hline\nFunction divided by function & Quotient Rule & $\\dfrac{x+1}{x-2}$ \\\\\n\\hline\nCan simplify first & Do it! & $\\dfrac{x^2}{x} = x$ \\\\\n\\hline\nSecond derivative & Differentiate twice & $f''(x)$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Strategy Tips:}}\n\\begin{enumerate}\n    \\item Always check if you can simplify BEFORE applying product/quotient rule\n    \\item For quotient rule: write it as $\\dfrac{\\text{lo} \\cdot \\text{dee hi} - \\text{hi} \\cdot \\text{dee lo}}{\\text{lo}^2}$\n    \\item For product rule: $(uv)' = u \\cdot v' + v \\cdot u'$ (order doesn't matter for addition)\n    \\item Always simplify your final answer\n    \\item Use trig identities when applicable\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item $(fg)' = f'g'$ \\textcolor{red}{WRONG!} Use product rule!\n    \\item $\\left(\\dfrac{f}{g}\\right)' = \\dfrac{f'}{g'}$ \\textcolor{red}{WRONG!} Use quotient rule!\n    \\item Getting the sign wrong in quotient rule (it's $gf' - fg'$, not $fg' - gf'$)\n    \\item Forgetting to square the denominator in quotient rule\n    \\item Not simplifying algebraically before differentiating\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Quick Check:}}\n\nCan you state these rules from memory?\n\\begin{itemize}\n    \\item Product rule: $(uv)' = ?$\n    \\item Quotient rule: $\\left(\\dfrac{u}{v}\\right)' = ?$\n\\end{itemize}\n\nIf not, practice until you can!\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "theorem",
+    "title": "Theorem 2.8: The Chain Rule",
+    "content": "If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then the composite function $F(x) = f(g(x))$ is differentiable at $x$, and:\n\\[\n\\boxed{F'(x) = f'(g(x)) \\cdot g'(x)}\n\\]\n\n\\textbf{Alternative Notations:}\n\nIf $y = f(u)$ and $u = g(x)$, then:\n\\[\n\\boxed{\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}}\n\\]\n\nor\n\\[\n\\boxed{\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In Words:}}\n\nThe derivative of a composite function is:\n\\begin{itemize}\n    \\item The derivative of the outer function (evaluated at the inner function)\n    \\item Times\n    \\item The derivative of the inner function\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Memory Aid:}}\n\n\"Derivative of outside times derivative of inside\"\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "example",
+    "title": "Example 24: Basic Chain Rule Application",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of $f(x) = (x^2 + 1)^3$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis is a composite function: the outer function is $u^3$ and the inner function is $u = x^2 + 1$.\n\n\\textbf{Step 1:} Identify outer and inner functions\n\\begin{align*}\n\\text{Inner: } u &= g(x) = x^2 + 1 \\\\\n\\text{Outer: } y &= f(u) = u^3\n\\end{align*}\n\n\\textbf{Step 2:} Find derivatives of each part\n\\begin{align*}\n\\frac{du}{dx} &= 2x \\\\\n\\frac{dy}{du} &= 3u^2\n\\end{align*}\n\n\\textbf{Step 3:} Apply chain rule\n\n$\\dfrac{dy}{dx} = \\dfrac{dy}{du} \\cdot \\dfrac{du}{dx}$\n\n\\begin{align*}\n\\frac{dy}{dx} &= 3u^2 \\cdot 2x \\\\\n&= 3(x^2 + 1)^2 \\cdot 2x \\\\\n&= 6x(x^2 + 1)^2\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = 6x(x^2 + 1)^2}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Key Steps:}}\n\\begin{enumerate}\n    \\item Differentiate outer function (keep inside unchanged)\n    \\item Multiply by derivative of inside\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "example",
+    "title": "Example 25: Chain Rule with Trigonometric Functions",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of $y = \\sin(3x^2)$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Identify the composition\n\\begin{align*}\n\\text{Inner: } u &= 3x^2 \\\\\n\\text{Outer: } y &= \\sin u\n\\end{align*}\n\n\\textbf{Step 2:} Find derivatives\n\\begin{align*}\n\\frac{du}{dx} &= 6x \\\\\n\\frac{dy}{du} &= \\cos u\n\\end{align*}\n\n\\textbf{Step 3:} Apply chain rule\n\\begin{align*}\n\\frac{dy}{dx} &= \\cos u \\cdot 6x \\\\\n&= \\cos(3x^2) \\cdot 6x \\\\\n&= 6x\\cos(3x^2)\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = 6x\\cos(3x^2)}\n\n\\textcolor{green}{\\textbf{Check:}} The derivative of $\\sin(\\text{something})$ is $\\cos(\\text{something})$ times the derivative of \"something\".\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "example",
+    "title": "Example 26: Chain Rule with Exponentials",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ if $y = e^{5x}\\sin x$.\n\n(Related to 2025 past paper, Q1 part iv)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis requires both the product rule AND the chain rule!\n\n\\textbf{Step 1:} Recognize it's a product: $u \\cdot v$ where $u = e^{5x}$ and $v = \\sin x$\n\n\\textbf{Step 2:} Find $u'$ using chain rule\n\nFor $u = e^{5x}$:\n\\begin{align*}\nu' &= e^{5x} \\cdot \\frac{d}{dx}(5x) \\\\\n&= e^{5x} \\cdot 5 \\\\\n&= 5e^{5x}\n\\end{align*}\n\n\\textbf{Step 3:} Find $v'$\n\\[\nv' = \\cos x\n\\]\n\n\\textbf{Step 4:} Apply product rule\n\n$(uv)' = uv' + vu'$\n\n\\begin{align*}\n\\frac{dy}{dx} &= e^{5x} \\cdot \\cos x + \\sin x \\cdot 5e^{5x} \\\\\n&= e^{5x}\\cos x + 5e^{5x}\\sin x \\\\\n&= e^{5x}(\\cos x + 5\\sin x)\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = e^{5x}(\\cos x + 5\\sin x)}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} We factored out $e^{5x}$ for a cleaner form. This is from past paper 2025, Q1(iv)!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "example",
+    "title": "Example 27: Multiple Chain Rule Applications",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of:\n\n(a) $f(x) = \\sqrt{x^2 + 1}$\n\n(b) $g(x) = (2x + 3)^5$\n\n(c) $h(x) = \\cos(x^3)$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $f(x) = \\sqrt{x^2 + 1} = (x^2 + 1)^{1/2}$\n\nOuter: $u^{1/2}$, Inner: $u = x^2 + 1$\n\n\\begin{align*}\nf'(x) &= \\frac{1}{2}(x^2 + 1)^{-1/2} \\cdot 2x \\\\\n&= \\frac{x}{(x^2 + 1)^{1/2}} \\\\\n&= \\frac{x}{\\sqrt{x^2 + 1}}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{f'(x) = \\frac{x}{\\sqrt{x^2 + 1}}}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $g(x) = (2x + 3)^5$\n\nOuter: $u^5$, Inner: $u = 2x + 3$\n\n\\begin{align*}\ng'(x) &= 5(2x + 3)^4 \\cdot 2 \\\\\n&= 10(2x + 3)^4\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{g'(x) = 10(2x + 3)^4}\n\n\\vspace{0.3cm}\n\\textbf{(c)} $h(x) = \\cos(x^3)$\n\nOuter: $\\cos u$, Inner: $u = x^3$\n\n\\begin{align*}\nh'(x) &= -\\sin(x^3) \\cdot 3x^2 \\\\\n&= -3x^2\\sin(x^3)\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{h'(x) = -3x^2\\sin(x^3)}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "example",
+    "title": "Example 28: Nested Chain Rule",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of $y = \\sin^2(3x) = [\\sin(3x)]^2$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis requires the chain rule TWICE (composition of three functions)!\n\nThink of it as: $y = u^2$ where $u = \\sin v$ where $v = 3x$.\n\n\\textbf{Step 1:} Outermost layer: $y = u^2$ where $u = \\sin(3x)$\n\n\\[\n\\frac{dy}{du} = 2u = 2\\sin(3x)\n\\]\n\n\\textbf{Step 2:} Middle layer: $u = \\sin(3x)$\n\nUsing chain rule again:\n\\[\n\\frac{du}{dx} = \\cos(3x) \\cdot 3 = 3\\cos(3x)\n\\]\n\n\\textbf{Step 3:} Combine using chain rule\n\n\\begin{align*}\n\\frac{dy}{dx} &= \\frac{dy}{du} \\cdot \\frac{du}{dx} \\\\\n&= 2\\sin(3x) \\cdot 3\\cos(3x) \\\\\n&= 6\\sin(3x)\\cos(3x)\n\\end{align*}\n\n\\textbf{Step 4:} Optional simplification using double angle formula\n\nRecall: $2\\sin\\theta\\cos\\theta = \\sin(2\\theta)$\n\n\\begin{align*}\n\\frac{dy}{dx} &= 6\\sin(3x)\\cos(3x) \\\\\n&= 3 \\cdot 2\\sin(3x)\\cos(3x) \\\\\n&= 3\\sin(6x)\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = 6\\sin(3x)\\cos(3x) = 3\\sin(6x)}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Strategy:}} Work from outside to inside, applying chain rule at each layer!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "definition",
+    "title": "Definition 2.8: General Power Chain Rule",
+    "content": "A special case of the chain rule that's very useful:\n\nIf $u = g(x)$ is differentiable, then:\n\\[\n\\boxed{\\frac{d}{dx}[u^n] = nu^{n-1} \\cdot \\frac{du}{dx}}\n\\]\n\n\\textbf{In words:} Bring down the exponent, reduce the exponent by 1, and multiply by the derivative of the inside.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Examples:}}\n\\begin{itemize}\n    \\item $\\dfrac{d}{dx}[(x^2 + 1)^3] = 3(x^2 + 1)^2 \\cdot 2x$\n    \\item $\\dfrac{d}{dx}[(3x - 2)^{10}] = 10(3x - 2)^9 \\cdot 3$\n    \\item $\\dfrac{d}{dx}[\\sqrt{x^2 + 4}] = \\dfrac{1}{2}(x^2 + 4)^{-1/2} \\cdot 2x$\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "example",
+    "title": "Example 29: Chain Rule Written Form (Past Paper Style)",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Write the chain rule for differentiation.\n\n(From 2021 past paper, Q1 part ix)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThe chain rule states that if $y = f(u)$ and $u = g(x)$, then:\n\n\\textbf{Answer:} \n\\[\n\\boxed{\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}}\n\\]\n\nOr equivalently, if $F(x) = f(g(x))$, then:\n\\[\n\\boxed{F'(x) = f'(g(x)) \\cdot g'(x)}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} The derivative of a composite function is the derivative of the outer function (evaluated at the inner function) times the derivative of the inner function.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Chain Rule",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 2.5 Summary: Chain Rule}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 2.5 Summary: Chain Rule}}\n\n\\textbf{The Chain Rule:}\n\\[\n\\boxed{\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)}\n\\]\n\nor\n\n\\[\n\\boxed{\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}}\n\\]\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Step-by-Step Strategy:}}\n\\begin{enumerate}\n    \\item Identify the outer function and inner function\n    \\item Differentiate the outer function (keep inside unchanged)\n    \\item Multiply by the derivative of the inner function\n    \\item Simplify\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Common Patterns:}}\n\n\\begin{center}\n\\begin{tabular}{|p{4cm}|p{5cm}|p{4cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Function Type} & \\textbf{Example} & \\textbf{Derivative} \\\\\n\\hline\n$(u)^n$ & $(x^2+1)^3$ & $nu^{n-1} \\cdot u'$ \\\\\n\\hline\n$\\sin(u)$ & $\\sin(5x)$ & $\\cos(u) \\cdot u'$ \\\\\n\\hline\n$\\cos(u)$ & $\\cos(x^2)$ & $-\\sin(u) \\cdot u'$ \\\\\n\\hline\n$e^u$ & $e^{3x}$ & $e^u \\cdot u'$ \\\\\n\\hline\n$\\ln(u)$ & $\\ln(x^2+1)$ & $\\dfrac{1}{u} \\cdot u'$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Forgetting to multiply by the derivative of the inside\n    \\item Differentiating the inside function incorrectly\n    \\item Not identifying the composition correctly\n    \\item Confusing chain rule with product rule\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Quick Test:}} Can you find $\\dfrac{d}{dx}[\\sin(x^2)]$ in your head?\n\nAnswer: $\\cos(x^2) \\cdot 2x = 2x\\cos(x^2)$ \\textcolor{green}{\\checkmark}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "definition",
+    "title": "Definition 2.9: Implicit vs. Explicit Functions",
+    "content": "\\textbf{Explicit Function:} $y$ is written explicitly in terms of $x$.\n\nExamples: $y = x^2 + 3$, $y = \\sin x$, $y = \\dfrac{x+1}{x-2}$\n\n\\textbf{Implicit Function:} The relationship between $x$ and $y$ is given by an equation.\n\nExamples: $x^2 + y^2 = 25$, $xy = 1$, $x^3 + y^3 = 6xy$\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Why Implicit Differentiation?}}\n\\begin{itemize}\n    \\item Sometimes solving for $y$ explicitly is difficult or impossible\n    \\item Even when possible, it may be easier to differentiate implicitly\n    \\item Many important curves (circles, ellipses, etc.) are naturally described implicitly\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "definition",
+    "title": "Definition 2.10: Method of Implicit Differentiation",
+    "content": "To find $\\dfrac{dy}{dx}$ when $y$ is defined implicitly:\n\n\\textbf{Step 1:} Differentiate both sides of the equation with respect to $x$\n\n\\textbf{Step 2:} When differentiating terms with $y$, use the chain rule:\n\\[\n\\frac{d}{dx}[f(y)] = f'(y) \\cdot \\frac{dy}{dx}\n\\]\n\n\\textbf{Step 3:} Collect all terms with $\\dfrac{dy}{dx}$ on one side\n\n\\textbf{Step 4:} Factor out $\\dfrac{dy}{dx}$ and solve for it\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Insight:}}\n\nWhen we differentiate $y$ with respect to $x$, we get $\\dfrac{dy}{dx}$ (by chain rule, treating $y$ as a function of $x$).\n\n\\textbf{Examples:}\n\\begin{itemize}\n    \\item $\\dfrac{d}{dx}(y) = \\dfrac{dy}{dx}$\n    \\item $\\dfrac{d}{dx}(y^2) = 2y \\cdot \\dfrac{dy}{dx}$\n    \\item $\\dfrac{d}{dx}(y^3) = 3y^2 \\cdot \\dfrac{dy}{dx}$\n    \\item $\\dfrac{d}{dx}(\\sin y) = \\cos y \\cdot \\dfrac{dy}{dx}$\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "example",
+    "title": "Example 30: Basic Implicit Differentiation",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ if $x^2 + y^2 = 25$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis is the equation of a circle with radius 5 centered at the origin.\n\n\\textbf{Step 1:} Differentiate both sides with respect to $x$\n\nLeft side:\n\\begin{align*}\n\\frac{d}{dx}(x^2 + y^2) &= \\frac{d}{dx}(x^2) + \\frac{d}{dx}(y^2) \\\\\n&= 2x + 2y\\frac{dy}{dx}\n\\end{align*}\n\nRight side:\n\\[\n\\frac{d}{dx}(25) = 0\n\\]\n\n\\textbf{Step 2:} Set them equal\n\\[\n2x + 2y\\frac{dy}{dx} = 0\n\\]\n\n\\textbf{Step 3:} Solve for $\\dfrac{dy}{dx}$\n\\begin{align*}\n2y\\frac{dy}{dx} &= -2x \\\\\n\\frac{dy}{dx} &= -\\frac{2x}{2y} \\\\\n\\frac{dy}{dx} &= -\\frac{x}{y}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = -\\frac{x}{y}}\n\n\\textcolor{green}{\\textbf{Geometric Interpretation:}} At any point $(x_0, y_0)$ on the circle, the slope of the tangent line is $-\\dfrac{x_0}{y_0}$.\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Check:}} At $(3, 4)$: slope $= -\\dfrac{3}{4}$. At $(0, 5)$: slope $= 0$ (horizontal tangent).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "example",
+    "title": "Example 31: Implicit Differentiation - Finding Tangent Line",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the tangent to the curve $x^2y^2 = 9$ at the point $(-1, 3)$.\n\n(From 2021 past paper, Q3 part b)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $\\dfrac{dy}{dx}$ using implicit differentiation\n\nDifferentiate both sides:\n\\[\n\\frac{d}{dx}(x^2y^2) = \\frac{d}{dx}(9)\n\\]\n\nLeft side (use product rule):\n\\begin{align*}\n\\frac{d}{dx}(x^2y^2) &= x^2 \\cdot \\frac{d}{dx}(y^2) + y^2 \\cdot \\frac{d}{dx}(x^2) \\\\\n&= x^2 \\cdot 2y\\frac{dy}{dx} + y^2 \\cdot 2x \\\\\n&= 2x^2y\\frac{dy}{dx} + 2xy^2\n\\end{align*}\n\nRight side:\n\\[\n\\frac{d}{dx}(9) = 0\n\\]\n\n\\textbf{Step 2:} Solve for $\\dfrac{dy}{dx}$\n\\begin{align*}\n2x^2y\\frac{dy}{dx} + 2xy^2 &= 0 \\\\\n2x^2y\\frac{dy}{dx} &= -2xy^2 \\\\\n\\frac{dy}{dx} &= -\\frac{2xy^2}{2x^2y} \\\\\n\\frac{dy}{dx} &= -\\frac{y}{x}\n\\end{align*}\n\n\\textbf{Step 3:} Find slope at $(-1, 3)$\n\\[\n\\frac{dy}{dx}\\bigg|_{(-1,3)} = -\\frac{3}{-1} = 3\n\\]\n\n\\textbf{Step 4:} Write equation of tangent line\n\nUsing point-slope form with point $(-1, 3)$ and slope $m = 3$:\n\\begin{align*}\ny - 3 &= 3(x - (-1)) \\\\\ny - 3 &= 3(x + 1) \\\\\ny - 3 &= 3x + 3 \\\\\ny &= 3x + 6\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{y = 3x + 6}\n\n\\textcolor{green}{\\textbf{Verification:}} Does $(-1, 3)$ lie on the line? $y = 3(-1) + 6 = 3$ \\textcolor{green}{\\checkmark}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "example",
+    "title": "Example 32: Implicit Differentiation with Trigonometric Functions",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ if $\\ln y = e^x\\sin x$.\n\n(From 2024 past paper, Q4 part b)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Differentiate both sides with respect to $x$\n\nLeft side (use chain rule):\n\\[\n\\frac{d}{dx}(\\ln y) = \\frac{1}{y} \\cdot \\frac{dy}{dx}\n\\]\n\nRight side (use product rule):\n\\begin{align*}\n\\frac{d}{dx}(e^x\\sin x) &= e^x \\cdot \\frac{d}{dx}(\\sin x) + \\sin x \\cdot \\frac{d}{dx}(e^x) \\\\\n&= e^x \\cos x + \\sin x \\cdot e^x \\\\\n&= e^x(\\cos x + \\sin x)\n\\end{align*}\n\n\\textbf{Step 2:} Set them equal\n\\[\n\\frac{1}{y}\\frac{dy}{dx} = e^x(\\cos x + \\sin x)\n\\]\n\n\\textbf{Step 3:} Solve for $\\dfrac{dy}{dx}$\n\\[\n\\frac{dy}{dx} = y \\cdot e^x(\\cos x + \\sin x)\n\\]\n\nBut we can also write $y$ in terms of $x$. From the original equation:\n\\[\n\\ln y = e^x\\sin x \\implies y = e^{e^x\\sin x}\n\\]\n\nTherefore:\n\\[\n\\frac{dy}{dx} = e^{e^x\\sin x} \\cdot e^x(\\cos x + \\sin x)\n\\]\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = ye^x(\\cos x + \\sin x) = e^{e^x\\sin x} \\cdot e^x(\\cos x + \\sin x)}\n\nEither form is acceptable!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "example",
+    "title": "Example 33: Finding Second Derivative Implicitly",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $y''$ if $x^2 + y^4 = 4$.\n\n(From 2023 past paper, Q3 part b)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $y'$ (first derivative) using implicit differentiation\n\nDifferentiate both sides:\n\\begin{align*}\n\\frac{d}{dx}(x^2 + y^4) &= \\frac{d}{dx}(4) \\\\\n2x + 4y^3\\frac{dy}{dx} &= 0\n\\end{align*}\n\nSolve for $\\dfrac{dy}{dx}$:\n\\begin{align*}\n4y^3\\frac{dy}{dx} &= -2x \\\\\n\\frac{dy}{dx} &= -\\frac{2x}{4y^3} \\\\\n\\frac{dy}{dx} &= -\\frac{x}{2y^3}\n\\end{align*}\n\n\\textbf{Step 2:} Find $y''$ by differentiating $y'$\n\nWe have $y' = -\\dfrac{x}{2y^3}$. Use the quotient rule:\n\n\\[\ny'' = \\frac{d}{dx}\\left(-\\frac{x}{2y^3}\\right)\n\\]\n\nLet $u = -x$ and $v = 2y^3$:\n\\begin{align*}\nu' &= -1 \\\\\nv' &= 2 \\cdot 3y^2 \\cdot \\frac{dy}{dx} = 6y^2\\frac{dy}{dx}\n\\end{align*}\n\nApply quotient rule:\n\\begin{align*}\ny'' &= \\frac{v \\cdot u' - u \\cdot v'}{v^2} \\\\\n&= \\frac{2y^3 \\cdot (-1) - (-x) \\cdot 6y^2\\frac{dy}{dx}}{(2y^3)^2} \\\\\n&= \\frac{-2y^3 + 6xy^2\\frac{dy}{dx}}{4y^6}\n\\end{align*}\n\n\\textbf{Step 3:} Substitute $\\dfrac{dy}{dx} = -\\dfrac{x}{2y^3}$\n\n\\begin{align*}\ny'' &= \\frac{-2y^3 + 6xy^2 \\cdot \\left(-\\frac{x}{2y^3}\\right)}{4y^6} \\\\\n&= \\frac{-2y^3 - \\frac{6x^2y^2}{2y^3}}{4y^6} \\\\\n&= \\frac{-2y^3 - \\frac{3x^2}{y}}{4y^6}\n\\end{align*}\n\nMultiply numerator and denominator by $y$:\n\\begin{align*}\ny'' &= \\frac{-2y^4 - 3x^2}{4y^7}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{y'' = \\frac{-2y^4 - 3x^2}{4y^7}}\n\nAlternative form: \\boxed{y'' = -\\frac{2y^4 + 3x^2}{4y^7}}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} Second derivatives from implicit differentiation can get messy! Always simplify carefully.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "example",
+    "title": "Example 34: Implicit Differentiation Practice",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $y''$ if $x^2 + y^4 = 16$.\n\n(From 2025 past paper, Q3)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Find $y'$ (first derivative)\n\nDifferentiate both sides:\n\\begin{align*}\n2x + 4y^3y' &= 0 \\\\\n4y^3y' &= -2x \\\\\ny' &= -\\frac{x}{2y^3}\n\\end{align*}\n\n\\textbf{Step 2:} Find $y''$ using quotient rule\n\n\\[\ny'' = \\frac{d}{dx}\\left(-\\frac{x}{2y^3}\\right)\n\\]\n\nNumerator: $u = -x$, so $u' = -1$\n\nDenominator: $v = 2y^3$, so $v' = 6y^2y'$\n\n\\begin{align*}\ny'' &= \\frac{(2y^3)(-1) - (-x)(6y^2y')}{(2y^3)^2} \\\\\n&= \\frac{-2y^3 + 6xy^2y'}{4y^6}\n\\end{align*}\n\n\\textbf{Step 3:} Substitute $y' = -\\dfrac{x}{2y^3}$\n\n\\begin{align*}\ny'' &= \\frac{-2y^3 + 6xy^2\\left(-\\frac{x}{2y^3}\\right)}{4y^6} \\\\\n&= \\frac{-2y^3 - \\frac{3x^2}{y}}{4y^6}\n\\end{align*}\n\nCombine fractions in numerator:\n\\begin{align*}\ny'' &= \\frac{\\frac{-2y^4 - 3x^2}{y}}{4y^6} \\\\\n&= \\frac{-2y^4 - 3x^2}{4y^7}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{y'' = -\\frac{2y^4 + 3x^2}{4y^7}}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "example",
+    "title": "Example 35: Implicit Differentiation - Complex Example",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Use implicit differentiation to find $\\dfrac{dy}{dx}$ if $x^3 + y^3 = 6xy$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis is called the Folium of Descartes, a famous curve.\n\n\\textbf{Step 1:} Differentiate both sides\n\nLeft side:\n\\[\n\\frac{d}{dx}(x^3 + y^3) = 3x^2 + 3y^2\\frac{dy}{dx}\n\\]\n\nRight side (use product rule):\n\\begin{align*}\n\\frac{d}{dx}(6xy) &= 6\\left[x \\cdot \\frac{dy}{dx} + y \\cdot 1\\right] \\\\\n&= 6x\\frac{dy}{dx} + 6y\n\\end{align*}\n\n\\textbf{Step 2:} Set them equal\n\\[\n3x^2 + 3y^2\\frac{dy}{dx} = 6x\\frac{dy}{dx} + 6y\n\\]\n\n\\textbf{Step 3:} Collect terms with $\\dfrac{dy}{dx}$\n\\begin{align*}\n3y^2\\frac{dy}{dx} - 6x\\frac{dy}{dx} &= 6y - 3x^2 \\\\\n(3y^2 - 6x)\\frac{dy}{dx} &= 6y - 3x^2\n\\end{align*}\n\n\\textbf{Step 4:} Solve for $\\dfrac{dy}{dx}$\n\\begin{align*}\n\\frac{dy}{dx} &= \\frac{6y - 3x^2}{3y^2 - 6x} \\\\\n&= \\frac{3(2y - x^2)}{3(y^2 - 2x)} \\\\\n&= \\frac{2y - x^2}{y^2 - 2x}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = \\frac{2y - x^2}{y^2 - 2x}}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} The derivative is undefined when $y^2 - 2x = 0$, i.e., when $y^2 = 2x$. These are points where the tangent line is vertical.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Implicit Differentiation",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 2.6 Summary: Implicit Differentiation}}",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 2.6 Summary: Implicit Differentiation}}\n\n\\textbf{Implicit Differentiation Procedure:}\n\\begin{enumerate}\n    \\item Differentiate both sides with respect to $x$\n    \\item When differentiating $y$ terms, multiply by $\\dfrac{dy}{dx}$ (chain rule)\n    \\item Collect all $\\dfrac{dy}{dx}$ terms on one side\n    \\item Factor out $\\dfrac{dy}{dx}$\n    \\item Solve for $\\dfrac{dy}{dx}$\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Key Derivatives to Remember:}}\n\n\\begin{center}\n\\begin{tabular}{|p{4cm}|p{5cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Expression} & \\textbf{Derivative w.r.t. } $x$ \\\\\n\\hline\n$y$ & $\\dfrac{dy}{dx}$ \\\\\n\\hline\n$y^n$ & $ny^{n-1}\\dfrac{dy}{dx}$ \\\\\n\\hline\n$\\sin y$ & $\\cos y \\cdot \\dfrac{dy}{dx}$ \\\\\n\\hline\n$e^y$ & $e^y \\cdot \\dfrac{dy}{dx}$ \\\\\n\\hline\n$\\ln y$ & $\\dfrac{1}{y} \\cdot \\dfrac{dy}{dx}$ \\\\\n\\hline\n$xy$ & $x\\dfrac{dy}{dx} + y$ (product rule) \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{When to Use Implicit Differentiation:}}\n\\begin{itemize}\n    \\item Equation involves both $x$ and $y$ mixed together\n    \\item Difficult or impossible to solve for $y$ explicitly\n    \\item Finding tangent lines to implicitly defined curves\n    \\item Finding second derivatives of implicit functions\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Forgetting to multiply by $\\dfrac{dy}{dx}$ when differentiating $y$ terms\n    \\item Not using product rule for terms like $xy$\n    \\item Arithmetic errors when collecting and factoring $\\dfrac{dy}{dx}$ terms\n    \\item Not checking if the point satisfies the original equation\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Practice Tip:}}\n\nAlways verify your answer by checking:\n\\begin{enumerate}\n    \\item Does the point lie on the original curve?\n    \\item Does the derivative make sense geometrically?\n    \\item Did you collect all $\\dfrac{dy}{dx}$ terms?\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Linear Approximation and Differentials",
+    "type": "definition",
+    "title": "Definition 2.11: Linear Approximation (Linearization)",
+    "content": "The \\textbf{linearization} of a function $f$ at $x = a$ is the linear function:\n\\[\n\\boxed{L(x) = f(a) + f'(a)(x - a)}\n\\]\n\nThis is the equation of the tangent line to $f$ at $x = a$.\n\nFor $x$ near $a$, we have the \\textbf{linear approximation}:\n\\[\n\\boxed{f(x) \\approx L(x) = f(a) + f'(a)(x - a)}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\\begin{itemize}\n    \\item The tangent line is the best linear approximation to the curve\n    \\item Near the point of tangency, the line and curve are very close\n    \\item The farther from $a$, the worse the approximation\n    \\item This is also called the \\textbf{tangent line approximation}\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Why This Works:}}\n\nFor small $\\Delta x = x - a$:\n\\[\nf(a + \\Delta x) \\approx f(a) + f'(a)\\Delta x\n\\]\n\nThe change in $f$ is approximately the derivative times the change in $x$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Linear Approximation and Differentials",
+    "type": "example",
+    "title": "Example 36: Finding Linearization",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the linearization of $f(x) = x + \\dfrac{1}{x}$ at the point $x = 1$.\n\n(From 2023 past paper, Q1 part xi)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThe linearization is $L(x) = f(a) + f'(a)(x - a)$ where $a = 1$.\n\n\\textbf{Step 1:} Find $f(1)$\n\\[\nf(1) = 1 + \\frac{1}{1} = 1 + 1 = 2\n\\]\n\n\\textbf{Step 2:} Find $f'(x)$\n\\begin{align*}\nf(x) &= x + \\frac{1}{x} = x + x^{-1} \\\\\nf'(x) &= 1 - x^{-2} = 1 - \\frac{1}{x^2}\n\\end{align*}\n\n\\textbf{Step 3:} Find $f'(1)$\n\\[\nf'(1) = 1 - \\frac{1}{1^2} = 1 - 1 = 0\n\\]\n\n\\textbf{Step 4:} Write the linearization\n\\begin{align*}\nL(x) &= f(1) + f'(1)(x - 1) \\\\\n&= 2 + 0(x - 1) \\\\\n&= 2\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{L(x) = 2}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Interpretation:}} Since $f'(1) = 0$, the tangent line is horizontal at $x = 1$. This means the function has a local extremum at this point!\n\n\\textcolor{green}{\\textbf{Approximation:}} For $x$ near 1, $f(x) \\approx 2$. For example, $f(1.1) \\approx 2$ (actual value: $1.1 + \\frac{1}{1.1} \\approx 2.009$).\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Linear Approximation and Differentials",
+    "type": "example",
+    "title": "Example 37: Using Linear Approximation",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the linearization of $f(x) = x + \\dfrac{1}{x}$ at $a = 1$.\n\n(From 2024 past paper, Q1 part vi)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis is the same as Example 36.\n\n\\textbf{Step 1:} Calculate $f(1)$ and $f'(1)$\n\nFrom before: $f(1) = 2$ and $f'(1) = 0$\n\n\\textbf{Step 2:} Write linearization formula\n\n\\[\nL(x) = f(1) + f'(1)(x - 1) = 2 + 0(x - 1) = 2\n\\]\n\n\\textbf{Answer:} \\boxed{L(x) = 2}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Note:}} This appears in both 2023 and 2024 past papers! It's a favorite exam question.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Linear Approximation and Differentials",
+    "type": "example",
+    "title": "Example 38: Approximating Function Values",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Use linear approximation to estimate $\\sqrt{4.1}$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe want to approximate $f(x) = \\sqrt{x}$ near $x = 4$ (since $\\sqrt{4} = 2$ is known).\n\n\\textbf{Step 1:} Set up the problem\n\nLet $f(x) = \\sqrt{x}$, $a = 4$, and we want to approximate $f(4.1)$.\n\n\\textbf{Step 2:} Find $f(4)$\n\\[\nf(4) = \\sqrt{4} = 2\n\\]\n\n\\textbf{Step 3:} Find $f'(x)$ and $f'(4)$\n\\begin{align*}\nf(x) &= x^{1/2} \\\\\nf'(x) &= \\frac{1}{2}x^{-1/2} = \\frac{1}{2\\sqrt{x}} \\\\\nf'(4) &= \\frac{1}{2\\sqrt{4}} = \\frac{1}{2(2)} = \\frac{1}{4}\n\\end{align*}\n\n\\textbf{Step 4:} Apply linear approximation\n\n\\begin{align*}\nf(4.1) &\\approx f(4) + f'(4)(4.1 - 4) \\\\\n&= 2 + \\frac{1}{4}(0.1) \\\\\n&= 2 + 0.025 \\\\\n&= 2.025\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\sqrt{4.1} \\approx 2.025}\n\n\\textcolor{green}{\\textbf{Check:}} Using a calculator, $\\sqrt{4.1} = 2.024845...$, so our approximation is very close! Error $< 0.001$.\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Strategy:}} Choose $a$ to be a point where:\n\\begin{itemize}\n    \\item $f(a)$ is easy to calculate\n    \\item $a$ is close to the desired $x$ value\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Linear Approximation and Differentials",
+    "type": "definition",
+    "title": "Definition 2.12: Differentials",
+    "content": "If $y = f(x)$ is a differentiable function, we define:\n\n\\textbf{Differential of } $x$ (independent variable):\n\\[\n\\boxed{dx = \\Delta x}\n\\]\nThis is an arbitrary increment in $x$.\n\n\\textbf{Differential of } $y$ (dependent variable):\n\\[\n\\boxed{dy = f'(x) \\, dx}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Relationship to Linear Approximation:}}\n\nThe differential $dy$ represents the change in $y$ along the tangent line when $x$ changes by $dx$.\n\nThe actual change in $y$ is:\n\\[\n\\Delta y = f(x + dx) - f(x)\n\\]\n\nFor small $dx$, we have the approximation:\n\\[\n\\boxed{\\Delta y \\approx dy = f'(x) \\, dx}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\\begin{itemize}\n    \\item $\\Delta y$: actual change in function value\n    \\item $dy$: change predicted by tangent line\n    \\item For small $dx$, $dy \\approx \\Delta y$\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Linear Approximation and Differentials",
+    "type": "example",
+    "title": "Example 39: Computing Differentials",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the differential $dy$ for:\n\n(a) $y = x^3 + 2x$\n\n(b) $y = \\sin(2x)$\n\n(c) $y = \\dfrac{1}{x^2}$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThe formula is $dy = f'(x) \\, dx$.\n\n\\textbf{(a)} $y = x^3 + 2x$\n\nFind $\\dfrac{dy}{dx}$:\n\\[\n\\frac{dy}{dx} = 3x^2 + 2\n\\]\n\nTherefore:\n\\[\ndy = (3x^2 + 2) \\, dx\n\\]\n\n\\textbf{Answer:} \\boxed{dy = (3x^2 + 2) \\, dx}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $y = \\sin(2x)$\n\nFind $\\dfrac{dy}{dx}$:\n\\[\n\\frac{dy}{dx} = \\cos(2x) \\cdot 2 = 2\\cos(2x)\n\\]\n\nTherefore:\n\\[\ndy = 2\\cos(2x) \\, dx\n\\]\n\n\\textbf{Answer:} \\boxed{dy = 2\\cos(2x) \\, dx}\n\n\\vspace{0.3cm}\n\\textbf{(c)} $y = \\dfrac{1}{x^2} = x^{-2}$\n\nFind $\\dfrac{dy}{dx}$:\n\\[\n\\frac{dy}{dx} = -2x^{-3} = -\\frac{2}{x^3}\n\\]\n\nTherefore:\n\\[\ndy = -\\frac{2}{x^3} \\, dx\n\\]\n\n\\textbf{Answer:} \\boxed{dy = -\\frac{2}{x^3} \\, dx}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Linear Approximation and Differentials",
+    "type": "example",
+    "title": "Example 40: Estimating Error Using Differentials",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} The radius of a sphere is measured to be 10 cm with a possible error of $\\pm 0.1$ cm. Use differentials to estimate the maximum error in the calculated volume.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThe volume of a sphere is $V = \\dfrac{4}{3}\\pi r^3$.\n\n\\textbf{Step 1:} Find the differential $dV$\n\n\\begin{align*}\n\\frac{dV}{dr} &= \\frac{4}{3}\\pi \\cdot 3r^2 = 4\\pi r^2\n\\end{align*}\n\nTherefore:\n\\[\ndV = 4\\pi r^2 \\, dr\n\\]\n\n\\textbf{Step 2:} Substitute known values\n\nGiven: $r = 10$ cm, $dr = \\pm 0.1$ cm\n\n\\begin{align*}\ndV &= 4\\pi (10)^2 (\\pm 0.1) \\\\\n&= 4\\pi (100)(\\pm 0.1) \\\\\n&= \\pm 40\\pi \\\\\n&\\approx \\pm 125.66 \\text{ cm}^3\n\\end{align*}\n\n\\textbf{Answer:} The maximum error in volume is approximately \\boxed{\\pm 126 \\text{ cm}^3}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Interpretation:}} A small error in radius ($0.1$ cm) leads to a much larger error in volume ($\\approx 126$ cm$^3$) because volume depends on $r^3$.\n\n\\textcolor{green}{\\textbf{Relative Error:}}\n\nThe actual volume is $V = \\dfrac{4}{3}\\pi(10)^3 \\approx 4188.79$ cm$^3$.\n\nRelative error: $\\dfrac{126}{4188.79} \\approx 0.03 = 3\\%$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Linear Approximation and Differentials",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 2.7 Summary}} {Linearization at",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 2.7 Summary}}\n\n\\textbf{Linearization at } $x = a$:\n\\[\n\\boxed{L(x) = f(a) + f'(a)(x - a)}\n\\]\n\n\\textbf{Linear Approximation:}\n\\[\n\\boxed{f(x) \\approx f(a) + f'(a)(x - a) \\quad \\text{for } x \\text{ near } a}\n\\]\n\n\\textbf{Differentials:}\n\\[\n\\boxed{dy = f'(x) \\, dx}\n\\]\n\n\\textbf{Change Approximation:}\n\\[\n\\boxed{\\Delta y \\approx dy = f'(x) \\, dx}\n\\]\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Applications:}}\n\n\\begin{center}\n\\begin{tabular}{|p{4cm}|p{9cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Application} & \\textbf{Method} \\\\\n\\hline\nApproximate function values & Use $f(x) \\approx f(a) + f'(a)(x-a)$ with $a$ near $x$ \\\\\n\\hline\nEstimate errors & Use $\\Delta y \\approx dy = f'(x) \\, dx$ \\\\\n\\hline\nSensitivity analysis & $dy$ shows how sensitive $y$ is to changes in $x$ \\\\\n\\hline\nTangent line equation & $y = L(x)$ is the tangent line \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important Notes:}}\n\\begin{itemize}\n    \\item Linear approximation is only accurate for $x$ close to $a$\n    \\item The farther from $a$, the larger the error\n    \\item $dy$ approximates $\\Delta y$ but they are not equal\n    \\item Always specify units when working with physical quantities\n\\end{itemize}\n\n\\textcolor{green}{\\textbf{Quick Formula Check:}}\n\\begin{itemize}\n    \\item Linearization includes: $f(a)$, $f'(a)$, and $(x-a)$ \n    \\item Differential $dy$ includes: $f'(x)$ and $dx$ \n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "definition",
+    "title": "Definition 2.13: Logarithmic Differentiation",
+    "content": "\\textbf{Logarithmic differentiation} is a technique used to differentiate functions of the form:\n\\begin{itemize}\n    \\item Products with many factors\n    \\item Quotients with complicated numerators/denominators\n    \\item Functions with variables in both base and exponent\n\\end{itemize}\n\n\\textbf{Procedure:}\n\\begin{enumerate}\n    \\item Take the natural logarithm of both sides: $\\ln y = \\ln[f(x)]$\n    \\item Use logarithm properties to simplify\n    \\item Differentiate both sides implicitly with respect to $x$\n    \\item Solve for $\\dfrac{dy}{dx}$\n    \\item Substitute back $y = f(x)$ if needed\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Logarithm Properties:}}\n\\begin{itemize}\n    \\item $\\ln(ab) = \\ln a + \\ln b$\n    \\item $\\ln\\left(\\dfrac{a}{b}\\right) = \\ln a - \\ln b$\n    \\item $\\ln(a^n) = n\\ln a$\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Remember:}}\n\nWhen differentiating $\\ln y$ with respect to $x$:\n\\[\n\\frac{d}{dx}(\\ln y) = \\frac{1}{y} \\cdot \\frac{dy}{dx}\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "example",
+    "title": "Example 41: Basic Logarithmic Differentiation",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Use logarithmic differentiation to find the derivative of $y = \\dfrac{x\\sqrt{x^2+1}}{(x+1)^3}$.\n\n(From 2022 past paper, Q5 part b)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Take natural logarithm of both sides\n\n\\[\n\\ln y = \\ln\\left(\\frac{x\\sqrt{x^2+1}}{(x+1)^3}\\right)\n\\]\n\n\\textbf{Step 2:} Use logarithm properties to expand\n\n\\begin{align*}\n\\ln y &= \\ln(x\\sqrt{x^2+1}) - \\ln(x+1)^3 \\\\\n&= \\ln x + \\ln\\sqrt{x^2+1} - 3\\ln(x+1) \\\\\n&= \\ln x + \\frac{1}{2}\\ln(x^2+1) - 3\\ln(x+1)\n\\end{align*}\n\n\\textbf{Step 3:} Differentiate both sides with respect to $x$\n\nLeft side:\n\\[\n\\frac{d}{dx}(\\ln y) = \\frac{1}{y}\\frac{dy}{dx}\n\\]\n\nRight side:\n\\begin{align*}\n\\frac{d}{dx}\\left[\\ln x + \\frac{1}{2}\\ln(x^2+1) - 3\\ln(x+1)\\right] &= \\frac{1}{x} + \\frac{1}{2} \\cdot \\frac{2x}{x^2+1} - 3 \\cdot \\frac{1}{x+1} \\\\\n&= \\frac{1}{x} + \\frac{x}{x^2+1} - \\frac{3}{x+1}\n\\end{align*}\n\n\\textbf{Step 4:} Set them equal\n\n\\[\n\\frac{1}{y}\\frac{dy}{dx} = \\frac{1}{x} + \\frac{x}{x^2+1} - \\frac{3}{x+1}\n\\]\n\n\\textbf{Step 5:} Solve for $\\dfrac{dy}{dx}$\n\n\\begin{align*}\n\\frac{dy}{dx} &= y\\left(\\frac{1}{x} + \\frac{x}{x^2+1} - \\frac{3}{x+1}\\right) \\\\\n&= \\frac{x\\sqrt{x^2+1}}{(x+1)^3}\\left(\\frac{1}{x} + \\frac{x}{x^2+1} - \\frac{3}{x+1}\\right)\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = \\frac{x\\sqrt{x^2+1}}{(x+1)^3}\\left(\\frac{1}{x} + \\frac{x}{x^2+1} - \\frac{3}{x+1}\\right)}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Advantage:}} Logarithmic differentiation converts multiplication/division into addition/subtraction, making complex derivatives manageable!\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "example",
+    "title": "Example 42: Logarithmic Differentiation with Variable Exponent",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ if $y = x^x$ (where $x > 0$).\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThis function has a variable base AND exponent, so standard rules don't apply. Use logarithmic differentiation.\n\n\\textbf{Step 1:} Take natural logarithm\n\n\\[\n\\ln y = \\ln(x^x) = x\\ln x\n\\]\n\n\\textbf{Step 2:} Differentiate both sides\n\nLeft side:\n\\[\n\\frac{d}{dx}(\\ln y) = \\frac{1}{y}\\frac{dy}{dx}\n\\]\n\nRight side (use product rule):\n\\begin{align*}\n\\frac{d}{dx}(x\\ln x) &= x \\cdot \\frac{1}{x} + \\ln x \\cdot 1 \\\\\n&= 1 + \\ln x\n\\end{align*}\n\n\\textbf{Step 3:} Solve for $\\dfrac{dy}{dx}$\n\n\\begin{align*}\n\\frac{1}{y}\\frac{dy}{dx} &= 1 + \\ln x \\\\\n\\frac{dy}{dx} &= y(1 + \\ln x) \\\\\n&= x^x(1 + \\ln x)\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = x^x(1 + \\ln x)}\n\n\\textcolor{green}{\\textbf{Verification:}} At $x = 1$: $\\dfrac{dy}{dx} = 1^1(1 + \\ln 1) = 1(1 + 0) = 1$.\n\nThis makes sense because $y = x^x$ passes through $(1, 1)$ with slope 1.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "definition",
+    "title": "Definition 2.14: Derivative of Inverse Functions",
+    "content": "If $f$ is a one-to-one differentiable function with inverse $f^{-1}$, and if $f'(f^{-1}(a)) \\neq 0$, then:\n\n\\[\n\\boxed{(f^{-1})'(a) = \\frac{1}{f'(f^{-1}(a))}}\n\\]\n\n\\textbf{Alternative form:} If $y = f^{-1}(x)$, then:\n\n\\[\n\\boxed{\\frac{dy}{dx} = \\frac{1}{dx/dy}}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In Words:}}\n\nThe derivative of the inverse function at $a$ is the reciprocal of the derivative of the original function at the corresponding point.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Geometric Interpretation:}}\n\nThe graphs of $f$ and $f^{-1}$ are reflections across the line $y = x$. Their tangent lines are also reflections, so their slopes are reciprocals.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "theorem",
+    "title": "Theorem 2.9: Derivatives of Inverse Trigonometric Functions",
+    "content": "\\[\n\\boxed{\\frac{d}{dx}(\\arcsin x) = \\frac{1}{\\sqrt{1-x^2}}}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(\\arccos x) = -\\frac{1}{\\sqrt{1-x^2}}}\n\\]\n\n\\[\n\\boxed{\\frac{d}{dx}(\\arctan x) = \\frac{1}{1+x^2}}\n\\]\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Domain Restrictions:}}\n\\begin{itemize}\n    \\item $\\arcsin x$ and $\\arccos x$: defined for $|x| < 1$\n    \\item $\\arctan x$: defined for all real $x$\n\\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "example",
+    "title": "Example 43: Derivative of Inverse Function",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Let $f(x) = x^3 + 1$. Find $(f^{-1})'(2)$.\n\n(Related to 2021 past paper, Q1 part xi)\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe use the formula: $(f^{-1})'(a) = \\dfrac{1}{f'(f^{-1}(a))}$\n\n\\textbf{Step 1:} Find $f^{-1}(2)$\n\nWe need to solve $f(x) = 2$:\n\\begin{align*}\nx^3 + 1 &= 2 \\\\\nx^3 &= 1 \\\\\nx &= 1\n\\end{align*}\n\nSo $f^{-1}(2) = 1$.\n\n\\textbf{Step 2:} Find $f'(x)$\n\n\\[\nf'(x) = 3x^2\n\\]\n\n\\textbf{Step 3:} Evaluate $f'(f^{-1}(2)) = f'(1)$\n\n\\[\nf'(1) = 3(1)^2 = 3\n\\]\n\n\\textbf{Step 4:} Apply the formula\n\n\\[\n(f^{-1})'(2) = \\frac{1}{f'(1)} = \\frac{1}{3}\n\\]\n\n\\textbf{Answer:} \\boxed{(f^{-1})'(2) = \\frac{1}{3}}\n\n\\textcolor{green}{\\textbf{Verification:}} We can find $f^{-1}(x)$ explicitly:\n\\begin{align*}\ny &= x^3 + 1 \\\\\nx^3 &= y - 1 \\\\\nx &= \\sqrt[3]{y - 1}\n\\end{align*}\n\nSo $f^{-1}(x) = \\sqrt[3]{x - 1}$.\n\nThen:\n\\[\n(f^{-1})'(x) = \\frac{1}{3}(x-1)^{-2/3} = \\frac{1}{3\\sqrt[3]{(x-1)^2}}\n\\]\n\nAt $x = 2$:\n\\[\n(f^{-1})'(2) = \\frac{1}{3\\sqrt[3]{(2-1)^2}} = \\frac{1}{3\\sqrt[3]{1}} = \\frac{1}{3}\n\\]\n\nConfirmed! \\textcolor{green}{\\checkmark}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "example",
+    "title": "Example 44: Derivative with Inverse Trigonometric Functions",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find the derivative of:\n\n(a) $y = \\arcsin(2x)$\n\n(b) $y = \\arctan(x^2)$\n\n(c) $y = x\\arcsin x$\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $y = \\arcsin(2x)$\n\nUse chain rule:\n\\begin{align*}\n\\frac{dy}{dx} &= \\frac{1}{\\sqrt{1-(2x)^2}} \\cdot 2 \\\\\n&= \\frac{2}{\\sqrt{1-4x^2}}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = \\frac{2}{\\sqrt{1-4x^2}}}\n\n\\vspace{0.3cm}\n\\textbf{(b)} $y = \\arctan(x^2)$\n\nUse chain rule:\n\\begin{align*}\n\\frac{dy}{dx} &= \\frac{1}{1+(x^2)^2} \\cdot 2x \\\\\n&= \\frac{2x}{1+x^4}\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = \\frac{2x}{1+x^4}}\n\n\\vspace{0.3cm}\n\\textbf{(c)} $y = x\\arcsin x$\n\nUse product rule:\n\\begin{align*}\n\\frac{dy}{dx} &= x \\cdot \\frac{1}{\\sqrt{1-x^2}} + \\arcsin x \\cdot 1 \\\\\n&= \\frac{x}{\\sqrt{1-x^2}} + \\arcsin x\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = \\frac{x}{\\sqrt{1-x^2}} + \\arcsin x}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "example",
+    "title": "Example 45: Complex Logarithmic Differentiation",
+    "content": "\\textcolor{primaryblue}{\\textbf{Problem:}} Find $\\dfrac{dy}{dx}$ if $y = (x^2 + 1)^x$.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThe base and exponent both involve $x$, so use logarithmic differentiation.\n\n\\textbf{Step 1:} Take natural logarithm\n\n\\[\n\\ln y = \\ln[(x^2+1)^x] = x\\ln(x^2+1)\n\\]\n\n\\textbf{Step 2:} Differentiate both sides\n\nLeft side:\n\\[\n\\frac{d}{dx}(\\ln y) = \\frac{1}{y}\\frac{dy}{dx}\n\\]\n\nRight side (use product rule):\n\\begin{align*}\n\\frac{d}{dx}[x\\ln(x^2+1)] &= x \\cdot \\frac{2x}{x^2+1} + \\ln(x^2+1) \\cdot 1 \\\\\n&= \\frac{2x^2}{x^2+1} + \\ln(x^2+1)\n\\end{align*}\n\n\\textbf{Step 3:} Solve for $\\dfrac{dy}{dx}$\n\n\\begin{align*}\n\\frac{1}{y}\\frac{dy}{dx} &= \\frac{2x^2}{x^2+1} + \\ln(x^2+1) \\\\\n\\frac{dy}{dx} &= y\\left[\\frac{2x^2}{x^2+1} + \\ln(x^2+1)\\right] \\\\\n&= (x^2+1)^x\\left[\\frac{2x^2}{x^2+1} + \\ln(x^2+1)\\right]\n\\end{align*}\n\n\\textbf{Answer:} \\boxed{\\frac{dy}{dx} = (x^2+1)^x\\left[\\frac{2x^2}{x^2+1} + \\ln(x^2+1)\\right]}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Derivatives of Logarithmic and Inverse Functions",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Section 2.8 Summary}} {Logarithmic Differentiation",
+    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Section 2.8 Summary}}\n\n\\textbf{Logarithmic Differentiation Steps:}\n\\begin{enumerate}\n    \\item Take $\\ln$ of both sides\n    \\item Use log properties to expand\n    \\item Differentiate implicitly\n    \\item Solve for $\\dfrac{dy}{dx}$\n    \\item Substitute back $y = f(x)$\n\\end{enumerate}\n\n\\textbf{When to Use Logarithmic Differentiation:}\n\\begin{itemize}\n    \\item Products with many factors\n    \\item Complicated quotients\n    \\item Variable in both base and exponent: $f(x)^{g(x)}$\n\\end{itemize}\n\n\\textbf{Inverse Function Derivative:}\n\\[\n\\boxed{(f^{-1})'(a) = \\frac{1}{f'(f^{-1}(a))}}\n\\]\n\n\\textbf{Inverse Trig Derivatives:}\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Function} & \\textbf{Derivative} \\\\\n\\hline\n$\\arcsin x$ & $\\dfrac{1}{\\sqrt{1-x^2}}$ \\\\\n\\hline\n$\\arccos x$ & $-\\dfrac{1}{\\sqrt{1-x^2}}$ \\\\\n\\hline\n$\\arctan x$ & $\\dfrac{1}{1+x^2}$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Common Mistakes:}}\n\\begin{itemize}\n    \\item Forgetting to multiply by $\\dfrac{dy}{dx}$ when differentiating $\\ln y$\n    \\item Not using chain rule with inverse trig functions\n    \\item Confusing $(f^{-1})'$ with $\\dfrac{1}{f'}$ (they're not the same!)\n    \\item Forgetting to substitute back $y = f(x)$ in logarithmic differentiation\n\\end{itemize}\n\n\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Key Formulas to Memorize:}}\n\\begin{itemize}\n    \\item $\\dfrac{d}{dx}(\\ln y) = \\dfrac{1}{y}\\dfrac{dy}{dx}$\n    \\item $\\ln(a^n) = n\\ln a$\n    \\item $\\ln(ab) = \\ln a + \\ln b$\n    \\item $\\ln\\left(\\dfrac{a}{b}\\right) = \\ln a - \\ln b$\n\\end{itemize}\n\n\\newpage"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 1: Derivative from First Principles",
+    "content": "Use the definition of the derivative (first principles) to find $f'(x)$ for:\n\n(a) $f(x) = 5x - 3$\n\n(b) $f(x) = x^2 + 2x$\n\n(c) $f(x) = \\dfrac{1}{x+1}$\n\nShow all steps clearly, including the limit evaluation.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 2: Basic Derivative Rules",
+    "content": "Find the derivative of each function:\n\n(a) $f(x) = 4x^5 - 3x^2 + 7x - 2$\n\n(b) $g(x) = \\dfrac{3}{x^4} - 5\\sqrt{x} + 2$\n\n(c) $h(x) = 2\\sin x + 3\\cos x - x^3$\n\n(d) $k(x) = e^x + \\ln x - 5x^2 + 1$\n\n(e) $p(x) = \\dfrac{2x^3 - 4x}{x^2}$ (simplify first, then differentiate)\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 3: Even and Odd Function Derivatives",
+    "content": "(a) If $f(x) = x^5 + x$ is an odd function, show that $f'(x)$ is an even function.\n\n(b) If $g(x) = x^4 + 2x^2 - 3$ is an even function, show that $g'(x)$ is an odd function.\n\n(c) State a general rule about derivatives of even and odd functions.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 4: Higher Order Derivatives",
+    "content": "Find the first and second derivatives:\n\n(a) $f(x) = x^4 - 6x^2 + 4$. Find $f'(x)$ and $f''(x)$.\n\n(b) $x = \\sin t$. Find $\\dfrac{dx}{dt}$ and $\\dfrac{d^2x}{dt^2}$.\n\n(c) $y = 2x^3 - 3x^2 - 12x + 1$. Find $y'$ and $y''$.\n\n(d) If $s(t) = t^3 - 6t^2 + 9t$ represents position, find the velocity $v(t)$ and acceleration $a(t)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 5: Derivative at a Point",
+    "content": "(a) Find $f'(2)$ if $f(x) = x^3 - 4x + 1$.\n\n(b) If $g(x) = \\sqrt{x^2 + 5}$, find $g'(2)$.\n\n(c) For $h(x) = \\dfrac{x}{x^2 + 1}$, evaluate $h'(1)$.\n\n(d) If $f(t) = e^t \\sin bt$ where $b$ is a constant, find $f'(0)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 6: Product Rule Applications",
+    "content": "Use the product rule to find the derivative:\n\n(a) $f(x) = (x^2 + 1)(x^3 - 2x)$\n\n(b) $g(x) = x^3 \\sin x$\n\n(c) $h(x) = e^x \\cos x$\n\n(d) $k(x) = (2x - 1)(x^2 + 3x - 5)$\n\n(e) $p(x) = \\ln x \\cdot x^2$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 7: Quotient Rule Applications",
+    "content": "Use the quotient rule to find $\\dfrac{dy}{dx}$:\n\n(a) $y = \\dfrac{x^2 + 1}{x - 2}$\n\n(b) $y = \\dfrac{\\sin x}{x}$\n\n(c) $y = \\dfrac{e^x}{x^2 + 1}$\n\n(d) $y = \\dfrac{x + 1}{x^2 - 4}$\n\n(e) $y = \\dfrac{\\ln x}{x}$\n\nFor part (a), also find the value of the derivative at $x = 3$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 8: Chain Rule Practice",
+    "content": "Find the derivative using the chain rule:\n\n(a) $f(x) = (x^2 + 3x - 1)^5$\n\n(b) $g(x) = \\sin(4x^2)$\n\n(c) $h(x) = e^{3x^2 + 2x}$\n\n(d) $k(x) = \\sqrt{5x^2 - 3x + 1}$\n\n(e) $p(x) = \\cos^3(2x)$ [Hint: this is $[\\cos(2x)]^3$]\n\n(f) $q(x) = \\ln(x^2 + 2x + 5)$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 9: Combined Rules",
+    "content": "Find $\\dfrac{dy}{dx}$ for the following (may require multiple rules):\n\n(a) $y = x^2 e^{3x}$ (product and chain rule)\n\n(b) $y = \\dfrac{\\sin(2x)}{x^2}$ (quotient and chain rule)\n\n(c) $y = (x^2 + 1)^3(x - 2)^2$ (product and chain rule)\n\n(d) $y = \\dfrac{e^{2x}}{\\sqrt{x}}$ (quotient and chain rule)\n\n(e) $y = \\sin(x^2) \\cos(3x)$ (product and chain rule)\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 10: Trigonometric Derivatives",
+    "content": "Find the derivative:\n\n(a) $f(x) = \\tan(5x)$\n\n(b) $g(x) = \\sec^2(x^2)$\n\n(c) $h(x) = x \\tan x$\n\n(d) $k(x) = \\dfrac{\\sin x}{1 + \\cos x}$\n\n(e) $p(x) = \\sin^2(3x) + \\cos^2(3x)$ [Hint: simplify first!]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 11: Basic Implicit Differentiation",
+    "content": "Find $\\dfrac{dy}{dx}$ using implicit differentiation:\n\n(a) $x^2 + y^2 = 16$\n\n(b) $x^2 + 4y^2 = 36$\n\n(c) $xy = 12$\n\n(d) $x^3 + y^3 = 6xy$ (Folium of Descartes)\n\n(e) $\\sin(xy) = x$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 12: Implicit Differentiation - Tangent Lines",
+    "content": "(a) Find the equation of the tangent line to the curve $x^2 + y^2 = 25$ at the point $(3, 4)$.\n\n(b) Find the tangent to the curve $x^2y^2 = 9$ at the point $(-1, 3)$.\n\n(c) For the curve $xy + y^2 = 4$, find the slope of the tangent line at $(1, -2)$.\n\n(d) Find the equation of the normal line to $x^2 + xy + y^2 = 7$ at the point $(1, 2)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 13: Second Derivatives - Implicit",
+    "content": "Find $\\dfrac{d^2y}{dx^2}$ (the second derivative) using implicit differentiation:\n\n(a) $x^2 + y^2 = 25$\n\n(b) $x^2 + y^4 = 4$\n\n(c) $x^2 + y^4 = 16$\n\nShow all steps, including finding $\\dfrac{dy}{dx}$ first.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 14: Implicit Differentiation - Special Forms",
+    "content": "Find $\\dfrac{dy}{dx}$:\n\n(a) $\\ln y = e^x \\sin x$\n\n(b) $e^{xy} = x + y$\n\n(c) $\\sqrt{x} + \\sqrt{y} = 1$\n\n(d) $\\sin(x + y) = y^2 \\cos x$\n\n(e) $y = \\sin(xy)$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 15: Verifying Solutions",
+    "content": "(a) If $f(x) = \\ln(1 + \\sqrt{1 - x})$, verify that:\n\\[\n4x(1-x)f''(x) + 2(2-3x)f'(x) + 1 = 0\n\\]\n\n(b) If $y = e^{ax}\\sin(bx)$ where $a$ and $b$ are constants, find $y'$ and $y''$, then show that:\n\\[\ny'' - 2ay' + (a^2 + b^2)y = 0\n\\]\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 16: Horizontal and Vertical Tangents",
+    "content": "(a) Find all points on the curve $y = x^4 - 6x^2 + 4$ where the tangent line is horizontal.\n\n(b) For $y = x^3 - 3x^2 + 2$, find the points where the slope of the tangent line equals 9.\n\n(c) For the curve $x^2 + xy + y^2 = 3$, find points where the tangent line is horizontal.\n\n(d) Determine if the function $f(x) = 2x^3 - 3x^2 - 12x + 1$ has any horizontal tangents. If so, where?\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 17: Tangent and Normal Line Equations",
+    "content": "(a) Find the equation of the tangent line to $y = x^2$ at $(2, 4)$.\n\n(b) Find the equation of the normal line to $y = x^2 - 3x + 2$ at $x = 1$.\n\n(c) Find both the tangent and normal lines to $y = \\sqrt{x}$ at the point $(4, 2)$.\n\n(d) For the curve $y = e^x$, find the tangent line at $x = 0$. Where does this tangent line cross the $x$-axis?\n\n(e) Find the tangent line to $f(x) = \\dfrac{1}{x}$ at $x = 2$. Does this line pass through the origin?\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 18: Linear Approximation",
+    "content": "(a) Find the linearization of $f(x) = \\sqrt{x}$ at $a = 9$, and use it to approximate $\\sqrt{9.2}$.\n\n(b) Find the linearization of $f(x) = x + \\dfrac{1}{x}$ at $a = 1$.\n\n(c) Use linear approximation to estimate $\\sqrt[3]{8.1}$. [Hint: use $f(x) = \\sqrt[3]{x}$ near $a = 8$]\n\n(d) Approximate $\\sin(0.1)$ using the linearization of $f(x) = \\sin x$ at $a = 0$.\n\n(e) Find the linearization of $f(x) = e^x$ at $a = 0$, and use it to approximate $e^{0.05}$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 19: Velocity and Acceleration",
+    "content": "(a) The position of a particle is given by $s(t) = t^3 - 6t^2 + 9t$ meters.\n   \\begin{itemize}\n       \\item Find the velocity $v(t)$ and acceleration $a(t)$\n       \\item When is the particle at rest?\n       \\item Find the velocity at $t = 2$ seconds\n   \\end{itemize}\n\n(b) The velocity of a moving object is $v(t) = 4t + 2$ m/s. If the position at $t = 0$ is $s(0) = 5$ m, find the position function $s(t)$.\n\n(c) An object moves with acceleration $a(t) = 6t - 4$ m/s². If $v(0) = 2$ m/s and $s(0) = 1$ m, find the velocity and position functions.\n\n(d) The height of a ball thrown upward is $h(t) = -4.9t^2 + 20t + 2$ meters. Find:\n   \\begin{itemize}\n       \\item The velocity at time $t$\n       \\item When the ball reaches its maximum height\n       \\item The maximum height\n   \\end{itemize}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 20: Differentials and Error Estimation",
+    "content": "(a) Find the differential $dy$ for:\n   \\begin{itemize}\n       \\item $y = x^4 - 2x^2 + 3$\n       \\item $y = \\sin(3x)$\n       \\item $y = \\dfrac{x}{x+1}$\n   \\end{itemize}\n\n(b) The radius of a circle is measured to be 5 cm with a possible error of $\\pm 0.05$ cm. Use differentials to estimate the maximum error in:\n   \\begin{itemize}\n       \\item The calculated circumference $C = 2\\pi r$\n       \\item The calculated area $A = \\pi r^2$\n   \\end{itemize}\n\n(c) The side of a cube is measured to be 10 cm with an error of at most 0.02 cm. Use differentials to estimate the maximum error in the calculated volume.\n\n(d) If $f(x) = x^3$, $x = 2$, and $dx = 0.01$, find $dy$ and compare it with $\\Delta y = f(2.01) - f(2)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 21: Logarithmic Differentiation - Products and Quotients",
+    "content": "Use logarithmic differentiation to find $\\dfrac{dy}{dx}$:\n\n(a) $y = \\dfrac{x\\sqrt{x^2+1}}{(x+1)^3}$\n\n(b) $y = \\dfrac{(x-1)^2(x+2)^3}{(2x+1)^5}$\n\n(c) $y = \\dfrac{x^2\\sqrt{x+1}}{(x-2)^3\\sqrt{x+3}}$\n\n(d) $y = (x^2 + 1)^{3/2}(x - 1)^{2/3}$\n\n(e) $y = \\sqrt{\\dfrac{(x+1)(x+2)}{(x-1)(x-2)}}$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 22: Logarithmic Differentiation - Variable Exponents",
+    "content": "Find $\\dfrac{dy}{dx}$ using logarithmic differentiation:\n\n(a) $y = x^x$ (for $x > 0$)\n\n(b) $y = x^{\\sin x}$\n\n(c) $y = (x^2 + 1)^x$\n\n(d) $y = (\\sin x)^x$\n\n(e) $y = x^{x^2}$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 23: Inverse Functions",
+    "content": "(a) Let $f(x) = x^3 + 1$. Find $(f^{-1})'(2)$.\n\n(b) If $f(x) = x^5 + x$ and $g = f^{-1}$, find $g'(2)$.\n\n(c) Let $f(x) = 2x + \\cos x$. Without finding $f^{-1}$ explicitly, find $(f^{-1})'(1)$.\n\n(d) If $f(x) = x^3 + 2x + 1$ has an inverse function $f^{-1}$, find $(f^{-1})'(4)$.\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 24: Inverse Trigonometric Functions",
+    "content": "Find the derivative:\n\n(a) $y = \\arcsin(3x)$\n\n(b) $y = \\arctan(x^2)$\n\n(c) $y = x\\arcsin x$\n\n(d) $y = \\dfrac{\\arctan x}{x}$\n\n(e) $y = \\arcsin(\\sqrt{x})$\n\n(f) $y = \\arccos\\left(\\dfrac{1}{x}\\right)$\n\n(g) $y = \\arctan(e^x)$\n\n(h) $y = \\ln(\\arctan x)$\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Calculus and Analytic Geometry",
+    "chapter": "Chapter 2 - Concept of Differentiation",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 25: Mixed Challenge Problems",
+    "content": "(a) Find $\\dfrac{dy}{dx}$ if $y = x^{2x}$ (use logarithmic differentiation).\n\n(b) For the curve defined by $e^{x+y} = xy$, find $\\dfrac{dy}{dx}$ at the point $(1, 1)$.\n\n(c) If $f(x) = \\ln(1 + \\sqrt{1-x})$ for $-1 < x < 1$, prove that:\n\\[\n4x(1-x)f''(x) + 2(2-3x)f'(x) + 1 = 0\n\\]\n\n(d) Find the derivative of $y = (\\sin x)^{\\tan x}$.\n\n(e) Use the definition of the derivative to show that:\n\\[\n\\lim_{x \\to 0} \\frac{a^x - 1}{x} = \\ln a\n\\]\nfor $a > 0$.\n\n(f) If $y = \\sqrt{x + \\sqrt{x + \\sqrt{x}}}$, find $\\dfrac{dy}{dx}$."
+  }
+]

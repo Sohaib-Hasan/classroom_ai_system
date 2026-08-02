@@ -1,0 +1,530 @@
+[
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Mappings and Functions",
+    "type": "definition",
+    "title": "Mapping",
+    "content": "Let $A$ and $B$ be nonempty sets. A \\textbf{mapping} (or\n\\textbf{function}) $F:A \\to B$ is a rule that assigns to each\nelement $a \\in A$ a \\textbf{unique} element $F(a) \\in B$. The set\n$A$ is called the \\textbf{domain} of $F$, and $B$ is called the\n\\textbf{codomain}. For $a \\in A$, the element $F(a) \\in B$ is called\nthe \\textbf{image} of $a$, and $a$ is called a \\textbf{preimage} of\n$F(a)$. The set of all images,\n$\\{F(a) : a \\in A\\} \\subseteq B$, is called the \\textbf{range} of\n$F$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Mappings and Functions",
+    "type": "example",
+    "title": "Example 4.1 --- Identifying Domain Codomain and Range",
+    "content": "Let $F:\\mathbb{R} \\to \\mathbb{R}$ be defined by $F(x)=x^2$. Identify\nthe domain, codomain, and range of $F$.\n\n\\textbf{Solution:}\nThe domain is $\\mathbb{R}$ (all real inputs are allowed), and the\ncodomain is $\\mathbb{R}$ (as stated in the definition of $F$).\n\nSince $x^2 \\ge 0$ for every real $x$, and every nonnegative real\nnumber $y$ has a preimage ($x=\\sqrt{y}$), the range consists of all\nnonnegative reals:\n\\[\n\\text{Domain} = \\boxed{\\mathbb{R}}, \\qquad \\text{Codomain} =\n\\boxed{\\mathbb{R}}, \\qquad \\text{Range} = \\boxed{[0,\\infty)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Mappings and Functions",
+    "type": "example",
+    "title": "Example 4.2 --- A Mapping Between Vector Spaces",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^3$ be defined by\n$F(x,y)=(x+y,\\ x-y,\\ 2x)$. Find $F(3,1)$.\n\n\\textbf{Solution:}\nSubstitute $x=3$, $y=1$ into each component:\n\\begin{align*}\nx+y &= 3+1 = 4\\\\\nx-y &= 3-1 = 2\\\\\n2x &= 2(3) = 6\n\\end{align*}\n\\[\nF(3,1) = \\boxed{(4,\\ 2,\\ 6)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Mappings and Functions",
+    "type": "example",
+    "title": "Example 4.3 --- Checking Whether a Rule Is a Mapping",
+    "content": "Determine whether $F:\\mathbb{R}^2 \\to \\mathbb{R}$ defined by\n$F(x,y)=\\dfrac{1}{x-y}$ is a mapping on all of $\\mathbb{R}^2$.\n\n\\textbf{Solution:}\nFor $F$ to be a mapping on the full domain $\\mathbb{R}^2$, every\nelement $(x,y) \\in \\mathbb{R}^2$ must produce a unique well-defined\noutput.\n\nConsider $(x,y)=(2,2)$. Then $F(2,2)=\\dfrac{1}{2-2}=\\dfrac{1}{0}$,\nwhich is \\textbf{undefined}.\n\nSince not every element of $\\mathbb{R}^2$ has a defined image, $F$\nis \\textbf{not} a mapping on all of $\\mathbb{R}^2$; its actual\ndomain is restricted to $\\{(x,y) : x \\neq y\\}$. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Mappings and Functions",
+    "type": "keypoint",
+    "title": "{Types of Mappings:} {enumerate}[leftmargin=2em,itemsep=4pt] {Injective (one-to-one):}",
+    "content": "\\textbf{Types of Mappings:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item \\textbf{Injective (one-to-one):} $F(a_1)=F(a_2) \\implies\n        a_1=a_2$ --- distinct inputs give distinct outputs.\n  \\item \\textbf{Surjective (onto):} every $b \\in B$ has at least one\n        preimage --- the range equals the codomain.\n  \\item \\textbf{Bijective:} both injective and surjective ---\n        every element of $B$ has exactly one preimage.\n  \\item \\textbf{Composition:} if $F:A \\to B$ and $G:B \\to C$, the\n        composition $G \\circ F: A \\to C$ is defined by\n        $(G \\circ F)(a)=G(F(a))$.\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Linear Mappings",
+    "type": "definition",
+    "title": "Linear Mapping (Linear Transformation)",
+    "content": "Let $V$ and $U$ be vector spaces over the same field $K$. A mapping\n$F:V \\to U$ is called a \\textbf{linear mapping} (or \\textbf{linear\ntransformation}) if it satisfies the following two conditions for\nall $v_1,v_2 \\in V$ and all $k \\in K$:\n\\begin{enumerate}[leftmargin=2em,itemsep=2pt]\n  \\item $F(v_1+v_2) = F(v_1)+F(v_2)$ \\hfill \\textit{(additivity)}\n  \\item $F(kv_1) = kF(v_1)$ \\hfill \\textit{(homogeneity)}\n\\end{enumerate}\nEquivalently, $F$ is linear if and only if for all\n$v_1,v_2 \\in V$ and $a,b \\in K$:\n\\[\nF(av_1+bv_2) = aF(v_1)+bF(v_2).\n\\]\nEvery linear mapping satisfies $F(0)=0$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Linear Mappings",
+    "type": "example",
+    "title": "Example 4.4 --- Verifying a Linear Mapping",
+    "content": "Show that $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ defined by\n$F(x,y,z)=(2x-y,\\ y+3z)$ is a linear mapping.\n\n\\textbf{Solution:}\nLet $u=(x_1,y_1,z_1)$ and $v=(x_2,y_2,z_2)$ be arbitrary vectors in\n$\\mathbb{R}^3$, and let $a,b \\in \\mathbb{R}$.\n\n\\textbf{Compute $F(au+bv)$:}\n\\begin{align*}\nau+bv &= (ax_1+bx_2,\\ ay_1+by_2,\\ az_1+bz_2)\\\\\nF(au+bv) &= \\big(2(ax_1+bx_2)-(ay_1+by_2),\\ (ay_1+by_2)+3(az_1+bz_2)\\big)\\\\\n&= \\big(a(2x_1-y_1)+b(2x_2-y_2),\\ a(y_1+3z_1)+b(y_2+3z_2)\\big).\n\\end{align*}\n\n\\textbf{Compute $aF(u)+bF(v)$:}\n\\begin{align*}\naF(u)+bF(v) &= a(2x_1-y_1,\\ y_1+3z_1)+b(2x_2-y_2,\\ y_2+3z_2)\\\\\n&= \\big(a(2x_1-y_1)+b(2x_2-y_2),\\ a(y_1+3z_1)+b(y_2+3z_2)\\big).\n\\end{align*}\n\nSince $F(au+bv)=aF(u)+bF(v)$ for arbitrary $u,v,a,b$, $F$ is a\n\\textbf{linear mapping}. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Linear Mappings",
+    "type": "example",
+    "title": "Example 4.5 --- A Mapping That Is Not Linear",
+    "content": "Show that $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ defined by\n$F(x,y)=(x^2,\\ y)$ is not a linear mapping.\n\n\\textbf{Solution:}\nIt suffices to find one instance where homogeneity or additivity\nfails. Test homogeneity with $k=2$ and $v=(1,1)$:\n\\[\nF(kv) = F(2,2) = (2^2,\\ 2) = (4,2).\n\\]\n\\[\nkF(v) = 2F(1,1) = 2(1^2,\\ 1) = 2(1,1) = (2,2).\n\\]\nSince $F(kv)=(4,2) \\neq (2,2)=kF(v)$, the homogeneity condition\nfails.\n\nTherefore $F$ is \\textbf{not} a linear mapping. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Linear Mappings",
+    "type": "example",
+    "title": "Example 4.6 --- The Zero Mapping and Identity Mapping",
+    "content": "Show that the zero mapping $F:V \\to U$ defined by $F(v)=0$ for all\n$v \\in V$, and the identity mapping $I:V \\to V$ defined by\n$I(v)=v$, are both linear mappings.\n\n\\textbf{Solution:}\n\\textbf{Zero mapping:} For any $v_1,v_2 \\in V$ and $a,b \\in K$:\n\\[\nF(av_1+bv_2) = 0 = a(0)+b(0) = aF(v_1)+bF(v_2).\n\\]\nSo $F$ is linear.\n\n\\textbf{Identity mapping:} For any $v_1,v_2 \\in V$ and $a,b \\in K$:\n\\[\nI(av_1+bv_2) = av_1+bv_2 = aI(v_1)+bI(v_2).\n\\]\nSo $I$ is linear. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Linear Mappings",
+    "type": "example",
+    "title": "Example 4.7 --- Linear Mapping Defined by a Matrix",
+    "content": "Let $A=\\begin{bmatrix}1&2\\\\0&-1\\\\3&1\\end{bmatrix}$, and define\n$F:\\mathbb{R}^2 \\to \\mathbb{R}^3$ by $F(v)=Av$ (treating $v$ as a\ncolumn vector). Find $F(2,-3)$ and confirm $F$ is linear.\n\n\\textbf{Solution:}\n\\[\nF(2,-3) = \\begin{bmatrix}1&2\\\\0&-1\\\\3&1\\end{bmatrix}\\begin{bmatrix}2\\\\-3\\end{bmatrix}\n= \\begin{bmatrix}1(2)+2(-3)\\\\0(2)+(-1)(-3)\\\\3(2)+1(-3)\\end{bmatrix}\n= \\begin{bmatrix}-4\\\\3\\\\3\\end{bmatrix}\n\\]\n\\[\nF(2,-3) = \\boxed{(-4,\\ 3,\\ 3)}\n\\]\n\nTo confirm linearity: for any vectors $u,v \\in \\mathbb{R}^2$ and\nscalars $a,b$, matrix multiplication satisfies\n$A(au+bv)=aAu+bAv$ by the distributive and associative properties\nof matrix algebra. Hence $F(au+bv)=aF(u)+bF(v)$, confirming $F$ is\nlinear. In fact, \\textbf{every} mapping of the form $F(v)=Av$ for a\nfixed matrix $A$ is automatically linear. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Linear Mappings",
+    "type": "theorem",
+    "title": "Properties of Linear Mappings",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $F(0) = 0$ for every linear mapping $F$ \\hfill \\textit{(zero preservation)}\n  \\item $F(-v) = -F(v)$ for all $v \\in V$ \\hfill \\textit{(negative preservation)}\n  \\item If $F,G:V \\to U$ are linear, then $F+G$ and $kF$ are also\n        linear \\hfill \\textit{(closure under operations)}\n  \\item If $F:V \\to U$ and $G:U \\to W$ are linear, then\n        $G \\circ F: V \\to W$ is linear \\hfill \\textit{(composition)}\n  \\item $F$ is completely determined by its action on a basis: if\n        $F(u_1),\\dots,F(u_n)$ are known for a basis\n        $\\{u_1,\\dots,u_n\\}$ of $V$, then $F(v)$ is known for every\n        $v \\in V$ \\hfill \\textit{(basis determination)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Linear Mappings",
+    "type": "example",
+    "title": "Example 4.8 --- Determining F from Its Action on a Basis",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be linear with\n$F(1,0)=(2,3)$ and $F(0,1)=(-1,4)$. Find $F(5,-2)$.\n\n\\textbf{Solution:}\nWrite $(5,-2)$ in terms of the standard basis:\n\\[\n(5,-2) = 5(1,0)+(-2)(0,1).\n\\]\nBy linearity:\n\\begin{align*}\nF(5,-2) &= 5F(1,0)+(-2)F(0,1)\\\\\n&= 5(2,3)+(-2)(-1,4)\\\\\n&= (10,15)+(2,-8)\\\\\n&= (12,\\ 7).\n\\end{align*}\n\\[\nF(5,-2) = \\boxed{(12,\\ 7)}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Linear Mappings",
+    "type": "keypoint",
+    "title": "{Testing Whether a Mapping Is Linear",
+    "content": "\\textbf{Testing Whether a Mapping Is Linear --- Exam Strategy:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item Every component of $F(x_1,\\dots,x_n)$ must be a\n        \\textbf{linear} expression in $x_1,\\dots,x_n$ (no squares,\n        products of variables, constants added, or other\n        nonlinear terms).\n  \\item A quick necessary check: if $F(0) \\neq 0$, then $F$ is\n        \\textbf{immediately} not linear.\n  \\item Any mapping of the form $F(v)=Av$ for a fixed matrix $A$ is\n        automatically linear.\n  \\item To disprove linearity, one specific counterexample (failing\n        additivity or homogeneity) is sufficient.\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Kernel and Image of a Linear Mapping",
+    "type": "definition",
+    "title": "Kernel and Image",
+    "content": "Let $F:V \\to U$ be a linear mapping. The \\textbf{kernel} of $F$,\ndenoted $\\ker(F)$, is the set of all vectors in $V$ that map to the\nzero vector of $U$:\n\\[\n\\ker(F) = \\{v \\in V : F(v) = 0\\}.\n\\]\nThe \\textbf{image} of $F$, denoted $\\operatorname{Im}(F)$, is the\nset of all vectors in $U$ that are images of some vector in $V$:\n\\[\n\\operatorname{Im}(F) = \\{F(v) : v \\in V\\}.\n\\]\nBoth $\\ker(F)$ and $\\operatorname{Im}(F)$ are subspaces --- $\\ker(F)$\nis a subspace of $V$, and $\\operatorname{Im}(F)$ is a subspace of\n$U$. The dimension of $\\ker(F)$ is called the \\textbf{nullity} of\n$F$, and the dimension of $\\operatorname{Im}(F)$ is called the\n\\textbf{rank} of $F$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Kernel and Image of a Linear Mapping",
+    "type": "example",
+    "title": "Example 4.9 --- Finding the Kernel of a Linear Mapping",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n$F(x,y,z)=(x+y+z,\\ x-y-z)$. Find $\\ker(F)$.\n\n\\textbf{Solution:}\nWe need all $(x,y,z)$ such that $F(x,y,z)=(0,0)$:\n\\begin{align*}\nx+y+z &= 0\\\\\nx-y-z &= 0\n\\end{align*}\nAdding the two equations: $2x=0 \\implies x=0$. Substituting into\nthe first equation: $y+z=0 \\implies y=-z$.\n\nSo every vector in $\\ker(F)$ has the form $(0,-z,z)=z(0,-1,1)$ for\n$z \\in \\mathbb{R}$.\n\\[\n\\ker(F) = \\boxed{\\operatorname{span}\\{(0,-1,1)\\}}, \\qquad\n\\text{nullity}(F) = 1\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Kernel and Image of a Linear Mapping",
+    "type": "example",
+    "title": "Example 4.10 --- Finding the Image of a Linear Mapping",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ be defined by\n$F(x,y,z)=(x+y,\\ y+z,\\ x+2y+z)$. Find $\\operatorname{Im}(F)$.\n\n\\textbf{Solution:}\nWrite $F(x,y,z)$ as a linear combination of vectors formed from the\ncoefficients of $x$, $y$, $z$:\n\\[\nF(x,y,z) = x(1,0,1)+y(1,1,2)+z(0,1,1).\n\\]\nSo $\\operatorname{Im}(F) = \\operatorname{span}\\{(1,0,1),(1,1,2),(0,1,1)\\}$.\nCheck for dependence: is $(1,1,2)=a(1,0,1)+b(0,1,1)$?\n\\begin{align*}\na &= 1\\\\\nb &= 1\\\\\na+b &= 1+1 = 2 \\quad \\checkmark\n\\end{align*}\nSince $(1,1,2)=(1,0,1)+(0,1,1)$, the third spanning vector is\nredundant. A basis for $\\operatorname{Im}(F)$ is\n$\\{(1,0,1),(0,1,1)\\}$, which are independent (not proportional).\n\\[\n\\operatorname{Im}(F) = \\boxed{\\operatorname{span}\\{(1,0,1),(0,1,1)\\}}, \\qquad\n\\text{rank}(F) = 2\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Kernel and Image of a Linear Mapping",
+    "type": "example",
+    "title": "Example 4.11 --- Verifying the Kernel Is a Subspace",
+    "content": "Let $F:V \\to U$ be a linear mapping. Prove that $\\ker(F)$ is a\nsubspace of $V$.\n\n\\textbf{Solution:}\n\\textbf{Zero vector:} Since $F$ is linear, $F(0)=0$, so\n$0 \\in \\ker(F)$. \\checkmark\n\n\\textbf{Closure under addition:} Let $v_1,v_2 \\in \\ker(F)$, so\n$F(v_1)=0$ and $F(v_2)=0$. Then\n\\[\nF(v_1+v_2) = F(v_1)+F(v_2) = 0+0 = 0,\n\\]\nso $v_1+v_2 \\in \\ker(F)$. \\checkmark\n\n\\textbf{Closure under scalar multiplication:} Let $v \\in \\ker(F)$\nand $k \\in K$. Then\n\\[\nF(kv) = kF(v) = k(0) = 0,\n\\]\nso $kv \\in \\ker(F)$. \\checkmark\n\nAll three subspace conditions hold, so $\\ker(F)$ is a subspace of\n$V$. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Kernel and Image of a Linear Mapping",
+    "type": "theorem",
+    "title": "Rank-Nullity Theorem",
+    "content": "Let $F:V \\to U$ be a linear mapping, where $V$ is\nfinite-dimensional. Then:\n\\[\n\\dim(V) = \\dim(\\ker(F)) + \\dim(\\operatorname{Im}(F)),\n\\]\nthat is,\n\\[\n\\dim(V) = \\text{nullity}(F) + \\text{rank}(F).\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Kernel and Image of a Linear Mapping",
+    "type": "example",
+    "title": "Example 4.12 --- Applying the Rank-Nullity Theorem",
+    "content": "Let $F:\\mathbb{R}^4 \\to \\mathbb{R}^3$ be a linear mapping with\n$\\dim(\\ker(F))=2$. Find $\\text{rank}(F)$.\n\n\\textbf{Solution:}\nBy the Rank-Nullity Theorem:\n\\[\n\\dim(\\mathbb{R}^4) = \\text{nullity}(F)+\\text{rank}(F).\n\\]\n\\[\n4 = 2 + \\text{rank}(F) \\implies \\text{rank}(F) = 2.\n\\]\n\\[\n\\text{rank}(F) = \\boxed{2}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Kernel and Image of a Linear Mapping",
+    "type": "example",
+    "title": "Example 4.13 --- Kernel and Rank-Nullity Verification",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n$F(x,y,z)=(2x-y+z,\\ x+y-z)$. Find $\\ker(F)$, $\\operatorname{Im}(F)$,\nand verify the Rank-Nullity Theorem.\n\n\\textbf{Solution:}\n\\textbf{Kernel:} solve $2x-y+z=0$ and $x+y-z=0$ simultaneously.\nAdding: $3x=0 \\implies x=0$. Then from the second equation,\n$y=z$. So $\\ker(F)=\\{(0,z,z)\\} = \\operatorname{span}\\{(0,1,1)\\}$,\ngiving $\\text{nullity}(F)=1$.\n\n\\textbf{Image:} write\n\\[\nF(x,y,z) = x(2,1)+y(-1,1)+z(1,-1).\n\\]\nSince $(1,-1)=-1(-1,1)$, the third vector is redundant. Also\n$(2,1)$ and $(-1,1)$ are independent (not proportional). So\n$\\operatorname{Im}(F)=\\operatorname{span}\\{(2,1),(-1,1)\\}$. Since\nthese two vectors are independent in $\\mathbb{R}^2$, they span all\nof $\\mathbb{R}^2$, giving $\\text{rank}(F)=2$.\n\n\\textbf{Verification:}\n\\[\n\\text{nullity}(F)+\\text{rank}(F) = 1+2 = 3 = \\dim(\\mathbb{R}^3). \\quad\\checkmark\n\\]\n\\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Singular and Nonsingular Linear Mappings",
+    "type": "definition",
+    "title": "Nonsingular Linear Mapping and Isomorphism",
+    "content": "A linear mapping $F:V \\to U$ is called \\textbf{nonsingular} if\n$\\ker(F)=\\{0\\}$; otherwise, $F$ is called \\textbf{singular}. A\nnonsingular linear mapping is always \\textbf{injective}\n(one-to-one).\n\nIf $F:V \\to U$ is linear, \\textbf{bijective} (both injective and\nsurjective), then $F$ is called an \\textbf{isomorphism}, and $V$ and\n$U$ are said to be \\textbf{isomorphic}, written $V \\cong U$. Two\nfinite-dimensional vector spaces over the same field are isomorphic\nif and only if they have the \\textbf{same dimension}."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Singular and Nonsingular Linear Mappings",
+    "type": "example",
+    "title": "Example 4.14 --- Testing for Nonsingularity",
+    "content": "Determine whether $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ defined by\n$F(x,y,z)=(x+y,\\ y+z,\\ x+z)$ is nonsingular.\n\n\\textbf{Solution:}\nFind $\\ker(F)$ by solving $F(x,y,z)=(0,0,0)$:\n\\begin{align*}\nx+y &= 0 \\tag{1}\\\\\ny+z &= 0 \\tag{2}\\\\\nx+z &= 0 \\tag{3}\n\\end{align*}\nFrom (1): $y=-x$. From (2): $z=-y=x$. Check (3): $x+z=x+x=2x=0\n\\implies x=0$. Then $y=0$, $z=0$.\n\nSince the only solution is $(0,0,0)$, $\\ker(F)=\\{0\\}$. Hence $F$ is\n\\textbf{nonsingular}. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Singular and Nonsingular Linear Mappings",
+    "type": "example",
+    "title": "Example 4.15 --- Testing for Singularity",
+    "content": "Determine whether $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ defined by\n$F(x,y,z)=(x+y+z,\\ 2x+2y+2z)$ is singular or nonsingular.\n\n\\textbf{Solution:}\nFind $\\ker(F)$: solve $x+y+z=0$ and $2x+2y+2z=0$. The second\nequation is exactly twice the first, so they represent the same\ncondition: $x+y+z=0$.\n\nThis single equation has infinitely many solutions, e.g.\n$(1,-1,0) \\neq (0,0,0)$ satisfies $F(1,-1,0)=(0,0)$.\n\nSince $\\ker(F) \\neq \\{0\\}$, $F$ is \\textbf{singular}. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Singular and Nonsingular Linear Mappings",
+    "type": "example",
+    "title": "Example 4.16 --- Verifying an Isomorphism",
+    "content": "Let $F:\\mathbb{R}^2 \\to P_1(t)$ be defined by\n$F(a,b) = a+bt$. Show that $F$ is an isomorphism.\n\n\\textbf{Solution:}\n\\textbf{Linearity:} for $(a_1,b_1),(a_2,b_2) \\in \\mathbb{R}^2$ and\nscalars $c_1,c_2$:\n\\begin{align*}\nF\\big(c_1(a_1,b_1)+c_2(a_2,b_2)\\big)\n&= F(c_1a_1+c_2a_2,\\ c_1b_1+c_2b_2)\\\\\n&= (c_1a_1+c_2a_2)+(c_1b_1+c_2b_2)t\\\\\n&= c_1(a_1+b_1t)+c_2(a_2+b_2t)\\\\\n&= c_1F(a_1,b_1)+c_2F(a_2,b_2).\n\\end{align*}\nSo $F$ is linear.\n\n\\textbf{Nonsingular (injective):} if $F(a,b)=0$, then $a+bt=0$,\nwhich forces $a=0$ and $b=0$ (a polynomial is zero only when all\ncoefficients are zero). So $\\ker(F)=\\{(0,0)\\}$, and $F$ is\nnonsingular, hence injective.\n\n\\textbf{Surjective:} every polynomial $p(t)=a+bt \\in P_1(t)$ is the\nimage of $(a,b) \\in \\mathbb{R}^2$, since $F(a,b)=a+bt=p(t)$.\n\nSince $F$ is linear, injective, and surjective, $F$ is an\n\\textbf{isomorphism}, so $\\mathbb{R}^2 \\cong P_1(t)$. This agrees\nwith the fact that $\\dim(\\mathbb{R}^2)=2=\\dim(P_1(t))$. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Singular and Nonsingular Linear Mappings",
+    "type": "theorem",
+    "title": "Properties of Nonsingular Mappings and Isomorphisms",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $F$ is nonsingular if and only if $F$ is injective \\hfill \\textit{(injectivity criterion)}\n  \\item If $\\dim(V)=\\dim(U)$, then $F:V \\to U$ is nonsingular if and\n        only if $F$ is an isomorphism \\hfill \\textit{(equal-dimension shortcut)}\n  \\item If $F:V \\to U$ is nonsingular and\n        $\\{v_1,\\dots,v_n\\}$ is linearly independent in $V$, then\n        $\\{F(v_1),\\dots,F(v_n)\\}$ is linearly independent in $U$ \\hfill \\textit{(independence preservation)}\n  \\item Every $n$-dimensional vector space over $K$ is isomorphic to\n        $K^n$ \\hfill \\textit{(coordinate isomorphism)}\n  \\item The inverse of an isomorphism $F:V \\to U$ is also an\n        isomorphism $F^{-1}:U \\to V$ \\hfill \\textit{(inverse property)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Singular and Nonsingular Linear Mappings",
+    "type": "keypoint",
+    "title": "{Kernel Rank-Nullity --- Exam Strategy:} {enumerate}[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{Kernel Rank-Nullity --- Exam Strategy:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item To find $\\ker(F)$: set $F(v)=0$ and solve the resulting\n        homogeneous system.\n  \\item To find $\\operatorname{Im}(F)$: write $F(v)$ as a linear\n        combination of vectors formed from the coefficients, then\n        reduce the spanning set to a basis.\n  \\item Use $\\dim(V)=\\text{nullity}(F)+\\text{rank}(F)$ to check work\n        or shortcut a computation once one of the two dimensions is\n        known.\n  \\item $F$ nonsingular $\\iff$ $\\ker(F)=\\{0\\}$ $\\iff$ $F$ injective\n        $\\iff$ nullity$(F)=0$.\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Operations with Linear Mappings",
+    "type": "definition",
+    "title": "Operations on Linear Mappings",
+    "content": "Let $F,G:V \\to U$ be linear mappings and $k$ a scalar. The\n\\textbf{sum} $F+G$ and \\textbf{scalar multiple} $kF$ are the\nmappings $V \\to U$ defined by:\n\\[\n(F+G)(v) = F(v)+G(v), \\qquad (kF)(v) = kF(v) \\quad \\text{for all } v \\in V.\n\\]\nIf $F:V \\to U$ and $G:U \\to W$ are linear, the \\textbf{composition}\n$G \\circ F: V \\to W$ is defined by\n\\[\n(G \\circ F)(v) = G(F(v)) \\quad \\text{for all } v \\in V.\n\\]\nThe set of all linear mappings from $V$ to $U$, denoted\n$\\operatorname{Hom}(V,U)$, is itself a vector space under the sum\nand scalar multiple defined above."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Operations with Linear Mappings",
+    "type": "example",
+    "title": "Example 4.17 --- Sum and Scalar Multiple of Linear Mappings",
+    "content": "Let $F,G:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(x+y,\\ x)$ and $G(x,y)=(2x,\\ y-x)$. Find $(F+G)(x,y)$ and\n$(3F)(x,y)$.\n\n\\textbf{Solution:}\n\\begin{align*}\n(F+G)(x,y) &= F(x,y)+G(x,y) = (x+y,\\ x)+(2x,\\ y-x)\\\\\n&= (x+y+2x,\\ x+y-x) = (3x+y,\\ y).\n\\end{align*}\n\\[\n(3F)(x,y) = 3(x+y,\\ x) = (3x+3y,\\ 3x)\n\\]\n\\[\n(F+G)(x,y) = \\boxed{(3x+y,\\ y)}, \\qquad (3F)(x,y) = \\boxed{(3x+3y,\\ 3x)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Operations with Linear Mappings",
+    "type": "example",
+    "title": "Example 4.18 --- Composition of Linear Mappings",
+    "content": "Let $F,G:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(x+y,\\ x-y)$ and $G(x,y)=(2x,\\ 3y)$. Find $(G \\circ F)(x,y)$.\n\n\\textbf{Solution:}\n\\[\n(G \\circ F)(x,y) = G\\big(F(x,y)\\big) = G(x+y,\\ x-y).\n\\]\nSubstitute into $G$, replacing its first argument by $x+y$ and its\nsecond by $x-y$:\n\\[\nG(x+y,\\ x-y) = \\big(2(x+y),\\ 3(x-y)\\big) = (2x+2y,\\ 3x-3y).\n\\]\n\\[\n(G \\circ F)(x,y) = \\boxed{(2x+2y,\\ 3x-3y)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Operations with Linear Mappings",
+    "type": "example",
+    "title": "Example 4.19 --- Proving F+G Is Linear",
+    "content": "Let $F,G:V \\to U$ be linear mappings. Prove that $F+G$ is also a\nlinear mapping.\n\n\\textbf{Solution:}\nLet $v_1,v_2 \\in V$ and $a,b \\in K$. By definition of $F+G$ and the\nlinearity of $F$ and $G$ separately:\n\\begin{align*}\n(F+G)(av_1+bv_2) &= F(av_1+bv_2)+G(av_1+bv_2)\\\\\n&= \\big(aF(v_1)+bF(v_2)\\big)+\\big(aG(v_1)+bG(v_2)\\big)\\\\\n&= a\\big(F(v_1)+G(v_1)\\big)+b\\big(F(v_2)+G(v_2)\\big)\\\\\n&= a(F+G)(v_1)+b(F+G)(v_2).\n\\end{align*}\nSince $(F+G)(av_1+bv_2)=a(F+G)(v_1)+b(F+G)(v_2)$ for arbitrary\n$v_1,v_2,a,b$, the mapping $F+G$ is linear. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Operations with Linear Mappings",
+    "type": "theorem",
+    "title": "Properties of the Space of Linear Mappings",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $\\operatorname{Hom}(V,U)$ is a vector space under $+$ and\n        scalar multiplication \\hfill \\textit{(vector space structure)}\n  \\item If $\\dim(V)=m$ and $\\dim(U)=n$, then\n        $\\dim(\\operatorname{Hom}(V,U))=mn$ \\hfill \\textit{(dimension formula)}\n  \\item Composition distributes over addition:\n        $G\\circ(F_1+F_2)=G\\circ F_1+G\\circ F_2$ \\hfill \\textit{(distributivity)}\n  \\item Composition is associative:\n        $(H\\circ G)\\circ F = H\\circ(G\\circ F)$ \\hfill \\textit{(associativity)}\n  \\item Composition is generally \\textbf{not} commutative:\n        $G\\circ F \\neq F\\circ G$ in general \\hfill \\textit{(non-commutativity)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Algebra A(V) of Linear Operators",
+    "type": "definition",
+    "title": "Linear Operator and the Algebra A(V)",
+    "content": "A linear mapping $F:V \\to V$ (same domain and codomain) is called a\n\\textbf{linear operator} on $V$. The set of all linear operators on\n$V$, denoted $A(V)$, forms an \\textbf{algebra}: it is a vector space\nunder $+$ and scalar multiplication, and it is also closed under\ncomposition, which plays the role of multiplication. For\n$F,G \\in A(V)$, the product $FG$ means $F \\circ G$. Powers are\ndefined by $F^2=F\\circ F$, $F^n=F\\circ F \\circ \\cdots \\circ F$\n($n$ times), and $F^0=I$ (the identity operator). For a polynomial\n$p(t)=a_0+a_1t+\\cdots+a_nt^n$, the operator\n\\[\np(F) = a_0I+a_1F+a_2F^2+\\cdots+a_nF^n\n\\]\nis called a \\textbf{polynomial in the operator $F$}. An operator $F$\nis \\textbf{invertible} if there exists $G \\in A(V)$ with $FG=GF=I$;\nthis $G$ is denoted $F^{-1}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Algebra A(V) of Linear Operators",
+    "type": "example",
+    "title": "Example 4.20 --- Computing Powers of a Linear Operator",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(y,\\ -x)$. Find $F^2(x,y)$ and identify the operator\n$F^2$.\n\n\\textbf{Solution:}\n\\begin{align*}\nF^2(x,y) &= F\\big(F(x,y)\\big) = F(y,-x)\\\\\n&= (-x,\\ -y) = -1(x,y).\n\\end{align*}\nSince $F^2(x,y)=-(x,y)$ for every $(x,y)$, the operator $F^2$ is\nsimply $-1$ times the identity operator:\n\\[\nF^2 = \\boxed{-I}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Algebra A(V) of Linear Operators",
+    "type": "example",
+    "title": "Example 4.21 --- Testing Invertibility of an Operator",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(x+y,\\ x-y)$. Show that $F$ is invertible and find\n$F^{-1}$.\n\n\\textbf{Solution:}\n\\textbf{Nonsingularity:} solve $x+y=0$ and $x-y=0$. Adding gives\n$2x=0 \\implies x=0$, and then $y=0$. So $\\ker(F)=\\{0\\}$, hence $F$\nis nonsingular. Since $F$ maps $\\mathbb{R}^2$ to $\\mathbb{R}^2$\n(same dimension), $F$ is invertible.\n\n\\textbf{Finding $F^{-1}$:} let $u=x+y$ and $v=x-y$. Adding these:\n$u+v=2x \\implies x=\\dfrac{u+v}{2}$. Subtracting: $u-v=2y \\implies\ny=\\dfrac{u-v}{2}$.\n\\[\nF^{-1}(u,v) = \\boxed{\\left(\\frac{u+v}{2},\\ \\frac{u-v}{2}\\right)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Algebra A(V) of Linear Operators",
+    "type": "example",
+    "title": "Example 4.22 --- Evaluating a Polynomial in an Operator",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(y,\\ x)$ (coordinate swap), and let $p(t)=t^2-1$. Compute\n$p(F)$.\n\n\\textbf{Solution:}\nFirst compute $F^2$:\n\\[\nF^2(x,y) = F\\big(F(x,y)\\big) = F(y,x) = (x,y).\n\\]\nSo $F^2=I$, the identity operator.\n\nNow evaluate $p(F)=F^2-I$:\n\\[\np(F)(x,y) = F^2(x,y)-I(x,y) = (x,y)-(x,y) = (0,0).\n\\]\nSince $p(F)$ sends every vector to $(0,0)$, $p(F)$ is the\n\\textbf{zero operator}:\n\\[\np(F) = \\boxed{0}\n\\]\nThis shows $F$ is a ``zero'' of the polynomial $p(t)=t^2-1$, in the\nsame sense that a matrix can be a zero of a polynomial.\n\\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Algebra A(V) of Linear Operators",
+    "type": "theorem",
+    "title": "Properties of the Algebra A(V)",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $A(V)$ is closed under $+$, scalar multiplication, and\n        composition \\hfill \\textit{(closure)}\n  \\item The identity operator $I$ satisfies $FI=IF=F$ for all\n        $F \\in A(V)$ \\hfill \\textit{(multiplicative identity)}\n  \\item $F \\in A(V)$ is invertible if and only if $F$ is\n        nonsingular (equivalently, bijective) \\hfill \\textit{(invertibility criterion)}\n  \\item Composition in $A(V)$ is associative but generally\n        \\textbf{not} commutative: $FG \\neq GF$ in general \\hfill \\textit{(non-commutativity)}\n  \\item If $F$ is invertible, then $(F^{-1})^{-1}=F$ and\n        $(FG)^{-1}=G^{-1}F^{-1}$ \\hfill \\textit{(inverse properties)}\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Matrices and Linear Mappings",
+    "type": "definition",
+    "title": "Matrix Representation of a Linear Mapping",
+    "content": "Let $F:V \\to U$ be a linear mapping, and let $S=\\{v_1,\\dots,v_n\\}$\nand $T=\\{u_1,\\dots,u_m\\}$ be bases of $V$ and $U$ respectively. For\neach $v_j$, express $F(v_j)$ as a linear combination of the basis\n$T$:\n\\[\nF(v_j) = a_{1j}u_1+a_{2j}u_2+\\cdots+a_{mj}u_m.\n\\]\nThe $m \\times n$ matrix $A=[a_{ij}]$, whose $j$-th column is the\ncoordinate vector $[F(v_j)]_T$, is called the \\textbf{matrix\nrepresentation} of $F$ relative to the bases $S$ and $T$, denoted\n$[F]_{S,T}$ (or simply $[F]_S$ when $V=U$ and $S=T$). This matrix\nsatisfies the key property:\n\\[\n[F(v)]_T = [F]_{S,T}\\,[v]_S \\qquad \\text{for every } v \\in V.\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Matrices and Linear Mappings",
+    "type": "example",
+    "title": "Example 4.23 --- Matrix Representation Relative to Standard Bases",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n$F(x,y,z)=(2x-y+z,\\ x+3y-z)$. Find the matrix representation of\n$F$ relative to the standard bases.\n\n\\textbf{Solution:}\nApply $F$ to each standard basis vector of $\\mathbb{R}^3$:\n\\begin{align*}\nF(1,0,0) &= (2,1)\\\\\nF(0,1,0) &= (-1,3)\\\\\nF(0,0,1) &= (1,-1)\n\\end{align*}\nUsing these images as the columns of the matrix:\n\\[\n[F] = \\boxed{\\begin{bmatrix}2&-1&1\\\\1&3&-1\\end{bmatrix}}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Matrices and Linear Mappings",
+    "type": "example",
+    "title": "Example 4.24 --- Matrix Representation Relative to a Nonstandard Basis",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(x+y,\\ x-y)$. Find the matrix representation of $F$\nrelative to the basis $S=\\{(1,1),(1,-1)\\}$.\n\n\\textbf{Solution:}\n\\textbf{Image of $(1,1)$:} $F(1,1)=(1+1,\\ 1-1)=(2,0)$. Express\n$(2,0)$ in terms of $S$: $a(1,1)+b(1,-1)=(2,0)$ gives $a+b=2$,\n$a-b=0$, so $a=1$, $b=1$. Coordinate vector: $(1,1)$.\n\n\\textbf{Image of $(1,-1)$:} $F(1,-1)=(1-1,\\ 1+1)=(0,2)$. Express\n$(0,2)$ in terms of $S$: $a+b=0$, $a-b=2$, so $a=1$, $b=-1$.\nCoordinate vector: $(1,-1)$.\n\nUsing these coordinate vectors as columns:\n\\[\n[F]_S = \\boxed{\\begin{bmatrix}1&1\\\\1&-1\\end{bmatrix}}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Matrices and Linear Mappings",
+    "type": "example",
+    "title": "Example 4.25 --- Using the Matrix Representation to Compute F(v)",
+    "content": "Using the mapping and basis $S$ from Example 4.24, let $v=(3,-1)$\nwith coordinate vector $[v]_S=(1,2)$. Verify that\n$[F(v)]_S=[F]_S\\,[v]_S$.\n\n\\textbf{Solution:}\n\\textbf{Direct computation:} $F(3,-1) = (3+(-1),\\ 3-(-1)) = (2,4)$.\nExpress $(2,4)$ in terms of $S$: $a+b=2$, $a-b=4$, so $a=3$,\n$b=-1$. Thus $[F(v)]_S=(3,-1)$.\n\n\\textbf{Matrix computation:}\n\\[\n[F]_S\\,[v]_S = \\begin{bmatrix}1&1\\\\1&-1\\end{bmatrix}\\begin{bmatrix}1\\\\2\\end{bmatrix}\n= \\begin{bmatrix}1(1)+1(2)\\\\1(1)-1(2)\\end{bmatrix}\n= \\begin{bmatrix}3\\\\-1\\end{bmatrix}.\n\\]\nBoth methods give $(3,-1)$, confirming\n$[F(v)]_S=[F]_S\\,[v]_S$. \\checkmark \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Matrices and Linear Mappings",
+    "type": "keypoint",
+    "title": "{Matrix Representation --- Key Facts:} {enumerate}[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{Matrix Representation --- Key Facts:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item Relative to the \\textbf{standard basis}, the matrix\n        representation of $F(v)=Av$ is simply $A$ itself.\n  \\item The columns of $[F]_{S,T}$ are the coordinate vectors (with\n        respect to $T$) of $F$ applied to each vector of $S$, in\n        order.\n  \\item Composition corresponds to matrix multiplication:\n        $[G\\circ F]_S = [G]_S[F]_S$.\n  \\item $F$ is invertible if and only if $[F]_S$ is an invertible\n        matrix, and then $[F^{-1}]_S = ([F]_S)^{-1}$.\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "Let $G:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n  $G(x,y,z)=(2x-z,\\ y+3z)$. Determine whether $G$ is injective,\n  surjective, both, or neither."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "Let $H:\\mathbb{R} \\to \\mathbb{R}$ be defined by\n  $H(x)=\\dfrac{2}{x^2-4}$. Determine the largest possible domain of\n  $H$ as a subset of $\\mathbb{R}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "Let $F,G:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n  $F(x,y)=(x+2y,\\ 3x-y)$ and $G(x,y)=(y,\\ x+y)$. Find\n  $(G \\circ F)(1,-2)$ and $(F \\circ G)(1,-2)$, and comment on\n  whether $G \\circ F = F \\circ G$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "Determine whether $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ defined\n  by $F(x,y,z)=(x+2y-z,\\ 3)$ is a linear mapping."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "Determine whether $F:M_{2,2} \\to \\mathbb{R}$ defined by\n  $F(A)=\\det(A)$ is a linear mapping."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ be linear with\n  $F(1,0,0)=(2,1,-1)$, $F(0,1,0)=(0,3,1)$, and\n  $F(0,0,1)=(1,-1,2)$. Find $F(2,-1,3)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ be defined by\n  $F(x,y,z)=(x-y,\\ y-z,\\ z-x)$. Find $\\ker(F)$ and\n  $\\operatorname{Im}(F)$, and verify the Rank-Nullity Theorem."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "Let $F:\\mathbb{R}^4 \\to \\mathbb{R}^3$ be defined by\n  $F(x_1,x_2,x_3,x_4)=(x_1+x_2,\\ x_2+x_3,\\ x_3+x_4)$. Find a basis\n  for $\\ker(F)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be a linear mapping\n  with $\\operatorname{rank}(F)=2$. Find $\\dim(\\ker(F))$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "Let $F:P_2(t) \\to P_1(t)$ be defined by\n  $F(a_0+a_1t+a_2t^2)=a_1+2a_2t$. Find $\\ker(F)$ and\n  $\\operatorname{Im}(F)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "Determine whether $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ defined\n  by $F(x,y,z)=(x+y,\\ y+z,\\ x+2y+z)$ is singular or nonsingular."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "Determine whether $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ defined\n  by $F(x,y)=(3x-y,\\ x+2y)$ is an isomorphism. If so find\n  $F^{-1}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "Show that $M_{2,2}$ is isomorphic to $\\mathbb{R}^4$ by\n  exhibiting an explicit isomorphism."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "Let $F,G:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n  $F(x,y,z)=(x-z,\\ 2y)$ and $G(x,y,z)=(x+y,\\ z-y)$. Find\n  $(2F-3G)(x,y,z)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 15",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^3$ and\n  $G:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n  $F(x,y)=(x,\\ x+y,\\ y)$ and $G(x,y,z)=(x-z,\\ y)$. Find\n  $(G \\circ F)(x,y)$ and determine whether $G \\circ F$ is the\n  identity mapping on $\\mathbb{R}^2$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 16",
+    "content": "Prove that if $F:V \\to U$ is a linear mapping and $k$ is a\n  scalar, then $kF$ is also a linear mapping."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 17",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ be defined by\n  $F(x,y,z)=(z,\\ x,\\ y)$. Find $F^2$ and $F^3$, and determine\n  whether $F$ is invertible."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 18",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n  $F(x,y)=(2x,\\ 3y)$. Show that $F$ is invertible and find\n  $F^{-1}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 19",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n  $F(x,y)=(-x,\\ y)$. Show that $F$ is a zero of the polynomial\n  $p(t)=t^2-1$ by computing $p(F)=F^2-I$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 20",
+    "content": "Let $F,G$ be linear operators on $\\mathbb{R}^2$ defined by\n  $F(x,y)=(y,0)$ and $G(x,y)=(0,x)$. Compute $FG$ and $GF$, and\n  determine whether $FG=GF$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 21",
+    "content": "Find the matrix representation of\n  $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ defined by\n  $F(x,y,z)=(3x-y+2z,\\ x+4z)$ relative to the standard bases."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 22",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n  $F(x,y)=(2x-y,\\ x+y)$. Find the matrix representation of $F$\n  relative to the basis $S=\\{(1,2),(2,3)\\}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 23",
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ have matrix\n  representation $[F]_S=\\begin{bmatrix}1&2\\\\0&-1\\end{bmatrix}$\n  relative to a basis $S=\\{u_1,u_2\\}$. Given that a vector $v$ has\n  coordinate vector $[v]_S=(3,-2)$, find $[F(v)]_S$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 24",
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ be defined by\n  $F(x,y,z)=(x+y+z,\\ 2x+ky+2z,\\ x+y+z)$. Find all values of $k$\n  for which $F$ is singular."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 4 - Mappings and Functions",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 25",
+    "content": "Let $F:P_1(t) \\to \\mathbb{R}^2$ be defined by\n  $F(a+bt)=(a-b,\\ a+b)$. Show that $F$ is an isomorphism, and find\n  a formula for $F^{-1}(x,y)$."
+  }
+]

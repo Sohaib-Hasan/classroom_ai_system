@@ -1,0 +1,802 @@
+[
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Vector Spaces",
+    "type": "definition",
+    "title": "Vector Space",
+    "content": "Let $V$ be a nonempty set equipped with two operations: \\textbf{vector addition}\n(denoted $u+v$ for $u,v \\in V$) and \\textbf{scalar multiplication} (denoted $kv$\nfor $k \\in K$, $v \\in V$, where $K$ is a field such as $\\mathbb{R}$ or\n$\\mathbb{C}$). Then $V$ is called a \\textbf{vector space} over $K$ if the\nfollowing axioms hold for all $u,v,w \\in V$ and all $a,b \\in K$:\n\n\\medskip\n\\textbf{Addition Axioms:}\n\\begin{enumerate}[leftmargin=2em,itemsep=2pt]\n  \\item $(u+v)+w = u+(v+w)$\n  \\item There exists $0 \\in V$ such that $u+0 = u$\n  \\item For each $u \\in V$ there exists $-u \\in V$ such that $u+(-u)=0$\n  \\item $u+v = v+u$\n\\end{enumerate}\n\n\\textbf{Scalar Multiplication Axioms:}\n\\begin{enumerate}[leftmargin=2em,itemsep=2pt]\n  \\setcounter{enumi}{4}\n  \\item $a(u+v) = au+av$\n  \\item $(a+b)u = au+bu$\n  \\item $(ab)u = a(bu)$\n  \\item $1u = u$\n\\end{enumerate}\n\nThe elements of $V$ are called \\textbf{vectors} and the elements of $K$ are\ncalled \\textbf{scalars}.\n\n\\vspace{0.2cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Vector Spaces",
+    "type": "example",
+    "title": "Example 3.1 --- Verifying the Zero Vector Space",
+    "content": "Show that $V=\\{0\\}$ consisting of a single element $0$ with\n$0+0=0$ and $k0=0$ for every scalar $k$ is a vector space.\n\n\\textbf{Solution:}\nAll eight axioms reduce to trivial statements involving only $0$:\n\\begin{align*}\n(0+0)+0 &= 0+(0+0) = 0\\\\\n0+0 &= 0 \\quad \\text{(so } 0 \\text{ is the zero vector)}\\\\\n0+(-0) &= 0+0 = 0 \\quad \\text{(so } -0=0\\text{)}\\\\\na(0+0) &= a0+a0 = 0\n\\end{align*}\nEvery axiom is satisfied since there is only one vector and it behaves\nconsistently under all operations. Hence $V=\\{0\\}$ is a vector space,\ncalled the \\textbf{zero vector space}. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Vector Spaces",
+    "type": "example",
+    "title": "Example 3.2 --- Verifying $\\mathbb{R",
+    "content": "^n$ as a Vector Space}\nShow that $\\mathbb{R}^3$ with the usual componentwise addition and\nscalar multiplication satisfies the vector space axioms, using\n$u=(1,2,3)$, $v=(0,-1,4)$, $w=(2,0,1)$ and scalar $a=2$.\n\n\\textbf{Solution:}\n\\textbf{Commutativity:}\n\\[\nu+v = (1,2,3)+(0,-1,4) = (1,1,7)\n\\]\n\\[\nv+u = (0,-1,4)+(1,2,3) = (1,1,7)\n\\]\nSo $u+v=v+u$. \\checkmark\n\n\\textbf{Zero vector:} $0=(0,0,0)$ satisfies $u+0=(1,2,3)+(0,0,0)=(1,2,3)=u$. \\checkmark\n\n\\textbf{Distributivity:}\n\\begin{align*}\na(u+v) &= 2(1,1,7) = (2,2,14)\\\\\nau+av &= 2(1,2,3)+2(0,-1,4) = (2,4,6)+(0,-2,8) = (2,2,14)\n\\end{align*}\nSo $a(u+v)=au+av$. \\checkmark\n\nSince all axioms hold for arbitrary vectors under the standard\noperations, $\\mathbb{R}^3$ (and in general $\\mathbb{R}^n$) is a vector\nspace over $\\mathbb{R}$. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Vector Spaces",
+    "type": "example",
+    "title": "Example 3.3 --- A Set That Is Not a Vector Space",
+    "content": "Let $V=\\mathbb{R}^2$ with the usual addition, but define scalar\nmultiplication by\n\\[\nk(x,y) = (kx, 0).\n\\]\nShow that $V$ is not a vector space under this operation.\n\n\\textbf{Solution:}\nCheck Axiom 8, which requires $1u=u$ for all $u \\in V$.\n\nLet $u=(3,5)$. Then:\n\\[\n1u = 1(3,5) = (1 \\cdot 3, 0) = (3,0) \\neq (3,5) = u.\n\\]\nSince $1u \\neq u$, Axiom 8 fails. Therefore $V$ with this modified\nscalar multiplication is \\textbf{not} a vector space. \\hfill$\\square$\n\\vspace{0.3cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Vector Spaces",
+    "type": "keypoint",
+    "title": "{Checking Whether a Set Is a",
+    "content": "\\textbf{Checking Whether a Set Is a Vector Space:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item It is enough to find \\textbf{one} axiom that fails to prove\n        a set is not a vector space.\n  \\item To prove a set \\textbf{is} a vector space, all eight axioms\n        must be verified in general (using arbitrary vectors and\n        scalars, not just specific numbers).\n  \\item The most commonly violated axioms in exam questions are\n        closure, the existence of a zero vector, and Axiom 8\n        ($1u=u$).\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "definition",
+    "title": "The Space \\texorpdfstring{$K^n$",
+    "content": "{K to the n}}\nLet $K$ be a field ($\\mathbb{R}$ or $\\mathbb{C}$). The set of all\n$n$-tuples of elements of $K$, denoted $K^n$, is a vector space over\n$K$ where addition and scalar multiplication are defined\ncomponentwise:\n\\[\n(a_1,\\dots,a_n)+(b_1,\\dots,b_n) = (a_1+b_1,\\dots,a_n+b_n),\n\\]\n\\[\nk(a_1,\\dots,a_n) = (ka_1,\\dots,ka_n).\n\\]\nThe zero vector is $(0,0,\\dots,0)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "example",
+    "title": "Example 3.4 --- Operations in \\texorpdfstring{$\\mathbb{R",
+    "content": "^4$}{R4}}\nLet $u=(1,-2,0,3)$ and $v=(2,1,-4,5)$ in $\\mathbb{R}^4$. Find\n$3u-2v$.\n\n\\textbf{Solution:}\n\\begin{align*}\n3u &= 3(1,-2,0,3) = (3,-6,0,9)\\\\\n2v &= 2(2,1,-4,5) = (4,2,-8,10)\\\\\n3u-2v &= (3,-6,0,9)-(4,2,-8,10) = (-1,-8,8,-1).\n\\end{align*}\n\\[\n3u-2v = \\boxed{(-1,-8,8,-1)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "example",
+    "title": "Example 3.5 --- Complex Space \\texorpdfstring{$\\mathbb{C",
+    "content": "^2$}{C2}}\nLet $u=(1-i,2)$ and $v=(i,3+i)$ in $\\mathbb{C}^2$. Find $u+v$ and\n$(2+i)u$.\n\n\\textbf{Solution:}\n\\begin{align*}\nu+v &= (1-i+i,\\ 2+3+i) = (1,\\ 5+i)\\\\[4pt]\n(2+i)u &= \\big((2+i)(1-i),\\ (2+i)(2)\\big)\\\\\n&= \\big(2-2i+i-i^2,\\ 4+2i\\big)\\\\\n&= \\big(2-i+1,\\ 4+2i\\big)\\\\\n&= (3-i,\\ 4+2i).\n\\end{align*}\n\\[\nu+v = \\boxed{(1,\\ 5+i)}, \\qquad (2+i)u = \\boxed{(3-i,\\ 4+2i)}\n\\]\n\n\\subsection*{Polynomial Space}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "definition",
+    "title": "Polynomial Space \\texorpdfstring{$P(t)$",
+    "content": "{P(t)}}\nLet $P(t)$ denote the set of all polynomials in a variable $t$ with\ncoefficients from a field $K$:\n\\[\np(t) = a_0+a_1t+a_2t^2+\\cdots+a_st^s.\n\\]\n$P(t)$ is a vector space over $K$ under the usual addition of\npolynomials and multiplication of a polynomial by a scalar. The zero\npolynomial is the zero vector. The subset $P_n(t)$ consisting of all\npolynomials of degree $\\le n$ is also a vector space."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "example",
+    "title": "Example 3.6 --- Operations in \\texorpdfstring{$P_2(t)$",
+    "content": "{P2(t)}}\nLet $p(t) = 2t^2-3t+1$ and $q(t) = -t^2+4t+5$ in $P_2(t)$. Find\n$p(t)+q(t)$ and $3p(t)$.\n\n\\textbf{Solution:}\n\\begin{align*}\np(t)+q(t) &= (2t^2-3t+1)+(-t^2+4t+5)\\\\\n&= (2-1)t^2+(-3+4)t+(1+5)\\\\\n&= t^2+t+6.\n\\end{align*}\n\\[\n3p(t) = 3(2t^2-3t+1) = 6t^2-9t+3.\n\\]\n\\[\np(t)+q(t) = \\boxed{t^2+t+6}, \\qquad 3p(t)=\\boxed{6t^2-9t+3}\n\\]\n\n\\subsection*{Matrix Space}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "definition",
+    "title": "Matrix Space \\texorpdfstring{$M_{m,n",
+    "content": "$}{Mmn}}\nThe set of all $m \\times n$ matrices with entries from a field $K$,\ndenoted $M_{m,n}(K)$ or simply $M_{m,n}$, forms a vector space over\n$K$ under the usual matrix addition and scalar multiplication. The\nzero matrix is the zero vector."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "example",
+    "title": "Example 3.7 --- Operations in \\texorpdfstring{$M_{2,2",
+    "content": "$}{M22}}\nLet $A=\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}$ and\n$B=\\begin{bmatrix}0&-1\\\\2&1\\end{bmatrix}$ in $M_{2,2}$. Find\n$2A-3B$.\n\n\\textbf{Solution:}\n\\begin{align*}\n2A &= \\begin{bmatrix}2&4\\\\6&8\\end{bmatrix}, \\qquad\n3B = \\begin{bmatrix}0&-3\\\\6&3\\end{bmatrix}\\\\[4pt]\n2A-3B &= \\begin{bmatrix}2&4\\\\6&8\\end{bmatrix}-\\begin{bmatrix}0&-3\\\\6&3\\end{bmatrix}\n= \\begin{bmatrix}2&7\\\\0&5\\end{bmatrix}.\n\\end{align*}\n\\[\n2A-3B = \\boxed{\\begin{bmatrix}2&7\\\\0&5\\end{bmatrix}}\n\\]\n\n\\subsection*{Function Space}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "definition",
+    "title": "Function Space \\texorpdfstring{$F(X)$",
+    "content": "{F(X)}}\nLet $X$ be a nonempty set and $K$ a field. The set $F(X)$ of all\nfunctions $f:X \\to K$ forms a vector space over $K$, where for\n$f,g \\in F(X)$ and $k \\in K$:\n\\[\n(f+g)(x) = f(x)+g(x), \\qquad (kf)(x) = k\\,f(x) \\quad \\text{for all } x \\in X.\n\\]\nThe zero vector is the zero function, which sends every $x \\in X$ to\n$0$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "example",
+    "title": "Example 3.8 --- Operations in a Function Space",
+    "content": "Let $f(x) = \\sin x$ and $g(x) = x^2$ be functions in\n$F(\\mathbb{R})$. Describe $(f+g)(x)$ and $(3f)(x)$.\n\n\\textbf{Solution:}\nBy definition of addition and scalar multiplication in a function\nspace:\n\\[\n(f+g)(x) = f(x)+g(x) = \\sin x + x^2.\n\\]\n\\[\n(3f)(x) = 3f(x) = 3\\sin x.\n\\]\n\\[\n(f+g)(x) = \\boxed{\\sin x + x^2}, \\qquad (3f)(x) = \\boxed{3\\sin x}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Examples of Vector Spaces",
+    "type": "keypoint",
+    "title": "{Common Vector Spaces to Remember:} {enumerate}[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{Common Vector Spaces to Remember:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $K^n$ --- $n$-tuples with componentwise operations\n  \\item $P(t)$ and $P_n(t)$ --- polynomials (all degrees, or degree\n        $\\le n$)\n  \\item $M_{m,n}$ --- $m \\times n$ matrices\n  \\item $F(X)$ --- functions from a set $X$ into a field $K$\n  \\item In every case, the zero vector is the ``zero object'' of\n        that space (zero tuple, zero polynomial, zero matrix, zero\n        function).\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "definition",
+    "title": "Linear Combination",
+    "content": "Let $V$ be a vector space over a field $K$, and let\n$u_1,u_2,\\dots,u_m \\in V$. A vector $v \\in V$ is called a\n\\textbf{linear combination} of $u_1,u_2,\\dots,u_m$ if there exist\nscalars $a_1,a_2,\\dots,a_m \\in K$ such that\n\\[\nv = a_1u_1+a_2u_2+\\cdots+a_mu_m.\n\\]\nFinding such scalars (if they exist) reduces to solving a system of\nlinear equations."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "example",
+    "title": "Example 3.9 --- Expressing a Vector as a Linear Combination",
+    "content": "Write $v=(4,9)$ as a linear combination of $u_1=(1,2)$ and\n$u_2=(2,3)$.\n\n\\textbf{Solution:}\nWe seek scalars $a,b$ such that $v = au_1+bu_2$:\n\\begin{align*}\na(1,2)+b(2,3) &= (4,9)\\\\\na+2b &= 4\\\\\n2a+3b &= 9\n\\end{align*}\nMultiply the first equation by $2$ and subtract from the second:\n\\begin{align*}\n(2a+3b)-(2a+4b) &= 9-8\\\\\n-b &= 1 \\implies b=-1\n\\end{align*}\nSubstitute back: $a+2(-1)=4 \\implies a=6$.\n\n\\textbf{Verification:} $6(1,2)-1(2,3) = (6,12)+(-2,-3) = (4,9)$. \\checkmark\n\\[\nv = \\boxed{6u_1 - u_2}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "example",
+    "title": "Example 3.10 --- Past Paper 2024 Q1(iii) \\& 2025 Q1(iii)",
+    "content": "For what value of $k$ is the vector $(1,-2,k)$ in $\\mathbb{R}^3$ a\nlinear combination of $(3,0,-2)$ and $(2,-1,-5)$?\n\n\\textbf{Solution:}\nWe require scalars $a,b$ such that\n\\[\na(3,0,-2)+b(2,-1,-5) = (1,-2,k).\n\\]\nThis gives the system:\n\\begin{align*}\n3a+2b &= 1\\\\\n-b &= -2\\\\\n-2a-5b &= k\n\\end{align*}\nFrom the second equation, $b=2$. Substituting into the first:\n\\[\n3a+2(2) = 1 \\implies 3a=-3 \\implies a=-1.\n\\]\nSubstitute $a=-1$, $b=2$ into the third equation:\n\\[\nk = -2(-1)-5(2) = 2-10 = -8.\n\\]\n\\[\nk = \\boxed{-8}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "example",
+    "title": "Example 3.11 --- Past Paper 2024 Q3(a)",
+    "content": "Determine whether $v=(3,3,-4)$ is a linear combination of\n$x=(1,2,3)$, $y=(2,3,7)$, and $z=(3,5,6)$.\n\n\\textbf{Solution:}\nSeek scalars $a,b,c$ such that $ax+by+cz=v$:\n\\begin{align*}\na+2b+3c &= 3 \\tag{1}\\\\\n2a+3b+5c &= 3 \\tag{2}\\\\\n3a+7b+6c &= -4 \\tag{3}\n\\end{align*}\nCompute $(2)-2(1)$:\n\\[\n-b-c = -3 \\implies b+c=3 \\tag{4}\n\\]\nCompute $(3)-3(1)$:\n\\[\nb-3c = -13 \\tag{5}\n\\]\nFrom (4), $b=3-c$. Substitute into (5):\n\\begin{align*}\n(3-c)-3c &= -13\\\\\n3-4c &= -13\\\\\nc &= 4\n\\end{align*}\nThen $b=3-4=-1$, and from (1): $a=3-2(-1)-3(4) = 3+2-12=-7$.\n\n\\textbf{Verification (Eq. 3):} $3(-7)+7(-1)+6(4) = -21-7+24=-4$. \\checkmark\n\nSince a consistent solution exists, $v$ \\textbf{is} a linear\ncombination of $x,y,z$:\n\\[\nv = \\boxed{-7x - y + 4z}\n\\]\n\\newpage\n\\subsection*{Spanning Sets}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "definition",
+    "title": "Linear Span and Spanning Set",
+    "content": "Let $S=\\{u_1,u_2,\\dots,u_m\\}$ be a subset of a vector space $V$.\nThe set of all linear combinations of vectors in $S$ is called the\n\\textbf{linear span} of $S$, denoted $\\operatorname{span}(S)$:\n\\[\n\\operatorname{span}(S) = \\{a_1u_1+a_2u_2+\\cdots+a_mu_m : a_i \\in K\\}.\n\\]\nIf $\\operatorname{span}(S)=V$, we say that $S$ \\textbf{spans} $V$,\nor that $S$ is a \\textbf{spanning set} of $V$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "example",
+    "title": "Example 3.12 --- Verifying a Spanning Set of \\texorpdfstring{$\\mathbb{R",
+    "content": "^3$}{R3}}\nShow that $S=\\{(1,1,1),(1,1,0),(1,0,0)\\}$ spans $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nLet $(a,b,c)$ be an arbitrary vector in $\\mathbb{R}^3$. We must find\nscalars $x,y,z$ such that\n\\[\nx(1,1,1)+y(1,1,0)+z(1,0,0) = (a,b,c).\n\\]\nThis gives the system:\n\\begin{align*}\nx+y+z &= a\\\\\nx+y &= b\\\\\nx &= c\n\\end{align*}\nFrom the third equation, $x=c$. Substituting into the second:\n$y=b-c$. Substituting both into the first: $z=a-b$.\n\nSince we obtained a solution for \\textbf{arbitrary} $(a,b,c)$:\n\\[\n(a,b,c) = c(1,1,1)+(b-c)(1,1,0)+(a-b)(1,0,0),\n\\]\nevery vector in $\\mathbb{R}^3$ is a linear combination of $S$.\nHence $S$ spans $\\mathbb{R}^3$. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "example",
+    "title": "Example 3.13 --- Spanning Set of a Polynomial Space",
+    "content": "Show that $S=\\{1,t,t^2\\}$ spans $P_2(t)$.\n\n\\textbf{Solution:}\nAny polynomial in $P_2(t)$ has the general form\n\\[\np(t) = c_0+c_1t+c_2t^2\n\\]\nfor some scalars $c_0,c_1,c_2$. This is already exactly a linear\ncombination of $1$, $t$, and $t^2$:\n\\[\np(t) = c_0(1)+c_1(t)+c_2(t^2).\n\\]\nSince every $p(t) \\in P_2(t)$ can be written this way, $S=\\{1,t,t^2\\}$\nspans $P_2(t)$. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "example",
+    "title": "Example 3.14 --- A Set That Does Not Span \\texorpdfstring{$\\mathbb{R",
+    "content": "^3$}{R3}}\nDetermine whether $S=\\{(1,2,3),(0,1,4)\\}$ spans $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nTest whether the vector $(0,0,1)$ can be written as a linear\ncombination of $S$:\n\\[\na(1,2,3)+b(0,1,4) = (0,0,1).\n\\]\nThis gives:\n\\begin{align*}\na &= 0\\\\\n2a+b &= 0 \\implies b=0\\\\\n3a+4b &= 1\n\\end{align*}\nSubstituting $a=0$, $b=0$ into the third equation gives\n$0=1$, which is a contradiction. Hence $(0,0,1) \\notin\n\\operatorname{span}(S)$, so $S$ does \\textbf{not} span\n$\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Combinations and Spanning Sets",
+    "type": "keypoint",
+    "title": "{Key Facts About Spanning Sets:} {enumerate}[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{Key Facts About Spanning Sets:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item A set of fewer than $n$ vectors can never span $\\mathbb{R}^n$.\n  \\item If a system derived from $\\operatorname{span}(S)=v$ leads to\n        a contradiction (like $0=1$), then $v \\notin\n        \\operatorname{span}(S)$.\n  \\item A spanning set need not be unique, and it need not be the\n        smallest possible set (it may contain redundant vectors).\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Subspaces",
+    "type": "definition",
+    "title": "Subspace",
+    "content": "Let $V$ be a vector space over a field $K$. A subset $W \\subseteq V$\nis called a \\textbf{subspace} of $V$ if $W$ is itself a vector space\nover $K$ under the addition and scalar multiplication operations\nalready defined on $V$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Subspaces",
+    "type": "theorem",
+    "title": "Subspace Test",
+    "content": "A subset $W$ of a vector space $V$ is a subspace of $V$ if and only\nif the following three conditions hold:\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $0 \\in W$ \\hfill \\textit{(zero vector condition)}\n  \\item $u,v \\in W \\implies u+v \\in W$ \\hfill \\textit{(closure under addition)}\n  \\item $u \\in W,\\ k \\in K \\implies ku \\in W$ \\hfill \\textit{(closure under scalar multiplication)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Subspaces",
+    "type": "example",
+    "title": "Example 3.15 --- Past Paper 2023 Q1(vi)",
+    "content": "Check whether\n$W=\\{(x,y,z) \\in \\mathbb{R}^3 : 2x+3y-4z=0\\}$\nis a subspace of $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\n\\textbf{Zero vector:} $2(0)+3(0)-4(0)=0$, so $0=(0,0,0) \\in W$. \\checkmark\n\n\\textbf{Closure under addition:} Let $u=(x_1,y_1,z_1)$ and\n$v=(x_2,y_2,z_2)$ be in $W$, so $2x_1+3y_1-4z_1=0$ and\n$2x_2+3y_2-4z_2=0$. Then\n\\begin{align*}\n2(x_1+x_2)+3(y_1+y_2)-4(z_1+z_2)\n&= (2x_1+3y_1-4z_1)+(2x_2+3y_2-4z_2)\\\\\n&= 0+0 = 0.\n\\end{align*}\nSo $u+v \\in W$. \\checkmark\n\n\\textbf{Closure under scalar multiplication:} For $k \\in \\mathbb{R}$,\n\\[\n2(kx_1)+3(ky_1)-4(kz_1) = k(2x_1+3y_1-4z_1) = k(0) = 0.\n\\]\nSo $ku \\in W$. \\checkmark\n\nAll three conditions hold, so $W$ \\textbf{is} a subspace of\n$\\mathbb{R}^3$. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Subspaces",
+    "type": "example",
+    "title": "Example 3.16 --- Past Paper 2021 Q1(vi)",
+    "content": "Show that\n$W=\\{(x,y,z) \\in \\mathbb{R}^3 : 2x+3y-4z=2\\}$\nis not a subspace of $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nCheck whether the zero vector belongs to $W$:\n\\[\n2(0)+3(0)-4(0) = 0 \\neq 2.\n\\]\nSince $0=(0,0,0) \\notin W$, the zero vector condition fails.\nTherefore $W$ is \\textbf{not} a subspace of $\\mathbb{R}^3$.\n\\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Subspaces",
+    "type": "example",
+    "title": "Example 3.17 --- Past Paper 2024 Q5(a)",
+    "content": "Let $W$ be the set of all matrices of the form\n\\[\n\\begin{bmatrix}a&0&b\\\\0&c&0\\\\d&0&e\\end{bmatrix}.\n\\]\nShow that $W$ is a subspace of $M_{3,3}$.\n\n\\textbf{Solution:}\n\\textbf{Zero vector:} Taking $a=b=c=d=e=0$ gives the zero matrix,\nwhich has the required form. So $0 \\in W$. \\checkmark\n\n\\textbf{Closure under addition:} Let\n$A=\\begin{bmatrix}a_1&0&b_1\\\\0&c_1&0\\\\d_1&0&e_1\\end{bmatrix}$ and\n$B=\\begin{bmatrix}a_2&0&b_2\\\\0&c_2&0\\\\d_2&0&e_2\\end{bmatrix}$ be in\n$W$. Then\n\\[\nA+B = \\begin{bmatrix}a_1+a_2&0&b_1+b_2\\\\0&c_1+c_2&0\\\\d_1+d_2&0&e_1+e_2\\end{bmatrix},\n\\]\nwhich has the same form (zero entries in the same fixed positions).\nSo $A+B \\in W$. \\checkmark\n\n\\textbf{Closure under scalar multiplication:} For $k \\in \\mathbb{R}$,\n\\[\nkA = \\begin{bmatrix}ka_1&0&kb_1\\\\0&kc_1&0\\\\kd_1&0&ke_1\\end{bmatrix},\n\\]\nwhich also has the same form. So $kA \\in W$. \\checkmark\n\nAll three conditions hold, so $W$ \\textbf{is} a subspace of\n$M_{3,3}$. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Subspaces",
+    "type": "example",
+    "title": "Example 3.18 --- Closure Fails Under Addition",
+    "content": "Determine whether $W=\\{(x,y) \\in \\mathbb{R}^2 : xy=0\\}$ is a\nsubspace of $\\mathbb{R}^2$.\n\n\\textbf{Solution:}\n\\textbf{Zero vector:} $(0)(0)=0$, so $0=(0,0) \\in W$. \\checkmark\n\n\\textbf{Closure under addition:} Consider $u=(1,0)$ and $v=(0,1)$.\nBoth satisfy $xy=0$, so $u,v \\in W$. However,\n\\[\nu+v = (1,1), \\qquad (1)(1) = 1 \\neq 0.\n\\]\nSo $u+v \\notin W$, and closure under addition \\textbf{fails}.\n\nSince one condition of the subspace test fails, $W$ is \\textbf{not} a\nsubspace of $\\mathbb{R}^2$, even though the zero vector belongs to\nit. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Subspaces",
+    "type": "theorem",
+    "title": "Properties of Subspaces",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $\\{0\\}$ is a subspace of every vector space $V$ \\hfill \\textit{(zero subspace)}\n  \\item $V$ is a subspace of itself \\hfill \\textit{(trivial subspace)}\n  \\item If $W_1$ and $W_2$ are subspaces of $V$, then $W_1 \\cap W_2$\n        is also a subspace of $V$ \\hfill \\textit{(intersection property)}\n  \\item The union $W_1 \\cup W_2$ is \\textbf{not} necessarily a\n        subspace of $V$ \\hfill \\textit{(union property)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Subspaces",
+    "type": "keypoint",
+    "title": "{Subspace Test --- Exam Strategy:} {enumerate}[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{Subspace Test --- Exam Strategy:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item Always check the zero vector \\textbf{first}. If $0 \\notin W$,\n        stop immediately and conclude $W$ is not a subspace.\n  \\item A defining equation set equal to a \\textbf{nonzero} constant\n        (e.g. $=2$ instead of $=0$) automatically fails the zero\n        vector test.\n  \\item Watch for nonlinear conditions (e.g. $xy=0$, $x^2+y^2=1$) or\n        inequalities (e.g. $x \\ge 0$) --- these usually violate\n        closure under addition or scalar multiplication.\n  \\item Combined test: $W$ is a subspace iff $0 \\in W$ and, for all\n        $u,v \\in W$ and $a,b \\in K$, $au+bv \\in W$.\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "definition",
+    "title": "Equation of a Linear Span",
+    "content": "Given vectors $v_1,v_2,\\dots,v_m$ in $K^n$, the subspace\n$W=\\operatorname{span}(v_1,\\dots,v_m)$ can often be described by one\nor more linear equations in $x_1,\\dots,x_n$ that every vector of $W$\nmust satisfy. To find such an equation: set\n$a_1v_1+a_2v_2+\\cdots+a_mv_m=(x_1,\\dots,x_n)$, then eliminate the\nscalars $a_i$ by row reduction. Any row that reduces to all zeros on\nthe left-hand side yields a linear equation relating\n$x_1,\\dots,x_n$ --- this is the required equation of $W$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "example",
+    "title": "Example 3.19 --- Past Paper 2021 Q4",
+    "content": "Find an equation of the subspace $W$ of $\\mathbb{R}^3$ spanned by\n$\\{(1,-2,1),(-2,0,3),(3,-2,-2)\\}$.\n\n\\textbf{Solution:}\nSet $a(1,-2,1)+b(-2,0,3)+c(3,-2,-2)=(x,y,z)$, giving the coefficient\nmatrix (vectors as columns) augmented by $(x,y,z)$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1&-2&3&x\\\\\n-2&0&-2&y\\\\\n1&3&-2&z\n\\end{array}\\right]\n\\]\n$R_2 \\leftarrow R_2+2R_1$, $R_3 \\leftarrow R_3-R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1&-2&3&x\\\\\n0&-4&4&y+2x\\\\\n0&5&-5&z-x\n\\end{array}\\right]\n\\]\n$R_3 \\leftarrow R_3+\\tfrac{5}{4}R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1&-2&3&x\\\\\n0&-4&4&y+2x\\\\\n0&0&0&z-x+\\tfrac{5}{4}(y+2x)\n\\end{array}\\right]\n\\]\nThe last row must equal zero for consistency:\n\\[\nz-x+\\tfrac{5}{4}y+\\tfrac{5}{2}x = 0 \\implies \\tfrac{3}{2}x+\\tfrac{5}{4}y+z=0.\n\\]\nMultiplying through by $4$:\n\\[\n6x+5y+4z=0\n\\]\n\\textbf{Verification:} for $(1,-2,1)$: $6(1)+5(-2)+4(1)=6-10+4=0$. \\checkmark\n\\[\nW: \\boxed{6x+5y+4z=0}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "example",
+    "title": "Example 3.20 --- Past Paper 2023 Q4",
+    "content": "Find an equation of the subspace $W$ of $\\mathbb{R}^3$ spanned by\n$(1,-3,2)$ and $(-2,0,3)$.\n\n\\textbf{Solution:}\nSet $a(1,-3,2)+b(-2,0,3)=(x,y,z)$:\n\\[\n\\left[\\begin{array}{cc|c}\n1&-2&x\\\\\n-3&0&y\\\\\n2&3&z\n\\end{array}\\right]\n\\]\n$R_2 \\leftarrow R_2+3R_1$, $R_3 \\leftarrow R_3-2R_1$:\n\\[\n\\left[\\begin{array}{cc|c}\n1&-2&x\\\\\n0&-6&y+3x\\\\\n0&7&z-2x\n\\end{array}\\right]\n\\]\n$R_3 \\leftarrow R_3+\\tfrac{7}{6}R_2$:\n\\[\n\\left[\\begin{array}{cc|c}\n1&-2&x\\\\\n0&-6&y+3x\\\\\n0&0&z-2x+\\tfrac{7}{6}(y+3x)\n\\end{array}\\right]\n\\]\nSetting the last row to zero:\n\\[\nz-2x+\\tfrac{7}{6}y+\\tfrac{7}{2}x=0 \\implies \\tfrac{3}{2}x+\\tfrac{7}{6}y+z=0.\n\\]\nMultiplying through by $6$:\n\\[\n9x+7y+6z=0\n\\]\n\\[\nW: \\boxed{9x+7y+6z=0}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "example",
+    "title": "Example 3.21 --- Equation of a Span in \\texorpdfstring{$\\mathbb{R",
+    "content": "^3$}{R3}}\nFind an equation of the subspace spanned by $(1,1,0)$ and $(0,1,1)$.\n\n\\textbf{Solution:}\nSet $a(1,1,0)+b(0,1,1)=(x,y,z)$:\n\\[\n\\left[\\begin{array}{cc|c}\n1&0&x\\\\\n1&1&y\\\\\n0&1&z\n\\end{array}\\right]\n\\]\n$R_2 \\leftarrow R_2-R_1$:\n\\[\n\\left[\\begin{array}{cc|c}\n1&0&x\\\\\n0&1&y-x\\\\\n0&1&z\n\\end{array}\\right]\n\\]\n$R_3 \\leftarrow R_3-R_2$:\n\\[\n\\left[\\begin{array}{cc|c}\n1&0&x\\\\\n0&1&y-x\\\\\n0&0&z-(y-x)\n\\end{array}\\right]\n\\]\nSetting the last row to zero: $z-y+x=0$.\n\\[\nW: \\boxed{x-y+z=0}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "keypoint",
+    "title": "{Finding the Equation of a Linear",
+    "content": "\\textbf{Finding the Equation of a Linear Span:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item Eliminate the scalars using row reduction; a row of zeros on\n        the left produces the required equation on the right.\n  \\item In $\\mathbb{R}^3$, a quick shortcut for two spanning vectors\n        $v_1,v_2$ is the cross product: the plane through the origin\n        with normal $n=v_1\\times v_2$ has equation\n        $n_1x+n_2y+n_3z=0$.\n  \\item If the number of independent spanning vectors equals the\n        dimension of the ambient space, the span is the entire\n        space and no restricting equation exists.\n\\end{enumerate}\n\n\\subsection*{Row Space of a Matrix}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "definition",
+    "title": "Row Space of a Matrix",
+    "content": "Let $A$ be an $m \\times n$ matrix. The \\textbf{row space} of $A$,\ndenoted $\\operatorname{rowsp}(A)$, is the subspace of $K^n$ spanned\nby the rows of $A$. If $A$ and $B$ are row equivalent (one is\nobtained from the other by elementary row operations), then\n$\\operatorname{rowsp}(A)=\\operatorname{rowsp}(B)$. The nonzero rows\nof any echelon form of $A$ form a basis for $\\operatorname{rowsp}(A)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "example",
+    "title": "Example 3.22 --- Basis for a Row Space",
+    "content": "Find a basis for the row space of\n$A=\\begin{bmatrix}1&2&3\\\\2&4&6\\\\1&1&1\\end{bmatrix}$.\n\n\\textbf{Solution:}\nRow reduce $A$:\n$R_2 \\leftarrow R_2-2R_1$, $R_3 \\leftarrow R_3-R_1$:\n\\[\n\\begin{bmatrix}1&2&3\\\\0&0&0\\\\0&-1&-2\\end{bmatrix}\n\\]\nInterchange $R_2$ and $R_3$ to reach echelon form:\n\\[\n\\begin{bmatrix}1&2&3\\\\0&-1&-2\\\\0&0&0\\end{bmatrix}\n\\]\nThe nonzero rows form a basis for $\\operatorname{rowsp}(A)$:\n\\[\n\\boxed{\\{(1,2,3),\\ (0,-1,-2)\\}}, \\qquad \\dim(\\operatorname{rowsp}(A))=2\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "example",
+    "title": "Example 3.23 --- Basis for a Row Space of a Larger Matrix",
+    "content": "Find a basis for the row space of\n$A=\\begin{bmatrix}1&0&1&2\\\\2&1&3&4\\\\0&1&1&0\\end{bmatrix}$.\n\n\\textbf{Solution:}\n$R_2 \\leftarrow R_2-2R_1$:\n\\[\n\\begin{bmatrix}1&0&1&2\\\\0&1&1&0\\\\0&1&1&0\\end{bmatrix}\n\\]\n$R_3 \\leftarrow R_3-R_2$:\n\\[\n\\begin{bmatrix}1&0&1&2\\\\0&1&1&0\\\\0&0&0&0\\end{bmatrix}\n\\]\nThe nonzero rows form a basis:\n\\[\n\\boxed{\\{(1,0,1,2),\\ (0,1,1,0)\\}}, \\qquad \\dim(\\operatorname{rowsp}(A))=2\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Spans and Row Space of a Matrix",
+    "type": "example",
+    "title": "Example 3.24 --- Testing Membership in a Row Space",
+    "content": "Determine whether $v=(4,1,5)$ belongs to the row space of\n$A=\\begin{bmatrix}1&2&1\\\\2&3&2\\end{bmatrix}$.\n\n\\textbf{Solution:}\nSeek $a,b$ such that $a(1,2,1)+b(2,3,2)=(4,1,5)$:\n\\begin{align*}\na+2b &= 4 \\tag{1}\\\\\n2a+3b &= 1 \\tag{2}\\\\\na+2b &= 5 \\tag{3}\n\\end{align*}\nEquations (1) and (3) both equal $a+2b$, but they require\n$a+2b=4$ and $a+2b=5$ simultaneously --- a direct contradiction.\nHence no such $a,b$ exist.\n\\[\nv=(4,1,5) \\ \\boxed{\\text{does NOT belong to } \\operatorname{rowsp}(A)}\n\\]\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "definition",
+    "title": "Linear Dependence and Independence",
+    "content": "Vectors $v_1,v_2,\\dots,v_m$ in a vector space $V$ are said to be\n\\textbf{linearly dependent} if there exist scalars\n$a_1,a_2,\\dots,a_m$, \\textbf{not all zero}, such that\n\\[\na_1v_1+a_2v_2+\\cdots+a_mv_m = 0.\n\\]\nIf the only solution is the \\textbf{trivial} one,\n$a_1=a_2=\\cdots=a_m=0$, then $v_1,\\dots,v_m$ are called\n\\textbf{linearly independent}."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "example",
+    "title": "Example 3.25 --- Testing for Linear Dependence",
+    "content": "Determine whether $u_1=(1,1,2)$, $u_2=(2,-1,1)$, $u_3=(4,1,5)$ are\nlinearly dependent in $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nTest whether $u_3$ is a linear combination of $u_1,u_2$: set\n$au_1+bu_2=u_3$:\n\\begin{align*}\na+2b &= 4\\\\\na-b &= 1\\\\\n2a+b &= 5\n\\end{align*}\nFrom the second equation, $a=1+b$. Substitute into the first:\n$(1+b)+2b=4 \\implies 3b=3 \\implies b=1$, so $a=2$.\n\n\\textbf{Verification (third equation):} $2(2)+1(1)=5$. \\checkmark\n\nSince $u_3 = 2u_1+u_2$, we have $2u_1+u_2-u_3=0$ with not all\ncoefficients zero. Hence $u_1,u_2,u_3$ are \\textbf{linearly\ndependent}. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "example",
+    "title": "Example 3.26 --- Past Paper 2024 Q4(b)",
+    "content": "Determine whether the vectors in $\\mathbb{R}^4$\n$(1,3,-1,-4)$, $(3,8,-5,7)$, $(2,9,4,23)$\nare linearly independent or linearly dependent.\n\n\\textbf{Solution:}\nSet $a(1,3,-1,-4)+b(3,8,-5,7)+c(2,9,4,23)=0$:\n\\begin{align*}\na+3b+2c &= 0 \\tag{1}\\\\\n3a+8b+9c &= 0 \\tag{2}\\\\\n-a-5b+4c &= 0 \\tag{3}\\\\\n-4a+7b+23c &= 0 \\tag{4}\n\\end{align*}\nFrom (1): $a=-3b-2c$. Substitute into (2):\n\\[\n3(-3b-2c)+8b+9c = -b+3c = 0 \\implies b=3c.\n\\]\nThen $a=-3(3c)-2c=-11c$.\n\n\\textbf{Check (3):} $-(-11c)-5(3c)+4c = 11c-15c+4c=0$. \\checkmark\n(automatically satisfied)\n\n\\textbf{Check (4):} $-4(-11c)+7(3c)+23c = 44c+21c+23c=88c$.\n\nSetting (4)$=0$: $88c=0 \\implies c=0$, which forces $b=0$ and\n$a=0$.\n\nSince only the trivial solution exists, the vectors are\n\\textbf{linearly independent}. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "theorem",
+    "title": "Properties of Linear Dependence and Independence",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item Any set containing the zero vector is linearly dependent \\hfill \\textit{(zero-vector rule)}\n  \\item A single nonzero vector is always linearly independent \\hfill \\textit{(singleton rule)}\n  \\item Two vectors are linearly dependent if and only if one is a\n        scalar multiple of the other \\hfill \\textit{(pair test)}\n  \\item Every subset of a linearly independent set is linearly\n        independent \\hfill \\textit{(hereditary property)}\n  \\item Every superset of a linearly dependent set is linearly\n        dependent \\hfill \\textit{(hereditary property)}\n  \\item Any set of more than $n$ vectors in $K^n$ is automatically\n        linearly dependent \\hfill \\textit{(dimension bound)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "example",
+    "title": "Example 3.27 --- Past Paper 2021 Q5",
+    "content": "Show that the vectors $(1-i,\\,i)$ and $(2,\\,-1+i)$ in $\\mathbb{C}^2$\nare linearly dependent over $\\mathbb{C}$ but linearly independent\nover $\\mathbb{R}$.\n\n\\textbf{Solution:}\n\\textbf{Over $\\mathbb{C}$:} Look for a complex scalar $k$ such that\n$k(1-i,i)=(2,-1+i)$. From the first component:\n\\[\nk = \\frac{2}{1-i} = \\frac{2(1+i)}{(1-i)(1+i)} = \\frac{2(1+i)}{2} = 1+i.\n\\]\nCheck the second component: $(1+i)(i) = i+i^2 = i-1 = -1+i$.\n\\checkmark\n\nSince $(2,-1+i) = (1+i)(1-i,i)$, the vectors are\n\\textbf{linearly dependent over $\\mathbb{C}$}.\n\n\\textbf{Over $\\mathbb{R}$:} Now require $a,b \\in \\mathbb{R}$ with\n$a(1-i,i)+b(2,-1+i)=(0,0)$:\n\\[\n\\text{Component 1: } a(1-i)+2b = (a+2b) - ai = 0\n\\]\nSeparating real and imaginary parts: $a+2b=0$ and $-a=0$, so $a=0$,\nwhich forces $b=0$.\n\nSince only the trivial real solution exists, the vectors are\n\\textbf{linearly independent over $\\mathbb{R}$}. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "example",
+    "title": "Example 3.28 --- Past Paper 2025 Q2(b)",
+    "content": "Show that the set $\\{1,i\\}$ in $\\mathbb{C}$ is linearly independent\nover $\\mathbb{R}$ but linearly dependent over $\\mathbb{C}$.\n\n\\textbf{Solution:}\n\\textbf{Over $\\mathbb{C}$:} The complex scalar $k=i$ satisfies\n$i = k \\cdot 1$. Since $i$ is a nonzero complex multiple of $1$, the\nset $\\{1,i\\}$ is \\textbf{linearly dependent over $\\mathbb{C}$}.\n\n\\textbf{Over $\\mathbb{R}$:} Suppose $a(1)+b(i)=0$ for real $a,b$.\nThen $a+bi=0$. Since $a,b$ are real, this forces both the real part\n$a=0$ and the imaginary part $b=0$.\n\nSince only the trivial solution exists over $\\mathbb{R}$, the set\n$\\{1,i\\}$ is \\textbf{linearly independent over $\\mathbb{R}$}.\n\\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "keypoint",
+    "title": "{Wronskian Test for Functions:} For functions",
+    "content": "\\textbf{Wronskian Test for Functions:}\nFor functions $f_1,\\dots,f_n$ that are $(n-1)$-times differentiable,\nthe \\textbf{Wronskian} is\n\\[\nW(f_1,\\dots,f_n)(x) = \\det\n\\begin{bmatrix}\nf_1 & f_2 & \\cdots & f_n\\\\\nf_1' & f_2' & \\cdots & f_n'\\\\\n\\vdots & \\vdots & & \\vdots\\\\\nf_1^{(n-1)} & f_2^{(n-1)} & \\cdots & f_n^{(n-1)}\n\\end{bmatrix}.\n\\]\nIf $W(x)$ is \\textbf{not} identically zero (nonzero for at least one\n$x$), then $f_1,\\dots,f_n$ are linearly independent."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "example",
+    "title": "Example 3.29 --- Past Paper 2024 Q1(v) \\& 2025 Q1(iv)",
+    "content": "Use the Wronskian to show that $f_1=1$, $f_2=e^x$, $f_3=e^{2x}$ are\nlinearly independent.\n\n\\textbf{Solution:}\n\\[\nW(x) = \\det\n\\begin{bmatrix}\n1 & e^x & e^{2x}\\\\\n0 & e^x & 2e^{2x}\\\\\n0 & e^x & 4e^{2x}\n\\end{bmatrix}\n\\]\nExpanding along the first column:\n\\begin{align*}\nW(x) &= 1 \\cdot \\det\\begin{bmatrix}e^x & 2e^{2x}\\\\ e^x & 4e^{2x}\\end{bmatrix}\\\\\n&= 1 \\cdot \\big(e^x \\cdot 4e^{2x} - 2e^{2x}\\cdot e^x\\big)\\\\\n&= 4e^{3x}-2e^{3x} = 2e^{3x}.\n\\end{align*}\nSince $W(x)=2e^{3x} \\neq 0$ for every real $x$, by the Wronskian\ntest $f_1,f_2,f_3$ are \\textbf{linearly independent}. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "example",
+    "title": "Example 3.30 --- Past Paper 2023 Q1(x)",
+    "content": "Let $V$ be the real vector space of functions defined on\n$\\mathbb{R}$. Check whether $x$ and $\\cos x$ are linearly dependent\nor linearly independent.\n\n\\textbf{Solution:}\nTwo functions are linearly dependent if and only if one is a scalar\nmultiple of the other for \\textbf{all} $x$. Suppose $x=k\\cos x$ for\nsome constant $k$, for all $x \\in \\mathbb{R}$.\n\nAt $x=0$: $0 = k\\cos(0) = k(1) \\implies k=0$.\n\nBut if $k=0$, then $x=0$ would have to hold for all $x$, which is\nfalse (for example, at $x=1$, $1 \\neq 0$).\n\nSince no single constant $k$ works for all $x$, the functions $x$\nand $\\cos x$ are \\textbf{linearly independent}. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Linear Dependence and Independence",
+    "type": "keypoint",
+    "title": "{Quick Tests for Independence:} {enumerate}[leftmargin=2em,itemsep=4pt] Two",
+    "content": "\\textbf{Quick Tests for Independence:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item Two vectors: dependent iff one is a scalar multiple of the\n        other.\n  \\item $n$ vectors in $K^n$: form a matrix with the vectors as\n        rows; independent iff the determinant is nonzero (iff\n        row reduction gives $n$ nonzero rows).\n  \\item Functions: use the Wronskian, or directly test whether one\n        function is a constant multiple of another for all $x$.\n  \\item Vectors over $\\mathbb{C}$: always check dependence over\n        $\\mathbb{C}$ \\textbf{and} over $\\mathbb{R}$ separately ---\n        the answers may differ.\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "definition",
+    "title": "Basis and Dimension",
+    "content": "A set $S=\\{u_1,u_2,\\dots,u_n\\}$ of vectors in a vector space $V$ is\ncalled a \\textbf{basis} of $V$ if:\n\\begin{enumerate}[leftmargin=2em,itemsep=2pt]\n  \\item $S$ is linearly independent, and\n  \\item $S$ spans $V$.\n\\end{enumerate}\nEvery finite-dimensional vector space has a basis, and every basis\nof $V$ contains the same number of vectors. This number is called\nthe \\textbf{dimension} of $V$, denoted $\\dim(V)$. The set\n$\\{e_1,e_2,\\dots,e_n\\}$, where $e_i$ has $1$ in the $i$-th position\nand $0$ elsewhere, is called the \\textbf{standard basis} of $K^n$,\nand $\\dim(K^n)=n$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "example",
+    "title": "Example 3.31 --- Past Paper 2021 Q1(viii)",
+    "content": "Write the standard basis of $\\mathbb{R}^4$.\n\n\\textbf{Solution:}\nThe standard basis of $\\mathbb{R}^4$ consists of the four unit\nvectors:\n\\[\ne_1=(1,0,0,0),\\ e_2=(0,1,0,0),\\ e_3=(0,0,1,0),\\ e_4=(0,0,0,1).\n\\]\n\\[\n\\boxed{\\{e_1,e_2,e_3,e_4\\}}, \\qquad \\dim(\\mathbb{R}^4)=4\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "example",
+    "title": "Example 3.32 --- Past Paper 2023 Q6 (First Part)",
+    "content": "Show that $\\{(1,0,1),(0,1,1),(0,0,1)\\}$ is a basis of\n$\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nSince $\\dim(\\mathbb{R}^3)=3$ and we have exactly $3$ vectors, it\nsuffices to check linear independence. Form the matrix with these\nvectors as rows and compute its determinant:\n\\[\n\\det\\begin{bmatrix}1&0&1\\\\0&1&1\\\\0&0&1\\end{bmatrix}\n= 1(1)(1) = 1 \\neq 0\n\\]\n(the matrix is upper triangular, so the determinant is the product\nof the diagonal entries).\n\nSince the determinant is nonzero, the vectors are linearly\nindependent. As there are exactly $3=\\dim(\\mathbb{R}^3)$ independent\nvectors, they automatically span $\\mathbb{R}^3$ as well. Hence the\nset \\textbf{is a basis} of $\\mathbb{R}^3$. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "example",
+    "title": "Example 3.33 --- A Set That Is Not a Basis",
+    "content": "Determine whether $S=\\{(1,2),(2,4)\\}$ is a basis of\n$\\mathbb{R}^2$.\n\n\\textbf{Solution:}\nNotice that $(2,4) = 2(1,2)$, so the second vector is a scalar\nmultiple of the first. Hence $S$ is \\textbf{linearly dependent}.\n\nSince a basis must first be linearly independent, $S$ fails this\nrequirement. Therefore $S$ is \\textbf{not a basis} of\n$\\mathbb{R}^2$ (geometrically, both vectors lie along the same line\nthrough the origin and cannot span the plane). \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "example",
+    "title": "Example 3.34 --- Past Paper 2025 Q3(a)",
+    "content": "Determine whether\n$(1,1,1,1)$, $(1,2,3,2)$, $(2,5,6,4)$, $(2,6,6,5)$\nform a basis of $\\mathbb{R}^4$. If not, find the dimension of the\nsubspace they span.\n\n\\textbf{Solution:}\nForm the matrix with these vectors as rows and row reduce:\n\\[\n\\begin{bmatrix}1&1&1&1\\\\1&2&3&2\\\\2&5&6&4\\\\2&6&6&5\\end{bmatrix}\n\\]\n$R_2 \\leftarrow R_2-R_1$, $R_3 \\leftarrow R_3-2R_1$,\n$R_4 \\leftarrow R_4-2R_1$:\n\\[\n\\begin{bmatrix}1&1&1&1\\\\0&1&2&1\\\\0&3&4&2\\\\0&4&4&3\\end{bmatrix}\n\\]\n$R_3 \\leftarrow R_3-3R_2$, $R_4 \\leftarrow R_4-4R_2$:\n\\[\n\\begin{bmatrix}1&1&1&1\\\\0&1&2&1\\\\0&0&-2&-1\\\\0&0&-4&-1\\end{bmatrix}\n\\]\n$R_4 \\leftarrow R_4-2R_3$:\n\\[\n\\begin{bmatrix}1&1&1&1\\\\0&1&2&1\\\\0&0&-2&-1\\\\0&0&0&1\\end{bmatrix}\n\\]\nAll four rows are nonzero, so the matrix has rank $4$. Hence all\nfour vectors are linearly independent. Since $4$ independent vectors\nin a $4$-dimensional space automatically span it:\n\\[\n\\text{the set } \\boxed{\\text{IS a basis of } \\mathbb{R}^4}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "keypoint",
+    "title": "{Shortcuts for Determining a Basis:} {enumerate}[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{Shortcuts for Determining a Basis:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item If $\\dim(V)=n$ is known, any $n$ linearly independent\n        vectors in $V$ automatically form a basis --- spanning need\n        not be checked separately.\n  \\item Equivalently, any $n$ vectors that span an $n$-dimensional\n        $V$ automatically form a basis.\n  \\item For vectors in $K^n$: form a matrix with the vectors as\n        rows and row reduce. $n$ nonzero rows (full rank) means the\n        vectors form a basis.\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "example",
+    "title": "Example 3.35 --- Past Paper 2023 Q1(vii)",
+    "content": "Find the dimension of the subspace\n$W=\\{(x_1,x_2,x_3,x_4) : x_2=x_3\\}$ of $\\mathbb{R}^4$.\n\n\\textbf{Solution:}\nThe condition $x_2=x_3$ leaves $x_1$, $x_2$ (with $x_3=x_2$), and\n$x_4$ free. Write a general vector of $W$ as:\n\\[\n(x_1,t,t,x_4) = x_1(1,0,0,0)+t(0,1,1,0)+x_4(0,0,0,1).\n\\]\nThe set $\\{(1,0,0,0),(0,1,1,0),(0,0,0,1)\\}$ spans $W$, and these\nthree vectors are clearly linearly independent (each has a nonzero\nentry in a position where the others are zero). Hence they form a\nbasis of $W$.\n\\[\n\\dim(W) = \\boxed{3}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "theorem",
+    "title": "Dimension Theorem for Subspaces",
+    "content": "If $U$ and $W$ are finite-dimensional subspaces of a vector space\n$V$, then $U+W$ is also finite-dimensional and:\n\\[\n\\dim(U+W) = \\dim(U)+\\dim(W)-\\dim(U \\cap W).\n\\]\nThis result is known as \\textbf{Grassmann's Formula}."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Basis and Dimension",
+    "type": "example",
+    "title": "Example 3.36 --- Past Paper 2023 Q5",
+    "content": "Suppose $U$ and $W$ are distinct four-dimensional subspaces of a\nvector space $V$ of dimension six. Find the possible dimension of\n$U \\cap W$.\n\n\\textbf{Solution:}\nSince $U+W$ is a subspace of $V$, we have $\\dim(U+W) \\le\n\\dim(V)=6$.\n\nAlso, since $U \\neq W$ and both have dimension $4$, $U+W$ must be\nstrictly larger than $U$ alone (otherwise $W \\subseteq U$ would\nforce $W=U$, since both have the same dimension). Hence\n$\\dim(U+W) \\ge 5$.\n\nCombining both bounds: $\\dim(U+W) \\in \\{5,6\\}$.\n\nBy Grassmann's Formula:\n\\[\n\\dim(U \\cap W) = \\dim(U)+\\dim(W)-\\dim(U+W) = 8-\\dim(U+W).\n\\]\n\\textbf{Case 1:} If $\\dim(U+W)=5$, then $\\dim(U \\cap W)=8-5=3$.\n\n\\textbf{Case 2:} If $\\dim(U+W)=6$, then $\\dim(U \\cap W)=8-6=2$.\n\\[\n\\dim(U \\cap W) \\in \\boxed{\\{2,\\ 3\\}}\n\\]\n\\hfill$\\square$\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Application to Matrices and Rank of a Matrix",
+    "type": "definition",
+    "title": "Rank of a Matrix",
+    "content": "Let $A$ be an $m \\times n$ matrix. The \\textbf{rank} of $A$, denoted\n$\\operatorname{rank}(A)$, is the dimension of the row space of $A$.\nSince the row space and column space of any matrix always have the\nsame dimension (row rank equals column rank), rank can equivalently\nbe computed as the number of nonzero rows in any echelon form of\n$A$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Application to Matrices and Rank of a Matrix",
+    "type": "example",
+    "title": "Example 3.37 --- Past Paper 2021 Q1(xiv)",
+    "content": "Find the rank of\n$A=\\begin{bmatrix}3&0&2&2\\\\-6&42&24&54\\\\21&-21&0&-15\\end{bmatrix}$.\n\n\\textbf{Solution:}\n$R_2 \\leftarrow R_2+2R_1$, $R_3 \\leftarrow R_3-7R_1$:\n\\[\n\\begin{bmatrix}3&0&2&2\\\\0&42&28&58\\\\0&-21&-14&-29\\end{bmatrix}\n\\]\n$R_3 \\leftarrow R_3+\\tfrac{1}{2}R_2$:\n\\[\n\\begin{bmatrix}3&0&2&2\\\\0&42&28&58\\\\0&0&0&0\\end{bmatrix}\n\\]\nThere are $2$ nonzero rows in the echelon form.\n\\[\n\\operatorname{rank}(A) = \\boxed{2}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Application to Matrices and Rank of a Matrix",
+    "type": "example",
+    "title": "Example 3.38 --- Rank of a Matrix with Dependent Rows",
+    "content": "Find the rank of\n$A=\\begin{bmatrix}1&-1&2\\\\2&-2&4\\\\3&1&0\\end{bmatrix}$.\n\n\\textbf{Solution:}\nObserve that $R_2 = 2R_1$, so $R_1$ and $R_2$ are already\ndependent. $R_2 \\leftarrow R_2-2R_1$, $R_3 \\leftarrow R_3-3R_1$:\n\\[\n\\begin{bmatrix}1&-1&2\\\\0&0&0\\\\0&4&-6\\end{bmatrix}\n\\]\nInterchanging rows to reach echelon form:\n\\[\n\\begin{bmatrix}1&-1&2\\\\0&4&-6\\\\0&0&0\\end{bmatrix}\n\\]\nThere are $2$ nonzero rows.\n\\[\n\\operatorname{rank}(A) = \\boxed{2}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Application to Matrices and Rank of a Matrix",
+    "type": "theorem",
+    "title": "Properties of Rank",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $\\operatorname{rank}(A) = \\operatorname{rank}(A^T)$ \\hfill \\textit{(row rank equals column rank)}\n  \\item $\\operatorname{rank}(A) \\le \\min(m,n)$ for an $m \\times n$\n        matrix $A$ \\hfill \\textit{(rank bound)}\n  \\item A square $n \\times n$ matrix $A$ is invertible if and only\n        if $\\operatorname{rank}(A)=n$ \\hfill \\textit{(invertibility criterion)}\n  \\item $\\operatorname{rank}(AB) \\le \\min(\\operatorname{rank}(A),\\operatorname{rank}(B))$ \\hfill \\textit{(product rank bound)}\n  \\item Elementary row and column operations do not change the rank\n        of a matrix \\hfill \\textit{(invariance property)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Application to Matrices and Rank of a Matrix",
+    "type": "example",
+    "title": "Example 3.39 --- Past Paper 2023 Q2",
+    "content": "If $A=\\begin{bmatrix}1&1&2\\\\1&2&3\\end{bmatrix}$, find a matrix $B$\nsuch that $AB=I_2$. Does this mean $A$ is invertible? Explain.\n\n\\textbf{Solution:}\nWe seek a $3 \\times 2$ matrix $B$ with $AB=I_2$. Writing the columns\nof $B$ as $(b_1,b_2,b_3)^T$ per column and solving:\n\n\\textbf{First column of $B$:} solve $b_{11}+b_{21}+2b_{31}=1$ and\n$b_{11}+2b_{21}+3b_{31}=0$. Choosing $b_{31}=0$ gives $b_{21}=-1$\nand $b_{11}=2$.\n\n\\textbf{Second column of $B$:} solve $b_{12}+b_{22}+2b_{32}=0$ and\n$b_{12}+2b_{22}+3b_{32}=1$. Choosing $b_{32}=0$ gives $b_{22}=1$ and\n$b_{12}=-1$.\n\\[\nB = \\begin{bmatrix}2&-1\\\\-1&1\\\\0&0\\end{bmatrix}\n\\]\n\\textbf{Verification:}\n\\[\nAB = \\begin{bmatrix}1&1&2\\\\1&2&3\\end{bmatrix}\\begin{bmatrix}2&-1\\\\-1&1\\\\0&0\\end{bmatrix}\n= \\begin{bmatrix}2-1+0&-1+1+0\\\\2-2+0&-1+2+0\\end{bmatrix}\n= \\begin{bmatrix}1&0\\\\0&1\\end{bmatrix} = I_2. \\quad\\checkmark\n\\]\n\n\\textbf{Does this mean $A$ is invertible?} \\textbf{No.} Invertibility\nis defined only for \\textbf{square} matrices, and requires a matrix\n$B$ satisfying \\textbf{both} $AB=I$ and $BA=I$. Here $A$ is\n$2\\times 3$ (not square), so $A$ cannot have a two-sided inverse.\nThe matrix $B$ found above is only a \\textbf{right inverse} of $A$;\nin fact $BA \\neq I_3$, since $\\operatorname{rank}(BA) \\le\n\\operatorname{rank}(A) = 2 < 3$, so $BA$ cannot equal the\n$3\\times 3$ identity. \\hfill$\\square$\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Sums and Direct Sums",
+    "type": "definition",
+    "title": "Sum and Direct Sum of Subspaces",
+    "content": "Let $U$ and $W$ be subspaces of a vector space $V$. The \\textbf{sum}\nof $U$ and $W$ is\n\\[\nU+W = \\{u+w : u \\in U,\\ w \\in W\\},\n\\]\nwhich is itself a subspace of $V$. If every vector $v \\in V$ can be\nwritten \\textbf{uniquely} as $v=u+w$ with $u \\in U$, $w \\in W$, then\n$V$ is called the \\textbf{direct sum} of $U$ and $W$, written\n$V=U \\oplus W$. This holds if and only if:\n\\[\nV = U+W \\qquad \\text{and} \\qquad U \\cap W = \\{0\\}.\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Sums and Direct Sums",
+    "type": "example",
+    "title": "Example 3.40 --- Verifying a Direct Sum Decomposition",
+    "content": "Let $U=\\{(a,b,0) : a,b \\in \\mathbb{R}\\}$ (the $xy$-plane) and\n$W=\\{(0,0,c) : c \\in \\mathbb{R}\\}$ (the $z$-axis) be subspaces of\n$\\mathbb{R}^3$. Show that $\\mathbb{R}^3=U \\oplus W$.\n\n\\textbf{Solution:}\n\\textbf{Spanning:} Any $(x,y,z) \\in \\mathbb{R}^3$ can be written as\n\\[\n(x,y,z) = (x,y,0)+(0,0,z),\n\\]\nwith $(x,y,0) \\in U$ and $(0,0,z) \\in W$. So $\\mathbb{R}^3=U+W$.\n\n\\textbf{Trivial intersection:} If $(a,b,0)=(0,0,c)$, then comparing\ncomponents gives $a=0$, $b=0$, $c=0$. So $U \\cap W = \\{(0,0,0)\\}$.\n\nSince $\\mathbb{R}^3=U+W$ and $U \\cap W=\\{0\\}$:\n\\[\n\\mathbb{R}^3 = \\boxed{U \\oplus W}\n\\]\n\\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Sums and Direct Sums",
+    "type": "example",
+    "title": "Example 3.41 --- Confirming a Direct Sum via Dimension",
+    "content": "Let $U=\\operatorname{span}\\{(1,1,0),(0,1,1)\\}$ and\n$W=\\operatorname{span}\\{(1,0,0)\\}$ in $\\mathbb{R}^3$. Determine\nwhether $\\mathbb{R}^3=U \\oplus W$.\n\n\\textbf{Solution:}\n$\\dim(U)=2$ (the two vectors are independent, not proportional) and\n$\\dim(W)=1$, so $\\dim(U)+\\dim(W)=3=\\dim(\\mathbb{R}^3)$.\n\n\\textbf{Check $U \\cap W$:} A vector in $W$ has the form $(t,0,0)$.\nFor this to lie in $U$: $(t,0,0)=a(1,1,0)+b(0,1,1)=(a,a+b,b)$.\nComparing components: $a=t$, $b=0$, and $a+b=0 \\implies a=0$. Then\n$t=a=0$. So $U \\cap W=\\{(0,0,0)\\}$.\n\nBy the Dimension Theorem, $\\dim(U+W)=\\dim(U)+\\dim(W)-\\dim(U\\cap W)\n= 2+1-0=3=\\dim(\\mathbb{R}^3)$, so $U+W=\\mathbb{R}^3$.\n\nSince $\\mathbb{R}^3=U+W$ and $U \\cap W=\\{0\\}$:\n\\[\n\\mathbb{R}^3 = \\boxed{U \\oplus W}\n\\]\n\\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Sums and Direct Sums",
+    "type": "example",
+    "title": "Example 3.42 --- A Sum That Is Not Direct",
+    "content": "Let $U=\\operatorname{span}\\{(1,0,0),(0,1,0)\\}$ (the $xy$-plane) and\n$W=\\operatorname{span}\\{(1,1,0),(0,0,1)\\}$ in $\\mathbb{R}^3$. Show\nthat $\\mathbb{R}^3=U+W$ but $\\mathbb{R}^3 \\neq U \\oplus W$.\n\n\\textbf{Solution:}\n\\textbf{Spanning:} Since $(1,0,0),(0,1,0) \\in U$ and $(0,0,1) \\in\nW$, the combined set spans all of $\\mathbb{R}^3$, so\n$\\mathbb{R}^3=U+W$.\n\n\\textbf{Intersection is nontrivial:} The vector $(1,1,0)$ is a basis\nvector of $W$, so $(1,1,0) \\in W$. Also, $(1,1,0)$ has $z$-component\n$0$, so $(1,1,0) \\in U$ (the $xy$-plane). Hence\n$(1,1,0) \\in U \\cap W$, and this vector is \\textbf{nonzero}.\n\nSince $U \\cap W \\neq \\{0\\}$, the sum is \\textbf{not direct}. For\ninstance, the vector $(1,1,0)$ can be decomposed as\n$(1,1,0)+(0,0,0)$ or as $(0,0,0)+(1,1,0)$ --- two different\ndecompositions with parts in $U$ and $W$, violating uniqueness.\n\\[\n\\mathbb{R}^3=U+W, \\qquad \\text{but} \\qquad \\mathbb{R}^3 \\neq\n\\boxed{U \\oplus W}\n\\]\n\\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Sums and Direct Sums",
+    "type": "theorem",
+    "title": "Properties of Direct Sums",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $V=U \\oplus W$ if and only if $V=U+W$ and $U \\cap W=\\{0\\}$ \\hfill \\textit{(defining criterion)}\n  \\item If $V=U \\oplus W$, then $\\dim(V)=\\dim(U)+\\dim(W)$ \\hfill \\textit{(dimension additivity)}\n  \\item If $V=U \\oplus W$, every $v \\in V$ has a \\textbf{unique}\n        representation $v=u+w$ with $u \\in U$, $w \\in W$ \\hfill \\textit{(uniqueness property)}\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Coordinates",
+    "type": "definition",
+    "title": "Coordinate Vector",
+    "content": "Let $S=\\{u_1,u_2,\\dots,u_n\\}$ be a basis of a vector space $V$.\nEvery vector $v \\in V$ can be written \\textbf{uniquely} as\n\\[\nv = a_1u_1+a_2u_2+\\cdots+a_nu_n.\n\\]\nThe scalars $(a_1,a_2,\\dots,a_n)$ are called the \\textbf{coordinates}\nof $v$ relative to the basis $S$, and the vector\n$[v]_S=(a_1,a_2,\\dots,a_n)$ is called the \\textbf{coordinate vector}\nof $v$ relative to $S$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Coordinates",
+    "type": "example",
+    "title": "Example 3.43 --- Past Paper 2024 Q1(iv)",
+    "content": "Let $S=\\{u=(1,2,1),\\ v=(2,9,0),\\ w=(3,3,4)\\}$ be a basis for\n$\\mathbb{R}^3$. Find the vector in $\\mathbb{R}^3$ whose coordinate\nvector relative to $S$ is $(-1,3,2)$.\n\n\\textbf{Solution:}\nThe required vector is the linear combination:\n\\begin{align*}\n-1u+3v+2w\n&= -1(1,2,1)+3(2,9,0)+2(3,3,4)\\\\\n&= (-1,-2,-1)+(6,27,0)+(6,6,8)\\\\\n&= (-1+6+6,\\ -2+27+6,\\ -1+0+8)\\\\\n&= (11,\\ 31,\\ 7).\n\\end{align*}\n\\[\n\\boxed{(11,\\ 31,\\ 7)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Coordinates",
+    "type": "example",
+    "title": "Example 3.44 --- Finding a Coordinate Vector",
+    "content": "Let $S=\\{(1,1),(1,-1)\\}$ be a basis of $\\mathbb{R}^2$. Find the\ncoordinate vector of $v=(5,1)$ relative to $S$.\n\n\\textbf{Solution:}\nWrite $v=a(1,1)+b(1,-1)$:\n\\begin{align*}\na+b &= 5\\\\\na-b &= 1\n\\end{align*}\nAdding the equations: $2a=6 \\implies a=3$, so $b=5-3=2$.\n\n\\textbf{Verification:} $3(1,1)+2(1,-1) = (3,3)+(2,-2)=(5,1)$.\n\\checkmark\n\\[\n[v]_S = \\boxed{(3,2)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Coordinates",
+    "type": "example",
+    "title": "Example 3.45 --- Coordinates in a Polynomial Space",
+    "content": "Let $S=\\{1,t,t^2\\}$ be the standard basis of $P_2(t)$. Find the\ncoordinate vector of $p(t)=3-2t+5t^2$ relative to $S$.\n\n\\textbf{Solution:}\nThe polynomial is already expressed as a linear combination of the\nbasis elements:\n\\[\np(t) = 3(1)+(-2)(t)+5(t^2).\n\\]\nReading off the coefficients in order:\n\\[\n[p]_S = \\boxed{(3,\\ -2,\\ 5)}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Coordinates",
+    "type": "keypoint",
+    "title": "{Coordinates --- Key Facts:} {enumerate}[leftmargin=2em,itemsep=4pt] The",
+    "content": "\\textbf{Coordinates --- Key Facts:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item The coordinate vector $[v]_S$ depends on \\textbf{both} the\n        choice of basis $S$ \\textbf{and} the order in which its\n        vectors are listed.\n  \\item Relative to the \\textbf{standard basis} of $K^n$, the\n        coordinate vector of $v$ is simply $v$ itself.\n  \\item Finding $[v]_S$ always reduces to solving the linear system\n        $v=a_1u_1+\\cdots+a_nu_n$ for the scalars $a_i$.\n  \\item Given $[v]_S$, recovering $v$ is a direct computation: form\n        the linear combination $a_1u_1+\\cdots+a_nu_n$.\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "Let $V=\\mathbb{R}^2$ with the usual addition, but with\n  scalar multiplication defined by $k(a,b)=(k^2a,\\ k^2b)$. Show that\n  $V$ is not a vector space by identifying a violated axiom."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "Let $A=\\begin{bmatrix}2&-1\\\\3&0\\end{bmatrix}$ and\n  $B=\\begin{bmatrix}1&4\\\\-2&5\\end{bmatrix}$ in $M_{2,2}$. Verify that\n  $3(A+B)=3A+3B$ using these matrices."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "In $P_3(t)$, let $p(t)=2t^3-t+4$ and\n  $q(t)=-t^3+3t^2+1$. Compute $2p(t)-3q(t)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "In $\\mathbb{C}^3$, let $u=(2-i,\\ 1,\\ 3i)$ and\n  $v=(i,\\ -1+i,\\ 2)$. Find $3u-(1+i)v$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "Determine whether $v=(2,-5,3)$ can be written as a linear\n  combination of $u_1=(1,-3,2)$ and $u_2=(2,-4,-1)$ in\n  $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "Find the value of $k$ such that $(2,k,-3)$ is a linear\n  combination of $(1,2,-1)$ and $(3,1,4)$ in $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "Determine whether $S=\\{(1,1,1),(2,1,0),(3,2,1)\\}$ spans\n  $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "Show that $\\{1,t,t^2,t^3\\}$ spans $P_3(t)$, and determine\n  whether $\\{1,t^2\\}$ also spans $P_3(t)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "Determine whether\n  $W=\\{(x,y,z) \\in \\mathbb{R}^3 : x^2+y^2=z\\}$ is a subspace of\n  $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "Let $W$ be the set of all $2\\times 2$ symmetric matrices\n  (i.e. $A=A^T$). Show that $W$ is a subspace of $M_{2,2}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "Determine whether\n  $W=\\{(x,y,z) \\in \\mathbb{R}^3 : x-2y+z=0 \\text{ and } x+y-z=3\\}$\n  is a subspace of $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "Find an equation of the subspace of $\\mathbb{R}^3$ spanned\n  by $\\{(2,-1,3),(1,0,-2),(4,-1,-1)\\}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "Find a basis for the row space of\n  $A=\\begin{bmatrix}2&1&3&1\\\\1&0&1&2\\\\0&1&1&-3\\end{bmatrix}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "Determine whether\n  $u_1=(1,0,-1,2)$, $u_2=(2,1,0,-1)$, $u_3=(0,-1,-2,5)$\n  are linearly dependent or independent in $\\mathbb{R}^4$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 15",
+    "content": "Show that $f_1=e^x$, $f_2=xe^x$, $f_3=x^2e^x$ are linearly\n  independent using the Wronskian."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 16",
+    "content": "Determine whether the vectors\n  $(1,2,3,4)$, $(2,3,4,5)$, $(3,4,5,6)$, $(4,5,6,8)$ in\n  $\\mathbb{R}^4$ are linearly dependent or independent."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 17",
+    "content": "Show that $\\{1-i,\\ 2+i\\}$ in $\\mathbb{C}$ is linearly\n  dependent over $\\mathbb{C}$ but linearly independent over\n  $\\mathbb{R}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 18",
+    "content": "Determine whether $\\{(1,0,2),(0,1,-1),(2,1,3)\\}$ is a basis\n  of $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 19",
+    "content": "Find the dimension of the subspace\n  $W=\\{(x_1,x_2,x_3,x_4,x_5) \\in \\mathbb{R}^5 : x_1=x_3 \\text{ and }\n  x_2+x_4=0\\}$ of $\\mathbb{R}^5$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 20",
+    "content": "If $U$ and $W$ are subspaces of $\\mathbb{R}^5$ with\n  $\\dim(U)=3$, $\\dim(W)=4$, and $\\dim(U \\cap W)=2$, find\n  $\\dim(U+W)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 21",
+    "content": "Suppose $U$ and $W$ are distinct three-dimensional subspaces\n  of a vector space $V$ of dimension five. Find the possible\n  dimensions of $U \\cap W$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 22",
+    "content": "Find the rank of\n  $A=\\begin{bmatrix}1&2&-1&3\\\\2&4&1&-2\\\\3&6&3&-7\\end{bmatrix}$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 23",
+    "content": "For what value of $k$ does the matrix\n  $A=\\begin{bmatrix}1&2&3\\\\2&4&6\\\\1&k&3\\end{bmatrix}$ have rank $2$\n  instead of rank $1$?"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 24",
+    "content": "Let $U=\\{(a,b,c) \\in \\mathbb{R}^3 : a+b+c=0\\}$ and\n  $W=\\operatorname{span}\\{(1,1,1)\\}$. Show that\n  $\\mathbb{R}^3=U \\oplus W$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 3 - Vector Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 25",
+    "content": "Let $S=\\{(1,2,3),(0,1,2),(0,0,1)\\}$ be a basis of\n  $\\mathbb{R}^3$. Find the coordinate vector of $v=(6,7,4)$ relative\n  to $S$."
+  }
+]

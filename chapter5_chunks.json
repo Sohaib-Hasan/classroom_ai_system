@@ -1,0 +1,618 @@
+[
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Inner Product Spaces",
+    "type": "definition",
+    "title": "Inner Product Space",
+    "content": "Let $V$ be a vector space over $\\mathbb{R}$ (or $\\mathbb{C}$). An\n\\textbf{inner product} on $V$ is a function that assigns to every\npair of vectors $u,v \\in V$ a scalar $\\langle u,v \\rangle$\nsatisfying the following axioms for all $u,v,w \\in V$ and\n$k \\in \\mathbb{R}$ (or $\\mathbb{C}$):\n\\begin{enumerate}[leftmargin=2em,itemsep=2pt]\n  \\item $\\langle u+v,\\ w \\rangle = \\langle u,w \\rangle+\\langle v,w \\rangle$ \\hfill \\textit{(linearity in first slot)}\n  \\item $\\langle ku,\\ v \\rangle = k\\langle u,v \\rangle$ \\hfill \\textit{(homogeneity)}\n  \\item $\\langle u,v \\rangle = \\overline{\\langle v,u \\rangle}$ \\hfill \\textit{(conjugate symmetry; $=\\langle v,u \\rangle$ over $\\mathbb{R}$)}\n  \\item $\\langle u,u \\rangle \\ge 0$, and $\\langle u,u \\rangle = 0$ if\n        and only if $u=0$ \\hfill \\textit{(positive definiteness)}\n\\end{enumerate}\nA vector space $V$ equipped with an inner product is called an\n\\textbf{inner product space}. The \\textbf{norm} (length) of a\nvector $u$ is defined as\n\\[\n\\|u\\| = \\sqrt{\\langle u,u \\rangle}.\n\\]\nA vector $u$ with $\\|u\\|=1$ is called a \\textbf{unit vector}, and\nthe process of replacing $u$ with $u/\\|u\\|$ is called\n\\textbf{normalization}."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Inner Product Spaces",
+    "type": "example",
+    "title": "Example 5.1 --- The Standard Inner Product on \\texorpdfstring{$\\mathbb{R",
+    "content": "^n$}{Rn}}\nLet $u=(1,-2,3)$ and $v=(4,0,-1)$ in $\\mathbb{R}^3$. Using the\nstandard (Euclidean) inner product\n$\\langle u,v \\rangle = u_1v_1+u_2v_2+u_3v_3$, compute\n$\\langle u,v \\rangle$.\n\n\\textbf{Solution:}\n\\[\n\\langle u,v \\rangle = (1)(4)+(-2)(0)+(3)(-1) = 4+0-3 = 1.\n\\]\n\\[\n\\langle u,v \\rangle = \\boxed{1}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Inner Product Spaces",
+    "type": "example",
+    "title": "Example 5.2 --- Computing a Norm",
+    "content": "Find $\\|u\\|$ for $u=(1,-5,3)$ in $\\mathbb{R}^3$ using the standard\ninner product.\n\n\\textbf{Solution:}\n\\[\n\\langle u,u \\rangle = 1^2+(-5)^2+3^2 = 1+25+9 = 35.\n\\]\n\\[\n\\|u\\| = \\sqrt{35}\n\\]\n\\[\n\\|u\\| = \\boxed{\\sqrt{35}}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Inner Product Spaces",
+    "type": "example",
+    "title": "Example 5.3 --- Past Paper 2024 Q1(xii) \\& 2025 Q1(x)",
+    "content": "Normalize the vector $v=(1,2,4,5)$.\n\n\\textbf{Solution:}\nFirst compute the norm:\n\\[\n\\|v\\| = \\sqrt{1^2+2^2+4^2+5^2} = \\sqrt{1+4+16+25} = \\sqrt{46}.\n\\]\nThe normalized (unit) vector is obtained by dividing each component\nby $\\|v\\|$:\n\\[\n\\hat{v} = \\frac{v}{\\|v\\|} = \\left(\\frac{1}{\\sqrt{46}},\\\n\\frac{2}{\\sqrt{46}},\\ \\frac{4}{\\sqrt{46}},\\\n\\frac{5}{\\sqrt{46}}\\right).\n\\]\n\\textbf{Verification:} $\\|\\hat{v}\\|^2 =\n\\dfrac{1+4+16+25}{46}=\\dfrac{46}{46}=1$. \\checkmark\n\\[\n\\hat{v} = \\boxed{\\left(\\dfrac{1}{\\sqrt{46}},\\ \\dfrac{2}{\\sqrt{46}},\\\n\\dfrac{4}{\\sqrt{46}},\\ \\dfrac{5}{\\sqrt{46}}\\right)}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Inner Product Spaces",
+    "type": "theorem",
+    "title": "Properties of the Inner Product",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $\\langle u,\\ v+w \\rangle = \\langle u,v \\rangle+\\langle u,w \\rangle$ \\hfill \\textit{(linearity in second slot, over $\\mathbb{R}$)}\n  \\item $\\langle u,\\ kv \\rangle = k\\langle u,v \\rangle$ over\n        $\\mathbb{R}$; $\\langle u,\\ kv \\rangle = \\overline{k}\\langle u,v \\rangle$\n        over $\\mathbb{C}$ \\hfill \\textit{(conjugate-homogeneity in second slot)}\n  \\item $\\langle 0,\\ v \\rangle = \\langle v,\\ 0 \\rangle = 0$ for\n        every $v \\in V$ \\hfill \\textit{(zero vector property)}\n  \\item $\\|kv\\| = |k|\\,\\|v\\|$ for any scalar $k$ \\hfill \\textit{(norm scaling)}\n  \\item $\\|u\\| \\ge 0$, with $\\|u\\|=0$ if and only if $u=0$ \\hfill \\textit{(positive definiteness of norm)}\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "definition",
+    "title": "Weighted Inner Product on \\texorpdfstring{$\\mathbb{R",
+    "content": "^n$}{Rn}}\nGiven fixed positive weights $w_1,w_2,\\dots,w_n$, the function\n\\[\n\\langle u,v \\rangle = w_1u_1v_1+w_2u_2v_2+\\cdots+w_nu_nv_n\n\\]\ndefines a valid inner product on $\\mathbb{R}^n$, called a\n\\textbf{weighted Euclidean inner product}. Choosing all weights\nequal to $1$ recovers the standard (unweighted) inner product."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "example",
+    "title": "Example 5.4 --- Computing a Weighted Inner Product",
+    "content": "Let $u=(1,2)$ and $v=(3,-1)$ in $\\mathbb{R}^2$, with weights\n$w_1=2$ and $w_2=5$. Compute $\\langle u,v \\rangle$ using this\nweighted inner product.\n\n\\textbf{Solution:}\n\\[\n\\langle u,v \\rangle = w_1u_1v_1+w_2u_2v_2 = 2(1)(3)+5(2)(-1) = 6-10 = -4.\n\\]\n\\[\n\\langle u,v \\rangle = \\boxed{-4}\n\\]\n\\vspace{0.5cm}\n\\subsection*{Complex Inner Product Space \\texorpdfstring{$\\mathbb{C}^n$}{Cn}}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "definition",
+    "title": "Standard Inner Product on \\texorpdfstring{$\\mathbb{C",
+    "content": "^n$}{Cn}}\nFor $u=(u_1,\\dots,u_n)$ and $v=(v_1,\\dots,v_n)$ in $\\mathbb{C}^n$,\nthe standard inner product is defined using complex conjugates to\nguarantee $\\langle u,u \\rangle \\ge 0$:\n\\[\n\\langle u,v \\rangle = u_1\\overline{v_1}+u_2\\overline{v_2}+\\cdots+u_n\\overline{v_n}.\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "example",
+    "title": "Example 5.5 --- Inner Product in \\texorpdfstring{$\\mathbb{C",
+    "content": "^2$}{C2}}\nLet $u=(2+i,\\ 1-i)$ and $v=(1,\\ 2+i)$ in $\\mathbb{C}^2$. Compute\n$\\langle u,v \\rangle$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\langle u,v \\rangle &= (2+i)\\overline{(1)}+(1-i)\\overline{(2+i)}\\\\\n&= (2+i)(1)+(1-i)(2-i)\\\\\n&= (2+i)+\\big(2-i-2i+i^2\\big)\\\\\n&= (2+i)+(2-3i-1)\\\\\n&= (2+i)+(1-3i)\\\\\n&= 3-2i.\n\\end{align*}\n\\[\n\\langle u,v \\rangle = \\boxed{3-2i}\n\\]\n\n\\subsection*{Function Space Inner Product}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "definition",
+    "title": "Inner Product on a Function Space",
+    "content": "Let $V=C[a,b]$ be the vector space of continuous real functions on\nthe interval $[a,b]$. The function\n\\[\n\\langle f,g \\rangle = \\int_a^b f(t)g(t)\\,dt\n\\]\ndefines an inner product on $C[a,b]$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "example",
+    "title": "Example 5.6 --- Inner Product of Functions",
+    "content": "Let $f(t)=t$ and $g(t)=t^2$ in $C[0,1]$. Compute\n$\\langle f,g \\rangle$ using $\\langle f,g \\rangle=\\int_0^1 f(t)g(t)\\,dt$.\n\n\\textbf{Solution:}\n\\[\n\\langle f,g \\rangle = \\int_0^1 t \\cdot t^2 \\,dt = \\int_0^1 t^3\\,dt\n= \\left[\\frac{t^4}{4}\\right]_0^1 = \\frac{1}{4}-0 = \\frac{1}{4}.\n\\]\n\\[\n\\langle f,g \\rangle = \\boxed{\\dfrac{1}{4}}\n\\]\n\n\\subsection*{Matrix Space Inner Product}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "definition",
+    "title": "Inner Product on \\texorpdfstring{$M_{m,n",
+    "content": "$}{Mmn}}\nFor matrices $A,B \\in M_{m,n}(\\mathbb{R})$, the function\n\\[\n\\langle A,B \\rangle = \\operatorname{tr}(B^TA)\n\\]\ndefines an inner product on $M_{m,n}$, where $\\operatorname{tr}$\ndenotes the trace (sum of diagonal entries). This is equivalent to\nsumming the products of corresponding entries of $A$ and $B$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "example",
+    "title": "Example 5.7 --- Inner Product of Matrices",
+    "content": "Let $A=\\begin{bmatrix}1&2\\\\0&-1\\end{bmatrix}$ and\n$B=\\begin{bmatrix}2&1\\\\3&4\\end{bmatrix}$ in $M_{2,2}$. Compute\n$\\langle A,B \\rangle$.\n\n\\textbf{Solution:}\nSum the products of corresponding entries:\n\\[\n\\langle A,B \\rangle = (1)(2)+(2)(1)+(0)(3)+(-1)(4) = 2+2+0-4 = 0.\n\\]\n\\[\n\\langle A,B \\rangle = \\boxed{0}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Examples of Inner Product Spaces",
+    "type": "keypoint",
+    "title": "{Common Inner Product Spaces to Remember:}",
+    "content": "\\textbf{Common Inner Product Spaces to Remember:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $\\mathbb{R}^n$ with the standard (Euclidean) inner product\n        $\\langle u,v \\rangle = \\sum u_iv_i$\n  \\item $\\mathbb{R}^n$ with a weighted inner product\n        $\\langle u,v \\rangle = \\sum w_iu_iv_i$, $w_i>0$\n  \\item $\\mathbb{C}^n$ with $\\langle u,v \\rangle = \\sum u_i\\overline{v_i}$\n        (conjugate on the \\textbf{second} vector)\n  \\item $C[a,b]$ with $\\langle f,g \\rangle = \\int_a^b f(t)g(t)\\,dt$\n  \\item $M_{m,n}$ with $\\langle A,B \\rangle = \\operatorname{tr}(B^TA)$\n        (sum of products of corresponding entries)\n  \\item When $\\langle u,v \\rangle=0$ for two nonzero vectors, they\n        are called \\textbf{orthogonal} (covered in Section 5.5).\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Cauchy-Schwarz Inequality and Applications",
+    "type": "theorem",
+    "title": "Cauchy-Schwarz Inequality",
+    "content": "Let $u,v$ be vectors in an inner product space $V$. Then:\n\\[\n|\\langle u,v \\rangle| \\le \\|u\\|\\,\\|v\\|.\n\\]\nEquality holds if and only if $u$ and $v$ are linearly dependent\n(one is a scalar multiple of the other)."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Cauchy-Schwarz Inequality and Applications",
+    "type": "theorem",
+    "title": "Triangle Inequality",
+    "content": "Let $u,v$ be vectors in an inner product space $V$. Then:\n\\[\n\\|u+v\\| \\le \\|u\\|+\\|v\\|.\n\\]\nThis is also called \\textbf{Minkowski's Inequality} and follows\ndirectly from the Cauchy-Schwarz Inequality."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Cauchy-Schwarz Inequality and Applications",
+    "type": "example",
+    "title": "Example 5.8 --- Past Paper 2023 Q1(i)",
+    "content": "If $V$ is an inner product space and $u,v \\in V$, show that\n\\[\n\\cos\\theta = \\frac{\\langle u,v \\rangle}{\\|u\\|\\,\\|v\\|}.\n\\]\n\n\\textbf{Solution:}\nBy the Cauchy-Schwarz Inequality, $|\\langle u,v \\rangle| \\le\n\\|u\\|\\,\\|v\\|$ for all nonzero $u,v \\in V$. Dividing both sides by\n$\\|u\\|\\,\\|v\\|>0$:\n\\[\n-1 \\le \\frac{\\langle u,v \\rangle}{\\|u\\|\\,\\|v\\|} \\le 1.\n\\]\nSince the quantity $\\dfrac{\\langle u,v \\rangle}{\\|u\\|\\,\\|v\\|}$ always\nlies in $[-1,1]$, it is a valid value for the cosine of some angle\n$\\theta$ with $0 \\le \\theta \\le \\pi$. This angle is defined to be\nthe \\textbf{angle between $u$ and $v$}, giving:\n\\[\n\\cos\\theta = \\boxed{\\frac{\\langle u,v \\rangle}{\\|u\\|\\,\\|v\\|}}\n\\]\n\\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Cauchy-Schwarz Inequality and Applications",
+    "type": "example",
+    "title": "Example 5.9 --- Past Paper 2021 Q1(i)",
+    "content": "Compute the angle between vectors $u=(-1,1,2)$ and $v=(2,1,-1)$.\n\n\\textbf{Solution:}\n\\[\n\\langle u,v \\rangle = (-1)(2)+(1)(1)+(2)(-1) = -2+1-2 = -3.\n\\]\n\\[\n\\|u\\| = \\sqrt{(-1)^2+1^2+2^2} = \\sqrt{6}, \\qquad\n\\|v\\| = \\sqrt{2^2+1^2+(-1)^2} = \\sqrt{6}.\n\\]\n\\[\n\\cos\\theta = \\frac{\\langle u,v \\rangle}{\\|u\\|\\,\\|v\\|} =\n\\frac{-3}{\\sqrt{6}\\cdot\\sqrt{6}} = \\frac{-3}{6} = -\\frac{1}{2}.\n\\]\n\\[\n\\theta = \\cos^{-1}\\left(-\\frac{1}{2}\\right)\n\\]\n\\[\n\\theta = \\boxed{120^\\circ}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Cauchy-Schwarz Inequality and Applications",
+    "type": "example",
+    "title": "Example 5.10 --- Verifying the Cauchy-Schwarz Inequality",
+    "content": "Verify the Cauchy-Schwarz Inequality for $u=(1,2,3)$ and\n$v=(4,-1,2)$ in $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\n\\[\n\\langle u,v \\rangle = (1)(4)+(2)(-1)+(3)(2) = 4-2+6 = 8.\n\\]\n\\[\n|\\langle u,v \\rangle| = 8.\n\\]\n\\[\n\\|u\\| = \\sqrt{1+4+9} = \\sqrt{14}, \\qquad \\|v\\| = \\sqrt{16+1+4} = \\sqrt{21}.\n\\]\n\\[\n\\|u\\|\\,\\|v\\| = \\sqrt{14}\\cdot\\sqrt{21} = \\sqrt{294} \\approx 17.15.\n\\]\nSince $8 \\le 17.15$:\n\\[\n|\\langle u,v \\rangle| \\le \\|u\\|\\,\\|v\\| \\quad\\checkmark\n\\]\nThe Cauchy-Schwarz Inequality holds. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Cauchy-Schwarz Inequality and Applications",
+    "type": "example",
+    "title": "Example 5.11 --- Verifying the Triangle Inequality",
+    "content": "Verify the Triangle Inequality for $u=(3,0,4)$ and $v=(1,2,2)$ in\n$\\mathbb{R}^3$.\n\n\\textbf{Solution:}\n\\[\nu+v = (4,2,6).\n\\]\n\\[\n\\|u+v\\| = \\sqrt{4^2+2^2+6^2} = \\sqrt{16+4+36} = \\sqrt{56} \\approx 7.48.\n\\]\n\\[\n\\|u\\| = \\sqrt{9+0+16} = \\sqrt{25} = 5, \\qquad \\|v\\| = \\sqrt{1+4+4} = \\sqrt{9} = 3.\n\\]\n\\[\n\\|u\\|+\\|v\\| = 5+3 = 8.\n\\]\nSince $7.48 \\le 8$:\n\\[\n\\|u+v\\| \\le \\|u\\|+\\|v\\| \\quad\\checkmark\n\\]\nThe Triangle Inequality holds. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Cauchy-Schwarz Inequality and Applications",
+    "type": "example",
+    "title": "Example 5.12 --- Past Paper 2021 Q1(xii)",
+    "content": "Find the norm of $\\left(\\dfrac{1}{2},-\\dfrac{1}{4},\\dfrac{1}{3},\\dfrac{1}{6}\\right)\n\\in \\mathbb{R}^4$ with respect to the Euclidean inner product on\n$\\mathbb{R}^4$.\n\n\\textbf{Solution:}\n\\[\n\\|v\\|^2 = \\left(\\frac{1}{2}\\right)^2+\\left(-\\frac{1}{4}\\right)^2+\\left(\\frac{1}{3}\\right)^2+\\left(\\frac{1}{6}\\right)^2\n= \\frac{1}{4}+\\frac{1}{16}+\\frac{1}{9}+\\frac{1}{36}.\n\\]\nUsing the common denominator $144$:\n\\[\n\\|v\\|^2 = \\frac{36}{144}+\\frac{9}{144}+\\frac{16}{144}+\\frac{4}{144} = \\frac{65}{144}.\n\\]\n\\[\n\\|v\\| = \\sqrt{\\frac{65}{144}} = \\frac{\\sqrt{65}}{12}\n\\]\n\\[\n\\|v\\| = \\boxed{\\dfrac{\\sqrt{65}}{12}}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Cauchy-Schwarz Inequality and Applications",
+    "type": "keypoint",
+    "title": "{Cauchy-Schwarz --- Key Facts:} {enumerate}[leftmargin=2em,itemsep=4pt] Cauchy-Schwarz",
+    "content": "\\textbf{Cauchy-Schwarz --- Key Facts:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item Cauchy-Schwarz guarantees $\\dfrac{\\langle u,v \\rangle}{\\|u\\|\\|v\\|}\n        \\in [-1,1]$, which is what makes the angle formula\n        well-defined.\n  \\item Equality in Cauchy-Schwarz occurs exactly when $u,v$ are\n        parallel (one is a scalar multiple of the other).\n  \\item $\\theta=90^\\circ$ (i.e. $\\cos\\theta=0$) exactly when\n        $\\langle u,v \\rangle=0$ --- this is the definition of\n        orthogonality, covered next.\n  \\item Always compute $\\langle u,v \\rangle$, $\\|u\\|$, and $\\|v\\|$\n        separately before substituting into the cosine formula, to\n        avoid arithmetic errors.\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "definition",
+    "title": "Orthogonal Vectors and Orthogonal Complement",
+    "content": "Vectors $u,v$ in an inner product space $V$ are called\n\\textbf{orthogonal} if $\\langle u,v \\rangle=0$. For a subset\n$S \\subseteq V$, the \\textbf{orthogonal complement} of $S$, denoted\n$S^{\\perp}$, is the set of all vectors in $V$ orthogonal to every\nvector in $S$:\n\\[\nS^{\\perp} = \\{v \\in V : \\langle v,s \\rangle = 0 \\text{ for all } s \\in S\\}.\n\\]\n$S^{\\perp}$ is always a subspace of $V$, even if $S$ itself is not."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "example",
+    "title": "Example 5.13 --- Checking Orthogonality",
+    "content": "Determine whether $u=(2,-1,3)$ and $v=(1,5,1)$ are orthogonal in\n$\\mathbb{R}^3$.\n\n\\textbf{Solution:}\n\\[\n\\langle u,v \\rangle = (2)(1)+(-1)(5)+(3)(1) = 2-5+3 = 0.\n\\]\nSince $\\langle u,v \\rangle=0$, the vectors \\textbf{are}\northogonal. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "example",
+    "title": "Example 5.14 --- Past Paper 2023 Q1(xii)",
+    "content": "Find a vector orthogonal to $u_1=\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}$\nand $u_2=\\begin{bmatrix}2\\\\1\\\\-4\\end{bmatrix}$.\n\n\\textbf{Solution:}\nA vector orthogonal to both $u_1$ and $u_2$ can be found using the\ncross product $u_1 \\times u_2$:\n\\[\nu_1 \\times u_2 =\n\\begin{vmatrix}\n\\mathbf{i} & \\mathbf{j} & \\mathbf{k}\\\\\n1 & 2 & 1\\\\\n2 & 1 & -4\n\\end{vmatrix}\n\\]\n\\begin{align*}\n&= \\mathbf{i}\\big((2)(-4)-(1)(1)\\big) - \\mathbf{j}\\big((1)(-4)-(1)(2)\\big) + \\mathbf{k}\\big((1)(1)-(2)(2)\\big)\\\\\n&= \\mathbf{i}(-8-1) - \\mathbf{j}(-4-2) + \\mathbf{k}(1-4)\\\\\n&= -9\\mathbf{i}+6\\mathbf{j}-3\\mathbf{k}.\n\\end{align*}\nSo $w=(-9,6,-3)$, or dividing by $-3$, the simplified vector\n$w=(3,-2,1)$.\n\n\\textbf{Verification:} $\\langle u_1,w \\rangle = 3-4+1=0$. \\checkmark\\quad\n$\\langle u_2,w \\rangle = 6-2-4=0$. \\checkmark\n\\[\nw = \\boxed{(3,\\ -2,\\ 1)}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "example",
+    "title": "Example 5.15 --- Finding an Orthogonal Complement",
+    "content": "Find $W^{\\perp}$ where $W=\\operatorname{span}\\{(1,1,0)\\}$ in\n$\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nWe need all $(x,y,z)$ such that $\\langle (x,y,z),(1,1,0) \\rangle=0$:\n\\[\nx+y = 0 \\implies y=-x, \\quad z \\text{ free}.\n\\]\nSo every vector in $W^{\\perp}$ has the form\n$(x,-x,z) = x(1,-1,0)+z(0,0,1)$.\n\\[\nW^{\\perp} = \\boxed{\\operatorname{span}\\{(1,-1,0),\\ (0,0,1)\\}}, \\qquad \\dim(W^{\\perp})=2\n\\]\n\n\\subsection*{Orthogonal Matrices}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "definition",
+    "title": "Orthogonal Matrix",
+    "content": "A real square matrix $P$ is called \\textbf{orthogonal} if\n\\[\nP^TP = PP^T = I,\n\\]\nequivalently, $P^{-1}=P^T$. This holds if and only if the rows of\n$P$ (and equivalently the columns of $P$) form an orthonormal set of\nvectors."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "example",
+    "title": "Example 5.16 --- Verifying an Orthogonal Matrix",
+    "content": "Show that\n$P=\\begin{bmatrix}\\tfrac{3}{5}&\\tfrac{4}{5}\\\\-\\tfrac{4}{5}&\\tfrac{3}{5}\\end{bmatrix}$\nis an orthogonal matrix.\n\n\\textbf{Solution:}\nCompute $P^TP$:\n\\[\nP^T = \\begin{bmatrix}\\tfrac{3}{5}&-\\tfrac{4}{5}\\\\\\tfrac{4}{5}&\\tfrac{3}{5}\\end{bmatrix}\n\\]\n\\[\nP^TP = \\begin{bmatrix}\\tfrac{3}{5}&-\\tfrac{4}{5}\\\\\\tfrac{4}{5}&\\tfrac{3}{5}\\end{bmatrix}\n\\begin{bmatrix}\\tfrac{3}{5}&\\tfrac{4}{5}\\\\-\\tfrac{4}{5}&\\tfrac{3}{5}\\end{bmatrix}\n= \\begin{bmatrix}\\tfrac{9}{25}+\\tfrac{16}{25}&\\tfrac{12}{25}-\\tfrac{12}{25}\\\\\\tfrac{12}{25}-\\tfrac{12}{25}&\\tfrac{16}{25}+\\tfrac{9}{25}\\end{bmatrix}\n= \\begin{bmatrix}1&0\\\\0&1\\end{bmatrix} = I.\n\\]\nSince $P^TP=I$, $P$ \\textbf{is} an orthogonal matrix. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "example",
+    "title": "Example 5.17 --- Past Paper 2021 Q1(xi)",
+    "content": "If $A$ is an orthogonal matrix, show that $\\det A = 1$ or $-1$.\n\n\\textbf{Solution:}\nSince $A$ is orthogonal, $A^TA=I$. Taking the determinant of both\nsides:\n\\[\n\\det(A^TA) = \\det(I) = 1.\n\\]\nUsing the property $\\det(A^TA)=\\det(A^T)\\det(A)$ and\n$\\det(A^T)=\\det(A)$:\n\\[\n\\det(A)\\cdot\\det(A) = 1 \\implies (\\det A)^2 = 1.\n\\]\nTaking the square root of both sides:\n\\[\n\\det A = \\pm 1\n\\]\n\\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "example",
+    "title": "Example 5.18 --- Past Paper 2024 Q1(vii) \\& 2025 Q1(vi)",
+    "content": "Show that matrix $P$ is orthogonal if and only if $P^T$ is\northogonal.\n\n\\textbf{Solution:}\n\\textbf{($\\Rightarrow$) Suppose $P$ is orthogonal.} Then\n$P^TP=PP^T=I$. We must show $(P^T)^TP^T=P^T(P^T)^T=I$. Since\n$(P^T)^T=P$, this becomes:\n\\[\n(P^T)^TP^T = PP^T = I \\quad\\checkmark\n\\]\n\\[\nP^T(P^T)^T = P^TP = I \\quad\\checkmark\n\\]\nSo $P^T$ is orthogonal.\n\n\\textbf{($\\Leftarrow$) Suppose $P^T$ is orthogonal.} Then by the same\nargument applied to $P^T$ in place of $P$:\n\\[\n(P^T)^TP^T = I \\implies PP^T = I \\quad\\checkmark\n\\]\n\\[\nP^T(P^T)^T = I \\implies P^TP = I \\quad\\checkmark\n\\]\nSo $P$ is orthogonal.\n\nSince each condition implies the other, $P$ is orthogonal if and\nonly if $P^T$ is orthogonal. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "example",
+    "title": "Example 5.19 --- Past Paper 2023 Q1(xi)",
+    "content": "Find an orthogonal matrix whose first row is\n$\\left(\\dfrac{1}{\\sqrt{5}},\\dfrac{2}{\\sqrt{5}}\\right)$.\n\n\\textbf{Solution:}\nFor a $2\\times 2$ orthogonal matrix, the second row must be a unit\nvector orthogonal to the first row. A vector orthogonal to\n$\\left(\\dfrac{1}{\\sqrt{5}},\\dfrac{2}{\\sqrt{5}}\\right)$ is obtained by\nswapping components and negating one:\n$\\left(-\\dfrac{2}{\\sqrt{5}},\\dfrac{1}{\\sqrt{5}}\\right)$.\n\n\\textbf{Check unit length:} $\\left(-\\dfrac{2}{\\sqrt{5}}\\right)^2+\n\\left(\\dfrac{1}{\\sqrt{5}}\\right)^2 = \\dfrac{4}{5}+\\dfrac{1}{5}=1$. \\checkmark\n\n\\textbf{Check orthogonality with row 1:}\n$\\dfrac{1}{\\sqrt5}\\left(-\\dfrac{2}{\\sqrt5}\\right)+\\dfrac{2}{\\sqrt5}\\left(\\dfrac{1}{\\sqrt5}\\right)\n= -\\dfrac{2}{5}+\\dfrac{2}{5}=0$. \\checkmark\n\\[\nP = \\boxed{\\begin{bmatrix}\\dfrac{1}{\\sqrt5}&\\dfrac{2}{\\sqrt5}\\\\[4pt]-\\dfrac{2}{\\sqrt5}&\\dfrac{1}{\\sqrt5}\\end{bmatrix}}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "theorem",
+    "title": "Properties of Orthogonal Matrices",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $P^{-1}=P^T$ \\hfill \\textit{(inverse equals transpose)}\n  \\item $\\det P = \\pm 1$ \\hfill \\textit{(determinant restriction)}\n  \\item The rows of $P$ form an orthonormal set, and so do the\n        columns of $P$ \\hfill \\textit{(orthonormal rows and columns)}\n  \\item $P$ is orthogonal if and only if $P^T$ is orthogonal \\hfill \\textit{(transpose symmetry)}\n  \\item The product of two orthogonal matrices is orthogonal \\hfill \\textit{(closure under multiplication)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonality",
+    "type": "keypoint",
+    "title": "{Orthogonality --- Exam Strategy:} {enumerate}[leftmargin=2em,itemsep=4pt] To",
+    "content": "\\textbf{Orthogonality --- Exam Strategy:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item To test orthogonality of two vectors, simply check whether\n        $\\langle u,v \\rangle=0$.\n  \\item To find a vector orthogonal to two given vectors in\n        $\\mathbb{R}^3$, use the cross product.\n  \\item To verify a matrix is orthogonal, check $P^TP=I$ (it is\n        enough to check one of $P^TP=I$ or $PP^T=I$ for a square\n        matrix).\n  \\item Building an orthogonal matrix from a given row/column: each\n        remaining row/column must be a unit vector orthogonal to\n        all previously chosen rows/columns.\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "definition",
+    "title": "Orthogonal and Orthonormal Sets",
+    "content": "A set $S=\\{v_1,v_2,\\dots,v_n\\}$ of \\textbf{nonzero} vectors in an\ninner product space $V$ is called an \\textbf{orthogonal set} if every\npair of distinct vectors in $S$ is orthogonal:\n\\[\n\\langle v_i,v_j \\rangle = 0 \\qquad \\text{for all } i \\neq j.\n\\]\nIf, in addition, every vector in $S$ has norm $1$ (i.e.\n$\\|v_i\\|=1$ for all $i$), then $S$ is called an\n\\textbf{orthonormal set}. Any orthogonal set can be converted into\nan orthonormal set by \\textbf{normalizing} each vector (dividing it\nby its own norm)."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "example",
+    "title": "Example 5.20 --- Verifying an Orthogonal Set",
+    "content": "Show that $S=\\{(1,1,1),\\ (1,-2,1),\\ (1,0,-1)\\}$ is an orthogonal set\nin $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nLabel the vectors $v_1=(1,1,1)$, $v_2=(1,-2,1)$, $v_3=(1,0,-1)$, and\ncheck all three pairwise inner products:\n\\[\n\\langle v_1,v_2 \\rangle = (1)(1)+(1)(-2)+(1)(1) = 1-2+1 = 0.\n\\]\n\\[\n\\langle v_1,v_3 \\rangle = (1)(1)+(1)(0)+(1)(-1) = 1+0-1 = 0.\n\\]\n\\[\n\\langle v_2,v_3 \\rangle = (1)(1)+(-2)(0)+(1)(-1) = 1+0-1 = 0.\n\\]\nSince all pairwise inner products are zero, $S$ \\textbf{is} an\northogonal set. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "example",
+    "title": "Example 5.21 --- Converting to an Orthonormal Set",
+    "content": "Convert the orthogonal set from Example 5.20 into an orthonormal\nset.\n\n\\textbf{Solution:}\nCompute the norm of each vector:\n\\[\n\\|v_1\\| = \\sqrt{1+1+1} = \\sqrt{3}, \\qquad\n\\|v_2\\| = \\sqrt{1+4+1} = \\sqrt{6}, \\qquad\n\\|v_3\\| = \\sqrt{1+0+1} = \\sqrt{2}.\n\\]\nDivide each vector by its own norm:\n\\[\nq_1 = \\frac{v_1}{\\|v_1\\|} = \\left(\\frac{1}{\\sqrt3},\\frac{1}{\\sqrt3},\\frac{1}{\\sqrt3}\\right), \\qquad\nq_2 = \\frac{v_2}{\\|v_2\\|} = \\left(\\frac{1}{\\sqrt6},\\frac{-2}{\\sqrt6},\\frac{1}{\\sqrt6}\\right),\n\\]\n\\[\nq_3 = \\frac{v_3}{\\|v_3\\|} = \\left(\\frac{1}{\\sqrt2},0,\\frac{-1}{\\sqrt2}\\right).\n\\]\n\\[\n\\{q_1,q_2,q_3\\} = \\boxed{\\left\\{\\left(\\tfrac{1}{\\sqrt3},\\tfrac{1}{\\sqrt3},\\tfrac{1}{\\sqrt3}\\right),\n\\left(\\tfrac{1}{\\sqrt6},\\tfrac{-2}{\\sqrt6},\\tfrac{1}{\\sqrt6}\\right),\n\\left(\\tfrac{1}{\\sqrt2},0,\\tfrac{-1}{\\sqrt2}\\right)\\right\\}}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "theorem",
+    "title": "Orthogonal Sets Are Linearly Independent",
+    "content": "Every orthogonal set of nonzero vectors in an inner product space\n$V$ is linearly independent."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "example",
+    "title": "Example 5.22 --- Proving the Independence of Orthogonal Sets",
+    "content": "Prove that an orthogonal set of nonzero vectors\n$\\{v_1,v_2,\\dots,v_n\\}$ is linearly independent.\n\n\\textbf{Solution:}\nSuppose $a_1v_1+a_2v_2+\\cdots+a_nv_n = 0$. Take the inner product of\nboth sides with $v_i$ (for a fixed but arbitrary index $i$):\n\\[\n\\left\\langle \\sum_{j=1}^n a_jv_j,\\ v_i \\right\\rangle = \\langle 0,v_i \\rangle = 0.\n\\]\nBy linearity of the inner product:\n\\[\n\\sum_{j=1}^n a_j\\langle v_j,v_i \\rangle = 0.\n\\]\nSince $S$ is orthogonal, $\\langle v_j,v_i \\rangle = 0$ for every\n$j \\neq i$, so all terms vanish except the $j=i$ term:\n\\[\na_i\\langle v_i,v_i \\rangle = 0.\n\\]\nSince $v_i$ is nonzero, $\\langle v_i,v_i \\rangle = \\|v_i\\|^2 \\neq\n0$. Therefore $a_i=0$.\n\nSince $i$ was arbitrary, $a_1=a_2=\\cdots=a_n=0$, which is the\ntrivial solution. Hence $\\{v_1,\\dots,v_n\\}$ is \\textbf{linearly\nindependent}. \\hfill$\\square$\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "example",
+    "title": "Example 5.23 --- Orthogonal Set as a Basis",
+    "content": "Using the result of Example 5.22, explain why the orthogonal set\n$S=\\{(1,1,1),(1,-2,1),(1,0,-1)\\}$ from Example 5.20 is a basis of\n$\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nBy Example 5.22, an orthogonal set of nonzero vectors is always\nlinearly independent. Since $S$ consists of $3$ nonzero orthogonal\nvectors, $S$ is linearly independent.\n\nSince $\\dim(\\mathbb{R}^3)=3$ and $S$ contains exactly $3$\nindependent vectors, $S$ automatically spans $\\mathbb{R}^3$ as\nwell. Hence:\n\\[\nS \\ \\boxed{\\text{is a basis of } \\mathbb{R}^3}\n\\]\n(In fact, $S$ is called an \\textbf{orthogonal basis} of\n$\\mathbb{R}^3$.) \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "definition",
+    "title": "Orthogonal Basis and Fourier Coefficients",
+    "content": "An \\textbf{orthogonal basis} of a vector space $V$ is a basis that\nis also an orthogonal set. If $S=\\{v_1,v_2,\\dots,v_n\\}$ is an\northogonal basis of $V$, every vector $v \\in V$ can be written as:\n\\[\nv = c_1v_1+c_2v_2+\\cdots+c_nv_n, \\qquad \\text{where }\nc_i = \\frac{\\langle v,v_i \\rangle}{\\langle v_i,v_i \\rangle} = \\frac{\\langle v,v_i \\rangle}{\\|v_i\\|^2}.\n\\]\nThe scalars $c_i$ are called the \\textbf{Fourier coefficients} of\n$v$ relative to $S$. If $S$ is instead an \\textbf{orthonormal}\nbasis, the formula simplifies (since $\\|v_i\\|=1$) to:\n\\[\nv = \\langle v,v_1 \\rangle v_1+\\langle v,v_2 \\rangle v_2+\\cdots+\\langle v,v_n \\rangle v_n.\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "example",
+    "title": "Example 5.24 --- Fourier Coefficients Relative to an Orthogonal Basis",
+    "content": "Express $v=(2,3,-1)$ as a linear combination of the orthogonal basis\n$S=\\{(1,1,1),(1,-2,1),(1,0,-1)\\}$ using Fourier coefficients.\n\n\\textbf{Solution:}\nCompute each Fourier coefficient $c_i = \\dfrac{\\langle v,v_i\n\\rangle}{\\|v_i\\|^2}$, reusing $\\|v_1\\|^2=3$, $\\|v_2\\|^2=6$,\n$\\|v_3\\|^2=2$ from Example 5.21:\n\\[\n\\langle v,v_1 \\rangle = 2+3-1 = 4, \\qquad c_1 = \\frac{4}{3}.\n\\]\n\\[\n\\langle v,v_2 \\rangle = 2-6-1 = -5, \\qquad c_2 = \\frac{-5}{6}.\n\\]\n\\[\n\\langle v,v_3 \\rangle = 2+0+1 = 3, \\qquad c_3 = \\frac{3}{2}.\n\\]\n\\textbf{Verification:}\n\\begin{align*}\nc_1v_1+c_2v_2+c_3v_3\n&= \\tfrac{4}{3}(1,1,1)+\\left(-\\tfrac{5}{6}\\right)(1,-2,1)+\\tfrac{3}{2}(1,0,-1)\\\\\n&= \\left(\\tfrac{8}{6}-\\tfrac{5}{6}+\\tfrac{9}{6},\\ \\tfrac{8}{6}+\\tfrac{10}{6}+0,\\ \\tfrac{8}{6}-\\tfrac{5}{6}-\\tfrac{9}{6}\\right)\\\\\n&= \\left(\\tfrac{12}{6},\\ \\tfrac{18}{6},\\ \\tfrac{-6}{6}\\right) = (2,3,-1) = v. \\quad\\checkmark\n\\end{align*}\n\\[\nv = \\boxed{\\tfrac{4}{3}v_1 - \\tfrac{5}{6}v_2 + \\tfrac{3}{2}v_3}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "example",
+    "title": "Example 5.25 --- Coordinates Relative to an Orthonormal Basis",
+    "content": "Express $v=(2,3,-1)$ in terms of the orthonormal basis\n$\\{q_1,q_2,q_3\\}$ from Example 5.21.\n\n\\textbf{Solution:}\nFor an orthonormal basis, the coefficients are simply\n$\\langle v,q_i \\rangle$ (no division by $\\|v_i\\|^2$ needed):\n\\[\n\\langle v,q_1 \\rangle = \\frac{2+3-1}{\\sqrt3} = \\frac{4}{\\sqrt3}.\n\\]\n\\[\n\\langle v,q_2 \\rangle = \\frac{2-6-1}{\\sqrt6} = \\frac{-5}{\\sqrt6}.\n\\]\n\\[\n\\langle v,q_3 \\rangle = \\frac{2+0+1}{\\sqrt2} = \\frac{3}{\\sqrt2}.\n\\]\n\\[\nv = \\boxed{\\tfrac{4}{\\sqrt3}q_1 - \\tfrac{5}{\\sqrt6}q_2 + \\tfrac{3}{\\sqrt2}q_3}\n\\]\nNotice these coefficients relate to the Fourier coefficients of\nExample 5.24 by $c_i' = c_i\\|v_i\\|$ --- e.g.\n$c_1\\|v_1\\| = \\tfrac{4}{3}\\cdot\\sqrt3 = \\tfrac{4}{\\sqrt3}$.\n\\checkmark \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "theorem",
+    "title": "Pythagorean Theorem",
+    "content": "If $u$ and $v$ are orthogonal vectors in an inner product space $V$,\nthen:\n\\[\n\\|u+v\\|^2 = \\|u\\|^2+\\|v\\|^2.\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "example",
+    "title": "Example 5.26 --- Verifying the Pythagorean Theorem",
+    "content": "Verify the Pythagorean Theorem for the orthogonal vectors\n$v_1=(1,1,1)$ and $v_2=(1,-2,1)$ from Example 5.20.\n\n\\textbf{Solution:}\n\\[\nv_1+v_2 = (2,-1,2).\n\\]\n\\[\n\\|v_1+v_2\\|^2 = 2^2+(-1)^2+2^2 = 4+1+4 = 9.\n\\]\n\\[\n\\|v_1\\|^2 = 1+1+1 = 3, \\qquad \\|v_2\\|^2 = 1+4+1 = 6.\n\\]\n\\[\n\\|v_1\\|^2+\\|v_2\\|^2 = 3+6 = 9.\n\\]\nSince $\\|v_1+v_2\\|^2 = 9 = \\|v_1\\|^2+\\|v_2\\|^2$, the Pythagorean\nTheorem is verified. \\hfill$\\square$"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Orthogonal Sets and Bases",
+    "type": "keypoint",
+    "title": "{Orthogonal Sets and Bases --- Key",
+    "content": "\\textbf{Orthogonal Sets and Bases --- Key Facts:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item An orthogonal set of nonzero vectors is automatically\n        linearly independent --- no separate independence check is\n        needed.\n  \\item $n$ nonzero orthogonal vectors in an $n$-dimensional space\n        automatically form an orthogonal basis.\n  \\item Fourier coefficients avoid solving a linear system: once a\n        basis is known to be orthogonal, each coefficient is found\n        directly via $c_i=\\dfrac{\\langle v,v_i \\rangle}{\\|v_i\\|^2}$.\n  \\item For an \\textbf{orthonormal} basis, the formula simplifies\n        further to $c_i=\\langle v,v_i \\rangle$, since $\\|v_i\\|=1$.\n  \\item The Pythagorean Theorem applies \\textbf{only} when the two\n        vectors are orthogonal --- it is a quick way to verify\n        orthogonality was used/computed correctly.\n\\end{enumerate}\n\n\\vspace{0.5cm}"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Gram-Schmidt Orthogonalization Process",
+    "type": "definition",
+    "title": "Gram-Schmidt Orthogonalization Process",
+    "content": "Let $\\{u_1,u_2,\\dots,u_n\\}$ be a basis of an inner product space\n$V$. The \\textbf{Gram-Schmidt process} constructs an\n\\textbf{orthogonal basis} $\\{v_1,v_2,\\dots,v_n\\}$ of $V$ as\nfollows:\n\\[\nv_1 = u_1,\n\\]\n\\[\nv_2 = u_2 - \\frac{\\langle u_2,v_1 \\rangle}{\\langle v_1,v_1 \\rangle}v_1,\n\\]\n\\[\nv_3 = u_3 - \\frac{\\langle u_3,v_1 \\rangle}{\\langle v_1,v_1 \\rangle}v_1\n- \\frac{\\langle u_3,v_2 \\rangle}{\\langle v_2,v_2 \\rangle}v_2,\n\\]\nand in general, for each $k=1,\\dots,n$:\n\\[\nv_k = u_k - \\sum_{i=1}^{k-1}\\frac{\\langle u_k,v_i \\rangle}{\\langle v_i,v_i \\rangle}v_i.\n\\]\nEach new vector $v_k$ is formed by subtracting from $u_k$ its\nprojections onto all previously constructed vectors\n$v_1,\\dots,v_{k-1}$. Normalizing each $v_i$ (dividing by\n$\\|v_i\\|$) then produces an \\textbf{orthonormal basis}\n$\\{q_1,q_2,\\dots,q_n\\}$ of $V$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Gram-Schmidt Orthogonalization Process",
+    "type": "theorem",
+    "title": "Existence of an Orthonormal Basis",
+    "content": "Every finite-dimensional inner product space $V$ has an orthogonal\nbasis, and hence also an orthonormal basis. Both can be obtained by\napplying the Gram-Schmidt process to \\textbf{any} basis of $V$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Gram-Schmidt Orthogonalization Process",
+    "type": "example",
+    "title": "Example 5.27 --- Gram-Schmidt Process for Two Vectors",
+    "content": "Apply the Gram-Schmidt process to $u_1=(3,4)$ and $u_2=(1,2)$ in\n$\\mathbb{R}^2$ to find an orthogonal basis, then normalize to find\nan orthonormal basis.\n\n\\textbf{Solution:}\n\\[\nv_1 = u_1 = (3,4).\n\\]\n\\[\n\\langle u_2,v_1 \\rangle = (1)(3)+(2)(4) = 11, \\qquad\n\\langle v_1,v_1 \\rangle = 9+16 = 25.\n\\]\n\\[\nv_2 = u_2 - \\frac{11}{25}v_1 = (1,2) - \\frac{11}{25}(3,4)\n= \\left(1-\\frac{33}{25},\\ 2-\\frac{44}{25}\\right)\n= \\left(-\\frac{8}{25},\\ \\frac{6}{25}\\right).\n\\]\n\\textbf{Check:} $\\langle v_1,v_2 \\rangle = 3\\left(-\\tfrac{8}{25}\\right)+4\\left(\\tfrac{6}{25}\\right)\n= -\\tfrac{24}{25}+\\tfrac{24}{25}=0$. \\checkmark\n\n\\textbf{Normalize:}\n\\[\n\\|v_1\\| = \\sqrt{9+16} = 5, \\qquad\n\\|v_2\\| = \\sqrt{\\tfrac{64}{625}+\\tfrac{36}{625}} = \\sqrt{\\tfrac{100}{625}} = \\frac{2}{5}.\n\\]\n\\[\nq_1 = \\frac{v_1}{\\|v_1\\|} = \\left(\\frac{3}{5},\\frac{4}{5}\\right), \\qquad\nq_2 = \\frac{v_2}{\\|v_2\\|} = \\left(-\\frac{4}{5},\\frac{3}{5}\\right).\n\\]\n\\[\n\\{q_1,q_2\\} = \\boxed{\\left\\{\\left(\\tfrac{3}{5},\\tfrac{4}{5}\\right),\\ \\left(-\\tfrac{4}{5},\\tfrac{3}{5}\\right)\\right\\}}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Gram-Schmidt Orthogonalization Process",
+    "type": "example",
+    "title": "Example 5.28 --- Past Paper 2024 Q3(b) \\& 2025 Q3(b)",
+    "content": "Apply the Gram-Schmidt process to the basis vectors\n$u_1=(1,1,1)$, $u_2=(0,1,1)$, $u_3=(0,0,1)$ to transform them into\nan orthogonal basis, then normalize to obtain an orthonormal basis.\n\n\\textbf{Solution:}\n\\[\nv_1 = u_1 = (1,1,1), \\qquad \\langle v_1,v_1 \\rangle = 3.\n\\]\n\\[\n\\langle u_2,v_1 \\rangle = 0+1+1 = 2.\n\\]\n\\[\nv_2 = u_2 - \\frac{2}{3}v_1 = (0,1,1)-\\tfrac{2}{3}(1,1,1)\n= \\left(-\\tfrac{2}{3},\\ \\tfrac{1}{3},\\ \\tfrac{1}{3}\\right),\n\\qquad \\langle v_2,v_2 \\rangle = \\tfrac{4}{9}+\\tfrac{1}{9}+\\tfrac{1}{9} = \\tfrac{2}{3}.\n\\]\n\\[\n\\langle u_3,v_1 \\rangle = 0+0+1 = 1, \\qquad\n\\langle u_3,v_2 \\rangle = 0+0+\\tfrac{1}{3} = \\tfrac{1}{3}.\n\\]\n\\[\nv_3 = u_3 - \\frac{1}{3}v_1 - \\frac{1/3}{2/3}v_2\n= (0,0,1) - \\tfrac{1}{3}(1,1,1) - \\tfrac{1}{2}\\left(-\\tfrac{2}{3},\\tfrac{1}{3},\\tfrac{1}{3}\\right)\n\\]\n\\[\n= (0,0,1) - \\left(\\tfrac{1}{3},\\tfrac{1}{3},\\tfrac{1}{3}\\right) - \\left(-\\tfrac{1}{3},\\tfrac{1}{6},\\tfrac{1}{6}\\right)\n= \\left(0,\\ -\\tfrac{1}{2},\\ \\tfrac{1}{2}\\right).\n\\]\n\\textbf{Check:} $\\langle v_1,v_3 \\rangle=0-\\tfrac{1}{2}+\\tfrac{1}{2}=0$ \\checkmark,\\quad\n$\\langle v_2,v_3 \\rangle=0-\\tfrac{1}{6}+\\tfrac{1}{6}=0$ \\checkmark\n\n\\textbf{Normalize:}\n\\[\n\\|v_1\\|=\\sqrt3, \\qquad \\|v_2\\|=\\sqrt{\\tfrac{2}{3}}=\\tfrac{\\sqrt6}{3}, \\qquad \\|v_3\\|=\\sqrt{\\tfrac{1}{2}}=\\tfrac{1}{\\sqrt2}.\n\\]\n\\[\nq_1 = \\left(\\tfrac{1}{\\sqrt3},\\tfrac{1}{\\sqrt3},\\tfrac{1}{\\sqrt3}\\right), \\qquad\nq_2 = \\left(-\\tfrac{2}{\\sqrt6},\\tfrac{1}{\\sqrt6},\\tfrac{1}{\\sqrt6}\\right), \\qquad\nq_3 = \\left(0,-\\tfrac{1}{\\sqrt2},\\tfrac{1}{\\sqrt2}\\right).\n\\]\n\\[\n\\{q_1,q_2,q_3\\} = \\boxed{\\left\\{\\left(\\tfrac{1}{\\sqrt3},\\tfrac{1}{\\sqrt3},\\tfrac{1}{\\sqrt3}\\right),\n\\left(-\\tfrac{2}{\\sqrt6},\\tfrac{1}{\\sqrt6},\\tfrac{1}{\\sqrt6}\\right),\n\\left(0,-\\tfrac{1}{\\sqrt2},\\tfrac{1}{\\sqrt2}\\right)\\right\\}}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Gram-Schmidt Orthogonalization Process",
+    "type": "example",
+    "title": "Example 5.29 --- Past Paper 2021 Q6",
+    "content": "Show that $\\{(1,-1,0),(2,-1,-2),(1,-1,-2)\\}$ is a basis of\n$\\mathbb{R}^3$. Find an orthonormal basis of $\\mathbb{R}^3$ using\nthe Gram-Schmidt process.\n\n\\textbf{Solution:}\n\\textbf{Basis check:} compute the determinant of the matrix with\nthese vectors as rows:\n\\[\n\\det\\begin{bmatrix}1&-1&0\\\\2&-1&-2\\\\1&-1&-2\\end{bmatrix}\n= 1\\big((-1)(-2)-(-2)(-1)\\big) - (-1)\\big((2)(-2)-(-2)(1)\\big) + 0\n\\]\n\\[\n= 1(2-2)+1(-4+2) = 0-2 = -2.\n\\]\nSince $\\det = -2 \\neq 0$, the vectors are linearly independent and\nform a \\textbf{basis} of $\\mathbb{R}^3$.\n\n\\textbf{Gram-Schmidt:} let $u_1=(1,-1,0)$, $u_2=(2,-1,-2)$,\n$u_3=(1,-1,-2)$.\n\\[\nv_1 = u_1 = (1,-1,0), \\qquad \\langle v_1,v_1 \\rangle = 2.\n\\]\n\\[\n\\langle u_2,v_1 \\rangle = 2+1+0 = 3.\n\\]\n\\[\nv_2 = u_2 - \\frac{3}{2}v_1 = (2,-1,-2)-\\tfrac{3}{2}(1,-1,0)\n= \\left(\\tfrac{1}{2},\\ \\tfrac{1}{2},\\ -2\\right),\n\\qquad \\langle v_2,v_2 \\rangle = \\tfrac{1}{4}+\\tfrac{1}{4}+4 = \\tfrac{9}{2}.\n\\]\n\\[\n\\langle u_3,v_1 \\rangle = 1+1+0 = 2, \\qquad\n\\langle u_3,v_2 \\rangle = \\tfrac{1}{2}-\\tfrac{1}{2}+4 = 4.\n\\]\n\\[\nv_3 = u_3 - \\frac{2}{2}v_1 - \\frac{4}{9/2}v_2\n= (1,-1,-2) - (1,-1,0) - \\tfrac{8}{9}\\left(\\tfrac{1}{2},\\tfrac{1}{2},-2\\right)\n\\]\n\\[\n= (0,0,-2) - \\left(\\tfrac{4}{9},\\tfrac{4}{9},-\\tfrac{16}{9}\\right)\n= \\left(-\\tfrac{4}{9},\\ -\\tfrac{4}{9},\\ -\\tfrac{2}{9}\\right).\n\\]\n\\textbf{Normalize:}\n\\[\n\\|v_1\\|=\\sqrt2, \\qquad \\|v_2\\|=\\sqrt{\\tfrac{9}{2}}=\\tfrac{3}{\\sqrt2}, \\qquad\n\\|v_3\\|=\\sqrt{\\tfrac{16}{81}+\\tfrac{16}{81}+\\tfrac{4}{81}}=\\sqrt{\\tfrac{36}{81}}=\\tfrac{2}{3}.\n\\]\n\\[\nq_1 = \\left(\\tfrac{1}{\\sqrt2},-\\tfrac{1}{\\sqrt2},0\\right), \\qquad\nq_2 = \\left(\\tfrac{\\sqrt2}{6},\\tfrac{\\sqrt2}{6},-\\tfrac{2\\sqrt2}{3}\\right), \\qquad\nq_3 = \\left(-\\tfrac{2}{3},-\\tfrac{2}{3},-\\tfrac{1}{3}\\right).\n\\]\n\\[\n\\{q_1,q_2,q_3\\} = \\boxed{\\left\\{\\left(\\tfrac{1}{\\sqrt2},-\\tfrac{1}{\\sqrt2},0\\right),\n\\left(\\tfrac{\\sqrt2}{6},\\tfrac{\\sqrt2}{6},-\\tfrac{2\\sqrt2}{3}\\right),\n\\left(-\\tfrac{2}{3},-\\tfrac{2}{3},-\\tfrac{1}{3}\\right)\\right\\}}\n\\]\n\n\\bigskip"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Gram-Schmidt Orthogonalization Process",
+    "type": "example",
+    "title": "Example 5.30 --- Past Paper 2023 Q6",
+    "content": "Show that $\\{(1,0,1),(0,1,1),(0,0,1)\\}$ is a basis of\n$\\mathbb{R}^3$. Find an orthonormal basis of $\\mathbb{R}^3$ using\nthe Gram-Schmidt process.\n\n\\textbf{Solution:}\n\\textbf{Basis check:} the matrix with these vectors as rows is\nupper triangular:\n\\[\n\\det\\begin{bmatrix}1&0&1\\\\0&1&1\\\\0&0&1\\end{bmatrix} = (1)(1)(1) = 1 \\neq 0.\n\\]\nSince the determinant is nonzero, the vectors are linearly\nindependent and form a \\textbf{basis} of $\\mathbb{R}^3$.\n\n\\textbf{Gram-Schmidt:} let $u_1=(1,0,1)$, $u_2=(0,1,1)$,\n$u_3=(0,0,1)$.\n\\[\nv_1 = u_1 = (1,0,1), \\qquad \\langle v_1,v_1 \\rangle = 2.\n\\]\n\\[\n\\langle u_2,v_1 \\rangle = 0+0+1 = 1.\n\\]\n\\[\nv_2 = u_2 - \\frac{1}{2}v_1 = (0,1,1)-\\tfrac{1}{2}(1,0,1)\n= \\left(-\\tfrac{1}{2},\\ 1,\\ \\tfrac{1}{2}\\right),\n\\qquad \\langle v_2,v_2 \\rangle = \\tfrac{1}{4}+1+\\tfrac{1}{4} = \\tfrac{3}{2}.\n\\]\n\\[\n\\langle u_3,v_1 \\rangle = 0+0+1 = 1, \\qquad\n\\langle u_3,v_2 \\rangle = 0+0+\\tfrac{1}{2} = \\tfrac{1}{2}.\n\\]\n\\[\nv_3 = u_3 - \\frac{1}{2}v_1 - \\frac{1/2}{3/2}v_2\n= (0,0,1) - \\tfrac{1}{2}(1,0,1) - \\tfrac{1}{3}\\left(-\\tfrac{1}{2},1,\\tfrac{1}{2}\\right)\n\\]\n\\[\n= \\left(-\\tfrac{1}{2},0,\\tfrac{1}{2}\\right) - \\left(-\\tfrac{1}{6},\\tfrac{1}{3},\\tfrac{1}{6}\\right)\n= \\left(-\\tfrac{1}{3},\\ -\\tfrac{1}{3},\\ \\tfrac{1}{3}\\right).\n\\]\n\\textbf{Normalize:}\n\\[\n\\|v_1\\|=\\sqrt2, \\qquad \\|v_2\\|=\\sqrt{\\tfrac{3}{2}}=\\tfrac{\\sqrt6}{2}, \\qquad\n\\|v_3\\|=\\sqrt{\\tfrac{1}{9}+\\tfrac{1}{9}+\\tfrac{1}{9}}=\\tfrac{1}{\\sqrt3}.\n\\]\n\\[\nq_1 = \\left(\\tfrac{1}{\\sqrt2},0,\\tfrac{1}{\\sqrt2}\\right), \\qquad\nq_2 = \\left(-\\tfrac{1}{\\sqrt6},\\tfrac{2}{\\sqrt6},\\tfrac{1}{\\sqrt6}\\right), \\qquad\nq_3 = \\left(-\\tfrac{1}{\\sqrt3},-\\tfrac{1}{\\sqrt3},\\tfrac{1}{\\sqrt3}\\right).\n\\]\n\\[\n\\{q_1,q_2,q_3\\} = \\boxed{\\left\\{\\left(\\tfrac{1}{\\sqrt2},0,\\tfrac{1}{\\sqrt2}\\right),\n\\left(-\\tfrac{1}{\\sqrt6},\\tfrac{2}{\\sqrt6},\\tfrac{1}{\\sqrt6}\\right),\n\\left(-\\tfrac{1}{\\sqrt3},-\\tfrac{1}{\\sqrt3},\\tfrac{1}{\\sqrt3}\\right)\\right\\}}\n\\]"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Gram-Schmidt Orthogonalization Process",
+    "type": "keypoint",
+    "title": "{Gram-Schmidt --- Exam Strategy:} {enumerate}[leftmargin=2em,itemsep=4pt] Always",
+    "content": "\\textbf{Gram-Schmidt --- Exam Strategy:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item Always compute $v_1=u_1$ first, then find $v_2$ using only\n        $v_1$, then $v_3$ using \\textbf{both} $v_1$ and $v_2$ ---\n        never skip a projection term.\n  \\item Keep $\\langle v_i,v_i \\rangle$ values recorded as you go;\n        they are reused repeatedly in later projection\n        coefficients.\n  \\item Always verify orthogonality of each new $v_k$ against all\n        previous $v_i$ before moving on --- this catches arithmetic\n        errors early.\n  \\item Normalize \\textbf{only at the very end}, after the full\n        orthogonal basis $\\{v_1,\\dots,v_n\\}$ has been found ---\n        normalizing early makes the fractions in later projection\n        steps far messier.\n  \\item If the problem also asks to verify the given vectors form a\n        basis first, use the determinant test before starting\n        Gram-Schmidt.\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "Let $u=(2,-1,4)$ and $v=(3,0,-2)$ in $\\mathbb{R}^3$.\n  Compute $\\langle u,v \\rangle$ and $\\|u\\|$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "Compute $\\langle u,v \\rangle$ for $u=(1,-2)$ and $v=(3,1)$\n  using the weighted inner product with weights $w_1=3$, $w_2=2$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "Let $u=(1+i,\\ 2)$ and $v=(2-i,\\ 1+i)$ in $\\mathbb{C}^2$.\n  Compute $\\langle u,v \\rangle$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "Let $f(t)=1$ and $g(t)=t^2$ in $C[0,2]$. Compute\n  $\\langle f,g \\rangle = \\int_0^2 f(t)g(t)\\,dt$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "Normalize the vector $v=(2,-3,6)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "Verify the Cauchy-Schwarz Inequality for $u=(2,1,-1)$ and\n  $v=(1,3,2)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "Verify the Triangle Inequality for $u=(1,-1,2)$ and\n  $v=(3,0,-1)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "Find the angle between $u=(1,0,-1)$ and $v=(2,1,2)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "Determine whether $u=(3,2,-1)$ and $v=(1,-2,-1)$ are\n  orthogonal."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "Find $W^{\\perp}$ where $W=\\operatorname{span}\\{(1,2,-1)\\}$\n  in $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "Find a vector orthogonal to $u_1=(1,0,2)$ and\n  $u_2=(2,1,-1)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "Show that $P=\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}$ is an\n  orthogonal matrix."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "If $A$ is a $3 \\times 3$ orthogonal matrix with\n  $\\det A = -1$, find $\\det(A^2)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "Find an orthogonal matrix whose first row is\n  $\\left(\\dfrac{3}{5},\\dfrac{4}{5}\\right)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 15",
+    "content": "Determine whether $\\{(1,2,1),(2,-1,0),(1,2,-5)\\}$ is an\n  orthogonal set in $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 16",
+    "content": "Convert the orthogonal set from the previous problem into\n  an orthonormal set."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 17",
+    "content": "Explain why an orthogonal set of $4$ nonzero vectors in\n  $\\mathbb{R}^4$ must automatically be a basis of $\\mathbb{R}^4$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 18",
+    "content": "Express $v=(1,4,-2)$ as a linear combination of the\n  orthogonal basis $\\{(1,1,0),(1,-1,0),(0,0,1)\\}$ using Fourier\n  coefficients."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 19",
+    "content": "Verify the Pythagorean Theorem for the orthogonal vectors\n  $u=(2,0,-2)$ and $v=(1,3,1)$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 20",
+    "content": "Apply the Gram-Schmidt process to $u_1=(1,1,0)$ and\n  $u_2=(2,0,1)$ in $\\mathbb{R}^3$ to find an orthogonal basis."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 21",
+    "content": "Apply the Gram-Schmidt process to $u_1=(1,1,1)$,\n  $u_2=(1,0,1)$, $u_3=(1,1,0)$ to find an orthonormal basis of\n  $\\mathbb{R}^3$."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 22",
+    "content": "Show that $\\{(1,2,0),(0,1,1),(1,0,1)\\}$ is a basis of\n  $\\mathbb{R}^3$, then apply the Gram-Schmidt process to find an\n  orthonormal basis."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 23",
+    "content": "Apply the Gram-Schmidt process to $u_1=(1,0,1,0)$,\n  $u_2=(1,1,0,0)$, $u_3=(0,1,1,1)$ in $\\mathbb{R}^4$ to obtain an\n  orthogonal set."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 24",
+    "content": "Find an orthonormal basis for the subspace\n  $W=\\operatorname{span}\\{(1,1,0),(0,1,1)\\}$ of $\\mathbb{R}^3$\n  using the Gram-Schmidt process."
+  },
+  {
+    "course": "Linear Algebra",
+    "chapter": "Chapter 5 - Inner Product Spaces",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 25",
+    "content": "Let $W=\\operatorname{span}\\{(1,-1,1)\\}$ in $\\mathbb{R}^3$.\n  Find a spanning set for $W^{\\perp}$, then apply the Gram-Schmidt\n  process to obtain an orthonormal basis of $W^{\\perp}$."
+  }
+]

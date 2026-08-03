@@ -49,8 +49,10 @@ except (FileNotFoundError, KeyError):
 
 EMBEDDING_MODEL = "gemini-embedding-001"
 GENERATION_MODEL = "gemini-3.6-flash"
-MAX_HISTORY_TURNS = 4
-API_TIMEOUT_SECONDS = 15   # ek API call ko itne se zyada waqt nahi milega, chahe kuch bhi ho
+MAX_HISTORY_TURNS = 3   # follow-up ka prompt halka rakhne ke liye — zyada purani history se koi khaas fayda nahi, sirf prompt bada hota hai
+MAX_HISTORY_ANSWER_CHARS = 400  # purane answers ka sirf khulasa bhejte hain, poora nahi — taake conversation lambi ho to bhi prompt bara na ho
+EMBEDDING_TIMEOUT_SECONDS = 15   # embeddings chhoti/fast calls hain
+GENERATION_TIMEOUT_SECONDS = 35  # answers ka prompt bara ho sakta hai (follow-up history + notes context + kai fields generate karne hain), isliye zyada waqt dete hain
 NOT_FOUND_THRESHOLD = 0.35 # is se neeche confidence pe seedha "notes mein nahi mila" bol dete hain, AI ko call hi nahi karte
 FALLBACK_THRESHOLD = 0.50  # is se kam confidence pe cross-course suggestion dikhega
 CACHE_SIMILARITY_THRESHOLD = 0.93  # itni similarity pe purana jawab reuse hoga
@@ -61,7 +63,7 @@ LOG_FILE = "logs/question_log.csv"
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-def call_with_timeout(fn, timeout=API_TIMEOUT_SECONDS):
+def call_with_timeout(fn, timeout):
     """Kisi bhi function (API call) ko chalata hai, lekin agar itne second mein
     jawab na aaye, TimeoutError raise kar deta hai — chahe underlying library
     (google-genai) khud kuch bhi kare. Ye hang-proof guarantee deta hai.
@@ -182,7 +184,7 @@ def embed_query(text, retries=2):
     last_error = None
     for attempt in range(retries):
         try:
-            return call_with_timeout(_call)
+            return call_with_timeout(_call, EMBEDDING_TIMEOUT_SECONDS)
         except Exception as e:
             last_error = e
             if attempt < retries - 1:
@@ -390,8 +392,11 @@ def format_history(history):
         return "(This is the first question of the conversation)"
     lines = []
     for turn in history[-MAX_HISTORY_TURNS:]:
+        answer_text = turn["answer"].english
+        if len(answer_text) > MAX_HISTORY_ANSWER_CHARS:
+            answer_text = answer_text[:MAX_HISTORY_ANSWER_CHARS] + "... (truncated)"
         lines.append(f"Student: {turn['question']}")
-        lines.append(f"Assistant: {turn['answer'].english}")
+        lines.append(f"Assistant: {answer_text}")
     return "\n".join(lines)
 
 
@@ -418,7 +423,7 @@ def generate_answer(question, chunks, history, retries=2):
     last_error = None
     for attempt in range(retries):
         try:
-            return call_with_timeout(_call)
+            return call_with_timeout(_call, GENERATION_TIMEOUT_SECONDS)
         except Exception as e:
             last_error = e
             if attempt < retries - 1:

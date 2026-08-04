@@ -1,0 +1,10 @@
+# Sirf tab install karein jab config.py mein EMBEDDING_PROVIDER = "local" ho.
+# Alag file mein isliye rakha hai kyunke sentence-transformers PyTorch
+# saath laata hai (~1-2 GB) — jinhe local embeddings nahi chahiye unhe
+# itna bhara download nahi karna padega.
+#
+# Install:
+#   pip install -r requirements.txt
+#   pip install -r requirements-local-embeddings.txt
+
+sentence-transformers>=3.0.0

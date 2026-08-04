@@ -1,8 +1,16 @@
-streamlit
-google-genai
-numpy
-pydantic
-pandas
-sympy
-matplotlib
-networkx
+# Pinned to versions tested against this codebase (Aug 2026).
+# Pehle ye sab unpinned the — google-genai jaisi actively-evolving library
+# (Interactions API mein already ek breaking-change round ho chuka hai)
+# ke saath ye risky hai. Naya version chahiye ho to jaan-boojh kar upgrade
+# karein aur dobara test karein, "pip install" ko chup-chaap upgrade na
+# karne dein.
+
+streamlit==1.60.0
+google-genai==2.16.0
+numpy==2.4.4
+pydantic==2.13.4
+pandas==3.0.2
+sympy==1.14.0
+matplotlib==3.10.8
+networkx==3.6.1
+requests==2.33.1

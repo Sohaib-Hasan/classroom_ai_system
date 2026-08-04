@@ -49,6 +49,39 @@ def check_for_unhandled_environments(text, handled_types):
         print("   Check karein ke inme important content to nahi — agar hai to script mein add karwa lein.\n")
 
 
+def check_for_leaked_box_markup(chunks, handled_types):
+    """SAFETY NET (added after testing confirmed a real edge case): agar
+    do SAME-TYPE boxes nested hon (jaise ek definitionbox ke andar
+    doosra definitionbox), to ye parser unhe cleanly separate NAHI kar
+    pata — andar wale box ka apna title/chunk bilkul ban hi nahi ta, aur
+    uska raw `\\begin{...}`/`\\end{...}` markup bahar wale chunk ke
+    content mein literal text ki tarah reh jata hai (verified via a unit
+    test with a synthetic nested example).
+
+    Ye function har chunk ke final content ko check karta hai — agar
+    kahin bhi raw `\\begin{TYPE}` ya stray `\\end{TYPE}` reh gaya hai, to
+    loud warning deta hai, taake ye silently notes mein na chala jaye
+    (jahan students ko raw LaTeX commands nazar aayenge, aur embedding
+    quality bhi kharab hogi is noise ki wajah se). Fix: us jagah notes
+    mein manually restructure karein — jaise andar wale box ko ek alag
+    type (jaise keypoint) mein badal dein, ya use bahar nikaal kar sibling
+    bana dein, phir chunking dobara chalayein."""
+    pattern = re.compile(r"\\(begin|end)\{(" + "|".join(handled_types) + r")\}")
+    flagged = False
+    for c in chunks:
+        matches = pattern.findall(c["content"])
+        if matches:
+            if not flagged:
+                print("⚠️  WARNING: Kuch chunks ke content mein raw LaTeX box-markup reh gaya hai")
+                print("   (aksar wajah: ek box ke andar SAME TYPE ka doosra box nested hai, jo ye")
+                print("   parser cleanly handle nahi karta). Neeche di gayi jagah manually check karein:\n")
+            flagged = True
+            print(f"   - \"{c['title']}\" ({c['section']}) — ismein reh gaya: {matches}")
+    if flagged:
+        print("   Fix: us nested box ko manually restructure karein (jaise andar wale ko alag")
+        print("   box-type mein badlein, ya bahar nikal kar sibling bana dein), phir dobara chalayein.\n")
+
+
 def check_for_missed_practice_section(text, matched_title):
     """Warn karta hai agar koi 'practice' ya 'exercise' jaisa section mila
     jo humare regex ne pakda nahi."""
@@ -201,6 +234,7 @@ def parse_tex_notes(filepath, course_name, chapter_name):
         # ne (examplebox/theorembox ke tor pe) pakad liya hoga — dobara add
         # karne ki zarurat nahi.
 
+    check_for_leaked_box_markup(chunks, TITLED_BOX_TYPES + UNTITLED_BOX_TYPES)
     return chunks
 
 

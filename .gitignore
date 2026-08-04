@@ -24,3 +24,6 @@ venv/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Testing
+.pytest_cache/

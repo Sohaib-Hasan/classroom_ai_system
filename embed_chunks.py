@@ -6,7 +6,7 @@ Har chapter ke chunk-files (chapter1_chunks.json, calc_chapter1_chunks.json,
 dhoondh sake ke student ke sawal se kaunsa tukda match karta hai.
 
 Pehli baar chalane se pehle install karna hai (terminal mein):
-    pip install google-genai
+    pip install -r requirements.txt
 
 Phir seedha chalayein:
     python3 embed_chunks.py
@@ -15,19 +15,34 @@ RESUMABLE HAI: agar beech mein rukna paड़e (internet, quota, ya kuch aur),
 dobara wahi command chalayein — jo tukde pehle se ho chuke hain unhe dobara
 nahi karega, sirf baaki wale karega. Progress har 25 tukdon ke baad save
 hoti rehti hai, kabhi bhi rok sakte hain.
+
+BACKEND BADALNA HO (Gemini <-> local free model)? config.py mein
+EMBEDDING_PROVIDER badlein aur --rebuild ke saath chalayein:
+    python3 embed_chunks.py --rebuild
+
+--rebuild ZAROORI hai backend badalne par, kyunke alag backends ke
+embeddings AAPAS MEIN COMPATIBLE NAHI hain (dekhein embedding_backend.py).
+Bina --rebuild ke, script sirf "naye" chunks add karega aur purane
+(doosre backend wale) embeddings ko as-is chhod dega — jo galat/mixed
+knowledge base bana degi.
 """
 
-import json
+import argparse
 import glob
-import time
+import json
 import os
-from google import genai
-from google.genai import types
+import time
+
 from config import GEMINI_API_KEY
+try:
+    from config import EMBEDDING_PROVIDER
+except ImportError:
+    EMBEDDING_PROVIDER = "gemini"
 
-client = genai.Client(api_key=GEMINI_API_KEY)
+from core import truncate_for_embedding
+from embedding_backend import get_backend
+from google import genai
 
-EMBEDDING_MODEL = "gemini-embedding-001"
 OUTPUT_FILE = "knowledge_base.json"
 SAVE_EVERY = 25
 
@@ -59,15 +74,13 @@ def save_knowledge_base(knowledge_base):
         json.dump(knowledge_base, f)
 
 
-def get_embedding(text, retries=3):
+def get_embedding(backend, text, retries=3):
+    text, was_truncated = truncate_for_embedding(text)
+    if was_truncated:
+        print("  ⚠️  Ye chunk embedding model ki input-limit se bada tha — truncate kar diya gaya.")
     for attempt in range(retries):
         try:
-            result = client.models.embed_content(
-                model=EMBEDDING_MODEL,
-                contents=text,
-                config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT"),
-            )
-            return result.embeddings[0].values
+            return backend.embed_document(text)
         except Exception as e:
             print(f"  Koshish {attempt + 1} fail hui: {e}")
             time.sleep(3)
@@ -75,8 +88,20 @@ def get_embedding(text, retries=3):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--rebuild",
+        action="store_true",
+        help="Poori knowledge base dobara embed karo (backend badalne ke baad zaroori hai).",
+    )
+    args = parser.parse_args()
+
+    client = genai.Client(api_key=GEMINI_API_KEY) if EMBEDDING_PROVIDER == "gemini" else None
+    backend = get_backend(EMBEDDING_PROVIDER, client=client)
+    print(f"Embedding provider: {backend.name}\n")
+
     all_chunks = load_all_chunks()
-    knowledge_base = load_existing_knowledge_base()
+    knowledge_base = [] if args.rebuild else load_existing_knowledge_base()
     already_done = {chunk_id(c) for c in knowledge_base}
 
     remaining = [c for c in all_chunks if chunk_id(c) not in already_done]
@@ -86,12 +111,13 @@ def main():
 
     if not remaining:
         print("Sab kuch pehle se ho chuka hai! Kuch karne ki zarurat nahi.")
+        print("(Agar backend badla hai to `python3 embed_chunks.py --rebuild` chalayein.)")
         return
 
     for i, chunk in enumerate(remaining):
         text_to_embed = f"{chunk['course']} - {chunk['chapter']} - {chunk['section']} - {chunk['title']}\n{chunk['content']}"
 
-        embedding = get_embedding(text_to_embed)
+        embedding = get_embedding(backend, text_to_embed)
         if embedding is None:
             print(f"  ⚠️  Skip ho gaya (3 koshishon ke baad bhi fail): {chunk['title']}")
             continue
@@ -104,7 +130,8 @@ def main():
             save_knowledge_base(knowledge_base)
             print(f"  {i + 1}/{len(remaining)} ho gaye... (progress save ho gayi)")
 
-        time.sleep(1)  # free tier ki rate-limit se bachne ke liye
+        if backend.name == "gemini":
+            time.sleep(1)  # free tier ki rate-limit se bachne ke liye — local model ko iski zaroorat nahi
 
     save_knowledge_base(knowledge_base)
     print(f"\n✅ Done! Total {len(knowledge_base)} tukdon ke embeddings '{OUTPUT_FILE}' mein save ho gaye.")

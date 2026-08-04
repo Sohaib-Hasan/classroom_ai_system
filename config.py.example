@@ -1,0 +1,42 @@
+"""
+config.py.example
+--------------------
+Ye sirf ek TEMPLATE hai — real secrets is file mein NAHI likhne.
+
+Kya karna hai:
+    1. Is file ki copy banayein aur naam `config.py` rakhein:
+           cp config.py.example config.py
+    2. `config.py` mein apni asli values bharein.
+    3. `config.py` ko kabhi commit na karein — `.gitignore` mein
+       already add hai, lekin double-check zaroor kar lein.
+
+Streamlit Cloud pe deploy karte waqt, ye values yahan nahi — "Secrets"
+settings (Settings > Secrets) mein daalni hain, isi naam se.
+"""
+
+# --- Zaroori (required) ---
+GEMINI_API_KEY = "your-gemini-api-key-here"       # https://aistudio.google.com/apikey se milti hai
+CLASS_PIN = "1234"                                 # students isse app open karne ke liye use karenge
+TEACHER_PASSWORD = "change-me-to-something-strong"  # sirf dashboard.py ke liye
+
+# --- Optional: embedding provider ---
+# "gemini" (default) ya "local" (free, apne machine par chalta hai, koi
+# API key/quota nahi chahiye — dekhein embedding_backend.py aur README.md
+# ka "Zero-budget setup" section). Agar "local" karein to
+# `pip install -r requirements-local-embeddings.txt` bhi chalayein, aur
+# `python3 embed_chunks.py --rebuild` se knowledge base dobara banayein.
+EMBEDDING_PROVIDER = "gemini"
+
+# --- Optional: generation fallback provider ---
+# Agar Gemini free-tier quota exam-week mein khatam ho jaye, to yahan ek
+# fallback provider set kar sakte hain (jaise AgentRouter — agentrouter.org
+# — ya OpenRouter, Groq, waghera). Chhod dein `None` par agar fallback
+# nahi chahiye (default behaviour, Gemini failure seedha error dega jaisa
+# pehle hota tha).
+#
+# GENERATION_FALLBACK_PROVIDER = "agentrouter"
+# GENERATION_FALLBACK_API_KEY = "sk-..."            # apni AgentRouter key (kabhi commit na karein!)
+# GENERATION_FALLBACK_MODEL = "claude-sonnet-4-5-20250929"  # apne console mein available model dekhein
+GENERATION_FALLBACK_PROVIDER = None
+GENERATION_FALLBACK_API_KEY = None
+GENERATION_FALLBACK_MODEL = None

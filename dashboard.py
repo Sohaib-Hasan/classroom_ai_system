@@ -1,16 +1,20 @@
 """
 dashboard.py
 --------------
-Teacher-only view: topics, trends, gaps in notes, AND now — verification
-results, cache effectiveness, and repeated-confusion signals.
+Teacher-only view: topics, trends, gaps in notes, verification results,
+cache effectiveness, aur repeated-confusion signals.
 
 Chalane ka tareeqa:
     streamlit run dashboard.py
 """
 
 import os
+
 import pandas as pd
 import streamlit as st
+
+from auth_guard import AttemptState, is_locked_out, record_attempt, seconds_remaining
+from cache_store import QACache
 
 try:
     TEACHER_PASSWORD = st.secrets["TEACHER_PASSWORD"]
@@ -18,22 +22,33 @@ except (FileNotFoundError, KeyError):
     from config import TEACHER_PASSWORD
 
 LOG_FILE = "logs/question_log.csv"
+CACHE_DB_FILE = "cache/qa_cache.db"
 WEAK_MATCH_THRESHOLD = 0.55
 
 st.set_page_config(page_title="Teacher Dashboard", page_icon="📊")
 
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
+if "teacher_attempts" not in st.session_state:
+    st.session_state.teacher_attempts = AttemptState()
 
 if not st.session_state.authenticated:
     st.title("📊 Teacher Dashboard")
+
+    if is_locked_out(st.session_state.teacher_attempts):
+        st.error(f"Too many incorrect attempts. Try again in {seconds_remaining(st.session_state.teacher_attempts)}s.")
+        st.stop()
+
     pwd = st.text_input("Password:", type="password")
     if st.button("Login"):
-        if pwd == TEACHER_PASSWORD:
+        correct = pwd == TEACHER_PASSWORD
+        st.session_state.teacher_attempts = record_attempt(st.session_state.teacher_attempts, correct)
+        if correct:
             st.session_state.authenticated = True
             st.rerun()
         else:
             st.error("Incorrect password.")
+            st.rerun()
     st.stop()
 
 st.title("📊 Teacher Dashboard")
@@ -108,7 +123,7 @@ if "similarity" in df.columns:
         st.warning(f"{len(weak)} question(s) where the assistant couldn't find a confident answer in the notes. These topics may need more content:")
         st.dataframe(
             weak[["date", "question", "matched_section", "similarity"]],
-            use_container_width=True,
+            width='stretch',
             hide_index=True,
         )
 else:
@@ -141,10 +156,15 @@ if "grounding" in df.columns:
             st.warning(f"{verified_false} AI-calculated answer(s) failed SymPy verification — worth a manual spot-check:")
             st.dataframe(
                 adapted[adapted["verified"].astype(str) == "False"][["date", "question", "matched_section"]],
-                use_container_width=True,
+                width='stretch',
                 hide_index=True,
             )
-    st.caption("Recommended practice: each week, manually spot-check 20-30 'adapted by AI' answers yourself, especially ones marked 'not auto-checkable' — and specifically include a few matrix/determinant-type questions, since the caching safety-check compares numbers but not their row/column arrangement (e.g. [[1,2],[3,4]] vs [[1,3],[2,4]] would look identical to it).")
+    st.caption(
+        "Recommended practice: each week, manually spot-check 20-30 'adapted by AI' answers yourself, "
+        "especially ones marked 'not auto-checkable'. The verification sampling now checks negative, "
+        "positive, and near-zero values (fixed from an earlier version that only sampled positive "
+        "numbers), but SymPy verification is still a safety net, not a guarantee."
+    )
     st.divider()
 
 # ------------------------------------------------------------------
@@ -163,10 +183,29 @@ if "from_cache" in df.columns or "repeated_confusion" in df.columns:
     st.divider()
 
 # ------------------------------------------------------------------
+# 6. Cache size (quota-saving visibility — zero-budget setups care about this)
+# ------------------------------------------------------------------
+if os.path.isfile(CACHE_DB_FILE):
+    st.subheader("Answer cache")
+    try:
+        cache = QACache(CACHE_DB_FILE)
+        stats = cache.stats()
+        col_h, col_i = st.columns(2)
+        col_h.metric("Cached unique Q&A pairs", stats["total_entries"])
+        col_i.metric("Courses represented", len(stats["by_course"]))
+        st.caption(
+            "Every cached entry is a generation API call that future students won't need to "
+            "spend quota on. Stored in SQLite (cache/qa_cache.db) — no manual cleanup needed."
+        )
+    except Exception:
+        pass
+    st.divider()
+
+# ------------------------------------------------------------------
 # Raw data + export
 # ------------------------------------------------------------------
 with st.expander("View / download full data"):
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    st.dataframe(df, width='stretch', hide_index=True)
     st.download_button(
         "Download CSV",
         data=df.to_csv(index=False),

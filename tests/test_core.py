@@ -9,6 +9,8 @@ Chalane ka tareeqa:
     pytest tests/ -v
 """
 
+import json
+
 import numpy as np
 import pytest
 
@@ -16,6 +18,7 @@ from core import (
     cosine_sim_matrix,
     decide_retrieval_strategy,
     math_signature,
+    repair_json_escaping,
     structural_signature,
     top_chunks_from_vector,
     truncate_for_embedding,
@@ -27,6 +30,58 @@ from core import (
 # ------------------------------------------------------------------
 # verify_computation — ye woh exact bug hai jo review mein mila tha
 # ------------------------------------------------------------------
+class TestRepairJsonEscaping:
+    """FIX regression tests for the exact production bug reported: Gemini
+    forgot to double-escape backslashes in LaTeX commands (\\times,
+    \\buildrel, \\pmod), which silently corrupted text (missing first
+    letters: "\\times" -> "imes") or crashed the whole answer."""
+
+    def test_fixes_single_backslash_latex_command(self):
+        raw = r'{"a": "x \times y"}'
+        repaired = repair_json_escaping(raw)
+        parsed = json.loads(repaired)
+        assert parsed["a"] == r"x \times y"
+
+    def test_fixes_multiple_latex_commands_in_one_string(self):
+        raw = r'{"a": "a \times a^{-1} \buildrel p \over \equiv 1 \pmod{p}"}'
+        repaired = repair_json_escaping(raw)
+        parsed = json.loads(repaired)  # should not raise
+        assert "\\times" in parsed["a"]
+        assert "\\buildrel" in parsed["a"]
+        assert "\\pmod" in parsed["a"]
+        # crucially, no letters were silently eaten
+        assert "imes" not in parsed["a"].replace("\\times", "")
+        assert "uildrel" not in parsed["a"].replace("\\buildrel", "")
+
+    def test_does_not_touch_already_correctly_escaped_json(self):
+        raw = r'{"a": "x \\times y"}'  # already correct (double backslash)
+        repaired = repair_json_escaping(raw)
+        assert repaired == raw
+
+    def test_does_not_touch_valid_single_char_json_escapes(self):
+        raw = r'{"a": "line1\nline2\ttabbed"}'
+        repaired = repair_json_escaping(raw)
+        assert repaired == raw  # \n and \t alone (not followed by more letters) are untouched
+
+    def test_does_not_touch_unicode_escapes(self):
+        raw = r'{"a": "\u0041"}'
+        repaired = repair_json_escaping(raw)
+        assert repaired == raw
+
+    def test_reproduces_and_fixes_the_exact_reported_bug(self):
+        # Simulates the literal corruption pattern the user reported in
+        # production: "\times" -> "imes", "\buildrel" -> "uildrel"
+        broken_raw = r'{"a": "\times a \buildrel p \over \equiv 1"}'
+        # Confirm this WOULD corrupt/crash without the fix
+        import pytest as _pytest
+        with _pytest.raises(json.JSONDecodeError):
+            json.loads(broken_raw)
+        # Confirm the fix resolves it
+        repaired = repair_json_escaping(broken_raw)
+        parsed = json.loads(repaired)  # should not raise now
+        assert parsed["a"].startswith(r"\times")
+
+
 class TestVerifyComputationDomainBug:
     """FIX regression test: pehle verify_computation sirf [1.5, 4.5]
     (sirf positive) se sample karta tha, isliye sqrt(x**2) == x jaisi

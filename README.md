@@ -1,212 +1,178 @@
 # Classroom AI System
 
-A Streamlit-based doubt-clearing assistant that answers questions **only from your course notes**. Instead of asking a general AI model, the system first searches your course material and provides answers grounded in your notes.
+Ek Streamlit-based doubt-clearing assistant jo sirf aapke course notes se
+grounded jawab deta hai — kisi bhi topic pe seedha "AI se poochna" nahi,
+balke "aapke course ke notes ke andar dhoondh kar jawab dena."
 
-## Repository Structure
+## Kya-kya hai is repo mein
 
-| File                          | Purpose                                                                  |
-| ----------------------------- | ------------------------------------------------------------------------ |
-| `app.py`                      | Student chat interface                                                   |
-| `dashboard.py`                | Teacher-only analytics dashboard                                         |
-| `chunk_notes.py`              | Splits `.tex` lecture notes into smaller chunks                          |
-| `embed_chunks.py`             | Generates embeddings for each chunk and builds `knowledge_base.json`     |
-| `core.py`                     | Pure business logic (independent of Streamlit and fully testable)        |
-| `embedding_backend.py`        | Embedding provider abstraction (Gemini or a free local model)            |
-| `generation_backend.py`       | Generation provider abstraction (Gemini with optional fallback provider) |
-| `cache_store.py`              | SQLite-backed Q&A cache                                                  |
-| `auth_guard.py`               | PIN/password brute-force protection                                      |
-| `logging_setup.py`            | Error logging configuration                                              |
-| `knowledge_base_loader.py`    | Loads `knowledge_base.json`                                              |
-| `list_models.py`              | Diagnostic tool to list models available for your API key                |
-| `verify_fallback_provider.py` | Manual smoke test for the fallback provider (e.g., AgentRouter)          |
-| `tests/`                      | Automated test suite (pytest)                                            |
+| File | Kya karta hai |
+|---|---|
+| `app.py` | Students ke liye chat UI |
+| `dashboard.py` | Teacher-only analytics dashboard |
+| `chunk_notes.py` | `.tex` notes ko chhote "chunks" mein todta hai |
+| `embed_chunks.py` | Har chunk ka embedding banata hai (`knowledge_base.json`) |
+| `core.py` | Saari pure business-logic (Streamlit se independent — testable) |
+| `embedding_backend.py` | Embedding provider abstraction (Gemini ya free local model) |
+| `generation_backend.py` | Generation provider abstraction (Gemini + optional fallback) |
+| `cache_store.py` | SQLite-backed Q&A cache |
+| `db_connection.py` | Pluggable storage connection (local SQLite ya Turso — shared data across separately-deployed apps) |
+| `question_log_store.py` | Question-activity log (dashboard analytics ka data source) |
+| `auth_guard.py` | PIN/password brute-force lockout logic |
+| `logging_setup.py` | Error logging |
+| `knowledge_base_loader.py` | `knowledge_base.json` ko load karta hai |
+| `list_models.py` | Diagnostic: aapki API key ke available models dikhata hai |
+| `verify_fallback_provider.py` | Manual smoke-test AgentRouter/fallback provider ke liye |
+| `tests/` | Automated tests (pytest) |
 
-## Initial Setup
+## Setup (pehli baar)
 
 ```bash
 pip install -r requirements.txt
 cp config.py.example config.py
 ```
 
-Open `config.py` and provide your configuration values (at minimum `GEMINI_API_KEY`, `CLASS_PIN`, and `TEACHER_PASSWORD`).
-
-You can obtain a Gemini API key here:
-
+`config.py` khol kar apni values bharein (`GEMINI_API_KEY`, `CLASS_PIN`,
+`TEACHER_PASSWORD` kam se kam). API key yahan se milti hai:
 https://aistudio.google.com/apikey
 
-To build the knowledge base from your lecture notes:
-
+Notes se knowledge base banane ke liye:
 ```bash
-python3 chunk_notes.py
-python3 embed_chunks.py
+python3 chunk_notes.py    # .tex notes -> *_chunks.json (agar aapka apna chunking script hai)
+python3 embed_chunks.py   # *_chunks.json -> knowledge_base.json
 ```
 
-Run the application:
-
+Chalana:
 ```bash
-streamlit run app.py         # Student interface
-streamlit run dashboard.py   # Teacher dashboard
+streamlit run app.py         # student chat
+streamlit run dashboard.py   # teacher dashboard
 ```
 
-## Running the Tests
+## Tests chalana
 
 ```bash
 pip install pytest
 pytest tests/ -v
 ```
 
-The repository includes **70 automated tests**, covering all major bugs identified during previous code reviews (see `CHANGELOG.md`) to help prevent regressions.
+70 tests hain — inme woh sab bugs bhi cover hote hain jo pehle review mein
+mile the (dekhein `CHANGELOG.md`), taake wo dobara chup-chaap wapas na aa
+sakein.
 
----
+## Teacher aur student app ALAG deploy kar rahe hain? (important)
 
-# Zero-Budget Setup
+Agar `app.py` aur `dashboard.py` ko do ALAG Streamlit Cloud apps ke tor
+par deploy kar rahe hain (do alag URLs, jaise ye project), to **dashboard
+by default khali dikhega** — har Streamlit Cloud app apna isolated
+container use karta hai, local SQLite file ek doosre ko nazar nahi aati.
 
-This project is designed to operate with **minimal or zero infrastructure cost**.
-
-There are two components that consume API quota:
-
-* Embeddings
-* Answer generation
-
-Both can be configured to remain free-tier friendly.
-
-## Embeddings (Retrieval)
-
-**Important:** Every user question requires an embedding request, even when the final answer comes from the cache, because the query embedding is needed to search the cache itself.
-
-As a result, **embeddings—not answer generation—are usually the primary quota bottleneck.**
-
-### Option 1 — Gemini (Default)
-
-Free, subject to Gemini's current free-tier limits.
-
-```python
-EMBEDDING_PROVIDER = "gemini"
+Fix: dono apps ki Secrets mein SAME Turso credentials daalein:
+```toml
+TURSO_DATABASE_URL = "libsql://your-db-name.turso.io"
+TURSO_AUTH_TOKEN = "..."
 ```
-
-### Option 2 — Local Model (Recommended if quota becomes an issue)
-
-A completely free local embedding model with:
-
-* No API key
-* No rate limits
-* Runs entirely on your own machine
-
-Install:
-
+Setup steps `db_connection.py` ke docstring mein hain (5 minute ka kaam,
+free). Deploy se pehle confirm karne ke liye:
 ```bash
-pip install -r requirements-local-embeddings.txt
+pip install -r requirements-turso.txt
+python3 verify_turso_connection.py
 ```
 
-Then set:
+Agar dono apps ko sirf EK hi Streamlit app ke tor par (multipage) chalayein,
+to Turso ki zaroorat nahi — local storage kaam kar jayega, lekin restart/
+sleep pe wo bhi reset ho sakti hai (Streamlit Cloud free tier ka local
+storage permanent nahi hota).
+
+## Zero-budget setup
+
+Is system ka design hi is soch ke saath hua hai ke koi paisa kharch na ho.
+Do hisse hain jahan quota lagta hai — **embedding** aur **generation** —
+aur dono independently free-tier-friendly banaye ja sakte hain.
+
+### Embedding (retrieval) — sabse zyada consume hone wala hissa
+
+**Important fact**: har sawal — chahe cache se mile ya nahi — pehle ek
+embedding call zaroor karta hai (query ko cache se match karne ke liye bhi
+uska embedding chahiye hota hai). Isliye embedding hi asal bottleneck hai,
+generation nahi (jo caching se bach jata hai).
+
+Do options:
+1. **Gemini (default)** — free, lekin apni RPD limit hai jo mahine dar
+   mahine badalti hai. `config.py`: `EMBEDDING_PROVIDER = "gemini"`.
+2. **Local/free model (recommended agar quota tight ho)** — bilkul free,
+   koi rate-limit nahi, koi API key nahi, aapke apne machine par chalta
+   hai:
+   ```bash
+   pip install -r requirements-local-embeddings.txt
+   ```
+   `config.py`: `EMBEDDING_PROVIDER = "local"`, phir:
+   ```bash
+   python3 embed_chunks.py --rebuild
+   ```
+   `--rebuild` **zaroori** hai — Gemini aur local model ke embeddings
+   AAPAS MEIN compatible nahi hain, mix karna galat results dega.
+
+### Generation (answer-writing)
+
+Default: Gemini. Agar exam-week jaisi heavy traffic mein Gemini ka
+free-tier quota khatam ho jaye, ek fallback provider configure kar sakte
+hain (jaise AgentRouter) jo Gemini fail hone par automatically try hoga:
 
 ```python
-EMBEDDING_PROVIDER = "local"
-```
-
-Rebuild the knowledge base:
-
-```bash
-python3 embed_chunks.py --rebuild
-```
-
-**Important:** Rebuilding is mandatory because Gemini embeddings and local embeddings are **not compatible** with one another.
-
----
-
-## Answer Generation
-
-The default generation provider is **Gemini**.
-
-If Gemini becomes unavailable (for example, during heavy exam-week traffic or due to free-tier quota exhaustion), an optional fallback provider (such as AgentRouter) can be configured.
-
-Example:
-
-```python
+# config.py
 GENERATION_FALLBACK_PROVIDER = "agentrouter"
 GENERATION_FALLBACK_API_KEY = "sk-..."
-GENERATION_FALLBACK_MODEL = "claude-sonnet-4-5-20250929"
+GENERATION_FALLBACK_MODEL = "claude-sonnet-4-5-20250929"  # apne console mein confirm karein
 ```
 
-### Important Notes About Third-Party Gateways
+**Zaroori caveats third-party gateways (AgentRouter, OpenRouter, etc.) ke
+baare mein:**
+- Ye unverified third-party proxies hain — koi published data-retention
+  policy nahi. Isse **primary/only** backbone na banayein, sirf fallback.
+- Deploy se pehle `python3 verify_fallback_provider.py` chala kar khud
+  confirm karein ke ye kaam kar raha hai — is integration ko live test
+  nahi kiya gaya tha (development sandbox mein network restricted thi).
+- **Apni API key kabhi bhi chat, code comments, ya commit mein na
+  likhein** — sirf `config.py` (gitignored) ya Streamlit Secrets mein.
+  Agar koi key kabhi chat/screenshot mein share ho jaye, use turant
+  revoke/regenerate kar dein — wo compromised maani jani chahiye.
 
-Services such as AgentRouter or OpenRouter are third-party proxy providers.
+## Architecture notes
 
-Before using them:
+- `core.py` mein koi `import streamlit` nahi hai — jaan-boojh kar, taake
+  business logic ko bina Streamlit chalaye test kiya ja sake.
+- Cache SQLite mein hai (`cache/qa_cache.db`), flat JSON mein nahi — purana
+  design har save par poori file rewrite karta tha.
+- `verify_computation()` ab negative, positive, aur near-zero — teenon
+  domains se sample karta hai (pehle sirf positive, jis se domain-sensitive
+  galtiyan jaise `sqrt(x**2) == x` "verified True" ban jati thi).
 
-* Do not rely on them as your primary production backend.
-* Run `python3 verify_fallback_provider.py` to verify the integration before deployment.
-* Never commit API keys to Git, source code, comments, screenshots, or chat messages.
-* Store secrets only in `config.py` (ignored by Git) or in Streamlit Secrets.
-* If an API key is ever exposed, revoke and regenerate it immediately.
+## Known limitations (honestly documented, jaan-boojh kar fix nahi kiye)
 
----
+- **Nested same-type LaTeX boxes** (ek `definitionbox` ke andar doosra
+  `definitionbox`): `chunk_notes.py` ka parser inhe cleanly separate nahi
+  karta — andar wale box ka apna chunk nahi banta, aur uska raw markup
+  bahar wale chunk mein leak ho jata hai. Ye behavior test se confirmed
+  hai (`tests/test_chunk_notes.py`). Ek safety-net warning
+  (`check_for_leaked_box_markup`) ise loudly flag karti hai jab bhi
+  `embed_chunks.py`/`chunk_notes.py` chale, taake ye chup-chaap knowledge
+  base mein na jaye. Agar aapke notes mein aisi nesting hai, wahan manually
+  restructure karein (andar wale box ko alag type mein badlein).
+- **Structural cache-safety signature** (`structural_signature` in
+  `core.py`) bracket-nesting/grouping capture karti hai, lekin ye
+  guarantee nahi ki koi bhi do structurally-different-lekin-textually-
+  identical inputs kabhi confuse nahi honge — bohat kam-probability edge
+  cases theoretically ho sakte hain.
+- AgentRouter/fallback provider integration live-tested nahi (upar
+  dekhein) — deploy se pehle khud confirm karein.
 
-# Architecture Notes
+## Deploy karna (Streamlit Cloud)
 
-* `core.py` intentionally contains **no `streamlit` imports**, allowing business logic to be tested independently.
-* The cache is stored in SQLite (`cache/qa_cache.db`) rather than a JSON file, avoiding complete file rewrites after every cache update.
-* `verify_computation()` validates AI-generated calculations using samples from **negative, positive, and near-zero domains**, reducing false positives that can occur with domain-sensitive mathematical expressions.
-
----
-
-# Known Limitations
-
-The following limitations are intentionally documented rather than hidden.
-
-### Nested LaTeX Boxes
-
-If one `definitionbox` is nested inside another `definitionbox`, the parser in `chunk_notes.py` cannot separate them cleanly.
-
-Instead:
-
-* the inner box is not extracted as its own chunk,
-* raw LaTeX markup may leak into the parent chunk.
-
-This behavior is covered by automated tests (`tests/test_chunk_notes.py`).
-
-The helper `check_for_leaked_box_markup` raises a warning whenever such markup is detected during `chunk_notes.py` or `embed_chunks.py`, preventing the issue from silently entering the knowledge base.
-
-If your notes contain nested boxes, restructure them manually (for example, by using a different environment for the inner box).
-
----
-
-### Structural Cache Signature
-
-`structural_signature` in `core.py` captures bracket nesting and expression structure.
-
-Although it significantly improves cache safety, it cannot mathematically guarantee that every structurally different but textually similar expression will always be distinguished.
-
-Extremely rare edge cases may still exist.
-
----
-
-### Fallback Provider
-
-The AgentRouter (or any fallback provider) integration has **not been live-tested in production**.
-
-Always run:
-
-```bash
-python3 verify_fallback_provider.py
-```
-
-before deploying.
-
----
-
-# Deployment (Streamlit Cloud)
-
-1. Push the repository to GitHub.
-   Ensure that `config.py` is **never committed** (it is already listed in `.gitignore`; verify before pushing).
-
-2. Create a new application on Streamlit Cloud and connect it to this repository.
-
-3. Open **Settings → Secrets** and add the same configuration variables used in `config.py`, including:
-
-   * `GEMINI_API_KEY`
-   * `CLASS_PIN`
-   * `TEACHER_PASSWORD`
-   * and any additional required settings.
-
-4. If `knowledge_base.json` is stored using Git LFS, verify after deployment that Streamlit Cloud downloads the **actual file** (approximately 94 MB or larger) rather than only the Git LFS pointer.
+1. Repo ko GitHub par push karein (`config.py` push NA ho — `.gitignore`
+   mein already hai, double-check zaroor karein).
+2. Streamlit Cloud pe naya app banayein, is repo ko point karein.
+3. Settings → Secrets mein `config.py` jaisi values daalein (isi naam se:
+   `GEMINI_API_KEY`, `CLASS_PIN`, `TEACHER_PASSWORD`, waghera).
+4. `knowledge_base.json` agar Git LFS se hai to Streamlit Cloud LFS support
+   karta hai — confirm kar lein ke deploy ke baad file poori (94MB+, sirf
+   LFS pointer nahi) load ho rahi hai.

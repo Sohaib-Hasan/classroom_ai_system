@@ -1,0 +1,11 @@
+# Sirf tab install karein jab config.py mein TURSO_DATABASE_URL /
+# TURSO_AUTH_TOKEN set karna ho (teacher aur student apps ko alag
+# deploy karte waqt data share karne ke liye). Alag file mein isliye
+# hai taake single-app/local-testing setups ko ye extra dependency na
+# chahiye ho.
+#
+# Install:
+#   pip install -r requirements.txt
+#   pip install -r requirements-turso.txt
+
+libsql-client>=0.3.1

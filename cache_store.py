@@ -62,15 +62,26 @@ def _blob_to_vec(blob: bytes) -> np.ndarray:
 
 
 class QACache:
-    """Thread-safe SQLite-backed QA cache. Ek hi instance poore app mein
+    """Thread-safe SQL-backed QA cache. Ek hi instance poore app mein
     reuse karein (Streamlit ke `st.cache_resource` ke saath, jaisa
-    app.py mein hota hai)."""
+    app.py mein hota hai).
 
-    def __init__(self, db_path: str = "cache/qa_cache.db"):
-        self._db_path = Path(db_path)
-        self._db_path.parent.mkdir(parents=True, exist_ok=True)
+    Do tareeqon se banayi ja sakti hai:
+      - `QACache("cache/qa_cache.db")` — purana behaviour, local SQLite
+        file (single-app setups ke liye).
+      - `QACache(connection=shared_conn)` — ek pehle se bani connection
+        (local ya Turso, dekhein db_connection.py) pass karein, taake
+        cache aur question-log dono SAME database share karein — teacher
+        aur student apps alag deploy hon tab bhi."""
+
+    def __init__(self, db_path: str = "cache/qa_cache.db", connection=None):
+        if connection is not None:
+            self._conn = connection
+        else:
+            self._db_path = Path(db_path)
+            self._db_path.parent.mkdir(parents=True, exist_ok=True)
+            self._conn = sqlite3.connect(str(self._db_path), check_same_thread=False)
         self._lock = threading.Lock()
-        self._conn = sqlite3.connect(str(self._db_path), check_same_thread=False)
         self._conn.executescript(_SCHEMA)
         self._conn.commit()
 

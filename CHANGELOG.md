@@ -84,9 +84,50 @@ Fix: `width='stretch'` mein badla — discovered via live AppTest simulation
   optional OpenAI-compatible fallback, jaise AgentRouter, sirf backup ke
   tor par).
 
+## Post-deployment fixes (Aug 2026) — real bugs found in production use
+
+**11. LaTeX commands in AI answers corrupted to garbled text**
+Reported: student saw text like "imes" instead of "×", "uildrel" instead
+of part of a LaTeX command, in the Roman Urdu explanation. Root cause
+(confirmed by reproduction): Gemini sometimes writes LaTeX commands
+(`\times`, `\buildrel`, `\pmod`) in the JSON response without properly
+double-escaping the backslash. JSON then interprets `\t`/`\b`/etc. as
+actual control characters (tab, backspace), silently eating the first
+letter — or, for letters that aren't valid JSON escapes, crashes the
+whole answer. Fix: `core.repair_json_escaping()` repairs the raw text
+before parsing (matches a curated list of known LaTeX command names,
+deliberately NOT a blanket regex — a blanket approach would have
+corrupted legitimate `\n` newlines followed by ordinary words, which a
+test caught). Also strengthened `SYSTEM_INSTRUCTION` to ask the model to
+avoid LaTeX/backslash notation in prose fields entirely, using plain
+symbols (×, ≡, √) instead — defense in depth alongside the repair
+function. Verified: `tests/test_core.py::TestRepairJsonEscaping`,
+reproducing the exact reported corruption pattern.
+
+**12. Teacher dashboard showed no questions despite students using the app**
+Reported: dashboard empty even after students asked questions. Root
+cause: `app.py` and `dashboard.py` were deployed as two SEPARATE
+Streamlit Cloud apps — each gets its own isolated, ephemeral container,
+so local files written by one are invisible to the other (and don't
+survive restarts even for the same app). Fix: `db_connection.py` — a
+pluggable connection that uses local SQLite by default (unchanged
+behaviour for single-app setups) or a shared, hosted Turso database when
+`TURSO_DATABASE_URL`/`TURSO_AUTH_TOKEN` are configured in BOTH apps'
+secrets. `question_log_store.py` replaces the CSV-based logging (which
+had the same cross-app-invisibility problem) with a SQL table on the
+same shared connection. Verified: mocked unit tests for the Turso
+adapter (`tests/test_db_connection.py`), plus a live simulation proving
+one AppTest instance's logged question was correctly read by a
+completely separate AppTest instance via a shared local file (same
+mechanism Turso uses, minus the network hop).
+⚠️ The actual Turso network connection was NOT live-tested (turso.tech
+not reachable from the development sandbox) — run
+`python3 verify_turso_connection.py` with real credentials before
+relying on it.
+
 ## Verification summary (kya actually test hua)
 
-- ✅ `pytest tests/` — 70/70 pass
+- ✅ `pytest tests/` — 91/91 pass
 - ✅ `py_compile` — sab files, koi syntax error nahi
 - ✅ `pyflakes` — clean
 - ✅ Live Streamlit simulation (`streamlit.testing.v1.AppTest`, mocked

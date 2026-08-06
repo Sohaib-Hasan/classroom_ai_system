@@ -80,10 +80,15 @@ question is a follow-up (e.g. "give an example", "simplify that", "explain
 more"), use the history to understand what they are referring to.
 
 Always respond with:
-1. "english": a clear, simple English explanation.
+1. "english": a clear, simple English explanation. Do NOT use LaTeX/
+   backslash commands here (like \\times, \\equiv, \\pmod, \\frac, \\buildrel)
+   — this field is shown as plain text, not rendered as math. Use plain
+   words or standard symbols instead (×, ÷, ≡, ², √, "mod"), e.g. write
+   "2 × 3 ≡ 1 (mod 5)" instead of "2 \\times 3 \\equiv 1 \\pmod{5}".
 2. "roman_urdu": the same explanation in Roman Urdu, mixing in English math
-   terms naturally the way a Pakistani teacher would. Keep math notation
-   (like $A^{-1}$) exactly as written in the notes in both versions.
+   terms naturally the way a Pakistani teacher would. Same rule as above —
+   plain symbols only, no backslash/LaTeX commands. Keep math notation
+   simple and readable, not typeset.
 3. "grounding": exactly one of:
    - "direct_from_notes": your answer directly follows a definition, theorem,
      or worked example in the notes, with the same or very similar numbers.
@@ -195,6 +200,58 @@ def decide_retrieval_strategy(best_sim, cross_best_sim, cross_course=None):
         soft_suggestion = cross_course
 
     return "answer", soft_suggestion
+
+
+# LaTeX/math command names that Gemini realistically might use in an
+# undergrad Linear Algebra / Calculus / Discrete Math / Number Theory
+# context. Deliberately a curated list (not a blanket "any 2+ letters
+# after a backslash" regex) — a blanket regex would also incorrectly
+# "fix" a LEGITIMATE `\n` (real newline) immediately followed by an
+# ordinary word (e.g. "\nNext step..."), corrupting correct output.
+# Matching only known command names avoids that false positive while
+# still catching the realistic set of LaTeX macros that cause this bug.
+_KNOWN_LATEX_COMMANDS = (
+    "times|div|pm|mp|cdot|ldots|cdots|vdots|ddots|"
+    "leq|geq|neq|ne|approx|equiv|pmod|bmod|mod|"
+    "frac|sqrt|sum|int|prod|lim|infty|partial|nabla|binom|choose|"
+    "alpha|beta|gamma|delta|epsilon|zeta|eta|theta|iota|kappa|lambda|"
+    "mu|nu|xi|pi|rho|sigma|tau|upsilon|phi|chi|psi|omega|"
+    "Gamma|Delta|Theta|Lambda|Xi|Pi|Sigma|Upsilon|Phi|Psi|Omega|"
+    "buildrel|over|overline|underline|bar|hat|vec|dot|ddot|widehat|widetilde|"
+    "in|notin|subset|subseteq|supset|supseteq|cup|cap|emptyset|"
+    "forall|exists|nexists|rightarrow|leftarrow|Rightarrow|Leftarrow|"
+    "leftrightarrow|Leftrightarrow|to|mapsto|"
+    "mathbb|mathcal|mathrm|mathbf|text|boxed|left|right|quad|qquad|"
+    "det|dim|ker|deg|gcd|lcm|sin|cos|tan|cot|sec|csc|ln|log|exp"
+)
+_LATEX_ESCAPE_REPAIR_RE = re.compile(r"(?<!\\)\\(" + _KNOWN_LATEX_COMMANDS + r")\b")
+
+
+def repair_json_escaping(raw_json_text):
+    """PRODUCTION BUG FIX (Aug 2026): Gemini kabhi kabhi apne "english"/
+    "roman_urdu" jawab mein LaTeX commands (jaise \\times, \\buildrel,
+    \\pmod) likhta hai, lekin JSON string ke andar backslash ko DOUBLE
+    likhna zaroori hota hai (\\\\times). Jab model ye bhool jata hai:
+      - Agar backslash ke baad wala letter JSON ka valid escape-char ho
+        (t, b, n, r, f) — to wo silently ek control-character (tab,
+        backspace, waghera) ban jata hai, aur pehla letter GHAYAB ho jata
+        hai jab display hota hai. Isi wajah se production mein "\\times"
+        "imes" ban gaya tha, aur "\\buildrel" "uildrel" ban gaya tha.
+      - Agar letter koi aur ho (jaise \\pmod ka 'p', \\over ka 'o') — to
+        JSON parsing SEEDHA CRASH ho jati hai (poora jawab lost, student
+        ko sirf "system busy" dikhta hai).
+
+    Ye function raw JSON text ko PARSE karne se PEHLE fix karta hai:
+    ek curated LaTeX-command list (dekhein _KNOWN_LATEX_COMMANDS) ke
+    against match kar ke, un exact command-names ko double-escape kar
+    deta hai. Jaan-boojh kar blanket "\\ + 2 ya zyada letters" regex NAHI
+    use kiya — wo ek GENUINE `\\n` (real newline) ko bhi galat samajh
+    leta agar uske turant baad koi ordinary word ho (jaise "\\nNext step
+    dekhein..."), jo naya bug bana deta. Curated list se ye false-positive
+    nahi hota, aur phir bhi wahi common LaTeX commands cover ho jate hain
+    jo is context (undergrad math) mein realistically aane ka chance hai.
+    """
+    return _LATEX_ESCAPE_REPAIR_RE.sub(r"\\\\\1", raw_json_text)
 
 
 def check_repeated_confusion(query_vec, history):

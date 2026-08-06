@@ -39,6 +39,8 @@ from typing import Type, TypeVar
 
 from pydantic import BaseModel
 
+from core import repair_json_escaping
+
 T = TypeVar("T", bound=BaseModel)
 
 
@@ -87,7 +89,13 @@ class GeminiGenerationBackend(GenerationBackend):
                 }
             ],
         )
-        return response_schema.model_validate_json(interaction.output_text)
+        # FIX (production bug, Aug 2026): Gemini kabhi LaTeX commands
+        # (\times, \buildrel, waghera) mein backslash double-escape
+        # karna bhool jata hai — is se jawab corrupt ho jata hai (kabhi
+        # silently, kabhi crash ke saath). Parse karne se pehle repair
+        # karte hain — dekhein core.repair_json_escaping().
+        repaired_text = repair_json_escaping(interaction.output_text)
+        return response_schema.model_validate_json(repaired_text)
 
 
 class OpenAICompatibleGenerationBackend(GenerationBackend):
@@ -148,6 +156,10 @@ class OpenAICompatibleGenerationBackend(GenerationBackend):
                 data = resp.json()
                 content = data["choices"][0]["message"]["content"]
                 content = _strip_markdown_fences(content)
+                # FIX (production bug, Aug 2026): same LaTeX-backslash
+                # escaping issue can happen with any underlying model —
+                # dekhein core.repair_json_escaping().
+                content = repair_json_escaping(content)
                 return response_schema.model_validate_json(content)
             except Exception as e:  # noqa: BLE001
                 last_error = e

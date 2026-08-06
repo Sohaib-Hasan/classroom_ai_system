@@ -26,8 +26,6 @@ Chalane ka tareeqa:
     streamlit run app.py
 """
 
-import csv
-import os
 import time
 from datetime import datetime
 
@@ -50,10 +48,12 @@ from core import (
     top_chunks_from_vector,
     verify_computation,
 )
+from db_connection import get_connection
 from embedding_backend import get_backend as get_embedding_backend_impl
 from generation_backend import get_generation_backend
 from knowledge_base_loader import load_knowledge_base
 from logging_setup import get_logger
+from question_log_store import QuestionLogStore
 
 try:
     # Streamlit Cloud pe deploy hone par yahan se milega (Secrets settings mein set karna hai)
@@ -63,11 +63,13 @@ try:
     GENERATION_FALLBACK_PROVIDER = st.secrets.get("GENERATION_FALLBACK_PROVIDER", None)
     GENERATION_FALLBACK_API_KEY = st.secrets.get("GENERATION_FALLBACK_API_KEY", None)
     GENERATION_FALLBACK_MODEL = st.secrets.get("GENERATION_FALLBACK_MODEL", None)
+    TURSO_DATABASE_URL = st.secrets.get("TURSO_DATABASE_URL", None)
+    TURSO_AUTH_TOKEN = st.secrets.get("TURSO_AUTH_TOKEN", None)
 except (FileNotFoundError, KeyError):
     # Apne computer pe local testing ke liye — config.py se milta hai.
-    # Naye optional settings (EMBEDDING_PROVIDER, GENERATION_FALLBACK_*)
-    # purani config.py files mein nahi hongi, isliye har ek ko alag se,
-    # getattr-jaisi soft-fallback ke saath import karte hain.
+    # Naye optional settings (EMBEDDING_PROVIDER, GENERATION_FALLBACK_*,
+    # TURSO_*) purani config.py files mein nahi hongi, isliye har ek ko
+    # alag se, getattr-jaisi soft-fallback ke saath import karte hain.
     from config import GEMINI_API_KEY, CLASS_PIN
     import config as _config
 
@@ -75,9 +77,10 @@ except (FileNotFoundError, KeyError):
     GENERATION_FALLBACK_PROVIDER = getattr(_config, "GENERATION_FALLBACK_PROVIDER", None)
     GENERATION_FALLBACK_API_KEY = getattr(_config, "GENERATION_FALLBACK_API_KEY", None)
     GENERATION_FALLBACK_MODEL = getattr(_config, "GENERATION_FALLBACK_MODEL", None)
+    TURSO_DATABASE_URL = getattr(_config, "TURSO_DATABASE_URL", None)
+    TURSO_AUTH_TOKEN = getattr(_config, "TURSO_AUTH_TOKEN", None)
 
 CACHE_DB_FILE = "cache/qa_cache.db"
-LOG_FILE = "logs/question_log.csv"
 
 logger = get_logger()
 client = genai.Client(api_key=GEMINI_API_KEY)
@@ -86,6 +89,17 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 # ------------------------------------------------------------------
 # Resources (Streamlit process ke liye ek hi baar banti hain)
 # ------------------------------------------------------------------
+@st.cache_resource
+def get_shared_db_connection():
+    # FIX (bug jo student ne report kiya): agar app.py aur dashboard.py
+    # alag Streamlit Cloud apps ke tor par deploy hon, local SQLite file
+    # ek doosre ko nazar nahi aati (har app ka apna isolated container
+    # hota hai). Agar TURSO_DATABASE_URL/TURSO_AUTH_TOKEN configure hon,
+    # dono apps SAME hosted database use karte hain — dekhein
+    # db_connection.py ke docstring mein Turso setup steps.
+    return get_connection(CACHE_DB_FILE, TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)
+
+
 @st.cache_resource
 def get_embedding_backend():
     return get_embedding_backend_impl(EMBEDDING_PROVIDER, client=client)
@@ -109,7 +123,12 @@ def get_fallback_generation_backend():
 
 @st.cache_resource
 def get_cache():
-    return QACache(CACHE_DB_FILE)
+    return QACache(connection=get_shared_db_connection())
+
+
+@st.cache_resource
+def get_question_log():
+    return QuestionLogStore(connection=get_shared_db_connection())
 
 
 def embed_query_safe(text: str):
@@ -184,43 +203,24 @@ def generate_answer(question, chunks, history):
 # ------------------------------------------------------------------
 # Logging (question activity — teacher dashboard ke liye)
 # ------------------------------------------------------------------
-LOG_COLUMNS = [
-    "timestamp", "course", "question", "matched_chapter", "matched_section",
-    "similarity", "grounding", "verified", "repeated_confusion", "from_cache",
-]
-
-
-def ensure_log_file_schema():
-    if os.path.isfile(LOG_FILE):
-        with open(LOG_FILE, "r", encoding="utf-8") as f:
-            first_line = f.readline().strip()
-        if first_line != ",".join(LOG_COLUMNS):
-            backup_name = LOG_FILE.replace(".csv", f"_old_{int(time.time())}.csv")
-            os.rename(LOG_FILE, backup_name)
-
-
 def log_question(question, course, chunks, answer, verified, repeated, cached):
-    os.makedirs("logs", exist_ok=True)
-    file_exists = os.path.isfile(LOG_FILE)
-    with open(LOG_FILE, "a", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        if not file_exists:
-            writer.writerow(LOG_COLUMNS)
-        top = chunks[0] if chunks else {}
-        writer.writerow(
-            [
-                datetime.now().isoformat(),
-                course,
-                question,
-                top.get("chapter", ""),
-                top.get("section", ""),
-                round(top.get("similarity", 0), 3),
-                answer.grounding,
-                "" if verified is None else verified,
-                repeated,
-                cached,
-            ]
-        )
+    # FIX (bug jo student ne report kiya): pehle CSV file mein likha jata
+    # tha, jo alag-deployed teacher dashboard app ko kabhi nazar nahi
+    # aati thi. Ab shared connection (local ya Turso) mein likhte hain —
+    # dekhein db_connection.py aur question_log_store.py.
+    top = chunks[0] if chunks else {}
+    get_question_log().log_question(
+        timestamp=datetime.now().isoformat(),
+        course=course,
+        question=question,
+        matched_chapter=top.get("chapter", ""),
+        matched_section=top.get("section", ""),
+        similarity=round(top.get("similarity", 0), 3),
+        grounding=answer.grounding,
+        verified=verified,
+        repeated_confusion=repeated,
+        from_cache=cached,
+    )
 
 
 # ------------------------------------------------------------------
@@ -305,7 +305,6 @@ st.caption("Ask a question, and follow-up as much as you like — the assistant 
 
 kb, embeddings_matrix, courses = load_knowledge_base()
 cache = get_cache()
-ensure_log_file_schema()
 
 with st.sidebar:
     st.markdown("**Course**")

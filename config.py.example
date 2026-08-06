@@ -40,3 +40,16 @@ EMBEDDING_PROVIDER = "gemini"
 GENERATION_FALLBACK_PROVIDER = None
 GENERATION_FALLBACK_API_KEY = None
 GENERATION_FALLBACK_MODEL = None
+
+# --- Optional: shared storage (Turso) ---
+# Agar teacher dashboard aur student app ALAG Streamlit Cloud apps ke
+# tor par deploy kiye hain (do alag URLs), to local storage ek doosre
+# ko kabhi nazar nahi aati — dashboard hamesha khali dikhega. Turso
+# (free hosted SQLite-compatible DB) ye fix karta hai. Setup steps
+# db_connection.py ke docstring mein hain. In DONO apps ki secrets mein
+# SAME values honi chahiye:
+#
+# TURSO_DATABASE_URL = "libsql://your-db-name.turso.io"
+# TURSO_AUTH_TOKEN = "..."
+TURSO_DATABASE_URL = None
+TURSO_AUTH_TOKEN = None

@@ -37,7 +37,7 @@ except (FileNotFoundError, KeyError):
 
 CACHE_DB_FILE = "cache/qa_cache.db"
 WEAK_MATCH_THRESHOLD = 0.55
-jhashdj
+st.error(f"DEBUG: URL starts with = {repr(TURSO_DATABASE_URL[:10]) if TURSO_DATABASE_URL else 'None/empty'}")
 st.set_page_config(page_title="Teacher Dashboard", page_icon="📊")
 
 

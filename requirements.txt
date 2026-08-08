@@ -14,3 +14,10 @@ sympy==1.14.0
 matplotlib==3.10.8
 networkx==3.6.1
 requests==2.33.1
+
+# Turso (shared storage across separately-deployed apps — see db_connection.py).
+# Moved here from requirements-turso.txt: Streamlit Cloud installs ONLY from
+# requirements.txt, so a separate file was silently never being installed,
+# causing "ModuleNotFoundError: libsql_client" the moment TURSO_DATABASE_URL/
+# TURSO_AUTH_TOKEN were set in Secrets (crashing the whole app).
+libsql-client>=0.3.1

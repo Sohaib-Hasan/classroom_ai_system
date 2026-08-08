@@ -148,8 +148,19 @@ def parse_tex_notes(filepath, course_name, chapter_name):
             (m.start(), m.end(), m.group(1), (m.group(2).strip(), m.group(3).strip()))
         )
     for m in untitled_box_pattern.finditer(text):
-        # Untitled box ka title khud bana lete hain content ke pehle kuch lafzon se
-        preview = re.sub(r"\\[a-zA-Z]+", "", m.group(2)).strip()
+        # Untitled box ka title khud bana lete hain content ke pehle kuch lafzon se.
+        # FIX (bug jo review mein mila tha): pehle sirf "\command" naam hi hataya
+        # jata tha, uske "{arguments}" ki braces nahi — jis se titles jaise
+        # "{primaryblue}{\ {Summary of Definitions}} {center} {tabular}{...}"
+        # ban jate the (asli text ke bajaye leftover braces/commands). Ab
+        # \command{...} ko poora uske andar wale plain text se replace karte
+        # hain (nested ek level tak), phir bachi hui koi bhi \command (jaise
+        # akela \faInfoCircle) hata dete hain.
+        preview = m.group(2)
+        for _ in range(3):
+            preview = re.sub(r"\\[a-zA-Z]+\{((?:[^{}]|\{[^{}]*\})*)\}", r"\1", preview)
+        preview = re.sub(r"\\[a-zA-Z]+", "", preview)
+        preview = re.sub(r"[{}]", "", preview).strip()
         auto_title = " ".join(preview.split()[:6]) or "Key Point"
         landmarks.append(
             (m.start(), m.end(), m.group(1), (auto_title, m.group(2).strip()))

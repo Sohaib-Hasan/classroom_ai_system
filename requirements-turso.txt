@@ -1,11 +1,8 @@
-# Sirf tab install karein jab config.py mein TURSO_DATABASE_URL /
-# TURSO_AUTH_TOKEN set karna ho (teacher aur student apps ko alag
-# deploy karte waqt data share karne ke liye). Alag file mein isliye
-# hai taake single-app/local-testing setups ko ye extra dependency na
-# chahiye ho.
-#
-# Install:
-#   pip install -r requirements.txt
-#   pip install -r requirements-turso.txt
+# NOTE: libsql-client ab requirements.txt mein bhi shamil hai (isliye
+# ke Streamlit Cloud sirf requirements.txt se install karta hai — ye
+# alag file kabhi install hi nahi hoti thi, jis se Turso Secrets set
+# karte hi "ModuleNotFoundError: libsql_client" aata tha aur poora app
+# crash ho jata tha). Ye file ab sirf local-dev documentation ke liye
+# rakhi hai; deploy ke liye sirf requirements.txt kaafi hai.
 
 libsql-client>=0.3.1

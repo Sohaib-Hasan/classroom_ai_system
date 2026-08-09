@@ -399,7 +399,17 @@ if question:
 
                     verified = verify_computation(answer.computation_expression, answer.computation_result)
 
+            # FIX (bug jo review mein mila tha): log_question() pehle isi
+            # try block mein tha jo answer dikhata hai — matlab agar
+            # sirf LOGGING fail ho (jaise Turso ka koi transient masla),
+            # to already-generated answer bhi kabhi student ko dikhta hi
+            # nahi tha, sirf generic "system busy" error milta tha. Ab
+            # logging apni alag try/except mein hai — fail ho to bhi
+            # answer zaroor dikhega, sirf ek chhota warning log hoga.
+            try:
                 log_question(question, selected_course, chunks, answer, verified, repeated, cached_hit is not None)
+            except Exception:
+                logger.exception(f"log_question failed (answer still shown): course={selected_course!r}, question={question!r}")
 
             show_answer(answer, lang_pref)
             if cross_suggestion:

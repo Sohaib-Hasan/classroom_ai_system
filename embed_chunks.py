@@ -50,7 +50,7 @@ SAVE_EVERY = 25
 def load_all_chunks():
     """Sab *_chunks.json files ko dhoond kar (kisi bhi course ke) ek list mein jama karta hai."""
     all_chunks = []
-    for filepath in sorted(glob.glob("*_chunks.json")):
+    for filepath in sorted(glob.glob("*_chunks.cleaned.json")):
         with open(filepath, "r", encoding="utf-8") as f:
             chunks = json.load(f)
             all_chunks.extend(chunks)

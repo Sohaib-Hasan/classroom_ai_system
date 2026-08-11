@@ -1,0 +1,770 @@
+[
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.1 — Proposition",
+    "content": "A proposition (also called a statement) is a declarative sentence that\nis either true or false, but not both.\n\nKey Points:\n\n- Every proposition has a truth value: either True (T) or False (F).\n- Propositions are usually denoted by lowercase letters: $p,\\, q,\\, r,\\, s, \\ldots$\n- Questions, commands, and exclamations are NOT propositions.\n- A proposition cannot be sometimes true — its truth value must be definite."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "example",
+    "title": "Example 1: Identifying Propositions",
+    "content": "Classify each of the following as a proposition or not a proposition.\nIf it is a proposition, state its truth value.\n\nSolution:\n\n| Sentence | Proposition? | Truth Value |\n|---|---|---|\n| ``Islamabad is the capital of Pakistan.'' | ✓ Yes | True |\n| ``$2 + 2 = 5$'' | ✓ Yes | False |\n| ``What time is it?'' | $\\times$ No | --- |\n| ``Close the door!'' | $\\times$ No | --- |\n| ``$x + 1 = 5$'' | $\\times$ No | --- |\n| ``Every even number greater than 2 is the sum of two primes.'' | ✓ Yes | Unknown |\n| ``The moon is made of cheese.'' | ✓ Yes | False |\n\nNote: ``$x + 1 = 5$'' is not a proposition because its truth value depends\non the value of $x$ — it is called a predicate (covered in Section~1.4).\nThe Goldbach conjecture (last row) is a proposition even though mathematicians have not\nyet proved or disproved it; it is still either true or false."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "example",
+    "title": "Example 2: Propositions from Everyday Life",
+    "content": "Let us form propositions from situations a CS student encounters daily.\n\nSolution:\n\nDefine the following propositions:\n\n- $p$ : ``Today is Friday.'' \\hfill (Truth value depends on the day)\n- $q$ : ``The lab is open.'' \\hfill (Truth value depends on schedule)\n- $r$ : ``$17$ is a prime number.'' \\hfill True\n- $s$ : ``All dogs are cats.'' \\hfill False\n\nEach of $p, q, r, s$ is a valid proposition because each is a declarative sentence with a\ndefinite (though sometimes contextual) truth value. We will use $p$ and $q$ throughout\nthis chapter to build compound statements."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.2 — Negation ($\\neg$)",
+    "content": "The negation of a proposition $p$, written $\\neg p$ (read: ``not $p$''), is the\nproposition that is true when $p$ is false, and false when $p$ is true.\n\nTruth Table for Negation:\n\n| $p$ | $\\neg p$ |\n|---|---|\n| T | F |\n| F | T |\n\nKey Points:\n\n- $\\neg p$ simply flips the truth value of $p$.\n- Applying negation twice returns the original: $\\neg(\\neg p) \\equiv p$.\n- In English, negation is expressed by inserting ``not'' or using ``It is not the case that \\ldots''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.3 — Conjunction ($\\land$)",
+    "content": "The conjunction of propositions $p$ and $q$, written $p \\land q$ (read:\n``$p$ and $q$''), is true only when both $p$ and $q$ are true.\n\nTruth Table for Conjunction:\n\n| $p$ | $q$ | $p \\land q$ |\n|---|---|---|\n| T | T | T |\n| T | F | F |\n| F | T | F |\n| F | F | F |\n\nKey Points:\n\n- $p \\land q$ is true in only 1 out of 4 possible cases.\n- Think of it as a strict ``both must pass'' condition.\n- In English: ``and'', ``but'', ``however'', ``moreover'' can all represent $\\land$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.4 — Disjunction ($\\lor$)",
+    "content": "The disjunction of propositions $p$ and $q$, written $p \\lor q$ (read:\n``$p$ or $q$''), is true when at least one of $p$ or $q$ is true.\n\nTruth Table for Disjunction:\n\n| $p$ | $q$ | $p \\lor q$ |\n|---|---|---|\n| T | T | T |\n| T | F | T |\n| F | T | T |\n| F | F | F |\n\nKey Points:\n\n- $p \\lor q$ is false in only 1 out of 4 possible cases (when both are false).\n- This is the inclusive or — both can be true simultaneously.\n- The exclusive or $p \\oplus q$ is true only when exactly one is true."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.5 — Exclusive Or ($\\oplus$)",
+    "content": "The exclusive or of $p$ and $q$, written $p \\oplus q$, is true when\nexactly one of $p$ and $q$ is true (but not both).\n\n| $p$ | $q$ | $p \\oplus q$ |\n|---|---|---|\n| T | T | F |\n| T | F | T |\n| F | T | T |\n| F | F | F |\n\nNote: In daily English, ``or'' often means exclusive or. For example:\n``You can have tea or coffee'' usually means you cannot have both. In mathematics,\nhowever, $\\lor$ is always inclusive or unless stated otherwise."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.6 — Conditional Statement ($\\rightarrow$)",
+    "content": "The conditional statement ``if $p$ then $q$'', written $p \\rightarrow q$, is\nfalse only when $p$ is true and $q$ is false. In all other cases it is true.\n\n$p$ is called the hypothesis (antecedent) \\quad and \\quad\n$q$ is called the conclusion (consequent).\n\nTruth Table for Conditional:\n\n| $p$ | $q$ | $p \\rightarrow q$ |\n|---|---|---|\n| T | T | T |\n| T | F | F |\n| F | T | T |\n| F | F | T |\n\nWays to read $p \\rightarrow q$:\n\n- ``If $p$, then $q$''\n- ``$p$ implies $q$''\n- ``$p$ only if $q$''\n- ``$q$ is necessary for $p$''\n- ``$p$ is sufficient for $q$''\n\nImportant: When the hypothesis $p$ is false, the conditional is\nvacuously true regardless of $q$. Think: ``If pigs can fly, I will give you \\$100.''\nSince pigs cannot fly, this promise is never broken — the statement is true."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.7 — Biconditional ($\\leftrightarrow$)",
+    "content": "The biconditional ``$p$ if and only if $q$'', written $p \\leftrightarrow q$\n(abbreviated iff), is true when $p$ and $q$ have the same truth value.\n\n| $p$ | $q$ | $p \\leftrightarrow q$ |\n|---|---|---|\n| T | T | T |\n| T | F | F |\n| F | T | F |\n| F | F | T |\n\nNote that $p \\leftrightarrow q \\;\\equiv\\; (p \\rightarrow q) \\land (q \\rightarrow p)$.\nThis equivalence appears directly in past paper 2020 Q1(xiv)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "example",
+    "title": "Example 3: Translating English to Symbolic Logic",
+    "content": "Let $p$ = ``It is raining'' and $q$ = ``She will go to college.''\n(This exact example appeared in Past Paper 2021 Q1(ix).)\n\nSolution:\n\nExpress each English sentence symbolically:\n\n| English Sentence | Symbolic Form |\n|---|---|\n| It is raining. | $p$ |\n| It is not raining. | $\\neg p$ |\n| It is raining and she will go to college. | $p \\land q$ |\n| It is raining and she will not go to college. | $p \\land \\neg q$ |\n| It is raining or she will go to college. | $p \\lor q$ |\n| If it is raining, she will go to college. | $p \\rightarrow q$ |\n| She will go to college if and only if it is raining. | $q \\leftrightarrow p$ |\n\nNote: The answer to Past Paper 2021 Q1(ix) is\n$\\boxed{p \\land \\neg q}$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "example",
+    "title": "Example 4: Building a Compound Truth Table",
+    "content": "Construct the truth table for $\\neg p \\lor q$.\n\nSolution:\n\nStrategy: We evaluate column by column — first compute $\\neg p$, then\ncombine with $q$ using $\\lor$.\n\n| $p$ | $q$ | $\\neg p$ | $\\neg p \\lor q$ |\n|---|---|---|---|\n| T | T | F | T |\n| T | F | F | F |\n| F | T | T | T |\n| F | F | T | T |\n\nObservation: Compare this truth table with $p \\rightarrow q$:\n\n| $p$ | $q$ | $\\neg p \\lor q$ | $p \\rightarrow q$ |\n|---|---|---|---|\n| T | T | T | T |\n| T | F | F | F |\n| F | T | T | T |\n| F | F | T | T |\n\nConclusion: The columns for $\\neg p \\lor q$ and $p \\rightarrow q$ are\nidentical. Therefore:\n\\[\n    \\boxed{p \\rightarrow q \\;\\equiv\\; \\neg p \\lor q}\n\\]\nThis is one of the most important logical equivalences and will be used in proofs throughout this chapter."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "example",
+    "title": "Example 5: Three-Variable Truth Table",
+    "content": "Construct the truth table for $(p \\oplus q) \\land (p \\oplus \\neg q)$.\\\\\n(This exact expression appeared in Past Paper 2021 Q3(i).)\n\nSolution:\n\nStep 1: For three variables we would need $2^3 = 8$ rows, but here we have\nonly $p$ and $q$, so $2^2 = 4$ rows suffice.\n\nStep 2: Build columns one operation at a time.\n\n| $p$ | $q$ | $\\neg q$ | $p \\oplus q$ | $p \\oplus \\neg q$ | $(p \\oplus q)\\land(p \\oplus \\neg q)$ |\n|---|---|---|---|---|---|\n| T | T | F | F | T | F |\n| T | F | T | T | F | F |\n| F | T | F | T | F | F |\n| F | F | T | F | T | F |\n\nConclusion: The final column is always False.\nTherefore $(p \\oplus q) \\land (p \\oplus \\neg q)$ is a contradiction\n(a statement that is always false regardless of the truth values of its variables).\n\\[\n    \\boxed{(p \\oplus q) \\land (p \\oplus \\neg q) \\;\\equiv\\; \\mathbf{F}}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "theorem",
+    "title": "Theorem 1.1 — Logical Equivalence of Conditional",
+    "content": "For any propositions $p$ and $q$:\n\\[\n    p \\rightarrow q \\;\\equiv\\; \\neg p \\lor q\n\\]\nThat is, the conditional ``if $p$ then $q$'' is logically equivalent to\n``not $p$ or $q$''."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "proof",
+    "title": "Proof of Theorem 1.1",
+    "content": "Proof:\n\nWe need to show that $p \\rightarrow q$ and $\\neg p \\lor q$ have identical truth values\nfor every possible combination of truth values of $p$ and $q$.\n\nStep 1: Enumerate all cases.\n\nThere are $2^2 = 4$ possible truth-value assignments for $(p,\\, q)$.\n\nStep 2: Evaluate both sides for each case.\n\n| $p$ | $q$ | $\\neg p$ | $p \\rightarrow q$ | $\\neg p \\lor q$ |\n|---|---|---|---|---|\n| T | T | F | T | T |\n| T | F | F | F | F |\n| F | T | T | T | T |\n| F | F | T | T | T |\n\nStep 3: Compare columns.\n\nIn every row, the column for $p \\rightarrow q$ and the column for $\\neg p \\lor q$\nshow the same truth value.\n\nConclusion: Since $p \\rightarrow q$ and $\\neg p \\lor q$\nagree on all possible inputs, by the definition of logical equivalence:\n\\[\n    p \\rightarrow q \\;\\equiv\\; \\neg p \\lor q \\qed\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.8 — Related Conditionals",
+    "content": "Given the conditional $p \\rightarrow q$, three related propositions are defined:\n\n| Name | Symbolic Form | Read as |\n|---|---|---|\n| Converse | $q \\rightarrow p$ | ``If $q$, then $p$'' |\n| Inverse | $\\neg p \\rightarrow \\neg q$ | ``If not $p$, then not $q$'' |\n| Contrapositive | $\\neg q \\rightarrow \\neg p$ | ``If not $q$, then not $p$'' |\n\nCritical Fact:\n\n- The contrapositive is always logically equivalent to the original:\n          $\\;p \\rightarrow q \\;\\equiv\\; \\neg q \\rightarrow \\neg p$\n- The converse and inverse are not equivalent to the original.\n- The converse and inverse are equivalent to each other."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "example",
+    "title": "Example 6: Converse Inverse and Contrapositive",
+    "content": "Let $p$ = ``It is raining'' and $q$ = ``The ground is wet.''\nWrite the conditional, converse, inverse, and contrapositive.\nThen determine which pairs are logically equivalent.\n\n(Past Paper 2022 Q1(xii) directly tests this concept.)\n\nSolution:\n\n| Statement | English | Symbolic |\n|---|---|---|\n| Conditional | If it is raining, then the ground is wet. | $p \\rightarrow q$ |\n| Converse | If the ground is wet, then it is raining. | $q \\rightarrow p$ |\n| Inverse | If it is not raining, then the ground is not wet. | $\\neg p \\rightarrow \\neg q$ |\n| Contrapositive | If the ground is not wet, then it is not raining. | $\\neg q \\rightarrow \\neg p$ |\n\nEquivalence check:\n\n- $p \\rightarrow q \\;\\equiv\\; \\neg q \\rightarrow \\neg p$ \\hfill ✓\\ Equivalent\n- $q \\rightarrow p \\;\\equiv\\; \\neg p \\rightarrow \\neg q$ \\hfill ✓\\ Equivalent\n- $p \\rightarrow q \\;\\not\\equiv\\; q \\rightarrow p$ \\hfill $\\times$\\ Not Equivalent\n\nIntuitive check: The ground can be wet because a pipe burst — not because of rain.\nSo the converse being true does not follow from the original conditional being true.\n\n\\begin{tikzpicture}[\n    node distance=1.5cm,\n    box/.style={rectangle, rounded corners, draw=primaryblue, fill=primaryblue!10,\n                text width=3.2cm, align=center, minimum height=1cm, font=\\small},\n    arrow/.style={->, thick, color=accentorange}\n]\n\n\\node[box, fill=primaryblue!25, text width=4cm, font=\\bfseries\\small] (center)\n    {Propositions\\\\$p,\\; q$};\n\n\\node[box, above left=1.2cm and 2.5cm of center]  (neg)\n    {Negation\\\\$\\neg p$\\\\``not $p$''};\n\n\\node[box, above right=1.2cm and 2.5cm of center] (conj)\n    {Conjunction\\\\$p \\land q$\\\\``$p$ and $q$''};\n\n\\node[box, below left=1.2cm and 2.5cm of center]  (disj)\n    {Disjunction\\\\$p \\lor q$\\\\``$p$ or $q$''};\n\n\\node[box, below right=1.2cm and 2.5cm of center] (cond)\n    {Conditional\\\\$p \\rightarrow q$\\\\``if $p$ then $q$''};\n\n\\node[box, above=2.4cm of center] (bicond)\n    {Biconditional\\\\$p \\leftrightarrow q$\\\\``$p$ iff $q$''};\n\n\\node[box, below=2.4cm of center] (xor)\n    {Exclusive Or\\\\$p \\oplus q$\\\\``exactly one''};\n\n\\draw[arrow] (center) -- (neg);\n\\draw[arrow] (center) -- (conj);\n\\draw[arrow] (center) -- (disj);\n\\draw[arrow] (center) -- (cond);\n\\draw[arrow] (center) -- (bicond);\n\\draw[arrow] (center) -- (xor);\n\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{center}\n\\textcolor{darkgray}{\\small\\textit{Figure 1.1: The six fundamental logical connectives built from propositions $p$ and $q$.}}"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "definition",
+    "title": "Definition 1.9 — Operator Precedence",
+    "content": "When parentheses are absent, logical operators are evaluated in the following order\n(from highest to lowest precedence):\n\n| Priority | Operator | Symbol |\n|---|---|---|\n| 1 (highest) | Negation | $\\neg$ |\n| 2 | Conjunction | $\\land$ |\n| 3 | Disjunction | $\\lor$ |\n| 4 | Conditional | $\\rightarrow$ |\n| 5 (lowest) | Biconditional | $\\leftrightarrow$ |\n\nExample: $\\neg p \\land q \\lor r \\rightarrow s$ is parsed as\n$\\bigl((\\neg p) \\land q\\bigr) \\lor r \\rightarrow s$,\nwhich equals $\\bigl[\\bigl((\\neg p) \\land q\\bigr) \\lor r\\bigr] \\rightarrow s$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "example",
+    "title": "Example 7: Applying Operator Precedence",
+    "content": "Given $p$ = T, $q$ = F, $r$ = T, evaluate $\\neg p \\lor q \\rightarrow p \\land r$.\n\nSolution:\n\nStep 1: Apply precedence to determine grouping.\n\\[\n    \\neg p \\lor q \\rightarrow p \\land r\n    \\;=\\; \\bigl[(\\neg p) \\lor q\\bigr] \\rightarrow \\bigl[p \\land r\\bigr]\n\\]\n\nStep 2: Substitute truth values.\n$$\\begin{align*}\n    \\neg p &= \\neg\\text{T} = \\text{F}\\\\\n    \\neg p \\lor q &= \\text{F} \\lor \\text{F} = \\text{F}\\\\\n    p \\land r &= \\text{T} \\land \\text{T} = \\text{T}\n\\end{align*}$$\n\nStep 3: Evaluate the conditional.\n\\[\n    \\text{F} \\rightarrow \\text{T} = \\textbf{T}\n\\]\n\nFinal Answer: $\\boxed{\\text{True}}$\n\n(When the hypothesis is False, the conditional is always True — vacuous truth.)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Propositions and Connectives",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 1.1 Summary — Propositions",
+    "content": "Section 1.1 Summary — Propositions \\& Connectives\n\n| Connective | Symbol | True when\\ldots | False when\\ldots |\n|---|---|---|---|\n| Negation | $\\neg p$ | $p$ is F | $p$ is T |\n| Conjunction | $p \\land q$ | Both T | At least one F |\n| Disjunction | $p \\lor q$ | At least one T | Both F |\n| Exclusive Or | $p \\oplus q$ | Exactly one T | Both same |\n| Conditional | $p \\rightarrow q$ | $p$ is F, or $q$ is T | $p$ is T and $q$ is F |\n| Biconditional | $p \\leftrightarrow q$ | Both same | Different values |\n\nKey Equivalences to Memorise:\n\n- $p \\rightarrow q \\;\\equiv\\; \\neg p \\lor q$\n- $p \\rightarrow q \\;\\equiv\\; \\neg q \\rightarrow \\neg p$ \\quad (contrapositive)\n- $p \\leftrightarrow q \\;\\equiv\\; (p \\rightarrow q) \\land (q \\rightarrow p)$\n- $\\neg(\\neg p) \\;\\equiv\\; p$ \\quad (double negation)\n\nPast Paper Connection:\n\n- 2020 Q1(v): Define tautology $\\rightarrow$ Section 1.2\n- 2021 Q1(ix): $p \\land \\neg q$ translation $\\rightarrow$ Example 3 above\n- 2022 Q1(xii): Converse \\& contrapositive $\\rightarrow$ Definition 1.8\n- 2024 Q5: Symbolic representation $\\rightarrow$ Example 3 type"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "definition",
+    "title": "Definition 1.10 --- Truth Table",
+    "content": "A truth table is a table that lists all possible truth-value combinations\nof the propositional variables in a compound proposition, together with the resulting\ntruth value of the compound proposition for each combination.\n\nKey Points:\n\n- If a compound proposition contains $n$ distinct variables, its truth table\n          has $\\mathbf{2^n}$ rows.\n- Columns are built left to right, one operation at a time, following\n          operator precedence.\n- The final column always corresponds to the entire compound proposition.\n- Variables are listed with alternating T/F patterns:\n          the rightmost variable alternates every row, the next every 2 rows,\n          the next every 4 rows, and so on.\n\nRow count rule:\n\\[\n    \\text{Number of rows} = 2^n \\quad \\text{where } n = \\text{number of distinct variables}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "definition",
+    "title": "Definition 1.11 --- Tautology",
+    "content": "A compound proposition is called a tautology if it is true for every\npossible truth-value assignment of its propositional variables.\n\nKey Points:\n\n- A tautology is also called a logically valid statement.\n- No matter what truth values you assign to its variables, the result is always T.\n- Tautologies are used as the foundation of valid rules of inference.\n- Notation: We write $\\models \\varphi$ to indicate that $\\varphi$ is a tautology.\n\nSimple example: $p \\lor \\neg p$ is always true (Law of Excluded Middle)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "definition",
+    "title": "Definition 1.12 --- Contradiction",
+    "content": "A compound proposition is called a contradiction if it is false for every\npossible truth-value assignment of its propositional variables.\n\nKey Points:\n\n- A contradiction is the exact opposite of a tautology.\n- No matter what truth values you assign, the result is always F.\n- The negation of a tautology is always a contradiction, and vice versa.\n\nSimple example: $p \\land \\neg p$ is always false (Law of Non-Contradiction)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "definition",
+    "title": "Definition 1.13 --- Contingency",
+    "content": "A compound proposition is called a contingency if it is neither a\ntautology nor a contradiction --- that is, it is true for some assignments and false\nfor others.\n\nExample: $p \\land q$ is true when both are T, and false otherwise.\nIt is a contingency."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 1: Verifying a Tautology --- $p \\lor \\neg p$",
+    "content": "Show that $p \\lor \\neg p$ is a tautology using a truth table.\n\nSolution:\n\nThis proposition has $n = 1$ variable, so we need $2^1 = 2$ rows.\n\n| $p$ | $\\neg p$ | $p \\lor \\neg p$ |\n|---|---|---|\n| T | F | T |\n| F | T | T |\n\nConclusion: The final column is all T.\nTherefore $p \\lor \\neg p$ is a tautology.\n\\[\n    \\boxed{p \\lor \\neg p \\;\\equiv\\; \\mathbf{T}}\n\\]\nThis is known as the Law of Excluded Middle: every proposition is either\ntrue or its negation is true --- there is no middle ground."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 2: Verifying a Contradiction --- $p \\land \\neg p$",
+    "content": "Show that $p \\land \\neg p$ is a contradiction using a truth table.\n\nSolution:\n\n| $p$ | $\\neg p$ | $p \\land \\neg p$ |\n|---|---|---|\n| T | F | F |\n| F | T | F |\n\nConclusion: The final column is all F.\nTherefore $p \\land \\neg p$ is a contradiction.\n\\[\n    \\boxed{p \\land \\neg p \\;\\equiv\\; \\mathbf{F}}\n\\]\nThis is the Law of Non-Contradiction: a proposition and its negation\ncannot both be true at the same time."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 3: Two-Variable Tautology --- Past Paper 2020 Q1(xiv)",
+    "content": "Using a truth table, show whether the following is a tautology or not:\n\\[\n    (P \\leftrightarrow Q) \\;\\leftrightarrow\\; \\bigl[(P \\rightarrow Q) \\land (Q \\rightarrow P)\\bigr]\n\\]\n\nSolution:\n\nStep 1: Count rows. Two variables $P$ and $Q$, so $2^2 = 4$ rows.\n\nStep 2: Build intermediate columns.\n\n| $P$ | $Q$ | $P \\rightarrow Q$ | $Q \\rightarrow P$ | $(P{\\rightarrow}Q)\\land(Q{\\rightarrow}P)$ | $P \\leftrightarrow Q$ |\n|---|---|---|---|---|---|\n| T | T | T | T | T | T |\n| T | F | F | T | F | F |\n| F | T | T | F | F | F |\n| F | F | T | T | T | T |\n\nStep 3: Evaluate the outer biconditional.\n\n| $P$ | $Q$ | $P \\leftrightarrow Q$ | $(P{\\leftrightarrow}Q)\\leftrightarrow[(P{\\rightarrow}Q)\\land(Q{\\rightarrow}P)]$ |\n|---|---|---|---|\n| T | T | T | $T \\leftrightarrow T = $ T |\n| T | F | F | $F \\leftrightarrow F = $ T |\n| F | T | F | $F \\leftrightarrow F = $ T |\n| F | F | T | $T \\leftrightarrow T = $ T |\n\nConclusion: All entries in the final column are T,\nso the statement is a tautology.\n\\[\n    \\boxed{(P \\leftrightarrow Q) \\;\\leftrightarrow\\; [(P \\rightarrow Q) \\land (Q \\rightarrow P)]\n    \\;\\equiv\\; \\mathbf{T}}\n\\]\nThis confirms the fundamental definition: $p \\leftrightarrow q$ means exactly\n$(p \\rightarrow q) \\land (q \\rightarrow p)$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 4: De Morgan's Law as Tautology --- Past Paper 2024 Q6(i)",
+    "content": "Draw a truth table for $\\neg(P \\land Q) \\leftrightarrow (\\neg P \\lor \\neg Q)$.\n\nSolution:\n\nStep 1: $n = 2$ variables $\\Rightarrow$ $2^2 = 4$ rows.\n\nStep 2: Build columns systematically.\n\n| $P$ | $Q$ | $P \\land Q$ | $\\neg(P \\land Q)$ | $\\neg P$ | $\\neg Q$ | $\\neg P \\lor \\neg Q$ |\n|---|---|---|---|---|---|---|\n| T | T | T | F | F | F | F |\n| T | F | F | T | F | T | T |\n| F | T | F | T | T | F | T |\n| F | F | F | T | T | T | T |\n\nStep 3: Apply the biconditional to the two highlighted columns.\n\n| $P$ | $Q$ | $\\neg(P \\land Q)$ | $\\neg P \\lor \\neg Q$ | $\\neg(P \\land Q) \\leftrightarrow (\\neg P \\lor \\neg Q)$ |\n|---|---|---|---|---|\n| T | T | F | F | T |\n| T | F | T | T | T |\n| F | T | T | T | T |\n| F | F | T | T | T |\n\nConclusion: The statement is a tautology.\nThis proves De Morgan's First Law:\n\\[\n    \\boxed{\\neg(P \\land Q) \\;\\equiv\\; \\neg P \\lor \\neg Q}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 5: Negation of a Tautology --- Past Paper 2024 Q6(ii)",
+    "content": "Draw a truth table for $\\neg\\bigl(\\neg(P \\land Q) \\leftrightarrow (\\neg P \\lor \\neg Q)\\bigr)$.\n\nSolution:\n\nKey Insight: From Example~4 we know that\n$\\neg(P \\land Q) \\leftrightarrow (\\neg P \\lor \\neg Q)$ is a tautology (always T).\nNegating a tautology gives a contradiction (always F).\n\nVerification:\n\n| $P$ | $Q$ | $\\neg(P \\land Q) \\leftrightarrow (\\neg P \\lor \\neg Q)$ | $\\neg\\bigl(\\neg(P \\land Q) \\leftrightarrow (\\neg P \\lor \\neg Q)\\bigr)$ |\n|---|---|---|---|\n| T | T | T | F |\n| T | F | T | F |\n| F | T | T | F |\n| F | F | T | F |\n\nConclusion: The final column is all F.\nThis is a contradiction --- confirming that the negation of a tautology\nis always a contradiction.\n\\[\n    \\boxed{\\neg\\bigl(\\neg(P \\land Q) \\leftrightarrow (\\neg P \\lor \\neg Q)\\bigr) \\;\\equiv\\; \\mathbf{F}}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 6: Three-Variable Truth Table --- Past Paper 2021 Q3(iii)",
+    "content": "Construct a truth table for $(\\neg p \\leftrightarrow \\neg q) \\leftrightarrow (q \\leftrightarrow r)$.\n\nSolution:\n\nStep 1: $n = 3$ variables $\\Rightarrow$ $2^3 = 8$ rows.\n\nStep 2: Standard variable ordering: $p$ changes every 4 rows,\n$q$ every 2 rows, $r$ every row.\n\n| $p$ | $q$ | $r$ | $\\neg p$ | $\\neg q$ | $\\neg p \\leftrightarrow \\neg q$ | $q \\leftrightarrow r$ | $(\\neg p \\leftrightarrow \\neg q) \\leftrightarrow (q \\leftrightarrow r)$ |\n|---|---|---|---|---|---|---|---|\n| T | T | T | F | F | T | T | T |\n| T | T | F | F | F | T | F | F |\n| T | F | T | F | T | F | F | T |\n| T | F | F | F | T | F | T | F |\n| F | T | T | T | F | F | T | F |\n| F | T | F | T | F | F | F | T |\n| F | F | T | T | T | T | F | F |\n| F | F | F | T | T | T | T | T |\n\nConclusion: The final column is not all T and not all F,\nso this is a contingency --- it is sometimes true and sometimes false."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "theorem",
+    "title": "Theorem 1.2 --- Tautology and Contradiction Relationship",
+    "content": "If $\\varphi$ is a tautology, then $\\neg \\varphi$ is a contradiction.\nConversely, if $\\varphi$ is a contradiction, then $\\neg \\varphi$ is a tautology.\n\\[\n    \\varphi \\equiv \\mathbf{T} \\;\\implies\\; \\neg\\varphi \\equiv \\mathbf{F}\n\\]\n\\[\n    \\varphi \\equiv \\mathbf{F} \\;\\implies\\; \\neg\\varphi \\equiv \\mathbf{T}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "proof",
+    "title": "Proof of Theorem 1.2",
+    "content": "Proof:\n\nStep 1: Setup.\n\nLet $\\varphi$ be a compound proposition containing variables $p_1, p_2, \\ldots, p_n$.\nSuppose $\\varphi$ is a tautology, meaning for every truth-value assignment\n$\\mathcal{A}$ to $p_1, \\ldots, p_n$:\n\\[\n    \\mathcal{A}(\\varphi) = \\mathbf{T}\n\\]\n\nStep 2: Evaluate $\\neg\\varphi$ under any assignment.\n\nLet $\\mathcal{A}$ be any truth-value assignment. By the definition of negation:\n\\[\n    \\mathcal{A}(\\neg\\varphi) = \\mathbf{T} \\iff \\mathcal{A}(\\varphi) = \\mathbf{F}\n\\]\nSince $\\varphi$ is a tautology, $\\mathcal{A}(\\varphi) = \\mathbf{T}$ for all $\\mathcal{A}$.\nTherefore $\\mathcal{A}(\\varphi) \\neq \\mathbf{F}$ for any $\\mathcal{A}$,\nwhich means $\\mathcal{A}(\\neg\\varphi) = \\mathbf{F}$ for all $\\mathcal{A}$.\n\nStep 3: Conclude.\n\nSince $\\neg\\varphi$ evaluates to $\\mathbf{F}$ under every truth-value assignment,\n$\\neg\\varphi$ satisfies the definition of a contradiction.\n\nThe converse follows by the same argument with the roles of $\\varphi$ and $\\neg\\varphi$\nexchanged, using the fact that $\\neg(\\neg\\varphi) \\equiv \\varphi$.\n\nConclusion: $\\varphi$ is a tautology if and only if\n$\\neg\\varphi$ is a contradiction."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 7: Proving a Tautology --- Past Paper 2023 Q2(ii)",
+    "content": "Show that $(p \\land q) \\rightarrow p$ is a tautology.\n\nSolution:\n\nMethod 1: Truth Table\n\n| $p$ | $q$ | $p \\land q$ | $(p \\land q) \\rightarrow p$ |\n|---|---|---|---|\n| T | T | T | T |\n| T | F | F | T |\n| F | T | F | T |\n| F | F | F | T |\n\nThe final column is all T. ✓\\ Tautology confirmed.\n\nMethod 2: Logical Reasoning (no truth table)\n\nThe conditional $p \\land q \\rightarrow p$ is false only when the hypothesis\n$p \\land q$ is true and the conclusion $p$ is false.\n\nBut if $p \\land q$ is true, then by the definition of conjunction, $p$ must be true.\nThis is a direct contradiction --- the hypothesis being true forces the conclusion to be true.\nTherefore the conditional can never be false.\n\nConclusion:\n\\[\n    \\boxed{(p \\land q) \\rightarrow p \\;\\equiv\\; \\mathbf{T}}\n\\]\nThis is known as the Simplification rule of inference and is used directly\nin logical proofs."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 8: Two-Variable Tautology --- Past Paper 2021 Q3(ii)",
+    "content": "Construct a truth table for $(\\neg p \\leftrightarrow \\neg q) \\rightarrow (p \\leftrightarrow q)$.\n\nSolution:\n\nStep 1: $n = 2 \\Rightarrow 2^2 = 4$ rows.\n\n| $p$ | $q$ | $\\neg p$ | $\\neg q$ | $\\neg p \\leftrightarrow \\neg q$ | $p \\leftrightarrow q$ | $(\\neg p \\leftrightarrow \\neg q) \\rightarrow (p \\leftrightarrow q)$ |\n|---|---|---|---|---|---|---|\n| T | T | F | F | T | T | T |\n| T | F | F | T | F | F | T |\n| F | T | T | F | F | F | T |\n| F | F | T | T | T | T | T |\n\nConclusion: All T --- this is a tautology.\n\\[\n    \\boxed{(\\neg p \\leftrightarrow \\neg q) \\rightarrow (p \\leftrightarrow q) \\;\\equiv\\; \\mathbf{T}}\n\\]\nIntuitively: if ``not $p$'' and ``not $q$'' have the same truth value, then\n$p$ and $q$ must also have the same truth value.\n\n\\smallFigure 1.2: Classification of compound propositions by their truth-value patterns."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "definition",
+    "title": "Definition 1.14 --- Satisfiability",
+    "content": "A compound proposition is called satisfiable if there exists at least one\ntruth-value assignment that makes it true.\n\nKey Points:\n\n- Every tautology is satisfiable (it is true under all assignments).\n- Every contingency is satisfiable (it is true under some assignments).\n- A contradiction is the only type that is not satisfiable.\n- Satisfiability is a central concept in computer science (the SAT problem).\n\n| Type | Always True? | Satisfiable? |\n|---|---|---|\n| Tautology | ✓ Yes | ✓ Yes |\n| Contingency | $\\times$ No | ✓ Yes |\n| Contradiction | $\\times$ No | $\\times$ No |\n\n(Past Paper 2025 Q1(v) directly asks: ``What is a satisfiable statement?'')"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "example",
+    "title": "Example 9: Satisfiability Check",
+    "content": "Determine whether each of the following is satisfiable:\n\n1. $p \\land \\neg p$\n2. $p \\lor q$\n3. $p \\rightarrow p$\n\nSolution:\n\n(a) $p \\land \\neg p$:\n\nFrom Example~2, this is a contradiction --- always F.\nThere is no assignment making it true.\n$\\Rightarrow$ Not satisfiable.\n\n(b) $p \\lor q$:\n\n| $p$ | $q$ | $p \\lor q$ |\n|---|---|---|\n| T | T | T |\n| T | F | T |\n| F | T | T |\n| F | F | F |\nTrue for 3 out of 4 assignments --- this is a contingency.\n$\\Rightarrow$ Satisfiable.\n\n(c) $p \\rightarrow p$:\n\n| $p$ | $p \\rightarrow p$ |\n|---|---|\n| T | T |\n| F | T |\nAlways T --- this is a tautology.\n$\\Rightarrow$ Satisfiable."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Truth Tables, Tautologies, and Contradictions",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 1.2 Summary --- Truth",
+    "content": "Section 1.2 Summary --- Truth Tables, Tautologies \\& Contradictions\n\nClassification at a Glance:\n\n| Type | Truth Pattern | Example |\n|---|---|---|\n| Tautology | All rows: T | $p \\lor \\neg p$ |\n| Contradiction | All rows: F | $p \\land \\neg p$ |\n| Contingency | Mix of T and F | $p \\land q$ |\n\nTruth Table Construction Steps:\n\n1. Count distinct variables $n$ $\\Rightarrow$ table has $2^n$ rows.\n2. List variables with standard alternating T/F pattern.\n3. Add one column per sub-expression, following operator precedence.\n4. Final column = the whole proposition.\n5. Check: all T $\\Rightarrow$ tautology; all F $\\Rightarrow$ contradiction; mixed $\\Rightarrow$ contingency.\n\nPast Paper Connection:\n\n- 2020 Q1(v) \\& Q1(xiv): Tautology definition and verification $\\rightarrow$ Examples 1, 3\n- 2021 Q3(i)(ii)(iii): Truth tables for compound propositions $\\rightarrow$ Examples 5, 6, 8\n- 2023 Q2(ii): $(p \\land q) \\rightarrow p$ tautology $\\rightarrow$ Example 7\n- 2024 Q6(i)(ii): De Morgan truth tables $\\rightarrow$ Examples 4, 5\n- 2025 Q1(v): Satisfiable statement $\\rightarrow$ Definition 1.14"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "definition",
+    "title": "Definition 1.15 --- Logical Equivalence",
+    "content": "Two compound propositions $\\varphi$ and $\\psi$ are logically equivalent,\nwritten $\\varphi \\equiv \\psi$, if they have identical truth values for every\npossible truth-value assignment of their variables.\n\nKey Points:\n\n- $\\varphi \\equiv \\psi$ if and only if $\\varphi \\leftrightarrow \\psi$ is a\n          tautology.\n- The symbol $\\equiv$ means ``logically equivalent'' ---\n          it is not the same as $\\leftrightarrow$ (which is a connective inside logic).\n- Logical equivalence is an equivalence relation: it is reflexive,\n          symmetric, and transitive.\n- We can substitute one side for the other inside any larger formula\n          without changing its truth value."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "theorem",
+    "title": "Theorem 1.3 --- Laws of Propositional Logic",
+    "content": "The following logical equivalences hold for all propositions $p$, $q$, and $r$.\nThese are the fundamental laws used to simplify compound propositions.\n\nIdentity Laws:\n\\[\n    p \\land \\mathbf{T} \\equiv p \\qquad\\qquad p \\lor \\mathbf{F} \\equiv p\n\\]\n\nDomination Laws:\n\\[\n    p \\lor \\mathbf{T} \\equiv \\mathbf{T} \\qquad\\qquad p \\land \\mathbf{F} \\equiv \\mathbf{F}\n\\]\n\nIdempotent Laws:\n\\[\n    p \\lor p \\equiv p \\qquad\\qquad p \\land p \\equiv p\n\\]\n\nDouble Negation Law:\n\\[\n    \\neg(\\neg p) \\equiv p\n\\]\n\nCommutative Laws:\n\\[\n    p \\lor q \\equiv q \\lor p \\qquad\\qquad p \\land q \\equiv q \\land p\n\\]\n\nAssociative Laws:\n\\[\n    (p \\lor q) \\lor r \\equiv p \\lor (q \\lor r)\n\\]\n\\[\n    (p \\land q) \\land r \\equiv p \\land (q \\land r)\n\\]\n\nDistributive Laws:\n\\[\n    p \\lor (q \\land r) \\equiv (p \\lor q) \\land (p \\lor r)\n\\]\n\\[\n    p \\land (q \\lor r) \\equiv (p \\land q) \\lor (p \\land r)\n\\]\n\nDe Morgan's Laws:\n\\[\n    \\neg(p \\land q) \\equiv \\neg p \\lor \\neg q\n\\]\n\\[\n    \\neg(p \\lor q) \\equiv \\neg p \\land \\neg q\n\\]\n\nAbsorption Laws:\n\\[\n    p \\lor (p \\land q) \\equiv p \\qquad\\qquad p \\land (p \\lor q) \\equiv p\n\\]\n\nNegation Laws:\n\\[\n    p \\lor \\neg p \\equiv \\mathbf{T} \\qquad\\qquad p \\land \\neg p \\equiv \\mathbf{F}\n\\]\n\nContrapositive Law:\n\\[\n    p \\rightarrow q \\;\\equiv\\; \\neg q \\rightarrow \\neg p\n\\]\n\nExportation Law:\n\\[\n    (p \\land q) \\rightarrow r \\;\\equiv\\; p \\rightarrow (q \\rightarrow r)\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "proof",
+    "title": "Proof of De Morgan's First Law: $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$",
+    "content": "Proof (by Truth Table):\n\nStep 1: We need $2^2 = 4$ rows for variables $p$ and $q$.\n\nStep 2: Evaluate both sides independently.\n\n| $p$ | $q$ | $p \\land q$ | $\\neg(p \\land q)$ | $\\neg p$ | $\\neg q$ | $\\neg p \\lor \\neg q$ |\n|---|---|---|---|---|---|---|\n| T | T | T | F | F | F | F |\n| T | F | F | T | F | T | T |\n| F | T | F | T | T | F | T |\n| F | F | F | T | T | T | T |\n\nStep 3: The columns for $\\neg(p \\land q)$ and $\\neg p \\lor \\neg q$ are\nidentical in every row: F, T, T, T.\n\nConclusion:\n\\[\n    \\neg(p \\land q) \\equiv \\neg p \\lor \\neg q \\qed\n\\]\n\nIntuitive meaning: ``It is not the case that both $p$ and $q$ are true''\nis the same as saying ``either $p$ is false or $q$ is false (or both).''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "proof",
+    "title": "Proof of De Morgan's Second Law: $\\neg(p \\lor q) \\equiv \\neg p \\land \\neg q$",
+    "content": "Proof (by Truth Table):\n\n| $p$ | $q$ | $p \\lor q$ | $\\neg(p \\lor q)$ | $\\neg p$ | $\\neg q$ | $\\neg p \\land \\neg q$ |\n|---|---|---|---|---|---|---|\n| T | T | T | F | F | F | F |\n| T | F | T | F | F | T | F |\n| F | T | T | F | T | F | F |\n| F | F | F | T | T | T | T |\n\nBoth columns produce F, F, F, T --- they are identical.\n\nConclusion:\n\\[\n    \\neg(p \\lor q) \\equiv \\neg p \\land \\neg q \\qed\n\\]\n\nIntuitive meaning: ``Neither $p$ nor $q$ is true'' is the same as\n``$p$ is false and $q$ is false.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "example",
+    "title": "Example 1: Applying De Morgan's Laws --- Past Paper 2024 Q1(i)",
+    "content": "State De Morgan's Laws in set theory and use them to find the negation of:\n\n1. Carlos will bicycle or run tomorrow.\n2. Ibrahim is smart and hardworking.\n\n(Part (b) directly from Past Paper 2023 Q1(iv).)\n\nSolution:\n\n(a) Let $p$ = ``Carlos will bicycle'' and $q$ = ``Carlos will run tomorrow.''\n\nOriginal statement: $p \\lor q$\n\nNegation: $\\neg(p \\lor q) \\equiv \\neg p \\land \\neg q$\n\nIn English: ``Carlos will not bicycle and will not run tomorrow.''\n\n(b) Let $p$ = ``Ibrahim is smart'' and $q$ = ``Ibrahim is hardworking.''\n\nOriginal statement: $p \\land q$\n\nNegation: $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$\n\nIn English: ``Ibrahim is not smart or is not hardworking.''\n\nCommon Mistake: Students often negate\n``Ibrahim is smart and hardworking'' as ``Ibrahim is not smart and not hardworking.''\nThis is wrong --- the and must change to or when\nnegating a conjunction (De Morgan's Law)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "example",
+    "title": "Example 2: Simplification Using Laws of Logic",
+    "content": "Simplify $\\neg(\\neg p \\land q) \\land (p \\lor q)$ using logical laws.\n\nSolution:\n\nWe apply laws step by step, naming each law used.\n\n$$\\begin{align*}\n    &\\neg(\\neg p \\land q) \\land (p \\lor q) \\\\\n    &\\equiv (\\neg(\\neg p) \\lor \\neg q) \\land (p \\lor q)\n        &&\\text{De Morgan's Law} \\\\\n    &\\equiv (p \\lor \\neg q) \\land (p \\lor q)\n        &&\\text{Double Negation Law} \\\\\n    &\\equiv p \\lor (\\neg q \\land q)\n        &&\\text{Distributive Law} \\\\\n    &\\equiv p \\lor \\mathbf{F}\n        &&\\text{Negation Law: } q \\land \\neg q \\equiv \\mathbf{F} \\\\\n    &\\equiv p\n        &&\\text{Identity Law}\n\\end{align*}$$\n\nResult:\n\\[\n    \\boxed{\\neg(\\neg p \\land q) \\land (p \\lor q) \\;\\equiv\\; p}\n\\]\n\nThis is exactly the type of simplification asked in Past Paper 2025 Q1(iv)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "example",
+    "title": "Example 3: Laws of Logic Proof --- Past Paper 2025 Q1(iv)",
+    "content": "Using laws of logic, show that:\n\\[\n    \\neg(\\neg p \\land q) \\land (p \\lor q) \\equiv p\n\\]\n\nSolution:\n\n| Expression | Law Applied |\n|---|---|\n| $\\neg(\\neg p \\land q) \\land (p \\lor q)$ | Given |\n| $(\\neg\\neg p \\lor \\neg q) \\land (p \\lor q)$ | De Morgan's Law |\n| $(p \\lor \\neg q) \\land (p \\lor q)$ | Double Negation Law |\n| $p \\lor (\\neg q \\land q)$ | Distributive Law |\n| $p \\lor \\mathbf{F}$ | Negation Law |\n| $p$ | Identity Law |\n\nConclusion: $\\neg(\\neg p \\land q) \\land (p \\lor q) \\equiv p$ \\quad ✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "example",
+    "title": "Example 4: Conditional Tautology Without Truth Table --- Past Paper 2025 Q1(ii)",
+    "content": "Show that $\\neg(p \\rightarrow q) \\rightarrow \\neg q$ is a tautology without using a truth table.\n\nSolution:\n\nWe convert the conditional to disjunction form and simplify algebraically.\n\n| Expression | Law Applied |\n|---|---|\n| $\\neg(p \\rightarrow q) \\rightarrow \\neg q$ | Given |\n| $\\neg(p \\rightarrow q) \\rightarrow \\neg q$ | (rewrite conditional) |\n| $\\neg[\\neg(p \\rightarrow q)] \\lor \\neg q$ | $A \\rightarrow B \\equiv \\neg A \\lor B$ |\n| $(p \\rightarrow q) \\lor \\neg q$ | Double Negation Law |\n| $(\\neg p \\lor q) \\lor \\neg q$ | $p \\rightarrow q \\equiv \\neg p \\lor q$ |\n| $\\neg p \\lor (q \\lor \\neg q)$ | Associative Law |\n| $\\neg p \\lor \\mathbf{T}$ | Negation Law: $q \\lor \\neg q \\equiv \\mathbf{T}$ |\n| $\\mathbf{T}$ | Domination Law |\n\nConclusion: The expression simplifies to $\\mathbf{T}$,\nconfirming it is a tautology. ✓\n\\[\n    \\boxed{\\neg(p \\rightarrow q) \\rightarrow \\neg q \\;\\equiv\\; \\mathbf{T}}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "example",
+    "title": "Example 5: Proving Logical Equivalence --- Past Paper 2023 Q2(i)",
+    "content": "Prove that $\\neg p \\leftrightarrow q \\;\\equiv\\; p \\leftrightarrow \\neg q$\nusing logical equivalences.\n\nSolution:\n\nRecall: $A \\leftrightarrow B \\equiv (A \\rightarrow B) \\land (B \\rightarrow A)$\nand $A \\rightarrow B \\equiv \\neg A \\lor B$.\n\nLeft-hand side:\n$$\\begin{align*}\n    \\neg p \\leftrightarrow q\n    &\\equiv (\\neg p \\rightarrow q) \\land (q \\rightarrow \\neg p) \\\\\n    &\\equiv (p \\lor q) \\land (\\neg q \\lor \\neg p) \\\\\n    &\\equiv (p \\lor q) \\land \\neg(q \\land p)\n        &&\\text{De Morgan on } \\neg q \\lor \\neg p \\\\\n    &\\equiv (p \\lor q) \\land \\neg(p \\land q)\n        &&\\text{Commutative Law}\n\\end{align*}$$\n\nRight-hand side:\n$$\\begin{align*}\n    p \\leftrightarrow \\neg q\n    &\\equiv (p \\rightarrow \\neg q) \\land (\\neg q \\rightarrow p) \\\\\n    &\\equiv (\\neg p \\lor \\neg q) \\land (q \\lor p) \\\\\n    &\\equiv \\neg(p \\land q) \\land (p \\lor q)\n        &&\\text{De Morgan; Commutative} \\\\\n    &\\equiv (p \\lor q) \\land \\neg(p \\land q)\n        &&\\text{Commutative Law}\n\\end{align*}$$\n\nBoth sides simplify to $(p \\lor q) \\land \\neg(p \\land q)$.\n\nConclusion:\n\\[\n    \\boxed{\\neg p \\leftrightarrow q \\;\\equiv\\; p \\leftrightarrow \\neg q} \\quad \\textcolor{darkgreen}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "example",
+    "title": "Example 6: XOR and Biconditional --- Past Paper 2025 Q1(x)",
+    "content": "Show that $\\neg(p \\oplus q)$ and $p \\leftrightarrow q$ are logically equivalent.\n\nSolution:\n\nMethod: Truth Table.\n\nRecall: $p \\oplus q$ is true when exactly one of $p$, $q$ is true.\n\n| $p$ | $q$ | $p \\oplus q$ | $\\neg(p \\oplus q)$ | $p \\leftrightarrow q$ |\n|---|---|---|---|---|\n| T | T | F | T | T |\n| T | F | T | F | F |\n| F | T | T | F | F |\n| F | F | F | T | T |\n\nThe columns for $\\neg(p \\oplus q)$ and $p \\leftrightarrow q$ are identical: T, F, F, T.\n\nConclusion:\n\\[\n    \\boxed{\\neg(p \\oplus q) \\;\\equiv\\; p \\leftrightarrow q}\n\\]\n\nIntuition: $p \\oplus q$ is true when $p$ and $q$ differ.\nNegating that gives truth when they are the same --- which is exactly\nwhat the biconditional means."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "example",
+    "title": "Example 7: Finding the Dual --- Past Paper 2025 Q1(i)",
+    "content": "Find the dual of $(p \\lor \\mathbf{F}) \\land (q \\lor \\mathbf{T})$.\n\nSolution:\n\nDefinition of Dual: To find the dual of a compound proposition,\nreplace every $\\lor$ with $\\land$, every $\\land$ with $\\lor$,\nevery $\\mathbf{T}$ with $\\mathbf{F}$, and every $\\mathbf{F}$ with $\\mathbf{T}$.\nDo not change the propositional variables or negations.\n\nOriginal: $(p \\lor \\mathbf{F}) \\land (q \\lor \\mathbf{T})$\n\nStep-by-step substitution:\n\n- Outer $\\land \\;\\longrightarrow\\; \\lor$\n- First $\\lor \\;\\longrightarrow\\; \\land$\n- $\\mathbf{F} \\;\\longrightarrow\\; \\mathbf{T}$\n- Second $\\lor \\;\\longrightarrow\\; \\land$\n- $\\mathbf{T} \\;\\longrightarrow\\; \\mathbf{F}$\n\nDual:\n\\[\n    \\boxed{(p \\land \\mathbf{T}) \\lor (q \\land \\mathbf{F})}\n\\]\n\nSimplification of the dual using laws:\n$$\\begin{align*}\n    (p \\land \\mathbf{T}) \\lor (q \\land \\mathbf{F})\n    &\\equiv p \\lor \\mathbf{F} &&\\text{Identity Law; Domination Law}\\\\\n    &\\equiv p &&\\text{Identity Law}\n\\end{align*}$$\n\nSimplification of the original for comparison:\n$$\\begin{align*}\n    (p \\lor \\mathbf{F}) \\land (q \\lor \\mathbf{T})\n    &\\equiv p \\land \\mathbf{T} &&\\text{Identity Law; Domination Law}\\\\\n    &\\equiv p &&\\text{Identity Law}\n\\end{align*}$$\n\nNote: Both the original and its dual simplify\nto $p$ in this case, but this is a coincidence --- duals are generally not equivalent\nto the original.\n\n\\smallFigure 1.3: The eight families of logical laws for propositional logic."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "example",
+    "title": "Example 8: Associative Law --- Past Paper 2021 Q1(iii)",
+    "content": "State the associative law of union for three sets and verify it logically.\n\nSolution:\n\nThe associative law of union for sets $A$, $B$, $C$ states:\n\\[\n    (A \\cup B) \\cup C = A \\cup (B \\cup C)\n\\]\n\nLogical counterpart: The analogous law for propositions is:\n\\[\n    (p \\lor q) \\lor r \\;\\equiv\\; p \\lor (q \\lor r)\n\\]\n\nVerification by truth table ($n=3$, so $2^3 = 8$ rows):\n\n| $p$ | $q$ | $r$ | $p \\lor q$ | $(p\\lor q)\\lor r$ | $q \\lor r$ | $p\\lor(q\\lor r)$ |\n|---|---|---|---|---|---|---|\n| T | T | T | T | T | T | T |\n| T | T | F | T | T | T | T |\n| T | F | T | T | T | T | T |\n| T | F | F | T | T | F | T |\n| F | T | T | T | T | T | T |\n| F | T | F | T | T | T | T |\n| F | F | T | F | T | T | T |\n| F | F | F | F | F | F | F |\n\nColumns 5 and 7 are identical. ✓\n\\[\n    \\boxed{(p \\lor q) \\lor r \\;\\equiv\\; p \\lor (q \\lor r)}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Logical Equivalences and Laws of Logic",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 1.3 Summary --- Logical",
+    "content": "Section 1.3 Summary --- Logical Equivalences \\& Laws\n\nStrategy for Algebraic Simplification:\n\n1. Replace conditionals: $p \\rightarrow q \\equiv \\neg p \\lor q$.\n2. Apply De Morgan's Laws to push negations inward.\n3. Apply Double Negation to eliminate $\\neg\\neg$.\n4. Use Distributive Laws to factor or expand.\n5. Use Absorption, Idempotent, and Negation Laws to reduce.\n6. Apply Identity and Domination Laws to reach the simplest form.\n\nMost Tested Laws (from past papers):\n| Law | Equivalence |\n|---|---|\n| De Morgan 1 | $\\neg(p\\land q) \\equiv \\neg p \\lor \\neg q$ |\n| De Morgan 2 | $\\neg(p\\lor q) \\equiv \\neg p \\land \\neg q$ |\n| Conditional | $p\\rightarrow q \\equiv \\neg p \\lor q$ |\n| Contrapositive | $p\\rightarrow q \\equiv \\neg q \\rightarrow \\neg p$ |\n| Double Negation | $\\neg\\neg p \\equiv p$ |\n| Biconditional | $p\\leftrightarrow q \\equiv (p\\rightarrow q)\\land(q\\rightarrow p)$ |\n| XOR--Biconditional | $\\neg(p\\oplus q) \\equiv p\\leftrightarrow q$ |\n\nPast Paper Connection:\n\n- 2021 Q1(iii): Associative law of union $\\rightarrow$ Example 8\n- 2023 Q1(iv): De Morgan negations in English $\\rightarrow$ Example 1\n- 2023 Q2(i): Proving $\\neg p\\leftrightarrow q\\equiv p\\leftrightarrow\\neg q$ $\\rightarrow$ Example 5\n- 2024 Q1(i): De Morgan's law in set theory $\\rightarrow$ Example 1\n- 2025 Q1(i): Dual of a proposition $\\rightarrow$ Example 7\n- 2025 Q1(ii): Tautology without truth table $\\rightarrow$ Example 4\n- 2025 Q1(iv): Laws of logic simplification $\\rightarrow$ Examples 2, 3\n- 2025 Q1(x): XOR and biconditional equivalence $\\rightarrow$ Example 6"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "definition",
+    "title": "Definition 1.16 --- Predicate",
+    "content": "A predicate is a statement involving one or more variables whose truth value\ndepends on the value(s) assigned to those variables. A predicate with variable $x$\nis written $P(x)$ and is called a propositional function.\n\nKey Points:\n\n- $P(x)$ is not a proposition --- it becomes one only when a specific\n          value is substituted for $x$.\n- The set of all allowable values for a variable is called the domain\n          (or universe of discourse).\n- Predicates can have more than one variable: $P(x,y)$, $Q(x,y,z)$, etc.\n- Once all variables are assigned values, $P(x)$ becomes a proposition\n          with a definite truth value.\n\nExample: Let $P(x)$ denote ``$x > 5$.''\n\n- $P(6)$: ``$6 > 5$'' \\hfill True\n- $P(3)$: ``$3 > 5$'' \\hfill False\n- $P(x)$: not yet a proposition (truth value unknown until $x$ is specified)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "example",
+    "title": "Example 1: Evaluating Predicates --- Past Paper 2022 Q1(iv)",
+    "content": "Let $P(x)$ denote the statement ``$x > 5$.''\nWhat are the truth values of $P(5)$ and $P(4)$?\n\nSolution:\n\n- $P(5)$: Substitute $x = 5$ $\\Rightarrow$ ``$5 > 5$'' $\\Rightarrow$\n          False \\quad (5 is not strictly greater than 5)\n- $P(4)$: Substitute $x = 4$ $\\Rightarrow$ ``$4 > 5$'' $\\Rightarrow$\n          False \\quad (4 is not greater than 5)\n\nAnswer: $P(5) = \\mathbf{F}$ and $P(4) = \\mathbf{F}$.\n\nFor $P(x)$ to be true, we need $x > 5$, i.e., $x \\geq 6$ for integer values.\nFor example, $P(6) = $ True, $P(100) = $ True."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "definition",
+    "title": "Definition 1.17 --- Universal Quantifier ($\\forall$)",
+    "content": "The universal quantification of $P(x)$, written $\\forall x\\, P(x)$\n(read: ``for all $x$, $P(x)$'' or ``for every $x$, $P(x)$''),\nis the proposition that claims $P(x)$ is true for every element $x$\nin the domain.\n\n| Symbol | $\\forall$ (inverted A --- think ``All'') |\n|---|---|\n| Read as | ``for all'', ``for every'', ``for each'', ``for any'' |\n| True when | $P(x)$ holds for every element in the domain |\n| False when | There exists at least one element where $P(x)$ is false |\n\nKey Points:\n\n- To disprove $\\forall x\\, P(x)$, it suffices to find one\n          element $x_0$ where $P(x_0)$ is false. This element is called a\n          counterexample.\n- $\\forall x\\, P(x)$ is equivalent to the conjunction of $P(a)$ over\n          all elements $a$ in the domain.\n- The domain must always be specified --- the truth of $\\forall x\\, P(x)$\n          depends heavily on what the domain is."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "definition",
+    "title": "Definition 1.18 --- Existential Quantifier ($\\exists$)",
+    "content": "The existential quantification of $P(x)$, written $\\exists x\\, P(x)$\n(read: ``there exists an $x$ such that $P(x)$''), is the proposition\nthat claims $P(x)$ is true for at least one element $x$ in the domain.\n\n| Symbol | $\\exists$ (reversed E --- think ``Exists'') |\n|---|---|\n| Read as | ``there exists'', ``for some'', ``there is at least one'' |\n| True when | $P(x)$ holds for at least one element in the domain |\n| False when | $P(x)$ is false for every element in the domain |\n\nKey Points:\n\n- To prove $\\exists x\\, P(x)$, it suffices to find one\n          specific element $x_0$ where $P(x_0)$ is true. This is called a\n          witness.\n- $\\exists x\\, P(x)$ is equivalent to the disjunction of $P(a)$ over\n          all elements $a$ in the domain.\n- Past Paper 2021 Q1(i) directly asks: ``Define existential quantification\n          with a suitable example.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "example",
+    "title": "Example 2: Existential Quantification --- Past Paper 2021 Q1(i)",
+    "content": "Define existential quantification with a suitable example.\nAlso evaluate $\\exists x\\, P(x)$ where $P(x)$ is ``$x^2 > 10$''\nwith domain $\\{1, 2, 3, 4, 5\\}$.\n\nSolution:\n\nDefinition: $\\exists x\\, P(x)$ means ``there exists at least one element\n$x$ in the domain for which $P(x)$ is true.''\n\nEvaluation: We check $P(x): x^2 > 10$ for each element.\n\n| $x$ | $x^2$ | $x^2 > 10$? |\n|---|---|---|\n| 1 | 1 | False |\n| 2 | 4 | False |\n| 3 | 9 | False |\n| 4 | 16 | True |\n| 5 | 25 | True |\n\nSince $P(4)$ is true (and $P(5)$ is true), there exists at least one\nelement making $P(x)$ true. The witness is $x_0 = 4$.\n\nConclusion: $\\exists x\\, P(x) = \\boxed{\\mathbf{True}}$"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "example",
+    "title": "Example 3: Universal Quantification with Counterexample",
+    "content": "Let $P(x)$ be ``$x^2 \\geq x$'' with domain $\\mathbb{R}$ (all real numbers).\nDetermine if $\\forall x\\, P(x)$ is true or false.\n\nSolution:\n\nClaim: $\\forall x\\, (x^2 \\geq x)$ --- ``For every real number $x$,\n$x^2 \\geq x$.''\n\nTesting with examples:\n\n- $x = 3$: $9 \\geq 3$ ✓\n- $x = 0$: $0 \\geq 0$ ✓\n- $x = -1$: $1 \\geq -1$ ✓\n- $x = 0.5$: $0.25 \\geq 0.5$? $\\times$ False!\n\nCounterexample found: $x_0 = 0.5$ gives $P(0.5) = $ False.\n\nConclusion: $\\forall x\\, P(x)$ is False.\n\nNote: To disprove a universal statement, we only\nneed one counterexample. We do not need to show it fails everywhere."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "definition",
+    "title": "Definition 1.19 --- Uniqueness Quantifier ($\\exists!$)",
+    "content": "The uniqueness quantifier $\\exists!\\, x\\, P(x)$ (read: ``there exists a\nunique $x$ such that $P(x)$'') asserts that $P(x)$ is true for\nexactly one element in the domain.\n\nExample: $\\exists!\\, x\\, (x^2 = 0)$ over the reals is True\nbecause only $x = 0$ satisfies $x^2 = 0$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "definition",
+    "title": "Definition 1.20 --- Negation of Quantified Statements",
+    "content": "The negation of a quantified statement is found by swapping the quantifier and\nnegating the predicate:\n\n| Statement | Negation | Read as |\n|---|---|---|\n| $\\forall x\\, P(x)$ | $\\exists x\\, \\neg P(x)$ | ``There exists $x$ such that $P(x)$ is false'' |\n| $\\exists x\\, P(x)$ | $\\forall x\\, \\neg P(x)$ | ``For all $x$, $P(x)$ is false'' |\n\nKey Points:\n\n- These are the De Morgan's Laws for quantifiers.\n- The negation of ``all students passed'' is ``some student did not pass''\n          --- not ``all students did not pass.''\n- The negation of ``some student failed'' is ``all students passed.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "theorem",
+    "title": "Theorem 1.4 --- De Morgan's Laws for Quantifiers",
+    "content": "For any predicate $P(x)$ over a domain $D$:\n\\[\n    \\neg\\,\\forall x\\, P(x) \\;\\equiv\\; \\exists x\\, \\neg P(x)\n\\]\n\\[\n    \\neg\\,\\exists x\\, P(x) \\;\\equiv\\; \\forall x\\, \\neg P(x)\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "proof",
+    "title": "Proof of Theorem 1.4 --- De Morgan's Laws for Quantifiers",
+    "content": "Proof of the first law:\n$\\neg\\,\\forall x\\, P(x) \\;\\equiv\\; \\exists x\\, \\neg P(x)$\n\nStep 1: What does $\\neg\\,\\forall x\\, P(x)$ mean?\n\n$\\forall x\\, P(x)$ is true only if $P(x)$ holds for every\nelement in the domain $D$. Its negation is true when this fails ---\ni.e., when $P(x)$ is false for at least one element.\n\nStep 2: Express the failure condition.\n\n$\\forall x\\, P(x)$ fails $\\iff$ there exists some element $x_0 \\in D$ with\n$P(x_0) = \\mathbf{F}$, i.e., $\\neg P(x_0) = \\mathbf{T}$.\n\nStep 3: Recognise the definition.\n\nThe condition ``there exists $x_0 \\in D$ such that $\\neg P(x_0)$ is true''\nis exactly the definition of $\\exists x\\, \\neg P(x)$.\n\nConclusion:\n\\[\n    \\neg\\,\\forall x\\, P(x) \\;\\equiv\\; \\exists x\\, \\neg P(x) \\qed\n\\]\n\nThe second law $\\neg\\,\\exists x\\, P(x) \\equiv \\forall x\\, \\neg P(x)$\nfollows by an identical argument with the roles of $\\forall$ and $\\exists$\nexchanged."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "example",
+    "title": "Example 4: Negating Quantified Statements --- Past Paper 2023 Q1(iii)",
+    "content": "Find the negation of the statement: ``All goats are mammals.''\n\nSolution:\n\nStep 1: Identify the structure.\n\nLet $G(x)$ = ``$x$ is a goat'' and $M(x)$ = ``$x$ is a mammal.''\n\nThe statement is: $\\forall x\\, (G(x) \\rightarrow M(x))$\n\nStep 2: Apply De Morgan's Law for quantifiers.\n$$\\begin{align*}\n    \\neg[\\forall x\\, (G(x) \\rightarrow M(x))]\n    &\\equiv \\exists x\\, \\neg(G(x) \\rightarrow M(x)) \\\\\n    &\\equiv \\exists x\\, \\neg(\\neg G(x) \\lor M(x))\n        &&[p \\rightarrow q \\equiv \\neg p \\lor q] \\\\\n    &\\equiv \\exists x\\, (G(x) \\land \\neg M(x))\n        &&[\\text{De Morgan's Law}]\n\\end{align*}$$\n\nStep 3: Translate back to English.\n\n$\\exists x\\, (G(x) \\land \\neg M(x))$: ``There exists an $x$ that is a goat\nand is not a mammal.''\n\nAnswer: The negation is:\n\\[\n    \\boxed{\\text{``There exists a goat that is not a mammal.''}}\n\\]\n\nCommon Mistake: The negation of ``All goats are mammals''\nis not ``All goats are not mammals'' --- that would be a much stronger claim.\nThe correct negation only requires one goat to fail to be a mammal."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "definition",
+    "title": "Definition 1.21 --- Nested Quantifiers",
+    "content": "When quantifiers appear one after another, they are called nested quantifiers.\nThe order of different quantifiers matters.\n\n| Expression | Meaning | Order matters? |\n|---|---|---|\n| $\\forall x\\, \\forall y\\, P(x,y)$ | For all $x$ and all $y$, $P(x,y)$ | No (same quantifier) |\n| $\\exists x\\, \\exists y\\, P(x,y)$ | There exist $x$ and $y$ such that $P(x,y)$ | No (same quantifier) |\n| $\\forall x\\, \\exists y\\, P(x,y)$ | For every $x$, there exists a $y$ such that $P(x,y)$ | Yes |\n| $\\exists x\\, \\forall y\\, P(x,y)$ | There exists an $x$ such that for all $y$, $P(x,y)$ | Yes |\n\nCritical Note:\n$\\forall x\\, \\exists y\\, P(x,y)$ and $\\exists x\\, \\forall y\\, P(x,y)$\nare not equivalent in general.\n\nExample with $P(x,y): y > x$ over integers:\n\n- $\\forall x\\, \\exists y\\, (y > x)$: For every integer, there is a larger one ---\n          True\n- $\\exists x\\, \\forall y\\, (y > x)$: There is an integer larger than all others ---\n          False"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "example",
+    "title": "Example 5: Expressing Statements with Quantifiers --- Past Paper 2025 Q2",
+    "content": "Let $S(x)$ = ``$x$ is a student,''\n$F(x)$ = ``$x$ is a faculty member,''\n$A(x,y)$ = ``$x$ has asked $y$ a question,''\nwhere the domain consists of all people in the school.\n\nExpress each statement using quantifiers:\n\n1. Every student has asked Professor Gross a question.\n2. Some student has not asked any faculty member a question.\n3. There is a faculty member who has asked every other faculty member a question.\n\nSolution:\n\nLet $g$ denote Professor Gross (a constant in the domain).\n\n(i) Every student has asked Professor Gross a question.\n\nWe need: for all $x$, if $x$ is a student, then $x$ has asked $g$ a question.\n\\[\n    \\boxed{\\forall x\\, \\bigl(S(x) \\rightarrow A(x,\\, g)\\bigr)}\n\\]\n\n(ii) Some student has not asked any faculty member a question.\n\nWe need: there exists a student $x$ such that for every faculty member $y$,\n$x$ has not asked $y$.\n\\[\n    \\boxed{\\exists x\\, \\bigl(S(x) \\land \\forall y\\, (F(y) \\rightarrow \\neg A(x,\\, y))\\bigr)}\n\\]\n\n(iii) There is a faculty member who has asked every other faculty member a question.\n\nWe need: there exists a faculty member $x$ such that for every other faculty member $y$\n(i.e., $y \\neq x$), $x$ has asked $y$.\n\\[\n    \\boxed{\\exists x\\, \\bigl(F(x) \\land \\forall y\\, (F(y) \\land y \\neq x\n    \\rightarrow A(x,\\, y))\\bigr)}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "example",
+    "title": "Example 6: Translating Mathematical Statements --- Past Paper 2023 Q1(v)",
+    "content": "Translate the statement ``The sum of two positive integers is always positive''\ninto a logical expression.\n\nSolution:\n\nStep 1: Identify variables and predicates.\n\nLet the domain be all positive integers $\\mathbb{Z}^+ = \\{1, 2, 3, \\ldots\\}$.\n\nLet $x$ and $y$ be any two positive integers. The statement says their sum $x + y$\nis also a positive integer.\n\nStep 2: Write the logical expression.\n\nSince $x, y \\in \\mathbb{Z}^+$ by assumption of the domain, we need:\n\\[\n    \\boxed{\\forall x\\, \\forall y\\, \\bigl((x > 0) \\land (y > 0)\n    \\rightarrow (x + y > 0)\\bigr)}\n\\]\n\nOr more concisely, if the domain is already restricted to positive integers:\n\\[\n    \\forall x\\, \\forall y\\, (x + y > 0)\n\\]\n\nNote: The domain always matters. Specifying\nthe domain as $\\mathbb{Z}^+$ vs.\\ $\\mathbb{Z}$ (all integers) changes whether\nthe statement needs the explicit positivity conditions."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "example",
+    "title": "Example 7: Truth Value of Nested Quantifiers --- Past Paper 2024 Q1(vi)",
+    "content": "What is the truth value of $\\exists x\\, \\exists y\\, P(x,y)$, where $P(x,y)$\nmeans $x \\cdot y > 0$ and $x$, $y$ are real numbers?\n\nSolution:\n\n$\\exists x\\, \\exists y\\, P(x,y)$ asks: ``Is there at least one pair $(x,y)$ of\nreal numbers such that $x \\cdot y > 0$?''\n\nFinding a witness: Take $x = 2$ and $y = 3$.\n\n\\[\n    x \\cdot y = 2 \\times 3 = 6 > 0 \\quad \\textcolor{darkgreen}{\\checkmark}\n\\]\n\nSince we found a specific pair $(x,y) = (2,3)$ satisfying $P(x,y)$, the\nexistential statement is true.\n\nAnswer:\n\\[\n    \\boxed{\\exists x\\, \\exists y\\, P(x,y) = \\mathbf{True}}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "example",
+    "title": "Example 8: Free and Bound Variables",
+    "content": "Identify the free and bound variables in:\n\n1. $\\exists x\\, (x + y = 1)$\n2. $\\forall x\\, \\exists y\\, (x^2 + y^2 = 1)$\n\nSolution:\n\nA variable is bound if it is governed by a quantifier. Otherwise it is free.\n\n(a) $\\exists x\\, (x + y = 1)$:\n\n- $x$ is bound by $\\exists x$\n- $y$ is free --- it has no quantifier\n\nThis is not a proposition (because $y$ is free --- its value is unspecified).\n\n(b) $\\forall x\\, \\exists y\\, (x^2 + y^2 = 1)$:\n\n- $x$ is bound by $\\forall x$\n- $y$ is bound by $\\exists y$\n\nAll variables are bound, so this is a proposition. Over the reals, it is\nTrue (for any $x$ with $|x| \\leq 1$, we can find $y = \\sqrt{1-x^2}$).\n\n\\smallFigure 1.4: From predicates to quantified statements,\nwith negation rules."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Predicate Logic and Quantifiers",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 1.4 Summary --- Predicate",
+    "content": "Section 1.4 Summary --- Predicate Logic \\& Quantifiers\n\nQuick Reference:\n\n| Concept | Symbol | True when | To disprove |\n|---|---|---|---|\n| Universal | $\\forall x\\, P(x)$ | All elements satisfy $P$ | One counterexample |\n| Existential | $\\exists x\\, P(x)$ | At least one satisfies $P$ | Show all fail |\n| Unique | $\\exists!\\, x\\, P(x)$ | Exactly one satisfies $P$ | Show 0 or 2+ satisfy |\n\nNegation Rules (De Morgan for Quantifiers):\n\\[\n    \\neg\\,\\forall x\\, P(x) \\equiv \\exists x\\, \\neg P(x)\n    \\qquad\\qquad\n    \\neg\\,\\exists x\\, P(x) \\equiv \\forall x\\, \\neg P(x)\n\\]\n\nTranslation Strategy:\n\n1. Identify all variables and assign predicate names.\n2. Look for keywords: ``all/every/each'' $\\Rightarrow$ $\\forall$;\n          ``some/there exists/at least one'' $\\Rightarrow$ $\\exists$.\n3. ``All $A$ are $B$'' $\\Rightarrow$ $\\forall x\\,(A(x) \\rightarrow B(x))$.\n4. ``Some $A$ is $B$'' $\\Rightarrow$ $\\exists x\\,(A(x) \\land B(x))$.\n5. Note: use $\\rightarrow$ with $\\forall$; use $\\land$ with $\\exists$.\n\nPast Paper Connection:\n\n- 2021 Q1(i): Define existential quantification $\\rightarrow$ Definition 1.18, Example 2\n- 2022 Q1(iv): Truth value of $P(5)$ and $P(4)$ $\\rightarrow$ Example 1\n- 2023 Q1(iii): Negation of ``All goats are mammals'' $\\rightarrow$ Example 4\n- 2023 Q1(v): Translate sum of integers $\\rightarrow$ Example 6\n- 2024 Q1(vi): Truth value of $\\exists x\\, \\exists y\\, P(x,y)$ $\\rightarrow$ Example 7\n- 2025 Q2: Full quantifier translation problem $\\rightarrow$ Example 5"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "definition",
+    "title": "Definition 1.22 --- Argument and Valid Argument",
+    "content": "An argument in propositional logic is a sequence of propositions.\nAll propositions except the last are called premises (or hypotheses),\nand the last proposition is the conclusion.\n\nAn argument is valid if whenever all its premises are true, the conclusion\nis also true. Formally, the argument with premises $p_1, p_2, \\ldots, p_n$\nand conclusion $q$ is valid if and only if:\n\\[\n    (p_1 \\land p_2 \\land \\cdots \\land p_n) \\rightarrow q\n    \\quad \\text{is a \\textbf{tautology}.}\n\\]\n\nKey Points:\n\n- A valid argument does not guarantee that the conclusion is true ---\n          only that if the premises are true, the conclusion must be true.\n- An argument can be valid even if some premises are false.\n- The standard notation for an argument is:\n\n|  | $p_1$ |\n|---|---|\n|  | $p_2$ |\n|  | $\\vdots$ |\n|  | $p_n$ |\n| $\\therefore$ | $q$ |\n\nThe symbol $\\therefore$ means ``therefore.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "theorem",
+    "title": "Theorem 1.5 --- Rules of Inference for Propositional Logic",
+    "content": "The following are the fundamental rules of inference. Each is a tautology.\n\n| Rule Name | Tautology | Argument Form |\n|---|---|---|\n| Modus Ponens | $(p \\land (p \\rightarrow q)) \\rightarrow q$ | $p,\\quad p \\rightarrow q \\;\\therefore\\; q$ |\n| Modus Tollens | $(\\neg q \\land (p \\rightarrow q)) \\rightarrow \\neg p$ | $\\neg q,\\quad p \\rightarrow q \\;\\therefore\\; \\neg p$ |\n| Hypothetical Syllogism | $((p{\\rightarrow}q)\\land(q{\\rightarrow}r))\\rightarrow(p{\\rightarrow}r)$ | $p{\\rightarrow}q,\\; q{\\rightarrow}r \\;\\therefore\\; p{\\rightarrow}r$ |\n| Disjunctive Syllogism | $((p \\lor q) \\land \\neg p) \\rightarrow q$ | $p \\lor q,\\quad \\neg p \\;\\therefore\\; q$ |\n| Addition | $p \\rightarrow (p \\lor q)$ | $p \\;\\therefore\\; p \\lor q$ |\n| Simplification | $(p \\land q) \\rightarrow p$ | $p \\land q \\;\\therefore\\; p$ |\n| Conjunction | $((p) \\land (q)) \\rightarrow (p \\land q)$ | $p,\\quad q \\;\\therefore\\; p \\land q$ |\n| Resolution | $((p\\lor q)\\land(\\neg p\\lor r))\\rightarrow(q\\lor r)$ | $p\\lor q,\\; \\neg p\\lor r \\;\\therefore\\; q\\lor r$ |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "proof",
+    "title": "Proof of Modus Ponens: $(p \\land (p \\rightarrow q)) \\rightarrow q$",
+    "content": "Proof (by Truth Table):\n\nWe verify that the formula is a tautology.\n\n| $p$ | $q$ | $p \\rightarrow q$ | $p \\land (p \\rightarrow q)$ | $[p \\land (p \\rightarrow q)] \\rightarrow q$ |\n|---|---|---|---|---|\n| T | T | T | T | T |\n| T | F | F | F | T |\n| F | T | T | F | T |\n| F | F | T | F | T |\n\nAll entries in the final column are T.\n\nConclusion: Modus Ponens is a tautology, confirming\nit is a valid rule of inference.\n\nIntuition: If we know ``$p$'' is true and we know ``if $p$ then $q$,''\nthen $q$ must be true. This is the most natural step in any logical argument."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "proof",
+    "title": "Proof of Modus Tollens: $(\\neg q \\land (p \\rightarrow q)) \\rightarrow \\neg p$",
+    "content": "Proof (using logical equivalences):\n\nStep 1: Recall that $p \\rightarrow q \\equiv \\neg q \\rightarrow \\neg p$\n(contrapositive law).\n\nStep 2: Modus Tollens has the form:\n$\\neg q \\quad$ and $\\quad p \\rightarrow q \\quad \\therefore \\quad \\neg p$\n\nStep 3: Replace $p \\rightarrow q$ with its contrapositive $\\neg q \\rightarrow \\neg p$:\n$\\neg q \\quad$ and $\\quad \\neg q \\rightarrow \\neg p \\quad \\therefore \\quad \\neg p$\n\nStep 4: This is exactly Modus Ponens applied to $\\neg q$ and\n$\\neg q \\rightarrow \\neg p$, which we already proved is valid.\n\nConclusion: Modus Tollens is valid."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "example",
+    "title": "Example 1: Applying Modus Ponens --- Past Paper 2025 Q1(xi)",
+    "content": "State the Modus Ponens rule of inference and apply it to the following:\n\nPremise 1: ``If it is raining, then I will carry an umbrella.''\\\\\nPremise 2: ``It is raining.''\\\\\nConclusion: ?\n\nSolution:\n\nStep 1: Identify propositions.\n\n- Let $p$ = ``It is raining''\n- Let $q$ = ``I will carry an umbrella''\n\nStep 2: Map to Modus Ponens form.\n| Premise 1: | $p \\rightarrow q$ |\n|---|---|\n| Premise 2: | $p$ |\n| $\\therefore$ | $q$ |\n\nStep 3: Apply the rule.\n\nSince we have $p$ (it is raining) and $p \\rightarrow q$ (if raining then umbrella),\nby Modus Ponens we conclude $q$.\n\nConclusion: ``I will carry an umbrella.''\n\\[\n    \\boxed{q : \\text{``I will carry an umbrella.''}}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "example",
+    "title": "Example 2: Applying Modus Tollens --- Past Paper 2023 Q1(ii)",
+    "content": "Define the Modus Tollens rule of inference and apply it:\n\nPremise 1: ``If Aslam studies hard, then he will pass.''\\\\\nPremise 2: ``Aslam did not pass.''\\\\\nConclusion: ?\n\nSolution:\n\nModus Tollens: From $p \\rightarrow q$ and $\\neg q$, conclude $\\neg p$.\n\nStep 1: Assign propositions.\n\n- $p$ = ``Aslam studies hard''\n- $q$ = ``Aslam will pass''\n\nStep 2: Map to rule form.\n| Premise 1: | $p \\rightarrow q$ |\n|---|---|\n| Premise 2: | $\\neg q$ |\n| $\\therefore$ | $\\neg p$ |\n\nConclusion: ``Aslam did not study hard.''\n\\[\n    \\boxed{\\neg p : \\text{``Aslam did not study hard.''}}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "example",
+    "title": "Example 3: Hypothetical Syllogism --- Past Paper 2020 Q1(xiii)",
+    "content": "Identify the rule used and verify it:\n\n\\[\n    p \\rightarrow q, \\quad q \\rightarrow r \\quad \\therefore \\quad p \\rightarrow r\n\\]\n\nSolution:\n\nRule identified: Hypothetical Syllogism --- if $p$ implies $q$\nand $q$ implies $r$, then $p$ implies $r$ (transitivity of implication).\n\nEnglish example:\n\n- $p \\rightarrow q$: ``If I study, then I understand the material.''\n- $q \\rightarrow r$: ``If I understand the material, then I pass the exam.''\n- $\\therefore\\; p \\rightarrow r$: ``If I study, then I pass the exam.''\n\nVerification by truth table ($2^3 = 8$ rows):\n\n| $p$ | $q$ | $r$ | $p{\\rightarrow}q$ | $q{\\rightarrow}r$ | $(p{\\rightarrow}q)\\land(q{\\rightarrow}r)\\rightarrow(p{\\rightarrow}r)$ |\n|---|---|---|---|---|---|\n| T | T | T | T | T | T |\n| T | T | F | T | F | T |\n| T | F | T | F | T | T |\n| T | F | F | F | T | T |\n| F | T | T | T | T | T |\n| F | T | F | T | F | T |\n| F | F | T | T | T | T |\n| F | F | F | T | T | T |\n\nConclusion: All T --- Hypothetical Syllogism is a tautology.\n\\[\n    \\boxed{(p \\rightarrow q) \\land (q \\rightarrow r) \\rightarrow (p \\rightarrow r)\n    \\;\\equiv\\; \\mathbf{T}}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "example",
+    "title": "Example 4: Addition and Simplification --- Past Paper 2021 Q1(ii)",
+    "content": "Give examples of the Addition rule and the Simplification rule of inference.\n\nSolution:\n\nAddition Rule: From $p$, conclude $p \\lor q$.\n\nForm:\n| Premise: | $p$ |\n|---|---|\n| $\\therefore$ | $p \\lor q$ |\n\nExample:\n\n- Premise: ``It is raining.''\n- Conclusion: ``It is raining or the ground is dry.''\n\nNote: The added proposition $q$ can be anything\n--- even something false or unrelated. The conclusion is still valid because\nif $p$ is true, then $p \\lor q$ is certainly true.\n\nSimplification Rule: From $p \\land q$, conclude $p$.\n\nForm:\n| Premise: | $p \\land q$ |\n|---|---|\n| $\\therefore$ | $p$ |\n\nExample:\n\n- Premise: ``It is raining and it is cold.''\n- Conclusion: ``It is raining.''\n\nVerification (Simplification):\n| $p$ | $q$ | $p \\land q$ | $(p \\land q) \\rightarrow p$ |\n|---|---|---|---|\n| T | T | T | T |\n| T | F | F | T |\n| F | T | F | T |\n| F | F | F | T |\nAll T --- ✓ Simplification is valid."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "example",
+    "title": "Example 5: Multi-Step Logical Argument",
+    "content": "Show that the following argument is valid and find the conclusion:\n\nPremises:\n\n1. It is not sunny this afternoon and it is colder than yesterday.\n2. We will go swimming only if it is sunny.\n3. If we do not go swimming, then we will take a canoe trip.\n4. If we take a canoe trip, then we will be home by sunset.\n\nSolution:\n\nStep 1: Assign propositions.\n\n- $p$ = ``It is sunny this afternoon''\n- $q$ = ``It is colder than yesterday''\n- $r$ = ``We will go swimming''\n- $s$ = ``We will take a canoe trip''\n- $t$ = ``We will be home by sunset''\n\nStep 2: Translate premises.\n\n1. $\\neg p \\land q$\n2. $r \\rightarrow p$\n3. $\\neg r \\rightarrow s$\n4. $s \\rightarrow t$\n\nStep 3: Apply rules of inference step by step.\n\n| Step | Statement | Justification |\n|---|---|---|\n| 5 | $\\neg p$ | Simplification from (1): $\\neg p \\land q \\Rightarrow \\neg p$ |\n| 6 | $\\neg r$ | Modus Tollens from (2) and (5): $r\\rightarrow p$, $\\neg p \\Rightarrow \\neg r$ |\n| 7 | $s$ | Modus Ponens from (3) and (6): $\\neg r \\rightarrow s$, $\\neg r \\Rightarrow s$ |\n| 8 | $t$ | Modus Ponens from (4) and (7): $s \\rightarrow t$, $s \\Rightarrow t$ |\n\nConclusion: $\\boxed{t}$ --- ``We will be home by sunset.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "definition",
+    "title": "Definition 1.23 --- Rules of Inference for Quantified Statements",
+    "content": "The following rules extend propositional rules of inference to predicate logic.\n\n| Rule | Form | Meaning |\n|---|---|---|\n| Universal Instantiation | $\\forall x\\, P(x) \\;\\therefore\\; P(c)$ | If true for all, true for specific $c$ |\n| Universal Generalization | $P(c) \\;\\therefore\\; \\forall x\\, P(x)$ | If true for arbitrary $c$, true for all |\n| Existential Instantiation | $\\exists x\\, P(x) \\;\\therefore\\; P(c)$ for some $c$ | Name the witness $c$ |\n| Existential Generalization | $P(c) \\;\\therefore\\; \\exists x\\, P(x)$ | One example proves existence |\n\nImportant: Universal Generalization requires\nthat $c$ be a completely arbitrary element --- no special assumptions\nmay be made about it. Otherwise the generalization is invalid."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "example",
+    "title": "Example 6: Wumpus World Inference --- Past Paper 2023 Q7",
+    "content": "In a Wumpus world, we know the following facts:\n\n1. There is no Wumpus in room $(1,1)$.\n2. There is no pit adjacent to room $(1,1)$ (no Breeze in $(1,1)$).\n3. If there is a Wumpus in a room, then adjacent rooms have Stench.\n4. If there is a pit in a room, then adjacent rooms have Breeze.\n5. Room $(1,2)$ is adjacent to $(1,1)$.\n\nUse rules of inference to show that room $(1,2)$ is safe\n(no Wumpus, no Pit).\n\nSolution:\n\nAssign propositions:\n\n- $W_{ij}$ = ``There is a Wumpus in room $(i,j)$''\n- $P_{ij}$ = ``There is a Pit in room $(i,j)$''\n- $S_{ij}$ = ``There is Stench in room $(i,j)$''\n- $B_{ij}$ = ``There is Breeze in room $(i,j)$''\n\nKnown facts:\n\n1. $\\neg W_{11}$ (no Wumpus in (1,1))\n2. $\\neg B_{11}$ (no Breeze in (1,1))\n3. $W_{12} \\rightarrow S_{11}$ (Wumpus in (1,2) $\\Rightarrow$ Stench in (1,1))\n4. $P_{12} \\rightarrow B_{11}$ (Pit in (1,2) $\\Rightarrow$ Breeze in (1,1))\n\n| Step | Statement | Justification |\n|---|---|---|\n| 5 | $\\neg S_{11}$ | From (1): no Wumpus anywhere near (1,1) |\n| 6 | $\\neg W_{12}$ | Modus Tollens: (3) $W_{12}{\\rightarrow}S_{11}$, $\\neg S_{11}$ |\n| 7 | $\\neg P_{12}$ | Modus Tollens: (4) $P_{12}{\\rightarrow}B_{11}$, $\\neg B_{11}$ |\n| 8 | $\\neg W_{12} \\land \\neg P_{12}$ | Conjunction of (6) and (7) |\n\nConclusion: Room $(1,2)$ has neither a Wumpus nor a Pit.\n\\[\n    \\boxed{\\neg W_{12} \\land \\neg P_{12} \\quad \\Rightarrow \\quad \\text{Room }(1,2)\n    \\text{ is \\textbf{safe}.}}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "example",
+    "title": "Example 7: Conjunction Rule --- Past Paper 2024 Q1(iii)",
+    "content": "Define the conjunction rule of inference. Apply it to the following:\n\nPremise 1: ``Aslam is good in Maths.''\\\\\nPremise 2: ``Aslam is a CS student.''\\\\\nConclusion: ?\n\nLet $m$ = ``Aslam is good in Maths'' and $c$ = ``Aslam is a CS student.''\n\nSolution:\n\nConjunction Rule: If $p$ is true and $q$ is true, we may conclude $p \\land q$.\n\n| Premise 1: | $m$ |\n|---|---|\n| Premise 2: | $c$ |\n| $\\therefore$ | $m \\land c$ |\n\nConclusion:\n\\[\n    \\boxed{m \\land c : \\text{``Aslam is good in Maths \\textbf{and} is a CS student.''}}\n\\]\n\nVerification:\n| $m$ | $c$ | $(m \\land c)$ (from $m$ and $c$) |\n|---|---|---|\n| T | T | T |\nWhen both premises are true, the conjunction is true. ✓\n\n\\smallFigure 1.5: The eight fundamental rules of inference in propositional logic."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Rules of Inference",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 1.5 Summary --- Rules",
+    "content": "Section 1.5 Summary --- Rules of Inference\n\nThe Eight Rules at a Glance:\n\n| Rule | Premises | Conclusion |\n|---|---|---|\n| Modus Ponens | $p$,\\; $p \\rightarrow q$ | $q$ |\n| Modus Tollens | $\\neg q$,\\; $p \\rightarrow q$ | $\\neg p$ |\n| Hyp.\\ Syllogism | $p\\rightarrow q$,\\; $q\\rightarrow r$ | $p \\rightarrow r$ |\n| Disj.\\ Syllogism | $p \\lor q$,\\; $\\neg p$ | $q$ |\n| Addition | $p$ | $p \\lor q$ |\n| Simplification | $p \\land q$ | $p$ |\n| Conjunction | $p$,\\; $q$ | $p \\land q$ |\n| Resolution | $p\\lor q$,\\; $\\neg p \\lor r$ | $q \\lor r$ |\n\nStrategy for Multi-Step Arguments:\n\n1. Assign a propositional variable to each atomic statement.\n2. Translate all premises into symbolic form.\n3. Apply rules one at a time, labelling each step with the rule used.\n4. Build toward the desired conclusion systematically.\n5. Common pattern: Simplification $\\rightarrow$ Modus Tollens $\\rightarrow$\n          Modus Ponens $\\rightarrow$ Conjunction.\n\nPast Paper Connection:\n\n- 2020 Q1(xiii): Name the rule $p{\\rightarrow}q,\\;q{\\rightarrow}r\\;\\therefore\\;p{\\rightarrow}r$\n          $\\rightarrow$ Hypothetical Syllogism, Example 3\n- 2021 Q1(ii): Addition and Simplification examples $\\rightarrow$ Example 4\n- 2023 Q1(ii): Define Modus Tollens $\\rightarrow$ Proof + Example 2\n- 2023 Q7: Wumpus world inference $\\rightarrow$ Example 6\n- 2024 Q1(iii): Conjunction rule $\\rightarrow$ Example 7\n- 2025 Q1(xi): State Modus Ponens $\\rightarrow$ Proof + Example 1"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "definition",
+    "title": "Definition 1.24 --- Direct Proof",
+    "content": "A direct proof of $p \\rightarrow q$ proceeds by:\n\n1. Assume the hypothesis $p$ is true.\n2. Use definitions, known theorems, and logical steps.\n3. Derive the conclusion $q$ directly.\n\nKey Points:\n\n- The most natural and straightforward proof method.\n- Works best when the hypothesis directly gives useful information.\n- Always begin: ``Assume $p$ is true. We will show $q$.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "example",
+    "title": "Example 1: Direct Proof --- Even Number",
+    "content": "Theorem: If $n$ is an even integer, then $n^2$ is also even.\n\nSolution:\n\nIdentify: $p$ = ``$n$ is even'', \\quad $q$ = ``$n^2$ is even.''\n\nProof:\n\nStep 1: Assume $p$. Let $n$ be an even integer.\n\nStep 2: Use the definition. By definition of even, there exists an integer\n$k$ such that:\n\\[\n    n = 2k\n\\]\n\nStep 3: Derive $q$. Squaring both sides:\n\\[\n    n^2 = (2k)^2 = 4k^2 = 2(2k^2)\n\\]\nLet $m = 2k^2$. Since $k$ is an integer, $m$ is also an integer, and:\n\\[\n    n^2 = 2m\n\\]\nBy definition of even, $n^2$ is even.\n\nConclusion: If $n$ is even, then $n^2$ is even."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "example",
+    "title": "Example 2: Direct Proof --- Sum of Odd Numbers",
+    "content": "Theorem: If $m$ and $n$ are both odd integers, then $m + n$ is even.\n\nSolution:\n\nProof:\n\nStep 1: Assume $p$. Let $m$ and $n$ be odd integers.\n\nStep 2: Apply definition. By definition of odd, there exist integers $j$ and $k$ such that:\n\\[\n    m = 2j + 1 \\qquad \\text{and} \\qquad n = 2k + 1\n\\]\n\nStep 3: Derive $q$. Adding:\n$$\\begin{align*}\n    m + n &= (2j + 1) + (2k + 1) \\\\\n          &= 2j + 2k + 2 \\\\\n          &= 2(j + k + 1)\n\\end{align*}$$\nLet $m' = j + k + 1$, which is an integer. Then $m + n = 2m'$, which is even by definition.\n\nConclusion: The sum of two odd integers is even."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "definition",
+    "title": "Definition 1.25 --- Proof by Contraposition",
+    "content": "A proof by contraposition proves $p \\rightarrow q$ by instead proving\nits logically equivalent contrapositive $\\neg q \\rightarrow \\neg p$.\n\n1. Assume $\\neg q$ (the negation of the conclusion).\n2. Derive $\\neg p$ (the negation of the hypothesis).\n\nKey Points:\n\n- Valid because $p \\rightarrow q \\equiv \\neg q \\rightarrow \\neg p$.\n- Use this method when a direct proof seems difficult but the contrapositive\n          is easier to work with.\n- Always state: ``We prove the contrapositive: assume $\\neg q$.''\n- Past Paper 2023 Q1(vi) directly asks: ``Define converse'' --- students\n          often confuse contrapositive with converse. Contrapositive $\\equiv$ original;\n          converse $\\not\\equiv$ original."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "example",
+    "title": "Example 3: Proof by Contraposition",
+    "content": "Theorem: If $n^2$ is odd, then $n$ is odd.\n\nSolution:\n\nIdentify: $p$ = ``$n^2$ is odd'', \\quad $q$ = ``$n$ is odd.''\n\nContrapositive: $\\neg q \\rightarrow \\neg p$,\ni.e., ``If $n$ is even, then $n^2$ is even.''\n\nProof (of the contrapositive):\n\nStep 1: Assume $\\neg q$. Assume $n$ is even.\n\nStep 2: Apply definition. There exists an integer $k$ such that $n = 2k$.\n\nStep 3: Derive $\\neg p$.\n\\[\n    n^2 = (2k)^2 = 4k^2 = 2(2k^2)\n\\]\nThis is even, i.e., $n^2$ is not odd, which is $\\neg p$.\n\nSince we proved $\\neg q \\rightarrow \\neg p$, the original\nstatement $p \\rightarrow q$ (``if $n^2$ is odd, then $n$ is odd'') is also proved.\n\nConclusion: If $n^2$ is odd, then $n$ is odd."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "definition",
+    "title": "Definition 1.26 --- Proof by Contradiction (Reductio ad Absurdum)",
+    "content": "A proof by contradiction proves a proposition $p$ by:\n\n1. Assume $\\neg p$ (the negation of what we want to prove).\n2. Derive a contradiction --- a statement of the form\n          $r \\land \\neg r$, which is always false.\n3. Conclude that $\\neg p$ must be false, so $p$ must be true.\n\nKey Points:\n\n- Based on the tautology: $(\\neg p \\rightarrow \\mathbf{F}) \\rightarrow p$.\n- If assuming $\\neg p$ leads to a logical impossibility, then $\\neg p$\n          is false, so $p$ must be true.\n- Particularly useful for proving things are irrational,\n          infinite, or unique.\n- Always begin: ``Assume for contradiction that $\\neg p$ is true.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "example",
+    "title": "Example 4: Proof by Contradiction --- Irrationality of $\\sqrt{2",
+    "content": "$}\n\\textbf{Theorem:} $\\sqrt{2}$ is irrational.\n\n\\vspace{0.3cm}\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\vspace{0.3cm}\n\\textbf{Step 1: Assume the negation.}\n\nAssume for contradiction that $\\sqrt{2}$ is \\textbf{rational}. Then there exist\nintegers $a$ and $b$ with $b \\neq 0$ and $\\gcd(a, b) = 1$ (the fraction is in\nlowest terms) such that:\n\u0000MATH0\u0000\n\n\\textbf{Step 2: Derive consequences.}\n\nSquaring both sides:\n\u0000MATH1\u0000\nSo $a^2$ is even. By Example 3 (contrapositive result), if $a^2$ is even then\n$a$ is even. Write $a = 2k$ for some integer $k$.\n\n\\textbf{Step 3: Continue deriving.}\n\nSubstituting $a = 2k$:\n\u0000MATH2\u0000\nSo $b^2$ is even, which means $b$ is also even.\n\n\\textbf{Step 4: Reach the contradiction.}\n\nBoth $a$ and $b$ are even, so $2 \\mid a$ and $2 \\mid b$, meaning $\\gcd(a,b) \\geq 2$.\nBut we assumed $\\gcd(a,b) = 1$. This is a contradiction:\n\u0000MATH3\u0000\n\n\\textbf{Step 5: Conclude.}\n\nThe assumption that $\\sqrt{2}$ is rational leads to a contradiction. Therefore:\n\n\\textcolor{darkgreen}{\\textbf{Conclusion:}} $\\sqrt{2}$ is irrational."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "example",
+    "title": "Example 5: Proof by Contradiction --- Conditional Statement",
+    "content": "Theorem: If $n$ is an integer and $n^2$ is odd, then $n$ is odd.\n\n(Prove using contradiction, as an alternative to Example~3.)\n\nSolution:\n\nTo prove $p \\rightarrow q$ by contradiction, assume $p$ is true and $q$ is false,\nand derive a contradiction.\n\nStep 1: Assume $p \\land \\neg q$.\n\nAssume $n^2$ is odd ($p$ is true) and $n$ is even ($\\neg q$ is true).\n\nStep 2: Derive.\n\nSince $n$ is even, write $n = 2k$ for integer $k$. Then:\n\\[\n    n^2 = (2k)^2 = 4k^2 = 2(2k^2)\n\\]\nSo $n^2$ is even --- but we assumed $n^2$ is odd.\n\nStep 3: Contradiction.\n\\[\n    n^2 \\text{ is odd} \\quad \\text{AND} \\quad n^2 \\text{ is even}\n    \\quad \\Rightarrow \\quad \\mathbf{F}\n\\]\n\nConclusion: The assumption $\\neg q$ is false, so $q$\n(``$n$ is odd'') must be true."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "definition",
+    "title": "Definition 1.27 --- Proof by Mathematical Induction",
+    "content": "Mathematical induction is a proof technique used to prove that a\nproposition $P(n)$ is true for all positive integers $n \\geq n_0$.\n\nA proof by induction consists of two steps:\n\nStep 1 --- Base Case:\nProve that $P(n_0)$ is true (usually $n_0 = 1$).\n\nStep 2 --- Inductive Step:\nAssume $P(k)$ is true for some arbitrary $k \\geq n_0$\n(this assumption is called the inductive hypothesis).\nThen prove that $P(k+1)$ is also true.\n\nKey Points:\n\n- Think of induction like a chain of dominoes: if the first falls (base case)\n          and each domino knocks over the next (inductive step), then all dominoes fall.\n- The inductive hypothesis is an assumption, not a proof ---\n          we assume $P(k)$ and use it to prove $P(k+1)$.\n- Never use $P(k+1)$ to prove $P(k+1)$ --- this is circular reasoning.\n- Strong induction assumes $P(1), P(2), \\ldots, P(k)$ are all true\n          to prove $P(k+1)$ (covered in Past Paper 2023 Q1(vii))."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "theorem",
+    "title": "Theorem 1.6 --- Sum of First $n$ Positive Integers",
+    "content": "For every positive integer $n$:\n\\[\n    \\sum_{i=1}^{n} i \\;=\\; 1 + 2 + 3 + \\cdots + n \\;=\\; \\frac{n(n+1)}{2}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "proof",
+    "title": "Proof of Theorem 1.6 by Mathematical Induction",
+    "content": "Proof:\n\nLet $P(n)$ denote the statement $\\displaystyle\\sum_{i=1}^{n} i = \\dfrac{n(n+1)}{2}$.\n\nStep 1 --- Base Case ($n = 1$):\n\nLeft-hand side: $\\displaystyle\\sum_{i=1}^{1} i = 1$\n\nRight-hand side: $\\dfrac{1 \\cdot (1+1)}{2} = \\dfrac{2}{2} = 1$\n\nBoth sides equal $1$, so $P(1)$ is true. ✓\n\nStep 2 --- Inductive Step:\n\nAssume $P(k)$ is true for some integer $k \\geq 1$ (inductive hypothesis):\n\\[\n    \\sum_{i=1}^{k} i = \\frac{k(k+1)}{2}\n\\]\nWe must show $P(k+1)$ is true, i.e.:\n\\[\n    \\sum_{i=1}^{k+1} i = \\frac{(k+1)(k+2)}{2}\n\\]\n\nStarting from the left-hand side of $P(k+1)$:\n$$\\begin{align*}\n    \\sum_{i=1}^{k+1} i\n    &= \\left(\\sum_{i=1}^{k} i\\right) + (k+1) \\\\[6pt]\n    &= \\frac{k(k+1)}{2} + (k+1)\n        \\qquad \\text{(by the inductive hypothesis)} \\\\[6pt]\n    &= \\frac{k(k+1)}{2} + \\frac{2(k+1)}{2} \\\\[6pt]\n    &= \\frac{k(k+1) + 2(k+1)}{2} \\\\[6pt]\n    &= \\frac{(k+1)(k+2)}{2}\n\\end{align*}$$\n\nThis is exactly the right-hand side of $P(k+1)$. ✓\n\nConclusion: By the principle of mathematical induction,\n$P(n)$ is true for all positive integers $n$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "example",
+    "title": "Example 6: Induction --- Sum of Squares",
+    "content": "Prove by induction that for all positive integers $n$:\n\\[\n    \\sum_{i=1}^{n} i^2 = \\frac{n(n+1)(2n+1)}{6}\n\\]\n\nSolution:\n\nLet $P(n)$: $\\displaystyle\\sum_{i=1}^{n} i^2 = \\dfrac{n(n+1)(2n+1)}{6}$.\n\nBase Case ($n = 1$):\n\nLHS $= 1^2 = 1$ \\quad RHS $= \\dfrac{1 \\cdot 2 \\cdot 3}{6} = 1$ \\quad\n✓\n\nInductive Step:\n\nAssume $P(k)$: $\\displaystyle\\sum_{i=1}^{k} i^2 = \\dfrac{k(k+1)(2k+1)}{6}$.\n\nShow $P(k+1)$: $\\displaystyle\\sum_{i=1}^{k+1} i^2 = \\dfrac{(k+1)(k+2)(2k+3)}{6}$.\n\n$$\\begin{align*}\n    \\sum_{i=1}^{k+1} i^2\n    &= \\sum_{i=1}^{k} i^2 + (k+1)^2 \\\\[6pt]\n    &= \\frac{k(k+1)(2k+1)}{6} + (k+1)^2\n        \\qquad\\text{(inductive hypothesis)} \\\\[6pt]\n    &= \\frac{k(k+1)(2k+1) + 6(k+1)^2}{6} \\\\[6pt]\n    &= \\frac{(k+1)\\bigl[k(2k+1) + 6(k+1)\\bigr]}{6} \\\\[6pt]\n    &= \\frac{(k+1)(2k^2 + k + 6k + 6)}{6} \\\\[6pt]\n    &= \\frac{(k+1)(2k^2 + 7k + 6)}{6} \\\\[6pt]\n    &= \\frac{(k+1)(k+2)(2k+3)}{6}\n\\end{align*}$$\n\nThis matches the RHS of $P(k+1)$. ✓\n\nConclusion: By induction, the formula holds for all $n \\geq 1$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "example",
+    "title": "Example 7: Induction --- Powers of 2",
+    "content": "Prove by induction that for all non-negative integers $n$:\n\\[\n    \\sum_{i=0}^{n} 2^i = 2^{n+1} - 1\n\\]\n\nSolution:\n\nLet $P(n)$: $\\displaystyle\\sum_{i=0}^{n} 2^i = 2^{n+1} - 1$.\n\nBase Case ($n = 0$):\n\nLHS $= 2^0 = 1$ \\quad RHS $= 2^{0+1} - 1 = 2 - 1 = 1$ \\quad\n✓\n\nInductive Step:\n\nAssume $P(k)$: $\\displaystyle\\sum_{i=0}^{k} 2^i = 2^{k+1} - 1$.\n\nShow $P(k+1)$: $\\displaystyle\\sum_{i=0}^{k+1} 2^i = 2^{k+2} - 1$.\n\n$$\\begin{align*}\n    \\sum_{i=0}^{k+1} 2^i\n    &= \\sum_{i=0}^{k} 2^i + 2^{k+1} \\\\[4pt]\n    &= (2^{k+1} - 1) + 2^{k+1}\n        \\qquad\\text{(inductive hypothesis)} \\\\[4pt]\n    &= 2 \\cdot 2^{k+1} - 1 \\\\[4pt]\n    &= 2^{k+2} - 1\n\\end{align*}$$\n\nThis matches $P(k+1)$. ✓\n\nConclusion: The formula holds for all $n \\geq 0$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "definition",
+    "title": "Definition 1.28 --- Strong Induction",
+    "content": "In strong induction (also called complete induction),\nthe inductive hypothesis is strengthened: instead of assuming only $P(k)$,\nwe assume $P(1), P(2), \\ldots, P(k)$ are all true, and use this\nto prove $P(k+1)$.\n\nComparison with ordinary induction:\n\n| Feature | Ordinary Induction | Strong Induction |\n|---|---|---|\n| Base case | Prove $P(1)$ | Prove $P(1)$ (sometimes more) |\n| Inductive hypothesis | Assume $P(k)$ | Assume $P(1),\\ldots,P(k)$ |\n| Inductive step | Prove $P(k+1)$ | Prove $P(k+1)$ |\n| Power | Less flexible | More flexible |\n\nNote: Strong induction and ordinary induction are\nlogically equivalent --- any theorem provable by one can be proved by the other.\nStrong induction is simply more convenient in some cases. (Past Paper 2023 Q1(vii) asks\nto differentiate between these two.)\n\n\\smallFigure 1.6: Choosing the right proof technique based on the structure of the theorem."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "example",
+    "title": "Example 8: Proof by Contradiction --- Big-O --- Past Paper 2020 Q5(a)",
+    "content": "Show that $n^2$ is not $O(n)$.\n\nSolution:\n\nRecall: $f(n)$ is $O(g(n))$ if there exist positive constants $C$ and $k$ such that:\n\\[\n    f(n) \\leq C \\cdot g(n) \\quad \\text{for all } n > k\n\\]\n\nStep 1: Assume for contradiction that $n^2$ IS $O(n)$.\n\nThen there exist positive constants $C$ and $k$ such that for all $n > k$:\n\\[\n    n^2 \\leq C \\cdot n\n\\]\n\nStep 2: Derive consequences.\n\nDividing both sides by $n$ (valid since $n > 0$):\n\\[\n    n \\leq C \\quad \\text{for all } n > k\n\\]\n\nStep 3: Reach the contradiction.\n\nThis claims $n$ is bounded above by the constant $C$ for all $n > k$. But $n$ grows\nwithout bound --- for any constant $C$, we can choose $n = \\lfloor C \\rfloor + 1 > k$\n(by taking $k$ large enough), giving $n > C$. This contradicts $n \\leq C$.\n\nConclusion: $n^2$ is not $O(n)$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Proof Techniques",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 1.6 Summary --- Proof",
+    "content": "Section 1.6 Summary --- Proof Techniques\n\nWhen to Use Which Technique:\n\n| Technique | When to use | Key move |\n|---|---|---|\n| Direct Proof | $p$ gives useful info | Assume $p$, derive $q$ |\n| Contraposition | $\\neg q$ is easier to use | Assume $\\neg q$, derive $\\neg p$ |\n| Contradiction | Proving irrationality, infinity | Assume $\\neg p$, derive $\\mathbf{F}$ |\n| Induction | All $n \\in \\mathbb{Z}^+$ | Base + inductive step |\n| Strong Induction | Need earlier cases | Assume $P(1),\\ldots,P(k)$ |\n\nInduction Checklist:\n\n1. State $P(n)$ clearly.\n2. Prove the base case explicitly.\n3. Write: ``Assume $P(k)$ is true for some $k \\geq 1$.''\n4. Write: ``We will show $P(k+1)$ is true.''\n5. Start from the LHS of $P(k+1)$, use the inductive hypothesis, reach the RHS.\n6. Conclude: ``By induction, $P(n)$ holds for all $n \\geq 1$.''\n\nKey Formulas Proved by Induction:\n\\[\n    \\sum_{i=1}^{n} i = \\frac{n(n+1)}{2} \\qquad\n    \\sum_{i=1}^{n} i^2 = \\frac{n(n+1)(2n+1)}{6} \\qquad\n    \\sum_{i=0}^{n} 2^i = 2^{n+1}-1\n\\]\n\nPast Paper Connection:\n\n- 2020 Q5(a): $n^2$ is not $O(n)$ $\\rightarrow$ Example 8\n- 2023 Q1(vi): Define converse (vs.\\ contrapositive) $\\rightarrow$ Definition 1.25\n- 2023 Q1(vii): Differentiate induction and strong induction $\\rightarrow$ Definition 1.28"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 1 - Propositions and Connectives",
+    "section": "Practice Exercises",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Exam Preparation Tips for Chapter",
+    "content": "Exam Preparation Tips for Chapter 1\n\n- Q1--Q5 target objective-type questions (2 marks each in past papers).\n- Q6--Q10 target 12-mark subjective questions on equivalences and laws.\n- Q11--Q13 cover predicate logic, which appears in both objective and\n          subjective parts every year.\n- Q14--Q16 cover rules of inference --- always present in at least one\n          subjective question.\n- Q17--Q20 cover all four proof techniques --- induction questions\n          appear almost every year; master the template in Definition~1.27.\n- For induction proofs, always state $P(n)$, prove the base case explicitly,\n          state the inductive hypothesis formally, and show every algebra step."
+  }
+]

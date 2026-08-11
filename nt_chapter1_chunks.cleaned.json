@@ -1,0 +1,1042 @@
+[
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Division Algorithm (Euclid's Theorem)",
+    "type": "definition",
+    "title": "Division Algorithm",
+    "content": "For integers $a$ and $b$ such that $b > 0$, there exist unique integers $q$ (quotient) and $r$ (remainder) such that:\n\\[\na = bq + r \\quad \\text{where} \\quad 0 \\leq r < b\n\\]\n\nKey Points:\n\n- $a$ is called the dividend\n- $b$ is called the divisor\n- $q$ is called the quotient\n- $r$ is called the remainder\n- The remainder $r$ is always non-negative and strictly less than the divisor $b$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Division Algorithm (Euclid's Theorem)",
+    "type": "example",
+    "title": "Example 1: Positive Dividend",
+    "content": "Find the quotient and remainder when $a = 47$ is divided by $b = 5$.\n\nSolution:\n\nWe need to express $47 = 5q + r$ where $0 \\leq r < 5$.\n\nDividing: $47 \\div 5 = 9$ with remainder $2$\n\nWe can verify: $47 = 5(9) + 2 = 45 + 2$ ✓\n\nTherefore: $q = 9$ and $r = 2$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Division Algorithm (Euclid's Theorem)",
+    "type": "example",
+    "title": "Example 2: Negative Dividend",
+    "content": "Find the quotient and remainder when $a = -23$ is divided by $b = 4$.\n\nSolution:\n\nWe need to express $-23 = 4q + r$ where $0 \\leq r < 4$.\n\nIf we simply divide: $-23 \\div 4 = -5.75$\n\nTaking $q = -6$: $-23 = 4(-6) + r$\n\\[\n-23 = -24 + r \\implies r = 1\n\\]\n\nVerification: $4(-6) + 1 = -24 + 1 = -23$ ✓\n\nTherefore: $q = -6$ and $r = 1$\n\nImportant: Note that $q = -5, r = -3$ is incorrect because the remainder must satisfy $0 \\leq r < 4$.\n\n\\subsection*{Visual Representation}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Division Algorithm (Euclid's Theorem)",
+    "type": "definition",
+    "title": "Theorem Statement: Division Algorithm",
+    "content": "For integers $a, b$ with $b > 0$, there exist unique integers $q$ and $r$ such that:\n\\[\n\\boxed{a = bq + r \\quad \\text{where} \\quad 0 \\leq r < b}\n\\]\n\nThis theorem guarantees:\n\n- Existence: Such integers $q$ and $r$ always exist\n- Uniqueness: These integers $q$ and $r$ are unique (only one such pair)"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Division Algorithm (Euclid's Theorem)",
+    "type": "example",
+    "title": "Proof of Division Algorithm",
+    "content": "Statement: For integers $a, b$ with $b > 0$, there exist unique integers $q$ and $r$ such that $a = bq + r$ where $0 \\leq r < b$.\n\nProof (Existence):\n\nConsider the set $S = \\{a - bk : k \\in \\mathbb{Z} \\text{ and } a - bk \\geq 0\\}$\n\nThis set $S$ is non-empty because:\n\n- If $a \\geq 0$, take $k = 0$, then $a - b(0) = a \\in S$\n- If $a < 0$, take $k = a$ (since $b > 0$), then $a - ba = a(1-b) \\geq 0$ for sufficiently negative $k$\n\nSince $S$ is a non-empty set of non-negative integers, by the Well-Ordering Principle, $S$ has a smallest element. Let $r$ be this smallest element.\n\nThen $r = a - bq$ for some $q \\in \\mathbb{Z}$, which gives us:\n\\[\na = bq + r\n\\]\n\nWe need to show $0 \\leq r < b$:\n\n- Since $r \\in S$, we have $r \\geq 0$ by definition\n- Suppose $r \\geq b$. Then:\n    \\[\n    r - b = (a - bq) - b = a - b(q+1) \\geq 0\n    \\]\n    This means $r - b \\in S$, but $r - b < r$, contradicting that $r$ is the smallest element of $S$.\n- Therefore, $r < b$\n\nHence, $0 \\leq r < b$. Existence proved.\n\nProof (Uniqueness):\n\nSuppose there exist two representations:\n\\[\na = bq_1 + r_1 \\quad \\text{where} \\quad 0 \\leq r_1 < b\n\\]\n\\[\na = bq_2 + r_2 \\quad \\text{where} \\quad 0 \\leq r_2 < b\n\\]\n\nSubtracting these equations:\n\\[\n0 = b(q_1 - q_2) + (r_1 - r_2)\n\\]\n\\[\nb(q_2 - q_1) = r_1 - r_2\n\\]\n\nSince $0 \\leq r_1 < b$ and $0 \\leq r_2 < b$, we have:\n\\[\n-b < r_1 - r_2 < b\n\\]\n\nBut $r_1 - r_2 = b(q_2 - q_1)$ is a multiple of $b$.\n\nThe only multiple of $b$ in the interval $(-b, b)$ is $0$.\n\nTherefore: $r_1 - r_2 = 0 \\implies r_1 = r_2$\n\nAnd: $b(q_2 - q_1) = 0 \\implies q_1 = q_2$ (since $b \\neq 0$)\n\nThus, $q$ and $r$ are unique. Uniqueness proved."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Division Algorithm (Euclid's Theorem)",
+    "type": "definition",
+    "title": "Corollary Statement",
+    "content": "For integers $a$ and $b$ such that $b \\neq 0$, there exist unique integers $q$ and $r$ such that:\n\\[\n\\boxed{a = bq + r \\quad \\text{where} \\quad 0 \\leq r < |b|}\n\\]\n\nKey Difference from Division Algorithm:\n\n- The divisor $b$ can now be negative (not just positive)\n- The remainder condition uses $|b|$ (absolute value of $b$) instead of just $b$\n- If $b > 0$, this reduces to the standard Division Algorithm\n- If $b < 0$, we use $|b| = -b$ as the bound for the remainder"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Division Algorithm (Euclid's Theorem)",
+    "type": "example",
+    "title": "Example 3: Divisor is Negative",
+    "content": "Find the quotient and remainder when $a = 17$ is divided by $b = -5$.\n\nSolution:\n\nWe need to express $17 = -5q + r$ where $0 \\leq r < |-5| = 5$.\n\nMethod: First apply division algorithm with positive divisor:\n\\[\n17 = 5(3) + 2\n\\]\n\nNow adjust for negative divisor:\n\\[\n17 = (-5)(-3) + 2 = 15 + 2\n\\]\n\nVerification: $(-5)(-3) + 2 = 15 + 2 = 17$ ✓\n\nAnd $0 \\leq 2 < 5$ ✓\n\nTherefore: $q = -3$ and $r = 2$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Division Algorithm (Euclid's Theorem)",
+    "type": "example",
+    "title": "Example 4: Both Negative",
+    "content": "Find the quotient and remainder when $a = -28$ is divided by $b = -7$.\n\nSolution:\n\nWe need to express $-28 = -7q + r$ where $0 \\leq r < |-7| = 7$.\n\nDividing: $-28 \\div (-7) = 4$ exactly\n\nSo: $-28 = (-7)(4) + 0$\n\nVerification: $(-7)(4) + 0 = -28 + 0 = -28$ ✓\n\nAnd $0 \\leq 0 < 7$ ✓\n\nTherefore: $q = 4$ and $r = 0$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Key Concept:}} When dividing any",
+    "content": "Key Concept:\n\nWhen dividing any integer by $n$, the possible remainders are: $0, 1, 2, 3, \\ldots, n-1$\n\nThis means every integer can be written in one of $n$ forms:\n\\[\nnq, \\quad nq+1, \\quad nq+2, \\quad \\ldots, \\quad nq+(n-1)\n\\]\n\nThis is the foundation of modular arithmetic and helps us prove many divisibility properties.\n\n\\subsection*{Problem 1}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "Show that $\\frac{a(a^2+2)}{3}$ is an integer."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Solution: Proving $3 | a(a^2+2)$",
+    "content": "Given: $a$ is a positive integer\n\nTo Prove: $\\frac{a(a^2+2)}{3}$ is an integer, i.e., $3 | a(a^2+2)$\n\nProof:\n\nBy Division Algorithm, any integer $a$ can be written as:\n\\[\na = 3q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2\\}\n\\]\n\nSo we have three cases:\n\nCase 1: $a = 3q$ (i.e., $r = 0$)\n\\[\na(a^2 + 2) = 3q((3q)^2 + 2) = 3q(9q^2 + 2) = 3[q(9q^2 + 2)]\n\\]\nThis is clearly divisible by 3. ✓\n\nCase 2: $a = 3q + 1$ (i.e., $r = 1$)\n$$\\begin{align*}\na^2 + 2 &= (3q+1)^2 + 2\\\\\n&= 9q^2 + 6q + 1 + 2\\\\\n&= 9q^2 + 6q + 3\\\\\n&= 3(3q^2 + 2q + 1)\n\\end{align*}$$\n\nTherefore:\n\\[\na(a^2+2) = (3q+1) \\cdot 3(3q^2 + 2q + 1) = 3[(3q+1)(3q^2 + 2q + 1)]\n\\]\nThis is divisible by 3. ✓\n\nCase 3: $a = 3q + 2$ (i.e., $r = 2$)\n$$\\begin{align*}\na^2 + 2 &= (3q+2)^2 + 2\\\\\n&= 9q^2 + 12q + 4 + 2\\\\\n&= 9q^2 + 12q + 6\\\\\n&= 3(3q^2 + 4q + 2)\n\\end{align*}$$\n\nTherefore:\n\\[\na(a^2+2) = (3q+2) \\cdot 3(3q^2 + 4q + 2) = 3[(3q+2)(3q^2 + 4q + 2)]\n\\]\nThis is divisible by 3. ✓\n\nConclusion: In all three cases, $3 | a(a^2+2)$, hence $\\frac{a(a^2+2)}{3}$ is an integer.\n\n\\subsection*{Problem 2: Squares of Integers}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "The square of any integer is either of the form $4k$ or $4k+1$ for some integer $k$.\n\nIn other words: $n^2 \\equiv 0 \\pmod{4}$ or $n^2 \\equiv 1 \\pmod{4}$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof: Form of Perfect Squares",
+    "content": "To Prove: For any integer $n$, $n^2$ is of the form $4k$ or $4k+1$.\n\nProof:\n\nBy Division Algorithm, any integer $n$ can be written as:\n\\[\nn = 4q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2, 3\\}\n\\]\n\nWe examine each case:\n\nCase 1: $n = 4q$ (even, divisible by 4)\n\\[\nn^2 = (4q)^2 = 16q^2 = 4(4q^2)\n\\]\nThis is of the form $4k$ where $k = 4q^2$. ✓\n\nCase 2: $n = 4q + 1$ (odd)\n\\[\nn^2 = (4q+1)^2 = 16q^2 + 8q + 1 = 4(4q^2 + 2q) + 1\n\\]\nThis is of the form $4k + 1$ where $k = 4q^2 + 2q$. ✓\n\nCase 3: $n = 4q + 2$ (even, not divisible by 4)\n\\[\nn^2 = (4q+2)^2 = 16q^2 + 16q + 4 = 4(4q^2 + 4q + 1)\n\\]\nThis is of the form $4k$ where $k = 4q^2 + 4q + 1$. ✓\n\nCase 4: $n = 4q + 3$ (odd)\n\\[\nn^2 = (4q+3)^2 = 16q^2 + 24q + 9 = 16q^2 + 24q + 8 + 1 = 4(4q^2 + 6q + 2) + 1\n\\]\nThis is of the form $4k + 1$ where $k = 4q^2 + 6q + 2$. ✓\n\nConclusion: In all cases, $n^2$ is either $4k$ or $4k+1$.\n\nImportant Note: No perfect square can be of the form $4k+2$ or $4k+3$.\n\n\\subsection*{Problem 3: Squares Modulo 3}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "The square of any integer is either of the form $3k$ or $3k+1$ for some integer $k$.\n\nIn other words: $n^2 \\equiv 0 \\pmod{3}$ or $n^2 \\equiv 1 \\pmod{3}$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof: Squares Modulo 3",
+    "content": "To Prove: For any integer $n$, $n^2$ is of the form $3k$ or $3k+1$.\n\nProof:\n\nBy Division Algorithm, any integer $n$ can be written as:\n\\[\nn = 3q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2\\}\n\\]\n\nWe examine each case:\n\nCase 1: $n = 3q$ (divisible by 3)\n\\[\nn^2 = (3q)^2 = 9q^2 = 3(3q^2)\n\\]\nThis is of the form $3k$ where $k = 3q^2$. ✓\n\nCase 2: $n = 3q + 1$\n\\[\nn^2 = (3q+1)^2 = 9q^2 + 6q + 1 = 3(3q^2 + 2q) + 1\n\\]\nThis is of the form $3k + 1$ where $k = 3q^2 + 2q$. ✓\n\nCase 3: $n = 3q + 2$\n\\[\nn^2 = (3q+2)^2 = 9q^2 + 12q + 4 = 9q^2 + 12q + 3 + 1 = 3(3q^2 + 4q + 1) + 1\n\\]\nThis is of the form $3k + 1$ where $k = 3q^2 + 4q + 1$. ✓\n\nConclusion: In all cases, $n^2$ is either $3k$ or $3k+1$.\n\nImportant Note: No perfect square can be of the form $3k+2$.\n\n\\subsection*{Problem 4: Cubes Modulo 9}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "The cube of any integer is of the form $9k$, $9k+1$, or $9k+8$ for some integer $k$.\n\nIn other words: $n^3 \\equiv 0, 1, \\text{ or } 8 \\pmod{9}$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof: Cubes Modulo 9",
+    "content": "To Prove: For any integer $n$, $n^3$ is of the form $9k$, $9k+1$, or $9k+8$.\n\nProof:\n\nBy Division Algorithm, any integer $n$ can be written as:\n\\[\nn = 3q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2\\}\n\\]\n\nWe examine each case:\n\nCase 1: $n = 3q$ (divisible by 3)\n\\[\nn^3 = (3q)^3 = 27q^3 = 9(3q^3)\n\\]\nThis is of the form $9k$ where $k = 3q^3$. ✓\n\nCase 2: $n = 3q + 1$\n$$\\begin{align*}\nn^3 &= (3q+1)^3\\\\\n&= (3q)^3 + 3(3q)^2(1) + 3(3q)(1)^2 + 1^3\\\\\n&= 27q^3 + 27q^2 + 9q + 1\\\\\n&= 9(3q^3 + 3q^2 + q) + 1\n\\end{align*}$$\nThis is of the form $9k + 1$ where $k = 3q^3 + 3q^2 + q$. ✓\n\nCase 3: $n = 3q + 2$\n$$\\begin{align*}\nn^3 &= (3q+2)^3\\\\\n&= (3q)^3 + 3(3q)^2(2) + 3(3q)(2)^2 + 2^3\\\\\n&= 27q^3 + 54q^2 + 36q + 8\\\\\n&= 9(3q^3 + 6q^2 + 4q) + 8\n\\end{align*}$$\nThis is of the form $9k + 8$ where $k = 3q^3 + 6q^2 + 4q$. ✓\n\nConclusion: In all cases, $n^3$ is of the form $9k$, $9k+1$, or $9k+8$.\n\n\\subsection*{Problem 5: Cubes Modulo 7}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "The cube of any integer is of the form $7k$ or $7k \\pm 1$ for some integer $k$.\n\nIn other words: $n^3 \\equiv 0, 1, \\text{ or } -1 \\pmod{7}$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof: Cubes Modulo 7",
+    "content": "To Prove: For any integer $n$, $n^3$ is of the form $7k$, $7k+1$, or $7k-1$ (i.e., $7k+6$).\n\nProof:\n\nBy Division Algorithm, any integer $n$ can be written as:\n\\[\nn = 7q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2, 3, 4, 5, 6\\}\n\\]\n\nWe examine each case:\n\nCase 1: $n = 7q$\n\\[\nn^3 = (7q)^3 = 343q^3 = 7(49q^3)\n\\]\nForm: $7k$ where $k = 49q^3$. ✓\n\nCase 2: $n = 7q + 1$\n\\[\nn^3 = (7q+1)^3 = 343q^3 + 147q^2 + 21q + 1 = 7(49q^3 + 21q^2 + 3q) + 1\n\\]\nForm: $7k + 1$ where $k = 49q^3 + 21q^2 + 3q$. ✓\n\nCase 3: $n = 7q + 2$\n\\[\nn^3 = (7q+2)^3 = 343q^3 + 294q^2 + 84q + 8 = 7(49q^3 + 42q^2 + 12q + 1) + 1\n\\]\nForm: $7k + 1$ where $k = 49q^3 + 42q^2 + 12q + 1$. ✓\n\nCase 4: $n = 7q + 3$\n$$\\begin{align*}\nn^3 &= (7q+3)^3 = 343q^3 + 441q^2 + 189q + 27\\\\\n&= 343q^3 + 441q^2 + 189q + 21 + 6\\\\\n&= 7(49q^3 + 63q^2 + 27q + 3) + 6\n\\end{align*}$$\nForm: $7k + 6 = 7k - 1$ where $k = 49q^3 + 63q^2 + 27q + 3$. ✓\n\nCase 5: $n = 7q + 4$\n$$\\begin{align*}\nn^3 &= (7q+4)^3 = 343q^3 + 588q^2 + 336q + 64\\\\\n&= 343q^3 + 588q^2 + 336q + 63 + 1\\\\\n&= 7(49q^3 + 84q^2 + 48q + 9) + 1\n\\end{align*}$$\nForm: $7k + 1$ where $k = 49q^3 + 84q^2 + 48q + 9$. ✓\n\nCase 6: $n = 7q + 5$\n$$\\begin{align*}\nn^3 &= (7q+5)^3 = 343q^3 + 735q^2 + 525q + 125\\\\\n&= 343q^3 + 735q^2 + 525q + 119 + 6\\\\\n&= 7(49q^3 + 105q^2 + 75q + 17) + 6\n\\end{align*}$$\nForm: $7k + 6 = 7k - 1$ where $k = 49q^3 + 105q^2 + 75q + 17$. ✓\n\nCase 7: $n = 7q + 6$\n$$\\begin{align*}\nn^3 &= (7q+6)^3 = 343q^3 + 882q^2 + 756q + 216\\\\\n&= 343q^3 + 882q^2 + 756q + 210 + 6\\\\\n&= 7(49q^3 + 126q^2 + 108q + 30) + 6\n\\end{align*}$$\nForm: $7k + 6 = 7k - 1$ where $k = 49q^3 + 126q^2 + 108q + 30$. ✓\n\nConclusion: In all cases, $n^3$ is of the form $7k$, $7k+1$, or $7k-1$.\n\n\\subsection*{Problem 6: Sum Formula Divisibility}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "For $n \\geq 1$, $\\frac{n(n+1)(2n+1)}{6}$ is an integer."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof",
+    "content": "Proof:\n\nBy Division Algorithm, any integer $n$ can be written as:\n\\[\nn = 6q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2, 3, 4, 5\\}\n\\]\n\nWe need to show that $6 | n(n+1)(2n+1)$ for all cases.\n\nCase 1: $n = 6q$\n\\[\nn(n+1)(2n+1) = 6q(6q+1)(12q+1) = 6[q(6q+1)(12q+1)]\n\\]\nDivisible by 6. ✓\n\nCase 2: $n = 6q + 1$\n$$\\begin{align*}\nn(n+1)(2n+1) &= (6q+1)(6q+2)(12q+3)\\\\\n&= (6q+1) \\cdot 2(3q+1) \\cdot 3(4q+1)\\\\\n&= 6(6q+1)(3q+1)(4q+1)\n\\end{align*}$$\nDivisible by 6. ✓\n\nCase 3: $n = 6q + 2$\n$$\\begin{align*}\nn(n+1)(2n+1) &= (6q+2)(6q+3)(12q+5)\\\\\n&= 2(3q+1) \\cdot 3(2q+1)(12q+5)\\\\\n&= 6(3q+1)(2q+1)(12q+5)\n\\end{align*}$$\nDivisible by 6. ✓\n\nCase 4: $n = 6q + 3$\n$$\\begin{align*}\nn(n+1)(2n+1) &= (6q+3)(6q+4)(12q+7)\\\\\n&= 3(2q+1) \\cdot 2(3q+2)(12q+7)\\\\\n&= 6(2q+1)(3q+2)(12q+7)\n\\end{align*}$$\nDivisible by 6. ✓\n\nCase 5: $n = 6q + 4$\n$$\\begin{align*}\nn(n+1)(2n+1) &= (6q+4)(6q+5)(12q+9)\\\\\n&= 2(3q+2)(6q+5) \\cdot 3(4q+3)\\\\\n&= 6(3q+2)(6q+5)(4q+3)\n\\end{align*}$$\nDivisible by 6. ✓\n\nCase 6: $n = 6q + 5$\n$$\\begin{align*}\nn(n+1)(2n+1) &= (6q+5)(6q+6)(12q+11)\\\\\n&= (6q+5) \\cdot 6(q+1)(12q+11)\\\\\n&= 6(6q+5)(q+1)(12q+11)\n\\end{align*}$$\nDivisible by 6. ✓\n\nTherefore, $\\frac{n(n+1)(2n+1)}{6}$ is always an integer."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Example 5: Verification",
+    "content": "Verify that $\\frac{n(n+1)(2n+1)}{6}$ is an integer for $n = 5$.\n\nSolution:\n\n\\[\n\\frac{5(5+1)(2 \\cdot 5+1)}{6} = \\frac{5 \\cdot 6 \\cdot 11}{6} = \\frac{330}{6} = 55\n\\]\n\nYes, 55 is an integer. ✓\n\nNote: This formula gives the sum of squares: $1^2 + 2^2 + 3^2 + \\cdots + n^2 = \\frac{n(n+1)(2n+1)}{6}$\n\n\\subsection*{Problem 7: Odd Integer Squares}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "The square of any odd integer is of the form $8k+1$ for some integer $k$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof",
+    "content": "Proof:\n\nAny odd integer can be written as $n = 2m + 1$ for some integer $m$.\n\nBy Division Algorithm, $m$ can be written as:\n\\[\nm = 4q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2, 3\\}\n\\]\n\nSo $n = 2m + 1 = 2(4q + r) + 1 = 8q + 2r + 1$\n\nNow we square $n$:\n\nCase 1: $r = 0$, so $n = 8q + 1$\n\\[\nn^2 = (8q+1)^2 = 64q^2 + 16q + 1 = 8(8q^2 + 2q) + 1\n\\]\nForm: $8k + 1$ where $k = 8q^2 + 2q$. ✓\n\nCase 2: $r = 1$, so $n = 8q + 3$\n\\[\nn^2 = (8q+3)^2 = 64q^2 + 48q + 9 = 64q^2 + 48q + 8 + 1 = 8(8q^2 + 6q + 1) + 1\n\\]\nForm: $8k + 1$ where $k = 8q^2 + 6q + 1$. ✓\n\nCase 3: $r = 2$, so $n = 8q + 5$\n\\[\nn^2 = (8q+5)^2 = 64q^2 + 80q + 25 = 64q^2 + 80q + 24 + 1 = 8(8q^2 + 10q + 3) + 1\n\\]\nForm: $8k + 1$ where $k = 8q^2 + 10q + 3$. ✓\n\nCase 4: $r = 3$, so $n = 8q + 7$\n\\[\nn^2 = (8q+7)^2 = 64q^2 + 112q + 49 = 64q^2 + 112q + 48 + 1 = 8(8q^2 + 14q + 6) + 1\n\\]\nForm: $8k + 1$ where $k = 8q^2 + 14q + 6$. ✓\n\nIn all cases, $n^2 = 8k + 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Example 6: Verification",
+    "content": "Verify that squares of odd numbers are of the form $8k+1$.\n\nSolution:\n\n- $1^2 = 1 = 8(0) + 1$ ✓\n- $3^2 = 9 = 8(1) + 1$ ✓\n- $5^2 = 25 = 8(3) + 1$ ✓\n- $7^2 = 49 = 8(6) + 1$ ✓\n- $9^2 = 81 = 8(10) + 1$ ✓\n\n\\subsection*{Problem 8: Divisibility by 3}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "For all $n \\in \\mathbb{Z}$, $3 | n(n^2+2)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof",
+    "content": "Proof:\n\nBy Division Algorithm:\n\\[\nn = 3q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2\\}\n\\]\n\nCase 1: $n = 3q$\n\\[\nn(n^2+2) = 3q((3q)^2+2) = 3q(9q^2+2) = 3[q(9q^2+2)]\n\\]\nDivisible by 3. ✓\n\nCase 2: $n = 3q + 1$\n$$\\begin{align*}\nn^2 + 2 &= (3q+1)^2 + 2 = 9q^2 + 6q + 1 + 2 = 9q^2 + 6q + 3 = 3(3q^2 + 2q + 1)\n\\end{align*}$$\n\\[\nn(n^2+2) = (3q+1) \\cdot 3(3q^2 + 2q + 1) = 3[(3q+1)(3q^2 + 2q + 1)]\n\\]\nDivisible by 3. ✓\n\nCase 3: $n = 3q + 2$\n$$\\begin{align*}\nn^2 + 2 &= (3q+2)^2 + 2 = 9q^2 + 12q + 4 + 2 = 9q^2 + 12q + 6 = 3(3q^2 + 4q + 2)\n\\end{align*}$$\n\\[\nn(n^2+2) = (3q+2) \\cdot 3(3q^2 + 4q + 2) = 3[(3q+2)(3q^2 + 4q + 2)]\n\\]\nDivisible by 3. ✓\n\nTherefore, $3 | n(n^2+2)$ for all $n \\in \\mathbb{Z}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Example 7: Verification",
+    "content": "Verify $3 | n(n^2+2)$ for $n = 7$.\n\nSolution:\n\n\\[\nn(n^2+2) = 7(7^2+2) = 7(49+2) = 7(51) = 357\n\\]\n\nCheck: $357 \\div 3 = 119$ ✓\n\nYes, $3 | 357$.\n\n\\subsection*{Problem 9: Cubic Expression Divisibility}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "For all $n \\in \\mathbb{Z}$, $3 | 4n^3-n$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof",
+    "content": "Proof:\n\nWe can factor: $4n^3 - n = n(4n^2 - 1) = n(2n-1)(2n+1)$\n\nThis is the product of three consecutive terms: $(2n-1), n, (2n+1)$ are not consecutive, but we analyze differently.\n\nBy Division Algorithm:\n\\[\nn = 3q + r \\quad \\text{where} \\quad r \\in \\{0, 1, 2\\}\n\\]\n\nCase 1: $n = 3q$\n\\[\n4n^3 - n = n(4n^2-1) = 3q(4(3q)^2-1) = 3q(36q^2-1) = 3[q(36q^2-1)]\n\\]\nDivisible by 3. ✓\n\nCase 2: $n = 3q + 1$\n$$\\begin{align*}\n4n^2 - 1 &= 4(3q+1)^2 - 1 = 4(9q^2+6q+1) - 1\\\\\n&= 36q^2 + 24q + 4 - 1 = 36q^2 + 24q + 3 = 3(12q^2 + 8q + 1)\n\\end{align*}$$\n\\[\n4n^3 - n = (3q+1) \\cdot 3(12q^2 + 8q + 1) = 3[(3q+1)(12q^2 + 8q + 1)]\n\\]\nDivisible by 3. ✓\n\nCase 3: $n = 3q + 2$\n$$\\begin{align*}\n4n^2 - 1 &= 4(3q+2)^2 - 1 = 4(9q^2+12q+4) - 1\\\\\n&= 36q^2 + 48q + 16 - 1 = 36q^2 + 48q + 15 = 3(12q^2 + 16q + 5)\n\\end{align*}$$\n\\[\n4n^3 - n = (3q+2) \\cdot 3(12q^2 + 16q + 5) = 3[(3q+2)(12q^2 + 16q + 5)]\n\\]\nDivisible by 3. ✓\n\nTherefore, $3 | 4n^3-n$ for all $n \\in \\mathbb{Z}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Example 8: Verification",
+    "content": "Verify $3 | 4n^3-n$ for $n = 5$.\n\nSolution:\n\n\\[\n4n^3 - n = 4(5)^3 - 5 = 4(125) - 5 = 500 - 5 = 495\n\\]\n\nCheck: $495 \\div 3 = 165$ ✓\n\nYes, $3 | 495$.\n\n\\subsection*{Problem 10: Consecutive Integers}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "definition",
+    "title": "Theorem Statement",
+    "content": "The product of two consecutive integers is divisible by 2."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Proof",
+    "content": "Proof:\n\nLet the two consecutive integers be $n$ and $n+1$.\n\nBy Division Algorithm:\n\\[\nn = 2q + r \\quad \\text{where} \\quad r \\in \\{0, 1\\}\n\\]\n\nCase 1: $n = 2q$ (even)\n\\[\nn(n+1) = 2q(2q+1) = 2[q(2q+1)]\n\\]\nDivisible by 2. ✓\n\nCase 2: $n = 2q + 1$ (odd)\n\\[\nn+1 = 2q + 1 + 1 = 2q + 2 = 2(q+1)\n\\]\n\\[\nn(n+1) = (2q+1) \\cdot 2(q+1) = 2[(2q+1)(q+1)]\n\\]\nDivisible by 2. ✓\n\nTherefore, the product of two consecutive integers is always divisible by 2."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Applications of Division Algorithm",
+    "type": "example",
+    "title": "Example 9: Verification",
+    "content": "Show that the product of consecutive integers is even.\n\nSolution:\n\n- $3 \\times 4 = 12 = 2(6)$ ✓\n- $7 \\times 8 = 56 = 2(28)$ ✓\n- $10 \\times 11 = 110 = 2(55)$ ✓\n- $15 \\times 16 = 240 = 2(120)$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Divisibility",
+    "type": "definition",
+    "title": "Definition: Divisibility",
+    "content": "An integer $a$ is said to be divisible by an integer $b \\neq 0$ if there exists an integer $c$ such that:\n\\[\na = bc\n\\]\n\nNotation: We write $b | a$ (read as ``$b$ divides $a$'').\n\nTerminology:\n\n- $b$ is called a divisor or factor of $a$\n- $a$ is called a multiple of $b$\n- If $b \\nmid a$, we say ``$b$ does not divide $a$''"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Divisibility",
+    "type": "example",
+    "title": "Example 10: Understanding Divisibility",
+    "content": "Determine which of the following statements are true:\n\nSolution:\n\n1. $3 | 12$ : True, because $12 = 3 \\times 4$ ✓\n2. $5 | 20$ : True, because $20 = 5 \\times 4$ ✓\n3. $7 | 30$ : False, because $30 = 7 \\times 4 + 2$ (no integer $c$ exists) $\\times$\n4. $-4 | 12$ : True, because $12 = (-4) \\times (-3)$ ✓\n5. $6 | 0$ : True, because $0 = 6 \\times 0$ ✓\n6. $0 | 5$ : False, because we cannot write $5 = 0 \\times c$ for any $c$ $\\times$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Divisibility",
+    "type": "example",
+    "title": "Example 11: Finding Divisors",
+    "content": "Find all positive divisors of 24.\n\nSolution:\n\nWe need to find all positive integers $d$ such that $d | 24$.\n\nTesting systematically:\n$$\\begin{align*}\n24 &= 1 \\times 24\\\\\n24 &= 2 \\times 12\\\\\n24 &= 3 \\times 8\\\\\n24 &= 4 \\times 6\n\\end{align*}$$\n\nTherefore, the positive divisors of 24 are: $\\boxed{1, 2, 3, 4, 6, 8, 12, 24}$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "definition",
+    "title": "Theorem: Properties of Divisibility",
+    "content": "For integers $a, b, c$ (where applicable):\n\n1. $a | 0$, $1 | a$, $a | a$\n2. $a | 1 \\iff a = \\pm 1$\n3. If $a | b$ and $b | a$, then $a = \\pm b$\n4. If $a | b$ and $c | d$, then $ac | bd$\n5. If $a | b$ and $b | c$, then $a | c$ (Transitivity)\n6. If $a | b$ and $a | c$, then $a | bc$ and $a | (b+c)$\n7. If $a | b$ and $a | c$, then $a | (bx+cy)$ for all $x, y \\in \\mathbb{Z}$\n8. If $a | b$, then $a | bc$ for all $c \\in \\mathbb{Z}$\n9. If $a | b$ and $a | c$, then $a^2 | bc$\n10. $a | b \\iff ac | bc$ for $c \\neq 0$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Proof of Property (a)",
+    "content": "Proof:\n\nPart 1: $a | 0$\n\nWe need to show $0 = a \\cdot c$ for some integer $c$.\n\nTake $c = 0$. Then $0 = a \\cdot 0$ for any integer $a$.\n\nTherefore, $a | 0$. ✓\n\nPart 2: $1 | a$\n\nWe need to show $a = 1 \\cdot c$ for some integer $c$.\n\nTake $c = a$. Then $a = 1 \\cdot a$.\n\nTherefore, $1 | a$. ✓\n\nPart 3: $a | a$\n\nWe need to show $a = a \\cdot c$ for some integer $c$.\n\nTake $c = 1$. Then $a = a \\cdot 1$.\n\nTherefore, $a | a$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Proof of Property (b)",
+    "content": "Proof:\n\nForward Direction ($\\Rightarrow$): Assume $a | 1$\n\nThen $1 = a \\cdot c$ for some integer $c$.\n\nThis means $ac = 1$.\n\nThe only integer solutions are: $a = 1, c = 1$ or $a = -1, c = -1$.\n\nTherefore, $a = \\pm 1$. ✓\n\nBackward Direction ($\\Leftarrow$): Assume $a = \\pm 1$\n\nIf $a = 1$: $1 = 1 \\cdot 1$, so $1 | 1$ ✓\n\nIf $a = -1$: $1 = (-1) \\cdot (-1)$, so $-1 | 1$ ✓\n\nTherefore, $a | 1 \\iff a = \\pm 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Proof of Property (c)",
+    "content": "Proof:\n\nGiven: $a | b$ and $b | a$\n\nSince $a | b$, there exists integer $m$ such that $b = am$ \\quad $\\cdots (1)$\n\nSince $b | a$, there exists integer $n$ such that $a = bn$ \\quad $\\cdots (2)$\n\nSubstituting (1) into (2):\n\\[\na = bn = (am)n = amn\n\\]\n\\[\na = amn\n\\]\n\nIf $a \\neq 0$, divide both sides by $a$:\n\\[\n1 = mn\n\\]\n\nThe only integer solutions are: $m = n = 1$ or $m = n = -1$.\n\nIf $m = n = 1$: From (1), $b = a(1) = a$\n\nIf $m = n = -1$: From (1), $b = a(-1) = -a$\n\nTherefore, $a = \\pm b$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Proof of Property (e)",
+    "content": "Proof:\n\nGiven: $a | b$ and $b | c$\n\nSince $a | b$, there exists integer $m$ such that $b = am$\n\nSince $b | c$, there exists integer $n$ such that $c = bn$\n\nSubstituting $b = am$ into $c = bn$:\n\\[\nc = bn = (am)n = a(mn)\n\\]\n\nSince $mn$ is an integer (product of integers), we have $c = a(mn)$.\n\nTherefore, $a | c$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Example 12: Property (e) Application",
+    "content": "Given $6 | 24$ and $24 | 72$, show that $6 | 72$.\n\nSolution:\n\nSince $6 | 24$: $24 = 6 \\times 4$\n\nSince $24 | 72$: $72 = 24 \\times 3$\n\nSubstituting:\n\\[\n72 = 24 \\times 3 = (6 \\times 4) \\times 3 = 6 \\times (4 \\times 3) = 6 \\times 12\n\\]\n\nTherefore, $6 | 72$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Proof of Property (f)",
+    "content": "Proof:\n\nGiven: $a | b$ and $a | c$\n\nSince $a | b$, there exists integer $m$ such that $b = am$\n\nSince $a | c$, there exists integer $n$ such that $c = an$\n\nAdding these equations:\n\\[\nb + c = am + an = a(m+n)\n\\]\n\nSince $(m+n)$ is an integer, we have $b + c = a(m+n)$.\n\nTherefore, $a | (b+c)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Example 13: Property (f) Application",
+    "content": "Given $7 | 35$ and $7 | 21$, show that $7 | 56$.\n\nSolution:\n\nWe have: $35 = 7 \\times 5$ and $21 = 7 \\times 3$\n\nTherefore:\n\\[\n35 + 21 = 7 \\times 5 + 7 \\times 3 = 7(5+3) = 7 \\times 8 = 56\n\\]\n\nSo $7 | 56$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Proof of Property (g)",
+    "content": "Proof:\n\nGiven: $a | b$ and $a | c$, and $x, y \\in \\mathbb{Z}$\n\nSince $a | b$, there exists integer $m$ such that $b = am$\n\nSince $a | c$, there exists integer $n$ such that $c = an$\n\nConsider $bx + cy$:\n\\[\nbx + cy = (am)x + (an)y = amx + any = a(mx + ny)\n\\]\n\nSince $mx + ny$ is an integer, we have $bx + cy = a(mx + ny)$.\n\nTherefore, $a | (bx+cy)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Example 14: Property (g) Application",
+    "content": "Given $5 | 20$ and $5 | 15$, show that $5 | (20 \\times 3 + 15 \\times 2)$.\n\nSolution:\n\nWe have: $20 = 5 \\times 4$ and $15 = 5 \\times 3$\n\nCalculate:\n\\[\n20 \\times 3 + 15 \\times 2 = (5 \\times 4) \\times 3 + (5 \\times 3) \\times 2\n\\]\n\\[\n= 5 \\times 12 + 5 \\times 6 = 5(12 + 6) = 5 \\times 18 = 90\n\\]\n\nTherefore, $5 | 90$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Proof of Property (j)",
+    "content": "Proof:\n\nForward Direction ($\\Rightarrow$): Assume $a | b$\n\nThen $b = am$ for some integer $m$.\n\nMultiply both sides by $c$:\n\\[\nbc = (am)c = (ac)m\n\\]\n\nTherefore, $ac | bc$. ✓\n\nBackward Direction ($\\Leftarrow$): Assume $ac | bc$\n\nThen $bc = (ac)k$ for some integer $k$.\n\nThis gives: $bc = ack$\n\nSince $c \\neq 0$, divide both sides by $c$:\n\\[\nb = ak\n\\]\n\nTherefore, $a | b$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Properties of Divisibility",
+    "type": "example",
+    "title": "Example 15: Property (j) Application",
+    "content": "Show that $3 | 12 \\iff 15 | 60$.\n\nSolution:\n\nHere $a = 3$, $b = 12$, $c = 5$.\n\nForward: $3 | 12$ means $12 = 3 \\times 4$\n\nMultiply by 5: $60 = 15 \\times 4$, so $15 | 60$ ✓\n\nBackward: $15 | 60$ means $60 = 15 \\times 4$\n\nDivide by 5: $12 = 3 \\times 4$, so $3 | 12$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "definition",
+    "title": "Definition: Greatest Common Divisor",
+    "content": "Let $a$ and $b$ be two integers, at least one of which is non-zero. The greatest common divisor (GCD) of $a$ and $b$, denoted by $\\gcd(a,b)$ or $(a,b)$, is the largest positive integer $d$ that satisfies:\n\n1. $d > 0$\n2. $d | a$ and $d | b$\n3. If $c | a$ and $c | b$, then $c | d$\n\nAlternative Names:\n\n- GCD is also called Highest Common Factor (HCF)\n- Notation: $\\gcd(a,b)$ or $(a,b)$ or $\\text{HCF}(a,b)$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "example",
+    "title": "Example 16: Finding GCD by Listing Divisors",
+    "content": "Find $\\gcd(24, 36)$.\n\nSolution:\n\nDivisors of 24: $1, 2, 3, 4, 6, 8, 12, 24$\n\nDivisors of 36: $1, 2, 3, 4, 6, 9, 12, 18, 36$\n\nCommon divisors: $1, 2, 3, 4, 6, 12$\n\nThe greatest common divisor is: $\\boxed{\\gcd(24, 36) = 12}$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "example",
+    "title": "Example 17: Finding GCD by Prime Factorization",
+    "content": "Find $\\gcd(72, 108)$.\n\nSolution:\n\nPrime factorization:\n$$\\begin{align*}\n72 &= 2^3 \\times 3^2\\\\\n108 &= 2^2 \\times 3^3\n\\end{align*}$$\n\nTaking minimum powers of each prime:\n\\[\n\\gcd(72, 108) = 2^{\\min(3,2)} \\times 3^{\\min(2,3)} = 2^2 \\times 3^2 = 4 \\times 9 = 36\n\\]\n\nTherefore: $\\boxed{\\gcd(72, 108) = 36}$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "definition",
+    "title": "Theorem: Existence and Uniqueness of GCD",
+    "content": "Let $a$ and $b$ be two integers, at least one of which is non-zero. Then $\\gcd(a,b)$ exists and is unique."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "example",
+    "title": "Proof: Existence and Uniqueness of GCD",
+    "content": "Proof of Existence:\n\nConsider the set $S = \\{ax + by : x, y \\in \\mathbb{Z} \\text{ and } ax + by > 0\\}$\n\nSince at least one of $a, b$ is non-zero, $S$ is non-empty.\n\nBy Well-Ordering Principle, $S$ has a smallest element, say $d = ax_0 + by_0$ for some integers $x_0, y_0$.\n\nWe claim that $d = \\gcd(a,b)$.\n\nStep 1: Show $d | a$\n\nBy Division Algorithm: $a = dq + r$ where $0 \\leq r < d$\n\nThen:\n\\[\nr = a - dq = a - (ax_0 + by_0)q = a(1 - x_0q) + b(-y_0q)\n\\]\n\nIf $r > 0$, then $r \\in S$ and $r < d$, contradicting that $d$ is the smallest element of $S$.\n\nTherefore, $r = 0$, so $a = dq$, hence $d | a$. ✓\n\nSimilarly, we can show $d | b$. ✓\n\nStep 2: Show if $c | a$ and $c | b$, then $c | d$\n\nIf $c | a$ and $c | b$, then by property (g) of divisibility:\n\\[\nc | (ax_0 + by_0) = d\n\\]\n\nTherefore, $c | d$. ✓\n\nHence, $d = \\gcd(a,b)$ exists.\n\nUniqueness:\n\nSuppose $d_1$ and $d_2$ are both greatest common divisors of $a$ and $b$.\n\nSince $d_1$ is a GCD: $d_1 | a$ and $d_1 | b$\n\nBy property (iii) of GCD definition: $d_1 | d_2$\n\nSimilarly, since $d_2$ is a GCD: $d_2 | a$ and $d_2 | b$\n\nBy property (iii) of GCD definition: $d_2 | d_1$\n\nSince $d_1 | d_2$ and $d_2 | d_1$, by property (c) of divisibility: $d_1 = \\pm d_2$\n\nSince both are positive (by definition), we have $d_1 = d_2$.\n\nTherefore, GCD is unique."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "definition",
+    "title": "Theorem: Bezout's Identity",
+    "content": "Let $a$ and $b$ be two integers, at least one of which is non-zero. Then there exist integers $x$ and $y$ such that:\n\\[\n\\gcd(a,b) = ax + by\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "example",
+    "title": "Example 18: Bezout's Identity Application",
+    "content": "Express $\\gcd(12, 18) = 6$ as a linear combination of 12 and 18.\n\nSolution:\n\nWe need to find $x$ and $y$ such that $12x + 18y = 6$.\n\nBy inspection or trial:\n\\[\n12(2) + 18(-1) = 24 - 18 = 6\n\\]\n\nTherefore: $x = 2, y = -1$ ✓\n\nVerification: $12(2) + 18(-1) = 24 - 18 = 6 = \\gcd(12, 18)$ ✓\n\nNote: The values of $x$ and $y$ are not unique. For example:\n\\[\n12(5) + 18(-3) = 60 - 54 = 6\n\\]\n\n\\subsection*{Euclidean Algorithm}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {The Euclidean Algorithm}} The Euclidean",
+    "content": "The Euclidean Algorithm\n\nThe Euclidean Algorithm is an efficient method to compute $\\gcd(a,b)$ based on the following principle:\n\nIf $a = bq + r$, then $\\gcd(a,b) = \\gcd(b,r)$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "definition",
+    "title": "Lemma: GCD Property",
+    "content": "If $a = bq + r$, then $\\gcd(a,b) = \\gcd(b,r)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "example",
+    "title": "Proof of Lemma",
+    "content": "Proof:\n\nLet $d_1 = \\gcd(a,b)$ and $d_2 = \\gcd(b,r)$.\n\nWe need to show $d_1 = d_2$.\n\nStep 1: Show $d_1 | d_2$\n\nSince $d_1 = \\gcd(a,b)$, we have $d_1 | a$ and $d_1 | b$.\n\nFrom $a = bq + r$, we get $r = a - bq$.\n\nBy property (g) of divisibility: $d_1 | (a - bq) = r$\n\nSo $d_1 | b$ and $d_1 | r$, which means $d_1$ is a common divisor of $b$ and $r$.\n\nTherefore, $d_1 | \\gcd(b,r) = d_2$. ✓\n\nStep 2: Show $d_2 | d_1$\n\nSince $d_2 = \\gcd(b,r)$, we have $d_2 | b$ and $d_2 | r$.\n\nFrom $a = bq + r$, by property (g): $d_2 | (bq + r) = a$\n\nSo $d_2 | a$ and $d_2 | b$, which means $d_2$ is a common divisor of $a$ and $b$.\n\nTherefore, $d_2 | \\gcd(a,b) = d_1$. ✓\n\nSince $d_1 | d_2$ and $d_2 | d_1$, and both are positive, we have $d_1 = d_2$.\n\nTherefore, $\\gcd(a,b) = \\gcd(b,r)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "example",
+    "title": "Example 19: Euclidean Algorithm",
+    "content": "Find $\\gcd(252, 105)$ using the Euclidean Algorithm.\n\nSolution:\n\nApply Division Algorithm repeatedly:\n\n$$\\begin{align*}\n252 &= 105 \\times 2 + 42 & \\implies \\gcd(252, 105) &= \\gcd(105, 42)\\\\\n105 &= 42 \\times 2 + 21 & \\implies \\gcd(105, 42) &= \\gcd(42, 21)\\\\\n42 &= 21 \\times 2 + 0 & \\implies \\gcd(42, 21) &= \\gcd(21, 0) = 21\n\\end{align*}$$\n\nTherefore: $\\boxed{\\gcd(252, 105) = 21}$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "example",
+    "title": "Example 20: GCD with Linear Combination",
+    "content": "Find $\\gcd(256, 1170)$ and express it as a linear combination $256x + 1170y$.\n\nSolution:\n\nStep 1: Apply Euclidean Algorithm\n\n$$\\begin{align*}\n1170 &= 256 \\times 4 + 146\\\\\n256 &= 146 \\times 1 + 110\\\\\n146 &= 110 \\times 1 + 36\\\\\n110 &= 36 \\times 3 + 2\\\\\n36 &= 2 \\times 18 + 0\n\\end{align*}$$\n\nTherefore: $\\gcd(256, 1170) = 2$\n\nStep 2: Back Substitution (Extended Euclidean Algorithm)\n\n$$\\begin{align*}\n2 &= 110 - 36 \\times 3\\\\\n&= 110 - (146 - 110 \\times 1) \\times 3\\\\\n&= 110 - 146 \\times 3 + 110 \\times 3\\\\\n&= 110 \\times 4 - 146 \\times 3\\\\\n&= (256 - 146 \\times 1) \\times 4 - 146 \\times 3\\\\\n&= 256 \\times 4 - 146 \\times 4 - 146 \\times 3\\\\\n&= 256 \\times 4 - 146 \\times 7\\\\\n&= 256 \\times 4 - (1170 - 256 \\times 4) \\times 7\\\\\n&= 256 \\times 4 - 1170 \\times 7 + 256 \\times 28\\\\\n&= 256 \\times 32 - 1170 \\times 7\n\\end{align*}$$\n\nTherefore: $\\boxed{\\gcd(256, 1170) = 2 = 256(32) + 1170(-7)}$\n\nVerification: $256 \\times 32 + 1170 \\times (-7) = 8192 - 8190 = 2$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Greatest Common Divisor (GCD)",
+    "type": "example",
+    "title": "Example 21: Another Linear Combination",
+    "content": "Find $\\gcd(10672, 4147)$ and express it as a linear combination.\n\nSolution:\n\nStep 1: Euclidean Algorithm\n\n$$\\begin{align*}\n10672 &= 4147 \\times 2 + 2378\\\\\n4147 &= 2378 \\times 1 + 1769\\\\\n2378 &= 1769 \\times 1 + 609\\\\\n1769 &= 609 \\times 2 + 551\\\\\n609 &= 551 \\times 1 + 58\\\\\n551 &= 58 \\times 9 + 29\\\\\n58 &= 29 \\times 2 + 0\n\\end{align*}$$\n\nTherefore: $\\gcd(10672, 4147) = 29$\n\nStep 2: Back Substitution\n\n$$\\begin{align*}\n29 &= 551 - 58 \\times 9\\\\\n&= 551 - (609 - 551 \\times 1) \\times 9\\\\\n&= 551 - 609 \\times 9 + 551 \\times 9\\\\\n&= 551 \\times 10 - 609 \\times 9\\\\\n&= (1769 - 609 \\times 2) \\times 10 - 609 \\times 9\\\\\n&= 1769 \\times 10 - 609 \\times 20 - 609 \\times 9\\\\\n&= 1769 \\times 10 - 609 \\times 29\\\\\n&= 1769 \\times 10 - (2378 - 1769 \\times 1) \\times 29\\\\\n&= 1769 \\times 10 - 2378 \\times 29 + 1769 \\times 29\\\\\n&= 1769 \\times 39 - 2378 \\times 29\\\\\n&= (4147 - 2378 \\times 1) \\times 39 - 2378 \\times 29\\\\\n&= 4147 \\times 39 - 2378 \\times 39 - 2378 \\times 29\\\\\n&= 4147 \\times 39 - 2378 \\times 68\\\\\n&= 4147 \\times 39 - (10672 - 4147 \\times 2) \\times 68\\\\\n&= 4147 \\times 39 - 10672 \\times 68 + 4147 \\times 136\\\\\n&= 4147 \\times 175 - 10672 \\times 68\n\\end{align*}$$\n\nTherefore: $\\boxed{\\gcd(10672, 4147) = 29 = 10672(-68) + 4147(175)}$\n\nVerification: $10672 \\times (-68) + 4147 \\times 175 = -725696 + 725725 = 29$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "definition",
+    "title": "Definition: Relatively Prime (Coprime) Integers",
+    "content": "Two integers $a$ and $b$, at least one of which is non-zero, are said to be relatively prime or coprime if:\n\\[\n\\gcd(a,b) = 1\n\\]\n\nKey Points:\n\n- Relatively prime integers have no common divisor other than $\\pm 1$\n- Alternative notation: $(a,b) = 1$\n- The integers do not need to be prime themselves"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 22: Identifying Coprime Integers",
+    "content": "Determine which pairs are relatively prime:\n\nSolution:\n\n1. $(8, 15)$: $\\gcd(8, 15) = 1$ Coprime ✓\n2. $(12, 18)$: $\\gcd(12, 18) = 6 \\neq 1$ Not coprime $\\times$\n3. $(21, 25)$: $\\gcd(21, 25) = 1$ Coprime ✓\n4. $(14, 21)$: $\\gcd(14, 21) = 7 \\neq 1$ Not coprime $\\times$\n5. $(9, 16)$: $\\gcd(9, 16) = 1$ Coprime ✓\n\nNote: Notice that 8, 9, 15, 16, 21, and 25 are not all prime numbers, but the pairs can still be coprime."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "definition",
+    "title": "Corollary: GCD Reduction",
+    "content": "If $\\gcd(a,b) = d$, then $\\gcd\\left(\\frac{a}{d}, \\frac{b}{d}\\right) = 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Proof of Corollary",
+    "content": "Proof:\n\nLet $\\gcd(a,b) = d$.\n\nThen $a = da'$ and $b = db'$ for some integers $a'$ and $b'$.\n\nWe have $\\frac{a}{d} = a'$ and $\\frac{b}{d} = b'$.\n\nLet $\\gcd(a', b') = g$.\n\nThen $g | a'$ and $g | b'$, which means:\n\\[\ng | da' = a \\quad \\text{and} \\quad g | db' = b\n\\]\n\nSince $g$ is a common divisor of $a$ and $b$, we have $g | \\gcd(a,b) = d$.\n\nBut $d = \\gcd(a,b)$ is the largest integer such that $a = da'$ and $b = db'$ where $\\gcd(a', b') = 1$.\n\nThis means $g | d$ and $g | a'$ and $g | b'$ can only be satisfied if $g = 1$.\n\nTherefore, $\\gcd(a', b') = \\gcd\\left(\\frac{a}{d}, \\frac{b}{d}\\right) = 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 23: GCD Reduction",
+    "content": "Given $\\gcd(48, 72) = 24$, verify that $\\gcd(2, 3) = 1$.\n\nSolution:\n\nWe have $\\gcd(48, 72) = 24$.\n\nCalculate:\n\\[\n\\frac{48}{24} = 2, \\quad \\frac{72}{24} = 3\n\\]\n\nNow find:\n\\[\n\\gcd(2, 3) = 1\n\\]\n\nTherefore, $\\gcd\\left(\\frac{48}{24}, \\frac{72}{24}\\right) = \\gcd(2, 3) = 1$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "definition",
+    "title": "Theorem: GCD Scaling Property",
+    "content": "Let $a$ and $b$ be two integers, at least one of which is non-zero, and let $k > 0$ be an integer. Then:\n\\[\n\\gcd(ka, kb) = k \\cdot \\gcd(a,b)\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Proof of Theorem",
+    "content": "Proof:\n\nLet $d = \\gcd(a,b)$.\n\nThen $a = dm$ and $b = dn$ for some integers $m$ and $n$ with $\\gcd(m,n) = 1$.\n\nConsider $ka$ and $kb$:\n\\[\nka = k(dm) = (kd)m, \\quad kb = k(dn) = (kd)n\n\\]\n\nSo $kd$ is a common divisor of $ka$ and $kb$.\n\nLet $g = \\gcd(ka, kb)$.\n\nThen $g | ka$ and $g | kb$.\n\nBy Bezout's theorem, there exist integers $x$ and $y$ such that:\n\\[\nd = ax + by\n\\]\n\nMultiply both sides by $k$:\n\\[\nkd = k(ax + by) = (ka)x + (kb)y\n\\]\n\nSince $g | ka$ and $g | kb$, by property (g) of divisibility:\n\\[\ng | (ka)x + (kb)y = kd\n\\]\n\nSo $g | kd$.\n\nAlso, $kd | ka$ and $kd | kb$, so $kd | g$.\n\nSince $g | kd$ and $kd | g$, and both are positive, we have $g = kd$.\n\nTherefore, $\\gcd(ka, kb) = k \\cdot \\gcd(a,b)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 24: GCD Scaling",
+    "content": "Verify that $\\gcd(15, 25) = 5 \\cdot \\gcd(3, 5)$.\n\nSolution:\n\nCalculate $\\gcd(3, 5) = 1$ (since 3 and 5 are coprime)\n\nAccording to the theorem with $k = 5$:\n\\[\n\\gcd(15, 25) = \\gcd(5 \\cdot 3, 5 \\cdot 5) = 5 \\cdot \\gcd(3, 5) = 5 \\cdot 1 = 5\n\\]\n\nVerification: $\\gcd(15, 25) = 5$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "definition",
+    "title": "Theorem: Division by Coprime Integers",
+    "content": "If $a | c$ and $b | c$ with $\\gcd(a,b) = 1$, then $ab | c$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Proof of Theorem",
+    "content": "Proof:\n\nGiven: $a | c$ and $b | c$ with $\\gcd(a,b) = 1$.\n\nSince $a | c$, we have $c = am$ for some integer $m$.\n\nSince $\\gcd(a,b) = 1$, by Bezout's theorem, there exist integers $x$ and $y$ such that:\n\\[\n1 = ax + by\n\\]\n\nMultiply both sides by $m$:\n\\[\nm = amx + bmy\n\\]\n\nSubstitute $c = am$:\n\\[\nm = cx + bmy\n\\]\n\nTherefore:\n\\[\nc = am = a(cx + bmy) = acx + abmy\n\\]\n\nSince $b | c$, let $c = bn$ for some integer $n$.\n\nThen:\n\\[\nc = acx + abmy = a(bn)x + abmy = ab(nx + my)\n\\]\n\nSince $nx + my$ is an integer, we have $c = ab(nx + my)$.\n\nTherefore, $ab | c$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 25: Application of Theorem",
+    "content": "Given $3 | 60$ and $4 | 60$ with $\\gcd(3,4) = 1$, show that $12 | 60$.\n\nSolution:\n\nWe have:\n\n- $3 | 60$ because $60 = 3 \\times 20$ ✓\n- $4 | 60$ because $60 = 4 \\times 15$ ✓\n- $\\gcd(3, 4) = 1$ ✓\n\nBy the theorem: $3 \\cdot 4 = 12$ divides $60$.\n\nVerification: $60 = 12 \\times 5$, so $12 | 60$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "definition",
+    "title": "Theorem: Euclid's Lemma",
+    "content": "If $a | bc$ and $\\gcd(a,b) = 1$, then $a | c$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Proof: Euclid's Lemma",
+    "content": "Proof:\n\nGiven: $a | bc$ and $\\gcd(a,b) = 1$.\n\nSince $\\gcd(a,b) = 1$, by Bezout's theorem, there exist integers $x$ and $y$ such that:\n\\[\n1 = ax + by\n\\]\n\nMultiply both sides by $c$:\n\\[\nc = acx + bcy\n\\]\n\nSince $a | bc$, we have $bc = ak$ for some integer $k$.\n\nSubstitute:\n\\[\nc = acx + bcy = acx + (ak)y = a(cx + ky)\n\\]\n\nSince $cx + ky$ is an integer, we have $c = a(cx + ky)$.\n\nTherefore, $a | c$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 26: Euclid's Lemma Application",
+    "content": "Given $7 | (5 \\times 21)$ and $\\gcd(7, 5) = 1$, show that $7 | 21$.\n\nSolution:\n\nWe have:\n\n- $5 \\times 21 = 105 = 7 \\times 15$, so $7 | (5 \\times 21)$ ✓\n- $\\gcd(7, 5) = 1$ (since 7 and 5 are coprime) ✓\n\nBy Euclid's Lemma: $7 | 21$\n\nVerification: $21 = 7 \\times 3$, so $7 | 21$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "definition",
+    "title": "Theorem: Alternative GCD Characterization",
+    "content": "For a positive integer $d$, $d = \\gcd(a,b)$ if and only if:\n\n1. $d | a$ and $d | b$\n2. Whenever $c | a$ and $c | b$, then $c | d$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Proof of Theorem",
+    "content": "Proof:\n\nForward Direction ($\\Rightarrow$): Assume $d = \\gcd(a,b)$\n\nBy definition of GCD:\n\n- $d | a$ and $d | b$ (property ii of GCD definition) ✓\n- If $c | a$ and $c | b$, then $c | d$ (property iii of GCD definition) ✓\n\nBackward Direction ($\\Leftarrow$): Assume conditions (a) and (b) hold\n\nLet $g = \\gcd(a,b)$.\n\nSince $g | a$ and $g | b$, by condition (b): $g | d$ \\quad $\\cdots (1)$\n\nSince $d | a$ and $d | b$, and $g$ is the GCD, by property (iii): $d | g$ \\quad $\\cdots (2)$\n\nFrom (1) and (2): $g | d$ and $d | g$\n\nSince both are positive: $g = d$\n\nTherefore, $d = \\gcd(a,b)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 27: Verifying GCD Characterization",
+    "content": "Verify that $d = 6$ satisfies both conditions for $\\gcd(24, 42)$.\n\nSolution:\n\nCondition (a): Check if $6 | 24$ and $6 | 42$\n\n- $24 = 6 \\times 4$, so $6 | 24$ ✓\n- $42 = 6 \\times 7$, so $6 | 42$ ✓\n\nCondition (b): Check if every common divisor of 24 and 42 divides 6\n\nCommon divisors of 24 and 42: $1, 2, 3, 6$\n\n- $1 | 6$ ✓\n- $2 | 6$ ✓\n- $3 | 6$ ✓\n- $6 | 6$ ✓\n\nBoth conditions satisfied, therefore $\\gcd(24, 42) = 6$ ✓\n\n\\subsection*{Coprimality Problems}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 28: Proving Two Expressions are Coprime",
+    "content": "Show that $\\gcd(2a+1, 9a+4) = 1$.\n\nSolution:\n\nLet $d = \\gcd(2a+1, 9a+4)$.\n\nThen $d | (2a+1)$ and $d | (9a+4)$.\n\nBy property (g) of divisibility:\n\\[\nd | [9(2a+1) - 2(9a+4)]\n\\]\n\nCalculate:\n\\[\n9(2a+1) - 2(9a+4) = 18a + 9 - 18a - 8 = 1\n\\]\n\nSo $d | 1$, which means $d = 1$.\n\nTherefore, $\\gcd(2a+1, 9a+4) = 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 29: Another Coprimality Proof",
+    "content": "Show that $\\gcd(5a+2, 7a+3) = 1$.\n\nSolution:\n\nLet $d = \\gcd(5a+2, 7a+3)$.\n\nThen $d | (5a+2)$ and $d | (7a+3)$.\n\nBy property (g):\n\\[\nd | [7(5a+2) - 5(7a+3)]\n\\]\n\nCalculate:\n\\[\n7(5a+2) - 5(7a+3) = 35a + 14 - 35a - 15 = -1\n\\]\n\nSo $d | (-1)$, which means $d | 1$, hence $d = 1$.\n\nTherefore, $\\gcd(5a+2, 7a+3) = 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 30: Third Coprimality Example",
+    "content": "Show that $\\gcd(2a+3, 4a+5) = 1$.\n\nSolution:\n\nLet $d = \\gcd(2a+3, 4a+5)$.\n\nThen $d | (2a+3)$ and $d | (4a+5)$.\n\nNote that $4a+5 = 2(2a+3) - 1$, so:\n\\[\nd | [2(2a+3) - (4a+5)]\n\\]\n\nCalculate:\n\\[\n2(2a+3) - (4a+5) = 4a + 6 - 4a - 5 = 1\n\\]\n\nSo $d | 1$, which means $d = 1$.\n\nTherefore, $\\gcd(2a+3, 4a+5) = 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 31: Coprimality with Condition",
+    "content": "Show that $\\gcd(3a, 3a+2) = 1$ for odd $a$.\n\nSolution:\n\nLet $d = \\gcd(3a, 3a+2)$.\n\nThen $d | 3a$ and $d | (3a+2)$.\n\nBy property (g):\n\\[\nd | [(3a+2) - 3a] = 2\n\\]\n\nSo $d | 2$, which means $d \\in \\{1, 2\\}$.\n\nNow, since $a$ is odd, $3a$ is also odd (product of two odd numbers).\n\nIf $d = 2$, then $d | 3a$ implies $2 | 3a$.\n\nBut $3a$ is odd, so $2 \\nmid 3a$.\n\nThis is a contradiction.\n\nTherefore, $d = 1$.\n\nHence, $\\gcd(3a, 3a+2) = 1$ for odd $a$.\n\n\\subsection*{Conditional Coprimality}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 32: GCD Result is 1 or 2",
+    "content": "If $\\gcd(a,b) = 1$, show that $\\gcd(a+b, a-b)$ is 1 or 2.\n\nSolution:\n\nLet $d = \\gcd(a+b, a-b)$.\n\nThen $d | (a+b)$ and $d | (a-b)$.\n\nBy property (g):\n\\[\nd | [(a+b) + (a-b)] = 2a\n\\]\n\\[\nd | [(a+b) - (a-b)] = 2b\n\\]\n\nSo $d | 2a$ and $d | 2b$.\n\nSince $\\gcd(a,b) = 1$, by the theorem on coprime integers:\n\nLet $d = \\gcd(2a, 2b) = 2 \\cdot \\gcd(a,b) = 2 \\cdot 1 = 2$.\n\nBut $d | 2a$ and $d | 2b$ means $d$ divides $\\gcd(2a, 2b) = 2$.\n\nTherefore, $d | 2$, so $d \\in \\{1, 2\\}$.\n\nHence, $\\gcd(a+b, a-b)$ is either 1 or 2."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 33: GCD Result is 1 or 3",
+    "content": "If $\\gcd(a,b) = 1$, show that $\\gcd(2a+b, a+2b)$ is 1 or 3.\n\nSolution:\n\nLet $d = \\gcd(2a+b, a+2b)$.\n\nThen $d | (2a+b)$ and $d | (a+2b)$.\n\nBy property (g):\n\\[\nd | [2(2a+b) - (a+2b)] = 4a + 2b - a - 2b = 3a\n\\]\n\\[\nd | [2(a+2b) - (2a+b)] = 2a + 4b - 2a - b = 3b\n\\]\n\nSo $d | 3a$ and $d | 3b$.\n\nSince $\\gcd(a,b) = 1$, we have $\\gcd(3a, 3b) = 3 \\cdot \\gcd(a,b) = 3 \\cdot 1 = 3$.\n\nTherefore, $d | 3$, so $d \\in \\{1, 3\\}$.\n\nHence, $\\gcd(2a+b, a+2b)$ is either 1 or 3."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 34: Sum and Sum of Squares",
+    "content": "If $\\gcd(a,b) = 1$, show that $\\gcd(a+b, a^2+b^2)$ is 1 or 2.\n\nSolution:\n\nLet $d = \\gcd(a+b, a^2+b^2)$.\n\nThen $d | (a+b)$ and $d | (a^2+b^2)$.\n\nSince $d | (a+b)$, we have:\n\\[\nd | (a+b)^2 = a^2 + 2ab + b^2\n\\]\n\nBy property (g):\n\\[\nd | [(a^2 + 2ab + b^2) - (a^2 + b^2)] = 2ab\n\\]\n\nSo $d | 2ab$.\n\nAlso, from $d | (a+b)$:\n\\[\nd | (a+b)a = a^2 + ab\n\\]\n\nBy property (g):\n\\[\nd | [(a^2+b^2) - (a^2+ab)] = b^2 - ab = b(b-a)\n\\]\n\nSimilarly:\n\\[\nd | (a+b)b = ab + b^2\n\\]\n\\[\nd | [(a^2+b^2) - (ab+b^2)] = a^2 - ab = a(a-b)\n\\]\n\nFrom $d | 2ab$ and $\\gcd(a,b) = 1$:\n\nIf $d$ is odd, then $d | ab$ implies $d | a$ or $d | b$ (by Euclid's Lemma applied twice).\n\nBut if $d | a$ and $d | (a+b)$, then $d | b$, contradicting $\\gcd(a,b) = 1$.\n\nSo $d$ must divide 2.\n\nTherefore, $d \\in \\{1, 2\\}$.\n\nHence, $\\gcd(a+b, a^2+b^2)$ is either 1 or 2."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Relatively Prime Integers",
+    "type": "example",
+    "title": "Example 35: Quadratic Expression",
+    "content": "If $\\gcd(a,b) = 1$, show that $\\gcd(a+b, a^2-ab+b^2)$ is 1 or 3.\n\nSolution:\n\nLet $d = \\gcd(a+b, a^2-ab+b^2)$.\n\nThen $d | (a+b)$ and $d | (a^2-ab+b^2)$.\n\nNote that:\n\\[\n(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3\n\\]\n\\[\na^3 + b^3 = (a+b)(a^2-ab+b^2)\n\\]\n\nSince $d | (a+b)$, we have:\n\\[\nd | (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3\n\\]\n\nAlso, $d | (a^2-ab+b^2)$ and $d | (a+b)$ gives:\n\\[\nd | (a+b)(a^2-ab+b^2) = a^3 + b^3\n\\]\n\nBy property (g):\n\\[\nd | [(a^3 + 3a^2b + 3ab^2 + b^3) - (a^3 + b^3)] = 3a^2b + 3ab^2 = 3ab(a+b)\n\\]\n\nSince $d | (a+b)$, we have:\n\\[\nd | 3ab\n\\]\n\nSince $\\gcd(a,b) = 1$, and $d | 3ab$:\n\n$d$ must divide 3.\n\nTherefore, $d \\in \\{1, 3\\}$.\n\nHence, $\\gcd(a+b, a^2-ab+b^2)$ is either 1 or 3."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "definition",
+    "title": "Definition: Least Common Multiple",
+    "content": "The least common multiple (LCM) of two integers $a$ and $b$ is a positive integer $m$, denoted by $\\text{lcm}(a,b)$ or $[a,b]$, that satisfies:\n\n1. $m > 0$\n2. $a | m$ and $b | m$\n3. If $a | c$ and $b | c$ with $c > 0$, then $m | c$\n\nIn words:\n\n- LCM is the smallest positive integer that is divisible by both $a$ and $b$\n- Every common multiple of $a$ and $b$ is a multiple of the LCM"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "example",
+    "title": "Example 36: Finding LCM by Listing Multiples",
+    "content": "Find $\\text{lcm}(6, 8)$.\n\nSolution:\n\nMultiples of 6: $6, 12, 18, 24, 30, 36, 42, 48, \\ldots$\n\nMultiples of 8: $8, 16, 24, 32, 40, 48, \\ldots$\n\nCommon multiples: $24, 48, 72, \\ldots$\n\nThe least common multiple is: $\\boxed{\\text{lcm}(6, 8) = 24}$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "example",
+    "title": "Example 37: Finding LCM by Prime Factorization",
+    "content": "Find $\\text{lcm}(12, 18)$.\n\nSolution:\n\nPrime factorization:\n$$\\begin{align*}\n12 &= 2^2 \\times 3\\\\\n18 &= 2 \\times 3^2\n\\end{align*}$$\n\nTaking maximum powers of each prime:\n\\[\n\\text{lcm}(12, 18) = 2^{\\max(2,1)} \\times 3^{\\max(1,2)} = 2^2 \\times 3^2 = 4 \\times 9 = 36\n\\]\n\nTherefore: $\\boxed{\\text{lcm}(12, 18) = 36}$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "definition",
+    "title": "Theorem: Relationship between GCD and LCM",
+    "content": "For any two positive integers $a$ and $b$:\n\\[\n\\gcd(a,b) \\cdot \\text{lcm}(a,b) = ab\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "example",
+    "title": "Proof of Theorem",
+    "content": "Proof:\n\nLet $a$ and $b$ be positive integers with prime factorizations:\n\\[\na = p_1^{\\alpha_1} p_2^{\\alpha_2} \\cdots p_k^{\\alpha_k}, \\quad b = p_1^{\\beta_1} p_2^{\\beta_2} \\cdots p_k^{\\beta_k}\n\\]\n\nwhere some exponents may be zero.\n\nThen:\n\\[\n\\gcd(a,b) = p_1^{\\min(\\alpha_1, \\beta_1)} p_2^{\\min(\\alpha_2, \\beta_2)} \\cdots p_k^{\\min(\\alpha_k, \\beta_k)}\n\\]\n\\[\n\\text{lcm}(a,b) = p_1^{\\max(\\alpha_1, \\beta_1)} p_2^{\\max(\\alpha_2, \\beta_2)} \\cdots p_k^{\\max(\\alpha_k, \\beta_k)}\n\\]\n\nNow:\n$$\\begin{align*}\n\\gcd(a,b) \\cdot \\text{lcm}(a,b) &= \\prod_{i=1}^{k} p_i^{\\min(\\alpha_i, \\beta_i)} \\cdot \\prod_{i=1}^{k} p_i^{\\max(\\alpha_i, \\beta_i)}\\\\\n&= \\prod_{i=1}^{k} p_i^{\\min(\\alpha_i, \\beta_i) + \\max(\\alpha_i, \\beta_i)}\n\\end{align*}$$\n\nFor any two numbers $\\alpha_i$ and $\\beta_i$:\n\\[\n\\min(\\alpha_i, \\beta_i) + \\max(\\alpha_i, \\beta_i) = \\alpha_i + \\beta_i\n\\]\n\nTherefore:\n$$\\begin{align*}\n\\gcd(a,b) \\cdot \\text{lcm}(a,b) &= \\prod_{i=1}^{k} p_i^{\\alpha_i + \\beta_i}\\\\\n&= \\prod_{i=1}^{k} p_i^{\\alpha_i} \\cdot \\prod_{i=1}^{k} p_i^{\\beta_i}\\\\\n&= a \\cdot b\n\\end{align*}$$\n\nHence, $\\gcd(a,b) \\cdot \\text{lcm}(a,b) = ab$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "example",
+    "title": "Example 38: Using GCD-LCM Relationship",
+    "content": "Find $\\text{lcm}(24, 138)$ given that $\\gcd(24, 138) = 6$.\n\nSolution:\n\nUsing the formula:\n\\[\n\\gcd(24, 138) \\cdot \\text{lcm}(24, 138) = 24 \\times 138\n\\]\n\nSubstitute $\\gcd(24, 138) = 6$:\n\\[\n6 \\cdot \\text{lcm}(24, 138) = 24 \\times 138 = 3312\n\\]\n\nSolve for LCM:\n\\[\n\\text{lcm}(24, 138) = \\frac{3312}{6} = 552\n\\]\n\nTherefore: $\\boxed{\\text{lcm}(24, 138) = 552}$ ✓\n\nVerification:\n\\[\n\\gcd(24, 138) \\cdot \\text{lcm}(24, 138) = 6 \\times 552 = 3312 = 24 \\times 138\n\\]\n✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "definition",
+    "title": "Corollary: LCM of Coprime Integers",
+    "content": "If $a$ and $b$ are relatively prime integers (i.e., $\\gcd(a,b) = 1$), then:\n\\[\n\\text{lcm}(a,b) = ab\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "example",
+    "title": "Proof of Corollary",
+    "content": "Proof:\n\nGiven: $\\gcd(a,b) = 1$\n\nFrom the theorem: $\\gcd(a,b) \\cdot \\text{lcm}(a,b) = ab$\n\nSubstitute $\\gcd(a,b) = 1$:\n\\[\n1 \\cdot \\text{lcm}(a,b) = ab\n\\]\n\nTherefore:\n\\[\n\\text{lcm}(a,b) = ab\n\\]\n\nHence, for coprime integers, the LCM equals their product."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "example",
+    "title": "Example 39: LCM of Coprime Numbers",
+    "content": "Find $\\text{lcm}(7, 12)$.\n\nSolution:\n\nFirst, check if 7 and 12 are coprime:\n\\[\n\\gcd(7, 12) = 1\n\\]\n\nSince they are coprime, by the corollary:\n\\[\n\\text{lcm}(7, 12) = 7 \\times 12 = 84\n\\]\n\nTherefore: $\\boxed{\\text{lcm}(7, 12) = 84}$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Least Common Multiple (LCM)",
+    "type": "example",
+    "title": "Example 40: Complete GCD and LCM Calculation",
+    "content": "Find $\\gcd(24, 138)$ and $\\text{lcm}(24, 138)$, then verify their relationship.\n\nSolution:\n\nStep 1: Find GCD using Euclidean Algorithm\n\n$$\\begin{align*}\n138 &= 24 \\times 5 + 18\\\\\n24 &= 18 \\times 1 + 6\\\\\n18 &= 6 \\times 3 + 0\n\\end{align*}$$\n\nTherefore: $\\gcd(24, 138) = 6$\n\nStep 2: Find LCM using the formula\n\n\\[\n\\text{lcm}(24, 138) = \\frac{24 \\times 138}{\\gcd(24, 138)} = \\frac{3312}{6} = 552\n\\]\n\nStep 3: Verify the relationship\n\n\\[\n\\gcd(24, 138) \\times \\text{lcm}(24, 138) = 6 \\times 552 = 3312\n\\]\n\\[\n24 \\times 138 = 3312\n\\]\n\nSince both are equal: $\\boxed{\\gcd(24, 138) = 6 \\text{ and } \\text{lcm}(24, 138) = 552}$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "GCD of Three or More Integers",
+    "type": "definition",
+    "title": "Definition: GCD of Three Integers",
+    "content": "Three integers $a$, $b$, and $c$, at least one of which is non-zero, are said to be relatively prime if:\n\\[\n\\gcd(a,b,c) = 1\n\\]\n\nThe GCD of three integers can be computed as:\n\\[\n\\gcd(a,b,c) = \\gcd(\\gcd(a,b), c)\n\\]\n\nKey Points:\n\n- The GCD operation is associative: $\\gcd(a,b,c) = \\gcd(a, \\gcd(b,c))$\n- This extends to any number of integers"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "GCD of Three or More Integers",
+    "type": "example",
+    "title": "Example 41: GCD of Three Numbers",
+    "content": "Find $\\gcd(198, 288, 512)$.\n\nSolution:\n\nStep 1: Find $\\gcd(198, 288)$\n\n$$\\begin{align*}\n288 &= 198 \\times 1 + 90\\\\\n198 &= 90 \\times 2 + 18\\\\\n90 &= 18 \\times 5 + 0\n\\end{align*}$$\n\nSo $\\gcd(198, 288) = 18$\n\nStep 2: Find $\\gcd(18, 512)$\n\n$$\\begin{align*}\n512 &= 18 \\times 28 + 8\\\\\n18 &= 8 \\times 2 + 2\\\\\n8 &= 2 \\times 4 + 0\n\\end{align*}$$\n\nSo $\\gcd(18, 512) = 2$\n\nTherefore: $\\boxed{\\gcd(198, 288, 512) = 2}$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "GCD of Three or More Integers",
+    "type": "example",
+    "title": "Example 42: Express GCD as Linear Combination",
+    "content": "Express $\\gcd(198, 288, 512) = 2$ as a linear combination of 198, 288, and 512.\n\nSolution:\n\nFrom Example 41, we have $\\gcd(198, 288, 512) = 2$.\n\nStep 1: Express $\\gcd(18, 512) = 2$\n\nBack-substitution from Euclidean Algorithm:\n$$\\begin{align*}\n2 &= 18 - 8 \\times 2\\\\\n&= 18 - (512 - 18 \\times 28) \\times 2\\\\\n&= 18 - 512 \\times 2 + 18 \\times 56\\\\\n&= 18 \\times 57 - 512 \\times 2\n\\end{align*}$$\n\nStep 2: Express $\\gcd(198, 288) = 18$\n\nBack-substitution:\n$$\\begin{align*}\n18 &= 198 - 90 \\times 2\\\\\n&= 198 - (288 - 198 \\times 1) \\times 2\\\\\n&= 198 - 288 \\times 2 + 198 \\times 2\\\\\n&= 198 \\times 3 - 288 \\times 2\n\\end{align*}$$\n\nStep 3: Combine both results\n\nSubstitute $18 = 198 \\times 3 - 288 \\times 2$ into $2 = 18 \\times 57 - 512 \\times 2$:\n$$\\begin{align*}\n2 &= (198 \\times 3 - 288 \\times 2) \\times 57 - 512 \\times 2\\\\\n&= 198 \\times 171 - 288 \\times 114 - 512 \\times 2\\\\\n&= 198 \\times 171 + 288 \\times (-114) + 512 \\times (-2)\n\\end{align*}$$\n\nTherefore: $\\boxed{2 = 198(171) + 288(-114) + 512(-2)}$\n\nVerification:\n\\[\n198 \\times 171 + 288 \\times (-114) + 512 \\times (-2) = 33858 - 32832 - 1024 = 2\n\\]\n✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "GCD of Three or More Integers",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Summary of GCD and LCM}}",
+    "content": "Summary of GCD and LCM\n\n| Property | Formula/Description |\n|---|---|\n| GCD Definition | Largest positive integer dividing both $a$ and $b$ |\n| LCM Definition | Smallest positive integer divisible by both $a$ and $b$ |\n| GCD-LCM Relationship | $\\gcd(a,b) \\cdot \\text{lcm}(a,b) = ab$ |\n| Bezout's Identity | $\\gcd(a,b) = ax + by$ for some $x, y \\in \\mathbb{Z}$ |\n| Euclidean Algorithm | If $a = bq + r$, then $\\gcd(a,b) = \\gcd(b,r)$ |\n| Coprime Integers | $\\gcd(a,b) = 1 \\implies \\text{lcm}(a,b) = ab$ |\n| GCD Scaling | $\\gcd(ka, kb) = k \\cdot \\gcd(a,b)$ for $k > 0$ |\n| Euclid's Lemma | If $a | bc$ and $\\gcd(a,b) = 1$, then $a | c$ |\n\n\\subsection*{Additional Problems}"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "GCD of Three or More Integers",
+    "type": "example",
+    "title": "Practice Problem 1",
+    "content": "Find $\\gcd(1024, 2580)$ and express it as a linear combination.\n\nSolution:\n\nEuclidean Algorithm:\n$$\\begin{align*}\n2580 &= 1024 \\times 2 + 532\\\\\n1024 &= 532 \\times 1 + 492\\\\\n532 &= 492 \\times 1 + 40\\\\\n492 &= 40 \\times 12 + 12\\\\\n40 &= 12 \\times 3 + 4\\\\\n12 &= 4 \\times 3 + 0\n\\end{align*}$$\n\nTherefore: $\\gcd(1024, 2580) = 4$\n\nBack Substitution:\n$$\\begin{align*}\n4 &= 40 - 12 \\times 3\\\\\n&= 40 - (492 - 40 \\times 12) \\times 3\\\\\n&= 40 - 492 \\times 3 + 40 \\times 36\\\\\n&= 40 \\times 37 - 492 \\times 3\\\\\n&= (532 - 492 \\times 1) \\times 37 - 492 \\times 3\\\\\n&= 532 \\times 37 - 492 \\times 37 - 492 \\times 3\\\\\n&= 532 \\times 37 - 492 \\times 40\\\\\n&= 532 \\times 37 - (1024 - 532 \\times 1) \\times 40\\\\\n&= 532 \\times 37 - 1024 \\times 40 + 532 \\times 40\\\\\n&= 532 \\times 77 - 1024 \\times 40\\\\\n&= (2580 - 1024 \\times 2) \\times 77 - 1024 \\times 40\\\\\n&= 2580 \\times 77 - 1024 \\times 154 - 1024 \\times 40\\\\\n&= 2580 \\times 77 - 1024 \\times 194\n\\end{align*}$$\n\nTherefore: $\\boxed{4 = 2580(77) + 1024(-194)}$\n\nVerification: $2580 \\times 77 - 1024 \\times 194 = 198660 - 198656 = 4$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "GCD of Three or More Integers",
+    "type": "example",
+    "title": "Problem 2",
+    "content": "Show that if $n$ is odd, then $\\gcd(n, n+2) = 1$.\n\nSolution:\n\nLet $d = \\gcd(n, n+2)$.\n\nThen $d | n$ and $d | (n+2)$.\n\nBy property (g) of divisibility:\n\\[\nd | [(n+2) - n] = 2\n\\]\n\nSo $d | 2$, which means $d \\in \\{1, 2\\}$.\n\nSince $n$ is odd, $n$ is not divisible by 2.\n\nIf $d = 2$, then $d | n$ implies $2 | n$, which contradicts that $n$ is odd.\n\nTherefore, $d = 1$.\n\nHence, $\\gcd(n, n+2) = 1$ for odd $n$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "GCD of Three or More Integers",
+    "type": "example",
+    "title": "Problem 3",
+    "content": "Prove that $\\gcd(a, b) = \\gcd(a, b-a)$ for $b > a > 0$.\n\nSolution:\n\nLet $d_1 = \\gcd(a, b)$ and $d_2 = \\gcd(a, b-a)$.\n\nShow $d_1 | d_2$:\n\nSince $d_1 = \\gcd(a, b)$, we have $d_1 | a$ and $d_1 | b$.\n\nBy property (g): $d_1 | (b - a)$\n\nSo $d_1 | a$ and $d_1 | (b-a)$, which means $d_1$ is a common divisor of $a$ and $b-a$.\n\nTherefore, $d_1 | \\gcd(a, b-a) = d_2$.\n\nShow $d_2 | d_1$:\n\nSince $d_2 = \\gcd(a, b-a)$, we have $d_2 | a$ and $d_2 | (b-a)$.\n\nBy property (g): $d_2 | [a + (b-a)] = b$\n\nSo $d_2 | a$ and $d_2 | b$, which means $d_2$ is a common divisor of $a$ and $b$.\n\nTherefore, $d_2 | \\gcd(a, b) = d_1$.\n\nSince $d_1 | d_2$ and $d_2 | d_1$, and both are positive:\n\\[\nd_1 = d_2\n\\]\n\nHence, $\\gcd(a, b) = \\gcd(a, b-a)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "GCD of Three or More Integers",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Important Identities for GCD}} {enumerate}[leftmargin=*]",
+    "content": "Important Identities for GCD\n\n1. $\\gcd(a, 0) = |a|$\n2. $\\gcd(a, 1) = 1$ for any integer $a$\n3. $\\gcd(a, a) = |a|$\n4. $\\gcd(a, b) = \\gcd(b, a)$ (Commutative)\n5. $\\gcd(a, b) = \\gcd(|a|, |b|)$\n6. $\\gcd(a, b+ka) = \\gcd(a, b)$ for any integer $k$\n7. If $d = \\gcd(a, b)$, then $\\gcd\\left(\\frac{a}{d}, \\frac{b}{d}\\right) = 1$\n8. $\\gcd(ac, bc) = |c| \\cdot \\gcd(a, b)$ for $c \\neq 0$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 1",
+    "content": "Find the quotient $q$ and remainder $r$ when $a = 157$ is divided by $b = 13$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 2",
+    "content": "Find the quotient $q$ and remainder $r$ when $a = -47$ is divided by $b = 9$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 3",
+    "content": "Show that the cube of any integer is of the form $5k$, $5k+1$, $5k+2$, $5k+3$, or $5k+4$. Determine which forms are actually possible."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 4",
+    "content": "Prove that for any integer $n$, $n^5 - n$ is divisible by 5."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 5",
+    "content": "Show that the square of any integer is of the form $5k$, $5k+1$, or $5k+4$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 6",
+    "content": "Prove that if $a | b$ and $b | c$, then $a | (2b + 3c)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 7",
+    "content": "Show that the product of three consecutive integers is divisible by 6."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 8",
+    "content": "Prove that $n^3 - n$ is divisible by 6 for all integers $n$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 9",
+    "content": "Show that if $n$ is an odd integer, then $n^2 - 1$ is divisible by 8."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 10",
+    "content": "Prove that $5 | (n^5 - 5n^3 + 4n)$ for all integers $n$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 11",
+    "content": "Find $\\gcd(420, 252)$ using the Euclidean Algorithm and express it as a linear combination of 420 and 252."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 12",
+    "content": "Find $\\gcd(3456, 1728)$ and $\\text{lcm}(3456, 1728)$. Verify that $\\gcd(a,b) \\cdot \\text{lcm}(a,b) = ab$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 13",
+    "content": "Find three integers $x$, $y$, and $z$ such that $\\gcd(144, 252, 360) = 144x + 252y + 360z$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 14",
+    "content": "If $\\gcd(a,b) = 12$ and $\\text{lcm}(a,b) = 360$, find all possible pairs $(a,b)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 15",
+    "content": "Find $\\gcd(987, 610)$ using the Euclidean Algorithm. (These are consecutive Fibonacci numbers)"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 16",
+    "content": "Show that $\\gcd(3a+5, 2a+3) = 1$ for all integers $a$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 17",
+    "content": "Prove that if $\\gcd(a,b) = 1$, then $\\gcd(a^2, b^2) = 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 18",
+    "content": "Show that if $\\gcd(a,b) = 1$, then $\\gcd(a+2b, 2a+b) = 1$ or $5$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 19",
+    "content": "Prove that consecutive integers are always coprime, i.e., $\\gcd(n, n+1) = 1$ for all integers $n$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 20",
+    "content": "If $\\gcd(a,b) = 1$, prove that $\\gcd(a-b, a+b) \\leq 2$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 21",
+    "content": "Prove that if $\\gcd(a, b) = 1$ and $c | a$ and $c | (a+b)$, then $c = 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 22",
+    "content": "Show that for any positive integers $a$ and $b$:\n\\[\n\\gcd(a,b) \\cdot \\gcd\\left(\\frac{\\text{lcm}(a,b)}{a}, \\frac{\\text{lcm}(a,b)}{b}\\right) = \\text{lcm}(a,b)\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 23",
+    "content": "If $n$ is a positive integer, prove that $\\gcd(n! + 1, (n+1)! + 1) = 1$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 24",
+    "content": "Prove that there exist infinitely many pairs of coprime integers $(a, b)$ such that neither $a$ nor $b$ is prime."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 1 - Division Algorithm (Euclid's Theorem)",
+    "section": "Practice Exercise",
+    "type": "example",
+    "title": "Problem 25",
+    "content": "Show that if $d = \\gcd(a, b)$, then for any integer $k$:\n\\[\n\\gcd(a + kb, b) = d\n\\]"
+  }
+]

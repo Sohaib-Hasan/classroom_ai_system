@@ -1,0 +1,1074 @@
+[
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Arithmetic Functions",
+    "type": "definition",
+    "title": "Definition: Arithmetic Function",
+    "content": "An arithmetic function (also called a number-theoretic function) is any\nfunction:\n\\[\nf : \\mathbb{Z}^+ \\longrightarrow \\mathbb{C}\n\\]\nthat is defined on the set of positive integers and takes complex (often real or\ninteger) values.\n\nKey Points:\n\n- The domain is always $\\mathbb{Z}^+ = \\{1, 2, 3, \\ldots\\}$\n- Arithmetic functions describe properties of integers (divisors, residues, etc.)\n- Most important arithmetic functions in number theory take \\emph{integer} values\n- Examples include the number of divisors, sum of divisors, and Euler's phi function"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Arithmetic Functions",
+    "type": "definition",
+    "title": "Definition: Multiplicative Function",
+    "content": "An arithmetic function $f$ is called multiplicative if:\n\n1. $f$ is not identically zero, i.e.\\ $f \\not\\equiv 0$\n2. Whenever $\\gcd(m, n) = 1$ (i.e.\\ $m$ and $n$ are coprime):\n    \\[\n        f(mn) = f(m) \\cdot f(n)\n    \\]\n\nKey Points:\n\n- The condition $\\gcd(m,n)=1$ is essential — multiplicativity need NOT hold for\n          non-coprime inputs\n- Every multiplicative function satisfies $f(1) = 1$\n- If $f$ is multiplicative and $n = p_1^{k_1} p_2^{k_2} \\cdots p_r^{k_r}$, then:\n    \\[\n        f(n) = f(p_1^{k_1}) \\cdot f(p_2^{k_2}) \\cdots f(p_r^{k_r})\n    \\]\n    reducing computation to prime powers\n- A function that is multiplicative for all $m, n$ (not just coprime pairs)\n          is called completely multiplicative\n\nNote: Multiplicativity is a\nvery powerful property — it means we only need to understand $f$ on prime powers to know\n$f$ everywhere."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Arithmetic Functions",
+    "type": "definition",
+    "title": "Definition: Additive Function",
+    "content": "An arithmetic function $f$ is called additive if:\n\n1. $f$ is not identically zero\n2. Whenever $\\gcd(m, n) = 1$:\n    \\[\n        f(mn) = f(m) + f(n)\n    \\]\n\nKey Points:\n\n- Every additive function satisfies $f(1) = 0$\n- If $n = p_1^{k_1} p_2^{k_2} \\cdots p_r^{k_r}$, then:\n    \\[\n        f(n) = f(p_1^{k_1}) + f(p_2^{k_2}) + \\cdots + f(p_r^{k_r})\n    \\]\n- The number of prime factors $\\Omega(n)$ (counted with multiplicity)\n          is a completely additive function"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Arithmetic Functions",
+    "type": "example",
+    "title": "Example 1: Identifying Multiplicative Functions",
+    "content": "Determine which of the following are multiplicative:\n\nSolution:\n\n(a) $f(n) = 1$ for all $n \\geq 1$.\n\nCheck: $f(mn) = 1 = 1 \\cdot 1 = f(m) \\cdot f(n)$ for all $m, n$. ✓\n\nMultiplicative (in fact, completely multiplicative).\n\n(b) $f(n) = n$ (the identity function).\n\nCheck: $f(mn) = mn = f(m) \\cdot f(n)$ for all $m, n$. ✓\n\nCompletely multiplicative.\n\n(c) $f(n) = n^2$.\n\nCheck: $f(mn) = (mn)^2 = m^2 n^2 = f(m) \\cdot f(n)$. ✓\n\nCompletely multiplicative.\n\n(d) $f(n) = n + 1$.\n\nCheck with $m = 2, n = 3$ (coprime):\n\\[\nf(6) = 7, \\quad f(2) \\cdot f(3) = 3 \\cdot 4 = 12 \\neq 7 \\quad \\textcolor{red}{\\times}\n\\]\n\nNot multiplicative.\n\n(e) $f(n) = 0$ for all $n$.\n\nBy definition, an identically-zero function is excluded. $\\times$\n\nNot multiplicative (fails the non-zero condition)."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Arithmetic Functions",
+    "type": "example",
+    "title": "Example 2: Property of Multiplicative Functions at 1",
+    "content": "Prove that if $f$ is multiplicative, then $f(1) = 1$.\n\nSolution:\n\nStep 1: Since $\\gcd(1, 1) = 1$, we may apply the multiplicativity condition:\n\\[\nf(1 \\cdot 1) = f(1) \\cdot f(1)\n\\]\n\\[\nf(1) = f(1)^2\n\\]\n\nStep 2: Rearranging:\n\\[\nf(1)^2 - f(1) = 0\n\\]\n\\[\nf(1)\\bigl(f(1) - 1\\bigr) = 0\n\\]\n\nSo either $f(1) = 0$ or $f(1) = 1$.\n\nStep 3: Since $f$ is not identically zero, there exists some $n$ with $f(n) \\neq 0$.\nWrite $n = 1 \\cdot n$. Then:\n\\[\nf(n) = f(1 \\cdot n) = f(1) \\cdot f(n)\n\\]\nDividing both sides by $f(n) \\neq 0$:\n\\[\nf(1) = 1\n\\]\n\nConclusion: Every multiplicative function satisfies $\\boxed{f(1) = 1}$.\n✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Arithmetic Functions",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Summary: Arithmetic Functions}} {center} {tabular}{|p{3.5cm}|p{5cm}|p{4cm}|}",
+    "content": "Summary: Arithmetic Functions\n\n| Type | Condition (when $\\gcd(m,n)=1$) | Value at 1 |\n|---|---|---|\n| Multiplicative | $f(mn) = f(m) \\cdot f(n)$ | $f(1) = 1$ |\n| Additive | $f(mn) = f(m) + f(n)$ | $f(1) = 0$ |\n| Completely Multiplicative | $f(mn) = f(m) \\cdot f(n)$ for all $m,n$ | $f(1) = 1$ |"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "definition",
+    "title": "Definition: Number of Divisors $\\tau(n)$",
+    "content": "For a positive integer $n$, the number-of-divisors function $\\tau(n)$ (also\nwritten $d(n)$) is defined as:\n\\[\n\\tau(n) = \\sum_{d \\mid n} 1\n\\]\nThat is, $\\tau(n)$ counts the total number of positive divisors of $n$.\n\nKey Points:\n\n- $\\tau(1) = 1$ (only divisor of 1 is 1 itself)\n- $\\tau(p) = 2$ for any prime $p$ (divisors are 1 and $p$)\n- $\\tau(n) = 2$ if and only if $n$ is prime\n- Divisors always come in pairs: if $d \\mid n$, then $\\frac{n}{d} \\mid n$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "definition",
+    "title": "Definition: Sum of Divisors $\\sigma(n)$",
+    "content": "For a positive integer $n$, the sum-of-divisors function $\\sigma(n)$ is:\n\\[\n\\sigma(n) = \\sum_{d \\mid n} d\n\\]\nThat is, $\\sigma(n)$ is the sum of all positive divisors of $n$.\n\nKey Points:\n\n- $\\sigma(1) = 1$\n- $\\sigma(p) = 1 + p$ for any prime $p$\n- $n$ is a perfect number if $\\sigma(n) = 2n$ (sum of proper divisors\n          equals $n$)\n- $\\sigma(n) \\geq n+1$ for all $n > 1$ (since 1 and $n$ are always divisors)"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "example",
+    "title": "Example 3: Computing $\\tau(n)$ and $\\sigma(n)$ for Small Values",
+    "content": "Compute $\\tau(n)$ and $\\sigma(n)$ for $n = 6, 12, 15$.\n\nSolution:\n\n(a) $n = 6$: Divisors are $1, 2, 3, 6$.\n\\[\n\\tau(6) = 4, \\qquad \\sigma(6) = 1 + 2 + 3 + 6 = 12\n\\]\nNote: $\\sigma(6) = 2(6) = 12$, so $6$ is a perfect number! ✓\n\n(b) $n = 12$: Divisors are $1, 2, 3, 4, 6, 12$.\n\\[\n\\tau(12) = 6, \\qquad \\sigma(12) = 1 + 2 + 3 + 4 + 6 + 12 = 28\n\\]\n\n(c) $n = 15$: Divisors are $1, 3, 5, 15$.\n\\[\n\\tau(15) = 4, \\qquad \\sigma(15) = 1 + 3 + 5 + 15 = 24\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "example",
+    "title": "Example 4: Small Values Table",
+    "content": "Tabulate $\\tau(n)$ and $\\sigma(n)$ for $n = 1$ through $10$.\n\nSolution:\n\n| $n$ | Divisors of $n$ | $\\tau(n)$ | $\\sigma(n)$ |\n|---|---|---|---|\n| 1 | 1 | 1 | 1 |\n| 2 | 1, 2 | 2 | 3 |\n| 3 | 1, 3 | 2 | 4 |\n| 4 | 1, 2, 4 | 3 | 7 |\n| 5 | 1, 5 | 2 | 6 |\n| 6 | 1, 2, 3, 6 | 4 | 12 |\n| 7 | 1, 7 | 2 | 8 |\n| 8 | 1, 2, 4, 8 | 4 | 15 |\n| 9 | 1, 3, 9 | 3 | 13 |\n| 10 | 1, 2, 5, 10 | 4 | 18 |\n\nObserve: $\\tau(n) = 2$ exactly\nwhen $n$ is prime (rows for $n = 2, 3, 5, 7$)."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "theorem",
+    "title": "Theorem: Structure of Divisors",
+    "content": "Let $n > 1$ be a positive integer with prime factorization:\n\\[\nn = p_1^{k_1} \\, p_2^{k_2} \\cdots p_r^{k_r}\n\\]\n\nThen every positive divisor $d$ of $n$ has the form:\n\\[\nd = p_1^{\\alpha_1} \\, p_2^{\\alpha_2} \\cdots p_r^{\\alpha_r}, \\qquad\n0 \\leq \\alpha_i \\leq k_i \\text{ for each } i = 1, 2, \\ldots, r\n\\]\n\nIn words: Every divisor of $n$ is formed\nby choosing, independently for each prime $p_i$, an exponent between $0$ and $k_i$.\n\nImportant: This theorem is the\nfoundation for computing $\\tau(n)$ and $\\sigma(n)$ via formulas."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "proof",
+    "title": "Proof: Structure of Divisors",
+    "content": "Proof:\n\nForward direction: If $d = p_1^{\\alpha_1} \\cdots\np_r^{\\alpha_r}$ with $0 \\leq \\alpha_i \\leq k_i$, then:\n\\[\n\\frac{n}{d} = p_1^{k_1 - \\alpha_1} \\cdots p_r^{k_r - \\alpha_r}\n\\]\nwhich is a positive integer since each $k_i - \\alpha_i \\geq 0$. Hence $d \\mid n$.\n✓\n\nBackward direction: Let $d \\mid n$. Then $d \\geq 1$ and\n$d \\leq n$, so $d$ is a positive integer. By the Fundamental Theorem of Arithmetic, $d$\nhas its own prime factorization. Suppose $d$ contains a prime factor $q \\neq p_i$ for any\n$i$. Then $q \\mid d$ and $d \\mid n$, so $q \\mid n$. But $n = p_1^{k_1} \\cdots p_r^{k_r}$\ncontains no prime other than $p_1, \\ldots, p_r$ — contradiction.\n\nHence every prime in $d$ is among $\\{p_1, \\ldots, p_r\\}$, so:\n\\[\nd = p_1^{\\alpha_1} \\cdots p_r^{\\alpha_r} \\text{ for some } \\alpha_i \\geq 0\n\\]\n\nNow suppose $\\alpha_i > k_i$ for some $i$. Then $p_i^{\\alpha_i} \\mid d$ and $d \\mid n$,\ngiving $p_i^{\\alpha_i} \\mid n = p_1^{k_1} \\cdots p_r^{k_r}$, which requires\n$\\alpha_i \\leq k_i$ — contradiction.\n\nTherefore $0 \\leq \\alpha_i \\leq k_i$ for each $i$.\n\nConclusion: The positive divisors of $n = p_1^{k_1} \\cdots\np_r^{k_r}$ are exactly the integers of the form $p_1^{\\alpha_1} \\cdots p_r^{\\alpha_r}$\nwith $0 \\leq \\alpha_i \\leq k_i$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "theorem",
+    "title": "Theorem: Formulas for $\\tau(n)$ and $\\sigma(n)$",
+    "content": "Let $n = p_1^{k_1} p_2^{k_2} \\cdots p_r^{k_r}$ with $n > 1$. Then:\n\n\\[\n\\boxed{\\tau(n) = \\prod_{i=1}^{r} (k_i + 1) = (k_1 + 1)(k_2 + 1) \\cdots (k_r + 1)}\n\\]\n\n\\[\n\\boxed{\\sigma(n) = \\prod_{i=1}^{r} \\frac{p_i^{k_i+1} - 1}{p_i - 1}}\n\\]\n\nIn words:\n\n- For $\\tau(n)$: add 1 to each exponent in the prime factorization, then multiply\n- For $\\sigma(n)$: apply the geometric series formula $1 + p + p^2 + \\cdots + p^k\n          = \\dfrac{p^{k+1}-1}{p-1}$ to each prime power, then multiply"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "theorem",
+    "title": "Theorem: $\\tau$ and $\\sigma$ are Multiplicative",
+    "content": "Both $\\tau(n)$ and $\\sigma(n)$ are multiplicative functions. That is, whenever\n$\\gcd(m, n) = 1$:\n\\[\n\\tau(mn) = \\tau(m) \\cdot \\tau(n)\n\\]\n\\[\n\\sigma(mn) = \\sigma(m) \\cdot \\sigma(n)\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "proof",
+    "title": "Proof: $\\tau(n)$ and $\\sigma(n)$ are Multiplicative",
+    "content": "Proof (for $\\tau$):\n\nLet $\\gcd(m, n) = 1$ with prime factorizations $m = p_1^{k_1} \\cdots p_s^{k_s}$ and\n$n = q_1^{j_1} \\cdots q_t^{j_t}$.\n\nSince $\\gcd(m,n) = 1$, no $p_i$ equals any $q_l$, so:\n\\[\nmn = p_1^{k_1} \\cdots p_s^{k_s} \\, q_1^{j_1} \\cdots q_t^{j_t}\n\\]\n\nApplying the formula for $\\tau$:\n$$\\begin{align*}\n\\tau(mn) &= (k_1+1)\\cdots(k_s+1)(j_1+1)\\cdots(j_t+1)\\\\\n         &= \\bigl[(k_1+1)\\cdots(k_s+1)\\bigr] \\cdot \\bigl[(j_1+1)\\cdots(j_t+1)\\bigr]\\\\\n         &= \\tau(m) \\cdot \\tau(n)\n\\end{align*}$$\n\nProof (for $\\sigma$):\n\nEvery divisor of $mn$ factors uniquely as $d = d_1 d_2$ where $d_1 \\mid m$ and\n$d_2 \\mid n$ (since $\\gcd(m,n)=1$). Hence:\n\\[\n\\sigma(mn) = \\sum_{d \\mid mn} d = \\sum_{d_1 \\mid m} \\sum_{d_2 \\mid n} d_1 d_2\n= \\Bigl(\\sum_{d_1 \\mid m} d_1\\Bigr)\\Bigl(\\sum_{d_2 \\mid n} d_2\\Bigr) = \\sigma(m)\\sigma(n)\n\\]\n\nConclusion: Both $\\tau$ and $\\sigma$ are multiplicative."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "example",
+    "title": "Example 5: Computing $\\tau(1800)$ and $\\sigma(1800)$",
+    "content": "Calculate $\\tau(1800)$ and $\\sigma(1800)$.\n\nSolution:\n\nStep 1: Find the prime factorization of $1800$.\n$$\\begin{align*}\n1800 &= 2 \\times 900 = 2 \\times 2 \\times 450 = 4 \\times 450\\\\\n     &= 4 \\times 2 \\times 225 = 8 \\times 225\\\\\n     &= 8 \\times 9 \\times 25 = 2^3 \\times 3^2 \\times 5^2\n\\end{align*}$$\n\nStep 2: Apply the $\\tau$ formula.\n\\[\n\\tau(1800) = (3+1)(2+1)(2+1) = 4 \\times 3 \\times 3 = \\boxed{36}\n\\]\n\nStep 3: Apply the $\\sigma$ formula.\n\\begin{align*}\n\\sigma(1800) &= \\frac{2^{3+1}-1}{2-1} \\cdot \\frac{3^{2+1}-1}{3-1} \\cdot \\frac{5^{2+1}-1}{5-1}\\\\[6pt]\n             &= \\frac{16-1}{1} \\cdot \\frac{27-1}{2} \\cdot \\frac{125-1}{4}\\\\[6pt]\n             &= 15 \\cdot 13 \\cdot 31\\\\[6pt]\n             &= 15 \\times 13 \\times 31\n\\end{align*}\n\nComputing step by step:\n\\[\n15 \\times 13 = 195, \\qquad 195 \\times 31 = 6045\n\\]\n\n\\[\n\\sigma(1800) = \\boxed{6045}\n\\]\n\nVerification using multiplicativity:\n\nSince $1800 = 8 \\times 9 \\times 25$ and $\\gcd(8,9) = \\gcd(9,25) = \\gcd(8,25) = 1$:\n\\[\n\\tau(8) = 4, \\quad \\tau(9) = 3, \\quad \\tau(25) = 3\n\\]\n\\[\n\\tau(1800) = 4 \\times 3 \\times 3 = 36 \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "example",
+    "title": "Example 6: Using Multiplicativity for $\\tau$ and $\\sigma$",
+    "content": "Find $\\tau(720)$ and $\\sigma(720)$.\n\nSolution:\n\nStep 1: Factorize $720$.\n\\[\n720 = 16 \\times 45 = 2^4 \\times 3^2 \\times 5\n\\]\n\nStep 2: Compute $\\tau(720)$.\n\\[\n\\tau(720) = (4+1)(2+1)(1+1) = 5 \\times 3 \\times 2 = \\boxed{30}\n\\]\n\nStep 3: Compute $\\sigma(720)$.\n$$\\begin{align*}\n\\sigma(2^4) &= 1 + 2 + 4 + 8 + 16 = 31\\\\\n\\sigma(3^2) &= 1 + 3 + 9 = 13\\\\\n\\sigma(5^1) &= 1 + 5 = 6\n\\end{align*}$$\n\\[\n\\sigma(720) = 31 \\times 13 \\times 6 = 31 \\times 78 = \\boxed{2418}\n\\]\n\nVerification: $\\dfrac{5^{4+1}-1}{5-1} \\cdot \\ldots$ gives the same result via\nformula ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "theorem",
+    "title": "Theorem: Sum Function of a Multiplicative Function",
+    "content": "Let $f$ be a multiplicative arithmetic function. Define:\n\\[\nF(n) = \\sum_{d \\mid n} f(d)\n\\]\n\nThen $F$ is also multiplicative.\n\nIn words: Summing a multiplicative\nfunction over all divisors preserves multiplicativity.\n\nImportant Applications:\n\n- Taking $f(d) = 1$ gives $F(n) = \\tau(n)$ — multiplicative ✓\n- Taking $f(d) = d$ gives $F(n) = \\sigma(n)$ — multiplicative ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "proof",
+    "title": "Proof: Sum of Multiplicative Function is Multiplicative",
+    "content": "Proof:\n\nLet $\\gcd(m, n) = 1$. We show $F(mn) = F(m) \\cdot F(n)$.\n\nStep 1: Bijection between divisors.\n\nSince $\\gcd(m, n) = 1$, every divisor $d$ of $mn$ factors \\emph{uniquely} as $d = d_1\nd_2$ where $d_1 \\mid m$ and $d_2 \\mid n$.\n\n(Uniqueness follows because $\\gcd(m,n)=1$ forces prime factors of $m$ and $n$ to be\ndisjoint.)\n\nStep 2: Apply multiplicativity of $f$.\n\nSince $d_1 \\mid m$ and $d_2 \\mid n$ with $\\gcd(m,n)=1$, we have $\\gcd(d_1, d_2) = 1$.\nTherefore:\n\\[\nf(d) = f(d_1 d_2) = f(d_1) \\cdot f(d_2)\n\\]\n\nStep 3: Compute $F(mn)$.\n\n$$\\begin{align*}\nF(mn) &= \\sum_{d \\mid mn} f(d)\n        = \\sum_{d_1 \\mid m} \\sum_{d_2 \\mid n} f(d_1 d_2)\n        = \\sum_{d_1 \\mid m} \\sum_{d_2 \\mid n} f(d_1) \\cdot f(d_2)\\\\\n      &= \\Bigl(\\sum_{d_1 \\mid m} f(d_1)\\Bigr) \\cdot \\Bigl(\\sum_{d_2 \\mid n} f(d_2)\\Bigr)\n        = F(m) \\cdot F(n)\n\\end{align*}$$\n\nConclusion: $F(mn) = F(m) \\cdot F(n)$ whenever $\\gcd(m,n)=1$,\nso $F$ is multiplicative."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "example",
+    "title": "Example 7: Verifying the Sum Function is Multiplicative",
+    "content": "Let $f(d) = d^2$. Verify that $F(n) = \\sum_{d \\mid n} d^2$ satisfies\n$F(4 \\cdot 9) = F(4) \\cdot F(9)$.\n\nSolution:\n\nStep 1: Compute $F(4)$.\n\nDivisors of $4$: $1, 2, 4$.\n\\[\nF(4) = 1^2 + 2^2 + 4^2 = 1 + 4 + 16 = 21\n\\]\n\nStep 2: Compute $F(9)$.\n\nDivisors of $9$: $1, 3, 9$.\n\\[\nF(9) = 1^2 + 3^2 + 9^2 = 1 + 9 + 81 = 91\n\\]\n\nStep 3: Compute $F(4) \\cdot F(9)$.\n\\[\nF(4) \\cdot F(9) = 21 \\times 91 = 1911\n\\]\n\nStep 4: Compute $F(36)$ directly.\n\nDivisors of $36$: $1, 2, 3, 4, 6, 9, 12, 18, 36$.\n$$\\begin{align*}\nF(36) &= 1 + 4 + 9 + 16 + 36 + 81 + 144 + 324 + 1296 = 1911\n\\end{align*}$$\n\n\\[\nF(36) = 1911 = F(4) \\cdot F(9) \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "theorem",
+    "title": "Theorem: $\\tau(n)$ is Odd $\\Leftrightarrow$ $n$ is a Perfect Square",
+    "content": "For any positive integer $n$:\n\\[\n\\tau(n) \\text{ is odd} \\quad \\iff \\quad n \\text{ is a perfect square}\n\\]\n\nIn words: The number of divisors is odd\nprecisely when $n$ is a perfect square. For all other $n$, divisors pair up and\n$\\tau(n)$ is even."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "proof",
+    "title": "Proof: $\\tau(n)$ Odd $\\Leftrightarrow$ $n$ is a Perfect Square",
+    "content": "Proof:\n\nKey Observation: Divisors of $n$ pair up as $(d, n/d)$,\nwith $d \\neq n/d$ when $d^2 \\neq n$ and $d = n/d$ when $d^2 = n$.\n\nForward Direction ($\\Rightarrow$): Suppose $\\tau(n)$ is\nodd.\n\nEach divisor $d \\neq \\sqrt{n}$ is paired with $n/d \\neq d$, contributing 2 to $\\tau(n)$.\nIf $\\tau(n)$ is odd, there must be an unpaired divisor, which requires $d = n/d$, i.e.\\\n$d^2 = n$.\n\nHence $n = d^2$ is a perfect square. ✓\n\nBackward Direction ($\\Leftarrow$): Suppose $n = k^2$ for\nsome positive integer $k$.\n\nUsing the formula with $n = p_1^{2e_1} \\cdots p_r^{2e_r}$:\n\\[\n\\tau(n) = (2e_1+1)(2e_2+1)\\cdots(2e_r+1)\n\\]\nEach factor $2e_i + 1$ is odd. The product of odd numbers is odd.\n\nTherefore $\\tau(n)$ is odd. ✓\n\nConclusion: $\\tau(n)$ is odd if and only if $n$ is a perfect\nsquare."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "example",
+    "title": "Example 8: Verifying $\\tau(n)$ Parity",
+    "content": "Verify the theorem for $n = 36, 12, 100$.\n\nSolution:\n\n(a) $n = 36 = 6^2 = 2^2 \\times 3^2$ — a perfect square.\n\\[\n\\tau(36) = (2+1)(2+1) = 9 \\quad \\text{(odd)} \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n(b) $n = 12 = 2^2 \\times 3$ — not a perfect square ($3$ has odd exponent).\n\\[\n\\tau(12) = (2+1)(1+1) = 6 \\quad \\text{(even)} \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n(c) $n = 100 = 10^2 = 2^2 \\times 5^2$ — a perfect square.\n\\[\n\\tau(100) = (2+1)(2+1) = 9 \\quad \\text{(odd)} \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "theorem",
+    "title": "Theorem: $\\sigma(n)$ is Odd $\\Leftrightarrow$ $n$ is a Square or Twice a Square",
+    "content": "For any positive integer $n$:\n\\[\n\\sigma(n) \\text{ is odd} \\quad \\iff \\quad n = k^2 \\text{ or } n = 2k^2 \\text{ for some }\nk \\in \\mathbb{Z}^+\n\\]\n\nIn words: $\\sigma(n)$ is odd only when\n$n$ is a perfect square or exactly twice a perfect square."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "proof",
+    "title": "Proof",
+    "content": "Proof:\n\nWrite $n = 2^a \\cdot m$ where $m$ is odd. By multiplicativity of $\\sigma$:\n\\[\n\\sigma(n) = \\sigma(2^a) \\cdot \\sigma(m)\n\\]\n\nStep 1: Parity of $\\sigma(2^a)$.\n\n\\[\n\\sigma(2^a) = 1 + 2 + 4 + \\cdots + 2^a = 2^{a+1} - 1\n\\]\n\nThis is always odd (since $2^{a+1}$ is even, subtracting 1 gives odd).\nTherefore the parity of $\\sigma(n)$ depends entirely on $\\sigma(m)$.\n\nStep 2: Parity of $\\sigma(p^k)$ for odd prime $p$.\n\n\\[\n\\sigma(p^k) = 1 + p + p^2 + \\cdots + p^k\n\\]\n\nSince $p$ is odd, each term is odd. The sum of $k+1$ odd numbers is:\n\n- odd if $k+1$ is odd, i.e.\\ $k$ is even\n- even if $k+1$ is even, i.e.\\ $k$ is odd\n\nStep 3: When is $\\sigma(m)$ odd?\n\nFor $m = p_1^{k_1} \\cdots p_r^{k_r}$ (odd primes), $\\sigma(m) = \\prod \\sigma(p_i^{k_i})$\nis odd if and only if every $\\sigma(p_i^{k_i})$ is odd, which requires every $k_i$ to be\neven. This means $m$ is a perfect square.\n\nStep 4: Conclude.\n\n$\\sigma(n)$ is odd $\\iff$ $\\sigma(m)$ is odd $\\iff$ $m$ is a perfect square.\n\n- If $a = 0$: $n = m = k^2$ — perfect square\n- If $a = 1$: $n = 2m = 2k^2$ — twice a perfect square\n- If $a \\geq 2$: $n = 2^a m = (2^{a/2})^2 m$ — when $a$ is even, this is\n          $(2^{a/2} k)^2$ — a perfect square\n\nCombining all cases: $\\sigma(n)$ is odd iff $n$ is a perfect square or twice a perfect\nsquare.\n\nConclusion: $\\sigma(n)$ odd $\\iff$ $n = k^2$ or $n = 2k^2$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "example",
+    "title": "Example 9: Verifying $\\sigma(n)$ Parity",
+    "content": "Verify the theorem for $n = 9, 18, 12, 50$.\n\nSolution:\n\n(a) $n = 9 = 3^2$ — perfect square.\n\\[\n\\sigma(9) = 1 + 3 + 9 = 13 \\quad \\text{(odd)} \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n(b) $n = 18 = 2 \\times 9 = 2 \\times 3^2$ — twice a perfect square.\n\\[\n\\sigma(18) = (1+2)(1+3+9) = 3 \\times 13 = 39 \\quad \\text{(odd)} \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n(c) $n = 12 = 4 \\times 3 = 2^2 \\times 3$ — neither a square nor twice a square.\n\\[\n\\sigma(12) = (1+2+4)(1+3) = 7 \\times 4 = 28 \\quad \\text{(even)} \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n(d) $n = 50 = 2 \\times 25 = 2 \\times 5^2$ — twice a perfect square.\n\\[\n\\sigma(50) = (1+2)(1+5+25) = 3 \\times 31 = 93 \\quad \\text{(odd)} \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Divisor Functions",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Summary: Divisor Functions}} {Formulas for}",
+    "content": "Summary: Divisor Functions\n\nFormulas for $n = p_1^{k_1} p_2^{k_2} \\cdots p_r^{k_r}$:\n\\[\n\\tau(n) = \\prod_{i=1}^{r}(k_i+1), \\qquad\n\\sigma(n) = \\prod_{i=1}^{r} \\frac{p_i^{k_i+1}-1}{p_i-1}\n\\]\n\n| Property | Statement |\n|---|---|\n| Multiplicativity | $\\tau(mn) = \\tau(m)\\tau(n)$ and $\\sigma(mn)=\\sigma(m)\\sigma(n)$ when $\\gcd(m,n)=1$ |\n| $\\tau(n)$ odd | $\\iff$ $n$ is a perfect square |\n| $\\sigma(n)$ odd | $\\iff$ $n = k^2$ or $n = 2k^2$ |\n| Sum is multiplicative | If $f$ multiplicative, $\\sum_{d|n} f(d)$ is multiplicative |\n\nRemember: Always find the prime\nfactorization first before applying any formula."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Perfect Numbers",
+    "type": "definition",
+    "title": "Definition: Perfect Number",
+    "content": "A positive integer $n$ is called a perfect number if $n$ equals the sum of all\nits proper positive divisors (i.e.\\ all positive divisors except $n$ itself).\n\nEquivalently:\n\\[\n\\sigma(n) = 2n\n\\]\n\nKey Points:\n\n- The word ``perfect'' was used by ancient Greek mathematicians\n- The four smallest perfect numbers are $6, 28, 496, 8128$\n- It is unknown whether any odd perfect numbers exist — this is one of\n          the oldest unsolved problems in mathematics\n- If $\\sigma(n) < 2n$, $n$ is called deficient; if $\\sigma(n) > 2n$,\n          it is abundant\n\nEquivalent form: $n$ is\nperfect $\\iff$ the sum of its \\emph{proper} divisors equals $n$, i.e.\\\n$\\sigma(n) - n = n$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Perfect Numbers",
+    "type": "example",
+    "title": "Example 10: Verifying $6$ and $28$ are Perfect",
+    "content": "Verify that $n = 6$ and $n = 28$ are perfect numbers.\n\nSolution:\n\n(a) $n = 6$: Divisors are $1, 2, 3, 6$.\n\\[\n\\sigma(6) = 1 + 2 + 3 + 6 = 12 = 2 \\times 6 \\quad \\textcolor{green}{\\checkmark}\n\\]\nSum of proper divisors: $1 + 2 + 3 = 6 = n$ ✓\n\n(b) $n = 28$: Divisors are $1, 2, 4, 7, 14, 28$.\n\\[\n\\sigma(28) = 1 + 2 + 4 + 7 + 14 + 28 = 56 = 2 \\times 28 \\quad \\textcolor{green}{\\checkmark}\n\\]\nSum of proper divisors: $1 + 2 + 4 + 7 + 14 = 28 = n$ ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Perfect Numbers",
+    "type": "example",
+    "title": "Example 11: Deficient and Abundant Numbers",
+    "content": "Classify $n = 10, 12, 15$ as perfect, deficient, or abundant.\n\nSolution:\n\n(a) $n = 10$: Divisors $1, 2, 5, 10$.\n\\[\n\\sigma(10) = 18 < 20 = 2 \\times 10\n\\]\nDeficient $\\times$\n\n(b) $n = 12$: Divisors $1, 2, 3, 4, 6, 12$.\n\\[\n\\sigma(12) = 28 > 24 = 2 \\times 12\n\\]\nAbundant $\\bigstar$\n\n(c) $n = 15$: Divisors $1, 3, 5, 15$.\n\\[\n\\sigma(15) = 24 < 30 = 2 \\times 15\n\\]\nDeficient $\\times$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Perfect Numbers",
+    "type": "theorem",
+    "title": "Theorem: Even Perfect Numbers (Euler--Euclid)",
+    "content": "An even positive integer $n$ is a perfect number if and only if it has the form:\n\\[\n\\boxed{n = 2^{p-1}(2^p - 1)}\n\\]\n\nwhere $p$ is a prime and $2^p - 1$ is also prime (a Mersenne prime).\n\nIn words:\n\n- Euclid proved the ``if'' direction (if $2^p - 1$ is prime then $n$ is perfect)\n- Euler proved the ``only if'' direction (every even perfect number has this form)\n- Primes $2^p - 1$ are called Mersenne primes; whether there are\n          infinitely many is unknown\n\nNote: This theorem applies\nto even perfect numbers only. The existence of odd perfect numbers remains\nan open problem."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Perfect Numbers",
+    "type": "proof",
+    "title": "Proof: Even Perfect Numbers",
+    "content": "Proof (Euclid's Direction):\n\nLet $p$ be prime and $q = 2^p - 1$ be prime. Set $n = 2^{p-1} q$.\n\nSince $q = 2^p - 1$ is odd and $2^{p-1}$ is a power of 2, $\\gcd(2^{p-1}, q) = 1$.\n\nBy multiplicativity of $\\sigma$:\n\\[\n\\sigma(n) = \\sigma(2^{p-1}) \\cdot \\sigma(q)\n\\]\n\nCompute each factor:\n\n\\[\n\\sigma(2^{p-1}) = 1 + 2 + 4 + \\cdots + 2^{p-1} = 2^p - 1 = q\n\\]\n\nSince $q$ is prime, its only divisors are $1$ and $q$:\n\\[\n\\sigma(q) = 1 + q = 1 + (2^p - 1) = 2^p\n\\]\n\nTherefore:\n\\[\n\\sigma(n) = q \\cdot 2^p = (2^p - 1) \\cdot 2^p\n\\]\n\nCheck if $\\sigma(n) = 2n$:\n\\[\n2n = 2 \\cdot 2^{p-1}(2^p - 1) = 2^p(2^p - 1)\n\\]\n\nIndeed $\\sigma(n) = 2^p(2^p - 1) = 2n$, so $n$ is perfect.\n\nConclusion: If $p$ and $2^p - 1$ are both prime, then\n$n = 2^{p-1}(2^p-1)$ is a perfect number."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Perfect Numbers",
+    "type": "example",
+    "title": "Example 12: Generating Perfect Numbers via the Formula",
+    "content": "Find the first three perfect numbers using $n = 2^{p-1}(2^p - 1)$.\n\nSolution:\n\n| $p$ | $2^p - 1$ | Prime? | $n = 2^{p-1}(2^p-1)$ | Perfect? |\n|---|---|---|---|---|\n| 2 | 3 | Yes | $2^1 \\times 3 = 6$ | Yes |\n| 3 | 7 | Yes | $2^2 \\times 7 = 28$ | Yes |\n| 4 | 15 | No ($15=3\\times5$) | --- | No |\n| 5 | 31 | Yes | $2^4 \\times 31 = 496$ | Yes |\n| 6 | 63 | No ($63=9\\times7$) | --- | No |\n| 7 | 127 | Yes | $2^6 \\times 127 = 8128$ | Yes |\n\nThe first four perfect numbers are: $\\boxed{6, \\ 28, \\ 496, \\ 8128}$.\n\nVerification for $n = 496$:\n\\[\n496 = 2^4 \\times 31\n\\]\n\\[\n\\sigma(496) = \\sigma(2^4) \\cdot \\sigma(31) = (1+2+4+8+16)(1+31) = 31 \\times 32 = 992 = 2 \\times 496\n\\]\n✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Perfect Numbers",
+    "type": "example",
+    "title": "Example 13: Showing a Number is Not Perfect",
+    "content": "Show that $n = 496$ is perfect but $n = 8$ is deficient.\n\nSolution:\n\n(a) $n = 496 = 2^4 \\times 31$ (computed above):\n\\[\n\\sigma(496) = 31 \\times 32 = 992 = 2 \\times 496 \\quad \\textcolor{green}{\\checkmark} \\quad \\textbf{Perfect}\n\\]\n\n(b) $n = 8 = 2^3$: Divisors are $1, 2, 4, 8$.\n\\[\n\\sigma(8) = 1 + 2 + 4 + 8 = 15 < 16 = 2 \\times 8\n\\]\nSum of proper divisors: $1 + 2 + 4 = 7 < 8$. Deficient. $\\times$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Perfect Numbers",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Summary: Perfect Numbers}} {center} {tabular}{|p{3.5cm}|p{8cm}|}",
+    "content": "Summary: Perfect Numbers\n\n| Classification | Condition |\n|---|---|\n| Perfect | $\\sigma(n) = 2n$ (sum of proper divisors $= n$) |\n| Deficient | $\\sigma(n) < 2n$ |\n| Abundant | $\\sigma(n) > 2n$ |\n\nEven perfect numbers: $n = 2^{p-1}(2^p - 1)$ where $p$ and $2^p-1$ are prime.\n\nKnown perfect numbers: $6, 28, 496, 8128, 33550336, \\ldots$\n\nOpen Problems:\n\n- Are there infinitely many even perfect numbers?\n- Do any odd perfect numbers exist?"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "definition",
+    "title": "Definition: Residue Class",
+    "content": "Let $m$ be a positive integer and $a \\in \\mathbb{Z}$. The residue class of $a$\nmodulo $m$, denoted $[a]_m$ or $\\bar{a}$, is the set of all integers congruent to $a$\nmodulo $m$:\n\\[\n[a]_m = \\{\\ x \\in \\mathbb{Z}\\ :\\ x \\equiv a \\pmod{m}\\ \\} = \\{\\ldots,\\, a-2m,\\, a-m,\\, a,\\, a+m,\\, a+2m,\\, \\ldots\\}\n\\]\n\nKey Points:\n\n- Two integers belong to the same residue class iff they are congruent\n          modulo $m$\n- There are exactly $m$ distinct residue classes modulo $m$:\n          $[0]_m, [1]_m, [2]_m, \\ldots, [m-1]_m$\n- The residue classes partition $\\mathbb{Z}$ — every integer belongs to exactly\n          one class\n- Any element of a residue class is called a representative of that class"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "definition",
+    "title": "Definition: Complete Residue System (CRS)",
+    "content": "A set of integers $\\{a_1, a_2, \\ldots, a_m\\}$ is a Complete Residue System\nmodulo $m$ (abbreviated CRS mod $m$) if every integer is congruent to exactly one $a_i$\nmodulo $m$.\n\nEquivalently, $\\{a_1, \\ldots, a_m\\}$ is a CRS mod $m$ if and only if:\n\n1. The set contains exactly $m$ elements, and\n2. No two elements are congruent to each other modulo $m$\n\nStandard CRS: The set\n$\\{0, 1, 2, \\ldots, m-1\\}$ is the standard (least non-negative) CRS modulo $m$.\n\nImportant: A CRS need not\nconsist of non-negative integers — any $m$ mutually incongruent integers form a CRS."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "definition",
+    "title": "Definition: Reduced Residue System (RRS)",
+    "content": "A set $\\{r_1, r_2, \\ldots, r_k\\}$ is a Reduced Residue System modulo $m$\n(abbreviated RRS mod $m$) if:\n\n1. Each $r_i$ satisfies $\\gcd(r_i, m) = 1$ (each element is coprime to $m$)\n2. No two elements are congruent modulo $m$: $r_i \\not\\equiv r_j \\pmod{m}$\n          for $i \\neq j$\n3. Every integer coprime to $m$ is congruent to some $r_i$\n\nKey Points:\n\n- The number of elements in any RRS mod $m$ equals $\\phi(m)$ (Euler's phi)\n- The standard RRS is obtained by removing from $\\{0,1,\\ldots,m-1\\}$ all elements\n          sharing a common factor with $m$\n- An RRS is a subset of a CRS"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "example",
+    "title": "Example 14: Complete and Reduced Residue Systems",
+    "content": "Find a CRS and an RRS modulo $m = 8$.\n\nSolution:\n\nStep 1: Standard CRS mod 8.\n\nTake one representative from each residue class:\n\\[\n\\{0,\\ 1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6,\\ 7\\}\n\\]\nThis has $m = 8$ elements, mutually incongruent mod 8. ✓\n\nStep 2: Standard RRS mod 8.\n\nKeep only those elements coprime to 8:\n\n| Element | $\\gcd(\\cdot, 8)$ | Include in RRS? |\n|---|---|---|\n| 0 | 8 | No |\n| 1 | 1 | Yes |\n| 2 | 2 | No |\n| 3 | 1 | Yes |\n| 4 | 4 | No |\n| 5 | 1 | Yes |\n| 6 | 2 | No |\n| 7 | 1 | Yes |\n\nRRS mod 8: $\\{1,\\ 3,\\ 5,\\ 7\\}$, which has $\\phi(8) = 4$ elements.\n✓\n\nAlternative CRS mod 8: $\\{-3,\\ -2,\\ -1,\\ 0,\\ 1,\\ 2,\\ 3,\\ 4\\}$ — also valid\nsince these 8 integers are mutually incongruent mod 8. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "example",
+    "title": "Example 15: Residue Systems modulo 10",
+    "content": "Find the CRS and RRS modulo $m = 10$.\n\nSolution:\n\nCRS mod 10: $\\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\\}$ — 10 elements, no two congruent\nmod 10. ✓\n\nRRS mod 10: Elements of $\\{0,\\ldots,9\\}$ coprime to 10:\n\nFactors of $10 = 2 \\times 5$, so exclude multiples of 2 and 5:\n\nExcluded: $0, 2, 4, 5, 6, 8$ \\quad Remaining: $\\{1, 3, 7, 9\\}$\n\n\\[\n\\text{RRS mod 10} = \\{1, 3, 7, 9\\}\n\\]\n\nThis has $\\phi(10) = 4$ elements. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "theorem",
+    "title": "Theorem: Size of a Complete Residue System",
+    "content": "If $\\{a_1, a_2, \\ldots, a_k\\}$ forms a Complete Residue System modulo $m$, then:\n\\[\nk = m\n\\]\n\nThat is, any CRS modulo $m$ contains exactly $m$ elements.\n\nEquivalent characterization: A set of\nintegers $S$ is a CRS mod $m$ if and only if every integer is congruent (mod $m$) to\nexactly one element of $S$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "proof",
+    "title": "Proof: Size of a CRS",
+    "content": "Proof:\n\nThere are exactly $m$ residue classes modulo $m$:\n$[0]_m, [1]_m, \\ldots, [m-1]_m$.\n\nA CRS must contain exactly one representative from each class (by definition: every\ninteger is congruent to exactly one element of the CRS, so no class is missed and no\nclass contributes more than one element).\n\nTherefore the CRS has exactly $m$ elements.\n\nConclusion: Every CRS modulo $m$ has exactly $m$ elements."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "theorem",
+    "title": "Theorem: Alternative Definition of CRS",
+    "content": "Let $m > 0$. A set $\\{a_1, a_2, \\ldots, a_m\\}$ of $m$ integers is a CRS modulo $m$ if\nand only if:\n\\[\na_i \\not\\equiv a_j \\pmod{m} \\quad \\text{for all } i \\neq j\n\\]\n\nThat is: $m$ integers form a CRS mod $m$ if and only if they are pairwise incongruent\nmodulo $m$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "proof",
+    "title": "Proof: Alternative CRS Characterization",
+    "content": "Proof:\n\n($\\Rightarrow$) If the set is a CRS, then each element\nrepresents a \\emph{different} residue class, so no two are congruent mod $m$.\n\n($\\Leftarrow$) Suppose $a_1, \\ldots, a_m$ are pairwise\nincongruent modulo $m$. They represent $m$ distinct residue classes. Since there are\nexactly $m$ classes in total ($[0], [1], \\ldots, [m-1]$), these $m$ elements must\nrepresent all of them. Therefore every integer is congruent to exactly one $a_i$.\n\nConclusion: The two conditions are equivalent."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "theorem",
+    "title": "Theorem: Size of a Reduced Residue System",
+    "content": "If $\\{r_1, r_2, \\ldots, r_k\\}$ forms a Reduced Residue System modulo $m$, then:\n\\[\nk = \\phi(m)\n\\]\n\nwhere $\\phi(m)$ is Euler's phi function (the number of integers in $\\{1, \\ldots, m\\}$\nthat are coprime to $m$)."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "proof",
+    "title": "Proof: Size of an RRS",
+    "content": "Proof:\n\nAmong the residue classes $[0], [1], \\ldots, [m-1]$, the classes $[a]$ with $\\gcd(a,m)=1$\nare exactly those consisting entirely of integers coprime to $m$.\n\nThe number of such classes is precisely $\\phi(m)$ (by definition of Euler's phi).\n\nAn RRS contains exactly one representative from each such class, giving $\\phi(m)$\nelements in total.\n\nConclusion: Any RRS modulo $m$ has exactly $\\phi(m)$ elements."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "example",
+    "title": "Example 16: CRS and RRS modulo 12",
+    "content": "Find a CRS and an RRS modulo 12, and verify the sizes.\n\nSolution:\n\nCRS mod 12: $\\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\\}$\n\nSize: $12 = m$. ✓\n\nRRS mod 12: Remove elements with $\\gcd(\\cdot, 12) > 1$.\n\n$12 = 2^2 \\times 3$, so remove multiples of 2 and multiples of 3:\n\nRemoved: $0, 2, 3, 4, 6, 8, 9, 10$ \\quad Remaining: $\\{1, 5, 7, 11\\}$\n\n\\[\n\\text{RRS mod 12} = \\{1, 5, 7, 11\\}\n\\]\n\n\\[\n\\phi(12) = 12\\Bigl(1-\\tfrac{1}{2}\\Bigr)\\Bigl(1-\\tfrac{1}{3}\\Bigr) = 12 \\cdot \\tfrac{1}{2} \\cdot \\tfrac{2}{3} = 4\n\\]\n\nSize: $4 = \\phi(12)$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Residues and Residue Systems",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Summary: Residue Systems}} {center} {tabular}{|p{3cm}|p{5.5cm}|p{3.5cm}|}",
+    "content": "Summary: Residue Systems\n\n| System | Condition | Size |\n|---|---|---|\n| CRS mod $m$ | $m$ pairwise incongruent integers | $m$ |\n| RRS mod $m$ | Pairwise incongruent integers, each coprime to $m$ | $\\phi(m)$ |\n\nRemember: An RRS is always a\n\\emph{subset} of a CRS."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "definition",
+    "title": "Definition: Euler Phi Function",
+    "content": "For a positive integer $m$, the Euler phi function (also called the\nEuler totient function) is:\n\\[\n\\phi(m) = \\#\\{k \\in \\mathbb{Z}^+ : 1 \\leq k \\leq m,\\ \\gcd(k, m) = 1\\}\n\\]\n\nThat is, $\\phi(m)$ counts the number of positive integers up to $m$ that are coprime\nto $m$.\n\nKey Points:\n\n- $\\phi(1) = 1$ (the only positive integer $\\leq 1$ coprime to 1 is 1 itself)\n- $\\phi(p) = p - 1$ for any prime $p$ (all integers $1, 2, \\ldots, p-1$ are\n          coprime to $p$)\n- $\\phi(p^k) = p^k - p^{k-1} = p^{k-1}(p-1)$ for prime $p$ and $k \\geq 1$\n- $\\phi(m)$ equals the size of any RRS modulo $m$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "example",
+    "title": "Example 17: Basic Evaluations of $\\phi$",
+    "content": "Compute $\\phi(1), \\phi(6), \\phi(7), \\phi(9)$.\n\nSolution:\n\n(a) $\\phi(1)$: Only integer in $\\{1\\}$ coprime to 1 is 1 itself.\n\\[\n\\phi(1) = \\boxed{1}\n\\]\n\n(b) $\\phi(6)$: Integers in $\\{1,2,3,4,5,6\\}$ coprime to 6:\n\\[\n\\gcd(1,6)=1,\\ \\gcd(5,6)=1 \\quad \\Rightarrow \\quad \\text{coprime: } 1, 5\n\\]\n\\[\n\\phi(6) = \\boxed{2}\n\\]\n\n(c) $\\phi(7)$: 7 is prime, so $\\phi(7) = 7-1 = \\boxed{6}$.\n\nIntegers: $1, 2, 3, 4, 5, 6$ — all coprime to 7. ✓\n\n(d) $\\phi(9) = \\phi(3^2) = 3^2 - 3^1 = 9 - 3 = \\boxed{6}$.\n\nIntegers coprime to 9: $\\{1, 2, 4, 5, 7, 8\\}$ — indeed 6 values. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "example",
+    "title": "Example 18",
+    "content": "Evaluate the given values using the formula for $\\phi$.\n\nSolution:\n\n(a) $\\phi(56)$:\n\\[\n56 = 2^3 \\times 7\n\\]\n\\[\n\\phi(56) = \\phi(2^3)\\cdot\\phi(7) = (2^3 - 2^2)(7-1) = 4 \\times 6 = \\boxed{24}\n\\]\n\n(b) $\\phi(800)$:\n\\[\n800 = 2^5 \\times 5^2\n\\]\n\\[\n\\phi(800) = \\phi(2^5)\\cdot\\phi(5^2) = (2^5-2^4)(5^2-5^1) = 16 \\times 20 = \\boxed{320}\n\\]\n\n(c) $\\phi(1800)$:\n\\[\n1800 = 2^3 \\times 3^2 \\times 5^2\n\\]\n\\[\n\\phi(1800) = \\phi(2^3)\\cdot\\phi(3^2)\\cdot\\phi(5^2) = (8-4)(9-3)(25-5) = 4 \\times 6 \\times 20 = \\boxed{480}\n\\]\n\n(d) $\\phi(1260^2)$:\n\nStep 1: Factorize 1260.\n\\[\n1260 = 4 \\times 315 = 2^2 \\times 3^2 \\times 5 \\times 7\n\\]\n\nStep 2: Find $1260^2$.\n\\[\n1260^2 = 2^4 \\times 3^4 \\times 5^2 \\times 7^2\n\\]\n\nStep 3: Apply the formula.\n$$\\begin{align*}\n\\phi(1260^2) &= \\phi(2^4)\\cdot\\phi(3^4)\\cdot\\phi(5^2)\\cdot\\phi(7^2)\\\\\n             &= (2^4-2^3)(3^4-3^3)(5^2-5)(7^2-7)\\\\\n             &= 8 \\times 54 \\times 20 \\times 42\n\\end{align*}$$\n\nComputing step by step:\n\\[\n8 \\times 54 = 432, \\quad 432 \\times 20 = 8640, \\quad 8640 \\times 42 = \\boxed{362880}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "theorem",
+    "title": "Theorem: $\\phi(n)$ is Multiplicative",
+    "content": "Euler's phi function is multiplicative. That is, whenever $\\gcd(m, n) = 1$:\n\\[\n\\phi(mn) = \\phi(m) \\cdot \\phi(n)\n\\]\n\nAs an immediate consequence, for $n = p_1^{k_1} p_2^{k_2} \\cdots p_r^{k_r}$:\n\\[\n\\phi(n) = \\phi(p_1^{k_1}) \\cdot \\phi(p_2^{k_2}) \\cdots \\phi(p_r^{k_r})\n        = p_1^{k_1-1}(p_1-1) \\cdot p_2^{k_2-1}(p_2-1) \\cdots p_r^{k_r-1}(p_r-1)\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "proof",
+    "title": "Proof",
+    "content": "Proof:\n\nLet $\\gcd(m,n) = 1$. Arrange the integers $0, 1, \\ldots, mn-1$ in an $m \\times n$ array:\n\n\\[\n\\begin{array}{ccccc}\n0 & 1 & 2 & \\cdots & n-1 \\\\\nn & n+1 & n+2 & \\cdots & 2n-1 \\\\\n2n & 2n+1 & 2n+2 & \\cdots & 3n-1 \\\\\n\\vdots & \\vdots & \\vdots & & \\vdots \\\\\n(m-1)n & (m-1)n+1 & \\cdots & \\cdots & mn-1\n\\end{array}\n\\]\n\nThe entry in row $s$ (starting from 0), column $t$ (starting from 0) is $sn + t$,\nwhere $0 \\leq s \\leq m-1$ and $0 \\leq t \\leq n-1$.\n\nStep 1: Column $t$ and coprimality with $n$.\n\nThe entries in column $t$ are $t, n+t, 2n+t, \\ldots, (m-1)n+t$.\n\nSince $sn \\equiv 0 \\pmod{n}$, we have $sn + t \\equiv t \\pmod{n}$.\n\nTherefore $\\gcd(sn+t, n) = \\gcd(t, n)$.\n\nAll entries in column $t$ are coprime to $n$ iff $\\gcd(t, n) = 1$.\n\nThe number of columns coprime to $n$ is $\\phi(n)$.\n\nStep 2: Within a ``good'' column, coprimality with $m$.\n\nFix a column $t$ with $\\gcd(t,n)=1$. The entries are $sn+t$ for $s = 0, 1, \\ldots, m-1$.\n\nModulo $m$: $sn + t \\equiv sn + t \\pmod{m}$.\n\nAs $s$ runs over $0, 1, \\ldots, m-1$, the values $sn + t \\pmod{m}$ take each residue\nclass mod $m$ exactly once (since $\\gcd(n,m) = 1$ means $n$ is invertible mod $m$).\n\nTherefore, exactly $\\phi(m)$ entries in each ``good'' column are coprime to $m$.\n\nStep 3: Count entries coprime to both $m$ and $n$.\n\nAn entry $sn+t$ satisfies $\\gcd(sn+t, mn) = 1$ iff $\\gcd(sn+t, m) = 1$ and\n$\\gcd(sn+t, n) = 1$ (since $\\gcd(m,n)=1$).\n\nNumber of such entries $= \\phi(n)$ good columns $\\times$ $\\phi(m)$ good entries per\ncolumn $= \\phi(m)\\phi(n)$.\n\nBut these entries are the integers in $\\{0, 1, \\ldots, mn-1\\}$ coprime to $mn$, of\nwhich there are $\\phi(mn)$.\n\nTherefore:\n\\[\n\\phi(mn) = \\phi(m) \\cdot \\phi(n)\n\\]\n\nConclusion: $\\phi$ is multiplicative."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "theorem",
+    "title": "Theorem",
+    "content": "For any positive integers $m$ and $n$ with $\\gcd(m,n) = d$:\n\\[\n\\boxed{\\phi(mn) = \\phi(m)\\,\\phi(n)\\,\\frac{d}{\\phi(d)}}\n\\]\n\nSpecial case: When $\\gcd(m,n) = 1$,\nwe have $d = 1$ and $\\phi(1) = 1$, recovering $\\phi(mn) = \\phi(m)\\phi(n)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "example",
+    "title": "Example 19: Applying the General $\\phi(mn)$ Formula",
+    "content": "Compute $\\phi(12 \\times 8)$ using the formula with $d = \\gcd(12, 8)$.\n\nSolution:\n\nStep 1: Find $d = \\gcd(12, 8) = 4$.\n\nStep 2: Compute individual values.\n\\[\n\\phi(12) = \\phi(2^2 \\times 3) = (4-2)(3-1) = 2 \\times 2 = 4\n\\]\n\\[\n\\phi(8) = \\phi(2^3) = 8 - 4 = 4\n\\]\n\\[\n\\phi(4) = \\phi(2^2) = 4 - 2 = 2\n\\]\n\nStep 3: Apply the formula.\n\\[\n\\phi(96) = \\phi(12)\\cdot\\phi(8)\\cdot\\frac{d}{\\phi(d)} = 4 \\times 4 \\times \\frac{4}{2} = 4 \\times 4 \\times 2 = 32\n\\]\n\nVerification: $96 = 2^5 \\times 3$, so:\n\\[\n\\phi(96) = (2^5 - 2^4)(3-1) = 16 \\times 2 = 32 \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "theorem",
+    "title": "Theorem: Product Formula for $\\phi(n)$",
+    "content": "For $n = p_1^{k_1} p_2^{k_2} \\cdots p_r^{k_r}$ with $n > 1$:\n\\[\n\\boxed{\\phi(n) = n \\prod_{p \\mid n} \\left(1 - \\frac{1}{p}\\right)\n              = n \\left(1 - \\frac{1}{p_1}\\right)\\left(1 - \\frac{1}{p_2}\\right) \\cdots\n                \\left(1 - \\frac{1}{p_r}\\right)}\n\\]\n\nIn words: Start with $n$; for each\ndistinct prime factor $p$ of $n$, multiply by $\\left(1 - \\dfrac{1}{p}\\right)$.\n\nNote: The product runs over\ndistinct prime factors only — each prime appears once regardless of its exponent."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "example",
+    "title": "Example 20: Using the Product Formula",
+    "content": "Compute $\\phi(360)$ using the product formula.\n\nSolution:\n\nStep 1: Factorize $360$.\n\\[\n360 = 2^3 \\times 3^2 \\times 5\n\\]\n\nStep 2: Apply the product formula.\n\\[\n\\phi(360) = 360 \\left(1 - \\frac{1}{2}\\right)\\left(1 - \\frac{1}{3}\\right)\n            \\left(1 - \\frac{1}{5}\\right)\n\\]\n\\[\n= 360 \\times \\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{4}{5}\n\\]\n\\[\n= 360 \\times \\frac{8}{30} = \\frac{2880}{30} = \\boxed{96}\n\\]\n\nVerification using $\\phi(p^k)$ formula:\n\\[\n\\phi(2^3)\\cdot\\phi(3^2)\\cdot\\phi(5) = 4 \\times 6 \\times 4 = 96 \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "theorem",
+    "title": "Theorem: When Primes of $n$ are Contained in $m$",
+    "content": "Let $m$ and $n$ be positive integers. If every prime factor of $n$ is also a prime factor\nof $m$, then:\n\\[\n\\phi(mn) = n\\,\\phi(m)\n\\]\n\nCorollary: Setting $n = m$ (every prime\nof $n$ is a prime of $m = n$):\n\\[\n\\phi(n^2) = n\\,\\phi(n)\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "proof",
+    "title": "Proof",
+    "content": "Proof of $\\phi(mn) = n\\phi(m)$:\n\nLet $m = p_1^{k_1} \\cdots p_r^{k_r}$.\n\nSince every prime of $n$ divides $m$, we can write $n = p_1^{j_1} \\cdots p_r^{j_r}$\n(some $j_i$ may be 0). Then:\n\\[\nmn = p_1^{k_1+j_1} \\cdots p_r^{k_r+j_r}\n\\]\n\nApply the product formula to both sides.\n\nLeft side:\n$$\\begin{align*}\n\\phi(mn) &= mn \\prod_{i=1}^{r}\\left(1 - \\frac{1}{p_i}\\right)\n\\end{align*}$$\n\nRight side:\n$$\\begin{align*}\nn\\,\\phi(m) &= n \\cdot m \\prod_{i=1}^{r}\\left(1 - \\frac{1}{p_i}\\right) = mn \\prod_{i=1}^{r}\\left(1 - \\frac{1}{p_i}\\right)\n\\end{align*}$$\n\nSince both sides equal $mn \\displaystyle\\prod_{i=1}^{r}\\left(1 - \\dfrac{1}{p_i}\\right)$:\n\\[\n\\phi(mn) = n\\,\\phi(m) \\quad \\textcolor{green}{\\checkmark}\n\\]\n\nProof of $\\phi(n^2) = n\\phi(n)$:\n\nSetting $m = n$ (every prime of $n$ divides $n$ trivially):\n\\[\n\\phi(n^2) = \\phi(n \\cdot n) = n\\,\\phi(n)\n\\]\n\nConclusion: Both identities hold."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "example",
+    "title": "Example 21",
+    "content": "Verify both identities for $m = 12$ and $n = 4$.\n\nSolution:\n\nNote: $12 = 2^2 \\times 3$ and $4 = 2^2$. Every prime of $n=4$ (namely 2) divides $m=12$.\n✓\n\nPart (a): Verify $\\phi(mn) = n\\phi(m)$, i.e.\\ $\\phi(48) = 4 \\cdot \\phi(12)$.\n\n\\[\n\\phi(12) = \\phi(2^2)\\phi(3) = 2 \\times 2 = 4\n\\]\n\\[\n4 \\cdot \\phi(12) = 4 \\times 4 = 16\n\\]\n\\[\n\\phi(48) = \\phi(2^4 \\times 3) = (16-8)(3-1) = 8 \\times 2 = 16 \\quad \\textcolor{green}{\\checkmark}\n\\]\n\nPart (b): Verify $\\phi(n^2) = n\\phi(n)$ for $n = 12$.\n\\[\n\\phi(12^2) = \\phi(144) = \\phi(2^4 \\times 3^2) = (16-8)(9-3) = 8 \\times 6 = 48\n\\]\n\\[\nn\\,\\phi(n) = 12 \\times 4 = 48 \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "example",
+    "title": "Example 22: Additional Computations",
+    "content": "Compute $\\phi(1260^2)$ using the identity $\\phi(n^2) = n\\phi(n)$.\n\nSolution:\n\nStep 1: Factorize 1260.\n\\[\n1260 = 2^2 \\times 3^2 \\times 5 \\times 7\n\\]\n\nStep 2: Compute $\\phi(1260)$.\n$$\\begin{align*}\n\\phi(1260) &= \\phi(2^2)\\cdot\\phi(3^2)\\cdot\\phi(5)\\cdot\\phi(7)\\\\\n           &= 2 \\times 6 \\times 4 \\times 6 = 288\n\\end{align*}$$\n\nStep 3: Apply $\\phi(n^2) = n\\phi(n)$.\n\\[\n\\phi(1260^2) = 1260 \\times \\phi(1260) = 1260 \\times 288 = \\boxed{362880}\n\\]\n\nConsistent with Example 18(d). ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler Phi Function",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Summary: Euler Phi Function}} {center}",
+    "content": "Summary: Euler Phi Function\n\n| Formula | Statement |\n|---|---|\n| $\\phi(p) = p-1$ | For any prime $p$ |\n| $\\phi(p^k) = p^{k-1}(p-1)$ | For prime $p$, $k \\geq 1$ |\n| $\\phi(mn) = \\phi(m)\\phi(n)$ | When $\\gcd(m,n)=1$ |\n| $\\phi(n) = n\\prod\\left(1-\\tfrac{1}{p}\\right)$ | Product over distinct primes $p \\mid n$ |\n| $\\phi(mn) = n\\phi(m)$ | When every prime of $n$ divides $m$ |\n| $\\phi(n^2) = n\\phi(n)$ | For any $n$ |"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Important Summation Theorem",
+    "type": "theorem",
+    "title": "Theorem: Important Summation",
+    "content": "For any positive integer $n$:\n\\[\n\\boxed{\\sum_{k=1}^{n} \\gcd(n,\\,k) = \\frac{1}{2}\\,n\\,\\phi(n) + \\frac{1}{2}\\,[n = 1]}\n\\]\n\nMore commonly stated (for $n \\geq 2$) using a divisor sum reformulation:\n\\[\n\\sum_{k=1}^{n} \\gcd(n, k) = \\sum_{d \\mid n} d\\,\\phi\\!\\left(\\tfrac{n}{d}\\right)\n\\]\n\nIn words: The sum of $\\gcd(n,k)$ over\n$k = 1, \\ldots, n$ can be evaluated by grouping according to the value of the gcd —\nwhich must be a divisor of $n$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Important Summation Theorem",
+    "type": "proof",
+    "title": "Proof",
+    "content": "Proof:\n\nFor each $k \\in \\{1, 2, \\ldots, n\\}$, let $d = \\gcd(n, k)$. Then $d \\mid n$.\n\nStep 1: Group by gcd value.\n\nFor each divisor $d$ of $n$, count the integers $k \\in \\{1, \\ldots, n\\}$ with\n$\\gcd(n,k) = d$.\n\nWrite $k = d\\ell$ and $n = dm$. Then $\\gcd(n,k) = d \\iff \\gcd(m, \\ell) = 1$, where\n$\\ell \\in \\{1, \\ldots, m\\}$.\n\nThe number of such $\\ell$ is $\\phi(m) = \\phi(n/d)$.\n\nStep 2: Form the sum.\n\n\\[\n\\sum_{k=1}^{n} \\gcd(n,k) = \\sum_{d \\mid n} d \\cdot \\#\\{k : \\gcd(n,k) = d\\}\n= \\sum_{d \\mid n} d \\cdot \\phi\\!\\left(\\frac{n}{d}\\right)\n\\]\n\nConclusion:\n$\\displaystyle\\sum_{k=1}^{n}\\gcd(n,k) = \\sum_{d \\mid n} d\\,\\phi\\!\\left(\\frac{n}{d}\\right)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Important Summation Theorem",
+    "type": "example",
+    "title": "Example 23",
+    "content": "Verify the summation theorem for $n = 6$.\n\nSolution:\n\nStep 1: Direct computation.\n\n| $k$ | $\\gcd(6, k)$ |\n|---|---|\n| 1 | 1 |\n| 2 | 2 |\n| 3 | 3 |\n| 4 | 2 |\n| 5 | 1 |\n| 6 | 6 |\n\n\\[\n\\sum_{k=1}^{6}\\gcd(6,k) = 1+2+3+2+1+6 = 15\n\\]\n\nStep 2: Using the divisor-sum formula.\n\nDivisors of 6: $1, 2, 3, 6$.\n\n$$\\begin{align*}\n\\sum_{d \\mid 6} d\\,\\phi(6/d) &= 1\\cdot\\phi(6) + 2\\cdot\\phi(3) + 3\\cdot\\phi(2) + 6\\cdot\\phi(1)\\\\\n                              &= 1\\cdot 2 + 2\\cdot 2 + 3\\cdot 1 + 6\\cdot 1\\\\\n                              &= 2 + 4 + 3 + 6 = 15 \\quad \\textcolor{green}{\\checkmark}\n\\end{align*}$$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Gauss Theorem",
+    "type": "theorem",
+    "title": "Theorem: Gauss's Theorem on $\\phi$",
+    "content": "For any positive integer $n$:\n\\[\n\\boxed{\\sum_{d \\mid n} \\phi(d) = n}\n\\]\n\nThat is, the sum of Euler's phi function over all positive divisors of $n$ equals $n$.\n\nExamples:\n\n- $n = 6$: $\\phi(1) + \\phi(2) + \\phi(3) + \\phi(6) = 1+1+2+2 = 6$\n- $n = p$: $\\phi(1) + \\phi(p) = 1 + (p-1) = p$ ✓\n- $n = p^k$: $\\phi(1)+\\phi(p)+\\cdots+\\phi(p^k) = 1+(p-1)+p(p-1)+\\cdots+p^{k-1}(p-1) = p^k$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Gauss Theorem",
+    "type": "proof",
+    "title": "Proof: Gauss Theorem",
+    "content": "Proof:\n\nConsider the fractions:\n\\[\n\\frac{1}{n},\\quad \\frac{2}{n},\\quad \\frac{3}{n},\\quad \\ldots,\\quad \\frac{n}{n}\n\\]\n\nThere are exactly $n$ such fractions. Reduce each to lowest terms: $\\dfrac{k}{n} =\n\\dfrac{k/d}{n/d}$ where $d = \\gcd(k,n)$.\n\nIn lowest terms, the denominator is $n/d$, which is a divisor of $n$.\n\nGroup by reduced denominator:\n\nFor each divisor $m \\mid n$, count fractions whose reduced denominator is $m$. A fraction\n$k/n$ has reduced denominator $m = n/d$ iff $d = \\gcd(k,n) = n/m$, i.e.\\ $k = (n/m)\\ell$\nwhere $\\gcd(\\ell, m) = 1$ and $1 \\leq \\ell \\leq m$.\n\nThe number of such $\\ell$ is $\\phi(m)$.\n\nCount all fractions:\n\n\\[\nn = \\sum_{m \\mid n} \\phi(m)\n\\]\n\nsince every fraction from $1/n$ to $n/n$ is counted exactly once.\n\nEquivalently (relabelling $m$ as $d$):\n\\[\n\\sum_{d \\mid n} \\phi(d) = n\n\\]\n\nConclusion: For every positive integer $n$,\n$\\displaystyle\\sum_{d \\mid n}\\phi(d) = n$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Gauss Theorem",
+    "type": "example",
+    "title": "Example 24: Verifying Gauss Theorem for n = 12",
+    "content": "Verify $\\sum_{d \\mid 12}\\phi(d) = 12$.\n\nSolution:\n\nDivisors of 12: $1, 2, 3, 4, 6, 12$.\n\n| $d$ | $\\phi(d)$ |\n|---|---|\n| 1 | 1 |\n| 2 | 1 |\n| 3 | 2 |\n| 4 | 2 |\n| 6 | 2 |\n| 12 | 4 |\n| Sum | 12 |\n\n\\[\n\\sum_{d \\mid 12}\\phi(d) = 1+1+2+2+2+4 = 12 \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Gauss Theorem",
+    "type": "example",
+    "title": "Example 25",
+    "content": "Verify $\\sum_{d \\mid p^3}\\phi(d) = p^3$ for any prime $p$.\n\nSolution:\n\nDivisors of $p^3$: $1, p, p^2, p^3$.\n\n$$\\begin{align*}\n\\sum_{d \\mid p^3}\\phi(d) &= \\phi(1) + \\phi(p) + \\phi(p^2) + \\phi(p^3)\\\\\n                          &= 1 + (p-1) + p(p-1) + p^2(p-1)\\\\\n                          &= 1 + (p-1)(1 + p + p^2)\\\\\n                          &= 1 + (p-1)\\cdot\\frac{p^3-1}{p-1}\\\\\n                          &= 1 + p^3 - 1 = p^3 \\quad \\textcolor{green}{\\checkmark}\n\\end{align*}$$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Congruence Theorem for Complete Residue Systems",
+    "type": "theorem",
+    "title": "Theorem: Existence and Uniqueness in a CRS",
+    "content": "Let $C = \\{a_1, a_2, \\ldots, a_m\\}$ be a Complete Residue System modulo $m$. Then for\nevery integer $a$, there exists a unique element $b \\in C$ such that:\n\\[\na \\equiv b \\pmod{m}\n\\]\n\nIn words: Every integer is congruent\nmodulo $m$ to exactly one element of any CRS. This is precisely what makes $C$ a\n``complete'' system."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Congruence Theorem for Complete Residue Systems",
+    "type": "proof",
+    "title": "Proof: Existence and Uniqueness in a CRS",
+    "content": "Proof:\n\nExistence: The residue classes $[a_1], [a_2], \\ldots,\n[a_m]$ are all distinct (since no two $a_i$ are congruent) and there are $m$ of them,\naccounting for all $m$ residue classes modulo $m$.\n\nGiven any integer $a$, it lies in some residue class $[a_j]$, so $a \\equiv a_j \\pmod{m}$.\nSet $b = a_j$. ✓\n\nUniqueness: Suppose $a \\equiv b_1 \\pmod{m}$ and $a \\equiv\nb_2 \\pmod{m}$ for $b_1, b_2 \\in C$. Then:\n\\[\nb_1 \\equiv b_2 \\pmod{m}\n\\]\n\nBut since $C$ is a CRS, no two elements are congruent. Hence $b_1 = b_2$.\n✓\n\nConclusion: For each $a \\in \\mathbb{Z}$, there is a unique\n$b \\in C$ with $a \\equiv b \\pmod{m}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Congruence Theorem for Complete Residue Systems",
+    "type": "example",
+    "title": "Example 26: Applying the CRS Uniqueness Theorem",
+    "content": "Using the CRS $C = \\{0, 1, 2, 3, 4, 5, 6\\}$ modulo 7, find the unique representative\nof each of the following integers.\n\nSolution:\n\n(a) $a = 50$:\n\\[\n50 = 7 \\times 7 + 1 \\implies 50 \\equiv 1 \\pmod{7}\n\\]\nUnique representative: $b = \\boxed{1}$.\n\n(b) $a = -15$:\n\\[\n-15 = 7 \\times (-3) + 6 \\implies -15 \\equiv 6 \\pmod{7}\n\\]\nUnique representative: $b = \\boxed{6}$.\n\n(c) $a = 100$:\n\\[\n100 = 7 \\times 14 + 2 \\implies 100 \\equiv 2 \\pmod{7}\n\\]\nUnique representative: $b = \\boxed{2}$.\n\nAll representatives are unique elements of $C$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Congruence Theorem for Complete Residue Systems",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Summary: Key Theorems of Part",
+    "content": "Summary: Key Theorems of Part 2\n\n| Theorem | Statement |\n|---|---|\n| CRS Size | Any CRS mod $m$ has exactly $m$ elements |\n| RRS Size | Any RRS mod $m$ has exactly $\\phi(m)$ elements |\n| $\\phi$ Multiplicative | $\\phi(mn) = \\phi(m)\\phi(n)$ when $\\gcd(m,n)=1$ |\n| Product Formula | $\\phi(n) = n\\prod_{p \\mid n}(1-1/p)$ |\n| Gauss Theorem | $\\displaystyle\\sum_{d|n}\\phi(d) = n$ |\n| Summation | $\\displaystyle\\sum_{k=1}^{n}\\gcd(n,k) = \\sum_{d|n}d\\,\\phi(n/d)$ |\n| CRS Uniqueness | Every integer is congruent to exactly one element of any CRS |\n\nKey chain of ideas:\nMultiplicativity of $\\phi$ $\\Rightarrow$ product formula $\\Rightarrow$ Gauss theorem\n$\\Rightarrow$ Möbius inversion (Part 3)."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Fermat's Little Theorem",
+    "type": "theorem",
+    "title": "Theorem: Fermat's Little Theorem",
+    "content": "Let $p$ be a prime and $a$ any integer with $p \\nmid a$ (i.e.\\ $\\gcd(a,p) = 1$). Then:\n\\[\n\\boxed{a^{p-1} \\equiv 1 \\pmod{p}}\n\\]\n\nEquivalent form: For any\ninteger $a$ (with no restriction):\n\\[\na^p \\equiv a \\pmod{p}\n\\]\n\nWarning: The converse is\nfalse in general. There exist composite integers $n$ for which $a^{n-1} \\equiv 1\n\\pmod{n}$ for certain $a$ (called Carmichael numbers, e.g.\\ $n = 561$). Such $n$\nare not prime."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Fermat's Little Theorem",
+    "type": "proof",
+    "title": "Proof: Fermat's Little Theorem",
+    "content": "Proof:\n\nLet $p$ be prime and $\\gcd(a,p) = 1$.\n\nStep 1: Consider the multiples of $a$.\n\nForm the set:\n\\[\nS = \\{a,\\ 2a,\\ 3a,\\ \\ldots,\\ (p-1)a\\}\n\\]\n\nStep 2: Show $S$ is an RRS modulo $p$.\n\nWe claim no two elements of $S$ are congruent modulo $p$.\n\nSuppose $ia \\equiv ja \\pmod{p}$ with $1 \\leq i < j \\leq p-1$.\n\nSince $\\gcd(a,p) = 1$, we may cancel $a$:\n\\[\ni \\equiv j \\pmod{p}\n\\]\n\nBut $0 < j - i < p$, so $p \\nmid (j-i)$ — contradiction.\n\nTherefore $\\{a, 2a, \\ldots, (p-1)a\\}$ are $p-1$ mutually incongruent integers, each\ncoprime to $p$, forming a Reduced Residue System modulo $p$. ✓\n\nStep 3: Compare with the standard RRS.\n\nSince $S$ is an RRS mod $p$, its elements are congruent (in some order) to\n$\\{1, 2, \\ldots, p-1\\}$.\n\nMultiplying all elements together:\n\\[\n(a)(2a)(3a)\\cdots((p-1)a) \\equiv 1 \\cdot 2 \\cdot 3 \\cdots (p-1) \\pmod{p}\n\\]\n\\[\na^{p-1} \\cdot (p-1)! \\equiv (p-1)! \\pmod{p}\n\\]\n\nStep 4: Cancel $(p-1)!$\n\nSince $p$ is prime, $\\gcd((p-1)!, p) = 1$, so we may cancel $(p-1)!$:\n\\[\na^{p-1} \\equiv 1 \\pmod{p}\n\\]\n\nConclusion: For prime $p$ with $p \\nmid a$,\n$a^{p-1} \\equiv 1 \\pmod{p}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Fermat's Little Theorem",
+    "type": "example",
+    "title": "Example 27: Direct Applications of Fermat's Little Theorem",
+    "content": "Use Fermat's Little Theorem to simplify:\n\nSolution:\n\n(a) $2^{10} \\pmod{11}$\n\n$11$ is prime, $\\gcd(2,11)=1$. By FLT: $2^{10} \\equiv 1 \\pmod{11}$.\n\\[\n\\boxed{2^{10} \\equiv 1 \\pmod{11}}\n\\]\n\nVerification: $2^{10} = 1024 = 93 \\times 11 + 1$. ✓\n\n(b) $3^{12} \\pmod{13}$\n\n$13$ is prime, $\\gcd(3,13)=1$. By FLT: $3^{12} \\equiv 1 \\pmod{13}$.\n\\[\n\\boxed{3^{12} \\equiv 1 \\pmod{13}}\n\\]\n\n(c) $7^{16} \\pmod{17}$\n\n$17$ is prime. FLT gives $7^{16} \\equiv 1 \\pmod{17}$.\n\\[\n\\boxed{7^{16} \\equiv 1 \\pmod{17}}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Fermat's Little Theorem",
+    "type": "example",
+    "title": "Example 28: Evaluate $5^{38",
+    "content": "\\pmod{11}$}\nFind the remainder when $5^{38}$ is divided by 11.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check conditions.\n\n$11$ is prime and $\\gcd(5,11) = 1$. Apply FLT: $5^{10} \\equiv 1 \\pmod{11}$.\n\n\\textbf{Step 2:} Write exponent in terms of 10.\n\u0000MATH0\u0000\n\n\\textbf{Step 3:} Simplify.\n\\begin{align*}\n5^{38} &= 5^{10 \\times 3 + 8} = \\left(5^{10}\\right)^3 \\cdot 5^8\\\\\n       &\\equiv 1^3 \\cdot 5^8 \\pmod{11}\\\\\n       &\\equiv 5^8 \\pmod{11}\n\\end{align*}\n\n\\textbf{Step 4:} Compute $5^8 \\pmod{11}$ by successive squaring.\n\\begin{align*}\n5^1 &\\equiv 5 \\pmod{11}\\\\\n5^2 &\\equiv 25 \\equiv 3 \\pmod{11}\\\\\n5^4 &\\equiv 3^2 = 9 \\pmod{11}\\\\\n5^8 &\\equiv 9^2 = 81 \\equiv 81 - 77 = 4 \\pmod{11}\n\\end{align*}\n\n\u0000MATH1\u0000\n\n\\textbf{Solution:} $\\boxed{5^{38} \\equiv 4 \\pmod{11}}$\n\n\\textbf{Verification:} $5^{10} \\equiv 1$ so $5^{40} \\equiv 1$, giving\n$5^{38} \\equiv 5^{-2} \\equiv (5^2)^{-1} \\equiv 25^{-1} \\equiv 3^{-1} \\pmod{11}$.\n\nSince $3 \\times 4 = 12 \\equiv 1 \\pmod{11}$, we get $3^{-1} \\equiv 4$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Fermat's Little Theorem",
+    "type": "example",
+    "title": "Example 29: Show $17 \\mid (11^{104",
+    "content": "+ 1)$}\nProve that $17$ divides $11^{104} + 1$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Goal:} Show $11^{104} + 1 \\equiv 0 \\pmod{17}$, i.e.\\ $11^{104} \\equiv -1 \\pmod{17}$.\n\n\\textbf{Step 1:} Apply FLT. $17$ is prime and $\\gcd(11,17) = 1$.\n\u0000MATH0\u0000\n\n\\textbf{Step 2:} Divide the exponent.\n\u0000MATH1\u0000\n\u0000MATH2\u0000\n\n\\textbf{Step 3:} Compute $11^8 \\pmod{17}$ by successive squaring.\n\\begin{align*}\n11^1 &\\equiv 11 \\pmod{17}\\\\\n11^2 &\\equiv 121 = 7 \\times 17 + 2 \\equiv 2 \\pmod{17}\\\\\n11^4 &\\equiv 2^2 = 4 \\pmod{17}\\\\\n11^8 &\\equiv 4^2 = 16 \\equiv -1 \\pmod{17}\n\\end{align*}\n\n\\textbf{Step 4:} Conclude.\n\u0000MATH3\u0000\n\u0000MATH4\u0000\n\nTherefore $17 \\mid (11^{104} + 1)$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Advanced Congruence Theorems",
+    "type": "theorem",
+    "title": "Theorem: Product of Two Fermat Congruences",
+    "content": "Let $p$ and $q$ be distinct primes and $a$ any integer. If:\n\\[\na^p \\equiv a \\pmod{q} \\quad \\text{and} \\quad a^q \\equiv a \\pmod{p}\n\\]\nthen:\n\\[\n\\boxed{a^{pq} \\equiv a \\pmod{pq}}\n\\]\n\nNote: The two hypotheses follow\nautomatically from Fermat's Little Theorem (since $a^q \\equiv a \\pmod q$ by FLT,\nthen raising both sides to $p$ suitably). The theorem is a step toward understanding\nCarmichael numbers and pseudoprimes."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Advanced Congruence Theorems",
+    "type": "proof",
+    "title": "Proof: $a^{pq",
+    "content": "\\equiv a \\pmod{pq}$}\n\\textcolor{darkgreen}{\\textbf{Proof:}}\n\n\\textcolor{darkgreen}{\\textbf{Step 1: Show $p \\mid (a^{pq} - a)$.}}\n\nFrom hypothesis: $a^q \\equiv a \\pmod{p}$.\n\nRaise both sides to the power $p$:\n\u0000MATH0\u0000\n\u0000MATH1\u0000\n\n(The last step uses $a^p \\equiv a \\pmod p$ from FLT applied to prime $p$.)\n\nSo $p \\mid (a^{pq} - a)$.\n\n\\textcolor{darkgreen}{\\textbf{Step 2: Show $q \\mid (a^{pq} - a)$.}}\n\nBy symmetry (using $a^p \\equiv a \\pmod{q}$ from hypothesis):\n\u0000MATH2\u0000\n\nSo $q \\mid (a^{pq} - a)$.\n\n\\textcolor{darkgreen}{\\textbf{Step 3: Combine.}}\n\nSince $p$ and $q$ are distinct primes, $\\gcd(p,q) = 1$. So:\n\u0000MATH3\u0000\n\u0000MATH4\u0000\n\n\\textcolor{green}{\\textbf{Conclusion:}} $a^{pq} \\equiv a \\pmod{pq}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Advanced Congruence Theorems",
+    "type": "theorem",
+    "title": "Theorem: Divisibility by $pq$",
+    "content": "For distinct primes $p$ and $q$ and any integer $a$:\n\\[\n\\boxed{pq \\mid \\left(a^{pq} - a^p - a^q + a\\right)}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Advanced Congruence Theorems",
+    "type": "proof",
+    "title": "Proof: $pq \\mid (a^{pq",
+    "content": "- a^p - a^q + a)$}\n\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nFactor the expression:\n\u0000MATH0\u0000\n\nA cleaner factoring:\n\u0000MATH1\u0000\n\n\\textcolor{darkgreen}{\\textbf{Most direct approach:}} Factor as:\n\u0000MATH2\u0000\n\nUse the cleaner grouping:\n\u0000MATH3\u0000\n\nActually, factor directly:\n\u0000MATH4\u0000\n\n\\textcolor{darkgreen}{\\textbf{Use FLT directly:}}\n\n\\textbf{Show $p \\mid (a^{pq} - a^p - a^q + a)$:}\n\nBy FLT: $a^p \\equiv a \\pmod{p}$ and $a^{pq} \\equiv (a^p)^q \\equiv a^q \\pmod{p}$ (since\n$a^p \\equiv a \\pmod p$ implies $(a^p)^q \\equiv a^q \\pmod p$).\n\nTherefore modulo $p$:\n\u0000MATH5\u0000\n\nSo $p \\mid (a^{pq} - a^p - a^q + a)$.\n\n\\textbf{Show $q \\mid (a^{pq} - a^p - a^q + a)$:}\n\nBy symmetry (swapping $p$ and $q$): $a^{pq} \\equiv a^p \\pmod{q}$ and $a^q \\equiv a \\pmod q$.\n\nTherefore modulo $q$:\n\u0000MATH6\u0000\n\n\\textcolor{darkgreen}{\\textbf{Combine:}} $\\gcd(p,q)=1$, so $pq \\mid (a^{pq}-a^p-a^q+a)$.\n\n\\textcolor{green}{\\textbf{Conclusion:}} The result holds for all integers $a$ and distinct\nprimes $p, q$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Advanced Congruence Theorems",
+    "type": "example",
+    "title": "Example 30: Show $p^{q-1",
+    "content": "+ q^{p-1} \\equiv 1 \\pmod{pq}$}\nFor distinct primes $p$ and $q$, prove that $p^{q-1} + q^{p-1} \\equiv 1 \\pmod{pq}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1: Work modulo $p$.}\n\n$q^{p-1} \\equiv 1 \\pmod{p}$ by FLT (since $p \\nmid q$).\n\n$p^{q-1} \\equiv 0 \\pmod{p}$.\n\nTherefore: $p^{q-1} + q^{p-1} \\equiv 0 + 1 = 1 \\pmod{p}$.\n\n\\textbf{Step 2: Work modulo $q$.}\n\n$p^{q-1} \\equiv 1 \\pmod{q}$ by FLT (since $q \\nmid p$).\n\n$q^{p-1} \\equiv 0 \\pmod{q}$.\n\nTherefore: $p^{q-1} + q^{p-1} \\equiv 1 + 0 = 1 \\pmod{q}$.\n\n\\textbf{Step 3: Combine via CRT.}\n\n$p^{q-1} + q^{p-1} \\equiv 1 \\pmod{p}$ and $\\equiv 1 \\pmod{q}$.\n\nSince $\\gcd(p,q) = 1$: $p^{q-1} + q^{p-1} \\equiv 1 \\pmod{pq}$. \\textcolor{green}{\\checkmark} \\qed\n\n\\textbf{Numerical verification with $p=3, q=5$:}\n\\[\n3^4 + 5^2 = 81 + 25 = 106 = 15 \\times 7 + 1 \\equiv 1 \\pmod{15} \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Advanced Congruence Theorems",
+    "type": "example",
+    "title": "Example 31",
+    "content": "Prove $a^{12} \\equiv 1 \\pmod{35}$ for all $a$ with $\\gcd(a,35)=1$.\n\nSolution:\n\nNote $35 = 5 \\times 7$.\n\nStep 1: Modulo 5.\n\n$\\gcd(a,5) = 1$. By FLT: $a^4 \\equiv 1 \\pmod{5}$.\n\nSince $12 = 4 \\times 3$:\n\\[\na^{12} = (a^4)^3 \\equiv 1^3 = 1 \\pmod{5}\n\\]\n\nStep 2: Modulo 7.\n\n$\\gcd(a,7) = 1$. By FLT: $a^6 \\equiv 1 \\pmod{7}$.\n\nSince $12 = 6 \\times 2$:\n\\[\na^{12} = (a^6)^2 \\equiv 1^2 = 1 \\pmod{7}\n\\]\n\nStep 3: Combine.\n\n$a^{12} \\equiv 1 \\pmod{5}$ and $a^{12} \\equiv 1 \\pmod{7}$, and $\\gcd(5,7) = 1$.\n\n\\[\na^{12} \\equiv 1 \\pmod{35} \\quad \\textcolor{green}{\\checkmark} \\qed\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Advanced Congruence Theorems",
+    "type": "example",
+    "title": "Example 32",
+    "content": "Prove $a^{30} \\equiv 1 \\pmod{77}$ for all $a$ with $\\gcd(a,77)=1$.\n\nSolution:\n\nNote $77 = 7 \\times 11$.\n\nStep 1: Modulo 7. By FLT: $a^6 \\equiv 1 \\pmod 7$.\n\nSince $30 = 6 \\times 5$: $a^{30} \\equiv 1 \\pmod 7$.\n\nStep 2: Modulo 11. By FLT: $a^{10} \\equiv 1 \\pmod{11}$.\n\nSince $30 = 10 \\times 3$: $a^{30} \\equiv 1 \\pmod{11}$.\n\nStep 3: Combine.\n\n$\\gcd(7,11)=1$, so $a^{30} \\equiv 1 \\pmod{77}$. ✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler's Theorem",
+    "type": "theorem",
+    "title": "Theorem: Euler's Theorem (Euler's Lemma)",
+    "content": "Let $m$ be a positive integer and $a$ an integer with $\\gcd(a, m) = 1$. Then:\n\\[\n\\boxed{a^{\\phi(m)} \\equiv 1 \\pmod{m}}\n\\]\n\nIn words: Euler's Theorem generalises\nFermat's Little Theorem to any modulus $m$ (not just primes).\n\nNote: When $m = p$ is prime,\n$\\phi(p) = p-1$, recovering Fermat's Little Theorem exactly."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler's Theorem",
+    "type": "proof",
+    "title": "Proof: Euler's Theorem",
+    "content": "Proof:\n\nLet $\\{r_1, r_2, \\ldots, r_{\\phi(m)}\\}$ be a Reduced Residue System modulo $m$.\n\nStep 1: Show $\\{ar_1, ar_2, \\ldots, ar_{\\phi(m)}\\}$ is also an RRS.\n\nSince $\\gcd(a,m)=1$ and $\\gcd(r_i,m)=1$:\n\\[\n\\gcd(ar_i, m) = 1 \\quad \\text{for all } i\n\\]\n\nIf $ar_i \\equiv ar_j \\pmod{m}$, then since $\\gcd(a,m)=1$, we cancel $a$:\n$r_i \\equiv r_j \\pmod{m}$, which forces $i = j$ (as the $r_i$ are distinct in the RRS).\n\nSo $\\{ar_1, \\ldots, ar_{\\phi(m)}\\}$ consists of $\\phi(m)$ mutually incongruent integers,\neach coprime to $m$ — an RRS. ✓\n\nStep 2: Multiply all elements.\n\nSince both sets are RRS mod $m$, their products are congruent modulo $m$:\n\\[\n(ar_1)(ar_2)\\cdots(ar_{\\phi(m)}) \\equiv r_1 r_2 \\cdots r_{\\phi(m)} \\pmod{m}\n\\]\n\\[\na^{\\phi(m)} \\cdot r_1 r_2 \\cdots r_{\\phi(m)} \\equiv r_1 r_2 \\cdots r_{\\phi(m)} \\pmod{m}\n\\]\n\nStep 3: Cancel $r_1 r_2 \\cdots r_{\\phi(m)}$.\n\nSince each $r_i$ is coprime to $m$, their product is coprime to $m$. Cancel:\n\\[\na^{\\phi(m)} \\equiv 1 \\pmod{m}\n\\]\n\nConclusion: For $\\gcd(a,m)=1$, $a^{\\phi(m)} \\equiv 1 \\pmod{m}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler's Theorem",
+    "type": "definition",
+    "title": "Corollary: Fermat as a Special Case of Euler",
+    "content": "When $m = p$ is prime:\n\\[\n\\phi(p) = p - 1\n\\]\n\nEuler's Theorem gives:\n\\[\na^{p-1} \\equiv 1 \\pmod{p} \\quad (\\text{for } \\gcd(a,p)=1)\n\\]\n\nThis is precisely Fermat's Little Theorem. ✓\n\nInsight: Euler's Theorem\nis strictly more general — it works for composite moduli too."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler's Theorem",
+    "type": "example",
+    "title": "Example 33: Last Two Digits of $3^{100",
+    "content": "$}\nFind the last two digits of $3^{100}$ (i.e.\\ compute $3^{100} \\pmod{100}$).\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check $\\gcd(3, 100) = 1$. \\textcolor{green}{\\checkmark}\n\n\\textbf{Step 2:} Compute $\\phi(100)$.\n\u0000MATH0\u0000\n\nBy Euler's Theorem: $3^{40} \\equiv 1 \\pmod{100}$.\n\n\\textbf{Step 3:} Write exponent.\n\u0000MATH1\u0000\n\u0000MATH2\u0000\n\n\\textbf{Step 4:} Compute $3^{20} \\pmod{100}$ by successive squaring.\n\\begin{align*}\n3^1   &= 3\\\\\n3^2   &= 9\\\\\n3^4   &= 81\\\\\n3^5   &= 3^4 \\times 3 = 243 \\equiv 43 \\pmod{100}\\\\\n3^{10} &= 43^2 = 1849 \\equiv 49 \\pmod{100}\\\\\n3^{20} &= 49^2 = 2401 \\equiv 1 \\pmod{100}\n\\end{align*}\n\n\\textbf{Wait} — $3^{20} \\equiv 1 \\pmod{100}$, so:\n\u0000MATH3\u0000\n\nThe last two digits of $3^{100}$ are $\\boxed{01}$.\n\n\\textbf{Verification:} $3^{20} = 3486784401$. Last two digits: $01$.\n✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Euler's Theorem",
+    "type": "example",
+    "title": "Example 34: Show $51 \\mid (10^{32n+9",
+    "content": "- 7)$}\nFor any non-negative integer $n$, prove $51 \\mid (10^{32n+9} - 7)$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nNote $51 = 3 \\times 17$. We show $3 \\mid (10^{32n+9} - 7)$ and\n$17 \\mid (10^{32n+9} - 7)$ separately.\n\n\\textbf{Part 1: Modulo 3.}\n\n$10 \\equiv 1 \\pmod{3}$, so $10^{32n+9} \\equiv 1 \\pmod{3}$.\n\n$7 \\equiv 1 \\pmod{3}$.\n\n$10^{32n+9} - 7 \\equiv 1 - 1 = 0 \\pmod{3}$. \\textcolor{green}{\\checkmark}\n\n\\textbf{Part 2: Modulo 17.}\n\n$\\gcd(10, 17) = 1$. By FLT: $10^{16} \\equiv 1 \\pmod{17}$.\n\nWrite $32n + 9 = 16(2n) + 9$:\n\u0000MATH0\u0000\n\nCompute $10^9 \\pmod{17}$:\n\\begin{align*}\n10^1 &\\equiv 10 \\pmod{17}\\\\\n10^2 &\\equiv 100 = 5 \\times 17 + 15 \\equiv 15 \\equiv -2 \\pmod{17}\\\\\n10^4 &\\equiv (-2)^2 = 4 \\pmod{17}\\\\\n10^8 &\\equiv 4^2 = 16 \\equiv -1 \\pmod{17}\\\\\n10^9 &\\equiv -1 \\times 10 = -10 \\equiv 7 \\pmod{17}\n\\end{align*}\n\nSo $10^{32n+9} \\equiv 7 \\pmod{17}$, giving:\n\u0000MATH1\u0000\n\n\\textbf{Combine:} $3 \\mid$ and $17 \\mid$, with $\\gcd(3,17)=1$:\n\\[\n51 \\mid (10^{32n+9} - 7) \\quad \\textcolor{green}{\\checkmark} \\qed\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Wilson's Theorem",
+    "type": "theorem",
+    "title": "Theorem: Wilson's Theorem",
+    "content": "An integer $p > 1$ is prime if and only if:\n\\[\n\\boxed{(p-1)! \\equiv -1 \\pmod{p}}\n\\]\n\nIn words: $(p-1)! + 1$ is divisible\nby $p$ if and only if $p$ is prime.\n\nNote: Although elegant, Wilson's\nTheorem is not a practical primality test — computing $(p-1)!$ for large $p$ is\ncomputationally infeasible."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Wilson's Theorem",
+    "type": "proof",
+    "title": "Proof: Wilson's Theorem",
+    "content": "Proof:\n\nPart 1: If $p$ is composite, then $(p-1)! \\not\\equiv -1 \\pmod{p}$.\n\nIf $p$ is composite, $p = ab$ for some $1 < a, b < p$.\n\nIf $a \\neq b$: both $a$ and $b$ appear in $\\{1, 2, \\ldots, p-1\\}$, so $ab = p \\mid\n(p-1)!$, giving $(p-1)! \\equiv 0 \\pmod{p}$. Since $-1 \\not\\equiv 0 \\pmod{p}$ (for\n$p > 1$), we have $(p-1)! \\not\\equiv -1 \\pmod{p}$.\n\nIf $a = b$: $p = a^2$. For $p > 4$, $a < 2a < p-1$, so both $a$ and $2a$ appear in\n$\\{1,\\ldots,p-1\\}$, making $2a^2 = 2p \\mid (p-1)!$, again $(p-1)! \\equiv 0$.\n(The case $p=4$ can be checked: $3! = 6 \\equiv 2 \\not\\equiv -1 \\pmod 4$.)\n\nPart 2: If $p$ is prime, then $(p-1)! \\equiv -1 \\pmod{p}$.\n\nConsider the integers $2, 3, \\ldots, p-2$. Each $a$ in this range has a unique\nmultiplicative inverse $a^{-1}$ modulo $p$ (since $\\gcd(a,p)=1$), with\n$a^{-1} \\in \\{1, \\ldots, p-1\\}$.\n\nSelf-inverse elements: $a \\equiv a^{-1} \\pmod p \\iff\na^2 \\equiv 1 \\pmod p \\iff p \\mid (a-1)(a+1) \\iff a \\equiv 1$ or $a \\equiv -1 \\equiv p-1$.\n\nSo in $\\{2, 3, \\ldots, p-2\\}$, no element is its own inverse. Every element pairs with a\ndistinct inverse. The product of all paired elements is:\n\\[\n2 \\times 3 \\times \\cdots \\times (p-2) \\equiv 1 \\pmod{p}\n\\]\n\nTherefore:\n\\[\n(p-1)! = 1 \\times (2 \\times 3 \\times \\cdots \\times (p-2)) \\times (p-1)\n\\equiv 1 \\times 1 \\times (p-1) \\equiv p-1 \\equiv -1 \\pmod{p}\n\\]\n\nConclusion: $p$ is prime iff $(p-1)! \\equiv -1 \\pmod{p}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Wilson's Theorem",
+    "type": "example",
+    "title": "Example 35: Verifying Wilson's Theorem",
+    "content": "Verify Wilson's Theorem for $p = 5, 7$.\n\nSolution:\n\n(a) $p = 5$:\n\\[\n(5-1)! = 4! = 24 = 5 \\times 4 + 4 \\equiv 4 \\equiv -1 \\pmod{5} \\quad \\textcolor{green}{\\checkmark}\n\\]\n\n(b) $p = 7$:\n\\[\n(7-1)! = 6! = 720 = 7 \\times 102 + 6 \\equiv 6 \\equiv -1 \\pmod{7} \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Wilson's Theorem",
+    "type": "theorem",
+    "title": "Theorem: Wilson's Theorem Applied to $p \\equiv 3 \\pmod{4",
+    "content": "$}\nIf $p$ is a prime with $p \\equiv 3 \\pmod{4}$, then:\n\u0000MATH0\u0000\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} When $p \\equiv 3 \\pmod 4$,\nthe square of the ``half-factorial'' is congruent to $1$ modulo $p$ (not $-1$)."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Wilson's Theorem",
+    "type": "proof",
+    "title": "Proof: Half-Factorial Theorem",
+    "content": "Proof:\n\nLet $k = \\dfrac{p-1}{2}$ (an integer since $p$ is odd).\n\nStep 1: Write $(p-1)!$ in terms of $k!$.\n\n\\[\n(p-1)! = 1 \\cdot 2 \\cdots k \\cdot (k+1) \\cdots (p-1)\n\\]\n\nNote that for $j = 1, 2, \\ldots, k$:\n\\[\np - j \\equiv -j \\pmod{p}\n\\]\n\nSo the second half $(k+1)(k+2)\\cdots(p-1)$ equals $(p-k)(p-k+1)\\cdots(p-1)$, which is\ncongruent to $(-k)(-k+1)\\cdots(-1) = (-1)^k \\cdot k!$ modulo $p$.\n\nStep 2: Therefore:\n\\[\n(p-1)! \\equiv k! \\cdot (-1)^k \\cdot k! = (-1)^k (k!)^2 \\pmod{p}\n\\]\n\nStep 3: Apply Wilson's Theorem.\n\\[\n-1 \\equiv (p-1)! \\equiv (-1)^k (k!)^2 \\pmod{p}\n\\]\n\\[\n(k!)^2 \\equiv \\frac{-1}{(-1)^k} = (-1)^{k+1} \\pmod{p}\n\\]\n\nStep 4: Use $p \\equiv 3 \\pmod 4$.\n\n$p - 1 \\equiv 2 \\pmod 4$, so $k = \\dfrac{p-1}{2}$ is odd.\n\nThen $k+1$ is even, so $(-1)^{k+1} = 1$.\n\n\\[\n\\left(\\frac{p-1}{2}\\,!\\right)^2 \\equiv 1 \\pmod{p}\n\\]\n\nConclusion: For prime $p \\equiv 3 \\pmod 4$,\n$\\left(\\dfrac{p-1}{2}!\\right)^2 \\equiv 1 \\pmod p$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Wilson's Theorem",
+    "type": "example",
+    "title": "Example 36: Find Remainder of $51^{151",
+    "content": "\\pmod{17}$}\nFind the remainder when $51^{151}$ is divided by 17.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Simplify $51 \\pmod{17}$.\n\u0000MATH0\u0000\n\n\\textbf{Step 2:} Therefore:\n\u0000MATH1\u0000\n\n\\textbf{Solution:} $\\boxed{51^{151} \\equiv 0 \\pmod{17}}$\n\nThe remainder is $\\mathbf{0}$.\n\n\\textcolor{green}{\\checkmark} (Since $17 \\mid 51$, $17 \\mid 51^{151}$ trivially.)"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Function",
+    "type": "definition",
+    "title": "Definition: Möbius Function",
+    "content": "The Möbius function $\\mu : \\mathbb{Z}^+ \\to \\{-1, 0, 1\\}$ is defined by:\n\\[\n\\mu(n) =\n\\begin{cases}\n1 & \\text{if } n = 1\\\\\n(-1)^k & \\text{if } n = p_1 p_2 \\cdots p_k \\text{ (product of } k \\text{ distinct primes)}\\\\\n0 & \\text{if } p^2 \\mid n \\text{ for some prime } p \\text{ (}n \\text{ has a squared factor)}\n\\end{cases}\n\\]\n\nKey Points:\n\n- $\\mu(n) = 0$ whenever $n$ has a repeated prime factor (``square-full'')\n- $\\mu(n) = \\pm 1$ when $n$ is squarefree (no repeated prime factor)\n- $\\mu$ is multiplicative: $\\mu(mn) = \\mu(m)\\mu(n)$ when $\\gcd(m,n)=1$\n- $\\mu(1) = 1$, $\\mu(p) = -1$ for any prime $p$, $\\mu(p^2) = 0$"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Function",
+    "type": "example",
+    "title": "Example 37: Computing $\\mu(n)$ for Various Values",
+    "content": "Evaluate $\\mu(n)$ for $n = 1, 2, 6, 12, 30, 210$.\n\nSolution:\n\n| $n$ | Factorization | Squarefree? | $\\mu(n)$ |\n|---|---|---|---|\n| 1 | 1 | Yes | $1$ |\n| 2 | $p$ | Yes ($k=1$) | $(-1)^1 = -1$ |\n| 6 | $2 \\times 3$ | Yes ($k=2$) | $(-1)^2 = 1$ |\n| 12 | $2^2 \\times 3$ | No ($2^2 \\mid 12$) | $0$ |\n| 30 | $2 \\times 3 \\times 5$ | Yes ($k=3$) | $(-1)^3 = -1$ |\n| 210 | $2\\times3\\times5\\times7$ | Yes ($k=4$) | $(-1)^4 = 1$ |"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Function",
+    "type": "example",
+    "title": "Example 38: More Values of $\\mu$",
+    "content": "Compute $\\mu(n)$ for $n = 4, 8, 100, 35, 42$.\n\nSolution:\n\n(a) $n=4 = 2^2$: Has squared factor. $\\mu(4) = \\boxed{0}$.\n\n(b) $n=8 = 2^3$: Has squared factor ($2^2 \\mid 8$). $\\mu(8) = \\boxed{0}$.\n\n(c) $n=100 = 2^2 \\times 5^2$: Has squared factors. $\\mu(100) = \\boxed{0}$.\n\n(d) $n=35 = 5 \\times 7$: Squarefree, $k=2$. $\\mu(35) = (-1)^2 = \\boxed{1}$.\n\n(e) $n=42 = 2 \\times 3 \\times 7$: Squarefree, $k=3$. $\\mu(42) = (-1)^3 = \\boxed{-1}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Function",
+    "type": "theorem",
+    "title": "Möbius Lemma: Divisor Sum of $\\mu$",
+    "content": "For any positive integer $n$:\n\\[\n\\sum_{d \\mid n} \\mu(d) =\n\\begin{cases}\n1 & \\text{if } n = 1 \\\\\n0 & \\text{if } n > 1\n\\end{cases}\n\\]\n\nIn words: The Möbius function is the\n``inverse'' of the constant function 1 under Dirichlet convolution — it detects the value 1."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Function",
+    "type": "proof",
+    "title": "Proof: Möbius Lemma",
+    "content": "Proof:\n\nDefine $F(n) = \\displaystyle\\sum_{d \\mid n}\\mu(d)$. Since $\\mu$ is multiplicative, $F$ is\nalso multiplicative (by our theorem on sum functions).\n\nCase $n = 1$: $F(1) = \\mu(1) = 1$.\n\nCase $n = p^k$ (prime power, $k \\geq 1$):\n\\[\nF(p^k) = \\mu(1) + \\mu(p) + \\mu(p^2) + \\cdots + \\mu(p^k) = 1 + (-1) + 0 + \\cdots + 0 = 0\n\\]\n\nGeneral $n > 1$: Write $n = p_1^{k_1}\\cdots p_r^{k_r}$.\nBy multiplicativity:\n\\[\nF(n) = F(p_1^{k_1}) \\cdots F(p_r^{k_r}) = 0 \\cdots 0 = 0\n\\]\n\nsince each $F(p_i^{k_i}) = 0$.\n\nConclusion:\n$\\displaystyle\\sum_{d \\mid n}\\mu(d) = \\begin{cases}1 & n=1\\\\ 0 & n>1\\end{cases}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Function",
+    "type": "example",
+    "title": "Example 39: Verifying the Möbius Lemma for n = 12",
+    "content": "Verify $\\sum_{d \\mid 12}\\mu(d) = 0$.\n\nSolution:\n\nDivisors of 12: $1, 2, 3, 4, 6, 12$.\n\n| $d$ | Factorization | $\\mu(d)$ |\n|---|---|---|\n| 1 | 1 | $1$ |\n| 2 | $p$ | $-1$ |\n| 3 | $p$ | $-1$ |\n| 4 | $2^2$ | $0$ |\n| 6 | $2\\times3$ | $1$ |\n| 12 | $2^2\\times3$ | $0$ |\n| Sum |  | $\\mathbf{0}$ |\n\n\\[\n\\sum_{d \\mid 12}\\mu(d) = 1 - 1 - 1 + 0 + 1 + 0 = 0 \\quad \\textcolor{green}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Inversion",
+    "type": "theorem",
+    "title": "Theorem: Möbius Inversion Formula",
+    "content": "Let $F$ and $f$ be arithmetic functions related by:\n\\[\nF(n) = \\sum_{d \\mid n} f(d)\n\\]\n\nThen:\n\\[\n\\boxed{f(n) = \\sum_{d \\mid n} \\mu(d)\\, F\\!\\left(\\frac{n}{d}\\right)}\n\\]\n\nIn words: If $F$ is the ``divisor sum''\nof $f$, then $f$ can be recovered from $F$ by the Möbius inversion formula. The\nMöbius function ``inverts'' the summation."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Inversion",
+    "type": "proof",
+    "title": "Proof: Möbius Inversion",
+    "content": "Proof:\n\nStart with the proposed inversion and substitute $F(n/d) = \\displaystyle\\sum_{e \\mid\n(n/d)} f(e)$:\n\n$$\\begin{align*}\n\\sum_{d \\mid n} \\mu(d)\\, F\\!\\left(\\frac{n}{d}\\right)\n&= \\sum_{d \\mid n} \\mu(d) \\sum_{e \\mid (n/d)} f(e)\n\\end{align*}$$\n\nEvery pair $(d, e)$ with $d \\mid n$ and $e \\mid (n/d)$ corresponds to a pair with\n$de \\mid n$. Substitute $m = de$, so $d \\mid m$ and $m \\mid n$:\n\n$$\\begin{align*}\n&= \\sum_{m \\mid n} f(m) \\sum_{d \\mid (n/m)} \\mu(d) \\cdot \\left[\\text{where } e = m/d\\right]\\\\\n&= \\sum_{m \\mid n} f(m) \\sum_{d \\mid (n/m)} \\mu(d)\n\\end{align*}$$\n\nWait — regroup by fixing $e$ and summing over $d \\mid (n/e)$:\n\n$$\\begin{align*}\n&= \\sum_{e \\mid n} f(e) \\sum_{d \\mid (n/e)} \\mu(d)\n\\end{align*}$$\n\nBy the Möbius Lemma:\n\\[\n\\sum_{d \\mid (n/e)} \\mu(d) = \\begin{cases} 1 & \\text{if } n/e = 1 \\text{ (i.e.\\ } e = n)\\\\\n                                            0 & \\text{if } n/e > 1 \\end{cases}\n\\]\n\nTherefore the double sum collapses to the single term $e = n$:\n\\[\n\\sum_{e \\mid n} f(e) \\cdot [n/e = 1] = f(n) \\cdot 1 = f(n)\n\\]\n\nConclusion: $\\displaystyle\\sum_{d \\mid n}\\mu(d)F(n/d) = f(n)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Inversion",
+    "type": "definition",
+    "title": "Definition: Möbius Pair",
+    "content": "Two arithmetic functions $f$ and $F$ form a Möbius pair if they satisfy:\n\\[\nF(n) = \\sum_{d \\mid n} f(d) \\quad \\iff \\quad f(n) = \\sum_{d \\mid n} \\mu(d)\\,F\\!\\left(\\tfrac{n}{d}\\right)\n\\]\n\nExamples of Möbius Pairs:\n\n- $f = \\mu$, $F(n) = [n=1]$ (the indicator of 1)\n- $f = \\phi$, $F(n) = n$ (Gauss's theorem provides the pair)\n- $f = \\text{id}$, $F = \\sigma$ (sum of divisors)"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Inversion",
+    "type": "example",
+    "title": "Example 40: Recovering $f$ from $F$ via Möbius Inversion",
+    "content": "Given $F(n) = n$ (so $F(n) = \\sum_{d|n}\\phi(d)$ by Gauss), recover $f = \\phi$ using\nthe inversion formula.\n\nSolution:\n\nBy Möbius inversion with $F(n) = n$:\n\\[\nf(n) = \\sum_{d \\mid n} \\mu(d)\\, F\\!\\left(\\frac{n}{d}\\right) = \\sum_{d \\mid n} \\mu(d) \\cdot \\frac{n}{d}\n\\]\n\nVerify for $n = 6$: Divisors of 6: $1, 2, 3, 6$.\n$$\\begin{align*}\nf(6) &= \\mu(1)\\cdot 6 + \\mu(2)\\cdot 3 + \\mu(3)\\cdot 2 + \\mu(6)\\cdot 1\\\\\n     &= 1(6) + (-1)(3) + (-1)(2) + (1)(1)\\\\\n     &= 6 - 3 - 2 + 1 = 2\n\\end{align*}$$\n\nIndeed $\\phi(6) = 2$. ✓\n\nVerify for $n = 12$: Divisors: $1, 2, 3, 4, 6, 12$.\n$$\\begin{align*}\nf(12) &= \\mu(1)(12)+\\mu(2)(6)+\\mu(3)(4)+\\mu(4)(3)+\\mu(6)(2)+\\mu(12)(1)\\\\\n      &= 12 + (-1)(6) + (-1)(4) + 0 + (1)(2) + 0\\\\\n      &= 12 - 6 - 4 + 2 = 4\n\\end{align*}$$\n\nIndeed $\\phi(12) = 4$. ✓\n\nThis confirms $\\phi(n) = \\displaystyle\\sum_{d \\mid n}\\mu(d)\\cdot\\dfrac{n}{d}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Inversion",
+    "type": "theorem",
+    "title": "Theorem",
+    "content": "For any integer $n > 1$:\n\\[\n\\phi(n) = n - 1 \\quad \\iff \\quad n \\text{ is prime}\n\\]"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Inversion",
+    "type": "proof",
+    "title": "Proof",
+    "content": "Forward Direction ($\\Leftarrow$):\n\nIf $n = p$ is prime, then every integer in $\\{1, 2, \\ldots, p-1\\}$ is coprime to $p$\n(since $p$ has no divisors other than 1 and itself). So $\\phi(p) = p-1$. ✓\n\nBackward Direction ($\\Rightarrow$):\n\nSuppose $\\phi(n) = n-1$. We show $n$ must be prime.\n\nAssume $n$ is composite. Then $n$ has a divisor $d$ with $1 < d < n$, so\n$\\gcd(d, n) = d > 1$, meaning $d$ is not counted by $\\phi(n)$.\n\nThe integers counted by $\\phi(n)$ are from $\\{1, \\ldots, n-1\\}$, which has $n-1$\nelements. For $\\phi(n) = n-1$, every element of $\\{1, \\ldots, n-1\\}$ must be coprime\nto $n$.\n\nBut $d \\in \\{1, \\ldots, n-1\\}$ with $\\gcd(d,n) > 1$ — contradiction.\n\nHence $n$ cannot be composite, so $n$ is prime. ✓\n\nConclusion: $\\phi(n) = n-1$ if and only if $n$ is prime."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Möbius Inversion",
+    "type": "example",
+    "title": "Example 41: Verifying the Theorem",
+    "content": "Verify the theorem for $n = 7$ (prime) and $n = 9$ (composite).\n\nSolution:\n\n(a) $n = 7$ (prime):\n\\[\n\\phi(7) = 6 = 7 - 1 \\quad \\textcolor{green}{\\checkmark}\n\\]\nIntegers coprime to 7 in $\\{1,\\ldots,6\\}$: all six of them.\n\n(b) $n = 9 = 3^2$ (composite):\n\\[\n\\phi(9) = 9 - 3 = 6 \\neq 8 = 9 - 1 \\quad \\textcolor{red}{\\times}\n\\]\nThe integers 3, 6 in $\\{1,\\ldots,8\\}$ share a factor with 9, so $\\phi(9) < 8$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Greatest Integer Function",
+    "type": "definition",
+    "title": "Definition: Greatest Integer Function (Floor Function)",
+    "content": "For any real number $x$, the greatest integer function $\\lfloor x \\rfloor$\n(also called the floor function or bracket function $[x]$) is defined\nas:\n\\[\n\\lfloor x \\rfloor = \\text{the greatest integer } n \\text{ such that } n \\leq x\n\\]\n\nEquivalently, $\\lfloor x \\rfloor$ is the unique integer satisfying:\n\\[\n\\lfloor x \\rfloor \\leq x < \\lfloor x \\rfloor + 1\n\\]\n\nKey Properties:\n\n- $\\lfloor x \\rfloor = x$ if and only if $x$ is an integer\n- $\\lfloor x + n \\rfloor = \\lfloor x \\rfloor + n$ for any integer $n$\n- $\\lfloor x \\rfloor + \\lfloor y \\rfloor \\leq \\lfloor x+y \\rfloor \\leq\n          \\lfloor x \\rfloor + \\lfloor y \\rfloor + 1$\n- $\\lfloor -x \\rfloor = -\\lfloor x \\rfloor - 1$ when $x \\notin \\mathbb{Z}$;\n          $\\lfloor -x \\rfloor = -x$ when $x \\in \\mathbb{Z}$\n- The fractional part is $\\{x\\} = x - \\lfloor x \\rfloor$,\n          with $0 \\leq \\{x\\} < 1$\n\nImportant: For $x < 0$,\nbe careful — $\\lfloor -2.3 \\rfloor = -3$ (not $-2$), since we go to the\n\\emph{greatest} integer $\\leq -2.3$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Greatest Integer Function",
+    "type": "example",
+    "title": "Example 42: Evaluating the Greatest Integer Function",
+    "content": "Evaluate the following:\n\nSolution:\n\n| Expression | Reason | Value |\n|---|---|---|\n| $\\lfloor 3.7 \\rfloor$ | Greatest integer $\\leq 3.7$ | $3$ |\n| $\\lfloor 5 \\rfloor$ | $5$ is already an integer | $5$ |\n| $\\lfloor -2.3 \\rfloor$ | Greatest integer $\\leq -2.3$ is $-3$ | $-3$ |\n| $\\lfloor -7 \\rfloor$ | $-7$ is an integer | $-7$ |\n| $\\lfloor \\pi \\rfloor$ | $\\pi \\approx 3.14159\\ldots$, so $\\lfloor\\pi\\rfloor = 3$ | $3$ |\n| $\\lfloor \\sqrt{2} \\rfloor$ | $\\sqrt{2} \\approx 1.414$, so floor is 1 | $1$ |\n| $\\lfloor -\\sqrt{2} \\rfloor$ | $-\\sqrt{2} \\approx -1.414$, floor is $-2$ | $-2$ |\n| $\\lfloor 7/3 \\rfloor$ | $7/3 = 2.333\\ldots$ | $2$ |"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Greatest Integer Function",
+    "type": "example",
+    "title": "Example 43: Number Theory Applications of Floor Function",
+    "content": "How many multiples of 7 are there in the set $\\{1, 2, \\ldots, 100\\}$?\n\nSolution:\n\nA multiple of 7 in $\\{1, \\ldots, 100\\}$ has the form $7k$ where $7k \\leq 100$.\n\\[\nk \\leq \\frac{100}{7} \\approx 14.28\\ldots\n\\]\n\\[\nk_{\\max} = \\left\\lfloor\\frac{100}{7}\\right\\rfloor = 14\n\\]\n\nThere are $\\boxed{14}$ multiples of 7 in $\\{1, \\ldots, 100\\}$, namely $7, 14, \\ldots, 98$.\n\nVerification: $7 \\times 14 = 98 \\leq 100 < 105 = 7 \\times 15$.\n✓"
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Greatest Integer Function",
+    "type": "example",
+    "title": "Example 44: Legendre's Formula — Highest Power of Prime in $n!$",
+    "content": "Find the highest power of 3 dividing $100!$.\n\nSolution:\n\nLegendre's Formula: The exponent of prime $p$ in $n!$ is:\n\\[\n\\sum_{k=1}^{\\infty} \\left\\lfloor \\frac{n}{p^k} \\right\\rfloor\n\\]\n\n(The sum is finite since $\\lfloor n/p^k\\rfloor = 0$ for $p^k > n$.)\n\nFor $n = 100$, $p = 3$:\n$$\\begin{align*}\n\\left\\lfloor\\frac{100}{3}\\right\\rfloor   &= 33\\\\\n\\left\\lfloor\\frac{100}{9}\\right\\rfloor   &= 11\\\\\n\\left\\lfloor\\frac{100}{27}\\right\\rfloor  &= 3\\\\\n\\left\\lfloor\\frac{100}{81}\\right\\rfloor  &= 1\\\\\n\\left\\lfloor\\frac{100}{243}\\right\\rfloor &= 0 \\quad (\\text{stop here})\n\\end{align*}$$\n\nExponent of 3 in $100!$ $= 33 + 11 + 3 + 1 = \\boxed{48}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Greatest Integer Function",
+    "type": "keypoint",
+    "title": "{primaryblue}{\\ {Summary: Part 3 Key Results}}",
+    "content": "Summary: Part 3 Key Results\n\n| Theorem | Statement |\n|---|---|\n| Fermat's Little | $a^{p-1} \\equiv 1 \\pmod p$ for prime $p$, $\\gcd(a,p)=1$ |\n| Euler's Theorem | $a^{\\phi(m)} \\equiv 1 \\pmod m$ for $\\gcd(a,m)=1$ |\n| Wilson's Theorem | $p$ prime $\\iff$ $(p-1)! \\equiv -1 \\pmod p$ |\n| Möbius Lemma | $\\sum_{d|n}\\mu(d) = [n=1]$ |\n| Möbius Inversion | $F = \\sum f(d) \\Rightarrow f(n) = \\sum\\mu(d)F(n/d)$ |\n| $\\phi(n) = n-1$ | $\\iff$ $n$ is prime |\n| Floor function | $\\lfloor x\\rfloor \\leq x < \\lfloor x\\rfloor + 1$ |\n\nKey hierarchy:\nFermat's Little Theorem $\\subset$ Euler's Theorem (FLT is the special case $m = p$ prime)."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 1",
+    "content": "Compute $\\tau(n)$ and $\\sigma(n)$ for $n = 2^5 \\times 3^2 \\times 7$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 2",
+    "content": "Find all positive integers $n \\leq 50$ for which $\\tau(n) = 6$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 3",
+    "content": "Prove that $\\tau(n)$ is odd if and only if $n$ is a perfect square, and verify for\n$n = 25, 36, 48$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 4",
+    "content": "Find all $n$ in the range $1 \\leq n \\leq 30$ such that $\\sigma(n)$ is odd."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 5",
+    "content": "Let $f(n) = (-1)^{\\tau(n)}$. Determine whether $f$ is multiplicative and compute\n$f(12), f(36), f(100)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 6",
+    "content": "Verify that $\\sum_{d \\mid n} \\tau(d) = \\sum_{d \\mid n} \\lfloor n/d \\rfloor$ for $n = 12$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 7",
+    "content": "Determine whether $n = 496$ is perfect. Identify the corresponding prime $p$ in the\nformula $2^{p-1}(2^p-1)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 8",
+    "content": "Show that if $n > 1$ is a perfect number, then $\\displaystyle\\sum_{d \\mid n}\n\\dfrac{1}{d} = 2$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 9",
+    "content": "Find a Complete Residue System modulo 9 using elements from $\\{-10, -9, \\ldots, 10\\}$\nthat contains no element from $\\{0, 1, \\ldots, 8\\}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 10",
+    "content": "Determine the Reduced Residue System modulo 18, and verify its size equals $\\phi(18)$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 11",
+    "content": "Compute $\\phi(n)$ for $n = 2^{10}$, $n = 3^5$, $n = 2 \\times 3 \\times 5 \\times 7$, and\n$n = p^2 q$ where $p, q$ are distinct odd primes."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 12",
+    "content": "Prove: For any prime $p$, $\\phi(p^k) + \\phi(p^{k-1}) = p^{k-1}(p-1) + p^{k-2}(p-1)$.\nSimplify and show the result equals $p^{k-2}(p-1)^2 \\cdot \\dfrac{p}{p-1}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 13",
+    "content": "Verify Gauss's theorem $\\sum_{d \\mid n}\\phi(d) = n$ for $n = 20$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 14",
+    "content": "Using Möbius inversion and $F(n) = \\sigma(n)$, find an expression for $f(n)$ (the\nidentity function $f(n) = n$) in terms of $\\mu$ and $\\sigma$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 15",
+    "content": "Compute $5^{200} \\pmod{7}$, $3^{1000} \\pmod{11}$, and $7^{50} \\pmod{13}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 16",
+    "content": "Prove: $n^7 - n$ is divisible by 42 for every integer $n$.\n\nHint: $42 = 2 \\times 3 \\times 7$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 17",
+    "content": "Find the last two digits of $7^{2025}$ (i.e.\\ $7^{2025} \\pmod{100}$)."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 18",
+    "content": "Using Wilson's Theorem, determine whether $29$ and $35$ satisfy $(n-1)! \\equiv -1\n\\pmod{n}$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 19",
+    "content": "Compute $\\mu(n)$ for $n = 1, 6, 30, 60, 210, 2310$, and verify the Möbius Lemma for\n$n = 30$."
+  },
+  {
+    "course": "Number Theory",
+    "chapter": "Chapter 4 - Arithmetic Functions",
+    "section": "Practice Exercises",
+    "type": "example",
+    "title": "Problem 20",
+    "content": "Evaluate the following using the greatest integer function:\n(a) $\\lfloor 5.9 \\rfloor$, (b) $\\lfloor -3.1 \\rfloor$,\n(c) $\\lfloor \\sqrt{50} \\rfloor$, (d) $\\lfloor 100/7 \\rfloor$,\n(e) the highest power of 5 dividing $200!$"
+  }
+]

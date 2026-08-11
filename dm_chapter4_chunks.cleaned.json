@@ -1,0 +1,714 @@
+[
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "definition",
+    "title": "Definition 4.1 --- The Product Rule",
+    "content": "If a procedure can be broken into two successive tasks, where\ntask 1 can be done in $n_1$ ways and task 2 can be done in $n_2$ ways\nregardless of how task 1 was done, then the total number of\nways to do the procedure is:\n\\[\n    n_1 \\times n_2\n\\]\nMore generally, for $k$ successive tasks with $n_1, n_2, \\ldots, n_k$\nways respectively:\n\\[\n    n_1 \\times n_2 \\times \\cdots \\times n_k\n\\]\n\nKey Points:\n\n- Use the product rule when tasks are performed\n          simultaneously or one after the other.\n- The tasks must be independent: the number of ways to\n          do task 2 does not depend on which choice was made in task 1.\n- Think of it as filling slots: one slot per task,\n          multiply the number of choices for each slot.\n\nPast Paper: 2020 Q1(x), 2023 Q1(xii), 2025 Q4"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "example",
+    "title": "Example 1: Applying the Product Rule --- Past Paper 2023 Q1(xii) \\& 2025 Q4",
+    "content": "(a) [2023 Q1(xii)] A car number plate is formed by 4 digits\nfrom $\\{1,2,\\ldots,9\\}$ followed by 3 letters from the alphabet (26\nletters). Neither digits nor letters are repeated. How many plates\nare possible?\n\n(b) How many bit strings of length 8 are there?\n\nSolution:\n\n(a) Seven successive slots, no repetition within digits or\nwithin letters:\n\n| Digit 1 | Digit 2 | Digit 3 | Digit 4 | Letter 1 | Letter 2 | Letter 3 |\n|---|---|---|---|---|---|---|\n| 9 | 8 | 7 | 6 | 26 | 25 | 24 |\n\n\\[\n    9 \\times 8 \\times 7 \\times 6 \\times 26 \\times 25 \\times 24\n    = 3024 \\times 15600 = \\boxed{47{,}174{,}400}\n\\]\n\n(b) Each of the 8 bits is independently 0 or 1 (2 choices):\n\\[\n    \\underbrace{2 \\times 2 \\times \\cdots \\times 2}_{8} = 2^8 = \\boxed{256}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "definition",
+    "title": "Definition 4.2 --- The Sum Rule",
+    "content": "If a task can be done either in $n_1$ ways or in $n_2$ ways,\nwhere the two sets of ways are disjoint (no overlap), then\nthe total number of ways to do the task is:\n\\[\n    n_1 + n_2\n\\]\nMore generally, for $k$ mutually exclusive alternatives:\n\\[\n    n_1 + n_2 + \\cdots + n_k\n\\]\n\nKey Points:\n\n- Use the sum rule when you choose one option from\n          multiple alternatives.\n- The alternatives must be mutually exclusive: no\n          outcome can satisfy more than one alternative.\n- If alternatives do overlap, use\n          Inclusion-Exclusion (Section 4.4).\n\nCombined rule: Most counting problems use both rules together.\nBreak the problem into tasks (product rule) and cases (sum rule).\n\nPast Paper: 2020 Q1(x), 2025 Q4"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "example",
+    "title": "Example 2: Sum Rule and Product Rule Combined --- Past Paper 2025 Q4",
+    "content": "How many license plates can be made using either:\n\n- two uppercase English letters followed by four digits, or\n- two digits followed by four uppercase English letters?\n\nRepetition is allowed.\n\nSolution:\n\nThe two formats are mutually exclusive (different structures).\n\nCase 1 --- 2 letters then 4 digits:\n\\[\n    \\underbrace{26 \\times 26}_{\\text{letters}} \\times\n    \\underbrace{10 \\times 10 \\times 10 \\times 10}_{\\text{digits}}\n    = 26^2 \\times 10^4 = 676 \\times 10{,}000 = 6{,}760{,}000\n\\]\n\nCase 2 --- 2 digits then 4 letters:\n\\[\n    \\underbrace{10 \\times 10}_{\\text{digits}} \\times\n    \\underbrace{26 \\times 26 \\times 26 \\times 26}_{\\text{letters}}\n    = 10^2 \\times 26^4 = 100 \\times 456{,}976 = 45{,}697{,}600\n\\]\n\nBy Sum Rule (two disjoint cases):\n\\[\n    6{,}760{,}000 + 45{,}697{,}600 = \\boxed{52{,}457{,}600}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "definition",
+    "title": "Definition 4.3 --- The Subtraction Rule (Complementary Counting)",
+    "content": "If a task can be done in $N$ total ways and $n_{\\text{bad}}$ of those\nways violate a constraint, then the number of valid ways is:\n\\[\n    N - n_{\\text{bad}}\n\\]\n\nThis is called complementary counting: it is often easier to\ncount what you do not want and subtract.\n\nWhen to use:\n\n- Keywords: ``at least one'', ``not all'',\n          ``except'', ``other than''.\n- When counting valid outcomes directly is harder than counting\n          invalid ones."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "example",
+    "title": "Example 3: Subtraction Rule --- Past Paper 2022 Q1(viii)",
+    "content": "(a) [2022 Q1(viii)] Let $A$ be the set of odd positive integers\nless than 10. Find $|A|$.\n\n(b) How many 4-digit passwords using digits 0--9 contain\nat least one 7?\n\n(c) How many bit strings of length 8 start with 1 or end with 00?\n\nSolution:\n\n(a) Odd positive integers less than 10:\n$A = \\{1, 3, 5, 7, 9\\} \\Rightarrow |A| = \\boxed{5}$\n\n(b) Complementary counting:\n\nTotal 4-digit passwords: $10^4 = 10{,}000$.\n\nPasswords with no 7: each digit has 9 choices $\\Rightarrow 9^4 = 6{,}561$.\n\nAt least one 7:\n\\[\n    10{,}000 - 6{,}561 = \\boxed{3{,}439}\n\\]\n\n(c) Let $A$ = strings starting with 1, $B$ = strings ending with 00.\n\n$|A| = 2^7 = 128$; \\quad $|B| = 2^6 = 64$; \\quad\n$|A \\cap B| = 2^5 = 32$ (starts with 1 AND ends with 00).\n\n$|A \\cup B| = 128 + 64 - 32 = \\boxed{160}$"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "definition",
+    "title": "Definition 4.4 --- The Division Rule",
+    "content": "If a counting method counts each distinct object exactly $d$ times,\nthe number of distinct objects is:\n\\[\n    \\frac{\\text{total count}}{d}\n\\]\n\nKey application:\nThe Handshaking Lemma is a direct application. Each edge is\ncounted twice in the degree sum (once for each endpoint):\n\\[\n    \\sum_{v \\in V} \\deg(v) = 2|E|\n    \\quad \\Rightarrow \\quad\n    |E| = \\frac{\\sum \\deg(v)}{2}\n\\]\n\nPast Paper: 2021 Q1(vii) ---\n``How many edges in a graph with 10 vertices each of degree 6?''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "example",
+    "title": "Example 4: Division Rule --- Past Paper 2021 Q1(vii)",
+    "content": "(a) [2021 Q1(vii)] How many edges are there in a graph with\n10 vertices each of degree 6?\n\n(b) How many ways can 6 people sit around a round table?\n\n(c) A class has 30 students. How many handshakes occur if\nevery student shakes hands with every other student exactly once?\n\nSolution:\n\n(a) Division rule via Handshaking Lemma:\n\\[\n    \\sum \\deg(v) = 10 \\times 6 = 60 = 2|E|\n    \\implies |E| = \\frac{60}{2} = \\boxed{30}\n\\]\n\n(b) Linear arrangements: $6! = 720$. Each circular arrangement\nis counted $6$ times (one per rotation). Apply division rule:\n\\[\n    \\frac{6!}{6} = \\frac{720}{6} = (6-1)! = 5! = \\boxed{120}\n\\]\n\n(c) Each pair of students shakes hands once.\nTotal ordered pairs: $30 \\times 29 = 870$. Division rule (each\nhandshake counted twice):\n\\[\n    \\frac{30 \\times 29}{2} = \\binom{30}{2} = \\boxed{435}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "example",
+    "title": "Example 5: Mixed Counting --- Exam-Style",
+    "content": "(a) How many 3-digit numbers can be formed from\n$\\{1,2,3,4,5\\}$ with no repeated digits? How many of these are even?\n\n(b) A committee of 2 is chosen from 4 men and 3 women. How\nmany committees have at least one woman?\n\n(c) How many 4-character passwords use letters A--Z and digits\n0--9 and contain at least one digit?\n\nSolution:\n\n(a) No repetition, 3 digits from 5:\n\\[\n    5 \\times 4 \\times 3 = \\boxed{60}\n\\]\nEven means last digit $\\in \\{2,4\\}$ (2 choices).\nFix last digit (2 choices), then first two slots get 4 and 3 choices:\n\\[\n    4 \\times 3 \\times 2 = \\boxed{24}\n\\]\n\n(b) Total committees of 2 from 7:\n$\\binom{7}{2} = 21$.\n\nAll-male committees: $\\binom{4}{2} = 6$.\n\nAt least one woman:\n\\[\n    21 - 6 = \\boxed{15}\n\\]\n\n(c) Each position: 26 + 10 = 36 choices.\nTotal $= 36^4 = 1{,}679{,}616$.\n\nNo digit (all letters): $26^4 = 456{,}976$.\n\nAt least one digit:\n\\[\n    1{,}679{,}616 - 456{,}976 = \\boxed{1{,}222{,}640}\n\\]\n\n\\smallFigure 4.1: Product Rule (AND) vs Sum\nRule (OR). Most problems combine both."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Basic Counting Principles",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 4.1 Summary --- Basic",
+    "content": "Section 4.1 Summary ---\nBasic Counting Principles\n\nFour Rules:\n| Rule | When to use | Formula |\n|---|---|---|\n| Product | Do task 1 AND task 2 | $n_1 \\times n_2$ |\n| Sum | Choose case 1 OR case 2 (disjoint) | $n_1 + n_2$ |\n| Subtraction | Count complement, subtract | $N - n_{\\text{bad}}$ |\n| Division | Each object counted $d$ times | total $\\div\\, d$ |\n\nQuick Decision Guide:\n\n- ``and'' / sequential tasks $\\to$ multiply\n- ``or'' / separate cases $\\to$ add\n- ``at least'' / ``at most'' $\\to$\n          complement: total $-$ opposite\n- No repetition $\\to$ choices decrease:\n          $n,\\, n{-}1,\\, n{-}2,\\ldots$\n- With repetition $\\to$ choices constant: $n^k$\n\nPast Paper Connection:\n\n- 2020 Q1(x): Name the basic counting principles\n          $\\rightarrow$ Definitions 4.1 \\& 4.2\n- 2021 Q1(vii): Edges in a 10-vertex degree-6 graph\n          $\\rightarrow$ Example 4(a) (division rule)\n- 2022 Q1(viii): $|A|$ where $A$ = odd integers $< 10$\n          $\\rightarrow$ Example 3(a)\n- 2023 Q1(xii): Car plates, no repetition\n          $\\rightarrow$ Example 1(a)\n- 2025 Q4: License plates, two formats, sum + product\n          $\\rightarrow$ Example 2"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "definition",
+    "title": "Definition 4.5 --- Factorial",
+    "content": "The factorial of a non-negative integer $n$, written $n!$, is:\n\\[\n    n! = n \\times (n-1) \\times (n-2) \\times \\cdots \\times 2 \\times 1\n    \\qquad \\text{with } 0! = 1\n\\]\n\nCommon values:\n| $n$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|---|\n| $n!$ | 1 | 1 | 2 | 6 | 24 | 120 | 720 |\n\nKey identity:\n$n! = n \\times (n-1)!$ \\quad (useful for simplifying expressions)\n\nPast Paper: Used throughout 2023 Q3"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "definition",
+    "title": "Definition 4.6 --- Permutation",
+    "content": "A permutation is an ordered arrangement of objects.\n\nPermutation of $n$ distinct objects taken $r$ at a time:\n\\[\n    P(n,r) = \\frac{n!}{(n-r)!}\n    = n \\times (n-1) \\times \\cdots \\times (n-r+1)\n    \\qquad (0 \\leq r \\leq n)\n\\]\n\nPermutation of all $n$ objects:\n\\[\n    P(n,n) = n!\n\\]\n\nKey Properties:\n\n- Order matters: arrangement $AB$ is different from $BA$.\n- Each object can be used at most once (no repetition).\n- Think of filling $r$ ordered slots: first slot has $n$ choices,\n          second has $n-1$, and so on.\n\nQuick reference:\n| Expression | Expanded | Value |\n|---|---|---|\n| $P(5,2)$ | $5 \\times 4$ | 20 |\n| $P(6,3)$ | $6 \\times 5 \\times 4$ | 120 |\n| $P(7,7)$ | $7!$ | 5040 |\n| $P(7,1)$ | $7$ | 7 |\n\nPast Paper: 2023 Q3 (all 6 parts use permutation logic),\n2023 Q1(xii), 2025 Q4"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "example",
+    "title": "Example 1: Basic Permutations",
+    "content": "(a) How many ways can 5 students be arranged in a row?\n\n(b) How many 3-letter arrangements can be made from\nMATH (no repetition)?\n\n(c) A president, vice-president, and secretary are chosen from\n10 candidates. How many ways?\n\nSolution:\n\n(a) Arrange all 5 students in order:\n\\[\n    P(5,5) = 5! = \\boxed{120}\n\\]\n\n(b) Choose 3 from 4 letters \\{M,A,T,H\\}, order matters:\n\\[\n    P(4,3) = \\frac{4!}{(4-3)!} = \\frac{24}{1} = 4 \\times 3 \\times 2 = \\boxed{24}\n\\]\n\n(c) Three distinct roles from 10 candidates, order matters:\n\\[\n    P(10,3) = 10 \\times 9 \\times 8 = \\boxed{720}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "definition",
+    "title": "Definition 4.7 --- Permutations with Repeated Elements",
+    "content": "The number of distinct permutations of $n$ objects where object 1\nappears $n_1$ times, object 2 appears $n_2$ times, \\ldots, object $k$\nappears $n_k$ times (with $n_1 + n_2 + \\cdots + n_k = n$) is:\n\\[\n    \\frac{n!}{n_1!\\; n_2!\\; \\cdots\\; n_k!}\n\\]\n\nExamples:\n\n- Arrangements of AABB (4 letters: A$\\times$2, B$\\times$2):\n          $\\dfrac{4!}{2!\\,2!} = 6$\n- Arrangements of MISSISSIPPI (11 letters:\n          M$\\times$1, I$\\times$4, S$\\times$4, P$\\times$2):\n          $\\dfrac{11!}{1!\\,4!\\,4!\\,2!} = 34{,}650$\n\nPast Paper: 2023 Q3 ---\nrequired strings treated as single repeated units."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "definition",
+    "title": "Definition 4.8 --- Permutations Containing a Fixed String",
+    "content": "To count permutations of $n$ objects that must contain a\nspecific consecutive substring:\n\n1. Glue all letters of the required string into one\n          single block.\n2. Count the total objects to arrange: $(n - s + 1)$ where $s$\n          is the length of the glued string.\n3. Total permutations $= (n - s + 1)!$\n\nMultiple required strings: Glue each required string into its\nown block, then count arrangements of all blocks and remaining letters.\n\nOverlapping strings:\nIf two required strings share a letter at the joining point,\nmerge them into one combined block.\nIf two strings share a letter but the overlap is incompatible\n(the letter must occupy two different positions), the answer is $\\mathbf{0}$.\n\nPast Paper: 2023 Q3 (all 6 parts)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "example",
+    "title": "Example 2: Permutations of ABCDEFG with Strings --- Past Paper 2023 Q3",
+    "content": "How many permutations of ABCDEFG ($n=7$ distinct letters)\ncontain the following strings?\n\ni) BCD \\quad\nii) CFGA \\quad\niii) BA and GF \\quad\niv) ABC and DE \\quad\nv) ABC and CDE \\quad\nvi) CBA and BED\n\nSolution:\n\ni) String BCD (length 3):\n\nGlue $\\{B,C,D\\}$ into block $[BCD]$. Remaining letters: $A,E,F,G$.\nTotal objects: $[BCD], A, E, F, G$ $= 5$.\n\\[\n    5! = \\boxed{120}\n\\]\n\nii) String CFGA (length 4):\n\nGlue $\\{C,F,G,A\\}$ into block $[CFGA]$. Remaining: $B,D,E$.\\\\\nTotal objects: $[CFGA], B, D, E$ $= 4$.\n\\[\n    4! = \\boxed{24}\n\\]\n\niii) Strings BA and GF (two separate blocks):\n\nGlue $B,A \\to [BA]$. Glue $G,F \\to [GF]$.\nTotal objects: $[BA], [GF], C, D, E$ $= 5$.\n\\[\n    5! = \\boxed{120}\n\\]\n\niv) Strings ABC and DE (two non-overlapping blocks):\n\nGlue $A,B,C \\to [ABC]$. Glue $D,E \\to [DE]$.\nTotal objects: $[ABC], [DE], F, G$ $= 4$.\n\\[\n    4! = \\boxed{24}\n\\]\n\nv) Strings ABC and CDE (overlapping at C):\n\nABC ends in C; CDE starts with C. For both substrings to appear,\nC must be simultaneously the 3rd letter of ABC and the 1st letter\nof CDE, forcing the combined block $[ABCDE]$.\nTotal objects: $[ABCDE], F, G$ $= 3$.\n\\[\n    3! = \\boxed{6}\n\\]\n\nvi) Strings CBA and BED (B appears in both):\n\nCBA contains B at position 2; BED starts with B.\nSince B is a single letter appearing once in ABCDEFG, it cannot\nsimultaneously be in two different positions required by CBA and BED.\n\\[\n    \\text{Answer} = \\boxed{0}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "definition",
+    "title": "Definition 4.9 --- Combination",
+    "content": "A combination is an unordered selection of objects.\n\nNumber of ways to choose $r$ objects from $n$ distinct objects\n(order does not matter):\n\\[\n    C(n,r) = \\binom{n}{r} = \\frac{n!}{r!\\,(n-r)!}\n    \\qquad (0 \\leq r \\leq n)\n\\]\n\nKey Properties:\n\n- Order does not matter: $\\{A,B\\} = \\{B,A\\}$.\n- $\\binom{n}{r} = \\binom{n}{n-r}$ \\quad (symmetry)\n- $\\binom{n}{0} = \\binom{n}{n} = 1$; \\quad $\\binom{n}{1} = n$\n- Link to permutation: $P(n,r) = \\binom{n}{r} \\times r!$\n\nQuick reference:\n| Expression | Expanded | Value |\n|---|---|---|\n| $\\binom{5}{2}$ | $\\dfrac{5\\times4}{2!}$ | 10 |\n| [4pt] $\\binom{6}{3}$ | $\\dfrac{6\\times5\\times4}{3!}$ | 20 |\n| [4pt] $\\binom{7}{4}$ | $\\dfrac{7\\times6\\times5\\times4}{4!}$ | 35 |\n| [4pt] $\\binom{10}{5}$ | $\\dfrac{10!}{5!\\,5!}$ | 252 |\n\nPast Paper: Selection / committee\nproblems appear in exam-style 4.2 questions."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "example",
+    "title": "Example 3: Applying Combinations",
+    "content": "(a) How many ways can a committee of 3 be chosen from 10 people?\n\n(b) A class has 12 boys and 8 girls. How many committees of 5\ncontain exactly 3 boys and 2 girls?\n\n(c) How many ways can you choose at least one book from a\nshelf of 4 different books?\n\nSolution:\n\n(a) Order does not matter (committee):\n\\[\n    \\binom{10}{3} = \\frac{10 \\times 9 \\times 8}{3!} = \\frac{720}{6} = \\boxed{120}\n\\]\n\n(b) Choose boys AND choose girls (product rule with combinations):\n\\[\n    \\binom{12}{3} \\times \\binom{8}{2}\n    = \\frac{12 \\times 11 \\times 10}{6} \\times \\frac{8 \\times 7}{2}\n    = 220 \\times 28 = \\boxed{6{,}160}\n\\]\n\n(c) Each book independently chosen or not $\\Rightarrow 2^4$ total subsets.\nAt least one book = total $-$ empty set:\n\\[\n    2^4 - 1 = 16 - 1 = \\boxed{15}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "definition",
+    "title": "Definition 4.10 --- Permutation vs Combination: How to Decide",
+    "content": "| Feature | Permutation | Combination |\n|---|---|---|\n| Order | Matters ($AB \\neq BA$) | Does not matter ($AB = BA$) |\n| Formula | $\\dfrac{n!}{(n-r)!}$ | $\\dfrac{n!}{r!\\,(n-r)!}$ |\n| Keywords | arrange, rank, seat, | choose, select, committee, |\n|  | schedule, order | group, team, subset |\n| Example | Top-3 finishers in race | 3 members from a club |\n| Relation | \\multicolumn{2}{c|}{$P(n,r) = C(n,r) \\times r!$} |  |\n\nQuick test:\nAsk ``Does swapping two chosen items give a different result?''\nYes $\\to$ Permutation. \\quad No $\\to$ Combination."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "example",
+    "title": "Example 4: Permutation vs Combination Mixed",
+    "content": "Identify whether each uses P or C, then solve.\n\n(a) 8 runners compete; how many ways can gold, silver, and\nbronze medals be awarded?\n\n(b) A team of 4 is chosen from 9 players. How many teams?\n\n(c) How many 4-digit PIN codes use digits 0--9 with no\nrepeated digit?\n\n(d) From 5 men and 4 women, how many committees of 4\ncontain at least 2 women?\n\nSolution:\n\n(a) Different medals $\\Rightarrow$ order matters.\nPermutation.\n\\[\n    P(8,3) = 8 \\times 7 \\times 6 = \\boxed{336}\n\\]\n\n(b) Team membership, no roles $\\Rightarrow$ order does not matter.\nCombination.\n\\[\n    \\binom{9}{4} = \\frac{9 \\times 8 \\times 7 \\times 6}{4!} = \\boxed{126}\n\\]\n\n(c) 4 ordered positions, no repetition.\nPermutation.\n\\[\n    P(10,4) = 10 \\times 9 \\times 8 \\times 7 = \\boxed{5040}\n\\]\n\n(d) At least 2 women: split into cases.\n\n| Women | Men | Ways | Count |\n|---|---|---|---|\n| 2 | 2 | $\\binom{4}{2}\\times\\binom{5}{2}$ | $6\\times10=60$ |\n| 3 | 1 | $\\binom{4}{3}\\times\\binom{5}{1}$ | $4\\times5=20$ |\n| 4 | 0 | $\\binom{4}{4}\\times\\binom{5}{0}$ | $1\\times1=1$ |\n| \\multicolumn{3}{|r|}{Total} | $\\mathbf{81}$ |  |  |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "example",
+    "title": "Example 5: License Plates Analysis --- Past Paper 2023 Q1(xii) \\& 2025 Q4",
+    "content": "(a) [2023 Q1(xii)] A car plate: 4 digits from $\\{1,\\ldots,9\\}$\nthen 3 letters from 26, no repetition within each group.\n\n(b) [2025 Q4] License plates: 2 letters + 4 digits OR\n2 digits + 4 letters, repetition allowed.\n\n(c) Compare: choose 3 letters for a code where order\nmatters vs order does not matter.\n\nSolution:\n\n(a) Different positions are distinct, no repetition.\nThis is a permutation calculation.\n\nDigits in order: $P(9,4) = 9 \\times 8 \\times 7 \\times 6 = 3024$\n\nLetters in order: $P(26,3) = 26 \\times 25 \\times 24 = 15{,}600$\n\nTotal (product rule):\n\\[\n    3024 \\times 15{,}600 = \\boxed{47{,}174{,}400}\n\\]\n\n(b) Repetition allowed $\\Rightarrow$ not a pure permutation;\nuse product rule with independent slots.\n\nCase 1 (2L + 4D): $26^2 \\times 10^4 = 676 \\times 10{,}000 = 6{,}760{,}000$\n\nCase 2 (2D + 4L): $10^2 \\times 26^4 = 100 \\times 456{,}976 = 45{,}697{,}600$\n\nBy sum rule (disjoint formats):\n\\[\n    6{,}760{,}000 + 45{,}697{,}600 = \\boxed{52{,}457{,}600}\n\\]\n\n(c) Choose 3 from 26 letters:\n\nOrder matters (permutation):\n$P(26,3) = 26 \\times 25 \\times 24 = 15{,}600$\n\nOrder does not matter (combination):\n$\\binom{26}{3} = \\dfrac{15{,}600}{3!} = \\dfrac{15{,}600}{6} = 2{,}600$\n\nThe permutation is exactly $3! = 6$ times the combination,\nsince each set of 3 letters can be ordered in $3!$ ways.\n\n\\smallFigure 4.2: Permutation (order matters)\nvs Combination (order does not matter).\nRelation: $P(n,r) = C(n,r) \\times r!$"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Permutations and Combinations",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 4.2 Summary --- Permutations",
+    "content": "Section 4.2 Summary ---\nPermutations \\& Combinations\n\nCore Formulas:\n| Type | Formula | When |\n|---|---|---|\n| All $n$ objects | $n!$ | Arrange everything |\n| $r$ from $n$, ordered | $P(n,r)=\\dfrac{n!}{(n-r)!}$ | Order matters |\n| $r$ from $n$, unordered | $\\binom{n}{r}=\\dfrac{n!}{r!\\,(n-r)!}$ | Order irrelevant |\n| Repeated elements | $\\dfrac{n!}{n_1!\\,n_2!\\cdots}$ | Identical objects |\n| Fixed substring | $(n-s+1)!$ | Glue $s$ letters into 1 block |\n\nString Technique for 2023 Q3:\n\n1. Glue each required string into one block.\n2. Count total objects: blocks + remaining letters.\n3. Overlapping strings at a boundary $\\to$ merge into one block.\n4. Letter in two incompatible positions $\\to$ answer is 0.\n\nPast Paper Connection:\n\n- 2023 Q3 (i--vi): Permutations of ABCDEFG with\n          6 string constraints $\\rightarrow$ Example 2 (complete solution)\n- 2023 Q1(xii): Car plates no-repeat $= P(9,4)\\times P(26,3)$\n          $\\rightarrow$ Example 5(a)\n- 2025 Q4: License plates two formats, repetition allowed\n          $\\rightarrow$ Example 5(b)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "definition",
+    "title": "Definition 4.11 --- The Pigeonhole Principle (Basic Form)",
+    "content": "If $k+1$ or more objects are placed into $k$ boxes, then at least one\nbox contains two or more objects.\n\nFormal Statement:\n\nIf $n$ objects are distributed into $k$ boxes where $n > k$, then\nat least one box contains at least 2 objects.\n\nThe name: Imagine $k+1$ pigeons flying into $k$ pigeonholes.\nAt least one hole must contain 2 or more pigeons.\n\nHow to apply:\n\n1. Identify the objects being distributed.\n2. Identify the boxes (categories/pigeonholes).\n3. Show that objects $>$ boxes.\n4. Conclude: at least one box has $\\geq 2$ objects.\n\nPast Paper: 2023 Q4 (both parts)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "example",
+    "title": "Example 1: Same Last Digit --- Past Paper 2023 Q4(i)",
+    "content": "Show that among any 11 integers, at least two must have the\nsame last digit.\n\nSolution:\n\nObjects: the 11 integers.\n\nBoxes: possible last digits $= \\{0,1,2,3,4,5,6,7,8,9\\}$\n--- exactly 10 boxes.\n\nApply Pigeonhole Principle:\n\nWe have 11 objects and 10 boxes. Since $11 > 10$, at least one box\nmust contain at least 2 integers.\n\nTwo integers in the same box share the same last digit.\n\nConcrete example:\n\nTry to give all 10 integers different last digits: $\\{1, 12, 23, 34, 45,\n56, 67, 78, 89, 90\\}$ --- last digits $1,2,3,4,5,6,7,8,9,0$ (all different).\nBut the 11th integer must repeat one of these 10 last digits."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "definition",
+    "title": "Definition 4.12 --- Generalised Pigeonhole Principle",
+    "content": "If $n$ objects are placed into $k$ boxes, then at least one box\ncontains at least:\n\\[\n    \\left\\lceil \\frac{n}{k} \\right\\rceil \\text{ objects}\n\\]\nwhere $\\lceil x \\rceil$ is the ceiling of $x$ (smallest\ninteger $\\geq x$).\n\nCeiling function:\n| $x$ | 3 | 3.1 | 7/3 | 11/4 | 100/12 |\n|---|---|---|---|---|---|\n| $\\lceil x \\rceil$ | 3 | 4 | 3 | 3 | 9 |\n\nFinding minimum $n$ to\nguarantee $r$ objects in one box:\n\nWe need $\\lceil n/k \\rceil \\geq r$, which gives:\n\\[\n    n \\geq k(r-1) + 1\n\\]\n\nPast Paper: 2023 Q4\n(generalised reasoning underlies both parts)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "example",
+    "title": "Example 2: Generalised Pigeonhole Principle",
+    "content": "(a) How many people must be in a room to guarantee at least\n3 share the same birth month?\n\n(b) How many cards must be drawn from a 52-card deck to\nguarantee at least 2 of the same suit?\n\n(c) Among any 100 people, at least how many must share the\nsame birth month?\n\nSolution:\n\n(a) Boxes: 12 months. Want $r = 3$ in one box.\n\\[\n    n \\geq k(r-1)+1 = 12(3-1)+1 = 12 \\times 2 + 1 = \\boxed{25}\n\\]\nWith 25 people, at least one month has $\\lceil 25/12 \\rceil = 3$ people.\n\n(b) Boxes: 4 suits. Want $r = 2$ in one box.\n\\[\n    n \\geq 4(2-1)+1 = 4+1 = \\boxed{5}\n\\]\n\n(c) $n=100$ people, $k=12$ months:\n\\[\n    \\left\\lceil \\frac{100}{12} \\right\\rceil = \\lceil 8.33 \\rceil = \\boxed{9}\n\\]\nAt least one month has $\\geq 9$ people."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "definition",
+    "title": "Definition 4.13 --- Proof Template for Pigeonhole Problems",
+    "content": "Most Pigeonhole proofs follow this five-step template:\n\n1. Define objects: what items are being distributed?\n2. Define boxes: what are the categories or groups?\n3. Count both: confirm objects $>$ boxes.\n4. Invoke the principle: state that at least one box\n          contains $\\geq 2$ objects (or $\\geq \\lceil n/k \\rceil$).\n5. Interpret: translate ``two objects in same box''\n          back into the original problem language.\n\nCommon box constructions:\n\n- Remainders mod $k$: group integers by remainder;\n          gives $k$ boxes. Used for last-digit / divisibility proofs.\n- Consecutive pairs: partition $\\{1,\\ldots,2N\\}$ into\n          pairs $\\{1,2\\},\\{3,4\\},\\ldots,\\{2N-1,2N\\}$; gives $N$ boxes.\n- Complementary pairs: pair numbers summing to a fixed\n          value.\n- Geometric sub-regions: divide a shape into equal\n          sub-regions.\n\nPast Paper: 2023 Q4(ii) uses the\nconsecutive-pairs construction."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "example",
+    "title": "Example 3: Consecutive Integers --- Past Paper 2023 Q4(ii)",
+    "content": "$N+1$ integers are chosen at random from $\\{1, 2, 3, \\ldots, 2N\\}$.\nProve that at least 2 of the chosen integers are consecutive\n(i.e.\\ differ by exactly 1).\n\nSolution:\n\nStep 1 --- Construct the boxes.\n\nPartition $\\{1,2,\\ldots,2N\\}$ into $N$ pairs of consecutive integers:\n\\[\n    \\{1,2\\},\\quad\\{3,4\\},\\quad\\{5,6\\},\\quad\\ldots,\\quad\\{2N-1,2N\\}\n\\]\nThere are exactly $N$ pairs.\n\nStep 2 --- Objects and boxes.\n\nObjects: the $N+1$ chosen integers.\n\nBoxes: the $N$ pairs above.\nEach chosen integer belongs to exactly one pair.\n\nStep 3 --- Apply Pigeonhole.\n\n$N+1$ objects into $N$ boxes. Since $N+1 > N$, at least one box\ncontains $\\geq 2$ chosen integers.\n\nStep 4 --- Interpret.\n\nA box containing 2 chosen integers means both elements of some pair\n$\\{2k-1, 2k\\}$ were selected. These two integers differ by 1, hence\nthey are consecutive.\n\nConcrete example ($N=4$):\n\nSet $=\\{1,2,3,4,5,6,7,8\\}$. Pairs: $\\{1,2\\},\\{3,4\\},\\{5,6\\},\\{7,8\\}$.\n\nChoose 5 integers: $\\{1,3,5,7,8\\}$.\n\nPair $\\{7,8\\}$ has both elements chosen --- 7 and 8 are consecutive. ✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "example",
+    "title": "Example 4: Further Pigeonhole Applications",
+    "content": "(a) Among any 5 integers, show that at least 2 have the same\nremainder when divided by 4.\n\n(b) A drawer has red, blue, green, and black socks. How many\nmust you draw to guarantee a matching pair?\n\n(c) Among any 10 integers, show that at least 2 have a\ndifference divisible by 9.\n\nSolution:\n\n(a) Remainders mod 4: $\\{0,1,2,3\\}$ --- 4 boxes.\n\n5 integers into 4 boxes: $5 > 4$. By Pigeonhole, at least two share\nthe same remainder.\n\nTwo integers with the same remainder mod 4 have a difference\n$\\equiv 0 \\pmod 4$, i.e.\\ divisible by 4.\n\n(b) 4 colours $= 4$ boxes. Want $r = 2$ in one box.\n\\[\n    n \\geq 4(2-1)+1 = \\boxed{5}\n\\]\nDraw 5 socks: at least two are the same colour.\n\n(c) Remainders mod 9: $\\{0,1,2,3,4,5,6,7,8\\}$ --- 9 boxes.\n\n10 integers into 9 boxes: $10 > 9$.\nAt least two integers share the same remainder mod 9.\nTheir difference $\\equiv 0 \\pmod 9$, so divisible by 9."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "example",
+    "title": "Example 5: Harder Pigeonhole Problems --- Exam Style",
+    "content": "(a) Show that among any 5 points chosen inside a square of\nside 2, at least 2 are within distance $\\sqrt{2}$ of each other.\n\n(b) A bag has 10 red, 10 blue, 10 green, and 10 yellow balls.\nHow many must be drawn to guarantee 5 balls of the same colour?\n\n(c) From $\\{1,2,\\ldots,100\\}$, how many integers must be\nchosen to guarantee two of them sum to 101?\n\nSolution:\n\n(a) Divide the $2\\times2$ square into 4 smaller $1\\times1$\nsub-squares. Each has diagonal $\\sqrt{2}$.\n\n5 points into 4 sub-squares: $5 > 4$. At least one sub-square\ncontains $\\geq 2$ points, which are at most $\\sqrt{2}$ apart.\n\n(b) 4 colours $= 4$ boxes. Want $r = 5$ in one box.\n\\[\n    n \\geq 4(5-1)+1 = 16+1 = \\boxed{17}\n\\]\n\n(c) Pair up all numbers that sum to 101:\n\\[\n    \\{1,100\\},\\;\\{2,99\\},\\;\\{3,98\\},\\;\\ldots,\\;\\{50,51\\}\n\\]\nThere are exactly 50 pairs (boxes).\n\nTo guarantee two integers from the same pair (which sum to 101):\n\\[\n    n \\geq 50+1 = \\boxed{51}\n\\]\n\n\\smallFigure 4.3: 4 pigeons into 3 boxes ---\nat least one box gets $\\lceil 4/3 \\rceil = 2$ pigeons."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Pigeonhole Principle",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 4.3 Summary --- Pigeonhole",
+    "content": "Section 4.3 Summary ---\nPigeonhole Principle\n\nTwo Forms:\n| Form | Statement |\n|---|---|\n| Basic | $n$ objects, $k$ boxes, $n>k$ $\\Rightarrow$ one box has $\\geq 2$ objects |\n| Generalised | $n$ objects, $k$ boxes $\\Rightarrow$ one box has $\\geq \\lceil n/k \\rceil$ objects |\n| Guarantee $r$ | Need $n \\geq k(r-1)+1$ objects |\n\nProof Template:\n\n1. Define objects and boxes clearly.\n2. Show objects $>$ boxes.\n3. Invoke the principle.\n4. Interpret ``two objects in same box'' in problem language.\n\nCommon Box Constructions:\n\n- Remainders mod $k$ $\\to$ $k$ boxes (last digit, divisibility)\n- Consecutive pairs $\\{1,2\\},\\{3,4\\},\\ldots$ $\\to$ $N$ boxes\n- Complementary pairs summing to fixed value $\\to$ pairs as boxes\n- Geometric sub-regions $\\to$ sub-shapes as boxes\n\nPast Paper Connection:\n\n- 2023 Q4(i): 11 integers, 10 last-digit boxes\n          $\\rightarrow$ Example 1\n- 2023 Q4(ii): $N+1$ from $2N$ consecutive integers,\n          consecutive-pair boxes $\\rightarrow$ Example 3"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "definition",
+    "title": "Definition 4.14 --- Inclusion-Exclusion for Two Sets",
+    "content": "For any two finite sets $A$ and $B$:\n\\[\n    |A \\cup B| = |A| + |B| - |A \\cap B|\n\\]\n\nWhy: Adding $|A|$ and $|B|$ counts elements in $A \\cap B$\ntwice. Subtracting $|A \\cap B|$ once corrects this so every\nelement is counted exactly once.\n\nUseful rearrangements:\n\\[\n    |A \\cap B| = |A| + |B| - |A \\cup B|\n\\]\n\\[\n    |\\overline{A \\cup B}| = |U| - |A| - |B| + |A \\cap B|\n    \\quad \\text{(elements in neither set)}\n\\]\n\nPast Paper: 2020 Q1(vi) ---\n``State the inclusion-exclusion principle.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "example",
+    "title": "Example 1: Two-Set Inclusion-Exclusion --- Past Paper 2020 Q1(vi)",
+    "content": "(a) In a class of 50 students, 30 study Maths, 25 study\nPhysics, and 10 study both. How many study at least one subject?\nHow many study neither?\n\n(b) How many integers from 1 to 100 are divisible by 2 or 5?\n\n(c) How many bit strings of length 8 start with 1 or end\nwith 00?\n\nSolution:\n\n(a) $M$ = Maths, $P$ = Physics:\n\\[\n    |M \\cup P| = 30 + 25 - 10 = \\boxed{45}\n    \\qquad\n    \\text{Neither} = 50 - 45 = \\boxed{5}\n\\]\n\n(b) $A$ = div by 2, $B$ = div by 5,\n$A\\cap B$ = div by $\\text{lcm}(2,5)=10$:\n\\[\n    |A| = \\lfloor 100/2 \\rfloor = 50,\\quad\n    |B| = \\lfloor 100/5 \\rfloor = 20,\\quad\n    |A\\cap B| = \\lfloor 100/10 \\rfloor = 10\n\\]\n\\[\n    |A \\cup B| = 50 + 20 - 10 = \\boxed{60}\n\\]\n\n(c) $A$ = starts with 1, $B$ = ends with 00:\n\\[\n    |A| = 2^7 = 128,\\quad\n    |B| = 2^6 = 64,\\quad\n    |A\\cap B| = 2^5 = 32\n\\]\n\\[\n    |A \\cup B| = 128 + 64 - 32 = \\boxed{160}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "definition",
+    "title": "Definition 4.15 --- Inclusion-Exclusion for Three Sets",
+    "content": "For any three finite sets $A$, $B$, $C$:\n\\[\n    |A \\cup B \\cup C|\n    = |A| + |B| + |C|\n    - |A \\cap B| - |A \\cap C| - |B \\cap C|\n    + |A \\cap B \\cap C|\n\\]\n\nWhy each element is counted once:\n| Element in | Added | Subtracted | Added back | Net |\n|---|---|---|---|---|\n| Exactly 1 set | 1 | 0 | 0 | 1 ✓ |\n| Exactly 2 sets | 2 | 1 | 0 | 1 ✓ |\n| All 3 sets | 3 | 3 | 1 | 1 ✓ |\n\nMemory aid: Add singles $-$ subtract pairs $+$ add triple.\n\nPast Paper: 2020 Q1(vi)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "example",
+    "title": "Example 2: Three-Set Inclusion-Exclusion",
+    "content": "Among 200 students: 90 take Discrete Maths (D), 80 take Algorithms (A),\n70 take Operating Systems (O). Also: 40 take D and A, 30 take D and O,\n20 take A and O, and 10 take all three.\n\n(a) How many take at least one course?\n\n(b) How many take none of the three?\n\n(c) How many take exactly two courses?\n\n(d) How many take exactly one course?\n\nSolution:\n\n(a)\n\\[\n    |D\\cup A\\cup O|\n    = 90+80+70-40-30-20+10 = \\boxed{160}\n\\]\n\n(b) $200 - 160 = \\boxed{40}$\n\n(c) Exactly two courses (in one pair but not all three):\n\n| Group | Count |\n|---|---|\n| D and A only | $|D\\cap A| - |D\\cap A\\cap O| = 40-10 = 30$ |\n| D and O only | $|D\\cap O| - |D\\cap A\\cap O| = 30-10 = 20$ |\n| A and O only | $|A\\cap O| - |D\\cap A\\cap O| = 20-10 = 10$ |\n| Total exactly two | $30+20+10 = \\boxed{60}$ |\n\n(d) Exactly one course:\n\nOnly D: $90 - 40 - 30 + 10 = 30$\n\nOnly A: $80 - 40 - 20 + 10 = 30$\n\nOnly O: $70 - 30 - 20 + 10 = 30$\n\nTotal exactly one: $30 + 30 + 30 = \\boxed{90}$\n\nVerify: $90 + 60 + 10 = 160 = |D\\cup A\\cup O|$\n✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "definition",
+    "title": "Definition 4.16 --- General Inclusion-Exclusion Principle",
+    "content": "For $n$ finite sets $A_1, A_2, \\ldots, A_n$:\n\\[\n    \\left|\\bigcup_{i=1}^{n} A_i\\right|\n    = \\sum_{i}|A_i|\n    - \\sum_{i<j}|A_i \\cap A_j|\n    + \\sum_{i<j<k}|A_i \\cap A_j \\cap A_k|\n    - \\cdots\n    + (-1)^{n+1}|A_1 \\cap \\cdots \\cap A_n|\n\\]\n\nSign pattern:\n| Intersection size | Sign |\n|---|---|\n| Single sets | $+$ |\n| Pairs | $-$ |\n| Triples | $+$ |\n| Quadruples | $-$ |\n| $\\vdots$ | alternates |\n\nDivisibility shortcut:\n$|\\text{integers divisible by }k\\text{ in }\\{1,\\ldots,n\\}|\n= \\lfloor n/k \\rfloor$\n\nFor intersections, use the LCM: $|A_i \\cap A_j|\n= \\lfloor n/\\text{lcm}(k_i,k_j) \\rfloor$\n\nPast Paper: 2020 Q1(vi)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "example",
+    "title": "Example 3: Divisibility with Three Sets",
+    "content": "How many integers from 1 to 1000 are divisible by 3, 5, or 7?\n\nSolution:\n\nLet $A$ = div by 3, $B$ = div by 5, $C$ = div by 7.\n\nSingle sets:\n\\[\n    |A| = \\lfloor 1000/3 \\rfloor = 333,\\quad\n    |B| = \\lfloor 1000/5 \\rfloor = 200,\\quad\n    |C| = \\lfloor 1000/7 \\rfloor = 142\n\\]\n\nPairwise intersections (use LCM):\n\\[\n    |A\\cap B| = \\lfloor 1000/15 \\rfloor = 66,\\quad\n    |A\\cap C| = \\lfloor 1000/21 \\rfloor = 47,\\quad\n    |B\\cap C| = \\lfloor 1000/35 \\rfloor = 28\n\\]\n\nTriple intersection:\n\\[\n    |A\\cap B\\cap C| = \\lfloor 1000/105 \\rfloor = 9\n\\]\n\nBy Inclusion-Exclusion:\n\\[\n    |A\\cup B\\cup C| = 333+200+142-66-47-28+9 = \\boxed{543}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "example",
+    "title": "Example 4: Complementary IE --- Not Divisible",
+    "content": "(a) How many integers from 1 to 100 are not divisible\nby 2, 3, or 5?\n\n(b) A 4-character password uses digits 0--9. How many\npasswords contain at least one each of the digits 1, 2, 3?\n\nSolution:\n\n(a) $A$ = div 2, $B$ = div 3, $C$ = div 5 within $\\{1,\\ldots,100\\}$:\n\\[\n    |A|=50,\\quad|B|=33,\\quad|C|=20\n\\]\n\\[\n    |A\\cap B|=\\lfloor100/6\\rfloor=16,\\quad\n    |A\\cap C|=\\lfloor100/10\\rfloor=10,\\quad\n    |B\\cap C|=\\lfloor100/15\\rfloor=6\n\\]\n\\[\n    |A\\cap B\\cap C|=\\lfloor100/30\\rfloor=3\n\\]\n\\[\n    |A\\cup B\\cup C| = 50+33+20-16-10-6+3 = 74\n\\]\nNot divisible by any: $100 - 74 = \\boxed{26}$\n\n(b) Let $A_i$ = passwords with digit $i$ missing entirely.\n\nTotal passwords: $10^4 = 10{,}000$.\n\n$|A_1| = 9^4 = 6{,}561$ (no 1); same for $|A_2|$, $|A_3|$.\n\n$|A_1\\cap A_2| = 8^4 = 4{,}096$ (neither 1 nor 2); same for other pairs.\n\n$|A_1\\cap A_2\\cap A_3| = 7^4 = 2{,}401$.\n\n\\[\n    |A_1\\cup A_2\\cup A_3|\n    = 3(6{,}561) - 3(4{,}096) + 2{,}401\n    = 19{,}683 - 12{,}288 + 2{,}401 = 9{,}796\n\\]\n\nAt least one each of 1, 2, 3:\n\\[\n    10{,}000 - 9{,}796 = \\boxed{204}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "example",
+    "title": "Example 5: Full Survey Problem --- Exam Style",
+    "content": "In a survey of 300 people: 150 like Tea (T), 120 like Coffee (C),\n100 like Juice (J). Also: 60 like T and C, 40 like T and J, 30 like\nC and J, and 15 like all three.\n\n(a) How many like at least one drink?\n\n(b) How many like none?\n\n(c) How many like exactly one drink?\n\n(d) How many like exactly two drinks?\n\nSolution:\n\n(a)\n\\[\n    |T\\cup C\\cup J| = 150+120+100-60-40-30+15 = \\boxed{255}\n\\]\n\n(b) $300 - 255 = \\boxed{45}$\n\n(c) Exactly one drink:\n\nOnly T: $150 - 60 - 40 + 15 = 65$\n\nOnly C: $120 - 60 - 30 + 15 = 45$\n\nOnly J: $100 - 40 - 30 + 15 = 45$\n\nTotal exactly one: $65 + 45 + 45 = \\boxed{155}$\n\n(d) Exactly two drinks:\n\nT and C only: $60 - 15 = 45$\n\nT and J only: $40 - 15 = 25$\n\nC and J only: $30 - 15 = 15$\n\nTotal exactly two: $45 + 25 + 15 = \\boxed{85}$\n\nVerify: $155 + 85 + 15 = 255 = |T\\cup C\\cup J|$\n✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Inclusion-Exclusion Principle",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 4.4 Summary --- Inclusion-Exclusion",
+    "content": "Section 4.4 Summary ---\nInclusion-Exclusion Principle\n\nCore Formulas:\n| Sets | Formula |\n|---|---|\n| 2 sets | $|A\\cup B| = |A|+|B|-|A\\cap B|$ |\n| 3 sets | $|A\\cup B\\cup C| = |A|+|B|+|C|$ |\n|  | $\\quad -|A\\cap B|-|A\\cap C|-|B\\cap C|+|A\\cap B\\cap C|$ |\n| General | Signs alternate: $+$ singles, $-$ pairs, $+$ triples, \\ldots |\n\nExact-Count Formulas (3 sets):\n\n- Exactly three: $|A\\cap B\\cap C|$\n- Exactly two (e.g.\\ A and B only):\n          $|A\\cap B| - |A\\cap B\\cap C|$\n- Exactly one (e.g.\\ A only):\n          $|A| - |A\\cap B| - |A\\cap C| + |A\\cap B\\cap C|$\n- None: $|U| - |A\\cup B\\cup C|$\n\nDivisibility Shortcut:\n\n$\\lfloor n/k \\rfloor$ integers in $\\{1,\\ldots,n\\}$ divisible by $k$.\nFor intersections use LCM: $|A_i\\cap A_j| = \\lfloor n/\\text{lcm}(k_i,k_j)\\rfloor$\n\nPast Paper Connection:\n\n- 2020 Q1(vi): ``State inclusion-exclusion principle''\n          $\\rightarrow$ Definitions 4.14--4.16"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "definition",
+    "title": "Definition 4.17 --- Sequence",
+    "content": "A sequence is a function from a subset of the integers\n(usually $\\{0,1,2,\\ldots\\}$ or $\\{1,2,3,\\ldots\\}$) to a set $S$.\n\nWe write the sequence as $\\{a_n\\}$ and call $a_n$ the\n$n$th term.\n\nCommon sequence types:\n| Type | Formula | First terms |\n|---|---|---|\n| Explicit (closed form) | $a_n = f(n)$ | $a_n=2^{n-1}$: 1,2,4,8,16\\ldots |\n| Arithmetic | $a_n = a_0 + nd$ | $d=3,\\,a_0=2$: 2,5,8,11\\ldots |\n| Geometric | $a_n = a_0 \\cdot r^n$ | $r=3,\\,a_0=2$: 2,6,18,54\\ldots |\n| Recurrence | $a_n$ from earlier terms | $F_n=F_{n-1}+F_{n-2}$: 1,1,2,3,5\\ldots |\n\nPast Paper: 2020 Q1(viii), 2022 Q1(xi)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "example",
+    "title": "Example 1: Sequence Terms--- Past Paper 2020 Q1(viii) \\& 2022 Q1(xi)",
+    "content": "(a) [2020 Q1(viii)] What is $a_8$ of the sequence $\\{a_n\\}$\nwhere $a_n = 2^{n-1}$?\n\n(b) [2022 Q1(xi)] What are $a_1$ and $a_3$ of the sequence\n$\\{a_n\\}$ where $a_n = \\lfloor n/2 \\rfloor + \\lceil n/2 \\rceil$?\n\n(c) Find the first five terms of $a_n = 3n-2$ and\n$b_n = (-1)^n \\cdot n$.\n\nSolution:\n\n(a) Substitute $n=8$:\n\\[\n    a_8 = 2^{8-1} = 2^7 = \\boxed{128}\n\\]\n\n(b) $\\lfloor n/2 \\rfloor + \\lceil n/2 \\rceil = n$ for all\npositive integers (floor and ceiling of $n/2$ always sum to $n$).\n\n$a_1 = \\lfloor 1/2 \\rfloor + \\lceil 1/2 \\rceil = 0 + 1 = \\boxed{1}$\n\n$a_3 = \\lfloor 3/2 \\rfloor + \\lceil 3/2 \\rceil = 1 + 2 = \\boxed{3}$\n\n(c)\n| $n$ | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| $a_n = 3n-2$ | 1 | 4 | 7 | 10 | 13 |\n| $b_n = (-1)^n n$ | $-1$ | $2$ | $-3$ | $4$ | $-5$ |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "definition",
+    "title": "Definition 4.18 --- Recurrence Relation",
+    "content": "A recurrence relation for $\\{a_n\\}$ is an equation that\nexpresses $a_n$ in terms of one or more previous terms\n$a_{n-1}, a_{n-2}, \\ldots$\n\nTogether with initial conditions (values for the first\nterms), a recurrence relation uniquely determines the\nentire sequence.\n\nStandard types and closed-form solutions:\n| Recurrence | Type | Closed form |\n|---|---|---|\n| $a_n = a_{n-1} + d$ | Arithmetic | $a_n = a_0 + nd$ |\n| $a_n = r \\cdot a_{n-1}$ | Geometric | $a_n = a_0 \\cdot r^n$ |\n| $a_n = a_{n-1} + a_{n-2}$ | Fibonacci | No simple closed form |\n\nPast Paper: 2020 Q6(a)(b), 2023 Q1(xi)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "example",
+    "title": "Example 2: Recurrence Relations --- Past Paper 2020 Q6(a)(b)",
+    "content": "(a) [2020 Q6(a)] Let $\\{a_n\\}$ satisfy\n$a_n = a_{n-1} + 3$ for $n=1,2,3,\\ldots$ with $a_0 = 2$.\nFind $a_1$, $a_2$, $a_3$.\n\n(b) [2020 Q6(b)] Solve $a_k = 3\\,a_{k-1}$ for $k=1,2,3,\\ldots$\nwith $a_0 = 2$.\n\nSolution:\n\n(a) Apply the recurrence step by step:\n\n$a_1 = a_0 + 3 = 2 + 3 = \\boxed{5}$\n\n$a_2 = a_1 + 3 = 5 + 3 = \\boxed{8}$\n\n$a_3 = a_2 + 3 = 8 + 3 = \\boxed{11}$\n\nThis is an arithmetic sequence with $d=3$.\n\nClosed form: $a_n = a_0 + nd = 2 + 3n$.\n\nVerify: $a_3 = 2+3(3) = 11$ ✓\n\n(b) This is a geometric recurrence with ratio $r=3$.\n\nThe general solution is:\n\\[\n    a_k = a_0 \\cdot r^k = 2 \\cdot 3^k\n\\]\n\n| $k$ | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| $a_k = 2\\cdot3^k$ | 2 | 6 | 18 | 54 | 162 |\n\nVerify: $a_1 = 3a_0 = 3\\times2 = 6$ ✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "definition",
+    "title": "Definition 4.19 --- Summation Notation",
+    "content": "The summation notation:\n\\[\n    \\sum_{j=m}^{n} a_j\n    = a_m + a_{m+1} + \\cdots + a_n\n\\]\nwhere $j$ is the index, $m$ is the lower limit,\n$n$ is the upper limit.\n\nClosed-form formulas (memorise these):\n| Summation | Closed Form |\n|---|---|\n| $\\displaystyle\\sum_{j=1}^{n} j$ | $\\dfrac{n(n+1)}{2}$ |\n| [8pt] $\\displaystyle\\sum_{j=1}^{n} j^2$ | $\\dfrac{n(n+1)(2n+1)}{6}$ |\n| [8pt] $\\displaystyle\\sum_{j=1}^{n} j^3$ | $\\left[\\dfrac{n(n+1)}{2}\\right]^2$ |\n| [8pt] $\\displaystyle\\sum_{j=0}^{n} r^j$ | $\\dfrac{r^{n+1}-1}{r-1}$ \\quad ($r\\neq1$) |\n| [8pt] $\\displaystyle\\sum_{j=1}^{n} c$ | $cn$ |\n\nPast Paper: 2020 Q1(xvi) ---\n``Evaluate $\\sum_{j=1}^{5} j^2$.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "example",
+    "title": "Example 3: Evaluating Summations --- Past Paper 2020 Q1(xvi)",
+    "content": "(a) [2020 Q1(xvi)] Evaluate $\\displaystyle\\sum_{j=1}^{5} j^2$.\n\n(b) Evaluate $\\displaystyle\\sum_{j=1}^{100} j$.\n\n(c) Evaluate $\\displaystyle\\sum_{j=0}^{4} 3^j$.\n\n(d) Evaluate $\\displaystyle\\sum_{j=1}^{5}(2j+1)$.\n\nSolution:\n\n(a) Formula with $n=5$:\n\\[\n    \\sum_{j=1}^{5} j^2\n    = \\frac{5\\times6\\times11}{6}\n    = \\frac{330}{6} = \\boxed{55}\n\\]\nVerify: $1+4+9+16+25=55$ ✓\n\n(b)\n\\[\n    \\sum_{j=1}^{100} j = \\frac{100\\times101}{2} = \\boxed{5050}\n\\]\n\n(c) Geometric series, $r=3$, indices $j=0$ to $4$:\n\\[\n    \\sum_{j=0}^{4} 3^j\n    = \\frac{3^5-1}{3-1}\n    = \\frac{242}{2} = \\boxed{121}\n\\]\nVerify: $1+3+9+27+81=121$ ✓\n\n(d) Split using linearity:\n\\[\n    \\sum_{j=1}^{5}(2j+1)\n    = 2\\sum_{j=1}^{5}j + \\sum_{j=1}^{5}1\n    = 2\\cdot\\frac{5\\times6}{2} + 5\n    = 30 + 5 = \\boxed{35}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "definition",
+    "title": "Definition 4.20 --- Recursive Algorithms",
+    "content": "A recursive algorithm solves a problem by reducing it to\nsmaller instances of the same problem.\n\nTwo required components:\n\n- Base case: simplest input, solved directly with no\n          recursion.\n- Recursive case: solution expressed in terms of the\n          same algorithm on a smaller input.\n\nTemplate:\n\\begin{verbatim}\nALGORITHM name(input):\n    if base case:\n        return base value\n    else:\n        return f( name(smaller input) )\n\\end{verbatim}\n\nKey insight: Tracing a recursive call has two phases:\n\n1. Descent: each call reduces the problem, printing or\n          computing on the way down.\n2. Ascent: as calls return, further actions happen on\n          the way back up.\n\nPast Paper: 2023 Q5 ---\n``Write a recursive algorithm for PATTERN.''"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "example",
+    "title": "Example 4: Sum Recurrence \\& Fibonacci --- Past Paper 2023 Q1(xi)",
+    "content": "(a) [2023 Q1(xi)] Define the recurrence relation for the sum\nof the first 5 integers and evaluate it.\n\n(b) Write a recurrence for $n!$ and compute $5!$.\n\n(c) Find $F_3$ through $F_8$ for the Fibonacci sequence\n$F_n = F_{n-1}+F_{n-2}$, $F_1=1$, $F_2=1$.\n\nSolution:\n\n(a) Let $S_n$ = sum of first $n$ positive integers.\n\nRecurrence: $S_n = S_{n-1} + n$, \\quad $S_1 = 1$.\n\n$S_1=1,\\quad S_2=3,\\quad S_3=6,\\quad S_4=10,\\quad\nS_5 = S_4+5 = 10+5 = \\boxed{15}$\n\nClosed form check: $\\dfrac{5\\times6}{2} = 15$\n✓\n\n(b) Recurrence: $n! = n\\times(n-1)!$, \\quad $0!=1$.\n\n$1!=1,\\ 2!=2,\\ 3!=6,\\ 4!=24,\\ 5!=5\\times24=\\boxed{120}$\n\n(c)\n| $n$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |\n|---|---|---|---|---|---|---|---|---|\n| $F_n$ | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "example",
+    "title": "Example 5: Recursive PATTERN Algorithm --- Past Paper 2023 Q5",
+    "content": "Write a recursive algorithm such that:\n\n\\textsc{Pattern}$(1,\\,5)$ produces: $5,\\;4,\\;3,\\;2,\\;1,\\;2,\\;3,\\;4,\\;5$\n\n\\textsc{Pattern}$(17,\\,20)$ produces: $20,\\;19,\\;18,\\;17,\\;18,\\;19,\\;20$\n\nAnalysis:\n\nThe output counts down from $high$ to $low$, then back\nup from $low+1$ to $high$.\n\nThis is achieved by printing $high$ before the recursive\ncall (descent) and then printing $high$ again after the call\nreturns (ascent).\n\nAlgorithm:\n\n\\begin{verbatim}\nALGORITHM Pattern(low, high):\n    print high\n    if high > low:\n        Pattern(low, high - 1)\n        print high\n\\end{verbatim}\n\nCall trace for Pattern(1, 5):\n\n| Call | Output |\n|---|---|\n| Pattern(1,5): print 5; recurse $\\to$ | 5 |\n| \\quad Pattern(1,4): print 4; recurse $\\to$ | 4 |\n| \\quad\\quad Pattern(1,3): print 3; recurse $\\to$ | 3 |\n| \\quad\\quad\\quad Pattern(1,2): print 2; recurse $\\to$ | 2 |\n| \\quad\\quad\\quad\\quad Pattern(1,1): print 1; base case | 1 |\n| \\quad\\quad\\quad Pattern(1,2) returns: print 2 | 2 |\n| \\quad\\quad Pattern(1,3) returns: print 3 | 3 |\n| \\quad Pattern(1,4) returns: print 4 | 4 |\n| Pattern(1,5) returns: print 5 | 5 |\n\nFull output: $5,4,3,2,1,2,3,4,5$ ✓\n\nPattern(17,20) trace: prints $20,19,18,17$ on descent;\n$18,19,20$ on ascent. ✓\n\nRecurrence for number of print statements:\n\nLet $T(n)$ where $n = high - low$.\n\n$T(0) = 1$ (base: print once). $\\quad T(n) = T(n-1)+2$.\n\nSolution: $T(n) = 2n+1$.\n\nPattern(1,5): $n=4 \\Rightarrow T(4)=9$ prints.\nCount: $5,4,3,2,1,2,3,4,5$ = 9 ✓\n\n\\smallFigure 4.5: Three core sequence types ---\narithmetic (constant difference), geometric (constant ratio), recursive\n(defined by previous terms)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Sequences, Series and Summations",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 4.5 Summary --- Sequences,",
+    "content": "Section 4.5 Summary ---\nSequences, Series \\& Summations\n\nSequence Closed Forms:\n| Type | Recurrence | Closed Form |\n|---|---|---|\n| Arithmetic | $a_n = a_{n-1}+d$ | $a_n = a_0 + nd$ |\n| Geometric | $a_n = r\\,a_{n-1}$ | $a_n = a_0 \\cdot r^n$ |\n| Sum $1\\ldots n$ | $S_n = S_{n-1}+n$ | $\\dfrac{n(n+1)}{2}$ |\n\nKey Summation Formulas:\n\\[\n    \\sum_{j=1}^{n}j = \\frac{n(n+1)}{2}\n    \\qquad\n    \\sum_{j=1}^{n}j^2 = \\frac{n(n+1)(2n+1)}{6}\n    \\qquad\n    \\sum_{j=0}^{n}r^j = \\frac{r^{n+1}-1}{r-1}\n\\]\n\nRecursive Algorithm:\n\n- Base case: handle simplest input directly.\n- Recursive case: reduce and call self on smaller input.\n- Trace by following descent (print before call) then ascent\n          (print after call returns).\n\nPast Paper Connection:\n\n- 2020 Q1(viii): $a_8=128$ for $a_n=2^{n-1}$\n          $\\rightarrow$ Example 1(a)\n- 2020 Q1(xvi): $\\sum_{j=1}^{5}j^2=55$\n          $\\rightarrow$ Example 3(a)\n- 2020 Q6(a): $a_n=a_{n-1}+3$, find $a_1,a_2,a_3$\n          $\\rightarrow$ Example 2(a)\n- 2020 Q6(b): Solve $a_k=3a_{k-1}$, $a_0=2$\n          $\\rightarrow$ Example 2(b)\n- 2022 Q1(xi): $a_1=1$, $a_3=3$\n          $\\rightarrow$ Example 1(b)\n- 2023 Q1(xi): Recurrence for sum of first 5 integers\n          $\\rightarrow$ Example 4(a)\n- 2023 Q5: Recursive PATTERN algorithm with call trace\n          $\\rightarrow$ Example 5"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 0",
+    "content": "State the Product Rule and the Sum Rule of counting. Give one example\nof each.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "A car number plate is formed by 4 digits chosen from $\\{1,2,\\ldots,9\\}$\nfollowed by 3 letters from the 26-letter alphabet.\nNeither digits nor letters may be repeated.\nHow many distinct number plates are possible?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "How many license plates can be made using either:\n\n1. two uppercase English letters followed by four digits, or\n2. two digits followed by four uppercase English letters?\n\nRepetition is allowed. Use the sum rule to combine the two cases.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "A student must choose one elective from List A (6 courses) or\nList B (4 courses). No course appears on both lists.\nHow many choices does the student have?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "How many 4-digit PIN codes (digits 0--9) are possible if:\n\n1. repetition is allowed?\n2. no digit may be repeated?\n3. the PIN must begin with 0?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "A graph has 10 vertices each of degree 6.\n\n1. State the Handshaking Lemma.\n2. How many edges does the graph have?\n3. How many edges does a graph with 8 vertices each of degree 4\n          have?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "How many 4-character strings can be formed from the lowercase\nletters a--z and digits 0--9 if:\n\n1. repetition is allowed?\n2. repetition is not allowed?\n3. the string must contain at least one digit? (Use the\n          subtraction rule.)\n\n\\end{enumerate}\n\n\\begin{enumerate}[label=Q\\arabic*., leftmargin=2.5em,\n                  itemsep=0.2cm, start=8]\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "Write the formulas for $P(n,r)$ and $\\binom{n}{r}$ and state clearly\nwhen each is used. Explain the relationship $P(n,r) = \\binom{n}{r}\\times r!$\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "How many permutations of the letters ABCDEFG contain the\nfollowing strings?\n\n1. BCD\n2. CFGA\n3. BA and GF\n4. ABC and DE\n5. ABC and CDE\n6. CBA and BED\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "1. In how many ways can 8 runners finish a race if we only\n          record the gold, silver, and bronze medal positions?\n2. A committee of 4 is chosen from 11 people. How many\n          committees are possible?\n3. How many 5-card hands can be dealt from a 52-card deck?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "A class has 15 boys and 10 girls.\n\n1. How many committees of 5 contain exactly 3 boys and 2 girls?\n2. How many committees of 5 contain at least 1 girl?\n3. How many committees of 5 contain at most 1 boy?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "1. How many distinct arrangements are there of the letters in\n          the word MISSISSIPPI?\n2. How many distinct arrangements of AABBCC begin\n          with A?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "From the 26-letter alphabet, how many 3-letter codes are possible if:\n\n1. order matters and no repetition?\n2. order does not matter and no repetition?\n3. Compare the two answers and explain the ratio.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "Evaluate the following without a calculator:\n\n1. $P(7, 3)$\n2. $\\binom{8}{3}$\n3. $\\binom{10}{7}$\n4. $P(5,5)$\n\n\\end{enumerate}\n\n\\begin{enumerate}[label=Q\\arabic*., leftmargin=2.5em,\n                  itemsep=0.2cm, start=15]\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "State both the basic and the generalised forms of the Pigeonhole\nPrinciple. Give a concrete example of each.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 15",
+    "content": "Show that among any 11 integers, at least two must have the\nsame last digit. Clearly identify the objects and the boxes.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 16",
+    "content": "$N+1$ integers are chosen at random from the set\n$\\{1, 2, 3, \\ldots, 2N\\}$.\n\n1. Define the $N$ pairs (boxes) used in the proof.\n2. Prove that at least 2 of the chosen integers must be\n          consecutive (differ by exactly 1).\n3. Verify your proof with a concrete example using $N=5$.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 17",
+    "content": "How many people must be present in a room to guarantee that at least:\n\n1. 2 share the same birth month?\n2. 3 share the same birth month?\n3. 4 share the same birth month?\n\nUse the formula $n \\geq k(r-1)+1$.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 18",
+    "content": "1. Show that among any 5 integers, at least 2 have the same\n          remainder when divided by 4.\n2. Show that among any 10 integers, at least 2 have a difference\n          divisible by 9.\n3. How many cards must be drawn from a standard 52-card deck to\n          guarantee at least 3 cards of the same suit?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 19",
+    "content": "Among any 100 people:\n\n1. At least how many must share the same birth month?\n2. At least how many must share the same birth day of the week?\n3. From $\\{1, 2, \\ldots, 100\\}$, how many integers must be\n          chosen to guarantee that two of them sum to 101?\n\n\\end{enumerate}\n\n\\begin{enumerate}[label=Q\\arabic*., leftmargin=2.5em,\n                  itemsep=0.2cm, start=20]\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 20",
+    "content": "State the Inclusion-Exclusion Principle for:\n\n1. two sets $A$ and $B$.\n2. three sets $A$, $B$, and $C$.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 21",
+    "content": "In a class of 60 students, 35 study Mathematics, 30 study Physics,\nand 18 study both.\n\n1. How many study at least one of these subjects?\n2. How many study neither?\n3. How many study exactly one subject?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 22",
+    "content": "How many integers from 1 to 200 are divisible by 2 or by 3?\nState clearly which formula you are applying at each step.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 23",
+    "content": "In a survey of 150 people:\n\n- 80 like Cricket (C), 70 like Football (F), 60 like Hockey (H)\n- 35 like C and F, 25 like C and H, 20 like F and H\n- 10 like all three\n\n1. How many like at least one sport?\n2. How many like none of the three sports?\n3. How many like exactly two sports?\n4. How many like exactly one sport?\n5. Verify your answers sum correctly.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 24",
+    "content": "How many integers from 1 to 1000 are not divisible by 3,\n5, or 7? Show all steps using Inclusion-Exclusion.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 25",
+    "content": "A 4-digit password uses digits 0--9 (repetition allowed). How many\npasswords contain at least one each of the digits 2, 4, and 6?\nUse the Inclusion-Exclusion Principle with complementary counting.\n\n\\end{enumerate}\n\n\\begin{enumerate}[label=Q\\arabic*., leftmargin=2.5em,\n                  itemsep=0.2cm, start=25]\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 26",
+    "content": "For the sequence $\\{a_n\\}$ where $a_n = 2^{n-1}$:\n\n1. Find $a_1$, $a_4$, and $a_8$.\n2. What type of sequence is this?\n3. Write the recurrence relation that generates this sequence.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 27",
+    "content": "Find $a_1$ and $a_3$ for the sequence $\\{a_n\\}$ where\n$a_n = \\lfloor n/2 \\rfloor + \\lceil n/2 \\rceil$.\nWhat is the pattern? Write a closed-form expression for $a_n$.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 28",
+    "content": "Let $\\{a_n\\}$ satisfy the recurrence relation\n$a_n = a_{n-1} + 3$ for $n = 1, 2, 3, \\ldots$ with $a_0 = 2$.\n\n1. Find $a_1$, $a_2$, $a_3$, and $a_{10}$.\n2. Identify the type of sequence and state the common\n          difference.\n3. Write the closed-form formula for $a_n$.\n4. Verify your formula for $a_3$ and $a_{10}$.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 29",
+    "content": "Solve the recurrence relation $a_k = 3\\,a_{k-1}$ for\n$k = 1, 2, 3, \\ldots$ with initial condition $a_0 = 2$.\n\n1. Write the first five terms.\n2. State the general (closed-form) solution.\n3. Verify that your solution satisfies both the recurrence and\n          the initial condition.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 30",
+    "content": "Evaluate each of the following summations. Show the formula used.\n\n1. $\\displaystyle\\sum_{j=1}^{5} j^2$\n2. $\\displaystyle\\sum_{j=1}^{50} j$\n3. $\\displaystyle\\sum_{j=0}^{5} 2^j$\n4. $\\displaystyle\\sum_{j=1}^{4}(3j - 1)$\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 31",
+    "content": "Define the recurrence relation for the sum of the first $n$\npositive integers. Evaluate it step by step for $n = 1, 2, 3, 4, 5$.\nVerify using the closed-form formula $S_n = \\dfrac{n(n+1)}{2}$.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 32",
+    "content": "The Fibonacci sequence is defined by $F_n = F_{n-1} + F_{n-2}$ with\n$F_1 = 1$ and $F_2 = 1$.\n\n1. Find $F_3$ through $F_{10}$.\n2. What type of recurrence is this (order and linearity)?\n3. Compute $\\displaystyle\\sum_{k=1}^{6} F_k$ and compare to $F_8 - 1$.\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 33",
+    "content": "Write a recursive algorithm such that:\n\n- \\textsc{Pattern}$(1, 5)$ produces:\n          $5,\\;4,\\;3,\\;2,\\;1,\\;2,\\;3,\\;4,\\;5$\n- \\textsc{Pattern}$(17, 20)$ produces:\n          $20,\\;19,\\;18,\\;17,\\;18,\\;19,\\;20$\n\n1. Identify the base case and the recursive case.\n2. Write the complete algorithm in pseudocode.\n3. Trace your algorithm for \\textsc{Pattern}$(3, 6)$ and list\n          the output.\n4. Write the recurrence relation $T(n)$ for the number of print\n          statements, where $n = high - low$. Solve it.\n\n\\end{enumerate}\n\n\\begin{enumerate}[label=Q\\arabic*., leftmargin=2.5em,\n                  itemsep=0.2cm, start=32]\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 34",
+    "content": "1. A restaurant menu has 5 starters, 8 main courses, and\n          4 desserts. How many 3-course meals are possible?\n2. If a customer must pick exactly 2 courses (any combination\n          of starter, main, or dessert), how many choices are there?\n3. How many ways can a group of 4 be seated at a round table?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 35",
+    "content": "A bag contains 6 red, 5 blue, and 4 green balls.\n\n1. How many ways can 3 balls be chosen?\n2. How many ways can 3 balls be chosen if all must be the same\n          colour?\n3. How many ways can 3 balls be chosen if at least one must be\n          red?\n4. How many ways if exactly 2 colours are represented?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 36",
+    "content": "Show that among any group of 27 English words (formed from the\n26-letter alphabet), at least 2 words begin with the same letter.\nGeneralise: how many words guarantee at least 3 share the same\nfirst letter?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 37",
+    "content": "In a university, 200 students are enrolled. 120 take Calculus,\n90 take Linear Algebra, 80 take Statistics, 50 take both Calculus\nand Linear Algebra, 40 take both Calculus and Statistics, 30 take\nboth Linear Algebra and Statistics, and 20 take all three.\n\n1. How many students take at least one of these courses?\n2. How many take none of the three?\n3. How many take exactly two courses?\n4. How many take exactly one course?\n\n\\item"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 4 - Basic Counting Principles",
+    "section": "Practice Exercises",
+    "type": "practice_problem",
+    "title": "Practice Problem 38",
+    "content": "Consider the sequence $a_n = 5 \\cdot 2^n - 3$.\n\n1. Find $a_0$, $a_1$, $a_2$, $a_3$.\n2. Show that this sequence satisfies the recurrence\n          $a_n = 2a_{n-1} + 3$.\n3. Evaluate $\\displaystyle\\sum_{n=0}^{4} a_n$.\n\n\\end{enumerate}"
+  }
+]

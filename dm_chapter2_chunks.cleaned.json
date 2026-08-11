@@ -1,0 +1,546 @@
+[
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "definition",
+    "title": "Definition 2.1 --- Set",
+    "content": "A set is an unordered collection of distinct objects, called the\nelements (or members) of the set.\n\nNotation:\n\n- Sets are denoted by capital letters: $A, B, C, S, \\ldots$\n- Elements are denoted by lowercase letters: $a, b, x, y, \\ldots$\n- $a \\in A$ means ``$a$ is an element of $A$'' (read: ``$a$ is in $A$'')\n- $a \\notin A$ means ``$a$ is not an element of $A$''\n- Sets are unordered: $\\{1,2,3\\} = \\{3,1,2\\} = \\{2,3,1\\}$\n- Elements are distinct: $\\{1,1,2\\}$ is the same set as $\\{1,2\\}$"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "definition",
+    "title": "Definition 2.2 --- Three Ways to Describe a Set",
+    "content": "1. Roster (Enumeration) Method: List all elements explicitly inside braces.\n\\[\n    A = \\{1,\\, 2,\\, 3,\\, 4,\\, 5\\}\n\\]\n\n2. Set-Builder (Predicate) Notation: Describe elements by a property $P(x)$.\n\\[\n    A = \\{x \\mid P(x)\\} \\quad \\text{or} \\quad A = \\{x : P(x)\\}\n\\]\nRead: ``the set of all $x$ such that $P(x)$ is true.''\n\n3. Verbal Description: Describe in plain words, e.g.\\\n``the set of all even positive integers less than 10.''\n\nStandard Number Sets:\n| Symbol | Name | Elements |\n|---|---|---|\n| $\\mathbb{N}$ | Natural numbers | $\\{0, 1, 2, 3, \\ldots\\}$ |\n| $\\mathbb{Z}$ | Integers | $\\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$ |\n| $\\mathbb{Z}^+$ | Positive integers | $\\{1, 2, 3, \\ldots\\}$ |\n| $\\mathbb{Q}$ | Rational numbers | $\\{p/q \\mid p,q \\in \\mathbb{Z},\\, q \\neq 0\\}$ |\n| $\\mathbb{R}$ | Real numbers | All points on the number line |\n| $\\mathbb{C}$ | Complex numbers | $\\{a + bi \\mid a,b \\in \\mathbb{R}\\}$ |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "example",
+    "title": "Example 1: Describing Sets in Multiple Ways",
+    "content": "Let $A$ be the set of odd positive integers less than 10.\n\nSolution:\n\nRoster method:\n\\[\n    A = \\{1,\\, 3,\\, 5,\\, 7,\\, 9\\}\n\\]\n\nSet-builder notation:\n\\[\n    A = \\{x \\in \\mathbb{Z}^+ \\mid x \\text{ is odd and } x < 10\\}\n\\]\nor equivalently:\n\\[\n    A = \\{x \\mid x = 2k-1,\\; k \\in \\mathbb{Z}^+,\\; x < 10\\}\n\\]\n\nCardinality: $|A| = 5$ \\quad (the set has 5 elements)\n\nMembership checks:\n\n- $3 \\in A$ \\hfill ✓\\ True\n- $4 \\in A$ \\hfill $\\times$\\ False\n- $11 \\in A$ \\hfill $\\times$\\ False (11 is not less than 10)\n\n(Past Paper 2022 Q1(viii) directly asks: ``Let $A$ be the set of odd positive\nintegers less than 10. Then $|A| = ?$'' Answer: $|A| = 5$.)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "definition",
+    "title": "Definition 2.3 --- Special Sets",
+    "content": "Empty Set: The set with no elements, written $\\emptyset$ or $\\{\\}$.\n\\[\n    \\emptyset = \\{\\} \\qquad |\\emptyset| = 0\n\\]\n\nUniversal Set: The set $U$ containing all objects under consideration\nin a particular context (the ``universe of discourse'').\n\nSingleton Set: A set with exactly one element, e.g.\\ $\\{5\\}$ or $\\{\\emptyset\\}$.\n\nCritical Warning:\n\n- $\\emptyset \\neq \\{\\emptyset\\}$ --- the empty set has 0 elements;\n          the set $\\{\\emptyset\\}$ has 1 element (the empty set itself).\n- $0 \\neq \\emptyset$ --- zero is a number, not a set.\n- $\\{0\\} \\neq \\emptyset$ --- $\\{0\\}$ is a set containing the number zero."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "definition",
+    "title": "Definition 2.4 --- Subset and Proper Subset",
+    "content": "Set $A$ is a subset of set $B$, written $A \\subseteq B$, if every element\nof $A$ is also an element of $B$:\n\\[\n    A \\subseteq B \\iff \\forall x\\,(x \\in A \\rightarrow x \\in B)\n\\]\n\nSet $A$ is a proper subset of $B$, written $A \\subset B$ (or $A \\subsetneq B$),\nif $A \\subseteq B$ and $A \\neq B$ (i.e., $B$ has at least one element not in $A$).\n\nKey Properties:\n\n- $\\emptyset \\subseteq A$ for every set $A$\n          (the empty set is a subset of every set).\n- $A \\subseteq A$ for every set $A$ (every set is a subset of itself).\n- $A = B \\iff (A \\subseteq B) \\land (B \\subseteq A)$\n- If $A \\subseteq B$ and $B \\subseteq C$, then $A \\subseteq C$ (transitivity).\n- $A \\not\\subseteq B$ means $\\exists x\\,(x \\in A \\land x \\notin B)$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "example",
+    "title": "Example 2: Identifying Subsets",
+    "content": "Let $A = \\{1, 2\\}$, $B = \\{1, 2, 3\\}$, $C = \\{2, 3, 4\\}$, $D = \\{1, 2\\}$.\n\nDetermine which of the following are true:\n\n1. $A \\subseteq B$\n2. $B \\subseteq A$\n3. $A \\subset D$\n4. $A = D$\n5. $\\emptyset \\subseteq A$\n6. $A \\subseteq C$\n\nSolution:\n\n| Statement | Reasoning | True/False |\n|---|---|---|\n| $A \\subseteq B$ | $1 \\in B$ and $2 \\in B$, so every element of $A$ is in $B$ | ✓\\ True |\n| $B \\subseteq A$ | $3 \\in B$ but $3 \\notin A$, so $B \\not\\subseteq A$ | $\\times$\\ False |\n| $A \\subset D$ | $A \\subseteq D$ but $A = D$ (not proper) | $\\times$\\ False |\n| $A = D$ | Both contain exactly $\\{1,2\\}$ | ✓\\ True |\n| $\\emptyset \\subseteq A$ | Empty set is subset of every set | ✓\\ True |\n| $A \\subseteq C$ | $1 \\in A$ but $1 \\notin C$ | $\\times$\\ False |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "definition",
+    "title": "Definition 2.5 --- Cardinality",
+    "content": "The cardinality of a set $A$, written $|A|$ or $\\#A$, is the\nnumber of distinct elements in $A$.\n\n| Set | Cardinality |\n|---|---|\n| $\\emptyset$ | $0$ |\n| $\\{a, b, c\\}$ | $3$ |\n| $\\{1, 1, 2, 3\\}$ | $3$ \\quad (duplicates don't count) |\n| $\\{\\emptyset\\}$ | $1$ |\n| $\\{\\emptyset, \\{1\\}, \\{1,2\\}\\}$ | $3$ |\n\nA set is called finite if its cardinality is a non-negative integer.\nOtherwise it is infinite (e.g.\\ $\\mathbb{Z}$, $\\mathbb{R}$)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "definition",
+    "title": "Definition 2.6 --- Power Set",
+    "content": "The power set of a set $A$, written $\\mathcal{P}(A)$ or $2^A$,\nis the set of all subsets of $A$, including $\\emptyset$ and $A$ itself.\n\\[\n    \\mathcal{P}(A) = \\{S \\mid S \\subseteq A\\}\n\\]\n\nKey Formula:\n\\[\n    \\text{If } |A| = n, \\text{ then } |\\mathcal{P}(A)| = 2^n\n\\]\n\nWhy $2^n$? Each element of $A$ is\neither included or excluded from a subset --- 2 choices per element,\n$n$ elements, so $2 \\times 2 \\times \\cdots \\times 2 = 2^n$ subsets in total."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "theorem",
+    "title": "Theorem 2.1 --- Cardinality of the Power Set",
+    "content": "If $A$ is a finite set with $|A| = n$, then:\n\\[\n    |\\mathcal{P}(A)| = 2^n\n\\]\nIn particular, $|\\mathcal{P}(\\emptyset)| = 2^0 = 1$,\nsince $\\mathcal{P}(\\emptyset) = \\{\\emptyset\\}$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "example",
+    "title": "Example 3: Power Set --- Past Paper 2020 Q1(xi)",
+    "content": "Find the power set of $A = \\{1, 3, 5\\}$.\n\nSolution:\n\n$|A| = 3$, so $|\\mathcal{P}(A)| = 2^3 = 8$ subsets.\n\nSystematic enumeration (by number of elements in each subset):\n\n| Subset Size | Subsets |\n|---|---|\n| 0 elements | $\\emptyset$ |\n| 1 element | $\\{1\\},\\quad \\{3\\},\\quad \\{5\\}$ |\n| 2 elements | $\\{1,3\\},\\quad \\{1,5\\},\\quad \\{3,5\\}$ |\n| 3 elements | $\\{1,3,5\\}$ |\n\nTherefore:\n\\[\n    \\boxed{\\mathcal{P}(A) = \\bigl\\{\\,\\emptyset,\\; \\{1\\},\\; \\{3\\},\\; \\{5\\},\\;\n    \\{1,3\\},\\; \\{1,5\\},\\; \\{3,5\\},\\; \\{1,3,5\\}\\,\\bigr\\}}\n\\]\n\nVerification: $|\\mathcal{P}(A)| = 8 = 2^3$ ✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "example",
+    "title": "Example 4: Power Set of the Empty Set --- Past Paper 2022 Q1(x)",
+    "content": "What is the power set of the empty set $\\emptyset$?\n\nSolution:\n\n$|\\emptyset| = 0$, so $|\\mathcal{P}(\\emptyset)| = 2^0 = 1$.\n\nThe only subset of the empty set is the empty set itself.\n\\[\n    \\boxed{\\mathcal{P}(\\emptyset) = \\{\\emptyset\\}}\n\\]\n\nCommon Mistake: Students often write\n$\\mathcal{P}(\\emptyset) = \\emptyset$ (the empty set). This is wrong.\n$\\mathcal{P}(\\emptyset)$ is not empty --- it contains one element:\nthe empty set. Always remember:\n\\[\n    |\\mathcal{P}(\\emptyset)| = 2^0 = 1 \\neq 0\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "definition",
+    "title": "Definition 2.7 --- Ordered Pair and Cartesian Product",
+    "content": "An ordered pair $(a, b)$ is a pair of elements where order matters:\n$(a,b) \\neq (b,a)$ in general.\n\nThe Cartesian product of sets $A$ and $B$, written $A \\times B$,\nis the set of all ordered pairs $(a,b)$ where $a \\in A$ and $b \\in B$:\n\\[\n    A \\times B = \\{(a,b) \\mid a \\in A \\text{ and } b \\in B\\}\n\\]\n\nCardinality: $|A \\times B| = |A| \\cdot |B|$\n\nExample: If $A = \\{1,2\\}$ and $B = \\{x, y\\}$ then:\n\\[\n    A \\times B = \\{(1,x),\\,(1,y),\\,(2,x),\\,(2,y)\\}\n    \\qquad |A \\times B| = 4\n\\]\n\nNote: $A \\times B \\neq B \\times A$ in general\n(order of pairs is reversed)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "example",
+    "title": "Example 5: Cartesian Product and Subsets",
+    "content": "Let $A = \\{0, 1\\}$ and $B = \\{a, b, c\\}$.\n\n1. Find $A \\times B$.\n2. Find $B \\times A$.\n3. Is $A \\times B = B \\times A$?\n4. How many subsets does $A \\times B$ have?\n\nSolution:\n\n(a)\n\\[\n    A \\times B = \\{(0,a),\\,(0,b),\\,(0,c),\\,(1,a),\\,(1,b),\\,(1,c)\\}\n    \\qquad |A \\times B| = 6\n\\]\n\n(b)\n\\[\n    B \\times A = \\{(a,0),\\,(a,1),\\,(b,0),\\,(b,1),\\,(c,0),\\,(c,1)\\}\n    \\qquad |B \\times A| = 6\n\\]\n\n(c) $A \\times B \\neq B \\times A$ because, for example, $(0,a) \\in A \\times B$\nbut $(0,a) \\notin B \\times A$ (since $0 \\notin B$). Not equal.\n\n(d) $|A \\times B| = 6$, so $|\\mathcal{P}(A \\times B)| = 2^6 = \\boxed{64}$ subsets."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "example",
+    "title": "Example 6: Using Set-Builder Notation",
+    "content": "Express each set using set-builder notation, then find its cardinality:\n\n1. The set of all positive integers less than or equal to 100\n          that are divisible by both 3 and 5.\n2. The set of all real solutions to $x^2 - 5x + 6 = 0$.\n\nSolution:\n\n(a) A number is divisible by both 3 and 5 iff it is divisible by $\\text{lcm}(3,5) = 15$.\n\\[\n    A = \\{x \\in \\mathbb{Z}^+ \\mid x \\leq 100 \\text{ and } 15 \\mid x\\}\n    = \\{15, 30, 45, 60, 75, 90\\}\n\\]\n\\[\n    |A| = \\left\\lfloor \\frac{100}{15} \\right\\rfloor = 6\n\\]\n\n(b) Solve $x^2 - 5x + 6 = 0$:\n\\[\n    (x-2)(x-3) = 0 \\implies x = 2 \\text{ or } x = 3\n\\]\n\\[\n    B = \\{x \\in \\mathbb{R} \\mid x^2 - 5x + 6 = 0\\} = \\{2, 3\\}\n    \\qquad |B| = 2\n\\]\n\n\\smallFigure 2.1: The nested subset relationship between standard number sets.\n\n\\smallFigure 2.2: Power set of $\\{a,b\\}$ shown as a Hasse diagram.\n$|\\mathcal{P}(\\{a,b\\})| = 2^2 = 4$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Sets",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 2.1 Summary --- Sets,",
+    "content": "Section 2.1 Summary --- Sets, Subsets \\& Power Sets\n\nKey Facts at a Glance:\n\n| Concept | Formula / Fact |\n|---|---|\n| Cardinality | $|A|$ = number of distinct elements |\n| Subset | $A \\subseteq B \\iff \\forall x\\,(x \\in A \\rightarrow x \\in B)$ |\n| Proper subset | $A \\subset B \\iff A \\subseteq B$ and $A \\neq B$ |\n| Set equality | $A = B \\iff A \\subseteq B$ and $B \\subseteq A$ |\n| Power set size | $|\\mathcal{P}(A)| = 2^{|A|}$ |\n| Cartesian product | $|A \\times B| = |A| \\cdot |B|$ |\n| Empty set | $\\emptyset \\subseteq A$ for every set $A$ |\n| $\\mathcal{P}(\\emptyset)$ | $= \\{\\emptyset\\}$, cardinality $= 1$ |\n\nPower Set Quick Reference:\n\n| $|A|$ | $|\\mathcal{P}(A)|$ | Example |\n|---|---|---|\n| 0 | 1 | $\\mathcal{P}(\\emptyset) = \\{\\emptyset\\}$ |\n| 1 | 2 | $\\mathcal{P}(\\{x\\}) = \\{\\emptyset, \\{x\\}\\}$ |\n| 2 | 4 | $\\mathcal{P}(\\{a,b\\}) = \\{\\emptyset,\\{a\\},\\{b\\},\\{a,b\\}\\}$ |\n| 3 | 8 | $\\mathcal{P}(\\{1,3,5\\})$ has 8 subsets |\n| $n$ | $2^n$ | General formula |\n\nPast Paper Connection:\n\n- 2020 Q1(xi): Power set of $\\{1,3,5\\}$ $\\rightarrow$ Example 3\n- 2022 Q1(viii): $|A|$ where $A$ is odd integers $< 10$ $\\rightarrow$ Example 1\n- 2022 Q1(x): Power set of $\\emptyset$ $\\rightarrow$ Example 4"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "definition",
+    "title": "Definition 2.8 --- Union",
+    "content": "The union of sets $A$ and $B$, written $A \\cup B$, is the set of all\nelements that belong to $A$ or $B$ (or both):\n\\[\n    A \\cup B = \\{x \\mid x \\in A \\lor x \\in B\\}\n\\]\n\nKey Points:\n\n- $\\cup$ corresponds to the logical connective $\\lor$ (OR).\n- $A \\cup B$ always contains at least as many elements as $A$ or $B$ alone.\n- $A \\subseteq A \\cup B$ and $B \\subseteq A \\cup B$.\n- $A \\cup A = A$ \\quad (idempotent)\n- $A \\cup \\emptyset = A$ \\quad (identity)\n- $A \\cup U = U$ \\quad (domination, where $U$ is the universal set)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "definition",
+    "title": "Definition 2.9 --- Intersection",
+    "content": "The intersection of sets $A$ and $B$, written $A \\cap B$, is the set of all\nelements that belong to both $A$ and $B$:\n\\[\n    A \\cap B = \\{x \\mid x \\in A \\land x \\in B\\}\n\\]\n\nKey Points:\n\n- $\\cap$ corresponds to the logical connective $\\land$ (AND).\n- $A \\cap B \\subseteq A$ and $A \\cap B \\subseteq B$.\n- $A \\cap A = A$ \\quad (idempotent)\n- $A \\cap \\emptyset = \\emptyset$ \\quad (domination)\n- $A \\cap U = A$ \\quad (identity)\n- Two sets are disjoint if $A \\cap B = \\emptyset$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "definition",
+    "title": "Definition 2.10 --- Complement",
+    "content": "The complement of set $A$ with respect to universal set $U$,\nwritten $\\overline{A}$ or $A^c$ or $A'$, is the set of all elements\nin $U$ that are not in $A$:\n\\[\n    \\overline{A} = \\{x \\in U \\mid x \\notin A\\}\n\\]\n\nKey Properties:\n\n- $\\overline{A}$ corresponds to the logical connective $\\neg$ (NOT).\n- $\\overline{\\overline{A}} = A$ \\quad (double complement)\n- $A \\cup \\overline{A} = U$ \\quad (complement law)\n- $A \\cap \\overline{A} = \\emptyset$ \\quad (complement law)\n- $\\overline{U} = \\emptyset$ and $\\overline{\\emptyset} = U$"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "definition",
+    "title": "Definition 2.11 --- Set Difference and Symmetric Difference",
+    "content": "The set difference (or relative complement) of $B$ from $A$,\nwritten $A - B$ or $A \\setminus B$, is the set of elements in $A$ but not in $B$:\n\\[\n    A - B = \\{x \\mid x \\in A \\land x \\notin B\\} = A \\cap \\overline{B}\n\\]\n\nThe symmetric difference of $A$ and $B$, written $A \\oplus B$\n(or $A \\triangle B$), is the set of elements in exactly one of $A$ or $B$:\n\\[\n    A \\oplus B = (A - B) \\cup (B - A) = (A \\cup B) - (A \\cap B)\n\\]\n\nNote: $A \\oplus B$ in set theory corresponds to\n$p \\oplus q$ (exclusive or) in propositional logic.\nPast Paper 2023 Q1(x) asks to draw the Venn diagram for symmetric difference."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "example",
+    "title": "Example 1: Computing All Set Operations",
+    "content": "Let $U = \\{1,2,3,4,5,6,7,8\\}$, $A = \\{1,2,3,4,5\\}$, $B = \\{3,4,5,6,7\\}$.\n\nFind: (a) $A \\cup B$ \\quad (b) $A \\cap B$ \\quad (c) $\\overline{A}$\n\\quad (d) $A - B$ \\quad (e) $B - A$ \\quad (f) $A \\oplus B$\n\nSolution:\n\n(a) Union --- elements in $A$ or $B$:\n\\[\n    A \\cup B = \\{1,2,3,4,5,6,7\\}\n\\]\n\n(b) Intersection --- elements in both $A$ and $B$:\n\\[\n    A \\cap B = \\{3,4,5\\}\n\\]\n\n(c) Complement of $A$ --- elements in $U$ but not in $A$:\n\\[\n    \\overline{A} = \\{6,7,8\\}\n\\]\n\n(d) $A - B$ --- elements in $A$ but not in $B$:\n\\[\n    A - B = \\{1,2\\}\n\\]\n\n(e) $B - A$ --- elements in $B$ but not in $A$:\n\\[\n    B - A = \\{6,7\\}\n\\]\n\n(f) Symmetric difference --- elements in exactly one of $A$, $B$:\n\\[\n    A \\oplus B = (A - B) \\cup (B - A) = \\{1,2\\} \\cup \\{6,7\\} = \\{1,2,6,7\\}\n\\]\n\nVerification: $A \\oplus B = (A \\cup B) - (A \\cap B)\n= \\{1,2,3,4,5,6,7\\} - \\{3,4,5\\} = \\{1,2,6,7\\}$ ✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "definition",
+    "title": "Definition 2.12 --- De Morgan's Laws for Sets",
+    "content": "For any sets $A$, $B$ within a universal set $U$:\n\\[\n    \\overline{A \\cup B} = \\overline{A} \\cap \\overline{B}\n\\]\n\\[\n    \\overline{A \\cap B} = \\overline{A} \\cup \\overline{B}\n\\]\n\nConnection to Logic:\n\nThese are the set-theory counterparts of De Morgan's Laws for propositions\n(Section~1.3). The correspondence is:\n| Set Theory | Propositional Logic |\n|---|---|\n| $\\overline{A \\cup B} = \\overline{A} \\cap \\overline{B}$ | $\\neg(p \\lor q) \\equiv \\neg p \\land \\neg q$ |\n| $\\overline{A \\cap B} = \\overline{A} \\cup \\overline{B}$ | $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$ |\n\n(Past Paper 2024 Q1(i) directly asks: ``Define De Morgan's Law in set theory.'')"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "theorem",
+    "title": "Theorem 2.2 --- De Morgan's First Law for Sets",
+    "content": "For any sets $A$ and $B$ within universal set $U$:\n\\[\n    \\overline{A \\cup B} = \\overline{A} \\cap \\overline{B}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "proof",
+    "title": "Proof of Theorem 2.2 --- De Morgan's First Law",
+    "content": "Proof (using set-builder notation and logical equivalences):\n\nStep 1: We prove the two sets are equal by showing each is a subset of the other.\n\n($\\subseteq$) Show $\\overline{A \\cup B} \\subseteq \\overline{A} \\cap \\overline{B}$:\n\nLet $x \\in \\overline{A \\cup B}$.\n$$\\begin{align*}\n    x \\in \\overline{A \\cup B}\n    &\\implies x \\notin A \\cup B \\\\\n    &\\implies \\neg(x \\in A \\lor x \\in B) \\\\\n    &\\implies (x \\notin A) \\land (x \\notin B)\n        &&\\text{(De Morgan for logic)} \\\\\n    &\\implies x \\in \\overline{A} \\land x \\in \\overline{B} \\\\\n    &\\implies x \\in \\overline{A} \\cap \\overline{B}\n\\end{align*}$$\n\n($\\supseteq$) Show $\\overline{A} \\cap \\overline{B} \\subseteq \\overline{A \\cup B}$:\n\nLet $x \\in \\overline{A} \\cap \\overline{B}$.\n$$\\begin{align*}\n    x \\in \\overline{A} \\cap \\overline{B}\n    &\\implies x \\in \\overline{A} \\land x \\in \\overline{B} \\\\\n    &\\implies (x \\notin A) \\land (x \\notin B) \\\\\n    &\\implies \\neg(x \\in A \\lor x \\in B)\n        &&\\text{(De Morgan for logic)} \\\\\n    &\\implies x \\notin A \\cup B \\\\\n    &\\implies x \\in \\overline{A \\cup B}\n\\end{align*}$$\n\nStep 2: Conclude equality.\n\nSince $\\overline{A \\cup B} \\subseteq \\overline{A} \\cap \\overline{B}$\nand $\\overline{A} \\cap \\overline{B} \\subseteq \\overline{A \\cup B}$,\nwe have:\n\\[\n    \\overline{A \\cup B} = \\overline{A} \\cap \\overline{B} \\qed\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "example",
+    "title": "Example 2: De Morgan's Law Application --- Past Paper 2024 Q1(i)",
+    "content": "Let $U = \\{1,2,3,4,5,6,7,8,9,10\\}$, $A = \\{1,2,3,4,5\\}$, $B = \\{4,5,6,7,8\\}$.\n\nVerify De Morgan's First Law: $\\overline{A \\cup B} = \\overline{A} \\cap \\overline{B}$.\n\nSolution:\n\nLeft-hand side:\n\\[\n    A \\cup B = \\{1,2,3,4,5,6,7,8\\}\n    \\implies \\overline{A \\cup B} = \\{9,10\\}\n\\]\n\nRight-hand side:\n\\[\n    \\overline{A} = \\{6,7,8,9,10\\}, \\quad\n    \\overline{B} = \\{1,2,3,9,10\\}\n\\]\n\\[\n    \\overline{A} \\cap \\overline{B} = \\{9,10\\}\n\\]\n\nBoth sides equal $\\{9,10\\}$. De Morgan's Law verified.\n\\[\n    \\boxed{\\overline{A \\cup B} = \\overline{A} \\cap \\overline{B} = \\{9,10\\}}\n    \\quad \\textcolor{darkgreen}{\\checkmark}\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "example",
+    "title": "Example 3: Set-Builder Proof of De Morgan --- Past Paper 2022 Q6(a)",
+    "content": "Use set-builder notation and logical equivalences to establish:\n\\[\n    (A \\cap B)' = A' \\cup B'\n\\]\n\nSolution:\n\nWe prove this by showing membership equivalence:\n\n$$\\begin{align*}\n    x \\in (A \\cap B)'\n    &\\iff x \\notin A \\cap B \\\\\n    &\\iff \\neg(x \\in A \\land x \\in B) \\\\\n    &\\iff (\\neg\\, x \\in A) \\lor (\\neg\\, x \\in B)\n        &&\\text{De Morgan's Law for logic} \\\\\n    &\\iff (x \\notin A) \\lor (x \\notin B) \\\\\n    &\\iff x \\in A' \\lor x \\in B' \\\\\n    &\\iff x \\in A' \\cup B'\n\\end{align*}$$\n\nSince $x \\in (A \\cap B)'$ if and only if $x \\in A' \\cup B'$:\n\\[\n    \\boxed{(A \\cap B)' = A' \\cup B'} \\qed\n\\]"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "theorem",
+    "title": "Theorem 2.3 --- Laws of Set Theory",
+    "content": "The following identities hold for all sets $A$, $B$, $C$ within universal set $U$:\n\n| Law Name | Union Form | Intersection Form |\n|---|---|---|\n| Identity | $A \\cup \\emptyset = A$ | $A \\cap U = A$ |\n| Domination | $A \\cup U = U$ | $A \\cap \\emptyset = \\emptyset$ |\n| Idempotent | $A \\cup A = A$ | $A \\cap A = A$ |\n| Complement | $A \\cup \\overline{A} = U$ | $A \\cap \\overline{A} = \\emptyset$ |\n| Commutative | $A \\cup B = B \\cup A$ | $A \\cap B = B \\cap A$ |\n| Associative | $(A\\cup B)\\cup C = A\\cup(B\\cup C)$ | $(A\\cap B)\\cap C = A\\cap(B\\cap C)$ |\n| Distributive | $A\\cup(B\\cap C)=(A\\cup B)\\cap(A\\cup C)$ | $A\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)$ |\n| De Morgan | $\\overline{A \\cup B} = \\overline{A} \\cap \\overline{B}$ | $\\overline{A \\cap B} = \\overline{A} \\cup \\overline{B}$ |\n| Absorption | $A \\cup (A \\cap B) = A$ | $A \\cap (A \\cup B) = A$ |\n| Double Comp. | \\multicolumn{2}{c|}{$\\overline{\\overline{A}} = A$} |  |\n\nVenn Diagrams: A Venn diagram represents sets as overlapping circles\ninside a rectangle (the universal set $U$). Shaded regions indicate the result of set operations.\n\n\\smallFigure 2.3: Venn diagrams for union, intersection, complement, and set difference.\n\n\\smallFigure 2.4: Symmetric difference $A \\oplus B$ (left)\nand three-set Venn diagram with $A \\cap B \\cap C$ highlighted (right)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "example",
+    "title": "Example 4: Symmetric Difference Venn Diagram --- Past Paper 2023 Q1(x)",
+    "content": "Draw the Venn diagram for the symmetric difference of $A = \\{1,3,5\\}$ and $B = \\{1,2,3\\}$.\nAlso compute $A \\oplus B$.\n\nSolution:\n\nStep 1: Identify the regions.\n\n- $A \\cap B = \\{1,3\\}$ \\quad (in both --- not in symmetric difference)\n- $A - B = \\{5\\}$ \\quad (only in $A$ --- in symmetric difference)\n- $B - A = \\{2\\}$ \\quad (only in $B$ --- in symmetric difference)\n\nStep 2: Compute $A \\oplus B$.\n\\[\n    A \\oplus B = (A - B) \\cup (B - A) = \\{5\\} \\cup \\{2\\} = \\boxed{\\{2,5\\}}\n\\]\n\nStep 3: Venn diagram placement.\n\nThe shaded regions (only in $A$ or only in $B$) form $A \\oplus B = \\{2,5\\}$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "example",
+    "title": "Example 5: Inclusion-Exclusion Principle",
+    "content": "In a class of 50 students, 30 like Mathematics, 25 like Computer Science,\nand 10 like both. How many students like at least one of the two subjects?\n\nSolution:\n\nLet $M$ = set of students who like Maths, $C$ = set who like CS.\n\nGiven: $|M| = 30$, $|C| = 25$, $|M \\cap C| = 10$.\n\nApply the Inclusion-Exclusion Principle:\n\\[\n    |M \\cup C| = |M| + |C| - |M \\cap C| = 30 + 25 - 10 = \\boxed{45}\n\\]\n\nStudents who like neither: $50 - 45 = 5$.\n\nNote: We subtract $|M \\cap C|$ because students\nin both sets get counted twice in $|M| + |C|$,\nso we correct by subtracting one copy."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "example",
+    "title": "Example 6: Simplifying Set Expressions",
+    "content": "Simplify $(A \\cup B) \\cap (A \\cup \\overline{B})$.\n\nSolution:\n\n| Expression | Law Applied |\n|---|---|\n| $(A \\cup B) \\cap (A \\cup \\overline{B})$ | Given |\n| $A \\cup (B \\cap \\overline{B})$ | Distributive Law |\n| $A \\cup \\emptyset$ | Complement Law: $B \\cap \\overline{B} = \\emptyset$ |\n| $A$ | Identity Law |\n\nResult:\n\\[\n    \\boxed{(A \\cup B) \\cap (A \\cup \\overline{B}) = A}\n\\]\n\n\\smallFigure 2.5: Correspondence between\npropositional logic connectives and set operations."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Set Operations and Venn Diagrams",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 2.2 Summary --- Set",
+    "content": "Section 2.2 Summary --- Set Operations \\& Venn Diagrams\n\nOperations Quick Reference:\n\n| Operation | Symbol | Elements included |\n|---|---|---|\n| Union | $A \\cup B$ | In $A$ or $B$ (or both) |\n| Intersection | $A \\cap B$ | In both $A$ and $B$ |\n| Complement | $\\overline{A}$ | In $U$ but not in $A$ |\n| Difference | $A - B$ | In $A$ but not in $B$ |\n| Sym.\\ Difference | $A \\oplus B$ | In exactly one of $A$, $B$ |\n\nInclusion-Exclusion Formula:\n\\[\n    |A \\cup B| = |A| + |B| - |A \\cap B|\n\\]\n\\[\n    |A \\cup B \\cup C| = |A|+|B|+|C|-|A\\cap B|-|A\\cap C|-|B\\cap C|+|A\\cap B\\cap C|\n\\]\n\nPast Paper Connection:\n\n- 2021 Q1(iii): Associative law of union $\\rightarrow$ Theorem 2.3\n- 2022 Q6(a): Set-builder proof of $(A\\cap B)' = A'\\cup B'$\n          $\\rightarrow$ Example 3\n- 2023 Q1(iv) \\& Q1(x): De Morgan negations; symmetric difference\n          Venn diagram $\\rightarrow$ Examples 2, 4\n- 2024 Q1(i): De Morgan's Law in set theory $\\rightarrow$\n          Definition 2.12, Example 2"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "definition",
+    "title": "Definition 2.13 --- Binary Relation",
+    "content": "A binary relation $R$ from set $A$ to set $B$ is a subset of the\nCartesian product $A \\times B$:\n\\[\n    R \\subseteq A \\times B\n\\]\nWe write $a\\, R\\, b$ or $(a,b) \\in R$ to mean ``$a$ is related to $b$ by $R$.''\n\nWhen $A = B$, we say $R$ is a relation on $A$, meaning $R \\subseteq A \\times A$.\n\nKey Points:\n\n- A relation is simply a set of ordered pairs.\n- A relation on $A$ with $|A| = n$ is a subset of $A \\times A$,\n          which has $n^2$ elements. So there are $2^{n^2}$ possible relations on $A$.\n- Relations can be represented as: a set of ordered pairs,\n          a directed graph (digraph), or a matrix."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "definition",
+    "title": "Definition 2.14 --- Matrix Representation of a Relation",
+    "content": "The relation matrix (or Boolean matrix) $M_R$ of a relation\n$R$ on $A = \\{a_1, a_2, \\ldots, a_n\\}$ is an $n \\times n$ matrix where:\n\\[\n    M_R[i][j] =\n    \\begin{cases}\n        1 & \\text{if } (a_i,\\, a_j) \\in R \\\\\n        0 & \\text{if } (a_i,\\, a_j) \\notin R\n    \\end{cases}\n\\]\n\nDigraph representation: Draw a vertex for each element of $A$.\nDraw a directed edge (arrow) from $a_i$ to $a_j$ whenever $(a_i, a_j) \\in R$.\nA loop at vertex $a_i$ represents the pair $(a_i, a_i) \\in R$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "example",
+    "title": "Example 1: Relation as Set Matrix and Digraph",
+    "content": "Let $A = \\{1, 2, 3\\}$ and $R = \\{(1,1),(1,2),(2,3),(3,1)\\}$.\n\n1. Write $R$ as a set of ordered pairs.\n2. Construct the relation matrix $M_R$.\n3. Describe the digraph.\n\nSolution:\n\n(a) $R = \\{(1,1),(1,2),(2,3),(3,1)\\}$ --- already in set form.\n\n(b) Relation matrix: Rows and columns ordered $1, 2, 3$.\n\n\\[\n    M_R = \\begin{pmatrix}\n        1 & 1 & 0 \\\\\n        0 & 0 & 1 \\\\\n        1 & 0 & 0\n    \\end{pmatrix}\n\\]\n\nEntry $(i,j) = 1$ iff $(i,j) \\in R$.\n\n(c) Digraph:"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "definition",
+    "title": "Definition 2.15 --- Reflexive Relation",
+    "content": "A relation $R$ on set $A$ is reflexive if every element is related\nto itself:\n\\[\n    R \\text{ is reflexive} \\iff \\forall a \\in A,\\; (a,a) \\in R\n\\]\n\nRecognition Tips:\n\n- In the matrix: all diagonal entries ($M[i][i]$) are 1.\n- In the digraph: every vertex has a loop.\n- To disprove: find any $a \\in A$ with $(a,a) \\notin R$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "definition",
+    "title": "Definition 2.16 --- Symmetric Relation",
+    "content": "A relation $R$ on set $A$ is symmetric if whenever $(a,b) \\in R$,\nthen $(b,a) \\in R$ as well:\n\\[\n    R \\text{ is symmetric} \\iff \\forall a,b \\in A,\\;\n    [(a,b) \\in R \\rightarrow (b,a) \\in R]\n\\]\n\nRecognition Tips:\n\n- In the matrix: $M$ is symmetric ($M = M^T$),\n          i.e.\\ $M[i][j] = M[j][i]$ for all $i, j$.\n- In the digraph: for every directed edge $a \\to b$,\n          there is also $b \\to a$ (edges come in pairs).\n- The empty relation $\\emptyset$ is symmetric (vacuously)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "definition",
+    "title": "Definition 2.17 --- Antisymmetric Relation",
+    "content": "A relation $R$ on set $A$ is antisymmetric if whenever both\n$(a,b) \\in R$ and $(b,a) \\in R$, then $a = b$:\n\\[\n    R \\text{ is antisymmetric} \\iff \\forall a,b \\in A,\\;\n    [(a,b) \\in R \\land (b,a) \\in R \\rightarrow a = b]\n\\]\n\nKey Points:\n\n- Equivalently: if $a \\neq b$ and $(a,b) \\in R$, then $(b,a) \\notin R$.\n- Antisymmetric $\\neq$ not symmetric. A relation can be both\n          symmetric and antisymmetric (e.g.\\ the equality relation on a single element).\n- In the matrix: for $i \\neq j$, $M[i][j]$ and $M[j][i]$\n          cannot both be 1.\n- Example: ``$\\leq$'' on integers is antisymmetric\n          ($a \\leq b$ and $b \\leq a$ implies $a = b$)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "definition",
+    "title": "Definition 2.18 --- Transitive Relation",
+    "content": "A relation $R$ on set $A$ is transitive if whenever $(a,b) \\in R$\nand $(b,c) \\in R$, then $(a,c) \\in R$:\n\\[\n    R \\text{ is transitive} \\iff \\forall a,b,c \\in A,\\;\n    [(a,b) \\in R \\land (b,c) \\in R \\rightarrow (a,c) \\in R]\n\\]\n\nRecognition Tips:\n\n- In the digraph: if there is a path $a \\to b \\to c$,\n          there must also be a direct edge $a \\to c$.\n- To disprove: find $a,b,c$ with $(a,b),(b,c) \\in R$\n          but $(a,c) \\notin R$.\n- Careful: check all pairs systematically ---\n          one missed pair makes it non-transitive."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "theorem",
+    "title": "Theorem 2.4 --- Detecting Properties from the Relation Matrix",
+    "content": "Let $R$ be a relation on $A = \\{a_1, \\ldots, a_n\\}$ with matrix $M_R$. Then:\n\n| Property | Matrix Condition |\n|---|---|\n| Reflexive | All diagonal entries are 1: $M[i][i] = 1$ for all $i$ |\n| Irreflexive | All diagonal entries are 0: $M[i][i] = 0$ for all $i$ |\n| Symmetric | $M = M^T$, i.e.\\ $M[i][j] = M[j][i]$ for all $i,j$ |\n| Antisymmetric | $M[i][j] = 1$ and $i \\neq j$ $\\Rightarrow$ $M[j][i] = 0$ |\n| Transitive | $M^2_R \\leq M_R$ (Boolean matrix product: if $(M_R^2)[i][j]=1$ then $M_R[i][j]=1$) |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "example",
+    "title": "Example 2: Four Relations Analysed --- Past Paper 2020 Q3",
+    "content": "For each relation on $\\{3,4,5,6\\}$, determine whether it is reflexive,\nsymmetric, antisymmetric, and transitive.\n\n(a) $R_1 = \\{(3,3),(3,4),(3,6),(5,4),(5,5),(5,6)\\}$\n\nSolution:\n\nReflexive? Need $(3,3),(4,4),(5,5),(6,6) \\in R_1$.\n$(4,4) \\notin R_1$ and $(6,6) \\notin R_1$. $\\times$ Not reflexive.\n\nSymmetric? $(3,4) \\in R_1$ but $(4,3) \\notin R_1$.\n$\\times$ Not symmetric.\n\nAntisymmetric? Check all pairs: no pair $(a,b)$ and $(b,a)$ with $a \\neq b$ exist.\n✓\\ Antisymmetric.\n\nTransitive? Check: $(3,4) \\in R_1$ --- need $(4,?)$ pairs. No $(4,x) \\in R_1$,\nso no violation from $(3,4)$. $(3,6) \\in R_1$ --- no $(6,x)$ pairs.\n$(5,4),(5,6)$ --- no $(4,x)$ or $(6,x)$. $(3,3) \\in R_1$: $(3,3)+(3,4) \\Rightarrow$ need $(3,4)$ ✓;\n$(3,3)+(3,6) \\Rightarrow$ need $(3,6)$ ✓.\n$(5,5)+(5,4) \\Rightarrow$ need $(5,4)$ ✓.\n$(5,5)+(5,6) \\Rightarrow$ need $(5,6)$ ✓.\n✓\\ Transitive.\n\n(b) $R_2 = \\{(3,3),(3,4),(4,3),(4,4),(5,5),(6,6)\\}$\n\nReflexive? $(3,3),(4,4),(5,5),(6,6) \\in R_2$. ✓\\ Reflexive.\n\nSymmetric? $(3,4) \\in R_2$ and $(4,3) \\in R_2$. All other non-diagonal pairs absent.\n✓\\ Symmetric.\n\nAntisymmetric? $(3,4) \\in R_2$ and $(4,3) \\in R_2$ with $3 \\neq 4$.\n$\\times$ Not antisymmetric.\n\nTransitive?\n$(3,4)+(4,3) \\Rightarrow$ need $(3,3)$ ✓;\n$(4,3)+(3,4) \\Rightarrow$ need $(4,4)$ ✓;\n$(3,4)+(4,4) \\Rightarrow$ need $(3,4)$ ✓;\n$(4,3)+(3,3) \\Rightarrow$ need $(4,3)$ ✓.\n✓\\ Transitive.\n\n(c) $R_3 = \\{(3,4),(4,5),(5,6)\\}$\n\nReflexive? $(3,3) \\notin R_3$.\n$\\times$ Not reflexive.\n\nSymmetric? $(3,4) \\in R_3$ but $(4,3) \\notin R_3$.\n$\\times$ Not symmetric.\n\nAntisymmetric? No pair $(a,b)$ and $(b,a)$ with $a \\neq b$ both present.\n✓\\ Antisymmetric.\n\nTransitive? $(3,4)+(4,5) \\Rightarrow$ need $(3,5)$. $(3,5) \\notin R_3$.\n$\\times$ Not transitive.\n\n(d) $R_4 = \\{(3,5),(3,6),(4,5),(4,6),(5,3),(5,5)\\}$\n\nReflexive? $(3,3) \\notin R_4$.\n$\\times$ Not reflexive.\n\nSymmetric? $(3,5) \\in R_4$ and $(5,3) \\in R_4$ ✓.\nBut $(3,6) \\in R_4$ and $(6,3) \\notin R_4$.\n$\\times$ Not symmetric.\n\nAntisymmetric? $(3,5) \\in R_4$ and $(5,3) \\in R_4$ with $3 \\neq 5$.\n$\\times$ Not antisymmetric.\n\nTransitive? $(5,3)+(3,5) \\Rightarrow$ need $(5,5)$ ✓.\n$(5,3)+(3,6) \\Rightarrow$ need $(5,6)$. $(5,6) \\notin R_4$.\n$\\times$ Not transitive.\n\nSummary Table:\n| Relation | Reflexive | Symmetric | Antisymmetric | Transitive |\n|---|---|---|---|---|\n| $R_1$ | No | No | Yes | Yes |\n| $R_2$ | Yes | Yes | No | Yes |\n| $R_3$ | No | No | Yes | No |\n| $R_4$ | No | No | No | No |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "example",
+    "title": "Example 3: Relations --- Past Paper 2021 Q4",
+    "content": "For each relation on $\\{1,2,3,4\\}$, determine which properties hold:\nreflexive, symmetric, transitive.\n\n(i) $R_1 = \\{(2,2),(2,3),(2,4),(3,2),(3,3),(3,4)\\}$\n\nSolution:\n\nReflexive? $(1,1) \\notin R_1$ and $(4,4) \\notin R_1$.\n$\\times$ Not reflexive.\n\nSymmetric? $(2,4) \\in R_1$ but $(4,2) \\notin R_1$.\n$\\times$ Not symmetric.\n\nTransitive? $(3,2)+(2,3) \\Rightarrow (3,3)$ ✓;\n$(3,2)+(2,4) \\Rightarrow (3,4)$ ✓;\n$(2,3)+(3,2) \\Rightarrow (2,2)$ ✓;\n$(2,3)+(3,4) \\Rightarrow (2,4)$ ✓;\n$(2,2)+(2,3) \\Rightarrow (2,3)$ ✓;\n$(3,3)+(3,4) \\Rightarrow (3,4)$ ✓.\n✓\\ Transitive.\n\n(ii) $R_2 = \\{(1,1),(1,2),(2,1),(2,2),(3,3),(4,4)\\}$\n\nReflexive? All of $(1,1),(2,2),(3,3),(4,4) \\in R_2$.\n✓\\ Reflexive.\n\nSymmetric? $(1,2) \\in R_2$ and $(2,1) \\in R_2$. All others symmetric.\n✓\\ Symmetric.\n\nTransitive? $(1,2)+(2,1) \\Rightarrow (1,1)$ ✓;\n$(2,1)+(1,2) \\Rightarrow (2,2)$ ✓;\n$(1,2)+(2,2) \\Rightarrow (1,2)$ ✓.\n✓\\ Transitive.\n\n(iii) $R_3 = \\emptyset$ (empty relation)\n\nReflexive? $(1,1) \\notin \\emptyset$.\n$\\times$ Not reflexive.\n\nSymmetric? Vacuously true --- there are no pairs $(a,b) \\in R_3$ to check.\n✓\\ Symmetric (vacuously).\n\nTransitive? Vacuously true.\n✓\\ Transitive (vacuously).\n\n(iv) $R_4 = \\{(1,1),(2,2),(3,3),(4,4)\\}$ (equality relation)\n\nReflexive? All $(a,a) \\in R_4$.\n✓\\ Reflexive.\n\nSymmetric? Only pairs of form $(a,a)$ --- symmetric trivially.\n✓\\ Symmetric.\n\nTransitive? $(a,a)+(a,a) \\Rightarrow (a,a)$ ✓.\n✓\\ Transitive.\n\n| Relation | Reflexive | Symmetric | Transitive |\n|---|---|---|---|\n| $R_1$ | No | No | Yes |\n| $R_2$ | Yes | Yes | Yes |\n| $R_3 = \\emptyset$ | No | Yes | Yes |\n| $R_4$ (equality) | Yes | Yes | Yes |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "example",
+    "title": "Example 4: Three Relations Analysed --- Past Paper 2022 Q2",
+    "content": "Let $A = \\{0,1,2,5\\}$. Analyse each of $R$, $S$, $T$:\n\n$R = \\{(0,0),(0,1),(0,5),(1,0),(1,1),(2,2),(5,0),(5,5)\\}$\n\n$S = \\{(0,0),(0,2),(0,5),(2,5)\\}$\n\n$T = \\{(0,1),(2,5)\\}$\n\nSolution:\n\nRelation $R$:\n\nReflexive? $(0,0),(1,1),(2,2),(5,5) \\in R$.\n✓\\ Reflexive.\n\nSymmetric? $(0,1) \\in R$ and $(1,0) \\in R$ ✓;\n$(0,5) \\in R$ and $(5,0) \\in R$ ✓;\nall self-loops symmetric.\n✓\\ Symmetric.\n\nTransitive? $(1,0)+(0,1) \\Rightarrow (1,1)$ ✓;\n$(1,0)+(0,5) \\Rightarrow (1,5)$. $(1,5) \\notin R$.\n$\\times$ Not transitive.\n\nRelation $S$:\n\nReflexive? $(1,1) \\notin S$.\n$\\times$ Not reflexive.\n\nSymmetric? $(0,2) \\in S$ but $(2,0) \\notin S$.\n$\\times$ Not symmetric.\n\nTransitive? $(0,2)+(2,5) \\Rightarrow (0,5)$ ✓;\n$(0,0)+(0,2) \\Rightarrow (0,2)$ ✓;\n$(0,0)+(0,5) \\Rightarrow (0,5)$ ✓.\nNo other composable pairs.\n✓\\ Transitive.\n\nRelation $T$:\n\nReflexive? $(0,0) \\notin T$.\n$\\times$ Not reflexive.\n\nSymmetric? $(0,1) \\in T$ but $(1,0) \\notin T$.\n$\\times$ Not symmetric.\n\nTransitive? No two pairs in $T$ are composable (no $x$ such that\n$(0,x),(x,?) \\in T$ with both present).\n✓\\ Transitive (vacuously).\n\n| Relation | Reflexive | Symmetric | Transitive |\n|---|---|---|---|\n| $R$ | Yes | Yes | No |\n| $S$ | No | No | Yes |\n| $T$ | No | No | Yes |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "example",
+    "title": "Example 5: Drawing Directed Graphs for Relations --- Past Paper 2024 Q3",
+    "content": "Let $A = \\{0,1,2,3\\}$. Draw the directed graph for each relation:\n\n$R = \\{(0,0),(0,1),(0,3),(1,0),(1,1),(2,2),(3,0),(3,3)\\}$\n\n$S = \\{(0,0),(0,2),(0,3),(2,3)\\}$\n\n$T = \\{(0,1),(2,3)\\}$\n\nSolution:\n\nFor each relation: place vertices $0,1,2,3$ and draw arrows for each ordered pair.\nA loop $(a,a)$ is an arrow from $a$ to itself.\n\nObservations from digraphs:\n\n- $R$ has loops at all vertices and bidirectional edges\n          $\\Rightarrow$ reflexive and symmetric.\n- $S$ has a loop only at $0$ and all arrows point ``one way''\n          $\\Rightarrow$ not reflexive, not symmetric, transitive.\n- $T$ has no loops and no reverse edges\n          $\\Rightarrow$ not reflexive, not symmetric, vacuously transitive.\n\n\\smallFigure 2.6: The four key properties of relations\nwith their matrix/digraph recognition rules."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Relations and Their Properties",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 2.3 Summary --- Relations",
+    "content": "Section 2.3 Summary --- Relations \\& Their Properties\n\nMaster Table of Properties:\n\n| Property | Definition | Matrix | Digraph |\n|---|---|---|---|\n| Reflexive | $(a,a)\\in R\\;\\forall a$ | Diagonal all 1s | Loop at every vertex |\n| Irreflexive | $(a,a)\\notin R\\;\\forall a$ | Diagonal all 0s | No loops |\n| Symmetric | $(a,b)\\Rightarrow(b,a)$ | $M=M^T$ | Edges in pairs |\n| Antisymmetric | $(a,b)\\land(b,a)\\Rightarrow a=b$ | No sym.\\ off-diag 1s | No 2-cycles |\n| Transitive | $(a,b)\\land(b,c)\\Rightarrow(a,c)$ | $M^2 \\leq M$ | Path$\\Rightarrow$edge |\n\nCommon Traps:\n\n- Antisymmetric $\\neq$ not symmetric.\n          A relation can be both (e.g.\\ $\\{(1,1),(2,2)\\}$) or neither\n          (e.g.\\ $\\{(1,2),(2,1),(1,3)\\}$).\n- Empty relation $\\emptyset$ is symmetric, antisymmetric,\n          and transitive (all vacuously), but NOT reflexive.\n- Transitivity --- always check all composable pairs.\n          Missing even one pair $(a,b),(b,c)$ with $(a,c)\\notin R$ breaks transitivity.\n- Vacuous truth --- if no pair $(a,b)$ exists with $a \\neq b$,\n          the relation is automatically symmetric and antisymmetric.\n\nPast Paper Connection:\n\n- 2020 Q3: Four relations on $\\{3,4,5,6\\}$ $\\rightarrow$ Example 2\n- 2021 Q4: Four relations on $\\{1,2,3,4\\}$ $\\rightarrow$ Example 3\n- 2022 Q2: Relations $R,S,T$ on $\\{0,1,2,5\\}$ $\\rightarrow$ Example 4\n- 2024 Q3: Directed graphs for $R,S,T$ on $\\{0,1,2,3\\}$ $\\rightarrow$ Example 5"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "definition",
+    "title": "Definition 2.19 --- Equivalence Relation",
+    "content": "A relation $R$ on a set $A$ is an equivalence relation if it satisfies\nall three of the following properties simultaneously:\n\n| Property | Formal Statement | Intuition |\n|---|---|---|\n| Reflexive | $\\forall a \\in A,\\; (a,a) \\in R$ | Every element equals itself |\n| Symmetric | $(a,b) \\in R \\Rightarrow (b,a) \\in R$ | Equality works both ways |\n| Transitive | $(a,b),(b,c)\\in R \\Rightarrow (a,c)\\in R$ | Equality chains together |\n\nKey Points:\n\n- When $R$ is an equivalence relation, we often write $a \\sim b$\n          instead of $(a,b) \\in R$.\n- Memory aid: Equivalence = Reflexive +\n          Symmetric + Transitive (``RST'').\n- The most important example of an equivalence relation is equality\n          ($=$) itself.\n- Modular congruence (``$\\equiv \\pmod{n}$'') is the most tested example\n          in this course."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "example",
+    "title": "Example 1: Equality is an Equivalence Relation",
+    "content": "Show that the equality relation $R = \\{(a,a) \\mid a \\in A\\}$ on any set $A$\nis an equivalence relation.\n\nSolution:\n\nReflexive: For every $a \\in A$, $(a,a) \\in R$ by definition.\n✓\n\nSymmetric: If $(a,b) \\in R$ then $a = b$, so $(b,a) = (a,a) \\in R$.\n✓\n\nTransitive: If $(a,b) \\in R$ and $(b,c) \\in R$, then $a=b$ and $b=c$,\nso $a=c$, giving $(a,c) \\in R$.\n✓\n\nConclusion: The equality relation is an equivalence\nrelation. Its equivalence classes are singletons $\\{a\\}$ for each $a \\in A$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "definition",
+    "title": "Definition 2.20 --- Congruence Modulo $n$",
+    "content": "Let $n$ be a positive integer. Integers $a$ and $b$ are\ncongruent modulo $n$, written $a \\equiv b \\pmod{n}$, if $n$ divides\n$a - b$, i.e.\\ $n \\mid (a - b)$.\n\nThe relation $R_n = \\{(a,b) \\in \\mathbb{Z} \\times \\mathbb{Z} \\mid a \\equiv b\n\\pmod{n}\\}$ is called congruence modulo $n$.\n\nKey Points:\n\n- Equivalently, $a \\equiv b \\pmod{n}$ iff $a$ and $b$ have the\n          same remainder when divided by $n$.\n- Example ($n=3$): $7 \\equiv 1 \\pmod{3}$ because $3 \\mid (7-1) = 6$.\n- Past Paper 2020 Q1(iii) asks: $(-17) \\bmod 2$.\n          Since $-17 = (-9)(2) + 1$, we get $(-17)\\bmod 2 = 1$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "theorem",
+    "title": "Theorem 2.5 --- Congruence Modulo $n$ is an Equivalence Relation",
+    "content": "For any positive integer $n$, congruence modulo $n$ is an equivalence relation\non $\\mathbb{Z}$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "proof",
+    "title": "Proof of Theorem 2.5",
+    "content": "Proof:\n\nWe verify the three properties for $R_n$ on $\\mathbb{Z}$.\n\nStep 1 --- Reflexive:\n\nFor any $a \\in \\mathbb{Z}$: $a - a = 0 = n \\cdot 0$, so $n \\mid (a-a)$.\nTherefore $(a,a) \\in R_n$ for all $a$. ✓\n\nStep 2 --- Symmetric:\n\nSuppose $(a,b) \\in R_n$, i.e.\\ $n \\mid (a-b)$.\nThen $a - b = nk$ for some integer $k$.\nSo $b - a = n(-k)$, meaning $n \\mid (b-a)$.\nTherefore $(b,a) \\in R_n$. ✓\n\nStep 3 --- Transitive:\n\nSuppose $(a,b) \\in R_n$ and $(b,c) \\in R_n$.\nThen $n \\mid (a-b)$ and $n \\mid (b-c)$.\nWrite $a - b = nj$ and $b - c = nk$ for integers $j, k$.\nThen:\n\\[\n    a - c = (a - b) + (b - c) = nj + nk = n(j+k)\n\\]\nSo $n \\mid (a-c)$, giving $(a,c) \\in R_n$. ✓\n\nConclusion: Congruence modulo $n$ satisfies all three\nproperties and is therefore an equivalence relation on $\\mathbb{Z}$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "definition",
+    "title": "Definition 2.21 --- Equivalence Class",
+    "content": "Let $R$ be an equivalence relation on set $A$. The equivalence class\nof an element $a \\in A$, written $[a]$ or $\\overline{a}$, is the set of all\nelements of $A$ that are related to $a$ by $R$:\n\\[\n    [a] = \\{b \\in A \\mid (a,b) \\in R\\} = \\{b \\in A \\mid a \\sim b\\}\n\\]\n\nKey Properties:\n\n- Every element of $A$ belongs to exactly one equivalence class.\n- $[a] = [b]$ if and only if $(a,b) \\in R$ (i.e.\\ $a \\sim b$).\n- Either $[a] = [b]$ (identical classes) or $[a] \\cap [b] = \\emptyset$\n          (completely disjoint).\n- Any element of an equivalence class can serve as its\n          representative."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "example",
+    "title": "Example 2: Equivalence Classes of Congruence Modulo 3",
+    "content": "Find all equivalence classes of the congruence modulo 3 relation on $\\mathbb{Z}$.\n\nSolution:\n\nWhen we divide any integer by 3, the remainder is 0, 1, or 2. So there are\nexactly three equivalence classes:\n\nClass $[0]$ --- integers with remainder 0:\n\\[\n    [0] = \\{\\ldots, -6, -3, 0, 3, 6, 9, \\ldots\\}\n        = \\{n \\in \\mathbb{Z} \\mid 3 \\mid n\\}\n\\]\n\nClass $[1]$ --- integers with remainder 1:\n\\[\n    [1] = \\{\\ldots, -5, -2, 1, 4, 7, 10, \\ldots\\}\n        = \\{n \\in \\mathbb{Z} \\mid n \\equiv 1 \\pmod{3}\\}\n\\]\n\nClass $[2]$ --- integers with remainder 2:\n\\[\n    [2] = \\{\\ldots, -4, -1, 2, 5, 8, 11, \\ldots\\}\n        = \\{n \\in \\mathbb{Z} \\mid n \\equiv 2 \\pmod{3}\\}\n\\]\n\nVerification:\n\n- $[0] \\cup [1] \\cup [2] = \\mathbb{Z}$ ✓\n          (every integer has a remainder)\n- $[0] \\cap [1] = \\emptyset$, $[0] \\cap [2] = \\emptyset$,\n          $[1] \\cap [2] = \\emptyset$ ✓\n          (no integer has two different remainders)\n- Note: $[0] = [3] = [6] = [-3] = \\ldots$ (many representatives, one class)"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "definition",
+    "title": "Definition 2.22 --- Partition",
+    "content": "A partition of a set $A$ is a collection of non-empty, mutually disjoint\nsubsets $A_1, A_2, \\ldots, A_k$ (called cells or blocks) whose\nunion is $A$:\n\\[\n    A = A_1 \\cup A_2 \\cup \\cdots \\cup A_k\n    \\quad \\text{where} \\quad\n    A_i \\neq \\emptyset\n    \\quad \\text{and} \\quad\n    A_i \\cap A_j = \\emptyset \\text{ for } i \\neq j\n\\]\n\nKey Points:\n\n- Every partition of $A$ defines an equivalence relation on $A$:\n          $a \\sim b$ iff $a$ and $b$ are in the same cell.\n- Conversely, every equivalence relation on $A$ induces a partition of $A$\n          (the cells are the equivalence classes).\n- This is the Fundamental Theorem of Equivalence Relations\n          (Theorem~2.6 below).\n- The set of all equivalence classes is called the quotient set,\n          written $A / R$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "theorem",
+    "title": "Theorem 2.6 --- Fundamental Theorem of Equivalence Relations",
+    "content": "Let $R$ be an equivalence relation on a non-empty set $A$. Then:\n\n1. The equivalence classes of $R$ form a partition of $A$.\n2. Conversely, given any partition $\\{A_1, A_2, \\ldots\\}$ of $A$,\n          the relation defined by $a \\sim b \\iff a$ and $b$ are in the same cell\n          is an equivalence relation on $A$.\n\nThis establishes a one-to-one correspondence between equivalence relations\non $A$ and partitions of $A$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "example",
+    "title": "Example 3: Finding the Partition from an Equivalence Relation",
+    "content": "Let $A = \\{1,2,3,4,5,6\\}$ and define the relation:\n\\[\n    R = \\{(a,b) \\mid a \\equiv b \\pmod{2}\\}\n\\]\n(i.e.\\ $a$ and $b$ have the same parity).\n\nVerify $R$ is an equivalence relation and find the partition of $A$.\n\nSolution:\n\nVerify equivalence relation:\n\nReflexive: $a - a = 0 = 2 \\cdot 0$, so $2 \\mid (a-a)$ for all $a$.\n✓\n\nSymmetric: If $2 \\mid (a-b)$ then $a-b = 2k$, so $b-a = 2(-k)$,\ngiving $2 \\mid (b-a)$. ✓\n\nTransitive: If $2 \\mid (a-b)$ and $2 \\mid (b-c)$, then\n$a-c=(a-b)+(b-c)$ is divisible by 2. ✓\n\nEquivalence classes:\n\\[\n    [1] = \\{1, 3, 5\\} \\quad \\text{(odd numbers in } A\\text{)}\n\\]\n\\[\n    [2] = \\{2, 4, 6\\} \\quad \\text{(even numbers in } A\\text{)}\n\\]\n\nPartition of $A$:\n\\[\n    \\boxed{A = \\{1,3,5\\} \\cup \\{2,4,6\\}}\n\\]\n\nVerification:\n$\\{1,3,5\\} \\cap \\{2,4,6\\} = \\emptyset$ ✓ and\n$\\{1,3,5\\} \\cup \\{2,4,6\\} = A$ ✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "example",
+    "title": "Example 4: Constructing an Equivalence Relation from a Partition",
+    "content": "Let $A = \\{1,2,3,4,5\\}$ with partition:\n$P_1 = \\{1,3\\}$, $P_2 = \\{2,4\\}$, $P_3 = \\{5\\}$.\n\nFind the equivalence relation $R$ induced by this partition.\n\nSolution:\n\nTwo elements are related iff they are in the same cell.\n\nFrom $P_1 = \\{1,3\\}$: $(1,1),(1,3),(3,1),(3,3) \\in R$\n\nFrom $P_2 = \\{2,4\\}$: $(2,2),(2,4),(4,2),(4,4) \\in R$\n\nFrom $P_3 = \\{5\\}$: $(5,5) \\in R$\n\n\\[\n    \\boxed{R = \\{(1,1),(1,3),(3,1),(3,3),(2,2),(2,4),(4,2),(4,4),(5,5)\\}}\n\\]\n\nVerify RST:\n\nReflexive: $(1,1),(2,2),(3,3),(4,4),(5,5) \\in R$. ✓\n\nSymmetric: $(1,3) \\in R \\Rightarrow (3,1) \\in R$; $(2,4) \\in R\n\\Rightarrow (4,2) \\in R$. ✓\n\nTransitive: $(1,3)+(3,1) \\Rightarrow (1,1)$ ✓;\n$(3,1)+(1,3) \\Rightarrow (3,3)$ ✓. ✓"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "example",
+    "title": "Example 5: Is This an Equivalence Relation?",
+    "content": "Determine whether each of the following relations on $\\mathbb{Z}$ is an\nequivalence relation. If yes, describe the equivalence classes.\nIf no, state which property fails.\n\n1. $R = \\{(a,b) \\mid a \\leq b\\}$\n2. $S = \\{(a,b) \\mid a + b \\text{ is even}\\}$\n3. $T = \\{(a,b) \\mid 3 \\mid (a + 2b)\\}$\n\nSolution:\n\n(a) $R$: ``$\\leq$'' on $\\mathbb{Z}$.\n\nReflexive: $a \\leq a$ always. ✓\n\nSymmetric: $1 \\leq 2$ but $2 \\not\\leq 1$. $\\times$ Fails.\n\nConclusion: Not an equivalence relation (fails symmetry).\n\n(b) $S$: $a + b$ is even.\n\nReflexive: $a + a = 2a$ is even. ✓\n\nSymmetric: $a+b$ even $\\Rightarrow$ $b+a$ even (addition commutes).\n✓\n\nTransitive: If $a+b$ even and $b+c$ even, then both $a,b$ same parity\nand $b,c$ same parity, so $a,c$ same parity, giving $a+c$ even.\n✓\n\nEquivalence classes:\n$[\\text{even}] = \\{0, \\pm 2, \\pm 4, \\ldots\\}$ and\n$[\\text{odd}] = \\{\\pm 1, \\pm 3, \\pm 5, \\ldots\\}$.\n\nConclusion: Equivalence relation.\nPartition: even integers $\\cup$ odd integers.\n\n(c) $T$: $3 \\mid (a + 2b)$.\n\nReflexive: $a + 2a = 3a$, so $3 \\mid 3a$. ✓\n\nSymmetric: If $3 \\mid (a+2b)$, note $b+2a = (a+2b) + (a-b+b-b) $;\nmore directly: $b + 2a = 3a + 3b - (a+2b)$. Since $3 \\mid (a+2b)$ and $3 \\mid 3(a+b)$,\nwe get $3 \\mid (b+2a)$. ✓\n\nTransitive: If $3\\mid(a+2b)$ and $3\\mid(b+2c)$, then adding:\n$3\\mid(a+2b+b+2c) = 3\\mid(a+3b+2c)$. Since $3\\mid 3b$, we get $3\\mid(a+2c)$.\n✓\n\nConclusion: Equivalence relation.\nThe classes turn out to be the same as congruence mod 3.\n\n\\smallFigure 2.7: An equivalence relation partitions\nthe set $A$ into disjoint, non-empty equivalence classes (cells).\n\n\\smallFigure 2.8: An equivalence relation lies in the\nintersection of reflexive, symmetric, and transitive relations."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Equivalence Relations and Partitions",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 2.4 Summary --- Equivalence",
+    "content": "Section 2.4 Summary --- Equivalence Relations \\& Partitions\n\nThe Big Picture:\n\n| Concept | Key Fact |\n|---|---|\n| Equivalence relation | Must be Reflexive + Symmetric + Transitive |\n| Equivalence class $[a]$ | All elements related to $a$; $a \\in [a]$ always |\n| $[a] = [b]$ | iff $(a,b) \\in R$ |\n| $[a] \\cap [b]$ | Either $= [a]=[b]$ or $= \\emptyset$ |\n| Partition | Disjoint, non-empty subsets covering $A$ |\n| Correspondence | Equivalence relations $\\longleftrightarrow$ Partitions |\n| Congruence mod $n$ | Gives $n$ equivalence classes: $[0],[1],\\ldots,[n-1]$ |\n\nStep-by-Step: Analysing an Equivalence Relation\n\n1. Check reflexive: is $(a,a) \\in R$ for every $a \\in A$?\n2. Check symmetric: for every $(a,b) \\in R$, is $(b,a) \\in R$?\n3. Check transitive: for every $(a,b),(b,c) \\in R$,\n          is $(a,c) \\in R$?\n4. If all three hold: find the equivalence classes by grouping related elements.\n5. Verify: classes are disjoint and cover $A$.\n\nPast Paper Connection:\n\n- 2020 Q1(iii): $(-17)\\bmod 2 = 1$ $\\rightarrow$ Definition 2.20\n- 2020 Q3, 2021 Q4, 2022 Q2: All test RST $\\rightarrow$\n          builds directly on Section 2.3 and this section\n- Relations $R_2$ in 2020 Q3 and $R_2$/$R_4$ in 2021 Q4 are equivalence\n          relations $\\rightarrow$ Examples 3, 4"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "definition",
+    "title": "Definition 2.23 --- Partial Order (Partial Ordering)",
+    "content": "A relation $R$ on a set $A$ is a partial order (or partial ordering)\nif it is:\n\n| Property | Formal Condition | Example with $\\leq$ |\n|---|---|---|\n| Reflexive | $(a,a) \\in R \\;\\forall a \\in A$ | $a \\leq a$ |\n| Antisymmetric | $(a,b)\\in R \\land (b,a)\\in R \\Rightarrow a=b$ | $a\\leq b \\land b\\leq a \\Rightarrow a=b$ |\n| Transitive | $(a,b)\\in R \\land (b,c)\\in R \\Rightarrow (a,c)\\in R$ | $a\\leq b \\land b\\leq c \\Rightarrow a\\leq c$ |\n\nKey Points:\n\n- Memory aid: Partial Order = Reflexive +\n          Antisymmetric + Transitive (``RAT'').\n- Compare with equivalence relation (RST): partial order replaces\n          symmetric with antisymmetric.\n- A set $A$ together with a partial order $R$ is called a\n          partially ordered set or poset, written $(A, R)$.\n- We often use the symbol $\\preceq$ to denote a generic partial order,\n          writing $a \\preceq b$ instead of $(a,b) \\in R$.\n- Two elements $a$ and $b$ in a poset are comparable if\n          $a \\preceq b$ or $b \\preceq a$; otherwise they are incomparable."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "example",
+    "title": "Example 1: Common Partial Orders",
+    "content": "Verify that each of the following is a partial order.\n\n1. The relation $\\leq$ (less than or equal to) on $\\mathbb{Z}$.\n2. The relation $\\mid$ (divides) on $\\mathbb{Z}^+$.\n3. The relation $\\subseteq$ (subset) on $\\mathcal{P}(A)$ for any set $A$.\n\nSolution:\n\n(a) $(\\mathbb{Z},\\, \\leq)$:\n\nReflexive: $a \\leq a$ for all $a \\in \\mathbb{Z}$. ✓\n\nAntisymmetric: $a \\leq b$ and $b \\leq a$ $\\Rightarrow$ $a = b$. ✓\n\nTransitive: $a \\leq b$ and $b \\leq c$ $\\Rightarrow$ $a \\leq c$. ✓\n\n(b) $(\\mathbb{Z}^+,\\, \\mid)$:\n\nReflexive: $a \\mid a$ since $a = a \\cdot 1$. ✓\n\nAntisymmetric: If $a \\mid b$ and $b \\mid a$ then $b = ka$ and $a = mb$,\ngiving $a = mka$, so $mk = 1$. Since $m,k \\in \\mathbb{Z}^+$, we get $m = k = 1$,\nthus $a = b$. ✓\n\nTransitive: If $a \\mid b$ and $b \\mid c$, then $b = ka$ and $c = lb$,\nso $c = l(ka) = (lk)a$, giving $a \\mid c$. ✓\n\n(c) $(\\mathcal{P}(A),\\, \\subseteq)$:\n\nReflexive: $A \\subseteq A$ for every set. ✓\n\nAntisymmetric: $A \\subseteq B$ and $B \\subseteq A$ $\\Rightarrow$ $A = B$. ✓\n\nTransitive: $A \\subseteq B$ and $B \\subseteq C$ $\\Rightarrow$ $A \\subseteq C$. ✓\n\n| Relation | Reflexive | Antisymmetric | Transitive |\n|---|---|---|---|\n| $(\\mathbb{Z},\\leq)$ | ✓ | ✓ | ✓ |\n| $(\\mathbb{Z}^+, \\mid)$ | ✓ | ✓ | ✓ |\n| $(\\mathcal{P}(A), \\subseteq)$ | ✓ | ✓ | ✓ |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "definition",
+    "title": "Definition 2.24 --- Total Order (Linear Order)",
+    "content": "A partial order $(A, \\preceq)$ is a total order (or linear order\nor chain) if every pair of elements is comparable:\n\\[\n    \\forall a,b \\in A,\\; a \\preceq b \\;\\text{ or }\\; b \\preceq a\n\\]\n\nKey Points:\n\n- $(\\mathbb{Z}, \\leq)$ is a total order --- any two integers are comparable.\n- $(\\mathbb{Z}^+, \\mid)$ is not a total order --- for example,\n          2 and 3 are incomparable (neither $2\\mid 3$ nor $3\\mid 2$).\n- $(\\mathcal{P}(A), \\subseteq)$ is not a total order in general ---\n          $\\{1\\}$ and $\\{2\\}$ are incomparable subsets."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "definition",
+    "title": "Definition 2.25 --- Hasse Diagram",
+    "content": "A Hasse diagram is a simplified visual representation of a finite poset\n$(A, \\preceq)$ obtained from its directed graph by:\n\n1. Remove all loops (reflexivity is understood).\n2. Remove all edges implied by transitivity.\n          If $a \\preceq b$ and $b \\preceq c$, remove the direct edge $a \\to c$.\n3. Orient edges upward. Place $b$ above $a$ whenever $a \\prec b$\n          (proper ordering), then drop all arrowheads.\n\nReading a Hasse Diagram:\n\n- $a \\preceq b$ iff you can travel from $a$ upward to $b$\n          along the edges.\n- Elements with no element below them are minimal elements.\n- Elements with no element above them are maximal elements."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "definition",
+    "title": "Definition 2.26 --- Special Elements in a Poset",
+    "content": "| Element | Definition | Key Fact |\n|---|---|---|\n| Maximal | No element strictly above it | May not be unique |\n| Minimal | No element strictly below it | May not be unique |\n| Greatest | Above every element | Unique if exists |\n| Least | Below every element | Unique if exists |\n| Upper bound of $B$ | Above every element of $B \\subseteq A$ | May not exist |\n| Lower bound of $B$ | Below every element of $B \\subseteq A$ | May not exist |\n| LUB / sup of $B$ | Least among all upper bounds of $B$ | Unique if exists |\n| GLB / inf of $B$ | Greatest among all lower bounds of $B$ | Unique if exists |\n\nCritical Distinction:\n\n- A maximal element has nothing above it in the poset.\n          A greatest element is above every other element.\n- A poset can have many maximal elements but at most one greatest element."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "theorem",
+    "title": "Theorem 2.7 --- Uniqueness of Greatest and Least Elements",
+    "content": "In a poset $(A, \\preceq)$, if a greatest element exists, it is unique.\nSimilarly, if a least element exists, it is unique."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "example",
+    "title": "Example 2: Hasse Diagram",
+    "content": "Draw the Hasse diagram for the divisibility partial order on the set\n$S = \\{1, 2, 3, 4, 6, 12\\}$.\n\nSolution:\n\nStep 1: List all divisibility pairs ($a \\mid b$ with $a \\neq b$):\n\\[\n    1\\mid 2,\\; 1\\mid 3,\\; 1\\mid 4,\\; 1\\mid 6,\\; 1\\mid 12,\\;\n    2\\mid 4,\\; 2\\mid 6,\\; 2\\mid 12,\\; 3\\mid 6,\\; 3\\mid 12,\\;\n    4\\mid 12,\\; 6\\mid 12\n\\]\n\nStep 2: Remove transitive edges.\n$1 \\mid 4$ is implied by $1\\mid 2$ and $2\\mid 4$, so remove direct $1\\to 4$.\nSimilarly remove $1\\to 6$, $1\\to 12$, $2\\to 12$, $3\\to 12$.\n\nStep 3: Draw upward edges only (no arrows, no loops).\n\nReading the diagram:\n\n- Least element: $1$ (below everything). ✓\n- Greatest element: $12$ (above everything). ✓\n- Minimal element: $1$ (same as least here).\n- Maximal element: $12$ (same as greatest here).\n- Comparable pairs: e.g.\\ $2$ and $4$ ($2 \\mid 4$).\n- Incomparable pairs: e.g.\\ $4$ and $6$\n          (neither $4\\mid 6$ nor $6\\mid 4$)."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "example",
+    "title": "Example 3: Hasse Diagram for Power Set",
+    "content": "Draw the Hasse diagram for the power set of $\\{a,b,c\\}$ ordered by $\\subseteq$.\n\nSolution:\n\nThe elements are the 8 subsets of $\\{a,b,c\\}$, ordered by inclusion.\nWe connect $A$ to $B$ (with $B$ above $A$) whenever $A \\subset B$ and\nthere is no $C$ with $A \\subset C \\subset B$.\n\nReading the diagram:\n\n- Least element: $\\emptyset$.\n- Greatest element: $\\{a,b,c\\}$.\n- Incomparable: $\\{a\\}$ and $\\{b\\}$\n          (neither is a subset of the other).\n- LUB of $\\{a\\}$ and $\\{b\\}$: $\\{a,b\\}$.\n- GLB of $\\{a,b\\}$ and $\\{b,c\\}$: $\\{b\\}$."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "example",
+    "title": "Example 4: Identifying Special Elements from a Hasse Diagram",
+    "content": "The Hasse diagram of a poset $(A, \\preceq)$ is given below:\n\nFind: maximal, minimal, greatest, and least elements.\nAlso find upper and lower bounds of $\\{b, c\\}$.\n\nSolution:\n\n| Concept | Elements | Reason |\n|---|---|---|\n| Maximal | $a$ | Nothing is above $a$ |\n| Minimal | $d$, $e$ | Nothing is below $d$ or $e$ |\n| Greatest | $a$ | $a$ is above all elements |\n| Least | Does not exist | No element is below both $d$ and $e$ |\n| Upper bounds of $\\{b,c\\}$ | $a$ | $a$ is above both $b$ and $c$ |\n| LUB of $\\{b,c\\}$ | $a$ | Least (only) upper bound |\n| Lower bounds of $\\{b,c\\}$ | $e$ | $e$ is below both $b$ and $c$ |\n| GLB of $\\{b,c\\}$ | $e$ | Greatest (only) lower bound |"
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "example",
+    "title": "Example 5: Comparing Partial and Total Orders",
+    "content": "Let $S = \\{2, 3, 6, 12, 24, 36\\}$ with the divisibility relation $\\mid$.\n\n1. Is $(S, \\mid)$ a partial order?\n2. Is it a total order?\n3. Find all incomparable pairs.\n4. Find maximal and minimal elements.\n\nSolution:\n\n(a) We verified in Example~1 that divisibility is reflexive,\nantisymmetric, and transitive. So $(S, \\mid)$ is a partial order.\n✓\n\n(b) Check comparability: $2 \\mid 3$? No. $3 \\mid 2$? No.\nSo $2$ and $3$ are incomparable. Therefore $(S, \\mid)$\nis not a total order. $\\times$\n\n(c) Incomparable pairs:\n| Pair | Reason |\n|---|---|\n| $(2, 3)$ | $2\\nmid 3$ and $3\\nmid 2$ |\n| $(3, 12)$ | $3\\mid 12$ --- comparable |\n| $(12, 36)$ | $12\\mid 36$ --- comparable |\n| $(24, 36)$ | $24\\nmid 36$ and $36\\nmid 24$ |\n| $(12, 24)$ | $12\\mid 24$ --- comparable |\n\nTruly incomparable pairs: $(2,3)$ and $(24,36)$.\n\n(d) From the divisibility structure:\n\n- Minimal elements: $2$ and $3$\n          (nothing in $S$ divides $2$ or $3$ except themselves).\n- Maximal elements: $24$ and $36$\n          (neither $24$ nor $36$ divides the other, and nothing in $S$\n          is divisible by both).\n- Least element: Does not exist ($2$ and $3$ are incomparable).\n- Greatest element: Does not exist ($24$ and $36$ are incomparable).\n\n\\smallFigure 2.9: Relationship between partial orders and total orders."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Partial Orderings",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Section 2.5 Summary --- Partial",
+    "content": "Section 2.5 Summary --- Partial Orderings\n\nEquivalence vs Partial Order:\n\n| Property | Equivalence Relation | Partial Order |\n|---|---|---|\n| Reflexive | ✓ | ✓ |\n| Symmetric | ✓ | $\\times$ |\n| Antisymmetric | $\\times$ | ✓ |\n| Transitive | ✓ | ✓ |\n| Acronym | RST | RAT |\n\nSpecial Elements Quick Reference:\n\n| Element | One-line definition |\n|---|---|\n| Maximal | Nothing strictly above it |\n| Minimal | Nothing strictly below it |\n| Greatest | Above everything (unique if exists) |\n| Least | Below everything (unique if exists) |\n| LUB of $B$ | Least of all upper bounds of $B$ |\n| GLB of $B$ | Greatest of all lower bounds of $B$ |\n\nHasse Diagram Construction Rules:\n\n1. Remove all loops.\n2. Remove all edges implied by transitivity.\n3. Place larger elements higher; drop all arrowheads.\n\nPast Paper Connection:\n\n- Partial orderings connect to tree structures\n          (Chapter~5 --- rooted trees use a partial order on nodes by depth).\n- The divisibility poset $(\\mathbb{Z}^+, \\mid)$ appears in\n          Number Theory (Chapter~3) for GCD and LCM calculations,\n          where $\\gcd(a,b) = $ GLB and $\\text{lcm}(a,b) = $ LUB."
+  },
+  {
+    "course": "Discrete Mathematics",
+    "chapter": "Chapter 2 - Sets",
+    "section": "Practice Exercises",
+    "type": "keypoint",
+    "title": "{primaryblue}{{\\ Exam Preparation Tips for Chapter",
+    "content": "Exam Preparation Tips for Chapter 2\n\n- Q1--Q3 cover sets and power sets --- always in objective part\n          (2 marks each).\n- Q4--Q8 cover set operations --- De Morgan proofs appear almost\n          every year as a 12-mark subjective question.\n- Q9--Q11 are the most heavily tested topic in this course ---\n          relations and their properties appear as full subjective questions in\n          2020, 2021, 2022, and 2024.\n- Q12--Q13 on equivalence relations are typically worth 12 marks\n          when they appear. Always verify all three properties with clear steps.\n- Q14--Q20 on partial orders and Hasse diagrams are growing in\n          frequency --- master the construction rules and special element definitions."
+  }
+]

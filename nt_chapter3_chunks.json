@@ -5,7 +5,7 @@
     "section": "Introduction to Congruences",
     "type": "definition",
     "title": "Definition: Congruence Relation",
-    "content": "Let $a, b, m \\in \\mathbb{Z}$ with $m > 0$. We say that $a$ is \\textbf{congruent to} $b$ \\textbf{modulo} $m$, written as:\n\\[\na \\equiv b \\pmod{m}\n\\]\n\nif and only if $m | (a - b)$.\n\nEquivalently, $a \\equiv b \\pmod{m}$ if and only if there exists an integer $k$ such that:\n\\[\na - b = km \\quad \\text{or} \\quad a = b + km\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Terminology:}}\n\\begin{itemize}[leftmargin=*]\n    \\item $m$ is called the \\textbf{modulus}\n    \\item We read $a \\equiv b \\pmod{m}$ as ``$a$ is congruent to $b$ modulo $m$''\n    \\item If $a \\not\\equiv b \\pmod{m}$, we say $a$ is \\textbf{not congruent to} $b$ modulo $m$\n    \\item The notation $\\pmod{m}$ indicates we are working in modular arithmetic\n\\end{itemize}"
+    "content": "Let $a, b, m \\in \\mathbb{Z}$ with $m > 0$. We say that $a$ is congruent to $b$ modulo $m$, written as:\n\\[\na \\equiv b \\pmod{m}\n\\]\n\nif and only if $m | (a - b)$.\n\nEquivalently, $a \\equiv b \\pmod{m}$ if and only if there exists an integer $k$ such that:\n\\[\na - b = km \\quad \\text{or} \\quad a = b + km\n\\]\n\nKey Terminology:\n\n- $m$ is called the modulus\n- We read $a \\equiv b \\pmod{m}$ as ``$a$ is congruent to $b$ modulo $m$''\n- If $a \\not\\equiv b \\pmod{m}$, we say $a$ is not congruent to $b$ modulo $m$\n- The notation $\\pmod{m}$ indicates we are working in modular arithmetic"
   },
   {
     "course": "Number Theory",
@@ -13,7 +13,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 1: Verifying Congruences",
-    "content": "Determine whether the following congruences are true:\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $17 \\equiv 5 \\pmod{12}$\n\nCheck if $12 | (17 - 5)$:\n\\[\n17 - 5 = 12 = 12 \\times 1\n\\]\n\nSince $12 | 12$, we have $17 \\equiv 5 \\pmod{12}$. \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} $-3 \\equiv 7 \\pmod{10}$\n\nCheck if $10 | (-3 - 7)$:\n\\[\n-3 - 7 = -10 = 10 \\times (-1)\n\\]\n\nSince $10 | (-10)$, we have $-3 \\equiv 7 \\pmod{10}$. \\textcolor{green}{\\checkmark}\n\n\\textbf{(c)} $23 \\equiv 8 \\pmod{5}$\n\nCheck if $5 | (23 - 8)$:\n\\[\n23 - 8 = 15 = 5 \\times 3\n\\]\n\nSince $5 | 15$, we have $23 \\equiv 8 \\pmod{5}$. \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} $14 \\equiv 5 \\pmod{4}$\n\nCheck if $4 | (14 - 5)$:\n\\[\n14 - 5 = 9 = 4 \\times 2 + 1\n\\]\n\nSince $4 \\nmid 9$, we have $14 \\not\\equiv 5 \\pmod{4}$. \\textcolor{red}{$\\times$}"
+    "content": "Determine whether the following congruences are true:\n\nSolution:\n\n(a) $17 \\equiv 5 \\pmod{12}$\n\nCheck if $12 | (17 - 5)$:\n\\[\n17 - 5 = 12 = 12 \\times 1\n\\]\n\nSince $12 | 12$, we have $17 \\equiv 5 \\pmod{12}$. ✓\n\n(b) $-3 \\equiv 7 \\pmod{10}$\n\nCheck if $10 | (-3 - 7)$:\n\\[\n-3 - 7 = -10 = 10 \\times (-1)\n\\]\n\nSince $10 | (-10)$, we have $-3 \\equiv 7 \\pmod{10}$. ✓\n\n(c) $23 \\equiv 8 \\pmod{5}$\n\nCheck if $5 | (23 - 8)$:\n\\[\n23 - 8 = 15 = 5 \\times 3\n\\]\n\nSince $5 | 15$, we have $23 \\equiv 8 \\pmod{5}$. ✓\n\n(d) $14 \\equiv 5 \\pmod{4}$\n\nCheck if $4 | (14 - 5)$:\n\\[\n14 - 5 = 9 = 4 \\times 2 + 1\n\\]\n\nSince $4 \\nmid 9$, we have $14 \\not\\equiv 5 \\pmod{4}$. $\\times$"
   },
   {
     "course": "Number Theory",
@@ -21,7 +21,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 2: Finding Congruent Numbers",
-    "content": "Find three positive integers that are congruent to 7 modulo 12.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe need integers of the form $a = 7 + 12k$ for $k \\in \\mathbb{Z}$.\n\nFor positive integers:\n\\begin{itemize}\n    \\item $k = 0$: $a = 7 + 12(0) = 7$\n    \\item $k = 1$: $a = 7 + 12(1) = 19$\n    \\item $k = 2$: $a = 7 + 12(2) = 31$\n    \\item $k = 3$: $a = 7 + 12(3) = 43$\n\\end{itemize}\n\nTherefore: $\\boxed{7, 19, 31, 43, \\ldots}$ are all congruent to 7 modulo 12.\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item $19 - 7 = 12 = 12(1)$ \\textcolor{green}{\\checkmark}\n    \\item $31 - 7 = 24 = 12(2)$ \\textcolor{green}{\\checkmark}\n    \\item $43 - 7 = 36 = 12(3)$ \\textcolor{green}{\\checkmark}\n\\end{itemize}"
+    "content": "Find three positive integers that are congruent to 7 modulo 12.\n\nSolution:\n\nWe need integers of the form $a = 7 + 12k$ for $k \\in \\mathbb{Z}$.\n\nFor positive integers:\n\n- $k = 0$: $a = 7 + 12(0) = 7$\n- $k = 1$: $a = 7 + 12(1) = 19$\n- $k = 2$: $a = 7 + 12(2) = 31$\n- $k = 3$: $a = 7 + 12(3) = 43$\n\nTherefore: $\\boxed{7, 19, 31, 43, \\ldots}$ are all congruent to 7 modulo 12.\n\nVerification:\n\n- $19 - 7 = 12 = 12(1)$ ✓\n- $31 - 7 = 24 = 12(2)$ ✓\n- $43 - 7 = 36 = 12(3)$ ✓"
   },
   {
     "course": "Number Theory",
@@ -29,7 +29,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 3: Negative Numbers in Congruences",
-    "content": "Show that $-15 \\equiv 6 \\pmod{7}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck if $7 | (-15 - 6)$:\n\\[\n-15 - 6 = -21 = 7 \\times (-3)\n\\]\n\nSince $7 | (-21)$, we have $-15 \\equiv 6 \\pmod{7}$. \\textcolor{green}{\\checkmark}\n\n\\textbf{Alternative method:}\n\nWe can also write: $-15 = 6 + 7k$\n\nSolving: $k = \\frac{-15 - 6}{7} = \\frac{-21}{7} = -3$ \\textcolor{green}{\\checkmark}"
+    "content": "Show that $-15 \\equiv 6 \\pmod{7}$.\n\nSolution:\n\nCheck if $7 | (-15 - 6)$:\n\\[\n-15 - 6 = -21 = 7 \\times (-3)\n\\]\n\nSince $7 | (-21)$, we have $-15 \\equiv 6 \\pmod{7}$. ✓\n\nAlternative method:\n\nWe can also write: $-15 = 6 + 7k$\n\nSolving: $k = \\frac{-15 - 6}{7} = \\frac{-21}{7} = -3$ ✓"
   },
   {
     "course": "Number Theory",
@@ -37,7 +37,7 @@
     "section": "Introduction to Congruences",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Important Observations}} {enumerate}[leftmargin=*] If $a",
-    "content": "\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Important Observations}}\n\n\\begin{enumerate}[leftmargin=*]\n    \\item If $a \\equiv b \\pmod{m}$, then $a$ and $b$ differ by a multiple of $m$\n    \\item Infinitely many integers are congruent to any given integer modulo $m$\n    \\item Negative numbers can be congruent to positive numbers\n    \\item $a \\equiv 0 \\pmod{m}$ if and only if $m | a$\n\\end{enumerate}"
+    "content": "Important Observations\n\n1. If $a \\equiv b \\pmod{m}$, then $a$ and $b$ differ by a multiple of $m$\n2. Infinitely many integers are congruent to any given integer modulo $m$\n3. Negative numbers can be congruent to positive numbers\n4. $a \\equiv 0 \\pmod{m}$ if and only if $m | a$"
   },
   {
     "course": "Number Theory",
@@ -45,7 +45,7 @@
     "section": "Introduction to Congruences",
     "type": "theorem",
     "title": "Theorem: Congruence is an Equivalence Relation",
-    "content": "Congruence modulo $m$ is an equivalence relation on $\\mathbb{Z}$. That is, for all $a, b, c \\in \\mathbb{Z}$:\n\n\\begin{enumerate}[label=(\\roman*), leftmargin=*]\n    \\item \\textbf{Reflexive:} $a \\equiv a \\pmod{m}$\n    \\item \\textbf{Symmetric:} If $a \\equiv b \\pmod{m}$, then $b \\equiv a \\pmod{m}$\n    \\item \\textbf{Transitive:} If $a \\equiv b \\pmod{m}$ and $b \\equiv c \\pmod{m}$, then $a \\equiv c \\pmod{m}$\n\\end{enumerate}"
+    "content": "Congruence modulo $m$ is an equivalence relation on $\\mathbb{Z}$. That is, for all $a, b, c \\in \\mathbb{Z}$:\n\n1. Reflexive: $a \\equiv a \\pmod{m}$\n2. Symmetric: If $a \\equiv b \\pmod{m}$, then $b \\equiv a \\pmod{m}$\n3. Transitive: If $a \\equiv b \\pmod{m}$ and $b \\equiv c \\pmod{m}$, then $a \\equiv c \\pmod{m}$"
   },
   {
     "course": "Number Theory",
@@ -53,7 +53,7 @@
     "section": "Introduction to Congruences",
     "type": "proof",
     "title": "Proof: Congruence is an Equivalence Relation",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nWe verify each property:\n\n\\vspace{0.3cm}\n\n\\textcolor{darkgreen}{\\textbf{(i) Reflexive Property:}}\n\nWe need to show $a \\equiv a \\pmod{m}$ for all $a \\in \\mathbb{Z}$.\n\nConsider:\n\\[\na - a = 0 = m \\times 0\n\\]\n\nSince $m | 0$ (as $0 = m \\times 0$), we have $m | (a - a)$.\n\nTherefore, $a \\equiv a \\pmod{m}$. \\textcolor{green}{\\checkmark}\n\n\\vspace{0.3cm}\n\n\\textcolor{darkgreen}{\\textbf{(ii) Symmetric Property:}}\n\nAssume $a \\equiv b \\pmod{m}$.\n\nThen $m | (a - b)$, so there exists $k \\in \\mathbb{Z}$ such that:\n\\[\na - b = km\n\\]\n\nMultiplying both sides by $-1$:\n\\[\nb - a = -km = m \\times (-k)\n\\]\n\nSince $-k \\in \\mathbb{Z}$, we have $m | (b - a)$.\n\nTherefore, $b \\equiv a \\pmod{m}$. \\textcolor{green}{\\checkmark}\n\n\\vspace{0.3cm}\n\n\\textcolor{darkgreen}{\\textbf{(iii) Transitive Property:}}\n\nAssume $a \\equiv b \\pmod{m}$ and $b \\equiv c \\pmod{m}$.\n\nThen:\n\\begin{itemize}\n    \\item $m | (a - b)$, so $a - b = k_1 m$ for some $k_1 \\in \\mathbb{Z}$\n    \\item $m | (b - c)$, so $b - c = k_2 m$ for some $k_2 \\in \\mathbb{Z}$\n\\end{itemize}\n\nAdding these equations:\n\\[\n(a - b) + (b - c) = k_1 m + k_2 m\n\\]\n\\[\na - c = (k_1 + k_2)m\n\\]\n\nSince $k_1 + k_2 \\in \\mathbb{Z}$, we have $m | (a - c)$.\n\nTherefore, $a \\equiv c \\pmod{m}$. \\textcolor{green}{\\checkmark}\n\n\\vspace{0.3cm}\n\n\\textcolor{green}{\\textbf{Conclusion:}} Since all three properties hold, congruence modulo $m$ is an equivalence relation. \\qed"
+    "content": "Proof:\n\nWe verify each property:\n\n(i) Reflexive Property:\n\nWe need to show $a \\equiv a \\pmod{m}$ for all $a \\in \\mathbb{Z}$.\n\nConsider:\n\\[\na - a = 0 = m \\times 0\n\\]\n\nSince $m | 0$ (as $0 = m \\times 0$), we have $m | (a - a)$.\n\nTherefore, $a \\equiv a \\pmod{m}$. ✓\n\n(ii) Symmetric Property:\n\nAssume $a \\equiv b \\pmod{m}$.\n\nThen $m | (a - b)$, so there exists $k \\in \\mathbb{Z}$ such that:\n\\[\na - b = km\n\\]\n\nMultiplying both sides by $-1$:\n\\[\nb - a = -km = m \\times (-k)\n\\]\n\nSince $-k \\in \\mathbb{Z}$, we have $m | (b - a)$.\n\nTherefore, $b \\equiv a \\pmod{m}$. ✓\n\n(iii) Transitive Property:\n\nAssume $a \\equiv b \\pmod{m}$ and $b \\equiv c \\pmod{m}$.\n\nThen:\n\n- $m | (a - b)$, so $a - b = k_1 m$ for some $k_1 \\in \\mathbb{Z}$\n- $m | (b - c)$, so $b - c = k_2 m$ for some $k_2 \\in \\mathbb{Z}$\n\nAdding these equations:\n\\[\n(a - b) + (b - c) = k_1 m + k_2 m\n\\]\n\\[\na - c = (k_1 + k_2)m\n\\]\n\nSince $k_1 + k_2 \\in \\mathbb{Z}$, we have $m | (a - c)$.\n\nTherefore, $a \\equiv c \\pmod{m}$. ✓\n\nConclusion: Since all three properties hold, congruence modulo $m$ is an equivalence relation."
   },
   {
     "course": "Number Theory",
@@ -61,7 +61,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 4: Demonstrating Reflexive Property",
-    "content": "Verify the reflexive property for $a = 25$ and $m = 7$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe need to show $25 \\equiv 25 \\pmod{7}$.\n\nCheck: $25 - 25 = 0 = 7 \\times 0$\n\nSince $7 | 0$, we have $25 \\equiv 25 \\pmod{7}$. \\textcolor{green}{\\checkmark}"
+    "content": "Verify the reflexive property for $a = 25$ and $m = 7$.\n\nSolution:\n\nWe need to show $25 \\equiv 25 \\pmod{7}$.\n\nCheck: $25 - 25 = 0 = 7 \\times 0$\n\nSince $7 | 0$, we have $25 \\equiv 25 \\pmod{7}$. ✓"
   },
   {
     "course": "Number Theory",
@@ -69,7 +69,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 5: Demonstrating Symmetric Property",
-    "content": "Given $13 \\equiv 3 \\pmod{5}$, verify that $3 \\equiv 13 \\pmod{5}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Given:} $13 \\equiv 3 \\pmod{5}$\n\nThis means $5 | (13 - 3) = 10$. \\textcolor{green}{\\checkmark}\n\n\\textbf{To verify:} $3 \\equiv 13 \\pmod{5}$\n\nCheck: $3 - 13 = -10 = 5 \\times (-2)$\n\nSince $5 | (-10)$, we have $3 \\equiv 13 \\pmod{5}$. \\textcolor{green}{\\checkmark}"
+    "content": "Given $13 \\equiv 3 \\pmod{5}$, verify that $3 \\equiv 13 \\pmod{5}$.\n\nSolution:\n\nGiven: $13 \\equiv 3 \\pmod{5}$\n\nThis means $5 | (13 - 3) = 10$. ✓\n\nTo verify: $3 \\equiv 13 \\pmod{5}$\n\nCheck: $3 - 13 = -10 = 5 \\times (-2)$\n\nSince $5 | (-10)$, we have $3 \\equiv 13 \\pmod{5}$. ✓"
   },
   {
     "course": "Number Theory",
@@ -77,7 +77,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 6: Demonstrating Transitive Property",
-    "content": "Given $17 \\equiv 11 \\pmod{6}$ and $11 \\equiv 5 \\pmod{6}$, verify that $17 \\equiv 5 \\pmod{6}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Given:}\n\\begin{itemize}\n    \\item $17 \\equiv 11 \\pmod{6}$: Check $17 - 11 = 6 = 6(1)$ \\textcolor{green}{\\checkmark}\n    \\item $11 \\equiv 5 \\pmod{6}$: Check $11 - 5 = 6 = 6(1)$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\n\\textbf{By transitivity:} $17 \\equiv 5 \\pmod{6}$\n\n\\textbf{Verification:} $17 - 5 = 12 = 6(2)$\n\nSince $6 | 12$, we have $17 \\equiv 5 \\pmod{6}$. \\textcolor{green}{\\checkmark}"
+    "content": "Given $17 \\equiv 11 \\pmod{6}$ and $11 \\equiv 5 \\pmod{6}$, verify that $17 \\equiv 5 \\pmod{6}$.\n\nSolution:\n\nGiven:\n\n- $17 \\equiv 11 \\pmod{6}$: Check $17 - 11 = 6 = 6(1)$ ✓\n- $11 \\equiv 5 \\pmod{6}$: Check $11 - 5 = 6 = 6(1)$ ✓\n\nBy transitivity: $17 \\equiv 5 \\pmod{6}$\n\nVerification: $17 - 5 = 12 = 6(2)$\n\nSince $6 | 12$, we have $17 \\equiv 5 \\pmod{6}$. ✓"
   },
   {
     "course": "Number Theory",
@@ -93,7 +93,7 @@
     "section": "Introduction to Congruences",
     "type": "proof",
     "title": "Proof: Remainder Interpretation",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\n\\textcolor{darkgreen}{\\textbf{Forward Direction ($\\Rightarrow$):}}\n\nAssume $a \\equiv b \\pmod{m}$.\n\nBy the Division Algorithm:\n\\begin{itemize}\n    \\item $a = mq_1 + r_1$ where $0 \\leq r_1 < m$\n    \\item $b = mq_2 + r_2$ where $0 \\leq r_2 < m$\n\\end{itemize}\n\nSince $a \\equiv b \\pmod{m}$, we have $m | (a - b)$.\n\nTherefore:\n\\[\na - b = m(q_1 - q_2) + (r_1 - r_2)\n\\]\n\nSince $m | (a - b)$, we have:\n\\[\nm | [m(q_1 - q_2) + (r_1 - r_2)]\n\\]\n\nThis means:\n\\[\nm | (r_1 - r_2)\n\\]\n\nBut $0 \\leq r_1 < m$ and $0 \\leq r_2 < m$, so:\n\\[\n-m < r_1 - r_2 < m\n\\]\n\nThe only multiple of $m$ in the interval $(-m, m)$ is 0.\n\nTherefore, $r_1 - r_2 = 0$, which gives $r_1 = r_2$. \\textcolor{green}{\\checkmark}\n\n\\vspace{0.3cm}\n\n\\textcolor{darkgreen}{\\textbf{Backward Direction ($\\Leftarrow$):}}\n\nAssume $a$ and $b$ leave the same remainder $r$ when divided by $m$.\n\nThen:\n\\begin{itemize}\n    \\item $a = mq_1 + r$\n    \\item $b = mq_2 + r$\n\\end{itemize}\n\nSubtracting:\n\\[\na - b = m(q_1 - q_2) + r - r = m(q_1 - q_2)\n\\]\n\nTherefore, $m | (a - b)$, which means $a \\equiv b \\pmod{m}$. \\textcolor{green}{\\checkmark}\n\n\\vspace{0.3cm}\n\n\\textcolor{green}{\\textbf{Conclusion:}} Both directions proven. \\qed"
+    "content": "Proof:\n\nForward Direction ($\\Rightarrow$):\n\nAssume $a \\equiv b \\pmod{m}$.\n\nBy the Division Algorithm:\n\n- $a = mq_1 + r_1$ where $0 \\leq r_1 < m$\n- $b = mq_2 + r_2$ where $0 \\leq r_2 < m$\n\nSince $a \\equiv b \\pmod{m}$, we have $m | (a - b)$.\n\nTherefore:\n\\[\na - b = m(q_1 - q_2) + (r_1 - r_2)\n\\]\n\nSince $m | (a - b)$, we have:\n\\[\nm | [m(q_1 - q_2) + (r_1 - r_2)]\n\\]\n\nThis means:\n\\[\nm | (r_1 - r_2)\n\\]\n\nBut $0 \\leq r_1 < m$ and $0 \\leq r_2 < m$, so:\n\\[\n-m < r_1 - r_2 < m\n\\]\n\nThe only multiple of $m$ in the interval $(-m, m)$ is 0.\n\nTherefore, $r_1 - r_2 = 0$, which gives $r_1 = r_2$. ✓\n\nBackward Direction ($\\Leftarrow$):\n\nAssume $a$ and $b$ leave the same remainder $r$ when divided by $m$.\n\nThen:\n\n- $a = mq_1 + r$\n- $b = mq_2 + r$\n\nSubtracting:\n\\[\na - b = m(q_1 - q_2) + r - r = m(q_1 - q_2)\n\\]\n\nTherefore, $m | (a - b)$, which means $a \\equiv b \\pmod{m}$. ✓\n\nConclusion: Both directions proven."
   },
   {
     "course": "Number Theory",
@@ -101,7 +101,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 7: Using Remainder Interpretation",
-    "content": "Show that $47 \\equiv 11 \\pmod{9}$ using the remainder interpretation.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nDivide both numbers by 9:\n\n\\textbf{For 47:}\n\\[\n47 = 9(5) + 2\n\\]\nRemainder = 2\n\n\\textbf{For 11:}\n\\[\n11 = 9(1) + 2\n\\]\nRemainder = 2\n\nSince both have the same remainder (2), we conclude:\n\\[\n47 \\equiv 11 \\pmod{9}\n\\]\n\n\\textbf{Direct verification:} $47 - 11 = 36 = 9(4)$ \\textcolor{green}{\\checkmark}"
+    "content": "Show that $47 \\equiv 11 \\pmod{9}$ using the remainder interpretation.\n\nSolution:\n\nDivide both numbers by 9:\n\nFor 47:\n\\[\n47 = 9(5) + 2\n\\]\nRemainder = 2\n\nFor 11:\n\\[\n11 = 9(1) + 2\n\\]\nRemainder = 2\n\nSince both have the same remainder (2), we conclude:\n\\[\n47 \\equiv 11 \\pmod{9}\n\\]\n\nDirect verification: $47 - 11 = 36 = 9(4)$ ✓"
   },
   {
     "course": "Number Theory",
@@ -109,7 +109,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 8: Finding Remainder Using Congruence",
-    "content": "If $a \\equiv 7 \\pmod{12}$, what is the remainder when $a$ is divided by 12?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nBy the Remainder Interpretation Theorem, if $a \\equiv 7 \\pmod{12}$, then $a$ and 7 leave the same remainder when divided by 12.\n\nSince $7 = 12(0) + 7$, the remainder when 7 is divided by 12 is 7.\n\nTherefore, the remainder when $a$ is divided by 12 is $\\boxed{7}$.\n\n\\textbf{Examples:}\n\\begin{itemize}\n    \\item $a = 19$: $19 = 12(1) + 7$ \\textcolor{green}{\\checkmark}\n    \\item $a = 31$: $31 = 12(2) + 7$ \\textcolor{green}{\\checkmark}\n    \\item $a = -5$: $-5 = 12(-1) + 7$ \\textcolor{green}{\\checkmark}\n\\end{itemize}"
+    "content": "If $a \\equiv 7 \\pmod{12}$, what is the remainder when $a$ is divided by 12?\n\nSolution:\n\nBy the Remainder Interpretation Theorem, if $a \\equiv 7 \\pmod{12}$, then $a$ and 7 leave the same remainder when divided by 12.\n\nSince $7 = 12(0) + 7$, the remainder when 7 is divided by 12 is 7.\n\nTherefore, the remainder when $a$ is divided by 12 is $\\boxed{7}$.\n\nExamples:\n\n- $a = 19$: $19 = 12(1) + 7$ ✓\n- $a = 31$: $31 = 12(2) + 7$ ✓\n- $a = -5$: $-5 = 12(-1) + 7$ ✓"
   },
   {
     "course": "Number Theory",
@@ -117,7 +117,7 @@
     "section": "Introduction to Congruences",
     "type": "example",
     "title": "Example 9: Non-Congruent Numbers",
-    "content": "Show that $25$ and $13$ are not congruent modulo 7 using remainders.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nFind remainders when divided by 7:\n\n\\textbf{For 25:}\n\\[\n25 = 7(3) + 4\n\\]\nRemainder = 4\n\n\\textbf{For 13:}\n\\[\n13 = 7(1) + 6\n\\]\nRemainder = 6\n\nSince $4 \\neq 6$, the remainders are different.\n\nTherefore, $25 \\not\\equiv 13 \\pmod{7}$. \\textcolor{red}{$\\times$}\n\n\\textbf{Direct verification:} $25 - 13 = 12 = 7(1) + 5$\n\nSince $7 \\nmid 12$, indeed $25 \\not\\equiv 13 \\pmod{7}$. \\textcolor{green}{\\checkmark}"
+    "content": "Show that $25$ and $13$ are not congruent modulo 7 using remainders.\n\nSolution:\n\nFind remainders when divided by 7:\n\nFor 25:\n\\[\n25 = 7(3) + 4\n\\]\nRemainder = 4\n\nFor 13:\n\\[\n13 = 7(1) + 6\n\\]\nRemainder = 6\n\nSince $4 \\neq 6$, the remainders are different.\n\nTherefore, $25 \\not\\equiv 13 \\pmod{7}$. $\\times$\n\nDirect verification: $25 - 13 = 12 = 7(1) + 5$\n\nSince $7 \\nmid 12$, indeed $25 \\not\\equiv 13 \\pmod{7}$. ✓"
   },
   {
     "course": "Number Theory",
@@ -125,7 +125,7 @@
     "section": "Introduction to Congruences",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Introduction to Congruences}} {center}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Introduction to Congruences}}\n\n\\begin{center}\n\\begin{tabular}{|p{5cm}|p{7cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Concept} & \\textbf{Key Point} \\\\\n\\hline\nDefinition & $a \\equiv b \\pmod{m} \\iff m | (a-b)$ \\\\\n\\hline\nEquivalence Relation & Reflexive, Symmetric, Transitive \\\\\n\\hline\nRemainder Property & Same remainder when divided by $m$ \\\\\n\\hline\nTesting Congruence & Check if $m$ divides $(a-b)$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Remember:}}\n\\begin{itemize}\n    \\item Congruence is like equality, but \"modulo $m$\"\n    \\item Think of it as ``clock arithmetic\"\n    \\item $a \\equiv 0 \\pmod{m}$ means $m$ divides $a$\n\\end{itemize}\n\n\\newpage"
+    "content": "Summary: Introduction to Congruences\n\n| Concept | Key Point |\n|---|---|\n| Definition | $a \\equiv b \\pmod{m} \\iff m | (a-b)$ |\n| Equivalence Relation | Reflexive, Symmetric, Transitive |\n| Remainder Property | Same remainder when divided by $m$ |\n| Testing Congruence | Check if $m$ divides $(a-b)$ |\n\nRemember:\n\n- Congruence is like equality, but \"modulo $m$\"\n- Think of it as ``clock arithmetic\"\n- $a \\equiv 0 \\pmod{m}$ means $m$ divides $a$"
   },
   {
     "course": "Number Theory",
@@ -133,7 +133,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "definition",
     "title": "Algebraic Properties of Congruences",
-    "content": "If $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$, then:\n\n\\begin{enumerate}[label=(\\roman*), leftmargin=*]\n    \\item \\textbf{Addition Property:}\n    \\[\n    a + c \\equiv b + d \\pmod{m}\n    \\]\n    \n    \\item \\textbf{Subtraction Property:}\n    \\[\n    a - c \\equiv b - d \\pmod{m}\n    \\]\n    \n    \\item \\textbf{Multiplication Property:}\n    \\[\n    ac \\equiv bd \\pmod{m}\n    \\]\n    \n    \\item \\textbf{Linear Combination Property:}\n    \n    For any integers $x$ and $y$:\n    \\[\n    ax + cy \\equiv bx + dy \\pmod{m}\n    \\]\n\\end{enumerate}\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Point:}} These properties allow us to perform arithmetic operations on congruences just like we do with equations."
+    "content": "If $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$, then:\n\n1. Addition Property:\n    \\[\n    a + c \\equiv b + d \\pmod{m}\n    \\]\n2. Subtraction Property:\n    \\[\n    a - c \\equiv b - d \\pmod{m}\n    \\]\n3. Multiplication Property:\n    \\[\n    ac \\equiv bd \\pmod{m}\n    \\]\n4. Linear Combination Property:\n\n    For any integers $x$ and $y$:\n    \\[\n    ax + cy \\equiv bx + dy \\pmod{m}\n    \\]\n\nKey Point: These properties allow us to perform arithmetic operations on congruences just like we do with equations."
   },
   {
     "course": "Number Theory",
@@ -141,7 +141,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: Addition Property",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nGiven: $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$\n\nTo prove: $a + c \\equiv b + d \\pmod{m}$\n\nSince $a \\equiv b \\pmod{m}$, we have $m | (a - b)$, so:\n\\[\na - b = k_1 m \\quad \\text{for some } k_1 \\in \\mathbb{Z}\n\\]\n\nSince $c \\equiv d \\pmod{m}$, we have $m | (c - d)$, so:\n\\[\nc - d = k_2 m \\quad \\text{for some } k_2 \\in \\mathbb{Z}\n\\]\n\nAdding these equations:\n\\[\n(a - b) + (c - d) = k_1 m + k_2 m\n\\]\n\\[\n(a + c) - (b + d) = (k_1 + k_2)m\n\\]\n\nSince $k_1 + k_2 \\in \\mathbb{Z}$, we have $m | [(a + c) - (b + d)]$.\n\nTherefore, $a + c \\equiv b + d \\pmod{m}$. \\qed"
+    "content": "Proof:\n\nGiven: $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$\n\nTo prove: $a + c \\equiv b + d \\pmod{m}$\n\nSince $a \\equiv b \\pmod{m}$, we have $m | (a - b)$, so:\n\\[\na - b = k_1 m \\quad \\text{for some } k_1 \\in \\mathbb{Z}\n\\]\n\nSince $c \\equiv d \\pmod{m}$, we have $m | (c - d)$, so:\n\\[\nc - d = k_2 m \\quad \\text{for some } k_2 \\in \\mathbb{Z}\n\\]\n\nAdding these equations:\n\\[\n(a - b) + (c - d) = k_1 m + k_2 m\n\\]\n\\[\n(a + c) - (b + d) = (k_1 + k_2)m\n\\]\n\nSince $k_1 + k_2 \\in \\mathbb{Z}$, we have $m | [(a + c) - (b + d)]$.\n\nTherefore, $a + c \\equiv b + d \\pmod{m}$."
   },
   {
     "course": "Number Theory",
@@ -149,7 +149,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 10: Addition Property",
-    "content": "Given $23 \\equiv 8 \\pmod{5}$ and $17 \\equiv 2 \\pmod{5}$, find $23 + 17 \\pmod{5}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nBy the addition property:\n\\[\n23 + 17 \\equiv 8 + 2 \\pmod{5}\n\\]\n\\[\n40 \\equiv 10 \\pmod{5}\n\\]\n\nSimplify further:\n\\[\n10 = 5(2) + 0\n\\]\n\nSo $10 \\equiv 0 \\pmod{5}$.\n\nTherefore: $\\boxed{23 + 17 \\equiv 0 \\pmod{5}}$\n\n\\textbf{Verification:} $40 = 5(8) + 0$ \\textcolor{green}{\\checkmark}"
+    "content": "Given $23 \\equiv 8 \\pmod{5}$ and $17 \\equiv 2 \\pmod{5}$, find $23 + 17 \\pmod{5}$.\n\nSolution:\n\nBy the addition property:\n\\[\n23 + 17 \\equiv 8 + 2 \\pmod{5}\n\\]\n\\[\n40 \\equiv 10 \\pmod{5}\n\\]\n\nSimplify further:\n\\[\n10 = 5(2) + 0\n\\]\n\nSo $10 \\equiv 0 \\pmod{5}$.\n\nTherefore: $\\boxed{23 + 17 \\equiv 0 \\pmod{5}}$\n\nVerification: $40 = 5(8) + 0$ ✓"
   },
   {
     "course": "Number Theory",
@@ -157,7 +157,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: Multiplication Property",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nGiven: $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$\n\nTo prove: $ac \\equiv bd \\pmod{m}$\n\nSince $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$:\n\\[\na = b + k_1 m \\quad \\text{and} \\quad c = d + k_2 m\n\\]\n\nfor some integers $k_1, k_2$.\n\nMultiply:\n\\[\nac = (b + k_1 m)(d + k_2 m)\n\\]\n\\[\n= bd + bk_2 m + dk_1 m + k_1 k_2 m^2\n\\]\n\\[\n= bd + m(bk_2 + dk_1 + k_1 k_2 m)\n\\]\n\nTherefore:\n\\[\nac - bd = m(bk_2 + dk_1 + k_1 k_2 m)\n\\]\n\nSince the expression in parentheses is an integer, we have $m | (ac - bd)$.\n\nTherefore, $ac \\equiv bd \\pmod{m}$. \\qed"
+    "content": "Proof:\n\nGiven: $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$\n\nTo prove: $ac \\equiv bd \\pmod{m}$\n\nSince $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$:\n\\[\na = b + k_1 m \\quad \\text{and} \\quad c = d + k_2 m\n\\]\n\nfor some integers $k_1, k_2$.\n\nMultiply:\n\\[\nac = (b + k_1 m)(d + k_2 m)\n\\]\n\\[\n= bd + bk_2 m + dk_1 m + k_1 k_2 m^2\n\\]\n\\[\n= bd + m(bk_2 + dk_1 + k_1 k_2 m)\n\\]\n\nTherefore:\n\\[\nac - bd = m(bk_2 + dk_1 + k_1 k_2 m)\n\\]\n\nSince the expression in parentheses is an integer, we have $m | (ac - bd)$.\n\nTherefore, $ac \\equiv bd \\pmod{m}$."
   },
   {
     "course": "Number Theory",
@@ -165,7 +165,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 11: Multiplication Property",
-    "content": "Given $11 \\equiv 3 \\pmod{4}$ and $9 \\equiv 1 \\pmod{4}$, find $11 \\times 9 \\pmod{4}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nBy the multiplication property:\n\\[\n11 \\times 9 \\equiv 3 \\times 1 \\pmod{4}\n\\]\n\\[\n99 \\equiv 3 \\pmod{4}\n\\]\n\n\\textbf{Verification:} \n\\[\n99 = 4(24) + 3\n\\]\n\nSo $99 \\equiv 3 \\pmod{4}$. \\textcolor{green}{\\checkmark}\n\nTherefore: $\\boxed{11 \\times 9 \\equiv 3 \\pmod{4}}$"
+    "content": "Given $11 \\equiv 3 \\pmod{4}$ and $9 \\equiv 1 \\pmod{4}$, find $11 \\times 9 \\pmod{4}$.\n\nSolution:\n\nBy the multiplication property:\n\\[\n11 \\times 9 \\equiv 3 \\times 1 \\pmod{4}\n\\]\n\\[\n99 \\equiv 3 \\pmod{4}\n\\]\n\nVerification:\n\\[\n99 = 4(24) + 3\n\\]\n\nSo $99 \\equiv 3 \\pmod{4}$. ✓\n\nTherefore: $\\boxed{11 \\times 9 \\equiv 3 \\pmod{4}}$"
   },
   {
     "course": "Number Theory",
@@ -173,7 +173,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: Linear Combination Property",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nGiven: $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$\n\nTo prove: $ax + cy \\equiv bx + dy \\pmod{m}$ for all $x, y \\in \\mathbb{Z}$\n\nSince $a \\equiv b \\pmod{m}$:\n\\[\na - b = k_1 m\n\\]\n\nMultiply by $x$:\n\\[\nax - bx = k_1 mx\n\\]\n\nSo $ax \\equiv bx \\pmod{m}$ \\quad $\\cdots (1)$\n\nSince $c \\equiv d \\pmod{m}$:\n\\[\nc - d = k_2 m\n\\]\n\nMultiply by $y$:\n\\[\ncy - dy = k_2 my\n\\]\n\nSo $cy \\equiv dy \\pmod{m}$ \\quad $\\cdots (2)$\n\nAdding congruences (1) and (2) using the addition property:\n\\[\nax + cy \\equiv bx + dy \\pmod{m}\n\\]\n\n\\qed"
+    "content": "Proof:\n\nGiven: $a \\equiv b \\pmod{m}$ and $c \\equiv d \\pmod{m}$\n\nTo prove: $ax + cy \\equiv bx + dy \\pmod{m}$ for all $x, y \\in \\mathbb{Z}$\n\nSince $a \\equiv b \\pmod{m}$:\n\\[\na - b = k_1 m\n\\]\n\nMultiply by $x$:\n\\[\nax - bx = k_1 mx\n\\]\n\nSo $ax \\equiv bx \\pmod{m}$ \\quad $\\cdots (1)$\n\nSince $c \\equiv d \\pmod{m}$:\n\\[\nc - d = k_2 m\n\\]\n\nMultiply by $y$:\n\\[\ncy - dy = k_2 my\n\\]\n\nSo $cy \\equiv dy \\pmod{m}$ \\quad $\\cdots (2)$\n\nAdding congruences (1) and (2) using the addition property:\n\\[\nax + cy \\equiv bx + dy \\pmod{m}\n\\]"
   },
   {
     "course": "Number Theory",
@@ -181,7 +181,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 12: Linear Combination",
-    "content": "Given $7 \\equiv 2 \\pmod{5}$ and $13 \\equiv 3 \\pmod{5}$, find $7(4) + 13(3) \\pmod{5}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nBy the linear combination property with $x = 4$ and $y = 3$:\n\\[\n7(4) + 13(3) \\equiv 2(4) + 3(3) \\pmod{5}\n\\]\n\\[\n28 + 39 \\equiv 8 + 9 \\pmod{5}\n\\]\n\\[\n67 \\equiv 17 \\pmod{5}\n\\]\n\nSimplify: $17 = 5(3) + 2$, so $17 \\equiv 2 \\pmod{5}$\n\nTherefore: $\\boxed{7(4) + 13(3) \\equiv 2 \\pmod{5}}$\n\n\\textbf{Direct verification:} $67 = 5(13) + 2$ \\textcolor{green}{\\checkmark}"
+    "content": "Given $7 \\equiv 2 \\pmod{5}$ and $13 \\equiv 3 \\pmod{5}$, find $7(4) + 13(3) \\pmod{5}$.\n\nSolution:\n\nBy the linear combination property with $x = 4$ and $y = 3$:\n\\[\n7(4) + 13(3) \\equiv 2(4) + 3(3) \\pmod{5}\n\\]\n\\[\n28 + 39 \\equiv 8 + 9 \\pmod{5}\n\\]\n\\[\n67 \\equiv 17 \\pmod{5}\n\\]\n\nSimplify: $17 = 5(3) + 2$, so $17 \\equiv 2 \\pmod{5}$\n\nTherefore: $\\boxed{7(4) + 13(3) \\equiv 2 \\pmod{5}}$\n\nDirect verification: $67 = 5(13) + 2$ ✓"
   },
   {
     "course": "Number Theory",
@@ -189,7 +189,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "theorem",
     "title": "Theorem: Power Property",
-    "content": "If $a \\equiv b \\pmod{m}$, then for any positive integer $k$:\n\\[\na^k \\equiv b^k \\pmod{m}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} Congruent numbers raised to the same power remain congruent."
+    "content": "If $a \\equiv b \\pmod{m}$, then for any positive integer $k$:\n\\[\na^k \\equiv b^k \\pmod{m}\n\\]\n\nIn words: Congruent numbers raised to the same power remain congruent."
   },
   {
     "course": "Number Theory",
@@ -197,7 +197,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: Power Property",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof by Induction:}}\n\n\\textbf{Base Case:} $k = 1$\n\n$a^1 \\equiv b^1 \\pmod{m}$ is given. \\textcolor{green}{\\checkmark}\n\n\\textbf{Inductive Hypothesis:} Assume $a^k \\equiv b^k \\pmod{m}$ for some positive integer $k$.\n\n\\textbf{Inductive Step:} Prove $a^{k+1} \\equiv b^{k+1} \\pmod{m}$\n\nWe have:\n\\[\na^{k+1} = a^k \\cdot a\n\\]\n\\[\nb^{k+1} = b^k \\cdot b\n\\]\n\nBy the inductive hypothesis: $a^k \\equiv b^k \\pmod{m}$\n\nBy the given: $a \\equiv b \\pmod{m}$\n\nUsing the multiplication property:\n\\[\na^k \\cdot a \\equiv b^k \\cdot b \\pmod{m}\n\\]\n\\[\na^{k+1} \\equiv b^{k+1} \\pmod{m}\n\\]\n\nBy mathematical induction, the result holds for all positive integers $k$. \\qed"
+    "content": "Proof by Induction:\n\nBase Case: $k = 1$\n\n$a^1 \\equiv b^1 \\pmod{m}$ is given. ✓\n\nInductive Hypothesis: Assume $a^k \\equiv b^k \\pmod{m}$ for some positive integer $k$.\n\nInductive Step: Prove $a^{k+1} \\equiv b^{k+1} \\pmod{m}$\n\nWe have:\n\\[\na^{k+1} = a^k \\cdot a\n\\]\n\\[\nb^{k+1} = b^k \\cdot b\n\\]\n\nBy the inductive hypothesis: $a^k \\equiv b^k \\pmod{m}$\n\nBy the given: $a \\equiv b \\pmod{m}$\n\nUsing the multiplication property:\n\\[\na^k \\cdot a \\equiv b^k \\cdot b \\pmod{m}\n\\]\n\\[\na^{k+1} \\equiv b^{k+1} \\pmod{m}\n\\]\n\nBy mathematical induction, the result holds for all positive integers $k$."
   },
   {
     "course": "Number Theory",
@@ -205,7 +205,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 13: Computing Large Powers",
-    "content": "Find $7^{100} \\pmod{6}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nFirst, simplify the base:\n\\[\n7 \\equiv 1 \\pmod{6}\n\\]\n\nBy the power property:\n\\[\n7^{100} \\equiv 1^{100} \\pmod{6}\n\\]\n\\[\n7^{100} \\equiv 1 \\pmod{6}\n\\]\n\nTherefore: $\\boxed{7^{100} \\equiv 1 \\pmod{6}}$\n\n\\textbf{Note:} Without this property, computing $7^{100}$ directly would be extremely difficult!"
+    "content": "Find $7^{100} \\pmod{6}$.\n\nSolution:\n\nFirst, simplify the base:\n\\[\n7 \\equiv 1 \\pmod{6}\n\\]\n\nBy the power property:\n\\[\n7^{100} \\equiv 1^{100} \\pmod{6}\n\\]\n\\[\n7^{100} \\equiv 1 \\pmod{6}\n\\]\n\nTherefore: $\\boxed{7^{100} \\equiv 1 \\pmod{6}}$\n\nNote: Without this property, computing $7^{100}$ directly would be extremely difficult!"
   },
   {
     "course": "Number Theory",
@@ -213,7 +213,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 14: Another Power Calculation",
-    "content": "Find $3^{50} \\pmod{8}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nFirst find a pattern:\n\\begin{align*}\n3^1 &= 3 \\equiv 3 \\pmod{8}\\\\\n3^2 &= 9 \\equiv 1 \\pmod{8}\n\\end{align*}\n\nSince $3^2 \\equiv 1 \\pmod{8}$, we can use the power property:\n\\[\n3^{50} = (3^2)^{25} \\equiv 1^{25} \\pmod{8}\n\\]\n\\[\n3^{50} \\equiv 1 \\pmod{8}\n\\]\n\nTherefore: $\\boxed{3^{50} \\equiv 1 \\pmod{8}}$"
+    "content": "Find $3^{50} \\pmod{8}$.\n\nSolution:\n\nFirst find a pattern:\n$$\\begin{align*}\n3^1 &= 3 \\equiv 3 \\pmod{8}\\\\\n3^2 &= 9 \\equiv 1 \\pmod{8}\n\\end{align*}$$\n\nSince $3^2 \\equiv 1 \\pmod{8}$, we can use the power property:\n\\[\n3^{50} = (3^2)^{25} \\equiv 1^{25} \\pmod{8}\n\\]\n\\[\n3^{50} \\equiv 1 \\pmod{8}\n\\]\n\nTherefore: $\\boxed{3^{50} \\equiv 1 \\pmod{8}}$"
   },
   {
     "course": "Number Theory",
@@ -221,7 +221,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "theorem",
     "title": "Theorem: Cancellation Law",
-    "content": "If $ac \\equiv bc \\pmod{m}$ and $\\gcd(c, m) = 1$, then:\n\\[\na \\equiv b \\pmod{m}\n\\]\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Warning:}} The condition $\\gcd(c, m) = 1$ is essential. Without it, cancellation may not be valid!"
+    "content": "If $ac \\equiv bc \\pmod{m}$ and $\\gcd(c, m) = 1$, then:\n\\[\na \\equiv b \\pmod{m}\n\\]\n\nWarning: The condition $\\gcd(c, m) = 1$ is essential. Without it, cancellation may not be valid!"
   },
   {
     "course": "Number Theory",
@@ -229,7 +229,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: Cancellation Law",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nGiven: $ac \\equiv bc \\pmod{m}$ and $\\gcd(c, m) = 1$\n\nSince $ac \\equiv bc \\pmod{m}$:\n\\[\nm | (ac - bc)\n\\]\n\\[\nm | c(a - b)\n\\]\n\nSince $\\gcd(c, m) = 1$ and $m | c(a - b)$, by Euclid's Lemma:\n\\[\nm | (a - b)\n\\]\n\nTherefore, $a \\equiv b \\pmod{m}$. \\qed"
+    "content": "Proof:\n\nGiven: $ac \\equiv bc \\pmod{m}$ and $\\gcd(c, m) = 1$\n\nSince $ac \\equiv bc \\pmod{m}$:\n\\[\nm | (ac - bc)\n\\]\n\\[\nm | c(a - b)\n\\]\n\nSince $\\gcd(c, m) = 1$ and $m | c(a - b)$, by Euclid's Lemma:\n\\[\nm | (a - b)\n\\]\n\nTherefore, $a \\equiv b \\pmod{m}$."
   },
   {
     "course": "Number Theory",
@@ -237,7 +237,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 15: Valid Cancellation",
-    "content": "Given $5 \\times 7 \\equiv 5 \\times 3 \\pmod{4}$, find the relationship between 7 and 3 modulo 4.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe have $35 \\equiv 15 \\pmod{4}$.\n\nCheck if we can cancel 5: $\\gcd(5, 4) = 1$ \\textcolor{green}{\\checkmark}\n\nSince $\\gcd(5, 4) = 1$, we can cancel:\n\\[\n7 \\equiv 3 \\pmod{4}\n\\]\n\n\\textbf{Verification:} $7 - 3 = 4 = 4(1)$, so indeed $7 \\equiv 3 \\pmod{4}$. \\textcolor{green}{\\checkmark}"
+    "content": "Given $5 \\times 7 \\equiv 5 \\times 3 \\pmod{4}$, find the relationship between 7 and 3 modulo 4.\n\nSolution:\n\nWe have $35 \\equiv 15 \\pmod{4}$.\n\nCheck if we can cancel 5: $\\gcd(5, 4) = 1$ ✓\n\nSince $\\gcd(5, 4) = 1$, we can cancel:\n\\[\n7 \\equiv 3 \\pmod{4}\n\\]\n\nVerification: $7 - 3 = 4 = 4(1)$, so indeed $7 \\equiv 3 \\pmod{4}$. ✓"
   },
   {
     "course": "Number Theory",
@@ -245,7 +245,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 16: When Cancellation Fails",
-    "content": "Consider $2 \\times 3 \\equiv 2 \\times 6 \\pmod{6}$.\n\nCan we cancel 2 to conclude $3 \\equiv 6 \\pmod{6}$?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck the gcd: $\\gcd(2, 6) = 2 \\neq 1$ \\textcolor{red}{$\\times$}\n\nSince $\\gcd(2, 6) \\neq 1$, we \\textbf{cannot} simply cancel 2.\n\nLet's verify:\n\\begin{itemize}\n    \\item $2 \\times 3 = 6 \\equiv 0 \\pmod{6}$ \\textcolor{green}{\\checkmark}\n    \\item $2 \\times 6 = 12 \\equiv 0 \\pmod{6}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nSo the original congruence is true.\n\nBut if we claimed $3 \\equiv 6 \\pmod{6}$:\n\\[\n3 - 6 = -3\n\\]\n\nSince $6 \\nmid (-3)$, we have $3 \\not\\equiv 6 \\pmod{6}$. \\textcolor{red}{$\\times$}\n\n\\textcolor{accentorange}{\\textbf{Conclusion:}} Cancellation failed because $\\gcd(2, 6) \\neq 1$!"
+    "content": "Consider $2 \\times 3 \\equiv 2 \\times 6 \\pmod{6}$.\n\nCan we cancel 2 to conclude $3 \\equiv 6 \\pmod{6}$?\n\nSolution:\n\nCheck the gcd: $\\gcd(2, 6) = 2 \\neq 1$ $\\times$\n\nSince $\\gcd(2, 6) \\neq 1$, we cannot simply cancel 2.\n\nLet's verify:\n\n- $2 \\times 3 = 6 \\equiv 0 \\pmod{6}$ ✓\n- $2 \\times 6 = 12 \\equiv 0 \\pmod{6}$ ✓\n\nSo the original congruence is true.\n\nBut if we claimed $3 \\equiv 6 \\pmod{6}$:\n\\[\n3 - 6 = -3\n\\]\n\nSince $6 \\nmid (-3)$, we have $3 \\not\\equiv 6 \\pmod{6}$. $\\times$\n\nConclusion: Cancellation failed because $\\gcd(2, 6) \\neq 1$!"
   },
   {
     "course": "Number Theory",
@@ -253,7 +253,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "definition",
     "title": "Corollary 1: Cancellation with Coprime Factor",
-    "content": "If $ac \\equiv bc \\pmod{m}$ and $\\gcd(c, m) = d > 1$, then:\n\\[\na \\equiv b \\pmod{\\frac{m}{d}}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} When we cannot cancel completely, we can reduce the modulus."
+    "content": "If $ac \\equiv bc \\pmod{m}$ and $\\gcd(c, m) = d > 1$, then:\n\\[\na \\equiv b \\pmod{\\frac{m}{d}}\n\\]\n\nIn words: When we cannot cancel completely, we can reduce the modulus."
   },
   {
     "course": "Number Theory",
@@ -261,7 +261,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 17: Modified Cancellation",
-    "content": "From Example 16: $2 \\times 3 \\equiv 2 \\times 6 \\pmod{6}$\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nHere $\\gcd(2, 6) = 2$, so we get:\n\\[\n3 \\equiv 6 \\pmod{\\frac{6}{2}}\n\\]\n\\[\n3 \\equiv 6 \\pmod{3}\n\\]\n\n\\textbf{Verification:} $6 - 3 = 3 = 3(1)$\n\nSo $3 \\equiv 6 \\pmod{3}$ is true! \\textcolor{green}{\\checkmark}"
+    "content": "From Example 16: $2 \\times 3 \\equiv 2 \\times 6 \\pmod{6}$\n\nSolution:\n\nHere $\\gcd(2, 6) = 2$, so we get:\n\\[\n3 \\equiv 6 \\pmod{\\frac{6}{2}}\n\\]\n\\[\n3 \\equiv 6 \\pmod{3}\n\\]\n\nVerification: $6 - 3 = 3 = 3(1)$\n\nSo $3 \\equiv 6 \\pmod{3}$ is true! ✓"
   },
   {
     "course": "Number Theory",
@@ -269,7 +269,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "definition",
     "title": "Corollary 2: Cancellation with Prime Modulus",
-    "content": "If $ac \\equiv bc \\pmod{p}$ where $p$ is prime and $p \\nmid c$, then:\n\\[\na \\equiv b \\pmod{p}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Point:}} For prime modulus, we can always cancel non-zero factors."
+    "content": "If $ac \\equiv bc \\pmod{p}$ where $p$ is prime and $p \\nmid c$, then:\n\\[\na \\equiv b \\pmod{p}\n\\]\n\nKey Point: For prime modulus, we can always cancel non-zero factors."
   },
   {
     "course": "Number Theory",
@@ -277,7 +277,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 18: Cancellation with Prime Modulus",
-    "content": "Given $5 \\times 8 \\equiv 5 \\times 2 \\pmod{7}$, can we cancel 5?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck conditions:\n\\begin{itemize}\n    \\item $p = 7$ is prime \\textcolor{green}{\\checkmark}\n    \\item $7 \\nmid 5$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nBy Corollary 2, we can cancel:\n\\[\n8 \\equiv 2 \\pmod{7}\n\\]\n\n\\textbf{Verification:} $8 - 2 = 6$, and $7 \\nmid 6$\n\nWait, this means $8 \\not\\equiv 2 \\pmod{7}$!\n\nLet me recalculate: $8 = 7(1) + 1$, so $8 \\equiv 1 \\pmod{7}$\n\nAnd $2 \\equiv 2 \\pmod{7}$\n\nSo the original statement $5 \\times 8 \\equiv 5 \\times 2 \\pmod{7}$ must be false!\n\nCheck: $5 \\times 8 = 40 = 7(5) + 5 \\equiv 5 \\pmod{7}$\n\nAnd: $5 \\times 2 = 10 = 7(1) + 3 \\equiv 3 \\pmod{7}$\n\nSince $5 \\not\\equiv 3 \\pmod{7}$, the premise was incorrect. \\textcolor{red}{$\\times$}"
+    "content": "Given $5 \\times 8 \\equiv 5 \\times 2 \\pmod{7}$, can we cancel 5?\n\nSolution:\n\nCheck conditions:\n\n- $p = 7$ is prime ✓\n- $7 \\nmid 5$ ✓\n\nBy Corollary 2, we can cancel:\n\\[\n8 \\equiv 2 \\pmod{7}\n\\]\n\nVerification: $8 - 2 = 6$, and $7 \\nmid 6$\n\nWait, this means $8 \\not\\equiv 2 \\pmod{7}$!\n\nLet me recalculate: $8 = 7(1) + 1$, so $8 \\equiv 1 \\pmod{7}$\n\nAnd $2 \\equiv 2 \\pmod{7}$\n\nSo the original statement $5 \\times 8 \\equiv 5 \\times 2 \\pmod{7}$ must be false!\n\nCheck: $5 \\times 8 = 40 = 7(5) + 5 \\equiv 5 \\pmod{7}$\n\nAnd: $5 \\times 2 = 10 = 7(1) + 3 \\equiv 3 \\pmod{7}$\n\nSince $5 \\not\\equiv 3 \\pmod{7}$, the premise was incorrect. $\\times$"
   },
   {
     "course": "Number Theory",
@@ -293,7 +293,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: GCD Preservation",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nGiven: $a \\equiv b \\pmod{m}$\n\nThen $a = b + km$ for some integer $k$.\n\nLet $d_1 = \\gcd(a, m)$ and $d_2 = \\gcd(b, m)$.\n\n\\textbf{Show $d_1 | d_2$:}\n\nSince $d_1 | a$ and $d_1 | m$:\n\\[\nd_1 | (a - km) = b\n\\]\n\nSo $d_1 | b$ and $d_1 | m$, which means $d_1 | \\gcd(b, m) = d_2$.\n\n\\textbf{Show $d_2 | d_1$:}\n\nSince $d_2 | b$ and $d_2 | m$:\n\\[\nd_2 | (b + km) = a\n\\]\n\nSo $d_2 | a$ and $d_2 | m$, which means $d_2 | \\gcd(a, m) = d_1$.\n\nSince $d_1 | d_2$ and $d_2 | d_1$, and both are positive:\n\\[\nd_1 = d_2\n\\]\n\nTherefore, $\\gcd(a, m) = \\gcd(b, m)$. \\qed"
+    "content": "Proof:\n\nGiven: $a \\equiv b \\pmod{m}$\n\nThen $a = b + km$ for some integer $k$.\n\nLet $d_1 = \\gcd(a, m)$ and $d_2 = \\gcd(b, m)$.\n\nShow $d_1 | d_2$:\n\nSince $d_1 | a$ and $d_1 | m$:\n\\[\nd_1 | (a - km) = b\n\\]\n\nSo $d_1 | b$ and $d_1 | m$, which means $d_1 | \\gcd(b, m) = d_2$.\n\nShow $d_2 | d_1$:\n\nSince $d_2 | b$ and $d_2 | m$:\n\\[\nd_2 | (b + km) = a\n\\]\n\nSo $d_2 | a$ and $d_2 | m$, which means $d_2 | \\gcd(a, m) = d_1$.\n\nSince $d_1 | d_2$ and $d_2 | d_1$, and both are positive:\n\\[\nd_1 = d_2\n\\]\n\nTherefore, $\\gcd(a, m) = \\gcd(b, m)$."
   },
   {
     "course": "Number Theory",
@@ -301,7 +301,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 19: GCD Preservation",
-    "content": "Given $23 \\equiv 8 \\pmod{5}$, verify that $\\gcd(23, 5) = \\gcd(8, 5)$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCalculate both GCDs:\n\n$\\gcd(23, 5)$:\n\\begin{align*}\n23 &= 5(4) + 3\\\\\n5 &= 3(1) + 2\\\\\n3 &= 2(1) + 1\\\\\n2 &= 1(2) + 0\n\\end{align*}\nSo $\\gcd(23, 5) = 1$\n\n$\\gcd(8, 5)$:\n\\begin{align*}\n8 &= 5(1) + 3\\\\\n5 &= 3(1) + 2\\\\\n3 &= 2(1) + 1\\\\\n2 &= 1(2) + 0\n\\end{align*}\nSo $\\gcd(8, 5) = 1$\n\nIndeed, $\\gcd(23, 5) = \\gcd(8, 5) = 1$ \\textcolor{green}{\\checkmark}"
+    "content": "Given $23 \\equiv 8 \\pmod{5}$, verify that $\\gcd(23, 5) = \\gcd(8, 5)$.\n\nSolution:\n\nCalculate both GCDs:\n\n$\\gcd(23, 5)$:\n$$\\begin{align*}\n23 &= 5(4) + 3\\\\\n5 &= 3(1) + 2\\\\\n3 &= 2(1) + 1\\\\\n2 &= 1(2) + 0\n\\end{align*}$$\nSo $\\gcd(23, 5) = 1$\n\n$\\gcd(8, 5)$:\n$$\\begin{align*}\n8 &= 5(1) + 3\\\\\n5 &= 3(1) + 2\\\\\n3 &= 2(1) + 1\\\\\n2 &= 1(2) + 0\n\\end{align*}$$\nSo $\\gcd(8, 5) = 1$\n\nIndeed, $\\gcd(23, 5) = \\gcd(8, 5) = 1$ ✓"
   },
   {
     "course": "Number Theory",
@@ -309,7 +309,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "theorem",
     "title": "Theorem: Divisor of Modulus",
-    "content": "If $a \\equiv b \\pmod{m}$ and $n | m$, then:\n\\[\na \\equiv b \\pmod{n}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} If a congruence holds for a modulus, it also holds for any divisor of that modulus."
+    "content": "If $a \\equiv b \\pmod{m}$ and $n | m$, then:\n\\[\na \\equiv b \\pmod{n}\n\\]\n\nIn words: If a congruence holds for a modulus, it also holds for any divisor of that modulus."
   },
   {
     "course": "Number Theory",
@@ -317,7 +317,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: Divisor of Modulus",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nGiven: $a \\equiv b \\pmod{m}$ and $n | m$\n\nSince $a \\equiv b \\pmod{m}$:\n\\[\nm | (a - b)\n\\]\n\nSo $a - b = km$ for some integer $k$.\n\nSince $n | m$, we have $m = nt$ for some integer $t$.\n\nSubstituting:\n\\[\na - b = k(nt) = (kt)n\n\\]\n\nSince $kt$ is an integer, we have $n | (a - b)$.\n\nTherefore, $a \\equiv b \\pmod{n}$. \\qed"
+    "content": "Proof:\n\nGiven: $a \\equiv b \\pmod{m}$ and $n | m$\n\nSince $a \\equiv b \\pmod{m}$:\n\\[\nm | (a - b)\n\\]\n\nSo $a - b = km$ for some integer $k$.\n\nSince $n | m$, we have $m = nt$ for some integer $t$.\n\nSubstituting:\n\\[\na - b = k(nt) = (kt)n\n\\]\n\nSince $kt$ is an integer, we have $n | (a - b)$.\n\nTherefore, $a \\equiv b \\pmod{n}$."
   },
   {
     "course": "Number Theory",
@@ -325,7 +325,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 20: Divisor of Modulus",
-    "content": "Given $37 \\equiv 13 \\pmod{24}$, find $37 \\pmod{12}$, $37 \\pmod{6}$, and $37 \\pmod{3}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince $12 | 24$, $6 | 24$, and $3 | 24$, we have:\n\n\\textbf{(a)} $37 \\equiv 13 \\pmod{12}$\n\nVerify: $37 - 13 = 24 = 12(2)$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} $37 \\equiv 13 \\pmod{6}$\n\nVerify: $37 - 13 = 24 = 6(4)$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(c)} $37 \\equiv 13 \\pmod{3}$\n\nVerify: $37 - 13 = 24 = 3(8)$ \\textcolor{green}{\\checkmark}\n\nSimplify further:\n\\begin{itemize}\n    \\item $13 = 12(1) + 1$, so $37 \\equiv 1 \\pmod{12}$\n    \\item $13 = 6(2) + 1$, so $37 \\equiv 1 \\pmod{6}$\n    \\item $13 = 3(4) + 1$, so $37 \\equiv 1 \\pmod{3}$\n\\end{itemize}"
+    "content": "Given $37 \\equiv 13 \\pmod{24}$, find $37 \\pmod{12}$, $37 \\pmod{6}$, and $37 \\pmod{3}$.\n\nSolution:\n\nSince $12 | 24$, $6 | 24$, and $3 | 24$, we have:\n\n(a) $37 \\equiv 13 \\pmod{12}$\n\nVerify: $37 - 13 = 24 = 12(2)$ ✓\n\n(b) $37 \\equiv 13 \\pmod{6}$\n\nVerify: $37 - 13 = 24 = 6(4)$ ✓\n\n(c) $37 \\equiv 13 \\pmod{3}$\n\nVerify: $37 - 13 = 24 = 3(8)$ ✓\n\nSimplify further:\n\n- $13 = 12(1) + 1$, so $37 \\equiv 1 \\pmod{12}$\n- $13 = 6(2) + 1$, so $37 \\equiv 1 \\pmod{6}$\n- $13 = 3(4) + 1$, so $37 \\equiv 1 \\pmod{3}$"
   },
   {
     "course": "Number Theory",
@@ -341,7 +341,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: Scaling Property",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nGiven: $a \\equiv b \\pmod{m}$\n\nThen $m | (a - b)$, so $a - b = km$ for some integer $k$.\n\nMultiply both sides by $c$:\n\\[\nc(a - b) = c(km)\n\\]\n\\[\nac - bc = (km)c = k(mc)\n\\]\n\nTherefore, $mc | (ac - bc)$, which means:\n\\[\nac \\equiv bc \\pmod{mc}\n\\]\n\n\\qed"
+    "content": "Proof:\n\nGiven: $a \\equiv b \\pmod{m}$\n\nThen $m | (a - b)$, so $a - b = km$ for some integer $k$.\n\nMultiply both sides by $c$:\n\\[\nc(a - b) = c(km)\n\\]\n\\[\nac - bc = (km)c = k(mc)\n\\]\n\nTherefore, $mc | (ac - bc)$, which means:\n\\[\nac \\equiv bc \\pmod{mc}\n\\]"
   },
   {
     "course": "Number Theory",
@@ -349,7 +349,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 21: Scaling Property",
-    "content": "Given $7 \\equiv 3 \\pmod{4}$, find $7 \\times 5 \\pmod{4 \\times 5}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nBy the scaling property with $c = 5$:\n\\[\n7 \\times 5 \\equiv 3 \\times 5 \\pmod{4 \\times 5}\n\\]\n\\[\n35 \\equiv 15 \\pmod{20}\n\\]\n\n\\textbf{Verification:} $35 - 15 = 20 = 20(1)$ \\textcolor{green}{\\checkmark}"
+    "content": "Given $7 \\equiv 3 \\pmod{4}$, find $7 \\times 5 \\pmod{4 \\times 5}$.\n\nSolution:\n\nBy the scaling property with $c = 5$:\n\\[\n7 \\times 5 \\equiv 3 \\times 5 \\pmod{4 \\times 5}\n\\]\n\\[\n35 \\equiv 15 \\pmod{20}\n\\]\n\nVerification: $35 - 15 = 20 = 20(1)$ ✓"
   },
   {
     "course": "Number Theory",
@@ -365,7 +365,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "proof",
     "title": "Proof: Division Property",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nGiven: $a \\equiv b \\pmod{m}$ and $d | a$, $d | b$, $d | m$\n\nSince $a \\equiv b \\pmod{m}$:\n\\[\nm | (a - b)\n\\]\n\nSo $a - b = km$ for some integer $k$.\n\nDivide both sides by $d$:\n\\[\n\\frac{a - b}{d} = k \\cdot \\frac{m}{d}\n\\]\n\\[\n\\frac{a}{d} - \\frac{b}{d} = k \\cdot \\frac{m}{d}\n\\]\n\nSince all divisions are exact (by hypothesis), this shows:\n\\[\n\\frac{m}{d} \\bigg| \\left(\\frac{a}{d} - \\frac{b}{d}\\right)\n\\]\n\nTherefore:\n\\[\n\\frac{a}{d} \\equiv \\frac{b}{d} \\pmod{\\frac{m}{d}}\n\\]\n\n\\qed"
+    "content": "Proof:\n\nGiven: $a \\equiv b \\pmod{m}$ and $d | a$, $d | b$, $d | m$\n\nSince $a \\equiv b \\pmod{m}$:\n\\[\nm | (a - b)\n\\]\n\nSo $a - b = km$ for some integer $k$.\n\nDivide both sides by $d$:\n\\[\n\\frac{a - b}{d} = k \\cdot \\frac{m}{d}\n\\]\n\\[\n\\frac{a}{d} - \\frac{b}{d} = k \\cdot \\frac{m}{d}\n\\]\n\nSince all divisions are exact (by hypothesis), this shows:\n\\[\n\\frac{m}{d} \\bigg| \\left(\\frac{a}{d} - \\frac{b}{d}\\right)\n\\]\n\nTherefore:\n\\[\n\\frac{a}{d} \\equiv \\frac{b}{d} \\pmod{\\frac{m}{d}}\n\\]"
   },
   {
     "course": "Number Theory",
@@ -373,7 +373,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 22: Division Property",
-    "content": "Given $24 \\equiv 12 \\pmod{6}$, and knowing that $6 | 24$, $6 | 12$, and $6 | 6$, apply the division property.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nDivide everything by $d = 6$:\n\\[\n\\frac{24}{6} \\equiv \\frac{12}{6} \\pmod{\\frac{6}{6}}\n\\]\n\\[\n4 \\equiv 2 \\pmod{1}\n\\]\n\n\\textbf{Note:} Any two integers are congruent modulo 1, so this is always true.\n\n\\textbf{Better example:} Let $d = 3$:\n\\[\n\\frac{24}{3} \\equiv \\frac{12}{3} \\pmod{\\frac{6}{3}}\n\\]\n\\[\n8 \\equiv 4 \\pmod{2}\n\\]\n\n\\textbf{Verification:} $8 - 4 = 4 = 2(2)$, so $8 \\equiv 4 \\pmod{2}$ \\textcolor{green}{\\checkmark}"
+    "content": "Given $24 \\equiv 12 \\pmod{6}$, and knowing that $6 | 24$, $6 | 12$, and $6 | 6$, apply the division property.\n\nSolution:\n\nDivide everything by $d = 6$:\n\\[\n\\frac{24}{6} \\equiv \\frac{12}{6} \\pmod{\\frac{6}{6}}\n\\]\n\\[\n4 \\equiv 2 \\pmod{1}\n\\]\n\nNote: Any two integers are congruent modulo 1, so this is always true.\n\nBetter example: Let $d = 3$:\n\\[\n\\frac{24}{3} \\equiv \\frac{12}{3} \\pmod{\\frac{6}{3}}\n\\]\n\\[\n8 \\equiv 4 \\pmod{2}\n\\]\n\nVerification: $8 - 4 = 4 = 2(2)$, so $8 \\equiv 4 \\pmod{2}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -381,7 +381,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Properties of Congruences}} {center}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Properties of Congruences}}\n\n\\begin{center}\n\\begin{tabular}{|p{5cm}|p{7cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Property} & \\textbf{Statement} \\\\\n\\hline\nAddition & $a \\equiv b, c \\equiv d \\Rightarrow a+c \\equiv b+d$ \\\\\n\\hline\nMultiplication & $a \\equiv b, c \\equiv d \\Rightarrow ac \\equiv bd$ \\\\\n\\hline\nPower & $a \\equiv b \\Rightarrow a^k \\equiv b^k$ \\\\\n\\hline\nCancellation & $ac \\equiv bc, \\gcd(c,m)=1 \\Rightarrow a \\equiv b$ \\\\\n\\hline\nGCD Preservation & $a \\equiv b \\Rightarrow \\gcd(a,m) = \\gcd(b,m)$ \\\\\n\\hline\nDivisor of Modulus & $a \\equiv b \\pmod{m}, n|m \\Rightarrow a \\equiv b \\pmod{n}$ \\\\\n\\hline\nScaling & $a \\equiv b \\pmod{m} \\Rightarrow ac \\equiv bc \\pmod{mc}$ \\\\\n\\hline\nDivision & $d|a,b,m \\Rightarrow \\frac{a}{d} \\equiv \\frac{b}{d} \\pmod{\\frac{m}{d}}$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Warning:}}\n\\begin{itemize}\n    \\item Cannot always cancel: need $\\gcd(c, m) = 1$\n    \\item Cannot always divide: need exact divisibility\n\\end{itemize}\n\n\\newpage"
+    "content": "Summary: Properties of Congruences\n\n| Property | Statement |\n|---|---|\n| Addition | $a \\equiv b, c \\equiv d \\Rightarrow a+c \\equiv b+d$ |\n| Multiplication | $a \\equiv b, c \\equiv d \\Rightarrow ac \\equiv bd$ |\n| Power | $a \\equiv b \\Rightarrow a^k \\equiv b^k$ |\n| Cancellation | $ac \\equiv bc, \\gcd(c,m)=1 \\Rightarrow a \\equiv b$ |\n| GCD Preservation | $a \\equiv b \\Rightarrow \\gcd(a,m) = \\gcd(b,m)$ |\n| Divisor of Modulus | $a \\equiv b \\pmod{m}, n|m \\Rightarrow a \\equiv b \\pmod{n}$ |\n| Scaling | $a \\equiv b \\pmod{m} \\Rightarrow ac \\equiv bc \\pmod{mc}$ |\n| Division | $d|a,b,m \\Rightarrow \\frac{a}{d} \\equiv \\frac{b}{d} \\pmod{\\frac{m}{d}}$ |\n\nWarning:\n\n- Cannot always cancel: need $\\gcd(c, m) = 1$\n- Cannot always divide: need exact divisibility"
   },
   {
     "course": "Number Theory",
@@ -397,7 +397,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 2",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_1 \\cdot 10 + a_0$ where $a_0$ is the last digit.\n\nNote that $10 \\equiv 0 \\pmod{2}$.\n\nBy the power property: $10^i \\equiv 0^i = 0 \\pmod{2}$ for all $i \\geq 1$.\n\nTherefore:\n\\[\nn \\equiv a_k \\cdot 0 + \\cdots + a_1 \\cdot 0 + a_0 \\pmod{2}\n\\]\n\\[\nn \\equiv a_0 \\pmod{2}\n\\]\n\nThus, $2 | n$ if and only if $2 | a_0$. \\qed"
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_1 \\cdot 10 + a_0$ where $a_0$ is the last digit.\n\nNote that $10 \\equiv 0 \\pmod{2}$.\n\nBy the power property: $10^i \\equiv 0^i = 0 \\pmod{2}$ for all $i \\geq 1$.\n\nTherefore:\n\\[\nn \\equiv a_k \\cdot 0 + \\cdots + a_1 \\cdot 0 + a_0 \\pmod{2}\n\\]\n\\[\nn \\equiv a_0 \\pmod{2}\n\\]\n\nThus, $2 | n$ if and only if $2 | a_0$."
   },
   {
     "course": "Number Theory",
@@ -405,7 +405,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 23: Testing Divisibility by 2",
-    "content": "Determine which of the following are divisible by 2: 456, 3217, 8840, 5679.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck the last digit:\n\n\\textbf{(a)} 456: Last digit is 6 (even) $\\Rightarrow$ divisible by 2 \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} 3217: Last digit is 7 (odd) $\\Rightarrow$ not divisible by 2 \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} 8840: Last digit is 0 (even) $\\Rightarrow$ divisible by 2 \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} 5679: Last digit is 9 (odd) $\\Rightarrow$ not divisible by 2 \\textcolor{red}{$\\times$}\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item $456 \\div 2 = 228$ \\textcolor{green}{\\checkmark}\n    \\item $8840 \\div 2 = 4420$ \\textcolor{green}{\\checkmark}\n\\end{itemize}"
+    "content": "Determine which of the following are divisible by 2: 456, 3217, 8840, 5679.\n\nSolution:\n\nCheck the last digit:\n\n(a) 456: Last digit is 6 (even) $\\Rightarrow$ divisible by 2 ✓\n\n(b) 3217: Last digit is 7 (odd) $\\Rightarrow$ not divisible by 2 $\\times$\n\n(c) 8840: Last digit is 0 (even) $\\Rightarrow$ divisible by 2 ✓\n\n(d) 5679: Last digit is 9 (odd) $\\Rightarrow$ not divisible by 2 $\\times$\n\nVerification:\n\n- $456 \\div 2 = 228$ ✓\n- $8840 \\div 2 = 4420$ ✓"
   },
   {
     "course": "Number Theory",
@@ -421,7 +421,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 5",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv 0 \\pmod{5}$.\n\nBy the power property: $10^i \\equiv 0 \\pmod{5}$ for all $i \\geq 1$.\n\nTherefore:\n\\[\nn \\equiv a_0 \\pmod{5}\n\\]\n\nThus, $5 | n$ if and only if $5 | a_0$, which means $a_0 \\in \\{0, 5\\}$. \\qed"
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv 0 \\pmod{5}$.\n\nBy the power property: $10^i \\equiv 0 \\pmod{5}$ for all $i \\geq 1$.\n\nTherefore:\n\\[\nn \\equiv a_0 \\pmod{5}\n\\]\n\nThus, $5 | n$ if and only if $5 | a_0$, which means $a_0 \\in \\{0, 5\\}$."
   },
   {
     "course": "Number Theory",
@@ -429,7 +429,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 24: Testing Divisibility by 5",
-    "content": "Test: 1235, 4682, 7890, 3456.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} 1235: Last digit is 5 $\\Rightarrow$ divisible by 5 \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} 4682: Last digit is 2 $\\Rightarrow$ not divisible by 5 \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} 7890: Last digit is 0 $\\Rightarrow$ divisible by 5 \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} 3456: Last digit is 6 $\\Rightarrow$ not divisible by 5 \\textcolor{red}{$\\times$}"
+    "content": "Test: 1235, 4682, 7890, 3456.\n\nSolution:\n\n(a) 1235: Last digit is 5 $\\Rightarrow$ divisible by 5 ✓\n\n(b) 4682: Last digit is 2 $\\Rightarrow$ not divisible by 5 $\\times$\n\n(c) 7890: Last digit is 0 $\\Rightarrow$ divisible by 5 ✓\n\n(d) 3456: Last digit is 6 $\\Rightarrow$ not divisible by 5 $\\times$"
   },
   {
     "course": "Number Theory",
@@ -445,7 +445,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 10",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_1 \\cdot 10 + a_0$.\n\nWe can write:\n\\[\nn = 10(a_k \\cdot 10^{k-1} + \\cdots + a_1) + a_0\n\\]\n\nThus $n \\equiv a_0 \\pmod{10}$.\n\nTherefore, $10 | n$ if and only if $10 | a_0$, which means $a_0 = 0$. \\qed"
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_1 \\cdot 10 + a_0$.\n\nWe can write:\n\\[\nn = 10(a_k \\cdot 10^{k-1} + \\cdots + a_1) + a_0\n\\]\n\nThus $n \\equiv a_0 \\pmod{10}$.\n\nTherefore, $10 | n$ if and only if $10 | a_0$, which means $a_0 = 0$."
   },
   {
     "course": "Number Theory",
@@ -453,7 +453,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 25: Testing Divisibility by 10",
-    "content": "Which are divisible by 10: 1230, 4567, 8000, 9995?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} 1230: Last digit is 0 $\\Rightarrow$ divisible by 10 \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} 4567: Last digit is 7 $\\Rightarrow$ not divisible by 10 \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} 8000: Last digit is 0 $\\Rightarrow$ divisible by 10 \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} 9995: Last digit is 5 $\\Rightarrow$ not divisible by 10 \\textcolor{red}{$\\times$}\n\n\\subsection*{Divisibility by 3 and 9}"
+    "content": "Which are divisible by 10: 1230, 4567, 8000, 9995?\n\nSolution:\n\n(a) 1230: Last digit is 0 $\\Rightarrow$ divisible by 10 ✓\n\n(b) 4567: Last digit is 7 $\\Rightarrow$ not divisible by 10 $\\times$\n\n(c) 8000: Last digit is 0 $\\Rightarrow$ divisible by 10 ✓\n\n(d) 9995: Last digit is 5 $\\Rightarrow$ not divisible by 10 $\\times$\n\n\\subsection*{Divisibility by 3 and 9}"
   },
   {
     "course": "Number Theory",
@@ -469,7 +469,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 3",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $n = a_k \\cdot 10^k + a_{k-1} \\cdot 10^{k-1} + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv 1 \\pmod{3}$.\n\nBy the power property: $10^i \\equiv 1^i = 1 \\pmod{3}$ for all $i \\geq 0$.\n\nTherefore:\n\\[\nn \\equiv a_k \\cdot 1 + a_{k-1} \\cdot 1 + \\cdots + a_1 \\cdot 1 + a_0 \\pmod{3}\n\\]\n\\[\nn \\equiv a_k + a_{k-1} + \\cdots + a_1 + a_0 \\pmod{3}\n\\]\n\nThus, $3 | n$ if and only if $3 | (a_k + a_{k-1} + \\cdots + a_1 + a_0)$. \\qed"
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + a_{k-1} \\cdot 10^{k-1} + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv 1 \\pmod{3}$.\n\nBy the power property: $10^i \\equiv 1^i = 1 \\pmod{3}$ for all $i \\geq 0$.\n\nTherefore:\n\\[\nn \\equiv a_k \\cdot 1 + a_{k-1} \\cdot 1 + \\cdots + a_1 \\cdot 1 + a_0 \\pmod{3}\n\\]\n\\[\nn \\equiv a_k + a_{k-1} + \\cdots + a_1 + a_0 \\pmod{3}\n\\]\n\nThus, $3 | n$ if and only if $3 | (a_k + a_{k-1} + \\cdots + a_1 + a_0)$."
   },
   {
     "course": "Number Theory",
@@ -477,7 +477,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 26: Testing Divisibility by 3",
-    "content": "Test: 12345, 8764, 2019, 5553.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} 12345: Sum of digits = $1 + 2 + 3 + 4 + 5 = 15$\n\nSince $15 = 3 \\times 5$, we have $3 | 15$.\n\nTherefore, $3 | 12345$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Verification:} $12345 = 3 \\times 4115$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} 8764: Sum of digits = $8 + 7 + 6 + 4 = 25$\n\nSince $25 = 3 \\times 8 + 1$, we have $3 \\nmid 25$.\n\nTherefore, $3 \\nmid 8764$ \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} 2019: Sum of digits = $2 + 0 + 1 + 9 = 12$\n\nSince $12 = 3 \\times 4$, we have $3 | 12$.\n\nTherefore, $3 | 2019$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Verification:} $2019 = 3 \\times 673$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} 5553: Sum of digits = $5 + 5 + 5 + 3 = 18$\n\nSince $18 = 3 \\times 6$, we have $3 | 18$.\n\nTherefore, $3 | 5553$ \\textcolor{green}{\\checkmark}"
+    "content": "Test: 12345, 8764, 2019, 5553.\n\nSolution:\n\n(a) 12345: Sum of digits = $1 + 2 + 3 + 4 + 5 = 15$\n\nSince $15 = 3 \\times 5$, we have $3 | 15$.\n\nTherefore, $3 | 12345$ ✓\n\nVerification: $12345 = 3 \\times 4115$ ✓\n\n(b) 8764: Sum of digits = $8 + 7 + 6 + 4 = 25$\n\nSince $25 = 3 \\times 8 + 1$, we have $3 \\nmid 25$.\n\nTherefore, $3 \\nmid 8764$ $\\times$\n\n(c) 2019: Sum of digits = $2 + 0 + 1 + 9 = 12$\n\nSince $12 = 3 \\times 4$, we have $3 | 12$.\n\nTherefore, $3 | 2019$ ✓\n\nVerification: $2019 = 3 \\times 673$ ✓\n\n(d) 5553: Sum of digits = $5 + 5 + 5 + 3 = 18$\n\nSince $18 = 3 \\times 6$, we have $3 | 18$.\n\nTherefore, $3 | 5553$ ✓"
   },
   {
     "course": "Number Theory",
@@ -493,7 +493,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 9",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $n = a_k \\cdot 10^k + a_{k-1} \\cdot 10^{k-1} + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv 1 \\pmod{9}$.\n\nBy the power property: $10^i \\equiv 1^i = 1 \\pmod{9}$ for all $i \\geq 0$.\n\nTherefore:\n\\[\nn \\equiv a_k + a_{k-1} + \\cdots + a_1 + a_0 \\pmod{9}\n\\]\n\nThus, $9 | n$ if and only if $9 | (a_k + a_{k-1} + \\cdots + a_1 + a_0)$. \\qed"
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + a_{k-1} \\cdot 10^{k-1} + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv 1 \\pmod{9}$.\n\nBy the power property: $10^i \\equiv 1^i = 1 \\pmod{9}$ for all $i \\geq 0$.\n\nTherefore:\n\\[\nn \\equiv a_k + a_{k-1} + \\cdots + a_1 + a_0 \\pmod{9}\n\\]\n\nThus, $9 | n$ if and only if $9 | (a_k + a_{k-1} + \\cdots + a_1 + a_0)$."
   },
   {
     "course": "Number Theory",
@@ -501,7 +501,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 27: Testing Divisibility by 9",
-    "content": "Test: 4536, 1728, 9999, 8765.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} 4536: Sum = $4 + 5 + 3 + 6 = 18 = 9 \\times 2$\n\nTherefore, $9 | 4536$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Verification:} $4536 = 9 \\times 504$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} 1728: Sum = $1 + 7 + 2 + 8 = 18 = 9 \\times 2$\n\nTherefore, $9 | 1728$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Verification:} $1728 = 9 \\times 192$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(c)} 9999: Sum = $9 + 9 + 9 + 9 = 36 = 9 \\times 4$\n\nTherefore, $9 | 9999$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} 8765: Sum = $8 + 7 + 6 + 5 = 26 = 9 \\times 2 + 8$\n\nSince $9 \\nmid 26$, we have $9 \\nmid 8765$ \\textcolor{red}{$\\times$}\n\n\\subsection*{Divisibility by 11}"
+    "content": "Test: 4536, 1728, 9999, 8765.\n\nSolution:\n\n(a) 4536: Sum = $4 + 5 + 3 + 6 = 18 = 9 \\times 2$\n\nTherefore, $9 | 4536$ ✓\n\nVerification: $4536 = 9 \\times 504$ ✓\n\n(b) 1728: Sum = $1 + 7 + 2 + 8 = 18 = 9 \\times 2$\n\nTherefore, $9 | 1728$ ✓\n\nVerification: $1728 = 9 \\times 192$ ✓\n\n(c) 9999: Sum = $9 + 9 + 9 + 9 = 36 = 9 \\times 4$\n\nTherefore, $9 | 9999$ ✓\n\n(d) 8765: Sum = $8 + 7 + 6 + 5 = 26 = 9 \\times 2 + 8$\n\nSince $9 \\nmid 26$, we have $9 \\nmid 8765$ $\\times$\n\n\\subsection*{Divisibility by 11}"
   },
   {
     "course": "Number Theory",
@@ -517,7 +517,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 11",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $n = a_k \\cdot 10^k + a_{k-1} \\cdot 10^{k-1} + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv -1 \\pmod{11}$.\n\nBy the power property:\n\\begin{align*}\n10^0 &\\equiv 1 \\pmod{11}\\\\\n10^1 &\\equiv -1 \\pmod{11}\\\\\n10^2 &\\equiv (-1)^2 = 1 \\pmod{11}\\\\\n10^3 &\\equiv (-1)^3 = -1 \\pmod{11}\\\\\n&\\vdots\\\\\n10^i &\\equiv (-1)^i \\pmod{11}\n\\end{align*}\n\nTherefore:\n\\[\nn \\equiv a_k(-1)^k + a_{k-1}(-1)^{k-1} + \\cdots + a_1(-1) + a_0(1) \\pmod{11}\n\\]\n\\[\nn \\equiv a_0 - a_1 + a_2 - a_3 + \\cdots \\pmod{11}\n\\]\n\nThus, $11 | n$ if and only if $11 | (a_0 - a_1 + a_2 - a_3 + \\cdots)$. \\qed"
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + a_{k-1} \\cdot 10^{k-1} + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv -1 \\pmod{11}$.\n\nBy the power property:\n$$\\begin{align*}\n10^0 &\\equiv 1 \\pmod{11}\\\\\n10^1 &\\equiv -1 \\pmod{11}\\\\\n10^2 &\\equiv (-1)^2 = 1 \\pmod{11}\\\\\n10^3 &\\equiv (-1)^3 = -1 \\pmod{11}\\\\\n&\\vdots\\\\\n10^i &\\equiv (-1)^i \\pmod{11}\n\\end{align*}$$\n\nTherefore:\n\\[\nn \\equiv a_k(-1)^k + a_{k-1}(-1)^{k-1} + \\cdots + a_1(-1) + a_0(1) \\pmod{11}\n\\]\n\\[\nn \\equiv a_0 - a_1 + a_2 - a_3 + \\cdots \\pmod{11}\n\\]\n\nThus, $11 | n$ if and only if $11 | (a_0 - a_1 + a_2 - a_3 + \\cdots)$."
   },
   {
     "course": "Number Theory",
@@ -525,7 +525,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 28: Testing Divisibility by 11",
-    "content": "Test: 1331, 2468, 12345, 9427.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} 1331: Alternating sum = $1 - 3 + 3 - 1 = 0$\n\nSince $11 | 0$, we have $11 | 1331$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Verification:} $1331 = 11 \\times 121$ (Note: $1331 = 11^3$) \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} 2468: Alternating sum = $8 - 6 + 4 - 2 = 4$\n\nSince $11 \\nmid 4$, we have $11 \\nmid 2468$ \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} 12345: Alternating sum = $5 - 4 + 3 - 2 + 1 = 3$\n\nSince $11 \\nmid 3$, we have $11 \\nmid 12345$ \\textcolor{red}{$\\times$}\n\n\\textbf{(d)} 9427: Alternating sum = $7 - 2 + 4 - 9 = 0$\n\nSince $11 | 0$, we have $11 | 9427$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Verification:} $9427 = 11 \\times 857$ \\textcolor{green}{\\checkmark}"
+    "content": "Test: 1331, 2468, 12345, 9427.\n\nSolution:\n\n(a) 1331: Alternating sum = $1 - 3 + 3 - 1 = 0$\n\nSince $11 | 0$, we have $11 | 1331$ ✓\n\nVerification: $1331 = 11 \\times 121$ (Note: $1331 = 11^3$) ✓\n\n(b) 2468: Alternating sum = $8 - 6 + 4 - 2 = 4$\n\nSince $11 \\nmid 4$, we have $11 \\nmid 2468$ $\\times$\n\n(c) 12345: Alternating sum = $5 - 4 + 3 - 2 + 1 = 3$\n\nSince $11 \\nmid 3$, we have $11 \\nmid 12345$ $\\times$\n\n(d) 9427: Alternating sum = $7 - 2 + 4 - 9 = 0$\n\nSince $11 | 0$, we have $11 | 9427$ ✓\n\nVerification: $9427 = 11 \\times 857$ ✓"
   },
   {
     "course": "Number Theory",
@@ -533,7 +533,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 29: Another Test for 11",
-    "content": "Show that 8525 is divisible by 11.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nDigits: 8, 5, 2, 5 (from left to right)\n\nAlternating sum (starting from right):\n\\[\n5 - 2 + 5 - 8 = 0\n\\]\n\nSince $11 | 0$, we conclude $11 | 8525$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Verification:} $8525 = 11 \\times 775$ \\textcolor{green}{\\checkmark}\n\n\\subsection*{Divisibility by 4 and 8}"
+    "content": "Show that 8525 is divisible by 11.\n\nSolution:\n\nDigits: 8, 5, 2, 5 (from left to right)\n\nAlternating sum (starting from right):\n\\[\n5 - 2 + 5 - 8 = 0\n\\]\n\nSince $11 | 0$, we conclude $11 | 8525$ ✓\n\nVerification: $8525 = 11 \\times 775$ ✓\n\n\\subsection*{Divisibility by 4 and 8}"
   },
   {
     "course": "Number Theory",
@@ -549,7 +549,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 4",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_2 \\cdot 10^2 + a_1 \\cdot 10 + a_0$.\n\nNote that $10^2 = 100 \\equiv 0 \\pmod{4}$.\n\nBy the power property: $10^i \\equiv 0 \\pmod{4}$ for all $i \\geq 2$.\n\nTherefore:\n\\[\nn \\equiv a_1 \\cdot 10 + a_0 \\pmod{4}\n\\]\n\nThe expression $a_1 \\cdot 10 + a_0$ represents the last two digits of $n$.\n\nThus, $4 | n$ if and only if $4$ divides the last two digits. \\qed"
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_2 \\cdot 10^2 + a_1 \\cdot 10 + a_0$.\n\nNote that $10^2 = 100 \\equiv 0 \\pmod{4}$.\n\nBy the power property: $10^i \\equiv 0 \\pmod{4}$ for all $i \\geq 2$.\n\nTherefore:\n\\[\nn \\equiv a_1 \\cdot 10 + a_0 \\pmod{4}\n\\]\n\nThe expression $a_1 \\cdot 10 + a_0$ represents the last two digits of $n$.\n\nThus, $4 | n$ if and only if $4$ divides the last two digits."
   },
   {
     "course": "Number Theory",
@@ -557,7 +557,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 30: Testing Divisibility by 4",
-    "content": "Test: 1236, 5678, 1000, 2019.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} 1236: Last two digits = 36\n\nCheck: $36 = 4 \\times 9$, so $4 | 36$\n\nTherefore, $4 | 1236$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} 5678: Last two digits = 78\n\nCheck: $78 = 4 \\times 19 + 2$, so $4 \\nmid 78$\n\nTherefore, $4 \\nmid 5678$ \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} 1000: Last two digits = 00\n\nCheck: $0 = 4 \\times 0$, so $4 | 0$\n\nTherefore, $4 | 1000$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} 2019: Last two digits = 19\n\nCheck: $19 = 4 \\times 4 + 3$, so $4 \\nmid 19$\n\nTherefore, $4 \\nmid 2019$ \\textcolor{red}{$\\times$}"
+    "content": "Test: 1236, 5678, 1000, 2019.\n\nSolution:\n\n(a) 1236: Last two digits = 36\n\nCheck: $36 = 4 \\times 9$, so $4 | 36$\n\nTherefore, $4 | 1236$ ✓\n\n(b) 5678: Last two digits = 78\n\nCheck: $78 = 4 \\times 19 + 2$, so $4 \\nmid 78$\n\nTherefore, $4 \\nmid 5678$ $\\times$\n\n(c) 1000: Last two digits = 00\n\nCheck: $0 = 4 \\times 0$, so $4 | 0$\n\nTherefore, $4 | 1000$ ✓\n\n(d) 2019: Last two digits = 19\n\nCheck: $19 = 4 \\times 4 + 3$, so $4 \\nmid 19$\n\nTherefore, $4 \\nmid 2019$ $\\times$"
   },
   {
     "course": "Number Theory",
@@ -573,7 +573,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 8",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_3 \\cdot 10^3 + a_2 \\cdot 10^2 + a_1 \\cdot 10 + a_0$.\n\nNote that $10^3 = 1000 \\equiv 0 \\pmod{8}$.\n\nBy the power property: $10^i \\equiv 0 \\pmod{8}$ for all $i \\geq 3$.\n\nTherefore:\n\\[\nn \\equiv a_2 \\cdot 10^2 + a_1 \\cdot 10 + a_0 \\pmod{8}\n\\]\n\nThe expression $a_2 \\cdot 100 + a_1 \\cdot 10 + a_0$ represents the last three digits.\n\nThus, $8 | n$ if and only if $8$ divides the last three digits. \\qed"
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + \\cdots + a_3 \\cdot 10^3 + a_2 \\cdot 10^2 + a_1 \\cdot 10 + a_0$.\n\nNote that $10^3 = 1000 \\equiv 0 \\pmod{8}$.\n\nBy the power property: $10^i \\equiv 0 \\pmod{8}$ for all $i \\geq 3$.\n\nTherefore:\n\\[\nn \\equiv a_2 \\cdot 10^2 + a_1 \\cdot 10 + a_0 \\pmod{8}\n\\]\n\nThe expression $a_2 \\cdot 100 + a_1 \\cdot 10 + a_0$ represents the last three digits.\n\nThus, $8 | n$ if and only if $8$ divides the last three digits."
   },
   {
     "course": "Number Theory",
@@ -581,7 +581,7 @@
     "section": "Divisibility Tests",
     "type": "example",
     "title": "Example 31: Testing Divisibility by 8",
-    "content": "Test: 12456, 34567, 8000, 1024.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} 12456: Last three digits = 456\n\nCheck: $456 = 8 \\times 57$, so $8 | 456$\n\nTherefore, $8 | 12456$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} 34567: Last three digits = 567\n\nCheck: $567 = 8 \\times 70 + 7$, so $8 \\nmid 567$\n\nTherefore, $8 \\nmid 34567$ \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} 8000: Last three digits = 000\n\nCheck: $0 = 8 \\times 0$, so $8 | 0$\n\nTherefore, $8 | 8000$ \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} 1024: Last three digits = 024 = 24\n\nCheck: $24 = 8 \\times 3$, so $8 | 24$\n\nTherefore, $8 | 1024$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Note:} $1024 = 2^{10}$, so of course $8 = 2^3$ divides it."
+    "content": "Test: 12456, 34567, 8000, 1024.\n\nSolution:\n\n(a) 12456: Last three digits = 456\n\nCheck: $456 = 8 \\times 57$, so $8 | 456$\n\nTherefore, $8 | 12456$ ✓\n\n(b) 34567: Last three digits = 567\n\nCheck: $567 = 8 \\times 70 + 7$, so $8 \\nmid 567$\n\nTherefore, $8 \\nmid 34567$ $\\times$\n\n(c) 8000: Last three digits = 000\n\nCheck: $0 = 8 \\times 0$, so $8 | 0$\n\nTherefore, $8 | 8000$ ✓\n\n(d) 1024: Last three digits = 024 = 24\n\nCheck: $24 = 8 \\times 3$, so $8 | 24$\n\nTherefore, $8 | 1024$ ✓\n\nNote: $1024 = 2^{10}$, so of course $8 = 2^3$ divides it."
   },
   {
     "course": "Number Theory",
@@ -589,7 +589,7 @@
     "section": "Divisibility Tests",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Divisibility Tests}} {center} {tabular}{|c|p{8cm}|}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Divisibility Tests}}\n\n\\begin{center}\n\\begin{tabular}{|c|p{8cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Divisor} & \\textbf{Test} \\\\\n\\hline\n2 & Last digit is even (0, 2, 4, 6, 8) \\\\\n\\hline\n3 & Sum of digits is divisible by 3 \\\\\n\\hline\n4 & Last 2 digits form a number divisible by 4 \\\\\n\\hline\n5 & Last digit is 0 or 5 \\\\\n\\hline\n8 & Last 3 digits form a number divisible by 8 \\\\\n\\hline\n9 & Sum of digits is divisible by 9 \\\\\n\\hline\n10 & Last digit is 0 \\\\\n\\hline\n11 & Alternating sum of digits is divisible by 11 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Remember:}}\n\\begin{itemize}\n    \\item These tests are based on congruence properties\n    \\item They work because of how powers of 10 behave modulo different numbers\n    \\item Tests can be combined (e.g., divisible by 6 means divisible by both 2 and 3)\n\\end{itemize}\n\n\\newpage"
+    "content": "Summary: Divisibility Tests\n\n| Divisor | Test |\n|---|---|\n| 2 | Last digit is even (0, 2, 4, 6, 8) |\n| 3 | Sum of digits is divisible by 3 |\n| 4 | Last 2 digits form a number divisible by 4 |\n| 5 | Last digit is 0 or 5 |\n| 8 | Last 3 digits form a number divisible by 8 |\n| 9 | Sum of digits is divisible by 9 |\n| 10 | Last digit is 0 |\n| 11 | Alternating sum of digits is divisible by 11 |\n\nRemember:\n\n- These tests are based on congruence properties\n- They work because of how powers of 10 behave modulo different numbers\n- Tests can be combined (e.g., divisible by 6 means divisible by both 2 and 3)"
   },
   {
     "course": "Number Theory",
@@ -597,7 +597,7 @@
     "section": "Linear Congruences",
     "type": "definition",
     "title": "Definition: Linear Congruence",
-    "content": "A \\textbf{linear congruence} is an equation of the form:\n\\[\nax \\equiv b \\pmod{m}\n\\]\n\nwhere $a, b, m \\in \\mathbb{Z}$ with $m > 0$, and $x$ is the unknown variable.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Terminology:}}\n\\begin{itemize}[leftmargin=*]\n    \\item $a$ is called the \\textbf{coefficient}\n    \\item $b$ is called the \\textbf{constant term}\n    \\item $m$ is the \\textbf{modulus}\n    \\item A \\textbf{solution} is a value of $x$ that satisfies the congruence\n    \\item Two solutions $x_1$ and $x_2$ are \\textbf{incongruent} if $x_1 \\not\\equiv x_2 \\pmod{m}$\n\\end{itemize}"
+    "content": "A linear congruence is an equation of the form:\n\\[\nax \\equiv b \\pmod{m}\n\\]\n\nwhere $a, b, m \\in \\mathbb{Z}$ with $m > 0$, and $x$ is the unknown variable.\n\nKey Terminology:\n\n- $a$ is called the coefficient\n- $b$ is called the constant term\n- $m$ is the modulus\n- A solution is a value of $x$ that satisfies the congruence\n- Two solutions $x_1$ and $x_2$ are incongruent if $x_1 \\not\\equiv x_2 \\pmod{m}$"
   },
   {
     "course": "Number Theory",
@@ -605,7 +605,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 33: Linear vs Non-Linear Congruences",
-    "content": "Identify which are linear congruences:\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $5x \\equiv 3 \\pmod{7}$\n\nLinear (degree 1 in $x$) \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} $x^2 \\equiv 4 \\pmod{5}$\n\nNot linear (degree 2 in $x$) \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} $3x + 2 \\equiv 7 \\pmod{11}$\n\nCan be rewritten as $3x \\equiv 5 \\pmod{11}$, so linear \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} $2x^2 + x \\equiv 1 \\pmod{8}$\n\nNot linear (contains $x^2$ term) \\textcolor{red}{$\\times$}\n\n\\textbf{(e)} $7x \\equiv 0 \\pmod{12}$\n\nLinear \\textcolor{green}{\\checkmark}"
+    "content": "Identify which are linear congruences:\n\nSolution:\n\n(a) $5x \\equiv 3 \\pmod{7}$\n\nLinear (degree 1 in $x$) ✓\n\n(b) $x^2 \\equiv 4 \\pmod{5}$\n\nNot linear (degree 2 in $x$) $\\times$\n\n(c) $3x + 2 \\equiv 7 \\pmod{11}$\n\nCan be rewritten as $3x \\equiv 5 \\pmod{11}$, so linear ✓\n\n(d) $2x^2 + x \\equiv 1 \\pmod{8}$\n\nNot linear (contains $x^2$ term) $\\times$\n\n(e) $7x \\equiv 0 \\pmod{12}$\n\nLinear ✓"
   },
   {
     "course": "Number Theory",
@@ -613,7 +613,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 34: Verifying Solutions",
-    "content": "Verify that $x = 5$ is a solution to $3x \\equiv 2 \\pmod{13}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSubstitute $x = 5$:\n\\[\n3(5) = 15\n\\]\n\nCheck if $15 \\equiv 2 \\pmod{13}$:\n\\[\n15 - 2 = 13 = 13(1)\n\\]\n\nSince $13 | 13$, we have $15 \\equiv 2 \\pmod{13}$ \\textcolor{green}{\\checkmark}\n\nTherefore, $x = 5$ is indeed a solution."
+    "content": "Verify that $x = 5$ is a solution to $3x \\equiv 2 \\pmod{13}$.\n\nSolution:\n\nSubstitute $x = 5$:\n\\[\n3(5) = 15\n\\]\n\nCheck if $15 \\equiv 2 \\pmod{13}$:\n\\[\n15 - 2 = 13 = 13(1)\n\\]\n\nSince $13 | 13$, we have $15 \\equiv 2 \\pmod{13}$ ✓\n\nTherefore, $x = 5$ is indeed a solution."
   },
   {
     "course": "Number Theory",
@@ -629,7 +629,7 @@
     "section": "Linear Congruences",
     "type": "proof",
     "title": "Proof: Existence and Uniqueness",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nThe congruence $ax \\equiv b \\pmod{m}$ is equivalent to:\n\\[\nm | (ax - b)\n\\]\n\nThis means there exists an integer $y$ such that:\n\\[\nax - b = my\n\\]\n\\[\nax - my = b\n\\]\n\nThis is a linear Diophantine equation in $x$ and $y$.\n\nBy the theory of Diophantine equations, this has a solution if and only if:\n\\[\n\\gcd(a, m) | b\n\\]\n\n\\textbf{Existence:} Let $d = \\gcd(a, m)$.\n\nIf $d | b$, then the Diophantine equation $ax - my = b$ has solutions.\n\nTherefore, the congruence $ax \\equiv b \\pmod{m}$ has solutions. \\textcolor{green}{\\checkmark}\n\n\\textbf{Number of Solutions:}\n\nIf $x_0$ is one particular solution, then the general solution is:\n\\[\nx = x_0 + k \\cdot \\frac{m}{d}\n\\]\n\nfor $k \\in \\mathbb{Z}$.\n\nThe distinct solutions modulo $m$ correspond to $k = 0, 1, 2, \\ldots, d-1$.\n\nFor $k = d$:\n\\[\nx = x_0 + d \\cdot \\frac{m}{d} = x_0 + m \\equiv x_0 \\pmod{m}\n\\]\n\nThis gives the same solution as $k = 0$.\n\nTherefore, there are exactly $d$ incongruent solutions modulo $m$. \\qed"
+    "content": "Proof:\n\nThe congruence $ax \\equiv b \\pmod{m}$ is equivalent to:\n\\[\nm | (ax - b)\n\\]\n\nThis means there exists an integer $y$ such that:\n\\[\nax - b = my\n\\]\n\\[\nax - my = b\n\\]\n\nThis is a linear Diophantine equation in $x$ and $y$.\n\nBy the theory of Diophantine equations, this has a solution if and only if:\n\\[\n\\gcd(a, m) | b\n\\]\n\nExistence: Let $d = \\gcd(a, m)$.\n\nIf $d | b$, then the Diophantine equation $ax - my = b$ has solutions.\n\nTherefore, the congruence $ax \\equiv b \\pmod{m}$ has solutions. ✓\n\nNumber of Solutions:\n\nIf $x_0$ is one particular solution, then the general solution is:\n\\[\nx = x_0 + k \\cdot \\frac{m}{d}\n\\]\n\nfor $k \\in \\mathbb{Z}$.\n\nThe distinct solutions modulo $m$ correspond to $k = 0, 1, 2, \\ldots, d-1$.\n\nFor $k = d$:\n\\[\nx = x_0 + d \\cdot \\frac{m}{d} = x_0 + m \\equiv x_0 \\pmod{m}\n\\]\n\nThis gives the same solution as $k = 0$.\n\nTherefore, there are exactly $d$ incongruent solutions modulo $m$."
   },
   {
     "course": "Number Theory",
@@ -637,7 +637,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 35: Solvable Linear Congruence",
-    "content": "Solve $6x \\equiv 9 \\pmod{15}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check solvability\n\n$d = \\gcd(6, 15) = 3$\n\nCheck if $d | 9$: $9 = 3(3)$, so $3 | 9$ \\textcolor{green}{\\checkmark}\n\nThe congruence has solutions.\n\n\\textbf{Step 2:} Simplify by dividing by $d = 3$\n\nDivide the entire congruence by 3:\n\\[\n\\frac{6x}{3} \\equiv \\frac{9}{3} \\pmod{\\frac{15}{3}}\n\\]\n\\[\n2x \\equiv 3 \\pmod{5}\n\\]\n\n\\textbf{Step 3:} Solve the simplified congruence\n\nNow $\\gcd(2, 5) = 1$, so there is a unique solution modulo 5.\n\nFind $x$ such that $2x \\equiv 3 \\pmod{5}$:\n\nTest values:\n\\begin{itemize}\n    \\item $x = 0$: $2(0) = 0 \\not\\equiv 3 \\pmod{5}$\n    \\item $x = 1$: $2(1) = 2 \\not\\equiv 3 \\pmod{5}$\n    \\item $x = 2$: $2(2) = 4 \\not\\equiv 3 \\pmod{5}$\n    \\item $x = 3$: $2(3) = 6 \\equiv 1 \\pmod{5}$\n    \\item $x = 4$: $2(4) = 8 \\equiv 3 \\pmod{5}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nSo $x \\equiv 4 \\pmod{5}$.\n\n\\textbf{Step 4:} Find all solutions modulo 15\n\nSince $d = 3$, there are 3 solutions modulo 15:\n\\[\nx = 4, \\quad x = 4 + 5 = 9, \\quad x = 4 + 10 = 14\n\\]\n\n\\textbf{Solutions:} $\\boxed{x \\equiv 4, 9, 14 \\pmod{15}}$\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item $6(4) = 24 \\equiv 9 \\pmod{15}$ \\textcolor{green}{\\checkmark}\n    \\item $6(9) = 54 \\equiv 9 \\pmod{15}$ \\textcolor{green}{\\checkmark}\n    \\item $6(14) = 84 \\equiv 9 \\pmod{15}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}"
+    "content": "Solve $6x \\equiv 9 \\pmod{15}$.\n\nSolution:\n\nStep 1: Check solvability\n\n$d = \\gcd(6, 15) = 3$\n\nCheck if $d | 9$: $9 = 3(3)$, so $3 | 9$ ✓\n\nThe congruence has solutions.\n\nStep 2: Simplify by dividing by $d = 3$\n\nDivide the entire congruence by 3:\n\\[\n\\frac{6x}{3} \\equiv \\frac{9}{3} \\pmod{\\frac{15}{3}}\n\\]\n\\[\n2x \\equiv 3 \\pmod{5}\n\\]\n\nStep 3: Solve the simplified congruence\n\nNow $\\gcd(2, 5) = 1$, so there is a unique solution modulo 5.\n\nFind $x$ such that $2x \\equiv 3 \\pmod{5}$:\n\nTest values:\n\n- $x = 0$: $2(0) = 0 \\not\\equiv 3 \\pmod{5}$\n- $x = 1$: $2(1) = 2 \\not\\equiv 3 \\pmod{5}$\n- $x = 2$: $2(2) = 4 \\not\\equiv 3 \\pmod{5}$\n- $x = 3$: $2(3) = 6 \\equiv 1 \\pmod{5}$\n- $x = 4$: $2(4) = 8 \\equiv 3 \\pmod{5}$ ✓\n\nSo $x \\equiv 4 \\pmod{5}$.\n\nStep 4: Find all solutions modulo 15\n\nSince $d = 3$, there are 3 solutions modulo 15:\n\\[\nx = 4, \\quad x = 4 + 5 = 9, \\quad x = 4 + 10 = 14\n\\]\n\nSolutions: $\\boxed{x \\equiv 4, 9, 14 \\pmod{15}}$\n\nVerification:\n\n- $6(4) = 24 \\equiv 9 \\pmod{15}$ ✓\n- $6(9) = 54 \\equiv 9 \\pmod{15}$ ✓\n- $6(14) = 84 \\equiv 9 \\pmod{15}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -645,7 +645,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 36: Unsolvable Linear Congruence",
-    "content": "Determine if $4x \\equiv 7 \\pmod{6}$ has solutions.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck solvability condition:\n\n$d = \\gcd(4, 6) = 2$\n\nCheck if $d | 7$: $7 = 2(3) + 1$, so $2 \\nmid 7$ \\textcolor{red}{$\\times$}\n\nSince $\\gcd(4, 6) = 2$ does not divide 7, the congruence has \\textbf{no solutions}.\n\n\\textbf{Verification by exhaustion:}\n\nTest all values $x = 0, 1, 2, 3, 4, 5$ modulo 6:\n\\begin{itemize}\n    \\item $x = 0$: $4(0) = 0 \\not\\equiv 7 \\pmod{6}$\n    \\item $x = 1$: $4(1) = 4 \\not\\equiv 7 \\pmod{6}$\n    \\item $x = 2$: $4(2) = 8 \\equiv 2 \\not\\equiv 7 \\pmod{6}$\n    \\item $x = 3$: $4(3) = 12 \\equiv 0 \\not\\equiv 7 \\pmod{6}$\n    \\item $x = 4$: $4(4) = 16 \\equiv 4 \\not\\equiv 7 \\pmod{6}$\n    \\item $x = 5$: $4(5) = 20 \\equiv 2 \\not\\equiv 7 \\pmod{6}$\n\\end{itemize}\n\nNo solution exists. \\textcolor{red}{$\\times$}"
+    "content": "Determine if $4x \\equiv 7 \\pmod{6}$ has solutions.\n\nSolution:\n\nCheck solvability condition:\n\n$d = \\gcd(4, 6) = 2$\n\nCheck if $d | 7$: $7 = 2(3) + 1$, so $2 \\nmid 7$ $\\times$\n\nSince $\\gcd(4, 6) = 2$ does not divide 7, the congruence has no solutions.\n\nVerification by exhaustion:\n\nTest all values $x = 0, 1, 2, 3, 4, 5$ modulo 6:\n\n- $x = 0$: $4(0) = 0 \\not\\equiv 7 \\pmod{6}$\n- $x = 1$: $4(1) = 4 \\not\\equiv 7 \\pmod{6}$\n- $x = 2$: $4(2) = 8 \\equiv 2 \\not\\equiv 7 \\pmod{6}$\n- $x = 3$: $4(3) = 12 \\equiv 0 \\not\\equiv 7 \\pmod{6}$\n- $x = 4$: $4(4) = 16 \\equiv 4 \\not\\equiv 7 \\pmod{6}$\n- $x = 5$: $4(5) = 20 \\equiv 2 \\not\\equiv 7 \\pmod{6}$\n\nNo solution exists. $\\times$"
   },
   {
     "course": "Number Theory",
@@ -653,7 +653,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 37: Finding All Solutions",
-    "content": "Solve $12x \\equiv 18 \\pmod{30}$ completely.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check solvability\n\n$d = \\gcd(12, 30) = 6$\n\nCheck if $d | 18$: $18 = 6(3)$, so $6 | 18$ \\textcolor{green}{\\checkmark}\n\nThe congruence has $d = 6$ solutions modulo 30.\n\n\\textbf{Step 2:} Simplify\n\nDivide by $d = 6$:\n\\[\n\\frac{12x}{6} \\equiv \\frac{18}{6} \\pmod{\\frac{30}{6}}\n\\]\n\\[\n2x \\equiv 3 \\pmod{5}\n\\]\n\n\\textbf{Step 3:} Solve simplified congruence\n\n$\\gcd(2, 5) = 1$, so unique solution modulo 5.\n\nFrom Example 35, we know $x \\equiv 4 \\pmod{5}$.\n\n\\textbf{Step 4:} Find all 6 solutions modulo 30\n\n$x = 4 + 5k$ for $k = 0, 1, 2, 3, 4, 5$:\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$k$ & $x = 4 + 5k$ \\\\\n\\hline\n0 & 4 \\\\\n\\hline\n1 & 9 \\\\\n\\hline\n2 & 14 \\\\\n\\hline\n3 & 19 \\\\\n\\hline\n4 & 24 \\\\\n\\hline\n5 & 29 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solutions:} $\\boxed{x \\equiv 4, 9, 14, 19, 24, 29 \\pmod{30}}$\n\n\\textbf{Verification for $x = 19$:}\n\\[\n12(19) = 228 = 30(7) + 18 \\equiv 18 \\pmod{30}\n\\]\n\\textcolor{green}{\\checkmark}\n\n\\subsection*{Special Case: Coprime Coefficient and Modulus}"
+    "content": "Solve $12x \\equiv 18 \\pmod{30}$ completely.\n\nSolution:\n\nStep 1: Check solvability\n\n$d = \\gcd(12, 30) = 6$\n\nCheck if $d | 18$: $18 = 6(3)$, so $6 | 18$ ✓\n\nThe congruence has $d = 6$ solutions modulo 30.\n\nStep 2: Simplify\n\nDivide by $d = 6$:\n\\[\n\\frac{12x}{6} \\equiv \\frac{18}{6} \\pmod{\\frac{30}{6}}\n\\]\n\\[\n2x \\equiv 3 \\pmod{5}\n\\]\n\nStep 3: Solve simplified congruence\n\n$\\gcd(2, 5) = 1$, so unique solution modulo 5.\n\nFrom Example 35, we know $x \\equiv 4 \\pmod{5}$.\n\nStep 4: Find all 6 solutions modulo 30\n\n$x = 4 + 5k$ for $k = 0, 1, 2, 3, 4, 5$:\n\n| $k$ | $x = 4 + 5k$ |\n|---|---|\n| 0 | 4 |\n| 1 | 9 |\n| 2 | 14 |\n| 3 | 19 |\n| 4 | 24 |\n| 5 | 29 |\n\nSolutions: $\\boxed{x \\equiv 4, 9, 14, 19, 24, 29 \\pmod{30}}$\n\nVerification for $x = 19$:\n\\[\n12(19) = 228 = 30(7) + 18 \\equiv 18 \\pmod{30}\n\\]\n✓\n\n\\subsection*{Special Case: Coprime Coefficient and Modulus}"
   },
   {
     "course": "Number Theory",
@@ -661,7 +661,7 @@
     "section": "Linear Congruences",
     "type": "definition",
     "title": "Special Case",
-    "content": "When $\\gcd(a, m) = 1$, the linear congruence:\n\\[\nax \\equiv b \\pmod{m}\n\\]\n\nhas a \\textbf{unique solution} modulo $m$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Solution Method:}}\n\nFind the multiplicative inverse of $a$ modulo $m$ (denoted $a^{-1}$), which satisfies:\n\\[\na \\cdot a^{-1} \\equiv 1 \\pmod{m}\n\\]\n\nThen the solution is:\n\\[\nx \\equiv a^{-1} \\cdot b \\pmod{m}\n\\]"
+    "content": "When $\\gcd(a, m) = 1$, the linear congruence:\n\\[\nax \\equiv b \\pmod{m}\n\\]\n\nhas a unique solution modulo $m$.\n\nSolution Method:\n\nFind the multiplicative inverse of $a$ modulo $m$ (denoted $a^{-1}$), which satisfies:\n\\[\na \\cdot a^{-1} \\equiv 1 \\pmod{m}\n\\]\n\nThen the solution is:\n\\[\nx \\equiv a^{-1} \\cdot b \\pmod{m}\n\\]"
   },
   {
     "course": "Number Theory",
@@ -669,7 +669,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 38: Unique Solution Case",
-    "content": "Solve $7x \\equiv 3 \\pmod{11}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck: $\\gcd(7, 11) = 1$ \\textcolor{green}{\\checkmark}\n\nTherefore, unique solution exists.\n\n\\textbf{Method 1: Find multiplicative inverse}\n\nFind $7^{-1} \\pmod{11}$ such that $7 \\cdot 7^{-1} \\equiv 1 \\pmod{11}$:\n\nTest values:\n\\begin{itemize}\n    \\item $7 \\times 1 = 7 \\not\\equiv 1 \\pmod{11}$\n    \\item $7 \\times 2 = 14 \\equiv 3 \\pmod{11}$\n    \\item $7 \\times 3 = 21 \\equiv 10 \\pmod{11}$\n    \\item $7 \\times 4 = 28 \\equiv 6 \\pmod{11}$\n    \\item $7 \\times 5 = 35 \\equiv 2 \\pmod{11}$\n    \\item $7 \\times 6 = 42 \\equiv 9 \\pmod{11}$\n    \\item $7 \\times 7 = 49 \\equiv 5 \\pmod{11}$\n    \\item $7 \\times 8 = 56 \\equiv 1 \\pmod{11}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nSo $7^{-1} \\equiv 8 \\pmod{11}$.\n\nMultiply both sides of $7x \\equiv 3 \\pmod{11}$ by 8:\n\\[\n8 \\cdot 7x \\equiv 8 \\cdot 3 \\pmod{11}\n\\]\n\\[\n56x \\equiv 24 \\pmod{11}\n\\]\n\\[\nx \\equiv 24 \\equiv 2 \\pmod{11}\n\\]\n\n\\textbf{Solution:} $\\boxed{x \\equiv 2 \\pmod{11}}$\n\n\\textbf{Verification:} $7(2) = 14 \\equiv 3 \\pmod{11}$ \\textcolor{green}{\\checkmark}"
+    "content": "Solve $7x \\equiv 3 \\pmod{11}$.\n\nSolution:\n\nCheck: $\\gcd(7, 11) = 1$ ✓\n\nTherefore, unique solution exists.\n\nMethod 1: Find multiplicative inverse\n\nFind $7^{-1} \\pmod{11}$ such that $7 \\cdot 7^{-1} \\equiv 1 \\pmod{11}$:\n\nTest values:\n\n- $7 \\times 1 = 7 \\not\\equiv 1 \\pmod{11}$\n- $7 \\times 2 = 14 \\equiv 3 \\pmod{11}$\n- $7 \\times 3 = 21 \\equiv 10 \\pmod{11}$\n- $7 \\times 4 = 28 \\equiv 6 \\pmod{11}$\n- $7 \\times 5 = 35 \\equiv 2 \\pmod{11}$\n- $7 \\times 6 = 42 \\equiv 9 \\pmod{11}$\n- $7 \\times 7 = 49 \\equiv 5 \\pmod{11}$\n- $7 \\times 8 = 56 \\equiv 1 \\pmod{11}$ ✓\n\nSo $7^{-1} \\equiv 8 \\pmod{11}$.\n\nMultiply both sides of $7x \\equiv 3 \\pmod{11}$ by 8:\n\\[\n8 \\cdot 7x \\equiv 8 \\cdot 3 \\pmod{11}\n\\]\n\\[\n56x \\equiv 24 \\pmod{11}\n\\]\n\\[\nx \\equiv 24 \\equiv 2 \\pmod{11}\n\\]\n\nSolution: $\\boxed{x \\equiv 2 \\pmod{11}}$\n\nVerification: $7(2) = 14 \\equiv 3 \\pmod{11}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -677,7 +677,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 39: Another Unique Solution",
-    "content": "Solve $5x \\equiv 7 \\pmod{12}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck: $\\gcd(5, 12) = 1$ \\textcolor{green}{\\checkmark}\n\nFind $5^{-1} \\pmod{12}$:\n\nTest: $5 \\times 5 = 25 = 2(12) + 1 \\equiv 1 \\pmod{12}$ \\textcolor{green}{\\checkmark}\n\nSo $5^{-1} \\equiv 5 \\pmod{12}$.\n\nMultiply both sides by 5:\n\\[\n5 \\cdot 5x \\equiv 5 \\cdot 7 \\pmod{12}\n\\]\n\\[\n25x \\equiv 35 \\pmod{12}\n\\]\n\\[\nx \\equiv 35 \\equiv 11 \\pmod{12}\n\\]\n\n\\textbf{Solution:} $\\boxed{x \\equiv 11 \\pmod{12}}$\n\n\\textbf{Verification:} $5(11) = 55 = 4(12) + 7 \\equiv 7 \\pmod{12}$ \\textcolor{green}{\\checkmark}"
+    "content": "Solve $5x \\equiv 7 \\pmod{12}$.\n\nSolution:\n\nCheck: $\\gcd(5, 12) = 1$ ✓\n\nFind $5^{-1} \\pmod{12}$:\n\nTest: $5 \\times 5 = 25 = 2(12) + 1 \\equiv 1 \\pmod{12}$ ✓\n\nSo $5^{-1} \\equiv 5 \\pmod{12}$.\n\nMultiply both sides by 5:\n\\[\n5 \\cdot 5x \\equiv 5 \\cdot 7 \\pmod{12}\n\\]\n\\[\n25x \\equiv 35 \\pmod{12}\n\\]\n\\[\nx \\equiv 35 \\equiv 11 \\pmod{12}\n\\]\n\nSolution: $\\boxed{x \\equiv 11 \\pmod{12}}$\n\nVerification: $5(11) = 55 = 4(12) + 7 \\equiv 7 \\pmod{12}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -685,7 +685,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 40: Solving by Trial",
-    "content": "Solve $9x \\equiv 5 \\pmod{13}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck: $\\gcd(9, 13) = 1$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Method: Trial and Error (for small modulus)}\n\nTest $x = 0, 1, 2, \\ldots, 12$:\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$x$ & $9x$ & $9x \\pmod{13}$ \\\\\n\\hline\n0 & 0 & 0 \\\\\n\\hline\n1 & 9 & 9 \\\\\n\\hline\n2 & 18 & 5 \\textcolor{green}{\\checkmark} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nFound: $x = 2$ gives $9(2) = 18 \\equiv 5 \\pmod{13}$\n\n\\textbf{Solution:} $\\boxed{x \\equiv 2 \\pmod{13}}$"
+    "content": "Solve $9x \\equiv 5 \\pmod{13}$.\n\nSolution:\n\nCheck: $\\gcd(9, 13) = 1$ ✓\n\nMethod: Trial and Error (for small modulus)\n\nTest $x = 0, 1, 2, \\ldots, 12$:\n\n| $x$ | $9x$ | $9x \\pmod{13}$ |\n|---|---|---|\n| 0 | 0 | 0 |\n| 1 | 9 | 9 |\n| 2 | 18 | 5 ✓ |\n\nFound: $x = 2$ gives $9(2) = 18 \\equiv 5 \\pmod{13}$\n\nSolution: $\\boxed{x \\equiv 2 \\pmod{13}}$"
   },
   {
     "course": "Number Theory",
@@ -693,7 +693,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 41: Homogeneous Linear Congruence",
-    "content": "Solve $5x \\equiv 0 \\pmod{15}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck solvability: $d = \\gcd(5, 15) = 5$\n\nSince $5 | 0$, the congruence has $d = 5$ solutions.\n\nSimplify:\n\\[\n\\frac{5x}{5} \\equiv \\frac{0}{5} \\pmod{\\frac{15}{5}}\n\\]\n\\[\nx \\equiv 0 \\pmod{3}\n\\]\n\nSo $x = 3k$ for integers $k$.\n\nSolutions modulo 15: $x = 0, 3, 6, 9, 12$\n\n\\textbf{Solutions:} $\\boxed{x \\equiv 0, 3, 6, 9, 12 \\pmod{15}}$\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item $5(0) = 0 \\equiv 0 \\pmod{15}$ \\textcolor{green}{\\checkmark}\n    \\item $5(3) = 15 \\equiv 0 \\pmod{15}$ \\textcolor{green}{\\checkmark}\n    \\item $5(6) = 30 \\equiv 0 \\pmod{15}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}"
+    "content": "Solve $5x \\equiv 0 \\pmod{15}$.\n\nSolution:\n\nCheck solvability: $d = \\gcd(5, 15) = 5$\n\nSince $5 | 0$, the congruence has $d = 5$ solutions.\n\nSimplify:\n\\[\n\\frac{5x}{5} \\equiv \\frac{0}{5} \\pmod{\\frac{15}{5}}\n\\]\n\\[\nx \\equiv 0 \\pmod{3}\n\\]\n\nSo $x = 3k$ for integers $k$.\n\nSolutions modulo 15: $x = 0, 3, 6, 9, 12$\n\nSolutions: $\\boxed{x \\equiv 0, 3, 6, 9, 12 \\pmod{15}}$\n\nVerification:\n\n- $5(0) = 0 \\equiv 0 \\pmod{15}$ ✓\n- $5(3) = 15 \\equiv 0 \\pmod{15}$ ✓\n- $5(6) = 30 \\equiv 0 \\pmod{15}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -701,7 +701,7 @@
     "section": "Linear Congruences",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Linear Congruences}} {For} $ax",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Linear Congruences}}\n\n\\textbf{For} $ax \\equiv b \\pmod{m}$:\n\n\\begin{center}\n\\begin{tabular}{|p{5cm}|p{7cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Condition} & \\textbf{Result} \\\\\n\\hline\n$\\gcd(a,m) \\nmid b$ & No solutions \\\\\n\\hline\n$\\gcd(a,m) = d$ and $d | b$ & Exactly $d$ solutions modulo $m$ \\\\\n\\hline\n$\\gcd(a,m) = 1$ & Unique solution modulo $m$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solution Steps:}\n\\begin{enumerate}[leftmargin=*]\n    \\item Check if $d = \\gcd(a, m)$ divides $b$\n    \\item If yes, divide entire congruence by $d$\n    \\item Solve simplified congruence\n    \\item Generate all $d$ solutions\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Remember:}}\n\\begin{itemize}\n    \\item Always check solvability first\n    \\item When $\\gcd(a,m) = 1$, use multiplicative inverse\n    \\item Number of solutions = $\\gcd(a, m)$\n\\end{itemize}"
+    "content": "Summary: Linear Congruences\n\nFor $ax \\equiv b \\pmod{m}$:\n\n| Condition | Result |\n|---|---|\n| $\\gcd(a,m) \\nmid b$ | No solutions |\n| $\\gcd(a,m) = d$ and $d | b$ | Exactly $d$ solutions modulo $m$ |\n| $\\gcd(a,m) = 1$ | Unique solution modulo $m$ |\n\nSolution Steps:\n\n1. Check if $d = \\gcd(a, m)$ divides $b$\n2. If yes, divide entire congruence by $d$\n3. Solve simplified congruence\n4. Generate all $d$ solutions\n\nRemember:\n\n- Always check solvability first\n- When $\\gcd(a,m) = 1$, use multiplicative inverse\n- Number of solutions = $\\gcd(a, m)$"
   },
   {
     "course": "Number Theory",
@@ -709,7 +709,7 @@
     "section": "Linear Congruences",
     "type": "example",
     "title": "Example 42: Complete Problem",
-    "content": "Solve $15x \\equiv 25 \\pmod{35}$ and find all solutions.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check solvability\n\n$d = \\gcd(15, 35) = 5$\n\nCheck: $25 = 5(5)$, so $5 | 25$ \\textcolor{green}{\\checkmark}\n\nCongruence has 5 solutions.\n\n\\textbf{Step 2:} Simplify\n\\[\n\\frac{15x}{5} \\equiv \\frac{25}{5} \\pmod{\\frac{35}{5}}\n\\]\n\\[\n3x \\equiv 5 \\pmod{7}\n\\]\n\n\\textbf{Step 3:} Solve simplified congruence\n\n$\\gcd(3, 7) = 1$, so unique solution modulo 7.\n\nFind $3^{-1} \\pmod{7}$:\n\n$3 \\times 5 = 15 = 2(7) + 1 \\equiv 1 \\pmod{7}$\n\nSo $3^{-1} \\equiv 5 \\pmod{7}$.\n\nMultiply by 5:\n\\[\nx \\equiv 5 \\times 5 \\equiv 25 \\equiv 4 \\pmod{7}\n\\]\n\n\\textbf{Step 4:} All solutions modulo 35\n\n$x = 4 + 7k$ for $k = 0, 1, 2, 3, 4$:\n\n\\textbf{Solutions:} $\\boxed{x \\equiv 4, 11, 18, 25, 32 \\pmod{35}}$\n\n\\textbf{Verification for $x = 18$:}\n\\[\n15(18) = 270 = 7(35) + 25 \\equiv 25 \\pmod{35}\n\\]\n\\textcolor{green}{\\checkmark}\n\n\\newpage"
+    "content": "Solve $15x \\equiv 25 \\pmod{35}$ and find all solutions.\n\nSolution:\n\nStep 1: Check solvability\n\n$d = \\gcd(15, 35) = 5$\n\nCheck: $25 = 5(5)$, so $5 | 25$ ✓\n\nCongruence has 5 solutions.\n\nStep 2: Simplify\n\\[\n\\frac{15x}{5} \\equiv \\frac{25}{5} \\pmod{\\frac{35}{5}}\n\\]\n\\[\n3x \\equiv 5 \\pmod{7}\n\\]\n\nStep 3: Solve simplified congruence\n\n$\\gcd(3, 7) = 1$, so unique solution modulo 7.\n\nFind $3^{-1} \\pmod{7}$:\n\n$3 \\times 5 = 15 = 2(7) + 1 \\equiv 1 \\pmod{7}$\n\nSo $3^{-1} \\equiv 5 \\pmod{7}$.\n\nMultiply by 5:\n\\[\nx \\equiv 5 \\times 5 \\equiv 25 \\equiv 4 \\pmod{7}\n\\]\n\nStep 4: All solutions modulo 35\n\n$x = 4 + 7k$ for $k = 0, 1, 2, 3, 4$:\n\nSolutions: $\\boxed{x \\equiv 4, 11, 18, 25, 32 \\pmod{35}}$\n\nVerification for $x = 18$:\n\\[\n15(18) = 270 = 7(35) + 25 \\equiv 25 \\pmod{35}\n\\]\n✓"
   },
   {
     "course": "Number Theory",
@@ -717,7 +717,7 @@
     "section": "Systems of Congruences",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Introduction to Systems of Congruences}}",
-    "content": "\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Introduction to Systems of Congruences}}\n\nA \\textbf{system of linear congruences} is a set of congruences that must be satisfied simultaneously:\n\n\\[\n\\begin{cases}\nx \\equiv a_1 \\pmod{m_1}\\\\\nx \\equiv a_2 \\pmod{m_2}\\\\\n\\vdots\\\\\nx \\equiv a_k \\pmod{m_k}\n\\end{cases}\n\\]\n\nThe goal is to find a value of $x$ that satisfies all congruences at once."
+    "content": "Introduction to Systems of Congruences\n\nA system of linear congruences is a set of congruences that must be satisfied simultaneously:\n\n\\[\n\\begin{cases}\nx \\equiv a_1 \\pmod{m_1}\\\\\nx \\equiv a_2 \\pmod{m_2}\\\\\n\\vdots\\\\\nx \\equiv a_k \\pmod{m_k}\n\\end{cases}\n\\]\n\nThe goal is to find a value of $x$ that satisfies all congruences at once."
   },
   {
     "course": "Number Theory",
@@ -725,7 +725,7 @@
     "section": "Systems of Congruences",
     "type": "theorem",
     "title": "Theorem: Chinese Remainder Theorem (CRT)",
-    "content": "Let $m_1, m_2, \\ldots, m_k$ be positive integers that are \\textbf{pairwise relatively prime} (i.e., $\\gcd(m_i, m_j) = 1$ for all $i \\neq j$).\n\nThen the system of congruences:\n\\[\n\\begin{cases}\nx \\equiv a_1 \\pmod{m_1}\\\\\nx \\equiv a_2 \\pmod{m_2}\\\\\n\\vdots\\\\\nx \\equiv a_k \\pmod{m_k}\n\\end{cases}\n\\]\n\nhas a \\textbf{unique solution} modulo $M = m_1 m_2 \\cdots m_k$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Point:}} The solution is unique up to congruence modulo $M$."
+    "content": "Let $m_1, m_2, \\ldots, m_k$ be positive integers that are pairwise relatively prime (i.e., $\\gcd(m_i, m_j) = 1$ for all $i \\neq j$).\n\nThen the system of congruences:\n\\[\n\\begin{cases}\nx \\equiv a_1 \\pmod{m_1}\\\\\nx \\equiv a_2 \\pmod{m_2}\\\\\n\\vdots\\\\\nx \\equiv a_k \\pmod{m_k}\n\\end{cases}\n\\]\n\nhas a unique solution modulo $M = m_1 m_2 \\cdots m_k$.\n\nKey Point: The solution is unique up to congruence modulo $M$."
   },
   {
     "course": "Number Theory",
@@ -733,7 +733,7 @@
     "section": "Systems of Congruences",
     "type": "proof",
     "title": "Proof: Chinese Remainder Theorem",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof (Constructive):}}\n\nWe prove for the case $k = 2$. The general case follows by induction.\n\nConsider:\n\\[\n\\begin{cases}\nx \\equiv a_1 \\pmod{m_1}\\\\\nx \\equiv a_2 \\pmod{m_2}\n\\end{cases}\n\\]\n\nwhere $\\gcd(m_1, m_2) = 1$.\n\n\\textbf{Step 1: Construct a solution}\n\nLet $M = m_1 m_2$ and define:\n\\[\nM_1 = \\frac{M}{m_1} = m_2, \\quad M_2 = \\frac{M}{m_2} = m_1\n\\]\n\nSince $\\gcd(m_1, m_2) = 1$:\n\\begin{itemize}\n    \\item $\\gcd(M_1, m_1) = \\gcd(m_2, m_1) = 1$\n    \\item $\\gcd(M_2, m_2) = \\gcd(m_1, m_2) = 1$\n\\end{itemize}\n\nSo we can find:\n\\begin{itemize}\n    \\item $y_1$ such that $M_1 y_1 \\equiv 1 \\pmod{m_1}$\n    \\item $y_2$ such that $M_2 y_2 \\equiv 1 \\pmod{m_2}$\n\\end{itemize}\n\n\\textbf{Step 2: Construct the solution}\n\nDefine:\n\\[\nx = a_1 M_1 y_1 + a_2 M_2 y_2\n\\]\n\n\\textbf{Verify:} $x \\equiv a_1 \\pmod{m_1}$\n\nNote that $M_1 = m_2 \\equiv 0 \\pmod{m_1}$ (since $m_1 | M_1$ is false, but $m_1 | M$ and $M = m_1 M_1$).\n\nActually, $M_2 = m_1 \\equiv 0 \\pmod{m_1}$.\n\nSo:\n\\[\nx \\equiv a_1 M_1 y_1 + a_2(0)y_2 \\equiv a_1 M_1 y_1 \\pmod{m_1}\n\\]\n\nSince $M_1 y_1 \\equiv 1 \\pmod{m_1}$:\n\\[\nx \\equiv a_1 \\cdot 1 = a_1 \\pmod{m_1}\n\\]\n\\textcolor{green}{\\checkmark}\n\n\\textbf{Verify:} $x \\equiv a_2 \\pmod{m_2}$\n\nSimilarly, $M_1 = m_2 \\equiv 0 \\pmod{m_2}$:\n\\[\nx \\equiv a_1(0)y_1 + a_2 M_2 y_2 \\equiv a_2 M_2 y_2 \\pmod{m_2}\n\\]\n\nSince $M_2 y_2 \\equiv 1 \\pmod{m_2}$:\n\\[\nx \\equiv a_2 \\cdot 1 = a_2 \\pmod{m_2}\n\\]\n\\textcolor{green}{\\checkmark}\n\n\\textbf{Step 3: Uniqueness}\n\nSuppose $x_1$ and $x_2$ are both solutions.\n\nThen:\n\\[\nx_1 \\equiv x_2 \\equiv a_i \\pmod{m_i} \\text{ for all } i\n\\]\n\nSo $m_i | (x_1 - x_2)$ for all $i$.\n\nSince $m_1, m_2, \\ldots, m_k$ are pairwise coprime:\n\\[\nM = m_1 m_2 \\cdots m_k \\text{ divides } (x_1 - x_2)\n\\]\n\nTherefore, $x_1 \\equiv x_2 \\pmod{M}$.\n\nHence, the solution is unique modulo $M$. \\qed"
+    "content": "Proof (Constructive):\n\nWe prove for the case $k = 2$. The general case follows by induction.\n\nConsider:\n\\[\n\\begin{cases}\nx \\equiv a_1 \\pmod{m_1}\\\\\nx \\equiv a_2 \\pmod{m_2}\n\\end{cases}\n\\]\n\nwhere $\\gcd(m_1, m_2) = 1$.\n\nStep 1: Construct a solution\n\nLet $M = m_1 m_2$ and define:\n\\[\nM_1 = \\frac{M}{m_1} = m_2, \\quad M_2 = \\frac{M}{m_2} = m_1\n\\]\n\nSince $\\gcd(m_1, m_2) = 1$:\n\n- $\\gcd(M_1, m_1) = \\gcd(m_2, m_1) = 1$\n- $\\gcd(M_2, m_2) = \\gcd(m_1, m_2) = 1$\n\nSo we can find:\n\n- $y_1$ such that $M_1 y_1 \\equiv 1 \\pmod{m_1}$\n- $y_2$ such that $M_2 y_2 \\equiv 1 \\pmod{m_2}$\n\nStep 2: Construct the solution\n\nDefine:\n\\[\nx = a_1 M_1 y_1 + a_2 M_2 y_2\n\\]\n\nVerify: $x \\equiv a_1 \\pmod{m_1}$\n\nNote that $M_1 = m_2 \\equiv 0 \\pmod{m_1}$ (since $m_1 | M_1$ is false, but $m_1 | M$ and $M = m_1 M_1$).\n\nActually, $M_2 = m_1 \\equiv 0 \\pmod{m_1}$.\n\nSo:\n\\[\nx \\equiv a_1 M_1 y_1 + a_2(0)y_2 \\equiv a_1 M_1 y_1 \\pmod{m_1}\n\\]\n\nSince $M_1 y_1 \\equiv 1 \\pmod{m_1}$:\n\\[\nx \\equiv a_1 \\cdot 1 = a_1 \\pmod{m_1}\n\\]\n✓\n\nVerify: $x \\equiv a_2 \\pmod{m_2}$\n\nSimilarly, $M_1 = m_2 \\equiv 0 \\pmod{m_2}$:\n\\[\nx \\equiv a_1(0)y_1 + a_2 M_2 y_2 \\equiv a_2 M_2 y_2 \\pmod{m_2}\n\\]\n\nSince $M_2 y_2 \\equiv 1 \\pmod{m_2}$:\n\\[\nx \\equiv a_2 \\cdot 1 = a_2 \\pmod{m_2}\n\\]\n✓\n\nStep 3: Uniqueness\n\nSuppose $x_1$ and $x_2$ are both solutions.\n\nThen:\n\\[\nx_1 \\equiv x_2 \\equiv a_i \\pmod{m_i} \\text{ for all } i\n\\]\n\nSo $m_i | (x_1 - x_2)$ for all $i$.\n\nSince $m_1, m_2, \\ldots, m_k$ are pairwise coprime:\n\\[\nM = m_1 m_2 \\cdots m_k \\text{ divides } (x_1 - x_2)\n\\]\n\nTherefore, $x_1 \\equiv x_2 \\pmod{M}$.\n\nHence, the solution is unique modulo $M$."
   },
   {
     "course": "Number Theory",
@@ -741,7 +741,7 @@
     "section": "Systems of Congruences",
     "type": "example",
     "title": "Example 43: CRT with Two Congruences",
-    "content": "Solve the system:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{3}\\\\\nx \\equiv 3 \\pmod{5}\n\\end{cases}\n\\]\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check conditions\n\n$\\gcd(3, 5) = 1$ \\textcolor{green}{\\checkmark} (pairwise coprime)\n\nSystem has unique solution modulo $M = 3 \\times 5 = 15$.\n\n\\textbf{Step 2:} Apply CRT construction\n\n$M_1 = \\frac{15}{3} = 5$, $M_2 = \\frac{15}{5} = 3$\n\nFind $y_1$ such that $M_1 y_1 \\equiv 1 \\pmod{3}$:\n\\[\n5y_1 \\equiv 1 \\pmod{3}\n\\]\n\\[\n2y_1 \\equiv 1 \\pmod{3}\n\\]\n\nTest: $2(2) = 4 \\equiv 1 \\pmod{3}$ \\textcolor{green}{\\checkmark}\n\nSo $y_1 = 2$.\n\nFind $y_2$ such that $M_2 y_2 \\equiv 1 \\pmod{5}$:\n\\[\n3y_2 \\equiv 1 \\pmod{5}\n\\]\n\nTest: $3(2) = 6 \\equiv 1 \\pmod{5}$ \\textcolor{green}{\\checkmark}\n\nSo $y_2 = 2$.\n\n\\textbf{Step 3:} Construct solution\n\\[\nx = a_1 M_1 y_1 + a_2 M_2 y_2\n\\]\n\\[\nx = 2(5)(2) + 3(3)(2)\n\\]\n\\[\nx = 20 + 18 = 38\n\\]\n\nReduce modulo 15:\n\\[\n38 = 2(15) + 8\n\\]\n\nSo $x \\equiv 8 \\pmod{15}$.\n\n\\textbf{Solution:} $\\boxed{x \\equiv 8 \\pmod{15}}$\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item $8 = 2(3) + 2$, so $8 \\equiv 2 \\pmod{3}$ \\textcolor{green}{\\checkmark}\n    \\item $8 = 1(5) + 3$, so $8 \\equiv 3 \\pmod{5}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\n\\textbf{General solution:} $x = 8 + 15k$ for any integer $k$."
+    "content": "Solve the system:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{3}\\\\\nx \\equiv 3 \\pmod{5}\n\\end{cases}\n\\]\n\nSolution:\n\nStep 1: Check conditions\n\n$\\gcd(3, 5) = 1$ ✓ (pairwise coprime)\n\nSystem has unique solution modulo $M = 3 \\times 5 = 15$.\n\nStep 2: Apply CRT construction\n\n$M_1 = \\frac{15}{3} = 5$, $M_2 = \\frac{15}{5} = 3$\n\nFind $y_1$ such that $M_1 y_1 \\equiv 1 \\pmod{3}$:\n\\[\n5y_1 \\equiv 1 \\pmod{3}\n\\]\n\\[\n2y_1 \\equiv 1 \\pmod{3}\n\\]\n\nTest: $2(2) = 4 \\equiv 1 \\pmod{3}$ ✓\n\nSo $y_1 = 2$.\n\nFind $y_2$ such that $M_2 y_2 \\equiv 1 \\pmod{5}$:\n\\[\n3y_2 \\equiv 1 \\pmod{5}\n\\]\n\nTest: $3(2) = 6 \\equiv 1 \\pmod{5}$ ✓\n\nSo $y_2 = 2$.\n\nStep 3: Construct solution\n\\[\nx = a_1 M_1 y_1 + a_2 M_2 y_2\n\\]\n\\[\nx = 2(5)(2) + 3(3)(2)\n\\]\n\\[\nx = 20 + 18 = 38\n\\]\n\nReduce modulo 15:\n\\[\n38 = 2(15) + 8\n\\]\n\nSo $x \\equiv 8 \\pmod{15}$.\n\nSolution: $\\boxed{x \\equiv 8 \\pmod{15}}$\n\nVerification:\n\n- $8 = 2(3) + 2$, so $8 \\equiv 2 \\pmod{3}$ ✓\n- $8 = 1(5) + 3$, so $8 \\equiv 3 \\pmod{5}$ ✓\n\nGeneral solution: $x = 8 + 15k$ for any integer $k$."
   },
   {
     "course": "Number Theory",
@@ -749,7 +749,7 @@
     "section": "Systems of Congruences",
     "type": "example",
     "title": "Example 44: Alternative Method for Two Congruences",
-    "content": "Solve the same system using substitution:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{3}\\\\\nx \\equiv 3 \\pmod{5}\n\\end{cases}\n\\]\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nFrom the first congruence: $x = 2 + 3k$ for some integer $k$.\n\nSubstitute into the second congruence:\n\\[\n2 + 3k \\equiv 3 \\pmod{5}\n\\]\n\\[\n3k \\equiv 1 \\pmod{5}\n\\]\n\nFind $k$: Test values\n\\begin{itemize}\n    \\item $k = 0$: $3(0) = 0 \\not\\equiv 1 \\pmod{5}$\n    \\item $k = 1$: $3(1) = 3 \\not\\equiv 1 \\pmod{5}$\n    \\item $k = 2$: $3(2) = 6 \\equiv 1 \\pmod{5}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nSo $k = 2$.\n\nTherefore:\n\\[\nx = 2 + 3(2) = 8\n\\]\n\n\\textbf{Solution:} $\\boxed{x \\equiv 8 \\pmod{15}}$ (same as before)"
+    "content": "Solve the same system using substitution:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{3}\\\\\nx \\equiv 3 \\pmod{5}\n\\end{cases}\n\\]\n\nSolution:\n\nFrom the first congruence: $x = 2 + 3k$ for some integer $k$.\n\nSubstitute into the second congruence:\n\\[\n2 + 3k \\equiv 3 \\pmod{5}\n\\]\n\\[\n3k \\equiv 1 \\pmod{5}\n\\]\n\nFind $k$: Test values\n\n- $k = 0$: $3(0) = 0 \\not\\equiv 1 \\pmod{5}$\n- $k = 1$: $3(1) = 3 \\not\\equiv 1 \\pmod{5}$\n- $k = 2$: $3(2) = 6 \\equiv 1 \\pmod{5}$ ✓\n\nSo $k = 2$.\n\nTherefore:\n\\[\nx = 2 + 3(2) = 8\n\\]\n\nSolution: $\\boxed{x \\equiv 8 \\pmod{15}}$ (same as before)"
   },
   {
     "course": "Number Theory",
@@ -757,7 +757,7 @@
     "section": "Systems of Congruences",
     "type": "example",
     "title": "Example 45: CRT with Three Congruences",
-    "content": "Solve the system:\n\\[\n\\begin{cases}\nx \\equiv 1 \\pmod{3}\\\\\nx \\equiv 2 \\pmod{4}\\\\\nx \\equiv 3 \\pmod{5}\n\\end{cases}\n\\]\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Verify pairwise coprimality\n\n$\\gcd(3, 4) = 1$ \\textcolor{green}{\\checkmark}\n\n$\\gcd(3, 5) = 1$ \\textcolor{green}{\\checkmark}\n\n$\\gcd(4, 5) = 1$ \\textcolor{green}{\\checkmark}\n\nUnique solution exists modulo $M = 3 \\times 4 \\times 5 = 60$.\n\n\\textbf{Step 2:} Apply CRT\n\n$M_1 = \\frac{60}{3} = 20$, $M_2 = \\frac{60}{4} = 15$, $M_3 = \\frac{60}{5} = 12$\n\n\\textbf{Find $y_1$:} $20y_1 \\equiv 1 \\pmod{3}$\n\n$20 \\equiv 2 \\pmod{3}$, so $2y_1 \\equiv 1 \\pmod{3}$\n\n$y_1 = 2$ (as $2 \\times 2 = 4 \\equiv 1 \\pmod{3}$)\n\n\\textbf{Find $y_2$:} $15y_2 \\equiv 1 \\pmod{4}$\n\n$15 \\equiv 3 \\pmod{4}$, so $3y_2 \\equiv 1 \\pmod{4}$\n\n$y_2 = 3$ (as $3 \\times 3 = 9 \\equiv 1 \\pmod{4}$)\n\n\\textbf{Find $y_3$:} $12y_3 \\equiv 1 \\pmod{5}$\n\n$12 \\equiv 2 \\pmod{5}$, so $2y_3 \\equiv 1 \\pmod{5}$\n\n$y_3 = 3$ (as $2 \\times 3 = 6 \\equiv 1 \\pmod{5}$)\n\n\\textbf{Step 3:} Construct solution\n\\[\nx = a_1 M_1 y_1 + a_2 M_2 y_2 + a_3 M_3 y_3\n\\]\n\\[\nx = 1(20)(2) + 2(15)(3) + 3(12)(3)\n\\]\n\\[\nx = 40 + 90 + 108 = 238\n\\]\n\nReduce modulo 60:\n\\[\n238 = 3(60) + 58\n\\]\n\n\\textbf{Solution:} $\\boxed{x \\equiv 58 \\pmod{60}}$\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item $58 = 19(3) + 1 \\equiv 1 \\pmod{3}$ \\textcolor{green}{\\checkmark}\n    \\item $58 = 14(4) + 2 \\equiv 2 \\pmod{4}$ \\textcolor{green}{\\checkmark}\n    \\item $58 = 11(5) + 3 \\equiv 3 \\pmod{5}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}"
+    "content": "Solve the system:\n\\[\n\\begin{cases}\nx \\equiv 1 \\pmod{3}\\\\\nx \\equiv 2 \\pmod{4}\\\\\nx \\equiv 3 \\pmod{5}\n\\end{cases}\n\\]\n\nSolution:\n\nStep 1: Verify pairwise coprimality\n\n$\\gcd(3, 4) = 1$ ✓\n\n$\\gcd(3, 5) = 1$ ✓\n\n$\\gcd(4, 5) = 1$ ✓\n\nUnique solution exists modulo $M = 3 \\times 4 \\times 5 = 60$.\n\nStep 2: Apply CRT\n\n$M_1 = \\frac{60}{3} = 20$, $M_2 = \\frac{60}{4} = 15$, $M_3 = \\frac{60}{5} = 12$\n\nFind $y_1$: $20y_1 \\equiv 1 \\pmod{3}$\n\n$20 \\equiv 2 \\pmod{3}$, so $2y_1 \\equiv 1 \\pmod{3}$\n\n$y_1 = 2$ (as $2 \\times 2 = 4 \\equiv 1 \\pmod{3}$)\n\nFind $y_2$: $15y_2 \\equiv 1 \\pmod{4}$\n\n$15 \\equiv 3 \\pmod{4}$, so $3y_2 \\equiv 1 \\pmod{4}$\n\n$y_2 = 3$ (as $3 \\times 3 = 9 \\equiv 1 \\pmod{4}$)\n\nFind $y_3$: $12y_3 \\equiv 1 \\pmod{5}$\n\n$12 \\equiv 2 \\pmod{5}$, so $2y_3 \\equiv 1 \\pmod{5}$\n\n$y_3 = 3$ (as $2 \\times 3 = 6 \\equiv 1 \\pmod{5}$)\n\nStep 3: Construct solution\n\\[\nx = a_1 M_1 y_1 + a_2 M_2 y_2 + a_3 M_3 y_3\n\\]\n\\[\nx = 1(20)(2) + 2(15)(3) + 3(12)(3)\n\\]\n\\[\nx = 40 + 90 + 108 = 238\n\\]\n\nReduce modulo 60:\n\\[\n238 = 3(60) + 58\n\\]\n\nSolution: $\\boxed{x \\equiv 58 \\pmod{60}}$\n\nVerification:\n\n- $58 = 19(3) + 1 \\equiv 1 \\pmod{3}$ ✓\n- $58 = 14(4) + 2 \\equiv 2 \\pmod{4}$ ✓\n- $58 = 11(5) + 3 \\equiv 3 \\pmod{5}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -765,7 +765,7 @@
     "section": "Systems of Congruences",
     "type": "example",
     "title": "Example 46: Real-World Application",
-    "content": "A farmer has some eggs. When counted in groups of 3, there are 2 left over. When counted in groups of 5, there are 3 left over. When counted in groups of 7, there are 4 left over. What is the smallest positive number of eggs?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nLet $x$ be the number of eggs. We have:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{3}\\\\\nx \\equiv 3 \\pmod{5}\\\\\nx \\equiv 4 \\pmod{7}\n\\end{cases}\n\\]\n\n\\textbf{Check coprimality:} $\\gcd(3,5) = \\gcd(3,7) = \\gcd(5,7) = 1$ \\textcolor{green}{\\checkmark}\n\n$M = 3 \\times 5 \\times 7 = 105$\n\n$M_1 = 35$, $M_2 = 21$, $M_3 = 15$\n\n\\textbf{Find $y_1$:} $35y_1 \\equiv 1 \\pmod{3}$\n\n$35 \\equiv 2 \\pmod{3}$, so $2y_1 \\equiv 1 \\pmod{3}$, thus $y_1 = 2$\n\n\\textbf{Find $y_2$:} $21y_2 \\equiv 1 \\pmod{5}$\n\n$21 \\equiv 1 \\pmod{5}$, so $y_2 = 1$\n\n\\textbf{Find $y_3$:} $15y_3 \\equiv 1 \\pmod{7}$\n\n$15 \\equiv 1 \\pmod{7}$, so $y_3 = 1$\n\n\\textbf{Construct solution:}\n\\[\nx = 2(35)(2) + 3(21)(1) + 4(15)(1)\n\\]\n\\[\nx = 140 + 63 + 60 = 263\n\\]\n\nReduce modulo 105:\n\\[\n263 = 2(105) + 53\n\\]\n\n\\textbf{Answer:} The smallest positive number of eggs is $\\boxed{53}$.\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item $53 = 17(3) + 2$ \\textcolor{green}{\\checkmark}\n    \\item $53 = 10(5) + 3$ \\textcolor{green}{\\checkmark}\n    \\item $53 = 7(7) + 4$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\n\\subsection*{When Moduli Are Not Coprime}"
+    "content": "A farmer has some eggs. When counted in groups of 3, there are 2 left over. When counted in groups of 5, there are 3 left over. When counted in groups of 7, there are 4 left over. What is the smallest positive number of eggs?\n\nSolution:\n\nLet $x$ be the number of eggs. We have:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{3}\\\\\nx \\equiv 3 \\pmod{5}\\\\\nx \\equiv 4 \\pmod{7}\n\\end{cases}\n\\]\n\nCheck coprimality: $\\gcd(3,5) = \\gcd(3,7) = \\gcd(5,7) = 1$ ✓\n\n$M = 3 \\times 5 \\times 7 = 105$\n\n$M_1 = 35$, $M_2 = 21$, $M_3 = 15$\n\nFind $y_1$: $35y_1 \\equiv 1 \\pmod{3}$\n\n$35 \\equiv 2 \\pmod{3}$, so $2y_1 \\equiv 1 \\pmod{3}$, thus $y_1 = 2$\n\nFind $y_2$: $21y_2 \\equiv 1 \\pmod{5}$\n\n$21 \\equiv 1 \\pmod{5}$, so $y_2 = 1$\n\nFind $y_3$: $15y_3 \\equiv 1 \\pmod{7}$\n\n$15 \\equiv 1 \\pmod{7}$, so $y_3 = 1$\n\nConstruct solution:\n\\[\nx = 2(35)(2) + 3(21)(1) + 4(15)(1)\n\\]\n\\[\nx = 140 + 63 + 60 = 263\n\\]\n\nReduce modulo 105:\n\\[\n263 = 2(105) + 53\n\\]\n\nAnswer: The smallest positive number of eggs is $\\boxed{53}$.\n\nVerification:\n\n- $53 = 17(3) + 2$ ✓\n- $53 = 10(5) + 3$ ✓\n- $53 = 7(7) + 4$ ✓\n\n\\subsection*{When Moduli Are Not Coprime}"
   },
   {
     "course": "Number Theory",
@@ -773,7 +773,7 @@
     "section": "Systems of Congruences",
     "type": "keypoint",
     "title": "{accentorange}{\\ {Warning: Non-Coprime Moduli}} When the",
-    "content": "\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Warning: Non-Coprime Moduli}}\n\nWhen the moduli are \\textbf{not} pairwise coprime, the Chinese Remainder Theorem does not apply directly. The system may have:\n\\begin{itemize}\n    \\item No solution (inconsistent system)\n    \\item Multiple solutions or infinitely many solutions\n\\end{itemize}\n\n\\textbf{Condition for Solvability:}\n\nFor the system to have a solution, we need:\n\\[\na_i \\equiv a_j \\pmod{\\gcd(m_i, m_j)} \\text{ for all } i, j\n\\]"
+    "content": "Warning: Non-Coprime Moduli\n\nWhen the moduli are not pairwise coprime, the Chinese Remainder Theorem does not apply directly. The system may have:\n\n- No solution (inconsistent system)\n- Multiple solutions or infinitely many solutions\n\nCondition for Solvability:\n\nFor the system to have a solution, we need:\n\\[\na_i \\equiv a_j \\pmod{\\gcd(m_i, m_j)} \\text{ for all } i, j\n\\]"
   },
   {
     "course": "Number Theory",
@@ -781,7 +781,7 @@
     "section": "Systems of Congruences",
     "type": "example",
     "title": "Example 47: Inconsistent System",
-    "content": "Determine if the following system has a solution:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{6}\\\\\nx \\equiv 5 \\pmod{9}\n\\end{cases}\n\\]\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCheck coprimality: $\\gcd(6, 9) = 3 \\neq 1$ \\textcolor{red}{$\\times$}\n\nModuli are not coprime. Check consistency:\n\nIf $x \\equiv 2 \\pmod{6}$ and $x \\equiv 5 \\pmod{9}$, then:\n\\[\nx \\equiv 2 \\pmod{3} \\text{ (since } 3 | 6\\text{)}\n\\]\n\\[\nx \\equiv 5 \\equiv 2 \\pmod{3} \\text{ (since } 3 | 9\\text{)}\n\\]\n\nBoth give $x \\equiv 2 \\pmod{3}$ \\textcolor{green}{\\checkmark}\n\nSo far consistent. Now solve:\n\nFrom first: $x = 2 + 6k$ for some integer $k$.\n\nSubstitute into second:\n\\[\n2 + 6k \\equiv 5 \\pmod{9}\n\\]\n\\[\n6k \\equiv 3 \\pmod{9}\n\\]\n\nCheck solvability: $\\gcd(6, 9) = 3$, and $3 | 3$ \\textcolor{green}{\\checkmark}\n\nDivide by 3:\n\\[\n2k \\equiv 1 \\pmod{3}\n\\]\n\n$2(2) = 4 \\equiv 1 \\pmod{3}$, so $k \\equiv 2 \\pmod{3}$\n\nThus $k = 2 + 3j$ for integer $j$.\n\nTherefore:\n\\[\nx = 2 + 6(2 + 3j) = 2 + 12 + 18j = 14 + 18j\n\\]\n\n\\textbf{Solution:} $\\boxed{x \\equiv 14 \\pmod{18}}$\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item $14 = 2(6) + 2 \\equiv 2 \\pmod{6}$ \\textcolor{green}{\\checkmark}\n    \\item $14 = 1(9) + 5 \\equiv 5 \\pmod{9}$ \\textcolor{green}{\\checkmark}\n\\end{itemize}"
+    "content": "Determine if the following system has a solution:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{6}\\\\\nx \\equiv 5 \\pmod{9}\n\\end{cases}\n\\]\n\nSolution:\n\nCheck coprimality: $\\gcd(6, 9) = 3 \\neq 1$ $\\times$\n\nModuli are not coprime. Check consistency:\n\nIf $x \\equiv 2 \\pmod{6}$ and $x \\equiv 5 \\pmod{9}$, then:\n\\[\nx \\equiv 2 \\pmod{3} \\text{ (since } 3 | 6\\text{)}\n\\]\n\\[\nx \\equiv 5 \\equiv 2 \\pmod{3} \\text{ (since } 3 | 9\\text{)}\n\\]\n\nBoth give $x \\equiv 2 \\pmod{3}$ ✓\n\nSo far consistent. Now solve:\n\nFrom first: $x = 2 + 6k$ for some integer $k$.\n\nSubstitute into second:\n\\[\n2 + 6k \\equiv 5 \\pmod{9}\n\\]\n\\[\n6k \\equiv 3 \\pmod{9}\n\\]\n\nCheck solvability: $\\gcd(6, 9) = 3$, and $3 | 3$ ✓\n\nDivide by 3:\n\\[\n2k \\equiv 1 \\pmod{3}\n\\]\n\n$2(2) = 4 \\equiv 1 \\pmod{3}$, so $k \\equiv 2 \\pmod{3}$\n\nThus $k = 2 + 3j$ for integer $j$.\n\nTherefore:\n\\[\nx = 2 + 6(2 + 3j) = 2 + 12 + 18j = 14 + 18j\n\\]\n\nSolution: $\\boxed{x \\equiv 14 \\pmod{18}}$\n\nVerification:\n\n- $14 = 2(6) + 2 \\equiv 2 \\pmod{6}$ ✓\n- $14 = 1(9) + 5 \\equiv 5 \\pmod{9}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -789,7 +789,7 @@
     "section": "Systems of Congruences",
     "type": "example",
     "title": "Example 48: Truly Inconsistent System",
-    "content": "Show that the following system has no solution:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{4}\\\\\nx \\equiv 3 \\pmod{6}\n\\end{cases}\n\\]\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n$\\gcd(4, 6) = 2$\n\nCheck consistency modulo 2:\n\nFrom first: $x \\equiv 2 \\equiv 0 \\pmod{2}$\n\nFrom second: $x \\equiv 3 \\equiv 1 \\pmod{2}$\n\nWe need $x$ to be both even and odd simultaneously! \\textcolor{red}{$\\times$}\n\nThis is impossible.\n\n\\textbf{Conclusion:} The system has \\textbf{no solution}."
+    "content": "Show that the following system has no solution:\n\\[\n\\begin{cases}\nx \\equiv 2 \\pmod{4}\\\\\nx \\equiv 3 \\pmod{6}\n\\end{cases}\n\\]\n\nSolution:\n\n$\\gcd(4, 6) = 2$\n\nCheck consistency modulo 2:\n\nFrom first: $x \\equiv 2 \\equiv 0 \\pmod{2}$\n\nFrom second: $x \\equiv 3 \\equiv 1 \\pmod{2}$\n\nWe need $x$ to be both even and odd simultaneously! $\\times$\n\nThis is impossible.\n\nConclusion: The system has no solution."
   },
   {
     "course": "Number Theory",
@@ -797,7 +797,7 @@
     "section": "Systems of Congruences",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Chinese Remainder Theorem}} {For",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Chinese Remainder Theorem}}\n\n\\textbf{For pairwise coprime moduli $m_1, m_2, \\ldots, m_k$:}\n\n\\begin{enumerate}[leftmargin=*]\n    \\item System has unique solution modulo $M = m_1 m_2 \\cdots m_k$\n    \\item Solution formula: $x = \\sum_{i=1}^{k} a_i M_i y_i$\n    \\item Where $M_i = \\frac{M}{m_i}$ and $M_i y_i \\equiv 1 \\pmod{m_i}$\n\\end{enumerate}\n\n\\textbf{For non-coprime moduli:}\n\n\\begin{itemize}\n    \\item Check consistency: $a_i \\equiv a_j \\pmod{\\gcd(m_i, m_j)}$\n    \\item If inconsistent: No solution\n    \\item If consistent: Solve by substitution method\n\\end{itemize}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Remember:}}\n\\begin{itemize}\n    \\item CRT only applies when moduli are pairwise coprime\n    \\item Always verify your solution\n    \\item Solution is unique modulo $M$\n\\end{itemize}\n\n\\newpage"
+    "content": "Summary: Chinese Remainder Theorem\n\nFor pairwise coprime moduli $m_1, m_2, \\ldots, m_k$:\n\n1. System has unique solution modulo $M = m_1 m_2 \\cdots m_k$\n2. Solution formula: $x = \\sum_{i=1}^{k} a_i M_i y_i$\n3. Where $M_i = \\frac{M}{m_i}$ and $M_i y_i \\equiv 1 \\pmod{m_i}$\n\nFor non-coprime moduli:\n\n- Check consistency: $a_i \\equiv a_j \\pmod{\\gcd(m_i, m_j)}$\n- If inconsistent: No solution\n- If consistent: Solve by substitution method\n\nRemember:\n\n- CRT only applies when moduli are pairwise coprime\n- Always verify your solution\n- Solution is unique modulo $M$"
   },
   {
     "course": "Number Theory",
@@ -805,7 +805,7 @@
     "section": "Linear Diophantine Equations",
     "type": "definition",
     "title": "Definition: Linear Diophantine Equation",
-    "content": "A \\textbf{linear Diophantine equation} is an equation of the form:\n\\[\nax + by = c\n\\]\n\nwhere $a, b, c \\in \\mathbb{Z}$ are given integers, and we seek integer solutions $x, y \\in \\mathbb{Z}$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Points:}}\n\\begin{itemize}[leftmargin=*]\n    \\item Named after the Greek mathematician Diophantus of Alexandria (3rd century AD)\n    \\item We are interested only in \\textbf{integer} solutions\n    \\item A Diophantine equation may have: no solutions, finitely many solutions, or infinitely many solutions\n    \\item Linear Diophantine equations have a close connection to linear congruences\n\\end{itemize}"
+    "content": "A linear Diophantine equation is an equation of the form:\n\\[\nax + by = c\n\\]\n\nwhere $a, b, c \\in \\mathbb{Z}$ are given integers, and we seek integer solutions $x, y \\in \\mathbb{Z}$.\n\nKey Points:\n\n- Named after the Greek mathematician Diophantus of Alexandria (3rd century AD)\n- We are interested only in integer solutions\n- A Diophantine equation may have: no solutions, finitely many solutions, or infinitely many solutions\n- Linear Diophantine equations have a close connection to linear congruences"
   },
   {
     "course": "Number Theory",
@@ -813,7 +813,7 @@
     "section": "Linear Diophantine Equations",
     "type": "example",
     "title": "Example 49: Understanding Diophantine Equations",
-    "content": "Determine which of the following are linear Diophantine equations:\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $3x + 5y = 7$\n\nLinear with integer coefficients \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} $x^2 + y = 10$\n\nNot linear (contains $x^2$) \\textcolor{red}{$\\times$}\n\n\\textbf{(c)} $2x - 7y = 15$\n\nLinear with integer coefficients \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} $xy = 12$\n\nNot linear (contains $xy$ term) \\textcolor{red}{$\\times$}\n\n\\textbf{(e)} $4x + 0y = 8$\n\nLinear (equivalent to $4x = 8$) \\textcolor{green}{\\checkmark}"
+    "content": "Determine which of the following are linear Diophantine equations:\n\nSolution:\n\n(a) $3x + 5y = 7$\n\nLinear with integer coefficients ✓\n\n(b) $x^2 + y = 10$\n\nNot linear (contains $x^2$) $\\times$\n\n(c) $2x - 7y = 15$\n\nLinear with integer coefficients ✓\n\n(d) $xy = 12$\n\nNot linear (contains $xy$ term) $\\times$\n\n(e) $4x + 0y = 8$\n\nLinear (equivalent to $4x = 8$) ✓"
   },
   {
     "course": "Number Theory",
@@ -821,7 +821,7 @@
     "section": "Linear Diophantine Equations",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Connection to Linear Congruences}} The",
-    "content": "\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Connection to Linear Congruences}}\n\nThe linear Diophantine equation:\n\\[\nax + by = c\n\\]\n\ncan be rewritten as a linear congruence. If we rearrange:\n\\[\nax = c - by\n\\]\n\\[\nax \\equiv c \\pmod{b}\n\\]\n\nThis shows the deep connection between Diophantine equations and congruences."
+    "content": "Connection to Linear Congruences\n\nThe linear Diophantine equation:\n\\[\nax + by = c\n\\]\n\ncan be rewritten as a linear congruence. If we rearrange:\n\\[\nax = c - by\n\\]\n\\[\nax \\equiv c \\pmod{b}\n\\]\n\nThis shows the deep connection between Diophantine equations and congruences."
   },
   {
     "course": "Number Theory",
@@ -837,7 +837,7 @@
     "section": "Linear Diophantine Equations",
     "type": "proof",
     "title": "Proof: Existence of Solutions",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nLet $d = \\gcd(a, b)$.\n\n\\textcolor{darkgreen}{\\textbf{Necessary Condition ($\\Rightarrow$):}}\n\nSuppose $x_0, y_0$ is a solution, so $ax_0 + by_0 = c$.\n\nSince $d | a$ and $d | b$:\n\\[\nd | (ax_0 + by_0)\n\\]\n\\[\nd | c\n\\]\n\nTherefore, $d | c$ is necessary. \\textcolor{green}{\\checkmark}\n\n\\textcolor{darkgreen}{\\textbf{Sufficient Condition ($\\Leftarrow$):}}\n\nSuppose $d | c$, so $c = dk$ for some integer $k$.\n\nBy Bezout's Identity, since $d = \\gcd(a, b)$, there exist integers $x', y'$ such that:\n\\[\nax' + by' = d\n\\]\n\nMultiply both sides by $k$:\n\\[\na(kx') + b(ky') = dk = c\n\\]\n\nLet $x_0 = kx'$ and $y_0 = ky'$. Then:\n\\[\nax_0 + by_0 = c\n\\]\n\nSo $(x_0, y_0)$ is a solution. \\textcolor{green}{\\checkmark}\n\nTherefore, the equation has solutions if and only if $d | c$. \\qed"
+    "content": "Proof:\n\nLet $d = \\gcd(a, b)$.\n\nNecessary Condition ($\\Rightarrow$):\n\nSuppose $x_0, y_0$ is a solution, so $ax_0 + by_0 = c$.\n\nSince $d | a$ and $d | b$:\n\\[\nd | (ax_0 + by_0)\n\\]\n\\[\nd | c\n\\]\n\nTherefore, $d | c$ is necessary. ✓\n\nSufficient Condition ($\\Leftarrow$):\n\nSuppose $d | c$, so $c = dk$ for some integer $k$.\n\nBy Bezout's Identity, since $d = \\gcd(a, b)$, there exist integers $x', y'$ such that:\n\\[\nax' + by' = d\n\\]\n\nMultiply both sides by $k$:\n\\[\na(kx') + b(ky') = dk = c\n\\]\n\nLet $x_0 = kx'$ and $y_0 = ky'$. Then:\n\\[\nax_0 + by_0 = c\n\\]\n\nSo $(x_0, y_0)$ is a solution. ✓\n\nTherefore, the equation has solutions if and only if $d | c$."
   },
   {
     "course": "Number Theory",
@@ -845,7 +845,7 @@
     "section": "Linear Diophantine Equations",
     "type": "example",
     "title": "Example 50: Testing for Solvability",
-    "content": "Determine which equations have integer solutions:\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $6x + 9y = 15$\n\n$\\gcd(6, 9) = 3$\n\nCheck: $15 = 3(5)$, so $3 | 15$ \\textcolor{green}{\\checkmark}\n\nHas solutions.\n\n\\textbf{(b)} $4x + 6y = 7$\n\n$\\gcd(4, 6) = 2$\n\nCheck: $7 = 2(3) + 1$, so $2 \\nmid 7$ \\textcolor{red}{$\\times$}\n\nNo integer solutions exist.\n\n\\textbf{(c)} $12x + 18y = 24$\n\n$\\gcd(12, 18) = 6$\n\nCheck: $24 = 6(4)$, so $6 | 24$ \\textcolor{green}{\\checkmark}\n\nHas solutions.\n\n\\textbf{(d)} $5x + 7y = 1$\n\n$\\gcd(5, 7) = 1$\n\nCheck: $1 | 1$ \\textcolor{green}{\\checkmark}\n\nHas solutions (since $\\gcd = 1$, every integer on the right side is solvable)."
+    "content": "Determine which equations have integer solutions:\n\nSolution:\n\n(a) $6x + 9y = 15$\n\n$\\gcd(6, 9) = 3$\n\nCheck: $15 = 3(5)$, so $3 | 15$ ✓\n\nHas solutions.\n\n(b) $4x + 6y = 7$\n\n$\\gcd(4, 6) = 2$\n\nCheck: $7 = 2(3) + 1$, so $2 \\nmid 7$ $\\times$\n\nNo integer solutions exist.\n\n(c) $12x + 18y = 24$\n\n$\\gcd(12, 18) = 6$\n\nCheck: $24 = 6(4)$, so $6 | 24$ ✓\n\nHas solutions.\n\n(d) $5x + 7y = 1$\n\n$\\gcd(5, 7) = 1$\n\nCheck: $1 | 1$ ✓\n\nHas solutions (since $\\gcd = 1$, every integer on the right side is solvable)."
   },
   {
     "course": "Number Theory",
@@ -853,7 +853,7 @@
     "section": "Linear Diophantine Equations",
     "type": "theorem",
     "title": "Theorem: General Solution",
-    "content": "If $(x_0, y_0)$ is one particular solution to $ax + by = c$, then the \\textbf{general solution} is:\n\\[\nx = x_0 + \\frac{b}{d}t, \\quad y = y_0 - \\frac{a}{d}t\n\\]\n\nwhere $d = \\gcd(a, b)$ and $t \\in \\mathbb{Z}$ is any integer.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} Once we find one solution, we can generate infinitely many solutions using this formula."
+    "content": "If $(x_0, y_0)$ is one particular solution to $ax + by = c$, then the general solution is:\n\\[\nx = x_0 + \\frac{b}{d}t, \\quad y = y_0 - \\frac{a}{d}t\n\\]\n\nwhere $d = \\gcd(a, b)$ and $t \\in \\mathbb{Z}$ is any integer.\n\nIn words: Once we find one solution, we can generate infinitely many solutions using this formula."
   },
   {
     "course": "Number Theory",
@@ -861,7 +861,7 @@
     "section": "Linear Diophantine Equations",
     "type": "proof",
     "title": "Proof: General Solution",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nSuppose $(x_0, y_0)$ is a particular solution: $ax_0 + by_0 = c$.\n\nLet $(x, y)$ be any other solution: $ax + by = c$.\n\nSubtract:\n\\[\na(x - x_0) + b(y - y_0) = 0\n\\]\n\\[\na(x - x_0) = -b(y - y_0)\n\\]\n\nDivide by $d = \\gcd(a, b)$:\n\\[\n\\frac{a}{d}(x - x_0) = -\\frac{b}{d}(y - y_0)\n\\]\n\nSince $\\gcd\\left(\\frac{a}{d}, \\frac{b}{d}\\right) = 1$, we have:\n\n$\\frac{b}{d} | (x - x_0)$ (by Euclid's Lemma)\n\nSo $x - x_0 = \\frac{b}{d}t$ for some integer $t$.\n\nTherefore:\n\\[\nx = x_0 + \\frac{b}{d}t\n\\]\n\nSubstituting back:\n\\[\n\\frac{a}{d} \\cdot \\frac{b}{d}t = -\\frac{b}{d}(y - y_0)\n\\]\n\\[\n\\frac{a}{d}t = -(y - y_0)\n\\]\n\\[\ny = y_0 - \\frac{a}{d}t\n\\]\n\n\\textbf{Verification:}\n\\[\nax + by = a\\left(x_0 + \\frac{b}{d}t\\right) + b\\left(y_0 - \\frac{a}{d}t\\right)\n\\]\n\\[\n= ax_0 + \\frac{ab}{d}t + by_0 - \\frac{ab}{d}t\n\\]\n\\[\n= ax_0 + by_0 = c\n\\]\n\\textcolor{green}{\\checkmark}\n\n\\qed"
+    "content": "Proof:\n\nSuppose $(x_0, y_0)$ is a particular solution: $ax_0 + by_0 = c$.\n\nLet $(x, y)$ be any other solution: $ax + by = c$.\n\nSubtract:\n\\[\na(x - x_0) + b(y - y_0) = 0\n\\]\n\\[\na(x - x_0) = -b(y - y_0)\n\\]\n\nDivide by $d = \\gcd(a, b)$:\n\\[\n\\frac{a}{d}(x - x_0) = -\\frac{b}{d}(y - y_0)\n\\]\n\nSince $\\gcd\\left(\\frac{a}{d}, \\frac{b}{d}\\right) = 1$, we have:\n\n$\\frac{b}{d} | (x - x_0)$ (by Euclid's Lemma)\n\nSo $x - x_0 = \\frac{b}{d}t$ for some integer $t$.\n\nTherefore:\n\\[\nx = x_0 + \\frac{b}{d}t\n\\]\n\nSubstituting back:\n\\[\n\\frac{a}{d} \\cdot \\frac{b}{d}t = -\\frac{b}{d}(y - y_0)\n\\]\n\\[\n\\frac{a}{d}t = -(y - y_0)\n\\]\n\\[\ny = y_0 - \\frac{a}{d}t\n\\]\n\nVerification:\n\\[\nax + by = a\\left(x_0 + \\frac{b}{d}t\\right) + b\\left(y_0 - \\frac{a}{d}t\\right)\n\\]\n\\[\n= ax_0 + \\frac{ab}{d}t + by_0 - \\frac{ab}{d}t\n\\]\n\\[\n= ax_0 + by_0 = c\n\\]\n✓"
   },
   {
     "course": "Number Theory",
@@ -869,7 +869,7 @@
     "section": "Linear Diophantine Equations",
     "type": "example",
     "title": "Example 51: Finding All Solutions",
-    "content": "Solve $3x + 5y = 1$ completely.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check solvability\n\n$\\gcd(3, 5) = 1$, and $1 | 1$ \\textcolor{green}{\\checkmark}\n\nEquation has solutions.\n\n\\textbf{Step 2:} Find one particular solution\n\nWe need $3x + 5y = 1$.\n\nBy inspection or trial:\n\\begin{itemize}\n    \\item Try $x = 2$: $3(2) + 5y = 1 \\Rightarrow 6 + 5y = 1 \\Rightarrow y = -1$\n\\end{itemize}\n\nCheck: $3(2) + 5(-1) = 6 - 5 = 1$ \\textcolor{green}{\\checkmark}\n\nSo $(x_0, y_0) = (2, -1)$ is a particular solution.\n\n\\textbf{Step 3:} Write general solution\n\nWith $d = 1$:\n\\[\nx = 2 + \\frac{5}{1}t = 2 + 5t\n\\]\n\\[\ny = -1 - \\frac{3}{1}t = -1 - 3t\n\\]\n\n\\textbf{General Solution:} $\\boxed{(x, y) = (2 + 5t, -1 - 3t) \\text{ for } t \\in \\mathbb{Z}}$\n\n\\textbf{Some specific solutions:}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$t$ & $x = 2 + 5t$ & $y = -1 - 3t$ \\\\\n\\hline\n$-1$ & $-3$ & $2$ \\\\\n\\hline\n$0$ & $2$ & $-1$ \\\\\n\\hline\n$1$ & $7$ & $-4$ \\\\\n\\hline\n$2$ & $12$ & $-7$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Verification for $t = 1$:}\n\\[\n3(7) + 5(-4) = 21 - 20 = 1\n\\]\n\\textcolor{green}{\\checkmark}"
+    "content": "Solve $3x + 5y = 1$ completely.\n\nSolution:\n\nStep 1: Check solvability\n\n$\\gcd(3, 5) = 1$, and $1 | 1$ ✓\n\nEquation has solutions.\n\nStep 2: Find one particular solution\n\nWe need $3x + 5y = 1$.\n\nBy inspection or trial:\n\n- Try $x = 2$: $3(2) + 5y = 1 \\Rightarrow 6 + 5y = 1 \\Rightarrow y = -1$\n\nCheck: $3(2) + 5(-1) = 6 - 5 = 1$ ✓\n\nSo $(x_0, y_0) = (2, -1)$ is a particular solution.\n\nStep 3: Write general solution\n\nWith $d = 1$:\n\\[\nx = 2 + \\frac{5}{1}t = 2 + 5t\n\\]\n\\[\ny = -1 - \\frac{3}{1}t = -1 - 3t\n\\]\n\nGeneral Solution: $\\boxed{(x, y) = (2 + 5t, -1 - 3t) \\text{ for } t \\in \\mathbb{Z}}$\n\nSome specific solutions:\n\n| $t$ | $x = 2 + 5t$ | $y = -1 - 3t$ |\n|---|---|---|\n| $-1$ | $-3$ | $2$ |\n| $0$ | $2$ | $-1$ |\n| $1$ | $7$ | $-4$ |\n| $2$ | $12$ | $-7$ |\n\nVerification for $t = 1$:\n\\[\n3(7) + 5(-4) = 21 - 20 = 1\n\\]\n✓"
   },
   {
     "course": "Number Theory",
@@ -877,7 +877,7 @@
     "section": "Linear Diophantine Equations",
     "type": "example",
     "title": "Example 52: Solving Using Extended Euclidean Algorithm",
-    "content": "Solve $12x + 18y = 30$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check solvability\n\n$d = \\gcd(12, 18)$\n\nUsing Euclidean Algorithm:\n\\begin{align*}\n18 &= 12(1) + 6\\\\\n12 &= 6(2) + 0\n\\end{align*}\n\nSo $d = 6$.\n\nCheck: $30 = 6(5)$, so $6 | 30$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Step 2:} Simplify equation\n\nDivide by $d = 6$:\n\\[\n\\frac{12x + 18y}{6} = \\frac{30}{6}\n\\]\n\\[\n2x + 3y = 5\n\\]\n\n\\textbf{Step 3:} Find particular solution to simplified equation\n\nNow $\\gcd(2, 3) = 1$.\n\nBy Bezout's Identity (working backwards from Euclidean Algorithm):\n\nFrom $18 = 12(1) + 6$:\n\\[\n6 = 18 - 12(1)\n\\]\n\nExpress 1 in terms of 2 and 3:\n\\[\n3 = 2(1) + 1\n\\]\n\\[\n1 = 3 - 2(1)\n\\]\n\nSo $2(-1) + 3(1) = 1$.\n\nMultiply by 5:\n\\[\n2(-5) + 3(5) = 5\n\\]\n\nParticular solution to $2x + 3y = 5$: $(x_0, y_0) = (-5, 5)$\n\n\\textbf{Verification:} $2(-5) + 3(5) = -10 + 15 = 5$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Step 4:} General solution\n\nWith $d = \\gcd(2, 3) = 1$:\n\\[\nx = -5 + \\frac{3}{1}t = -5 + 3t\n\\]\n\\[\ny = 5 - \\frac{2}{1}t = 5 - 2t\n\\]\n\n\\textbf{General Solution:} $\\boxed{(x, y) = (-5 + 3t, 5 - 2t) \\text{ for } t \\in \\mathbb{Z}}$\n\n\\textbf{Some solutions:}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$t$ & $x = -5 + 3t$ & $y = 5 - 2t$ \\\\\n\\hline\n$0$ & $-5$ & $5$ \\\\\n\\hline\n$1$ & $-2$ & $3$ \\\\\n\\hline\n$2$ & $1$ & $1$ \\\\\n\\hline\n$3$ & $4$ & $-1$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Verification for original equation with $t = 2$:}\n\\[\n12(1) + 18(1) = 12 + 18 = 30\n\\]\n\\textcolor{green}{\\checkmark}"
+    "content": "Solve $12x + 18y = 30$.\n\nSolution:\n\nStep 1: Check solvability\n\n$d = \\gcd(12, 18)$\n\nUsing Euclidean Algorithm:\n$$\\begin{align*}\n18 &= 12(1) + 6\\\\\n12 &= 6(2) + 0\n\\end{align*}$$\n\nSo $d = 6$.\n\nCheck: $30 = 6(5)$, so $6 | 30$ ✓\n\nStep 2: Simplify equation\n\nDivide by $d = 6$:\n\\[\n\\frac{12x + 18y}{6} = \\frac{30}{6}\n\\]\n\\[\n2x + 3y = 5\n\\]\n\nStep 3: Find particular solution to simplified equation\n\nNow $\\gcd(2, 3) = 1$.\n\nBy Bezout's Identity (working backwards from Euclidean Algorithm):\n\nFrom $18 = 12(1) + 6$:\n\\[\n6 = 18 - 12(1)\n\\]\n\nExpress 1 in terms of 2 and 3:\n\\[\n3 = 2(1) + 1\n\\]\n\\[\n1 = 3 - 2(1)\n\\]\n\nSo $2(-1) + 3(1) = 1$.\n\nMultiply by 5:\n\\[\n2(-5) + 3(5) = 5\n\\]\n\nParticular solution to $2x + 3y = 5$: $(x_0, y_0) = (-5, 5)$\n\nVerification: $2(-5) + 3(5) = -10 + 15 = 5$ ✓\n\nStep 4: General solution\n\nWith $d = \\gcd(2, 3) = 1$:\n\\[\nx = -5 + \\frac{3}{1}t = -5 + 3t\n\\]\n\\[\ny = 5 - \\frac{2}{1}t = 5 - 2t\n\\]\n\nGeneral Solution: $\\boxed{(x, y) = (-5 + 3t, 5 - 2t) \\text{ for } t \\in \\mathbb{Z}}$\n\nSome solutions:\n\n| $t$ | $x = -5 + 3t$ | $y = 5 - 2t$ |\n|---|---|---|\n| $0$ | $-5$ | $5$ |\n| $1$ | $-2$ | $3$ |\n| $2$ | $1$ | $1$ |\n| $3$ | $4$ | $-1$ |\n\nVerification for original equation with $t = 2$:\n\\[\n12(1) + 18(1) = 12 + 18 = 30\n\\]\n✓"
   },
   {
     "course": "Number Theory",
@@ -885,7 +885,7 @@
     "section": "Linear Diophantine Equations",
     "type": "example",
     "title": "Example 53: Finding Positive Solutions",
-    "content": "Find all \\textbf{positive} integer solutions to $7x + 11y = 100$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Check solvability\n\n$\\gcd(7, 11) = 1$, and $1 | 100$ \\textcolor{green}{\\checkmark}\n\n\\textbf{Step 2:} Find particular solution\n\nWe need $7x + 11y = 100$.\n\nTry small values systematically. For $y = 1$:\n\\[\n7x + 11(1) = 100 \\Rightarrow 7x = 89\n\\]\n\n$89 = 7(12) + 5$, not divisible.\n\nFor $y = 2$:\n\\[\n7x + 11(2) = 100 \\Rightarrow 7x = 78\n\\]\n\n$78 = 7(11) + 1$, not divisible.\n\nFor $y = 3$:\n\\[\n7x + 11(3) = 100 \\Rightarrow 7x = 67\n\\]\n\nNot divisible.\n\nContinue... or use Extended Euclidean Algorithm:\n\nFrom Bezout's Identity for $\\gcd(7, 11) = 1$:\n\n$11 = 7(1) + 4$\n\n$7 = 4(1) + 3$\n\n$4 = 3(1) + 1$\n\n$3 = 1(3) + 0$\n\nWorking backwards:\n\\[\n1 = 4 - 3(1) = 4 - [7 - 4(1)] = 4(2) - 7\n\\]\n\\[\n= [11 - 7(1)](2) - 7 = 11(2) - 7(3)\n\\]\n\nSo $7(-3) + 11(2) = 1$.\n\nMultiply by 100:\n\\[\n7(-300) + 11(200) = 100\n\\]\n\nParticular solution: $(x_0, y_0) = (-300, 200)$\n\n\\textbf{Step 3:} General solution\n\\[\nx = -300 + 11t, \\quad y = 200 - 7t\n\\]\n\n\\textbf{Step 4:} Find positive solutions\n\nNeed $x > 0$ and $y > 0$:\n\n$x > 0$: $-300 + 11t > 0 \\Rightarrow t > \\frac{300}{11} \\approx 27.27$\n\nSo $t \\geq 28$.\n\n$y > 0$: $200 - 7t > 0 \\Rightarrow t < \\frac{200}{7} \\approx 28.57$\n\nSo $t \\leq 28$.\n\nTherefore, $t = 28$ is the only value.\n\n\\textbf{Solution:}\n\\[\nx = -300 + 11(28) = -300 + 308 = 8\n\\]\n\\[\ny = 200 - 7(28) = 200 - 196 = 4\n\\]\n\n\\textbf{Answer:} The only positive solution is $\\boxed{(x, y) = (8, 4)}$\n\n\\textbf{Verification:} $7(8) + 11(4) = 56 + 44 = 100$ \\textcolor{green}{\\checkmark}"
+    "content": "Find all positive integer solutions to $7x + 11y = 100$.\n\nSolution:\n\nStep 1: Check solvability\n\n$\\gcd(7, 11) = 1$, and $1 | 100$ ✓\n\nStep 2: Find particular solution\n\nWe need $7x + 11y = 100$.\n\nTry small values systematically. For $y = 1$:\n\\[\n7x + 11(1) = 100 \\Rightarrow 7x = 89\n\\]\n\n$89 = 7(12) + 5$, not divisible.\n\nFor $y = 2$:\n\\[\n7x + 11(2) = 100 \\Rightarrow 7x = 78\n\\]\n\n$78 = 7(11) + 1$, not divisible.\n\nFor $y = 3$:\n\\[\n7x + 11(3) = 100 \\Rightarrow 7x = 67\n\\]\n\nNot divisible.\n\nContinue... or use Extended Euclidean Algorithm:\n\nFrom Bezout's Identity for $\\gcd(7, 11) = 1$:\n\n$11 = 7(1) + 4$\n\n$7 = 4(1) + 3$\n\n$4 = 3(1) + 1$\n\n$3 = 1(3) + 0$\n\nWorking backwards:\n\\[\n1 = 4 - 3(1) = 4 - [7 - 4(1)] = 4(2) - 7\n\\]\n\\[\n= [11 - 7(1)](2) - 7 = 11(2) - 7(3)\n\\]\n\nSo $7(-3) + 11(2) = 1$.\n\nMultiply by 100:\n\\[\n7(-300) + 11(200) = 100\n\\]\n\nParticular solution: $(x_0, y_0) = (-300, 200)$\n\nStep 3: General solution\n\\[\nx = -300 + 11t, \\quad y = 200 - 7t\n\\]\n\nStep 4: Find positive solutions\n\nNeed $x > 0$ and $y > 0$:\n\n$x > 0$: $-300 + 11t > 0 \\Rightarrow t > \\frac{300}{11} \\approx 27.27$\n\nSo $t \\geq 28$.\n\n$y > 0$: $200 - 7t > 0 \\Rightarrow t < \\frac{200}{7} \\approx 28.57$\n\nSo $t \\leq 28$.\n\nTherefore, $t = 28$ is the only value.\n\nSolution:\n\\[\nx = -300 + 11(28) = -300 + 308 = 8\n\\]\n\\[\ny = 200 - 7(28) = 200 - 196 = 4\n\\]\n\nAnswer: The only positive solution is $\\boxed{(x, y) = (8, 4)}$\n\nVerification: $7(8) + 11(4) = 56 + 44 = 100$ ✓"
   },
   {
     "course": "Number Theory",
@@ -893,7 +893,7 @@
     "section": "Linear Diophantine Equations",
     "type": "example",
     "title": "Example 54: No Solutions Case",
-    "content": "Show that $6x + 9y = 20$ has no integer solutions.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n$\\gcd(6, 9) = 3$\n\nCheck if $3 | 20$:\n\\[\n20 = 3(6) + 2\n\\]\n\nSince $3 \\nmid 20$, the equation has \\textbf{no integer solutions}. \\textcolor{red}{$\\times$}\n\n\\textbf{Alternative explanation:}\n\nThe left side $6x + 9y = 3(2x + 3y)$ is always divisible by 3.\n\nBut 20 is not divisible by 3.\n\nTherefore, no integer values of $x$ and $y$ can satisfy the equation."
+    "content": "Show that $6x + 9y = 20$ has no integer solutions.\n\nSolution:\n\n$\\gcd(6, 9) = 3$\n\nCheck if $3 | 20$:\n\\[\n20 = 3(6) + 2\n\\]\n\nSince $3 \\nmid 20$, the equation has no integer solutions. $\\times$\n\nAlternative explanation:\n\nThe left side $6x + 9y = 3(2x + 3y)$ is always divisible by 3.\n\nBut 20 is not divisible by 3.\n\nTherefore, no integer values of $x$ and $y$ can satisfy the equation."
   },
   {
     "course": "Number Theory",
@@ -901,7 +901,7 @@
     "section": "Linear Diophantine Equations",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Linear Diophantine Equations}} {For}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Linear Diophantine Equations}}\n\n\\textbf{For} $ax + by = c$:\n\n\\begin{center}\n\\begin{tabular}{|p{5.5cm}|p{6.5cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Condition} & \\textbf{Result} \\\\\n\\hline\n$\\gcd(a,b) \\nmid c$ & No solutions \\\\\n\\hline\n$\\gcd(a,b) \\mid c$ & Infinitely many solutions \\\\\n\\hline\nGeneral Solution & $(x, y) = \\left(x_0 + \\frac{b}{d}t, y_0 - \\frac{a}{d}t\\right)$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solution Steps:}\n\\begin{enumerate}[leftmargin=*]\n    \\item Check if $d = \\gcd(a, b)$ divides $c$\n    \\item Find one particular solution $(x_0, y_0)$\n    \\item Write general solution using the formula\n    \\item Apply constraints (if positive solutions needed, etc.)\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Remember:}}\n\\begin{itemize}\n    \\item Use Extended Euclidean Algorithm to find particular solutions\n    \\item General solution contains a parameter $t \\in \\mathbb{Z}$\n    \\item Connection to congruences: $ax + by = c \\Rightarrow ax \\equiv c \\pmod{b}$\n\\end{itemize}\n\n\\newpage"
+    "content": "Summary: Linear Diophantine Equations\n\nFor $ax + by = c$:\n\n| Condition | Result |\n|---|---|\n| $\\gcd(a,b) \\nmid c$ | No solutions |\n| $\\gcd(a,b) \\mid c$ | Infinitely many solutions |\n| General Solution | $(x, y) = \\left(x_0 + \\frac{b}{d}t, y_0 - \\frac{a}{d}t\\right)$ |\n\nSolution Steps:\n\n1. Check if $d = \\gcd(a, b)$ divides $c$\n2. Find one particular solution $(x_0, y_0)$\n3. Write general solution using the formula\n4. Apply constraints (if positive solutions needed, etc.)\n\nRemember:\n\n- Use Extended Euclidean Algorithm to find particular solutions\n- General solution contains a parameter $t \\in \\mathbb{Z}$\n- Connection to congruences: $ax + by = c \\Rightarrow ax \\equiv c \\pmod{b}$"
   },
   {
     "course": "Number Theory",
@@ -909,7 +909,7 @@
     "section": "Polynomial Congruences",
     "type": "definition",
     "title": "Definition: Polynomial Congruence",
-    "content": "A \\textbf{polynomial congruence} is an equation of the form:\n\\[\nf(x) \\equiv 0 \\pmod{m}\n\\]\n\nwhere $f(x)$ is a polynomial with integer coefficients:\n\\[\nf(x) = a_n x^n + a_{n-1} x^{n-1} + \\cdots + a_1 x + a_0\n\\]\n\nand $a_i \\in \\mathbb{Z}$ for all $i$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Terminology:}}\n\\begin{itemize}[leftmargin=*]\n    \\item The \\textbf{degree} of $f(x)$ is the highest power of $x$ with non-zero coefficient\n    \\item A \\textbf{solution} is a value $x = a$ such that $f(a) \\equiv 0 \\pmod{m}$\n    \\item Two solutions $a$ and $b$ are \\textbf{incongruent} if $a \\not\\equiv b \\pmod{m}$\n    \\item We typically count only incongruent solutions modulo $m$\n\\end{itemize}"
+    "content": "A polynomial congruence is an equation of the form:\n\\[\nf(x) \\equiv 0 \\pmod{m}\n\\]\n\nwhere $f(x)$ is a polynomial with integer coefficients:\n\\[\nf(x) = a_n x^n + a_{n-1} x^{n-1} + \\cdots + a_1 x + a_0\n\\]\n\nand $a_i \\in \\mathbb{Z}$ for all $i$.\n\nKey Terminology:\n\n- The degree of $f(x)$ is the highest power of $x$ with non-zero coefficient\n- A solution is a value $x = a$ such that $f(a) \\equiv 0 \\pmod{m}$\n- Two solutions $a$ and $b$ are incongruent if $a \\not\\equiv b \\pmod{m}$\n- We typically count only incongruent solutions modulo $m$"
   },
   {
     "course": "Number Theory",
@@ -917,7 +917,7 @@
     "section": "Polynomial Congruences",
     "type": "example",
     "title": "Example 55: Identifying Polynomial Congruences",
-    "content": "Identify the degree and determine if solvable:\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{(a)} $x^2 + 3x + 2 \\equiv 0 \\pmod{5}$\n\nDegree 2 (quadratic polynomial congruence) \\textcolor{green}{\\checkmark}\n\n\\textbf{(b)} $2x - 7 \\equiv 0 \\pmod{11}$\n\nDegree 1 (linear congruence, already studied) \\textcolor{green}{\\checkmark}\n\n\\textbf{(c)} $x^3 - x \\equiv 0 \\pmod{7}$\n\nDegree 3 (cubic polynomial congruence) \\textcolor{green}{\\checkmark}\n\n\\textbf{(d)} $x^4 + 5x^2 + 6 \\equiv 0 \\pmod{8}$\n\nDegree 4 (quartic polynomial congruence) \\textcolor{green}{\\checkmark}"
+    "content": "Identify the degree and determine if solvable:\n\nSolution:\n\n(a) $x^2 + 3x + 2 \\equiv 0 \\pmod{5}$\n\nDegree 2 (quadratic polynomial congruence) ✓\n\n(b) $2x - 7 \\equiv 0 \\pmod{11}$\n\nDegree 1 (linear congruence, already studied) ✓\n\n(c) $x^3 - x \\equiv 0 \\pmod{7}$\n\nDegree 3 (cubic polynomial congruence) ✓\n\n(d) $x^4 + 5x^2 + 6 \\equiv 0 \\pmod{8}$\n\nDegree 4 (quartic polynomial congruence) ✓"
   },
   {
     "course": "Number Theory",
@@ -925,7 +925,7 @@
     "section": "Polynomial Congruences",
     "type": "example",
     "title": "Example 56: Finding Solutions by Exhaustion",
-    "content": "Solve $x^2 + x - 2 \\equiv 0 \\pmod{5}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince modulus is small, test all values $x = 0, 1, 2, 3, 4$:\n\n\\textbf{For $x = 0$:}\n\\[\n0^2 + 0 - 2 = -2 \\equiv 3 \\pmod{5}\n\\]\nNot a solution. \\textcolor{red}{$\\times$}\n\n\\textbf{For $x = 1$:}\n\\[\n1^2 + 1 - 2 = 0 \\equiv 0 \\pmod{5}\n\\]\nSolution! \\textcolor{green}{\\checkmark}\n\n\\textbf{For $x = 2$:}\n\\[\n2^2 + 2 - 2 = 4 \\equiv 4 \\pmod{5}\n\\]\nNot a solution. \\textcolor{red}{$\\times$}\n\n\\textbf{For $x = 3$:}\n\\[\n3^2 + 3 - 2 = 10 \\equiv 0 \\pmod{5}\n\\]\nSolution! \\textcolor{green}{\\checkmark}\n\n\\textbf{For $x = 4$:}\n\\[\n4^2 + 4 - 2 = 18 \\equiv 3 \\pmod{5}\n\\]\nNot a solution. \\textcolor{red}{$\\times$}\n\n\\textbf{Solutions:} $\\boxed{x \\equiv 1, 3 \\pmod{5}}$\n\n\\textbf{Note:} This quadratic has exactly 2 incongruent solutions modulo 5."
+    "content": "Solve $x^2 + x - 2 \\equiv 0 \\pmod{5}$.\n\nSolution:\n\nSince modulus is small, test all values $x = 0, 1, 2, 3, 4$:\n\nFor $x = 0$:\n\\[\n0^2 + 0 - 2 = -2 \\equiv 3 \\pmod{5}\n\\]\nNot a solution. $\\times$\n\nFor $x = 1$:\n\\[\n1^2 + 1 - 2 = 0 \\equiv 0 \\pmod{5}\n\\]\nSolution! ✓\n\nFor $x = 2$:\n\\[\n2^2 + 2 - 2 = 4 \\equiv 4 \\pmod{5}\n\\]\nNot a solution. $\\times$\n\nFor $x = 3$:\n\\[\n3^2 + 3 - 2 = 10 \\equiv 0 \\pmod{5}\n\\]\nSolution! ✓\n\nFor $x = 4$:\n\\[\n4^2 + 4 - 2 = 18 \\equiv 3 \\pmod{5}\n\\]\nNot a solution. $\\times$\n\nSolutions: $\\boxed{x \\equiv 1, 3 \\pmod{5}}$\n\nNote: This quadratic has exactly 2 incongruent solutions modulo 5."
   },
   {
     "course": "Number Theory",
@@ -933,7 +933,7 @@
     "section": "Polynomial Congruences",
     "type": "theorem",
     "title": "Theorem: Factor Theorem for Congruences",
-    "content": "If $a$ is a solution to $f(x) \\equiv 0 \\pmod{m}$, that is, $f(a) \\equiv 0 \\pmod{m}$, then:\n\\[\nf(x) \\equiv (x - a) \\cdot q(x) \\pmod{m}\n\\]\n\nfor some polynomial $q(x)$ with integer coefficients.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} If $a$ is a root, then $(x - a)$ is a factor modulo $m$."
+    "content": "If $a$ is a solution to $f(x) \\equiv 0 \\pmod{m}$, that is, $f(a) \\equiv 0 \\pmod{m}$, then:\n\\[\nf(x) \\equiv (x - a) \\cdot q(x) \\pmod{m}\n\\]\n\nfor some polynomial $q(x)$ with integer coefficients.\n\nIn words: If $a$ is a root, then $(x - a)$ is a factor modulo $m$."
   },
   {
     "course": "Number Theory",
@@ -941,7 +941,7 @@
     "section": "Polynomial Congruences",
     "type": "proof",
     "title": "Proof: Factor Theorem",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof:}}\n\nBy polynomial division, we can write:\n\\[\nf(x) = (x - a) \\cdot q(x) + r\n\\]\n\nwhere $r$ is a constant (degree 0).\n\nSubstituting $x = a$:\n\\[\nf(a) = (a - a) \\cdot q(a) + r = 0 \\cdot q(a) + r = r\n\\]\n\nSince $f(a) \\equiv 0 \\pmod{m}$, we have $r \\equiv 0 \\pmod{m}$.\n\nTherefore:\n\\[\nf(x) \\equiv (x - a) \\cdot q(x) \\pmod{m}\n\\]\n\n\\qed"
+    "content": "Proof:\n\nBy polynomial division, we can write:\n\\[\nf(x) = (x - a) \\cdot q(x) + r\n\\]\n\nwhere $r$ is a constant (degree 0).\n\nSubstituting $x = a$:\n\\[\nf(a) = (a - a) \\cdot q(a) + r = 0 \\cdot q(a) + r = r\n\\]\n\nSince $f(a) \\equiv 0 \\pmod{m}$, we have $r \\equiv 0 \\pmod{m}$.\n\nTherefore:\n\\[\nf(x) \\equiv (x - a) \\cdot q(x) \\pmod{m}\n\\]"
   },
   {
     "course": "Number Theory",
@@ -949,7 +949,7 @@
     "section": "Polynomial Congruences",
     "type": "example",
     "title": "Example 57: Applying Factor Theorem",
-    "content": "Given that $x = 2$ is a solution to $x^2 - 5x + 6 \\equiv 0 \\pmod{7}$, factor the polynomial modulo 7.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Verify that $x = 2$ is a solution:}\n\\[\n2^2 - 5(2) + 6 = 4 - 10 + 6 = 0 \\equiv 0 \\pmod{7}\n\\]\n\\textcolor{green}{\\checkmark}\n\nBy Factor Theorem:\n\\[\nx^2 - 5x + 6 \\equiv (x - 2) \\cdot q(x) \\pmod{7}\n\\]\n\nwhere $q(x)$ is degree 1.\n\nLet $q(x) = x + b$ for some constant $b$.\n\nExpand:\n\\[\n(x - 2)(x + b) = x^2 + bx - 2x - 2b = x^2 + (b - 2)x - 2b\n\\]\n\nCompare with $x^2 - 5x + 6$:\n\\[\nb - 2 \\equiv -5 \\pmod{7} \\Rightarrow b \\equiv -3 \\equiv 4 \\pmod{7}\n\\]\n\\[\n-2b \\equiv 6 \\pmod{7} \\Rightarrow b \\equiv -3 \\equiv 4 \\pmod{7}\n\\]\n\nBoth give $b = 4$.\n\nTherefore:\n\\[\n\\boxed{x^2 - 5x + 6 \\equiv (x - 2)(x - 4) \\pmod{7}}\n\\]\n\n\\textbf{This means the other solution is $x \\equiv 4 \\pmod{7}$.}\n\n\\textbf{Verification:}\n\\[\n4^2 - 5(4) + 6 = 16 - 20 + 6 = 2 \\equiv 2 \\pmod{7}\n\\]\n\nWait, this doesn't work! Let me recalculate:\n\nActually, $x^2 - 5x + 6 = (x - 2)(x - 3)$ in regular arithmetic.\n\nCheck $x = 3$:\n\\[\n3^2 - 5(3) + 6 = 9 - 15 + 6 = 0 \\equiv 0 \\pmod{7}\n\\]\n\\textcolor{green}{\\checkmark}\n\nSo the factorization is:\n\\[\n\\boxed{x^2 - 5x + 6 \\equiv (x - 2)(x - 3) \\pmod{7}}\n\\]\n\n\\textbf{Solutions:} $x \\equiv 2, 3 \\pmod{7}$"
+    "content": "Given that $x = 2$ is a solution to $x^2 - 5x + 6 \\equiv 0 \\pmod{7}$, factor the polynomial modulo 7.\n\nSolution:\n\nVerify that $x = 2$ is a solution:\n\\[\n2^2 - 5(2) + 6 = 4 - 10 + 6 = 0 \\equiv 0 \\pmod{7}\n\\]\n✓\n\nBy Factor Theorem:\n\\[\nx^2 - 5x + 6 \\equiv (x - 2) \\cdot q(x) \\pmod{7}\n\\]\n\nwhere $q(x)$ is degree 1.\n\nLet $q(x) = x + b$ for some constant $b$.\n\nExpand:\n\\[\n(x - 2)(x + b) = x^2 + bx - 2x - 2b = x^2 + (b - 2)x - 2b\n\\]\n\nCompare with $x^2 - 5x + 6$:\n\\[\nb - 2 \\equiv -5 \\pmod{7} \\Rightarrow b \\equiv -3 \\equiv 4 \\pmod{7}\n\\]\n\\[\n-2b \\equiv 6 \\pmod{7} \\Rightarrow b \\equiv -3 \\equiv 4 \\pmod{7}\n\\]\n\nBoth give $b = 4$.\n\nTherefore:\n\\[\n\\boxed{x^2 - 5x + 6 \\equiv (x - 2)(x - 4) \\pmod{7}}\n\\]\n\nThis means the other solution is $x \\equiv 4 \\pmod{7}$.\n\nVerification:\n\\[\n4^2 - 5(4) + 6 = 16 - 20 + 6 = 2 \\equiv 2 \\pmod{7}\n\\]\n\nWait, this doesn't work! Let me recalculate:\n\nActually, $x^2 - 5x + 6 = (x - 2)(x - 3)$ in regular arithmetic.\n\nCheck $x = 3$:\n\\[\n3^2 - 5(3) + 6 = 9 - 15 + 6 = 0 \\equiv 0 \\pmod{7}\n\\]\n✓\n\nSo the factorization is:\n\\[\n\\boxed{x^2 - 5x + 6 \\equiv (x - 2)(x - 3) \\pmod{7}}\n\\]\n\nSolutions: $x \\equiv 2, 3 \\pmod{7}$"
   },
   {
     "course": "Number Theory",
@@ -957,7 +957,7 @@
     "section": "Polynomial Congruences",
     "type": "theorem",
     "title": "Theorem: Lagrange's Theorem",
-    "content": "Let $p$ be a prime number and $f(x)$ be a polynomial of degree $n \\geq 1$ with integer coefficients. Then the polynomial congruence:\n\\[\nf(x) \\equiv 0 \\pmod{p}\n\\]\n\nhas \\textbf{at most} $n$ incongruent solutions modulo $p$.\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important:}} This theorem only holds for \\textbf{prime} moduli!"
+    "content": "Let $p$ be a prime number and $f(x)$ be a polynomial of degree $n \\geq 1$ with integer coefficients. Then the polynomial congruence:\n\\[\nf(x) \\equiv 0 \\pmod{p}\n\\]\n\nhas at most $n$ incongruent solutions modulo $p$.\n\nImportant: This theorem only holds for prime moduli!"
   },
   {
     "course": "Number Theory",
@@ -965,7 +965,7 @@
     "section": "Polynomial Congruences",
     "type": "proof",
     "title": "Proof: Lagrange's Theorem",
-    "content": "\\textcolor{darkgreen}{\\textbf{Proof by Induction on degree $n$:}}\n\n\\textbf{Base Case:} $n = 1$\n\n$f(x) = ax + b$ where $p \\nmid a$ (otherwise degree would be 0).\n\nThe congruence $ax \\equiv -b \\pmod{p}$ has exactly 1 solution (since $\\gcd(a, p) = 1$).\n\nSo the theorem holds for $n = 1$. \\textcolor{green}{\\checkmark}\n\n\\textbf{Inductive Hypothesis:} Assume the theorem holds for all polynomials of degree $< n$.\n\n\\textbf{Inductive Step:} Consider $f(x)$ of degree $n$.\n\n\\textbf{Case 1:} $f(x) \\equiv 0 \\pmod{p}$ has no solutions.\n\nThen the theorem holds trivially (0 solutions $\\leq n$). \\textcolor{green}{\\checkmark}\n\n\\textbf{Case 2:} $f(x) \\equiv 0 \\pmod{p}$ has at least one solution, say $a$.\n\nBy Factor Theorem:\n\\[\nf(x) \\equiv (x - a) \\cdot g(x) \\pmod{p}\n\\]\n\nwhere $g(x)$ has degree $n - 1$.\n\nIf $b$ is any other solution to $f(x) \\equiv 0 \\pmod{p}$ with $b \\not\\equiv a \\pmod{p}$:\n\\[\nf(b) \\equiv (b - a) \\cdot g(b) \\equiv 0 \\pmod{p}\n\\]\n\nSince $p$ is prime and $b \\not\\equiv a \\pmod{p}$, we have $p \\nmid (b - a)$.\n\nTherefore, by Euclid's Lemma: $p | g(b)$, so $g(b) \\equiv 0 \\pmod{p}$.\n\nThis means every solution to $f(x) \\equiv 0 \\pmod{p}$ (except $a$) is also a solution to $g(x) \\equiv 0 \\pmod{p}$.\n\nBy inductive hypothesis, $g(x) \\equiv 0 \\pmod{p}$ has at most $n - 1$ solutions.\n\nIncluding the solution $a$, $f(x) \\equiv 0 \\pmod{p}$ has at most:\n\\[\n1 + (n - 1) = n \\text{ solutions}\n\\]\n\nBy mathematical induction, the theorem holds for all $n \\geq 1$. \\qed"
+    "content": "Proof by Induction on degree $n$:\n\nBase Case: $n = 1$\n\n$f(x) = ax + b$ where $p \\nmid a$ (otherwise degree would be 0).\n\nThe congruence $ax \\equiv -b \\pmod{p}$ has exactly 1 solution (since $\\gcd(a, p) = 1$).\n\nSo the theorem holds for $n = 1$. ✓\n\nInductive Hypothesis: Assume the theorem holds for all polynomials of degree $< n$.\n\nInductive Step: Consider $f(x)$ of degree $n$.\n\nCase 1: $f(x) \\equiv 0 \\pmod{p}$ has no solutions.\n\nThen the theorem holds trivially (0 solutions $\\leq n$). ✓\n\nCase 2: $f(x) \\equiv 0 \\pmod{p}$ has at least one solution, say $a$.\n\nBy Factor Theorem:\n\\[\nf(x) \\equiv (x - a) \\cdot g(x) \\pmod{p}\n\\]\n\nwhere $g(x)$ has degree $n - 1$.\n\nIf $b$ is any other solution to $f(x) \\equiv 0 \\pmod{p}$ with $b \\not\\equiv a \\pmod{p}$:\n\\[\nf(b) \\equiv (b - a) \\cdot g(b) \\equiv 0 \\pmod{p}\n\\]\n\nSince $p$ is prime and $b \\not\\equiv a \\pmod{p}$, we have $p \\nmid (b - a)$.\n\nTherefore, by Euclid's Lemma: $p | g(b)$, so $g(b) \\equiv 0 \\pmod{p}$.\n\nThis means every solution to $f(x) \\equiv 0 \\pmod{p}$ (except $a$) is also a solution to $g(x) \\equiv 0 \\pmod{p}$.\n\nBy inductive hypothesis, $g(x) \\equiv 0 \\pmod{p}$ has at most $n - 1$ solutions.\n\nIncluding the solution $a$, $f(x) \\equiv 0 \\pmod{p}$ has at most:\n\\[\n1 + (n - 1) = n \\text{ solutions}\n\\]\n\nBy mathematical induction, the theorem holds for all $n \\geq 1$."
   },
   {
     "course": "Number Theory",
@@ -973,7 +973,7 @@
     "section": "Polynomial Congruences",
     "type": "example",
     "title": "Example 58: Lagrange's Theorem Application",
-    "content": "How many solutions can $x^3 + 2x - 1 \\equiv 0 \\pmod{7}$ have?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{itemize}\n    \\item Modulus: $p = 7$ (prime) \\textcolor{green}{\\checkmark}\n    \\item Degree: $n = 3$\n\\end{itemize}\n\nBy Lagrange's Theorem, the congruence has \\textbf{at most 3} incongruent solutions modulo 7.\n\n\\textbf{Find actual solutions by testing:}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$x$ & $x^3 + 2x - 1$ & Result $\\pmod{7}$ \\\\\n\\hline\n0 & $0 + 0 - 1 = -1$ & $6$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n1 & $1 + 2 - 1 = 2$ & $2$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n2 & $8 + 4 - 1 = 11$ & $4$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n3 & $27 + 6 - 1 = 32$ & $4$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n4 & $64 + 8 - 1 = 71$ & $1$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n5 & $125 + 10 - 1 = 134$ & $1$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n6 & $216 + 12 - 1 = 227$ & $3$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Result:} This congruence has \\textbf{0 solutions}.\n\nThis is consistent with Lagrange's Theorem (0 $\\leq$ 3). \\textcolor{green}{\\checkmark}"
+    "content": "How many solutions can $x^3 + 2x - 1 \\equiv 0 \\pmod{7}$ have?\n\nSolution:\n\n- Modulus: $p = 7$ (prime) ✓\n- Degree: $n = 3$\n\nBy Lagrange's Theorem, the congruence has at most 3 incongruent solutions modulo 7.\n\nFind actual solutions by testing:\n\n| $x$ | $x^3 + 2x - 1$ | Result $\\pmod{7}$ |\n|---|---|---|\n| 0 | $0 + 0 - 1 = -1$ | $6$ $\\times$ |\n| 1 | $1 + 2 - 1 = 2$ | $2$ $\\times$ |\n| 2 | $8 + 4 - 1 = 11$ | $4$ $\\times$ |\n| 3 | $27 + 6 - 1 = 32$ | $4$ $\\times$ |\n| 4 | $64 + 8 - 1 = 71$ | $1$ $\\times$ |\n| 5 | $125 + 10 - 1 = 134$ | $1$ $\\times$ |\n| 6 | $216 + 12 - 1 = 227$ | $3$ $\\times$ |\n\nResult: This congruence has 0 solutions.\n\nThis is consistent with Lagrange's Theorem (0 $\\leq$ 3). ✓"
   },
   {
     "course": "Number Theory",
@@ -981,7 +981,7 @@
     "section": "Polynomial Congruences",
     "type": "example",
     "title": "Example 59: Bound is Tight",
-    "content": "Show that $x^2 - 1 \\equiv 0 \\pmod{5}$ achieves the maximum number of solutions.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nDegree $n = 2$, prime modulus $p = 5$.\n\nBy Lagrange's Theorem: at most 2 solutions.\n\nFactor: $x^2 - 1 = (x - 1)(x + 1)$\n\nTest:\n\n\\textbf{$x = 1$:} $1^2 - 1 = 0 \\equiv 0 \\pmod{5}$ \\textcolor{green}{\\checkmark}\n\n\\textbf{$x = 4$:} $4^2 - 1 = 15 \\equiv 0 \\pmod{5}$ \\textcolor{green}{\\checkmark}\n\n(Note: $4 \\equiv -1 \\pmod{5}$)\n\n\\textbf{Solutions:} $x \\equiv 1, 4 \\pmod{5}$\n\nThis achieves the maximum of 2 solutions! \\textcolor{green}{\\checkmark}\n\n\\subsection*{Composite Modulus Cases}"
+    "content": "Show that $x^2 - 1 \\equiv 0 \\pmod{5}$ achieves the maximum number of solutions.\n\nSolution:\n\nDegree $n = 2$, prime modulus $p = 5$.\n\nBy Lagrange's Theorem: at most 2 solutions.\n\nFactor: $x^2 - 1 = (x - 1)(x + 1)$\n\nTest:\n\n$x = 1$: $1^2 - 1 = 0 \\equiv 0 \\pmod{5}$ ✓\n\n$x = 4$: $4^2 - 1 = 15 \\equiv 0 \\pmod{5}$ ✓\n\n(Note: $4 \\equiv -1 \\pmod{5}$)\n\nSolutions: $x \\equiv 1, 4 \\pmod{5}$\n\nThis achieves the maximum of 2 solutions! ✓\n\n\\subsection*{Composite Modulus Cases}"
   },
   {
     "course": "Number Theory",
@@ -989,7 +989,7 @@
     "section": "Polynomial Congruences",
     "type": "keypoint",
     "title": "{accentorange}{\\ {Warning: Composite Moduli}} When the",
-    "content": "\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Warning: Composite Moduli}}\n\nWhen the modulus $m$ is \\textbf{composite} (not prime), Lagrange's Theorem does \\textbf{NOT} apply.\n\nA polynomial of degree $n$ can have \\textbf{more than $n$} solutions modulo a composite number!"
+    "content": "Warning: Composite Moduli\n\nWhen the modulus $m$ is composite (not prime), Lagrange's Theorem does NOT apply.\n\nA polynomial of degree $n$ can have more than $n$ solutions modulo a composite number!"
   },
   {
     "course": "Number Theory",
@@ -997,7 +997,7 @@
     "section": "Polynomial Congruences",
     "type": "example",
     "title": "Example 60: Exceeding the Degree Bound",
-    "content": "Solve $x^2 - 1 \\equiv 0 \\pmod{8}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nModulus: $m = 8$ (composite: $8 = 2^3$) \\textcolor{red}{Not prime!}\n\nDegree: $n = 2$\n\n\\textbf{Test all values $x = 0, 1, 2, 3, 4, 5, 6, 7$:}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$x$ & $x^2 - 1$ & Result $\\pmod{8}$ \\\\\n\\hline\n0 & $-1$ & $7$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n1 & $0$ & $0$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n2 & $3$ & $3$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n3 & $8$ & $0$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n4 & $15$ & $7$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n5 & $24$ & $0$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n6 & $35$ & $3$ \\textcolor{red}{$\\times$} \\\\\n\\hline\n7 & $48$ & $0$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solutions:} $\\boxed{x \\equiv 1, 3, 5, 7 \\pmod{8}}$\n\n\\textbf{Observation:} This degree-2 polynomial has \\textbf{4 solutions}, which exceeds the degree!\n\nThis violates Lagrange's bound because 8 is not prime. \\textcolor{accentorange}{$\\triangle$}"
+    "content": "Solve $x^2 - 1 \\equiv 0 \\pmod{8}$.\n\nSolution:\n\nModulus: $m = 8$ (composite: $8 = 2^3$) Not prime!\n\nDegree: $n = 2$\n\nTest all values $x = 0, 1, 2, 3, 4, 5, 6, 7$:\n\n| $x$ | $x^2 - 1$ | Result $\\pmod{8}$ |\n|---|---|---|\n| 0 | $-1$ | $7$ $\\times$ |\n| 1 | $0$ | $0$ ✓ |\n| 2 | $3$ | $3$ $\\times$ |\n| 3 | $8$ | $0$ ✓ |\n| 4 | $15$ | $7$ $\\times$ |\n| 5 | $24$ | $0$ ✓ |\n| 6 | $35$ | $3$ $\\times$ |\n| 7 | $48$ | $0$ ✓ |\n\nSolutions: $\\boxed{x \\equiv 1, 3, 5, 7 \\pmod{8}}$\n\nObservation: This degree-2 polynomial has 4 solutions, which exceeds the degree!\n\nThis violates Lagrange's bound because 8 is not prime. $\\triangle$"
   },
   {
     "course": "Number Theory",
@@ -1005,7 +1005,7 @@
     "section": "Polynomial Congruences",
     "type": "example",
     "title": "Example 61: Another Composite Example",
-    "content": "Solve $x^2 \\equiv 1 \\pmod{15}$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n$m = 15 = 3 \\times 5$ (composite)\n\nTest values:\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$x$ & $x^2$ & $x^2 \\pmod{15}$ \\\\\n\\hline\n1 & 1 & 1 \\textcolor{green}{\\checkmark} \\\\\n\\hline\n4 & 16 & 1 \\textcolor{green}{\\checkmark} \\\\\n\\hline\n11 & 121 & 1 \\textcolor{green}{\\checkmark} \\\\\n\\hline\n14 & 196 & 1 \\textcolor{green}{\\checkmark} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solutions:} $\\boxed{x \\equiv 1, 4, 11, 14 \\pmod{15}}$\n\nAgain, 4 solutions for a degree-2 polynomial! \\textcolor{accentorange}{$\\triangle$}\n\n\\textbf{Note:} $1 \\equiv 1 \\pmod{15}$, $4 \\equiv 4 \\pmod{15}$, $11 \\equiv -4 \\pmod{15}$, $14 \\equiv -1 \\pmod{15}$"
+    "content": "Solve $x^2 \\equiv 1 \\pmod{15}$.\n\nSolution:\n\n$m = 15 = 3 \\times 5$ (composite)\n\nTest values:\n\n| $x$ | $x^2$ | $x^2 \\pmod{15}$ |\n|---|---|---|\n| 1 | 1 | 1 ✓ |\n| 4 | 16 | 1 ✓ |\n| 11 | 121 | 1 ✓ |\n| 14 | 196 | 1 ✓ |\n\nSolutions: $\\boxed{x \\equiv 1, 4, 11, 14 \\pmod{15}}$\n\nAgain, 4 solutions for a degree-2 polynomial! $\\triangle$\n\nNote: $1 \\equiv 1 \\pmod{15}$, $4 \\equiv 4 \\pmod{15}$, $11 \\equiv -4 \\pmod{15}$, $14 \\equiv -1 \\pmod{15}$"
   },
   {
     "course": "Number Theory",
@@ -1013,7 +1013,7 @@
     "section": "Polynomial Congruences",
     "type": "example",
     "title": "Example 62: Why Composite Moduli Behave Differently",
-    "content": "Explain why $x^2 - 1 \\equiv 0 \\pmod{8}$ has 4 solutions.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nFactor: $x^2 - 1 = (x - 1)(x + 1)$\n\nSo we need:\n\\[\n(x - 1)(x + 1) \\equiv 0 \\pmod{8}\n\\]\n\nFor prime moduli, if $ab \\equiv 0 \\pmod{p}$, then $a \\equiv 0 \\pmod{p}$ or $b \\equiv 0 \\pmod{p}$.\n\nBut for composite moduli like 8, we can have $ab \\equiv 0 \\pmod{8}$ without either factor being $\\equiv 0 \\pmod{8}$.\n\n\\textbf{Example:} $x = 3$\n\n$(3 - 1)(3 + 1) = 2 \\times 4 = 8 \\equiv 0 \\pmod{8}$\n\nNeither $2 \\equiv 0 \\pmod{8}$ nor $4 \\equiv 0 \\pmod{8}$, but their product is! \\textcolor{accentorange}{$\\triangle$}\n\nThis is why composite moduli allow more solutions than the degree would suggest."
+    "content": "Explain why $x^2 - 1 \\equiv 0 \\pmod{8}$ has 4 solutions.\n\nSolution:\n\nFactor: $x^2 - 1 = (x - 1)(x + 1)$\n\nSo we need:\n\\[\n(x - 1)(x + 1) \\equiv 0 \\pmod{8}\n\\]\n\nFor prime moduli, if $ab \\equiv 0 \\pmod{p}$, then $a \\equiv 0 \\pmod{p}$ or $b \\equiv 0 \\pmod{p}$.\n\nBut for composite moduli like 8, we can have $ab \\equiv 0 \\pmod{8}$ without either factor being $\\equiv 0 \\pmod{8}$.\n\nExample: $x = 3$\n\n$(3 - 1)(3 + 1) = 2 \\times 4 = 8 \\equiv 0 \\pmod{8}$\n\nNeither $2 \\equiv 0 \\pmod{8}$ nor $4 \\equiv 0 \\pmod{8}$, but their product is! $\\triangle$\n\nThis is why composite moduli allow more solutions than the degree would suggest."
   },
   {
     "course": "Number Theory",
@@ -1021,7 +1021,7 @@
     "section": "Polynomial Congruences",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Polynomial Congruences}} {center} {tabular}{|p{5cm}|p{7cm}|}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Polynomial Congruences}}\n\n\\begin{center}\n\\begin{tabular}{|p{5cm}|p{7cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Property} & \\textbf{Statement} \\\\\n\\hline\nDefinition & $f(x) \\equiv 0 \\pmod{m}$ where $f(x)$ is a polynomial \\\\\n\\hline\nFactor Theorem & If $f(a) \\equiv 0$, then $f(x) \\equiv (x-a)g(x) \\pmod{m}$ \\\\\n\\hline\nLagrange (Prime) & Degree $n$, prime $p$ $\\Rightarrow$ at most $n$ solutions \\\\\n\\hline\nComposite Moduli & Can have more than $n$ solutions! \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solution Methods:}\n\\begin{enumerate}[leftmargin=*]\n    \\item For small moduli: Test all residues\n    \\item Use factorization when possible\n    \\item Apply Factor Theorem to find additional roots\n    \\item For composite moduli, use Chinese Remainder Theorem\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Remember:}}\n\\begin{itemize}\n    \\item Lagrange's Theorem ONLY applies to prime moduli\n    \\item Composite moduli can have many more solutions than expected\n    \\item Always count only incongruent solutions modulo $m$\n\\end{itemize}\n\n\\newpage"
+    "content": "Summary: Polynomial Congruences\n\n| Property | Statement |\n|---|---|\n| Definition | $f(x) \\equiv 0 \\pmod{m}$ where $f(x)$ is a polynomial |\n| Factor Theorem | If $f(a) \\equiv 0$, then $f(x) \\equiv (x-a)g(x) \\pmod{m}$ |\n| Lagrange (Prime) | Degree $n$, prime $p$ $\\Rightarrow$ at most $n$ solutions |\n| Composite Moduli | Can have more than $n$ solutions! |\n\nSolution Methods:\n\n1. For small moduli: Test all residues\n2. Use factorization when possible\n3. Apply Factor Theorem to find additional roots\n4. For composite moduli, use Chinese Remainder Theorem\n\nRemember:\n\n- Lagrange's Theorem ONLY applies to prime moduli\n- Composite moduli can have many more solutions than expected\n- Always count only incongruent solutions modulo $m$"
   },
   {
     "course": "Number Theory",
@@ -1029,7 +1029,7 @@
     "section": "Practice Exercises",
     "type": "example",
     "title": "Problem 1",
-    "content": "Determine whether the following congruences are true or false:\n\\begin{enumerate}[label=(\\alph*)]\n    \\item $45 \\equiv 9 \\pmod{12}$\n    \\item $-17 \\equiv 4 \\pmod{7}$\n    \\item $100 \\equiv 0 \\pmod{25}$\n    \\item $83 \\equiv 13 \\pmod{9}$\n\\end{enumerate}"
+    "content": "Determine whether the following congruences are true or false:\n\n1. $45 \\equiv 9 \\pmod{12}$\n2. $-17 \\equiv 4 \\pmod{7}$\n3. $100 \\equiv 0 \\pmod{25}$\n4. $83 \\equiv 13 \\pmod{9}$"
   },
   {
     "course": "Number Theory",
@@ -1085,7 +1085,7 @@
     "section": "Practice Exercises",
     "type": "example",
     "title": "Problem 8",
-    "content": "Use divisibility tests to determine which of the following are\ndivisible by 3, 9, and 11:\n\\begin{enumerate}[label=(\\alph*)]\n    \\item 123456\n    \\item 987654\n    \\item 246810\n    \\item 111111\n\\end{enumerate}"
+    "content": "Use divisibility tests to determine which of the following are\ndivisible by 3, 9, and 11:\n\n1. 123456\n2. 987654\n3. 246810\n4. 111111"
   },
   {
     "course": "Number Theory",
@@ -1101,7 +1101,7 @@
     "section": "Practice Exercises",
     "type": "example",
     "title": "Problem 10",
-    "content": "Determine whether the following linear congruences have solutions.\nIf yes, find all incongruent solutions:\n\\begin{enumerate}[label=(\\alph*)]\n    \\item $4x \\equiv 3 \\pmod{9}$\n    \\item $6x \\equiv 4 \\pmod{8}$\n    \\item $5x \\equiv 7 \\pmod{11}$\n    \\item $14x \\equiv 5 \\pmod{21}$\n\\end{enumerate}"
+    "content": "Determine whether the following linear congruences have solutions.\nIf yes, find all incongruent solutions:\n\n1. $4x \\equiv 3 \\pmod{9}$\n2. $6x \\equiv 4 \\pmod{8}$\n3. $5x \\equiv 7 \\pmod{11}$\n4. $14x \\equiv 5 \\pmod{21}$"
   },
   {
     "course": "Number Theory",
@@ -1149,7 +1149,7 @@
     "section": "Practice Exercises",
     "type": "example",
     "title": "Problem 16",
-    "content": "Determine which of the following Diophantine equations have integer\nsolutions. For those that do, find the general solution:\n\\begin{enumerate}[label=(\\alph*)]\n    \\item $5x + 7y = 1$\n    \\item $6x + 9y = 11$\n    \\item $8x + 12y = 20$\n    \\item $15x + 25y = 40$\n\\end{enumerate}"
+    "content": "Determine which of the following Diophantine equations have integer\nsolutions. For those that do, find the general solution:\n\n1. $5x + 7y = 1$\n2. $6x + 9y = 11$\n3. $8x + 12y = 20$\n4. $15x + 25y = 40$"
   },
   {
     "course": "Number Theory",

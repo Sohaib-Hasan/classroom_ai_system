@@ -5,7 +5,7 @@
     "section": "Basic Definitions and Solutions",
     "type": "definition",
     "title": "System of Linear Equations",
-    "content": "A \\textbf{system of linear equations} (or \\textbf{linear system}) is a\ncollection of $m$ equations in $n$ unknowns $x_1, x_2, \\ldots, x_n$ of\nthe form:\n\\begin{align*}\na_{11}x_1 + a_{12}x_2 + \\cdots + a_{1n}x_n &= b_1 \\\\\na_{21}x_1 + a_{22}x_2 + \\cdots + a_{2n}x_n &= b_2 \\\\\n&\\;\\vdots \\\\\na_{m1}x_1 + a_{m2}x_2 + \\cdots + a_{mn}x_n &= b_m\n\\end{align*}\nwhere $a_{ij} \\in \\mathbb{R}$ are the \\textbf{coefficients} and\n$b_i \\in \\mathbb{R}$ are the \\textbf{constant terms}.\n\n\\medskip\nA \\textbf{solution} of the system is an ordered $n$-tuple\n$(s_1, s_2, \\ldots, s_n)$ such that each equation is satisfied when\n$x_i = s_i$. The set of all solutions is called the\n\\textbf{solution set}.\n\n\\medskip\nA system is called:\n\\begin{itemize}[leftmargin=2em, itemsep=3pt]\n    \\item \\textbf{Consistent} if it has at least one solution.\n    \\item \\textbf{Inconsistent} if it has no solution.\n\\end{itemize}"
+    "content": "A system of linear equations (or linear system) is a\ncollection of $m$ equations in $n$ unknowns $x_1, x_2, \\ldots, x_n$ of\nthe form:\n$$\\begin{align*}\na_{11}x_1 + a_{12}x_2 + \\cdots + a_{1n}x_n &= b_1 \\\\\na_{21}x_1 + a_{22}x_2 + \\cdots + a_{2n}x_n &= b_2 \\\\\n&\\;\\vdots \\\\\na_{m1}x_1 + a_{m2}x_2 + \\cdots + a_{mn}x_n &= b_m\n\\end{align*}$$\nwhere $a_{ij} \\in \\mathbb{R}$ are the coefficients and\n$b_i \\in \\mathbb{R}$ are the constant terms.\n\n\\medskip\nA solution of the system is an ordered $n$-tuple\n$(s_1, s_2, \\ldots, s_n)$ such that each equation is satisfied when\n$x_i = s_i$. The set of all solutions is called the\nsolution set.\n\n\\medskip\nA system is called:\n\n- Consistent if it has at least one solution.\n- Inconsistent if it has no solution."
   },
   {
     "course": "Linear Algebra",
@@ -13,7 +13,7 @@
     "section": "Basic Definitions and Solutions",
     "type": "keypoint",
     "title": "{Three Possible Outcomes for Any Linear",
-    "content": "\\textbf{Three Possible Outcomes for Any Linear System:}\n\\begin{enumerate}[leftmargin=2em, itemsep=4pt]\n    \\item \\textbf{Exactly one solution} (unique solution) --- system is consistent.\n    \\item \\textbf{Infinitely many solutions} --- system is consistent.\n    \\item \\textbf{No solution} --- system is inconsistent.\n\\end{enumerate}\nThere is no linear system that has exactly two solutions."
+    "content": "Three Possible Outcomes for Any Linear System:\n\n1. Exactly one solution (unique solution) --- system is consistent.\n2. Infinitely many solutions --- system is consistent.\n3. No solution --- system is inconsistent.\n\nThere is no linear system that has exactly two solutions."
   },
   {
     "course": "Linear Algebra",
@@ -21,7 +21,7 @@
     "section": "Basic Definitions and Solutions",
     "type": "example",
     "title": "Example 2.1 --- Identifying Consistent and Inconsistent Systems",
-    "content": "Classify each system and state its solution set:\n\\[\n\\text{(a)}\\quad x + y = 5, \\quad x - y = 1\n\\qquad\n\\text{(b)}\\quad x + y = 3, \\quad 2x + 2y = 7\n\\qquad\n\\text{(c)}\\quad x + y = 4, \\quad 2x + 2y = 8\n\\]\n\n\\textbf{Solution:}\n\n\\textbf{(a)} Adding the two equations: $2x = 6 \\Rightarrow x = 3$,\nthen $y = 5 - 3 = 2$.\\\\\nUnique solution: $(x, y) = (3, 2)$.\nSystem is \\textbf{consistent} (one solution).\n\n\\textbf{(b)} Multiply first equation by 2: $2x + 2y = 6$.\nBut the second equation says $2x + 2y = 7$. Contradiction:\n$6 \\neq 7$. System is \\textbf{inconsistent} (no solution).\n\n\\textbf{(c)} Multiply first equation by 2: $2x + 2y = 8$,\nwhich is identical to the second equation. The two equations\nrepresent the same line. System is \\textbf{consistent}\n(infinitely many solutions): $\\{(t,\\, 4-t) : t \\in \\mathbb{R}\\}$.\n\n\\bigskip"
+    "content": "Classify each system and state its solution set:\n\\[\n\\text{(a)}\\quad x + y = 5, \\quad x - y = 1\n\\qquad\n\\text{(b)}\\quad x + y = 3, \\quad 2x + 2y = 7\n\\qquad\n\\text{(c)}\\quad x + y = 4, \\quad 2x + 2y = 8\n\\]\n\nSolution:\n\n(a) Adding the two equations: $2x = 6 \\Rightarrow x = 3$,\nthen $y = 5 - 3 = 2$.\\\\\nUnique solution: $(x, y) = (3, 2)$.\nSystem is consistent (one solution).\n\n(b) Multiply first equation by 2: $2x + 2y = 6$.\nBut the second equation says $2x + 2y = 7$. Contradiction:\n$6 \\neq 7$. System is inconsistent (no solution).\n\n(c) Multiply first equation by 2: $2x + 2y = 8$,\nwhich is identical to the second equation. The two equations\nrepresent the same line. System is consistent\n(infinitely many solutions): $\\{(t,\\, 4-t) : t \\in \\mathbb{R}\\}$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -29,7 +29,7 @@
     "section": "Basic Definitions and Solutions",
     "type": "definition",
     "title": "Coefficient Matrix and Augmented Matrix",
-    "content": "Given the system $Ax = b$, the \\textbf{coefficient matrix} is the\n$m \\times n$ matrix $A = [a_{ij}]$ formed by the coefficients of\nthe unknowns. The \\textbf{augmented matrix} is the $m \\times (n+1)$\nmatrix formed by appending the constant column $b$ to $A$:\n\\[\n[A \\mid b] =\n\\left[\\begin{array}{cccc|c}\na_{11} & a_{12} & \\cdots & a_{1n} & b_1 \\\\\na_{21} & a_{22} & \\cdots & a_{2n} & b_2 \\\\\n\\vdots & \\vdots & \\ddots & \\vdots & \\vdots \\\\\na_{m1} & a_{m2} & \\cdots & a_{mn} & b_m\n\\end{array}\\right].\n\\]\nAll row operations are performed on the augmented matrix to solve\nthe system."
+    "content": "Given the system $Ax = b$, the coefficient matrix is the\n$m \\times n$ matrix $A = [a_{ij}]$ formed by the coefficients of\nthe unknowns. The augmented matrix is the $m \\times (n+1)$\nmatrix formed by appending the constant column $b$ to $A$:\n\\[\n[A \\mid b] =\n\\left[\\begin{array}{cccc|c}\na_{11} & a_{12} & \\cdots & a_{1n} & b_1 \\\\\na_{21} & a_{22} & \\cdots & a_{2n} & b_2 \\\\\n\\vdots & \\vdots & \\ddots & \\vdots & \\vdots \\\\\na_{m1} & a_{m2} & \\cdots & a_{mn} & b_m\n\\end{array}\\right].\n\\]\nAll row operations are performed on the augmented matrix to solve\nthe system."
   },
   {
     "course": "Linear Algebra",
@@ -37,7 +37,7 @@
     "section": "Basic Definitions and Solutions",
     "type": "example",
     "title": "Example 2.2 --- Writing Augmented Matrices",
-    "content": "Write the augmented matrix for each system:\n\\[\n\\text{(a)}\\;\n\\begin{cases}\n2x - y + 3z = 5 \\\\\nx + 4y - z = 2 \\\\\n3x + 2y + z = 7\n\\end{cases}\n\\qquad\n\\text{(b)}\\;\n\\begin{cases}\nx_1 - x_2 + 2x_3 + x_4 = 0 \\\\\n3x_1 + 2x_2 \\phantom{{}+2x_3} + x_4 = 0 \\\\\n4x_1 + x_2 + 2x_3 + 2x_4 = 0\n\\end{cases}\n\\]\n\n\\textbf{Solution:}\n\n\\textbf{(a)}\n\\[\n[A \\mid b] =\n\\left[\\begin{array}{ccc|c}\n2 & -1 & 3 & 5 \\\\\n1 &  4 & -1 & 2 \\\\\n3 &  2 &  1 & 7\n\\end{array}\\right].\n\\]\n\n\\textbf{(b)} (Homogeneous system --- constant column is all zeros)\n\\[\n[A \\mid 0] =\n\\left[\\begin{array}{cccc|c}\n1 & -1 & 2 & 1 & 0 \\\\\n3 &  2 & 0 & 1 & 0 \\\\\n4 &  1 & 2 & 2 & 0\n\\end{array}\\right].\n\\]\n\n\\bigskip"
+    "content": "Write the augmented matrix for each system:\n\\[\n\\text{(a)}\\;\n\\begin{cases}\n2x - y + 3z = 5 \\\\\nx + 4y - z = 2 \\\\\n3x + 2y + z = 7\n\\end{cases}\n\\qquad\n\\text{(b)}\\;\n\\begin{cases}\nx_1 - x_2 + 2x_3 + x_4 = 0 \\\\\n3x_1 + 2x_2 \\phantom{{}+2x_3} + x_4 = 0 \\\\\n4x_1 + x_2 + 2x_3 + 2x_4 = 0\n\\end{cases}\n\\]\n\nSolution:\n\n(a)\n\\[\n[A \\mid b] =\n\\left[\\begin{array}{ccc|c}\n2 & -1 & 3 & 5 \\\\\n1 &  4 & -1 & 2 \\\\\n3 &  2 &  1 & 7\n\\end{array}\\right].\n\\]\n\n(b) (Homogeneous system --- constant column is all zeros)\n\\[\n[A \\mid 0] =\n\\left[\\begin{array}{cccc|c}\n1 & -1 & 2 & 1 & 0 \\\\\n3 &  2 & 0 & 1 & 0 \\\\\n4 &  1 & 2 & 2 & 0\n\\end{array}\\right].\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -45,7 +45,7 @@
     "section": "Basic Definitions and Solutions",
     "type": "example",
     "title": "Example 2.3 --- Reading a System from its Augmented Matrix",
-    "content": "Write the system of equations corresponding to:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 0 & -3 & 4 \\\\\n0 & 2 &  1 & -1 \\\\\n5 & -1 & 0 & 2\n\\end{array}\\right].\n\\]\n\n\\textbf{Solution:}\n\\begin{align*}\nx_1 \\phantom{{}+ 2x_2} - 3x_3 &= 4 \\\\\n2x_2 + x_3 &= -1 \\\\\n5x_1 - x_2 \\phantom{{}+ 3x_3} &= 2\n\\end{align*}\n\\vspace{0.5cm}"
+    "content": "Write the system of equations corresponding to:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 0 & -3 & 4 \\\\\n0 & 2 &  1 & -1 \\\\\n5 & -1 & 0 & 2\n\\end{array}\\right].\n\\]\n\nSolution:\n$$\\begin{align*}\nx_1 \\phantom{{}+ 2x_2} - 3x_3 &= 4 \\\\\n2x_2 + x_3 &= -1 \\\\\n5x_1 - x_2 \\phantom{{}+ 3x_3} &= 2\n\\end{align*}$$"
   },
   {
     "course": "Linear Algebra",
@@ -53,7 +53,7 @@
     "section": "Equivalent Systems and Elementary Operations",
     "type": "definition",
     "title": "Elementary Row Operations",
-    "content": "The three \\textbf{elementary row operations} (EROs) on an augmented\nmatrix are:\n\\begin{enumerate}[leftmargin=2em, itemsep=4pt]\n    \\item \\textbf{Row Interchange:} Swap two rows.\n          \\hfill Notation: $R_i \\leftrightarrow R_j$\n    \\item \\textbf{Row Scaling:} Multiply a row by a nonzero scalar $k \\neq 0$.\n          \\hfill Notation: $R_i \\leftarrow k R_i$\n    \\item \\textbf{Row Replacement:} Replace a row by the sum of itself and\n          a scalar multiple of another row.\n          \\hfill Notation: $R_i \\leftarrow R_i + k R_j$\n\\end{enumerate}\nTwo systems are called \\textbf{equivalent} if one can be obtained from\nthe other by a finite sequence of elementary row operations. Equivalent\nsystems have exactly the same solution set."
+    "content": "The three elementary row operations (EROs) on an augmented\nmatrix are:\n\n1. Row Interchange: Swap two rows.\n          \\hfill Notation: $R_i \\leftrightarrow R_j$\n2. Row Scaling: Multiply a row by a nonzero scalar $k \\neq 0$.\n          \\hfill Notation: $R_i \\leftarrow k R_i$\n3. Row Replacement: Replace a row by the sum of itself and\n          a scalar multiple of another row.\n          \\hfill Notation: $R_i \\leftarrow R_i + k R_j$\n\nTwo systems are called equivalent if one can be obtained from\nthe other by a finite sequence of elementary row operations. Equivalent\nsystems have exactly the same solution set."
   },
   {
     "course": "Linear Algebra",
@@ -61,7 +61,7 @@
     "section": "Equivalent Systems and Elementary Operations",
     "type": "example",
     "title": "Example 2.4 --- Applying Elementary Row Operations",
-    "content": "Apply the given row operations to the matrix:\n\\[\nM = \\left[\\begin{array}{ccc|c}\n2 & 4 & -2 & 6 \\\\\n1 & 3 &  0 & 4 \\\\\n0 & -1 & 2 & 1\n\\end{array}\\right].\n\\]\nPerform: (a) $R_1 \\leftrightarrow R_2$, then (b) $R_1 \\leftarrow \\tfrac{1}{2}R_1$,\nthen (c) $R_2 \\leftarrow R_2 - 2R_1$.\n\n\\textbf{Solution:}\n\n\\textbf{Step (a)} $R_1 \\leftrightarrow R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 3 &  0 & 4 \\\\\n2 & 4 & -2 & 6 \\\\\n0 & -1 & 2 & 1\n\\end{array}\\right]\n\\]\n\n\\textbf{Step (b)} $R_1 \\leftarrow \\tfrac{1}{2}R_1$ (no change needed; already done above).\nProceed directly to step (c).\n\n\\textbf{Step (c)} $R_2 \\leftarrow R_2 - 2R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  3 &  0 & 4 \\\\\n0 & -2 & -2 & -2 \\\\\n0 & -1 &  2 & 1\n\\end{array}\\right].\n\\]\n\n\\bigskip"
+    "content": "Apply the given row operations to the matrix:\n\\[\nM = \\left[\\begin{array}{ccc|c}\n2 & 4 & -2 & 6 \\\\\n1 & 3 &  0 & 4 \\\\\n0 & -1 & 2 & 1\n\\end{array}\\right].\n\\]\nPerform: (a) $R_1 \\leftrightarrow R_2$, then (b) $R_1 \\leftarrow \\tfrac{1}{2}R_1$,\nthen (c) $R_2 \\leftarrow R_2 - 2R_1$.\n\nSolution:\n\nStep (a) $R_1 \\leftrightarrow R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 3 &  0 & 4 \\\\\n2 & 4 & -2 & 6 \\\\\n0 & -1 & 2 & 1\n\\end{array}\\right]\n\\]\n\nStep (b) $R_1 \\leftarrow \\tfrac{1}{2}R_1$ (no change needed; already done above).\nProceed directly to step (c).\n\nStep (c) $R_2 \\leftarrow R_2 - 2R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  3 &  0 & 4 \\\\\n0 & -2 & -2 & -2 \\\\\n0 & -1 &  2 & 1\n\\end{array}\\right].\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -69,7 +69,7 @@
     "section": "Equivalent Systems and Elementary Operations",
     "type": "example",
     "title": "Example 2.5 --- Checking Solution Equivalence after Row Operations",
-    "content": "Show that the systems\n\\[\n\\text{(I)}\\;\n\\begin{cases}\nx + 2y = 5 \\\\\n3x - y = 1\n\\end{cases}\n\\qquad \\text{and} \\qquad\n\\text{(II)}\\;\n\\begin{cases}\nx + 2y = 5 \\\\\n-7y = -14\n\\end{cases}\n\\]\nare equivalent and have the same solution.\n\n\\textbf{Solution:}\nSystem (II) is obtained from System (I) by $R_2 \\leftarrow R_2 - 3R_1$.\n\nFrom System (II): $-7y = -14 \\Rightarrow y = 2$.\nSubstitute: $x + 4 = 5 \\Rightarrow x = 1$.\n\nVerify in System (I):\n\\[\n(1) + 2(2) = 5 \\;\\checkmark \\qquad 3(1) - (2) = 1 \\;\\checkmark\n\\]\nBoth systems have solution $(x, y) = (1, 2)$. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Show that the systems\n\\[\n\\text{(I)}\\;\n\\begin{cases}\nx + 2y = 5 \\\\\n3x - y = 1\n\\end{cases}\n\\qquad \\text{and} \\qquad\n\\text{(II)}\\;\n\\begin{cases}\nx + 2y = 5 \\\\\n-7y = -14\n\\end{cases}\n\\]\nare equivalent and have the same solution.\n\nSolution:\nSystem (II) is obtained from System (I) by $R_2 \\leftarrow R_2 - 3R_1$.\n\nFrom System (II): $-7y = -14 \\Rightarrow y = 2$.\nSubstitute: $x + 4 = 5 \\Rightarrow x = 1$.\n\nVerify in System (I):\n\\[\n(1) + 2(2) = 5 \\;\\checkmark \\qquad 3(1) - (2) = 1 \\;\\checkmark\n\\]\nBoth systems have solution $(x, y) = (1, 2)$. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -77,7 +77,7 @@
     "section": "Equivalent Systems and Elementary Operations",
     "type": "example",
     "title": "Example 2.6 --- Elementary Operations on a $3\\times 3$ System",
-    "content": "Use elementary row operations to simplify:\n\\[\n\\left[\\begin{array}{ccc|c}\n0 & 2 & -1 & 3 \\\\\n1 & -1 &  2 & 5 \\\\\n3 &  1 &  0 & 4\n\\end{array}\\right].\n\\]\nBring to a form where the first column has a leading 1 in row 1.\n\n\\textbf{Solution:}\n\n$R_1 \\leftrightarrow R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 &  2 & 5 \\\\\n0 &  2 & -1 & 3 \\\\\n3 &  1 &  0 & 4\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - 3R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 &  2 & 5 \\\\\n0 &  2 & -1 & 3 \\\\\n0 &  4 & -6 & -11\n\\end{array}\\right].\n\\]\nThe first column now has a leading 1 in row 1 with zeros below it.\n\\vspace{0.5cm}"
+    "content": "Use elementary row operations to simplify:\n\\[\n\\left[\\begin{array}{ccc|c}\n0 & 2 & -1 & 3 \\\\\n1 & -1 &  2 & 5 \\\\\n3 &  1 &  0 & 4\n\\end{array}\\right].\n\\]\nBring to a form where the first column has a leading 1 in row 1.\n\nSolution:\n\n$R_1 \\leftrightarrow R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 &  2 & 5 \\\\\n0 &  2 & -1 & 3 \\\\\n3 &  1 &  0 & 4\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - 3R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 &  2 & 5 \\\\\n0 &  2 & -1 & 3 \\\\\n0 &  4 & -6 & -11\n\\end{array}\\right].\n\\]\nThe first column now has a leading 1 in row 1 with zeros below it."
   },
   {
     "course": "Linear Algebra",
@@ -93,7 +93,7 @@
     "section": "Small Square Systems",
     "type": "example",
     "title": "Example 2.7 --- Cramer's Rule for a $2 \\times 2$ System",
-    "content": "Solve using Cramer's Rule:\n\\[\n3x - 2y = 7, \\qquad x + 4y = 5.\n\\]\n\n\\textbf{Solution:}\n\\[\nD = \\begin{vmatrix} 3 & -2 \\\\ 1 & 4 \\end{vmatrix}\n= (3)(4) - (-2)(1) = 12 + 2 = 14.\n\\]\n\\[\nD_x = \\begin{vmatrix} 7 & -2 \\\\ 5 & 4 \\end{vmatrix}\n= (7)(4) - (-2)(5) = 28 + 10 = 38.\n\\qquad\nD_y = \\begin{vmatrix} 3 & 7 \\\\ 1 & 5 \\end{vmatrix}\n= (3)(5) - (7)(1) = 15 - 7 = 8.\n\\]\n\\[\nx = \\frac{38}{14} = \\boxed{\\dfrac{19}{7}}, \\qquad\ny = \\frac{8}{14} = \\boxed{\\dfrac{4}{7}}.\n\\]\n\n\\bigskip"
+    "content": "Solve using Cramer's Rule:\n\\[\n3x - 2y = 7, \\qquad x + 4y = 5.\n\\]\n\nSolution:\n\\[\nD = \\begin{vmatrix} 3 & -2 \\\\ 1 & 4 \\end{vmatrix}\n= (3)(4) - (-2)(1) = 12 + 2 = 14.\n\\]\n\\[\nD_x = \\begin{vmatrix} 7 & -2 \\\\ 5 & 4 \\end{vmatrix}\n= (7)(4) - (-2)(5) = 28 + 10 = 38.\n\\qquad\nD_y = \\begin{vmatrix} 3 & 7 \\\\ 1 & 5 \\end{vmatrix}\n= (3)(5) - (7)(1) = 15 - 7 = 8.\n\\]\n\\[\nx = \\frac{38}{14} = \\boxed{\\dfrac{19}{7}}, \\qquad\ny = \\frac{8}{14} = \\boxed{\\dfrac{4}{7}}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -101,7 +101,7 @@
     "section": "Small Square Systems",
     "type": "example",
     "title": "Example 2.8 --- Cramer's Rule for a $3 \\times 3$ System",
-    "content": "Solve using Cramer's Rule:\n\\[\nx + y + z = 6, \\qquad 2x - y + z = 3, \\qquad x + 2y - z = 2.\n\\]\n\n\\textbf{Solution:}\n\\[\nD = \\begin{vmatrix} 1 & 1 & 1 \\\\ 2 & -1 & 1 \\\\ 1 & 2 & -1 \\end{vmatrix}.\n\\]\nExpanding along row 1:\n\\begin{align*}\nD &= 1\\begin{vmatrix}-1&1\\\\2&-1\\end{vmatrix}\n   - 1\\begin{vmatrix}2&1\\\\1&-1\\end{vmatrix}\n   + 1\\begin{vmatrix}2&-1\\\\1&2\\end{vmatrix} \\\\\n  &= 1(1-2) - 1(-2-1) + 1(4+1) \\\\\n  &= (-1) - (-3) + 5 = -1 + 3 + 5 = 7.\n\\end{align*}\n\\[\nD_x = \\begin{vmatrix}6&1&1\\\\3&-1&1\\\\2&2&-1\\end{vmatrix}\n= 6(1-2)-1(-3-2)+1(6+2)\n= -6+5+8 = 7.\n\\]\n\\[\nD_y = \\begin{vmatrix}1&6&1\\\\2&3&1\\\\1&2&-1\\end{vmatrix}\n= 1(-3-2)-6(-2-1)+1(4-3)\n= -5+18+1 = 14.\n\\]\n\\[\nD_z = \\begin{vmatrix}1&1&6\\\\2&-1&3\\\\1&2&2\\end{vmatrix}\n= 1(-2-6)-1(4-3)+6(4+1)\n= -8-1+30 = 21.\n\\]\n\\[\nx = \\frac{D_x}{D} = \\frac{7}{7} = \\boxed{1}, \\quad\ny = \\frac{D_y}{D} = \\frac{14}{7} = \\boxed{2}, \\quad\nz = \\frac{D_z}{D} = \\frac{21}{7} = \\boxed{3}.\n\\]\n\n\\bigskip"
+    "content": "Solve using Cramer's Rule:\n\\[\nx + y + z = 6, \\qquad 2x - y + z = 3, \\qquad x + 2y - z = 2.\n\\]\n\nSolution:\n\\[\nD = \\begin{vmatrix} 1 & 1 & 1 \\\\ 2 & -1 & 1 \\\\ 1 & 2 & -1 \\end{vmatrix}.\n\\]\nExpanding along row 1:\n$$\\begin{align*}\nD &= 1\\begin{vmatrix}-1&1\\\\2&-1\\end{vmatrix}\n   - 1\\begin{vmatrix}2&1\\\\1&-1\\end{vmatrix}\n   + 1\\begin{vmatrix}2&-1\\\\1&2\\end{vmatrix} \\\\\n  &= 1(1-2) - 1(-2-1) + 1(4+1) \\\\\n  &= (-1) - (-3) + 5 = -1 + 3 + 5 = 7.\n\\end{align*}$$\n\\[\nD_x = \\begin{vmatrix}6&1&1\\\\3&-1&1\\\\2&2&-1\\end{vmatrix}\n= 6(1-2)-1(-3-2)+1(6+2)\n= -6+5+8 = 7.\n\\]\n\\[\nD_y = \\begin{vmatrix}1&6&1\\\\2&3&1\\\\1&2&-1\\end{vmatrix}\n= 1(-3-2)-6(-2-1)+1(4-3)\n= -5+18+1 = 14.\n\\]\n\\[\nD_z = \\begin{vmatrix}1&1&6\\\\2&-1&3\\\\1&2&2\\end{vmatrix}\n= 1(-2-6)-1(4-3)+6(4+1)\n= -8-1+30 = 21.\n\\]\n\\[\nx = \\frac{D_x}{D} = \\frac{7}{7} = \\boxed{1}, \\quad\ny = \\frac{D_y}{D} = \\frac{14}{7} = \\boxed{2}, \\quad\nz = \\frac{D_z}{D} = \\frac{21}{7} = \\boxed{3}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -109,7 +109,7 @@
     "section": "Small Square Systems",
     "type": "example",
     "title": "Example 2.9 --- Detecting No Unique Solution via Cramer's Rule",
-    "content": "Attempt to solve using Cramer's Rule:\n\\[\n2x - 4y = 6, \\qquad -x + 2y = 3.\n\\]\n\n\\textbf{Solution:}\n\\[\nD = \\begin{vmatrix}2 & -4 \\\\ -1 & 2\\end{vmatrix}\n= (2)(2) - (-4)(-1) = 4 - 4 = 0.\n\\]\nSince $D = 0$, Cramer's Rule does not apply.\nCheck consistency: multiply the second equation by $-2$:\n$2x - 4y = -6$. But the first equation gives $2x - 4y = 6$.\nContradiction $\\Rightarrow$ the system is \\textbf{inconsistent}\n(no solution).\n\\vspace{0.5cm}"
+    "content": "Attempt to solve using Cramer's Rule:\n\\[\n2x - 4y = 6, \\qquad -x + 2y = 3.\n\\]\n\nSolution:\n\\[\nD = \\begin{vmatrix}2 & -4 \\\\ -1 & 2\\end{vmatrix}\n= (2)(2) - (-4)(-1) = 4 - 4 = 0.\n\\]\nSince $D = 0$, Cramer's Rule does not apply.\nCheck consistency: multiply the second equation by $-2$:\n$2x - 4y = -6$. But the first equation gives $2x - 4y = 6$.\nContradiction $\\Rightarrow$ the system is inconsistent\n(no solution)."
   },
   {
     "course": "Linear Algebra",
@@ -117,7 +117,7 @@
     "section": "Systems in Triangular and Echelon Forms",
     "type": "definition",
     "title": "Triangular and Echelon Form",
-    "content": "A system is in \\textbf{upper triangular form} if, in the coefficient\nmatrix, all entries below the main diagonal are zero. For example,\na $3 \\times 3$ triangular system has the shape:\n\\[\n\\begin{cases}\na_{11}x_1 + a_{12}x_2 + a_{13}x_3 = b_1 \\\\\n\\phantom{a_{11}x_1 + {}}a_{22}x_2 + a_{23}x_3 = b_2 \\\\\n\\phantom{a_{11}x_1 + a_{22}x_2 + {}}a_{33}x_3 = b_3\n\\end{cases}\n\\]\nSuch a system is solved by \\textbf{back substitution}: solve the\nlast equation first, then substitute upward.\n\n\\medskip\nA matrix is in \\textbf{row echelon form (REF)} if:\n\\begin{enumerate}[leftmargin=2em, itemsep=3pt]\n    \\item All zero rows are at the bottom.\n    \\item The first nonzero entry in each row (called the\n          \\textbf{pivot} or \\textbf{leading entry}) is strictly to\n          the right of the pivot in the row above.\n    \\item All entries below each pivot are zero.\n\\end{enumerate}"
+    "content": "A system is in upper triangular form if, in the coefficient\nmatrix, all entries below the main diagonal are zero. For example,\na $3 \\times 3$ triangular system has the shape:\n\\[\n\\begin{cases}\na_{11}x_1 + a_{12}x_2 + a_{13}x_3 = b_1 \\\\\n\\phantom{a_{11}x_1 + {}}a_{22}x_2 + a_{23}x_3 = b_2 \\\\\n\\phantom{a_{11}x_1 + a_{22}x_2 + {}}a_{33}x_3 = b_3\n\\end{cases}\n\\]\nSuch a system is solved by back substitution: solve the\nlast equation first, then substitute upward.\n\n\\medskip\nA matrix is in row echelon form (REF) if:\n\n1. All zero rows are at the bottom.\n2. The first nonzero entry in each row (called the\n          pivot or leading entry) is strictly to\n          the right of the pivot in the row above.\n3. All entries below each pivot are zero."
   },
   {
     "course": "Linear Algebra",
@@ -125,7 +125,7 @@
     "section": "Systems in Triangular and Echelon Forms",
     "type": "example",
     "title": "Example 2.10 --- Back Substitution in a Triangular System",
-    "content": "Solve the triangular system:\n\\[\n2x + 3y - z = 9, \\qquad 4y + 2z = 6, \\qquad 3z = 6.\n\\]\n\n\\textbf{Solution:}\n\nFrom the third equation:\n\\[\n3z = 6 \\implies z = 2.\n\\]\nSubstitute $z = 2$ into the second equation:\n\\[\n4y + 2(2) = 6 \\implies 4y = 2 \\implies y = \\tfrac{1}{2}.\n\\]\nSubstitute $y = \\tfrac{1}{2}$, $z = 2$ into the first equation:\n\\[\n2x + 3\\!\\left(\\tfrac{1}{2}\\right) - 2 = 9\n\\implies 2x + \\tfrac{3}{2} - 2 = 9\n\\implies 2x = 9 - \\tfrac{3}{2} + 2 = \\tfrac{19}{2}\n\\implies x = \\tfrac{19}{4}.\n\\]\nSolution: $\\displaystyle\\left(\\frac{19}{4},\\; \\frac{1}{2},\\; 2\\right)$.\n\n\\bigskip"
+    "content": "Solve the triangular system:\n\\[\n2x + 3y - z = 9, \\qquad 4y + 2z = 6, \\qquad 3z = 6.\n\\]\n\nSolution:\n\nFrom the third equation:\n\\[\n3z = 6 \\implies z = 2.\n\\]\nSubstitute $z = 2$ into the second equation:\n\\[\n4y + 2(2) = 6 \\implies 4y = 2 \\implies y = \\tfrac{1}{2}.\n\\]\nSubstitute $y = \\tfrac{1}{2}$, $z = 2$ into the first equation:\n\\[\n2x + 3\\!\\left(\\tfrac{1}{2}\\right) - 2 = 9\n\\implies 2x + \\tfrac{3}{2} - 2 = 9\n\\implies 2x = 9 - \\tfrac{3}{2} + 2 = \\tfrac{19}{2}\n\\implies x = \\tfrac{19}{4}.\n\\]\nSolution: $\\displaystyle\\left(\\frac{19}{4},\\; \\frac{1}{2},\\; 2\\right)$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -133,7 +133,7 @@
     "section": "Systems in Triangular and Echelon Forms",
     "type": "example",
     "title": "Example 2.11 --- Identifying Row Echelon Form",
-    "content": "Determine which matrices are in row echelon form:\n\\[\n(A)=\n\\begin{bmatrix}\n1 & 3 & -1 \\\\\n0 & 2 &  4 \\\\\n0 & 0 &  5\n\\end{bmatrix},\n\\quad\n(B)=\n\\begin{bmatrix}\n0 & 1 & 2 \\\\\n1 & 0 & 3 \\\\\n0 & 0 & 1\n\\end{bmatrix},\n\\quad\n(C)=\n\\begin{bmatrix}\n1 & 2 & 0 & 4 \\\\\n0 & 0 & 3 & 1 \\\\\n0 & 0 & 0 & 2\n\\end{bmatrix}.\n\\]\n\n\\textbf{Solution:}\n\n\\textbf{(A)} Pivots are at positions $(1,1)$, $(2,2)$, $(3,3)$, each\nstrictly right of the one above, all below-pivot entries are zero.\n\\textbf{Yes, (A) is in REF.}\n\n\\textbf{(B)} The pivot of row 2 (position $(2,1)$) is to the\n\\emph{left} of the pivot of row 1 (position $(1,2)$).\n\\textbf{No, (B) is not in REF.}\n\n\\textbf{(C)} Row 1 pivot at column 1, row 2 pivot at column 3\n(column 2 is skipped — allowed), row 3 pivot at column 4.\nEach pivot is strictly to the right of the one above.\n\\textbf{Yes, (C) is in REF.}\n\n\\bigskip"
+    "content": "Determine which matrices are in row echelon form:\n\\[\n(A)=\n\\begin{bmatrix}\n1 & 3 & -1 \\\\\n0 & 2 &  4 \\\\\n0 & 0 &  5\n\\end{bmatrix},\n\\quad\n(B)=\n\\begin{bmatrix}\n0 & 1 & 2 \\\\\n1 & 0 & 3 \\\\\n0 & 0 & 1\n\\end{bmatrix},\n\\quad\n(C)=\n\\begin{bmatrix}\n1 & 2 & 0 & 4 \\\\\n0 & 0 & 3 & 1 \\\\\n0 & 0 & 0 & 2\n\\end{bmatrix}.\n\\]\n\nSolution:\n\n(A) Pivots are at positions $(1,1)$, $(2,2)$, $(3,3)$, each\nstrictly right of the one above, all below-pivot entries are zero.\nYes, (A) is in REF.\n\n(B) The pivot of row 2 (position $(2,1)$) is to the\n\\emph{left} of the pivot of row 1 (position $(1,2)$).\nNo, (B) is not in REF.\n\n(C) Row 1 pivot at column 1, row 2 pivot at column 3\n(column 2 is skipped — allowed), row 3 pivot at column 4.\nEach pivot is strictly to the right of the one above.\nYes, (C) is in REF.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -141,7 +141,7 @@
     "section": "Systems in Triangular and Echelon Forms",
     "type": "example",
     "title": "Example 2.12 --- Solving a System via Back Substitution from REF",
-    "content": "Solve the system whose augmented matrix in REF is:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -2 & 1 & 3 \\\\\n0 &  1 & 4 & 2 \\\\\n0 &  0 & 1 & -1\n\\end{array}\\right].\n\\]\n\n\\textbf{Solution:}\n\nThe system reads:\n\\begin{align*}\nx_1 - 2x_2 + x_3 &= 3 \\\\\nx_2 + 4x_3 &= 2 \\\\\nx_3 &= -1.\n\\end{align*}\nFrom row 3: $x_3 = -1$.\n\nFrom row 2: $x_2 + 4(-1) = 2 \\Rightarrow x_2 = 6$.\n\nFrom row 1: $x_1 - 2(6) + (-1) = 3\n\\Rightarrow x_1 - 13 = 3 \\Rightarrow x_1 = 16$.\n\nSolution: $\\boxed{(x_1, x_2, x_3) = (16,\\; 6,\\; -1)}$.\n\\vspace{0.5cm}"
+    "content": "Solve the system whose augmented matrix in REF is:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -2 & 1 & 3 \\\\\n0 &  1 & 4 & 2 \\\\\n0 &  0 & 1 & -1\n\\end{array}\\right].\n\\]\n\nSolution:\n\nThe system reads:\n$$\\begin{align*}\nx_1 - 2x_2 + x_3 &= 3 \\\\\nx_2 + 4x_3 &= 2 \\\\\nx_3 &= -1.\n\\end{align*}$$\nFrom row 3: $x_3 = -1$.\n\nFrom row 2: $x_2 + 4(-1) = 2 \\Rightarrow x_2 = 6$.\n\nFrom row 1: $x_1 - 2(6) + (-1) = 3\n\\Rightarrow x_1 - 13 = 3 \\Rightarrow x_1 = 16$.\n\nSolution: $\\boxed{(x_1, x_2, x_3) = (16,\\; 6,\\; -1)}$."
   },
   {
     "course": "Linear Algebra",
@@ -149,7 +149,7 @@
     "section": "Gaussian Elimination",
     "type": "definition",
     "title": "Gaussian Elimination",
-    "content": "\\textbf{Gaussian elimination} is a systematic algorithm that transforms\nthe augmented matrix $[A \\mid b]$ into \\textbf{row echelon form} using\nelementary row operations, then solves by \\textbf{back substitution}.\n\n\\medskip\n\\textbf{Gauss-Jordan elimination} continues further, reducing the matrix\nto \\textbf{reduced row echelon form (RREF)}, where each pivot equals 1\nand all other entries in its column are zero. The solution can then be\nread off directly without back substitution."
+    "content": "Gaussian elimination is a systematic algorithm that transforms\nthe augmented matrix $[A \\mid b]$ into row echelon form using\nelementary row operations, then solves by back substitution.\n\n\\medskip\nGauss-Jordan elimination continues further, reducing the matrix\nto reduced row echelon form (RREF), where each pivot equals 1\nand all other entries in its column are zero. The solution can then be\nread off directly without back substitution."
   },
   {
     "course": "Linear Algebra",
@@ -157,7 +157,7 @@
     "section": "Gaussian Elimination",
     "type": "keypoint",
     "title": "{Steps for Gaussian Elimination:} {enumerate}[leftmargin=2em, itemsep=4pt]",
-    "content": "\\textbf{Steps for Gaussian Elimination:}\n\\begin{enumerate}[leftmargin=2em, itemsep=4pt]\n    \\item Write the augmented matrix $[A \\mid b]$.\n    \\item Identify the leftmost nonzero column (pivot column).\n    \\item Swap rows if needed to place a nonzero entry at the top of\n          the pivot column.\n    \\item Use row replacement operations to create zeros below the pivot.\n    \\item Ignore the top row and repeat steps 2--4 on the remaining\n          submatrix.\n    \\item Once in REF, solve by back substitution.\n\\end{enumerate}\n\\textbf{Consistency check:} If a row of the form\n$[0 \\; 0 \\; \\cdots \\; 0 \\mid c]$ with $c \\neq 0$ appears,\nthe system is \\textbf{inconsistent}."
+    "content": "Steps for Gaussian Elimination:\n\n1. Write the augmented matrix $[A \\mid b]$.\n2. Identify the leftmost nonzero column (pivot column).\n3. Swap rows if needed to place a nonzero entry at the top of\n          the pivot column.\n4. Use row replacement operations to create zeros below the pivot.\n5. Ignore the top row and repeat steps 2--4 on the remaining\n          submatrix.\n6. Once in REF, solve by back substitution.\n\nConsistency check: If a row of the form\n$[0 \\; 0 \\; \\cdots \\; 0 \\mid c]$ with $c \\neq 0$ appears,\nthe system is inconsistent."
   },
   {
     "course": "Linear Algebra",
@@ -165,7 +165,7 @@
     "section": "Gaussian Elimination",
     "type": "example",
     "title": "Example 2.13 --- Gaussian Elimination (Unique Solution)",
-    "content": "Solve by Gaussian elimination:\n\\[\n3x_1 + x_2 - x_3 = -4, \\qquad\nx_1 + x_2 - 2x_3 = -4, \\qquad\n-x_1 + 2x_2 - x_3 = 1.\n\\]\n\n\\textbf{Solution:}\n\nAugmented matrix:\n\\[\n\\left[\\begin{array}{ccc|c}\n 3 & 1 & -1 & -4 \\\\\n 1 & 1 & -2 & -4 \\\\\n-1 & 2 & -1 &  1\n\\end{array}\\right]\n\\]\n\n$R_1 \\leftrightarrow R_2$ (bring the simplest leading entry to top):\n\\[\n\\left[\\begin{array}{ccc|c}\n 1 & 1 & -2 & -4 \\\\\n 3 & 1 & -1 & -4 \\\\\n-1 & 2 & -1 &  1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 3R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -2 & -4 \\\\\n0 & -2 &  5 &  8 \\\\\n-1 & 2 & -1 &  1\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 + R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -2 & -4 \\\\\n0 & -2 &  5 &  8 \\\\\n0 &  3 & -3 & -3\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 + \\tfrac{3}{2}R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -2 & -4 \\\\\n0 & -2 &  5 &  8 \\\\\n0 &  0 & \\tfrac{3}{2} & 9\n\\end{array}\\right]\n\\]\n\nBack substitution:\n\\[\n\\frac{3}{2}x_3 = 9 \\implies x_3 = 6.\n\\]\n\\[\n-2x_2 + 5(6) = 8 \\implies -2x_2 = 8 - 30 = -22 \\implies x_2 = 11.\n\\]\n\\[\nx_1 + 11 - 2(6) = -4 \\implies x_1 + 11 - 12 = -4 \\implies x_1 = -3.\n\\]\n\nSolution: $\\boxed{(x_1,\\, x_2,\\, x_3) = (-3,\\; 11,\\; 6)}$.\n\n\\bigskip"
+    "content": "Solve by Gaussian elimination:\n\\[\n3x_1 + x_2 - x_3 = -4, \\qquad\nx_1 + x_2 - 2x_3 = -4, \\qquad\n-x_1 + 2x_2 - x_3 = 1.\n\\]\n\nSolution:\n\nAugmented matrix:\n\\[\n\\left[\\begin{array}{ccc|c}\n 3 & 1 & -1 & -4 \\\\\n 1 & 1 & -2 & -4 \\\\\n-1 & 2 & -1 &  1\n\\end{array}\\right]\n\\]\n\n$R_1 \\leftrightarrow R_2$ (bring the simplest leading entry to top):\n\\[\n\\left[\\begin{array}{ccc|c}\n 1 & 1 & -2 & -4 \\\\\n 3 & 1 & -1 & -4 \\\\\n-1 & 2 & -1 &  1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 3R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -2 & -4 \\\\\n0 & -2 &  5 &  8 \\\\\n-1 & 2 & -1 &  1\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 + R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -2 & -4 \\\\\n0 & -2 &  5 &  8 \\\\\n0 &  3 & -3 & -3\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 + \\tfrac{3}{2}R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -2 & -4 \\\\\n0 & -2 &  5 &  8 \\\\\n0 &  0 & \\tfrac{3}{2} & 9\n\\end{array}\\right]\n\\]\n\nBack substitution:\n\\[\n\\frac{3}{2}x_3 = 9 \\implies x_3 = 6.\n\\]\n\\[\n-2x_2 + 5(6) = 8 \\implies -2x_2 = 8 - 30 = -22 \\implies x_2 = 11.\n\\]\n\\[\nx_1 + 11 - 2(6) = -4 \\implies x_1 + 11 - 12 = -4 \\implies x_1 = -3.\n\\]\n\nSolution: $\\boxed{(x_1,\\, x_2,\\, x_3) = (-3,\\; 11,\\; 6)}$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -173,7 +173,7 @@
     "section": "Gaussian Elimination",
     "type": "example",
     "title": "Example 2.14 --- Past Paper 2024 Q4(a) \\& 2025 Q4(a)",
-    "content": "Solve the system by Gaussian elimination:\n\\[\n3x_1 + x_2 - x_3 = -4, \\qquad\nx_1 + x_2 - 2x_3 = -4, \\qquad\n-x_1 + 2x_2 - x_3 = 1.\n\\]\n\n\\textbf{Solution:}\nThis is the same system solved in Example 2.13. (See above.)\nSolution: $\\boxed{(x_1,\\, x_2,\\, x_3) = (-3,\\; 11,\\; 6)}$.\n\n\\bigskip"
+    "content": "Solve the system by Gaussian elimination:\n\\[\n3x_1 + x_2 - x_3 = -4, \\qquad\nx_1 + x_2 - 2x_3 = -4, \\qquad\n-x_1 + 2x_2 - x_3 = 1.\n\\]\n\nSolution:\nThis is the same system solved in Example 2.13. (See above.)\nSolution: $\\boxed{(x_1,\\, x_2,\\, x_3) = (-3,\\; 11,\\; 6)}$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -181,7 +181,7 @@
     "section": "Gaussian Elimination",
     "type": "example",
     "title": "Example 2.15 --- Gauss-Jordan Elimination (RREF)",
-    "content": "Solve using Gauss-Jordan elimination:\n\\[\nx + y - z = 2, \\qquad 2x - y + z = 5, \\qquad x - 2y + 3z = 0.\n\\]\n\n\\textbf{Solution:}\n\nAugmented matrix:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -1 & 2 \\\\\n2 & -1 &  1 & 5 \\\\\n1 & -2 &  3 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -1 &  2 \\\\\n0 & -3 &  3 &  1 \\\\\n0 & -3 &  4 & -2\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow -\\tfrac{1}{3}R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 1 & -1 &  2 \\\\\n0 & 1 & -1 & -\\tfrac{1}{3} \\\\\n0 & -3 & 4 & -2\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 + 3R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 1 & -1 &  2 \\\\\n0 & 1 & -1 & -\\tfrac{1}{3} \\\\\n0 & 0 &  1 & -3\n\\end{array}\\right]\n\\]\n\nNow apply upward elimination (Gauss-Jordan):\n\n$R_2 \\leftarrow R_2 + R_3$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 1 & -1 &  2 \\\\\n0 & 1 &  0 & -\\tfrac{10}{3} \\\\\n0 & 0 &  1 & -3\n\\end{array}\\right]\n\\]\n\n$R_1 \\leftarrow R_1 + R_3$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 1 & 0 & -1 \\\\\n0 & 1 & 0 & -\\tfrac{10}{3} \\\\\n0 & 0 & 1 & -3\n\\end{array}\\right]\n\\]\n\n$R_1 \\leftarrow R_1 - R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 0 & 0 & \\tfrac{7}{3} \\\\\n0 & 1 & 0 & -\\tfrac{10}{3} \\\\\n0 & 0 & 1 & -3\n\\end{array}\\right]\n\\]\n\nSolution: $\\boxed{x_1 = \\dfrac{7}{3},\\quad x_2 = -\\dfrac{10}{3},\\quad x_3 = -3}$.\n\n\\bigskip"
+    "content": "Solve using Gauss-Jordan elimination:\n\\[\nx + y - z = 2, \\qquad 2x - y + z = 5, \\qquad x - 2y + 3z = 0.\n\\]\n\nSolution:\n\nAugmented matrix:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -1 & 2 \\\\\n2 & -1 &  1 & 5 \\\\\n1 & -2 &  3 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  1 & -1 &  2 \\\\\n0 & -3 &  3 &  1 \\\\\n0 & -3 &  4 & -2\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow -\\tfrac{1}{3}R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 1 & -1 &  2 \\\\\n0 & 1 & -1 & -\\tfrac{1}{3} \\\\\n0 & -3 & 4 & -2\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 + 3R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 1 & -1 &  2 \\\\\n0 & 1 & -1 & -\\tfrac{1}{3} \\\\\n0 & 0 &  1 & -3\n\\end{array}\\right]\n\\]\n\nNow apply upward elimination (Gauss-Jordan):\n\n$R_2 \\leftarrow R_2 + R_3$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 1 & -1 &  2 \\\\\n0 & 1 &  0 & -\\tfrac{10}{3} \\\\\n0 & 0 &  1 & -3\n\\end{array}\\right]\n\\]\n\n$R_1 \\leftarrow R_1 + R_3$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 1 & 0 & -1 \\\\\n0 & 1 & 0 & -\\tfrac{10}{3} \\\\\n0 & 0 & 1 & -3\n\\end{array}\\right]\n\\]\n\n$R_1 \\leftarrow R_1 - R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 0 & 0 & \\tfrac{7}{3} \\\\\n0 & 1 & 0 & -\\tfrac{10}{3} \\\\\n0 & 0 & 1 & -3\n\\end{array}\\right]\n\\]\n\nSolution: $\\boxed{x_1 = \\dfrac{7}{3},\\quad x_2 = -\\dfrac{10}{3},\\quad x_3 = -3}$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -189,7 +189,7 @@
     "section": "Gaussian Elimination",
     "type": "example",
     "title": "Example 2.16 --- Inconsistent System via Gaussian Elimination",
-    "content": "Solve using Gaussian elimination:\n\\[\nx + 2y + z = 3, \\qquad 2x + 4y + 2z = 7, \\qquad x + y + z = 1.\n\\]\n\n\\textbf{Solution:}\n\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & 1 & 3 \\\\\n2 & 4 & 2 & 7 \\\\\n1 & 1 & 1 & 1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & 1 & 3 \\\\\n0 & 0 & 0 & 1 \\\\\n1 & 1 & 1 & 1\n\\end{array}\\right]\n\\]\n\nRow 2 reads $0 = 1$, which is a contradiction.\nThe system is \\textbf{inconsistent} --- no solution exists.\n\n\\bigskip"
+    "content": "Solve using Gaussian elimination:\n\\[\nx + 2y + z = 3, \\qquad 2x + 4y + 2z = 7, \\qquad x + y + z = 1.\n\\]\n\nSolution:\n\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & 1 & 3 \\\\\n2 & 4 & 2 & 7 \\\\\n1 & 1 & 1 & 1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & 1 & 3 \\\\\n0 & 0 & 0 & 1 \\\\\n1 & 1 & 1 & 1\n\\end{array}\\right]\n\\]\n\nRow 2 reads $0 = 1$, which is a contradiction.\nThe system is inconsistent --- no solution exists.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -197,7 +197,7 @@
     "section": "Gaussian Elimination",
     "type": "example",
     "title": "Example 2.17 --- System with Infinitely Many Solutions",
-    "content": "Solve using Gaussian elimination:\n\\[\nx_1 + 2x_2 - x_3 = 3, \\qquad 2x_1 + 4x_2 - 2x_3 = 6, \\qquad\nx_1 + x_2 + x_3 = 4.\n\\]\n\n\\textbf{Solution:}\n\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & -1 & 3 \\\\\n2 & 4 & -2 & 6 \\\\\n1 & 1 &  1 & 4\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & -1 & 3 \\\\\n0 & 0 &  0 & 0 \\\\\n0 & -1 & 2 & 1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftrightarrow R_3$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 & -1 & 3 \\\\\n0 & -1 &  2 & 1 \\\\\n0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow -R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & -1 & 3 \\\\\n0 & 1 & -2 & -1 \\\\\n0 & 0 &  0 &  0\n\\end{array}\\right]\n\\]\n\n$x_3 = t$ (free variable). From row 2:\n$x_2 - 2t = -1 \\Rightarrow x_2 = 2t - 1$.\nFrom row 1:\n$x_1 + 2(2t-1) - t = 3 \\Rightarrow x_1 + 3t - 2 = 3\n\\Rightarrow x_1 = 5 - 3t$.\n\nGeneral solution (infinitely many solutions):\n\\[\n\\boxed{(x_1,\\, x_2,\\, x_3) = (5-3t,\\; 2t-1,\\; t), \\quad t \\in \\mathbb{R}.}\n\\]\n\n\n\n\n\n\n\\vspace{0.5cm}"
+    "content": "Solve using Gaussian elimination:\n\\[\nx_1 + 2x_2 - x_3 = 3, \\qquad 2x_1 + 4x_2 - 2x_3 = 6, \\qquad\nx_1 + x_2 + x_3 = 4.\n\\]\n\nSolution:\n\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & -1 & 3 \\\\\n2 & 4 & -2 & 6 \\\\\n1 & 1 &  1 & 4\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & -1 & 3 \\\\\n0 & 0 &  0 & 0 \\\\\n0 & -1 & 2 & 1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftrightarrow R_3$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 & -1 & 3 \\\\\n0 & -1 &  2 & 1 \\\\\n0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow -R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & -1 & 3 \\\\\n0 & 1 & -2 & -1 \\\\\n0 & 0 &  0 &  0\n\\end{array}\\right]\n\\]\n\n$x_3 = t$ (free variable). From row 2:\n$x_2 - 2t = -1 \\Rightarrow x_2 = 2t - 1$.\nFrom row 1:\n$x_1 + 2(2t-1) - t = 3 \\Rightarrow x_1 + 3t - 2 = 3\n\\Rightarrow x_1 = 5 - 3t$.\n\nGeneral solution (infinitely many solutions):\n\\[\n\\boxed{(x_1,\\, x_2,\\, x_3) = (5-3t,\\; 2t-1,\\; t), \\quad t \\in \\mathbb{R}.}\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -205,7 +205,7 @@
     "section": "Echelon Matrices and Row Canonical Form",
     "type": "definition",
     "title": "Reduced Row Echelon Form",
-    "content": "A matrix is in \\textbf{reduced row echelon form} (RREF), also called\n\\textbf{row canonical form}, if it satisfies all conditions of REF\nand additionally:\n\\begin{enumerate}[leftmargin=2em, itemsep=5pt]\n    \\item Every pivot (leading entry) equals \\textbf{1}.\n    \\item Every entry \\textbf{above and below} each pivot is zero ---\n          the entire pivot column is cleared.\n\\end{enumerate}\n\n\\medskip\nTwo matrices are \\textbf{row equivalent} if one can be obtained from\nthe other by a finite sequence of elementary row operations.\nRow equivalent matrices always have the same solution set."
+    "content": "A matrix is in reduced row echelon form (RREF), also called\nrow canonical form, if it satisfies all conditions of REF\nand additionally:\n\n1. Every pivot (leading entry) equals 1.\n2. Every entry above and below each pivot is zero ---\n          the entire pivot column is cleared.\n\n\\medskip\nTwo matrices are row equivalent if one can be obtained from\nthe other by a finite sequence of elementary row operations.\nRow equivalent matrices always have the same solution set."
   },
   {
     "course": "Linear Algebra",
@@ -213,7 +213,7 @@
     "section": "Echelon Matrices and Row Canonical Form",
     "type": "keypoint",
     "title": "{REF vs.\\ RREF --- Quick Comparison:}",
-    "content": "\\textbf{REF vs.\\ RREF --- Quick Comparison:}\n\n\\medskip\n\\begin{center}\n\\begin{tabular}{@{}lcc@{}}\n\\toprule\n\\textbf{Property} & \\textbf{REF} & \\textbf{RREF} \\\\\n\\midrule\nZero rows at bottom           & \\checkmark & \\checkmark \\\\\nEach pivot right of above     & \\checkmark & \\checkmark \\\\\nZeros below each pivot        & \\checkmark & \\checkmark \\\\\nEach pivot $= 1$              & $\\times$   & \\checkmark \\\\\nZeros above each pivot        & $\\times$   & \\checkmark \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\bigskip"
+    "content": "REF vs.\\ RREF --- Quick Comparison:\n\n\\medskip\n| \\toprule Property | REF | RREF |\n|---|---|---|\n| \\midrule Zero rows at bottom | ✓ | ✓ |\n| Each pivot right of above | ✓ | ✓ |\n| Zeros below each pivot | ✓ | ✓ |\n| Each pivot $= 1$ | $\\times$ | ✓ |\n| Zeros above each pivot | $\\times$ | ✓ |\n| \\bottomrule |  |  |\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -221,7 +221,7 @@
     "section": "Echelon Matrices and Row Canonical Form",
     "type": "example",
     "title": "Example 2.18 --- Identifying REF and RREF",
-    "content": "Classify each matrix as neither, REF only, or RREF:\n\\[\n(A)=\n\\begin{bmatrix}\n1 & 3 & 0 \\\\\n0 & 1 & 2 \\\\\n0 & 0 & 1\n\\end{bmatrix},\n\\qquad\n(B)=\n\\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{bmatrix},\n\\qquad\n(C)=\n\\begin{bmatrix}\n0 & 1 & 2 \\\\\n1 & 0 & 3 \\\\\n0 & 0 & 1\n\\end{bmatrix}.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\n\\textbf{(A)} Pivots at $(1,1)$, $(2,2)$, $(3,3)$ --- each to the right\nof the one above, zeros below each pivot. \\checkmark\\ REF.\n\nBut entry $(1,2)=3$ is \\emph{above} the pivot in column 2, so not all\nabove-pivot entries are zero. \\textbf{REF only, not RREF.}\n\n\\medskip\n\\textbf{(B)} Pivots are all 1, each column has zeros everywhere except\nthe pivot position. \\textbf{This is RREF} (and also REF).\n\n\\medskip\n\\textbf{(C)} Row 1 pivot is at column 2, but row 2 pivot is at column 1\n--- column 1 is to the \\emph{left} of column 2.\n\\textbf{Neither REF nor RREF.}\n\n\\bigskip"
+    "content": "Classify each matrix as neither, REF only, or RREF:\n\\[\n(A)=\n\\begin{bmatrix}\n1 & 3 & 0 \\\\\n0 & 1 & 2 \\\\\n0 & 0 & 1\n\\end{bmatrix},\n\\qquad\n(B)=\n\\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{bmatrix},\n\\qquad\n(C)=\n\\begin{bmatrix}\n0 & 1 & 2 \\\\\n1 & 0 & 3 \\\\\n0 & 0 & 1\n\\end{bmatrix}.\n\\]\n\nSolution:\n\n\\medskip\n(A) Pivots at $(1,1)$, $(2,2)$, $(3,3)$ --- each to the right\nof the one above, zeros below each pivot. ✓\\ REF.\n\nBut entry $(1,2)=3$ is \\emph{above} the pivot in column 2, so not all\nabove-pivot entries are zero. REF only, not RREF.\n\n\\medskip\n(B) Pivots are all 1, each column has zeros everywhere except\nthe pivot position. This is RREF (and also REF).\n\n\\medskip\n(C) Row 1 pivot is at column 2, but row 2 pivot is at column 1\n--- column 1 is to the \\emph{left} of column 2.\nNeither REF nor RREF.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -229,7 +229,7 @@
     "section": "Echelon Matrices and Row Canonical Form",
     "type": "example",
     "title": "Example 2.19 --- Reducing a Matrix to RREF",
-    "content": "Reduce to RREF:\n\\[\nA =\n\\begin{bmatrix}\n0 & 2 &  4 & 2 \\\\\n1 & 3 &  5 & 3 \\\\\n2 & 8 & 10 & 6\n\\end{bmatrix}.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\n$R_1 \\leftrightarrow R_2$ (bring nonzero pivot to top of column 1):\n\\[\n\\begin{bmatrix}\n1 & 3 &  5 & 3 \\\\\n0 & 2 &  4 & 2 \\\\\n2 & 8 & 10 & 6\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_3 \\leftarrow R_3 - 2R_1$:\n\\[\n\\begin{bmatrix}\n1 & 3 &  5 & 3 \\\\\n0 & 2 &  4 & 2 \\\\\n0 & 2 &  0 & 0\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\begin{bmatrix}\n1 & 3 & 5 & 3 \\\\\n0 & 2 & 4 & 2 \\\\\n0 & 0 & -4 & -2\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_2 \\leftarrow \\tfrac{1}{2}R_2$, $R_3 \\leftarrow -\\tfrac{1}{4}R_3$:\n\\[\n\\begin{bmatrix}\n1 & 3 & 5 & 3 \\\\\n0 & 1 & 2 & 1 \\\\\n0 & 0 & 1 & \\tfrac{1}{2}\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_2 \\leftarrow R_2 - 2R_3$, $R_1 \\leftarrow R_1 - 5R_3$:\n\\[\n\\begin{bmatrix}\n1 & 3 & 0 & \\tfrac{1}{2} \\\\\n0 & 1 & 0 & 0 \\\\\n0 & 0 & 1 & \\tfrac{1}{2}\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_1 \\leftarrow R_1 - 3R_2$:\n\\[\n\\begin{bmatrix}\n1 & 0 & 0 & \\tfrac{1}{2} \\\\\n0 & 1 & 0 & 0 \\\\\n0 & 0 & 1 & \\tfrac{1}{2}\n\\end{bmatrix}\n\\quad \\leftarrow \\textbf{RREF}\n\\]\n\n\\bigskip"
+    "content": "Reduce to RREF:\n\\[\nA =\n\\begin{bmatrix}\n0 & 2 &  4 & 2 \\\\\n1 & 3 &  5 & 3 \\\\\n2 & 8 & 10 & 6\n\\end{bmatrix}.\n\\]\n\nSolution:\n\n\\medskip\n$R_1 \\leftrightarrow R_2$ (bring nonzero pivot to top of column 1):\n\\[\n\\begin{bmatrix}\n1 & 3 &  5 & 3 \\\\\n0 & 2 &  4 & 2 \\\\\n2 & 8 & 10 & 6\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_3 \\leftarrow R_3 - 2R_1$:\n\\[\n\\begin{bmatrix}\n1 & 3 &  5 & 3 \\\\\n0 & 2 &  4 & 2 \\\\\n0 & 2 &  0 & 0\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\begin{bmatrix}\n1 & 3 & 5 & 3 \\\\\n0 & 2 & 4 & 2 \\\\\n0 & 0 & -4 & -2\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_2 \\leftarrow \\tfrac{1}{2}R_2$, $R_3 \\leftarrow -\\tfrac{1}{4}R_3$:\n\\[\n\\begin{bmatrix}\n1 & 3 & 5 & 3 \\\\\n0 & 1 & 2 & 1 \\\\\n0 & 0 & 1 & \\tfrac{1}{2}\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_2 \\leftarrow R_2 - 2R_3$, $R_1 \\leftarrow R_1 - 5R_3$:\n\\[\n\\begin{bmatrix}\n1 & 3 & 0 & \\tfrac{1}{2} \\\\\n0 & 1 & 0 & 0 \\\\\n0 & 0 & 1 & \\tfrac{1}{2}\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_1 \\leftarrow R_1 - 3R_2$:\n\\[\n\\begin{bmatrix}\n1 & 0 & 0 & \\tfrac{1}{2} \\\\\n0 & 1 & 0 & 0 \\\\\n0 & 0 & 1 & \\tfrac{1}{2}\n\\end{bmatrix}\n\\quad \\leftarrow \\textbf{RREF}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -237,7 +237,7 @@
     "section": "Echelon Matrices and Row Canonical Form",
     "type": "example",
     "title": "Example 2.20 --- Row Equivalence of Two Matrices",
-    "content": "Show that the matrices\n\\[\nA =\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n2 & 5 & 7 \\\\\n1 & 3 & 5\n\\end{bmatrix}\n\\qquad \\text{and} \\qquad\nB =\n\\begin{bmatrix}\n1 & 0 & 1 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{bmatrix}\n\\]\nare row equivalent by reducing $A$ to REF and comparing with $B$.\n\n\\textbf{Solution:}\n\n\\medskip\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n0 & 1 & 1 \\\\\n0 & 1 & 2\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_1 \\leftarrow R_1 - 2R_2$:\n\\[\n\\begin{bmatrix}\n1 & 0 & 1 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{bmatrix}\n= B.\n\\]\n\nSince $A$ reduces to $B$ by elementary row operations,\n$A$ and $B$ are \\textbf{row equivalent}. \\hfill$\\square$\n\\vspace{0.5cm}"
+    "content": "Show that the matrices\n\\[\nA =\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n2 & 5 & 7 \\\\\n1 & 3 & 5\n\\end{bmatrix}\n\\qquad \\text{and} \\qquad\nB =\n\\begin{bmatrix}\n1 & 0 & 1 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{bmatrix}\n\\]\nare row equivalent by reducing $A$ to REF and comparing with $B$.\n\nSolution:\n\n\\medskip\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n0 & 1 & 1 \\\\\n0 & 1 & 2\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{bmatrix}\n\\]\n\n\\medskip\n$R_1 \\leftarrow R_1 - 2R_2$:\n\\[\n\\begin{bmatrix}\n1 & 0 & 1 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{bmatrix}\n= B.\n\\]\n\nSince $A$ reduces to $B$ by elementary row operations,\n$A$ and $B$ are row equivalent. \\hfill$\\square$"
   },
   {
     "course": "Linear Algebra",
@@ -245,7 +245,7 @@
     "section": "Gaussian Elimination Method",
     "type": "definition",
     "title": "Matrix Equation of a Linear System",
-    "content": "Any system of $m$ equations in $n$ unknowns can be written compactly as\n\\[\nAx = b,\n\\]\nwhere $A$ is the $m\\times n$ \\textbf{coefficient matrix},\n$x = [x_1, x_2, \\ldots, x_n]^T$ is the \\textbf{unknown vector}, and\n$b = [b_1, b_2, \\ldots, b_m]^T$ is the \\textbf{constant vector}.\n\n\\medskip\nThe system $Ax = b$ is consistent if and only if $b$ is in the\n\\textbf{column space} of $A$, i.e.\\ $b$ can be written as a linear\ncombination of the columns of $A$.\n\n\\bigskip"
+    "content": "Any system of $m$ equations in $n$ unknowns can be written compactly as\n\\[\nAx = b,\n\\]\nwhere $A$ is the $m\\times n$ coefficient matrix,\n$x = [x_1, x_2, \\ldots, x_n]^T$ is the unknown vector, and\n$b = [b_1, b_2, \\ldots, b_m]^T$ is the constant vector.\n\n\\medskip\nThe system $Ax = b$ is consistent if and only if $b$ is in the\ncolumn space of $A$, i.e.\\ $b$ can be written as a linear\ncombination of the columns of $A$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -253,7 +253,7 @@
     "section": "Gaussian Elimination Method",
     "type": "example",
     "title": "Example 2.21 --- Writing a System",
-    "content": "Write the matrix equation for the system:\n\\[\n2x_1 - x_2 + 3x_3 = 5, \\qquad\nx_1 + 4x_2 - x_3 = 2, \\qquad\n3x_1 + 2x_2 + x_3 = 7.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\nIdentify the coefficient matrix $A$, unknown vector $x$, and\nconstant vector $b$:\n\\[\nA =\n\\begin{bmatrix}\n2 & -1 & 3 \\\\\n1 &  4 & -1 \\\\\n3 &  2 &  1\n\\end{bmatrix},\n\\qquad\nx =\n\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3 \\end{bmatrix},\n\\qquad\nb =\n\\begin{bmatrix} 5 \\\\ 2 \\\\ 7 \\end{bmatrix}.\n\\]\n\nThe system is equivalent to the single matrix equation\n$Ax = b$, i.e.:\n\\[\n\\begin{bmatrix}\n2 & -1 & 3 \\\\\n1 &  4 & -1 \\\\\n3 &  2 &  1\n\\end{bmatrix}\n\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3 \\end{bmatrix}\n=\n\\begin{bmatrix} 5 \\\\ 2 \\\\ 7 \\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Write the matrix equation for the system:\n\\[\n2x_1 - x_2 + 3x_3 = 5, \\qquad\nx_1 + 4x_2 - x_3 = 2, \\qquad\n3x_1 + 2x_2 + x_3 = 7.\n\\]\n\nSolution:\n\n\\medskip\nIdentify the coefficient matrix $A$, unknown vector $x$, and\nconstant vector $b$:\n\\[\nA =\n\\begin{bmatrix}\n2 & -1 & 3 \\\\\n1 &  4 & -1 \\\\\n3 &  2 &  1\n\\end{bmatrix},\n\\qquad\nx =\n\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3 \\end{bmatrix},\n\\qquad\nb =\n\\begin{bmatrix} 5 \\\\ 2 \\\\ 7 \\end{bmatrix}.\n\\]\n\nThe system is equivalent to the single matrix equation\n$Ax = b$, i.e.:\n\\[\n\\begin{bmatrix}\n2 & -1 & 3 \\\\\n1 &  4 & -1 \\\\\n3 &  2 &  1\n\\end{bmatrix}\n\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3 \\end{bmatrix}\n=\n\\begin{bmatrix} 5 \\\\ 2 \\\\ 7 \\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -261,7 +261,7 @@
     "section": "Gaussian Elimination Method",
     "type": "theorem",
     "title": "Consistency Theorem (Rouche-Capelli)",
-    "content": "The system $Ax = b$ is consistent if and only if\n\\[\n\\text{rank}(A) = \\text{rank}([A \\mid b]).\n\\]\nMoreover, if the system is consistent and has $n$ unknowns:\n\\begin{enumerate}[leftmargin=2em, itemsep=5pt]\n    \\item If $\\text{rank}(A) = n$, the system has a \\textbf{unique solution}.\n    \\item If $\\text{rank}(A) < n$, the system has \\textbf{infinitely many solutions},\n          with $n - \\text{rank}(A)$ \\textbf{free variables}.\n\\end{enumerate}\n\n\\bigskip"
+    "content": "The system $Ax = b$ is consistent if and only if\n\\[\n\\text{rank}(A) = \\text{rank}([A \\mid b]).\n\\]\nMoreover, if the system is consistent and has $n$ unknowns:\n\n1. If $\\text{rank}(A) = n$, the system has a unique solution.\n2. If $\\text{rank}(A) < n$, the system has infinitely many solutions,\n          with $n - \\text{rank}(A)$ free variables.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -269,7 +269,7 @@
     "section": "Gaussian Elimination Method",
     "type": "example",
     "title": "Example 2.22 --- Using Rank to Determine Solution Type",
-    "content": "Without solving, determine the solution type of the system:\n\\[\nx_1 + 2x_2 + 3x_3 = 4, \\qquad\n2x_1 + 4x_2 + 6x_3 = 8, \\qquad\nx_1 + x_2 + 2x_3 = 3.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\nForm the augmented matrix and row reduce:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & 3 & 4 \\\\\n2 & 4 & 6 & 8 \\\\\n1 & 1 & 2 & 3\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 &  3 & 4 \\\\\n0 & 0 &  0 & 0 \\\\\n0 & -1 & -1 & -1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftrightarrow R_3$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 &  3 & 4 \\\\\n0 & -1 & -1 & -1 \\\\\n0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n$\\text{rank}(A) = 2$, $\\text{rank}([A\\mid b]) = 2$, $n = 3$.\n\nSince $\\text{rank}(A) = \\text{rank}([A\\mid b]) = 2 < 3$, the system is\n\\textbf{consistent} with $3 - 2 = 1$ free variable.\nIt has \\textbf{infinitely many solutions}.\n\\vspace{0.5cm}"
+    "content": "Without solving, determine the solution type of the system:\n\\[\nx_1 + 2x_2 + 3x_3 = 4, \\qquad\n2x_1 + 4x_2 + 6x_3 = 8, \\qquad\nx_1 + x_2 + 2x_3 = 3.\n\\]\n\nSolution:\n\n\\medskip\nForm the augmented matrix and row reduce:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & 3 & 4 \\\\\n2 & 4 & 6 & 8 \\\\\n1 & 1 & 2 & 3\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 &  3 & 4 \\\\\n0 & 0 &  0 & 0 \\\\\n0 & -1 & -1 & -1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftrightarrow R_3$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 &  3 & 4 \\\\\n0 & -1 & -1 & -1 \\\\\n0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n$\\text{rank}(A) = 2$, $\\text{rank}([A\\mid b]) = 2$, $n = 3$.\n\nSince $\\text{rank}(A) = \\text{rank}([A\\mid b]) = 2 < 3$, the system is\nconsistent with $3 - 2 = 1$ free variable.\nIt has infinitely many solutions."
   },
   {
     "course": "Linear Algebra",
@@ -277,7 +277,7 @@
     "section": "Linear Combinations",
     "type": "definition",
     "title": "Solution as a Linear Combination of Columns",
-    "content": "The matrix equation $Ax = b$ can be written as:\n\\[\nx_1 \\mathbf{a}_1 + x_2 \\mathbf{a}_2 + \\cdots + x_n \\mathbf{a}_n = b,\n\\]\nwhere $\\mathbf{a}_1, \\mathbf{a}_2, \\ldots, \\mathbf{a}_n$ are the columns\nof $A$.\n\n\\medskip\nTherefore, solving $Ax = b$ is equivalent to asking:\n\n\\medskip\n\\textit{``Can $b$ be expressed as a linear combination of the columns\nof $A$?''}\n\n\\medskip\nIf yes, the coefficients $x_1, x_2, \\ldots, x_n$ form the solution.\nIf no, the system is inconsistent.\n\n\\bigskip"
+    "content": "The matrix equation $Ax = b$ can be written as:\n\\[\nx_1 \\mathbf{a}_1 + x_2 \\mathbf{a}_2 + \\cdots + x_n \\mathbf{a}_n = b,\n\\]\nwhere $\\mathbf{a}_1, \\mathbf{a}_2, \\ldots, \\mathbf{a}_n$ are the columns\nof $A$.\n\n\\medskip\nTherefore, solving $Ax = b$ is equivalent to asking:\n\n\\medskip\n``Can $b$ be expressed as a linear combination of the columns\nof $A$?''\n\n\\medskip\nIf yes, the coefficients $x_1, x_2, \\ldots, x_n$ form the solution.\nIf no, the system is inconsistent.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -285,7 +285,7 @@
     "section": "Linear Combinations",
     "type": "example",
     "title": "Example 2.23 --- Past Paper 2024 Q3(a)",
-    "content": "Determine whether the vector $v = (3, 3, -4)$ is a linear combination\nof $u_1 = (1,2,3)$, $u_2 = (2,3,7)$, $u_3 = (3,5,6)$.\n\n\\textbf{Solution:}\n\n\\medskip\nWe need scalars $x_1, x_2, x_3$ such that\n$x_1 u_1 + x_2 u_2 + x_3 u_3 = v$.\n\n\\medskip\nThis gives the system $Ax = v$ where:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & 3 &  3 \\\\\n2 & 3 & 5 &  3 \\\\\n3 & 7 & 6 & -4\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - 3R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 &  3 &  3 \\\\\n0 & -1 & -1 & -3 \\\\\n0 &  1 & -3 & -13\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 + R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 &  3 &  3 \\\\\n0 & -1 & -1 & -3 \\\\\n0 &  0 & -4 & -16\n\\end{array}\\right]\n\\]\n\nBack substitution:\n\\[\n-4x_3 = -16 \\implies x_3 = 4.\n\\]\n\\[\n-x_2 - 4 = -3 \\implies x_2 = -1.\n\\]\n\\[\nx_1 + 2(-1) + 3(4) = 3 \\implies x_1 = 3 - 10 = -7.\n\\]\n\n\\medskip\n\\textbf{Verification:}\n\\[\n-7(1,2,3) + (-1)(2,3,7) + 4(3,5,6)\n= (-7,-14,-21) + (-2,-3,-7) + (12,20,24)\n= (3,3,-4) \\;\\checkmark\n\\]\n\nYes, $v = (3,3,-4)$ \\textbf{is} a linear combination of $u_1, u_2, u_3$.\n\n\\bigskip"
+    "content": "Determine whether the vector $v = (3, 3, -4)$ is a linear combination\nof $u_1 = (1,2,3)$, $u_2 = (2,3,7)$, $u_3 = (3,5,6)$.\n\nSolution:\n\n\\medskip\nWe need scalars $x_1, x_2, x_3$ such that\n$x_1 u_1 + x_2 u_2 + x_3 u_3 = v$.\n\n\\medskip\nThis gives the system $Ax = v$ where:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 & 3 &  3 \\\\\n2 & 3 & 5 &  3 \\\\\n3 & 7 & 6 & -4\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - 3R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 &  3 &  3 \\\\\n0 & -1 & -1 & -3 \\\\\n0 &  1 & -3 & -13\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 + R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & 2 &  3 &  3 \\\\\n0 & -1 & -1 & -3 \\\\\n0 &  0 & -4 & -16\n\\end{array}\\right]\n\\]\n\nBack substitution:\n\\[\n-4x_3 = -16 \\implies x_3 = 4.\n\\]\n\\[\n-x_2 - 4 = -3 \\implies x_2 = -1.\n\\]\n\\[\nx_1 + 2(-1) + 3(4) = 3 \\implies x_1 = 3 - 10 = -7.\n\\]\n\n\\medskip\nVerification:\n\\[\n-7(1,2,3) + (-1)(2,3,7) + 4(3,5,6)\n= (-7,-14,-21) + (-2,-3,-7) + (12,20,24)\n= (3,3,-4) \\;\\checkmark\n\\]\n\nYes, $v = (3,3,-4)$ is a linear combination of $u_1, u_2, u_3$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -293,7 +293,7 @@
     "section": "Linear Combinations",
     "type": "example",
     "title": "Example 2.24 --- Linear Combination with No Solution",
-    "content": "Determine whether $v = (1, 2, 4)$ is a linear combination of\n$u_1 = (1, 1, 2)$ and $u_2 = (2, 3, 6)$.\n\n\\textbf{Solution:}\n\n\\medskip\nSet up the augmented matrix:\n\\[\n\\left[\\begin{array}{cc|c}\n1 & 2 & 1 \\\\\n1 & 3 & 2 \\\\\n2 & 6 & 4\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - R_1$, $R_3 \\leftarrow R_3 - 2R_1$:\n\\[\n\\left[\\begin{array}{cc|c}\n1 & 2 & 1 \\\\\n0 & 1 & 1 \\\\\n0 & 2 & 2\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - 2R_2$:\n\\[\n\\left[\\begin{array}{cc|c}\n1 & 2 & 1 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 0\n\\end{array}\\right]\n\\]\n\nNo contradiction row appears. $\\text{rank}(A) = \\text{rank}([A\\mid b]) = 2$.\n\n\\medskip\nBack substitution: $x_2 = 1$, $x_1 = 1 - 2(1) = -1$.\n\n\\medskip\nSo $v = -1 \\cdot u_1 + 1 \\cdot u_2$. \\textbf{Yes}, $v$ is a linear\ncombination of $u_1$ and $u_2$.\n\n\\bigskip"
+    "content": "Determine whether $v = (1, 2, 4)$ is a linear combination of\n$u_1 = (1, 1, 2)$ and $u_2 = (2, 3, 6)$.\n\nSolution:\n\n\\medskip\nSet up the augmented matrix:\n\\[\n\\left[\\begin{array}{cc|c}\n1 & 2 & 1 \\\\\n1 & 3 & 2 \\\\\n2 & 6 & 4\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - R_1$, $R_3 \\leftarrow R_3 - 2R_1$:\n\\[\n\\left[\\begin{array}{cc|c}\n1 & 2 & 1 \\\\\n0 & 1 & 1 \\\\\n0 & 2 & 2\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - 2R_2$:\n\\[\n\\left[\\begin{array}{cc|c}\n1 & 2 & 1 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 0\n\\end{array}\\right]\n\\]\n\nNo contradiction row appears. $\\text{rank}(A) = \\text{rank}([A\\mid b]) = 2$.\n\n\\medskip\nBack substitution: $x_2 = 1$, $x_1 = 1 - 2(1) = -1$.\n\n\\medskip\nSo $v = -1 \\cdot u_1 + 1 \\cdot u_2$. Yes, $v$ is a linear\ncombination of $u_1$ and $u_2$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -301,7 +301,7 @@
     "section": "Linear Combinations",
     "type": "example",
     "title": "Example 2.25 --- Value of $k$ for a Linear Combination",
-    "content": "For what value of $k$ is the vector $(1,-2,k)$ in $\\mathbb{R}^3$ a\nlinear combination of $(3,0,-2)$ and $(2,-1,-5)$?\n\n\\textbf{Solution:}\n\n\\medskip\nWe need $x_1(3,0,-2) + x_2(2,-1,-5) = (1,-2,k)$.\n\n\\medskip\nThis gives the system:\n\\[\n\\left[\\begin{array}{cc|c}\n3 &  2 &  1 \\\\\n0 & -1 & -2 \\\\\n-2 & -5 &  k\n\\end{array}\\right]\n\\]\n\nFrom row 2: $x_2 = 2$.\n\nFrom row 1: $3x_1 + 4 = 1 \\implies x_1 = -1$.\n\n\\medskip\nSubstitute into row 3:\n\\[\n-2(-1) - 5(2) = k \\implies 2 - 10 = k \\implies \\boxed{k = -8}.\n\\]\n\\newpage"
+    "content": "For what value of $k$ is the vector $(1,-2,k)$ in $\\mathbb{R}^3$ a\nlinear combination of $(3,0,-2)$ and $(2,-1,-5)$?\n\nSolution:\n\n\\medskip\nWe need $x_1(3,0,-2) + x_2(2,-1,-5) = (1,-2,k)$.\n\n\\medskip\nThis gives the system:\n\\[\n\\left[\\begin{array}{cc|c}\n3 &  2 &  1 \\\\\n0 & -1 & -2 \\\\\n-2 & -5 &  k\n\\end{array}\\right]\n\\]\n\nFrom row 2: $x_2 = 2$.\n\nFrom row 1: $3x_1 + 4 = 1 \\implies x_1 = -1$.\n\n\\medskip\nSubstitute into row 3:\n\\[\n-2(-1) - 5(2) = k \\implies 2 - 10 = k \\implies \\boxed{k = -8}.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -309,7 +309,7 @@
     "section": "Homogeneous Systems",
     "type": "definition",
     "title": "Homogeneous System",
-    "content": "A system $Ax = b$ is called \\textbf{homogeneous} if $b = \\mathbf{0}$,\ni.e.\\ every right-hand side constant is zero:\n\\[\na_{i1}x_1 + a_{i2}x_2 + \\cdots + a_{in}x_n = 0, \\quad i = 1,2,\\ldots,m.\n\\]\n\n\\medskip\nEvery homogeneous system is \\textbf{always consistent}, since\n$x = \\mathbf{0}$ (called the \\textbf{trivial solution}) is always a\nsolution.\n\n\\medskip\nA homogeneous system has a \\textbf{nontrivial solution} (i.e.\\ a solution\nwith at least one $x_i \\neq 0$) if and only if it has a free variable,\nwhich occurs when:\n\\[\n\\text{rank}(A) < n \\quad (\\text{number of unknowns}).\n\\]\nIn particular, if the system has \\textbf{more unknowns than equations}\n($n > m$), it always has a nontrivial solution."
+    "content": "A system $Ax = b$ is called homogeneous if $b = \\mathbf{0}$,\ni.e.\\ every right-hand side constant is zero:\n\\[\na_{i1}x_1 + a_{i2}x_2 + \\cdots + a_{in}x_n = 0, \\quad i = 1,2,\\ldots,m.\n\\]\n\n\\medskip\nEvery homogeneous system is always consistent, since\n$x = \\mathbf{0}$ (called the trivial solution) is always a\nsolution.\n\n\\medskip\nA homogeneous system has a nontrivial solution (i.e.\\ a solution\nwith at least one $x_i \\neq 0$) if and only if it has a free variable,\nwhich occurs when:\n\\[\n\\text{rank}(A) < n \\quad (\\text{number of unknowns}).\n\\]\nIn particular, if the system has more unknowns than equations\n($n > m$), it always has a nontrivial solution."
   },
   {
     "course": "Linear Algebra",
@@ -317,7 +317,7 @@
     "section": "Homogeneous Systems",
     "type": "keypoint",
     "title": "{Structure of Solutions of a Homogeneous",
-    "content": "\\textbf{Structure of Solutions of a Homogeneous System:}\n\\begin{enumerate}[leftmargin=2em, itemsep=5pt]\n    \\item The trivial solution $x = \\mathbf{0}$ always exists.\n    \\item If $x_p$ and $x_q$ are solutions, so is $x_p + x_q$\n          (closed under addition).\n    \\item If $x_p$ is a solution and $c \\in \\mathbb{R}$, then $cx_p$\n          is also a solution (closed under scalar multiplication).\n    \\item The solution set of $Ax = \\mathbf{0}$ forms a\n          \\textbf{subspace} of $\\mathbb{R}^n$, called the\n          \\textbf{null space} of $A$.\n\\end{enumerate}\n\n\\bigskip"
+    "content": "Structure of Solutions of a Homogeneous System:\n\n1. The trivial solution $x = \\mathbf{0}$ always exists.\n2. If $x_p$ and $x_q$ are solutions, so is $x_p + x_q$\n          (closed under addition).\n3. If $x_p$ is a solution and $c \\in \\mathbb{R}$, then $cx_p$\n          is also a solution (closed under scalar multiplication).\n4. The solution set of $Ax = \\mathbf{0}$ forms a\n          subspace of $\\mathbb{R}^n$, called the\n          null space of $A$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -325,7 +325,7 @@
     "section": "Homogeneous Systems",
     "type": "example",
     "title": "Example 2.26 --- Past Paper 2021 Q2",
-    "content": "Examine the homogeneous system for a nontrivial solution:\n\\[\nx_1 - x_2 + 2x_3 + x_4 = 0, \\qquad\n3x_1 + 2x_2 \\phantom{{}+2x_3} + x_4 = 0, \\qquad\n4x_1 + x_2 + 2x_3 + 2x_4 = 0.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\nWe have $m = 3$ equations and $n = 4$ unknowns. Since $n > m$, a\nnontrivial solution must exist. We find it explicitly.\n\n\\medskip\nAugmented matrix (right column all zeros, omitted for brevity):\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & -1 & 2 & 1 & 0 \\\\\n3 &  2 & 0 & 1 & 0 \\\\\n4 &  1 & 2 & 2 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 3R_1$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & -1 & 2 & 1 & 0 \\\\\n0 &  5 & -6 & -2 & 0 \\\\\n4 &  1 & 2 & 2 & 0\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - 4R_1$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & -1 &  2 &  1 & 0 \\\\\n0 &  5 & -6 & -2 & 0 \\\\\n0 &  5 & -6 & -2 & 0\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & -1 &  2 &  1 & 0 \\\\\n0 &  5 & -6 & -2 & 0 \\\\\n0 &  0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n\\medskip\n$\\text{rank}(A) = 2 < 4$, so there are $4 - 2 = 2$ free variables.\nSet $x_3 = s$ and $x_4 = t$ (free).\n\n\\medskip\nFrom row 2:\n\\[\n5x_2 = 6s + 2t \\implies x_2 = \\frac{6s + 2t}{5}.\n\\]\n\nFrom row 1:\n\\[\nx_1 = x_2 - 2s - t = \\frac{6s+2t}{5} - 2s - t\n= \\frac{6s + 2t - 10s - 5t}{5} = \\frac{-4s - 3t}{5}.\n\\]\n\n\\medskip\nGeneral solution (nontrivial solutions exist for any $s, t \\neq 0,0$):\n\\[\n\\boxed{\n(x_1, x_2, x_3, x_4)\n= \\frac{s}{5}(-4, 6, 5, 0) + \\frac{t}{5}(-3, 2, 0, 5),\n\\quad s,t \\in \\mathbb{R}.\n}\n\\]\n\n\\bigskip"
+    "content": "Examine the homogeneous system for a nontrivial solution:\n\\[\nx_1 - x_2 + 2x_3 + x_4 = 0, \\qquad\n3x_1 + 2x_2 \\phantom{{}+2x_3} + x_4 = 0, \\qquad\n4x_1 + x_2 + 2x_3 + 2x_4 = 0.\n\\]\n\nSolution:\n\n\\medskip\nWe have $m = 3$ equations and $n = 4$ unknowns. Since $n > m$, a\nnontrivial solution must exist. We find it explicitly.\n\n\\medskip\nAugmented matrix (right column all zeros, omitted for brevity):\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & -1 & 2 & 1 & 0 \\\\\n3 &  2 & 0 & 1 & 0 \\\\\n4 &  1 & 2 & 2 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 3R_1$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & -1 & 2 & 1 & 0 \\\\\n0 &  5 & -6 & -2 & 0 \\\\\n4 &  1 & 2 & 2 & 0\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - 4R_1$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & -1 &  2 &  1 & 0 \\\\\n0 &  5 & -6 & -2 & 0 \\\\\n0 &  5 & -6 & -2 & 0\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & -1 &  2 &  1 & 0 \\\\\n0 &  5 & -6 & -2 & 0 \\\\\n0 &  0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n\\medskip\n$\\text{rank}(A) = 2 < 4$, so there are $4 - 2 = 2$ free variables.\nSet $x_3 = s$ and $x_4 = t$ (free).\n\n\\medskip\nFrom row 2:\n\\[\n5x_2 = 6s + 2t \\implies x_2 = \\frac{6s + 2t}{5}.\n\\]\n\nFrom row 1:\n\\[\nx_1 = x_2 - 2s - t = \\frac{6s+2t}{5} - 2s - t\n= \\frac{6s + 2t - 10s - 5t}{5} = \\frac{-4s - 3t}{5}.\n\\]\n\n\\medskip\nGeneral solution (nontrivial solutions exist for any $s, t \\neq 0,0$):\n\\[\n\\boxed{\n(x_1, x_2, x_3, x_4)\n= \\frac{s}{5}(-4, 6, 5, 0) + \\frac{t}{5}(-3, 2, 0, 5),\n\\quad s,t \\in \\mathbb{R}.\n}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -333,7 +333,7 @@
     "section": "Homogeneous Systems",
     "type": "example",
     "title": "Example 2.27 --- Homogeneous System with Only Trivial Solution",
-    "content": "Solve the homogeneous system:\n\\[\nx_1 + 2x_2 - x_3 = 0, \\qquad\n2x_1 + x_2 + x_3 = 0, \\qquad\nx_1 - x_2 + 2x_3 = 0.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 & -1 & 0 \\\\\n2 &  1 &  1 & 0 \\\\\n1 & -1 &  2 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 & -1 & 0 \\\\\n0 & -3 &  3 & 0 \\\\\n0 & -3 &  3 & 0\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 & -1 & 0 \\\\\n0 & -3 &  3 & 0 \\\\\n0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n\\medskip\n$\\text{rank}(A) = 2 < 3$, so one free variable exists. Set $x_3 = t$.\n\n\\medskip\nFrom row 2: $-3x_2 + 3t = 0 \\implies x_2 = t$.\n\nFrom row 1: $x_1 + 2t - t = 0 \\implies x_1 = -t$.\n\n\\medskip\nGeneral solution:\n\\[\n(x_1, x_2, x_3) = t(-1,\\, 1,\\, 1), \\quad t \\in \\mathbb{R}.\n\\]\nThe system has infinitely many nontrivial solutions; the\n\\textbf{only trivial solution} occurs at $t = 0$.\n\n\\bigskip"
+    "content": "Solve the homogeneous system:\n\\[\nx_1 + 2x_2 - x_3 = 0, \\qquad\n2x_1 + x_2 + x_3 = 0, \\qquad\nx_1 - x_2 + 2x_3 = 0.\n\\]\n\nSolution:\n\n\\medskip\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 & -1 & 0 \\\\\n2 &  1 &  1 & 0 \\\\\n1 & -1 &  2 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 & -1 & 0 \\\\\n0 & -3 &  3 & 0 \\\\\n0 & -3 &  3 & 0\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 &  2 & -1 & 0 \\\\\n0 & -3 &  3 & 0 \\\\\n0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n\\medskip\n$\\text{rank}(A) = 2 < 3$, so one free variable exists. Set $x_3 = t$.\n\n\\medskip\nFrom row 2: $-3x_2 + 3t = 0 \\implies x_2 = t$.\n\nFrom row 1: $x_1 + 2t - t = 0 \\implies x_1 = -t$.\n\n\\medskip\nGeneral solution:\n\\[\n(x_1, x_2, x_3) = t(-1,\\, 1,\\, 1), \\quad t \\in \\mathbb{R}.\n\\]\nThe system has infinitely many nontrivial solutions; the\nonly trivial solution occurs at $t = 0$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -341,7 +341,7 @@
     "section": "Homogeneous Systems",
     "type": "example",
     "title": "Example 2.28 --- Echelon Form of a System (Past Paper 2023 Q1iv)",
-    "content": "Convert the coefficient matrix of the given system to echelon form:\n\\[\nx_1 - x_2 + 2x_3 = 0, \\qquad\n4x_1 + x_2 + 2x_3 = 1, \\qquad\nx_1 + x_2 + x_3 = -1.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\nAugmented matrix:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 & 2 &  0 \\\\\n4 &  1 & 2 &  1 \\\\\n1 &  1 & 1 & -1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 4R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 &  2 &  0 \\\\\n0 &  5 & -6 &  1 \\\\\n0 &  2 & -1 & -1\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow 5R_3 - 2R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 &  2 &  0 \\\\\n0 &  5 & -6 &  1 \\\\\n0 &  0 &  7 & -7\n\\end{array}\\right]\n\\quad \\leftarrow \\textbf{Row Echelon Form}\n\\]\n\n\\medskip\nBack substitution from row 3: $7x_3 = -7 \\implies x_3 = -1$.\n\nFrom row 2: $5x_2 + 6 = 1 \\implies x_2 = -1$.\n\nFrom row 1: $x_1 + 1 - 2 = 0 \\implies x_1 = 1$.\n\n\\medskip\nSolution: $\\boxed{(x_1, x_2, x_3) = (1,\\,-1,\\,-1)}$.\n\\vspace{0.5cm}"
+    "content": "Convert the coefficient matrix of the given system to echelon form:\n\\[\nx_1 - x_2 + 2x_3 = 0, \\qquad\n4x_1 + x_2 + 2x_3 = 1, \\qquad\nx_1 + x_2 + x_3 = -1.\n\\]\n\nSolution:\n\n\\medskip\nAugmented matrix:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 & 2 &  0 \\\\\n4 &  1 & 2 &  1 \\\\\n1 &  1 & 1 & -1\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 4R_1$, $R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 &  2 &  0 \\\\\n0 &  5 & -6 &  1 \\\\\n0 &  2 & -1 & -1\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow 5R_3 - 2R_2$:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -1 &  2 &  0 \\\\\n0 &  5 & -6 &  1 \\\\\n0 &  0 &  7 & -7\n\\end{array}\\right]\n\\quad \\leftarrow \\textbf{Row Echelon Form}\n\\]\n\n\\medskip\nBack substitution from row 3: $7x_3 = -7 \\implies x_3 = -1$.\n\nFrom row 2: $5x_2 + 6 = 1 \\implies x_2 = -1$.\n\nFrom row 1: $x_1 + 1 - 2 = 0 \\implies x_1 = 1$.\n\n\\medskip\nSolution: $\\boxed{(x_1, x_2, x_3) = (1,\\,-1,\\,-1)}$."
   },
   {
     "course": "Linear Algebra",
@@ -349,7 +349,7 @@
     "section": "Null Space of a Matrix",
     "type": "definition",
     "title": "Null Space",
-    "content": "The \\textbf{null space} (or \\textbf{kernel}) of an $m \\times n$ matrix\n$A$ is the set of all solutions to the homogeneous system $Ax = \\mathbf{0}$:\n\\[\n\\text{Null}(A) = \\{ x \\in \\mathbb{R}^n : Ax = \\mathbf{0} \\}.\n\\]\nThe null space is always a \\textbf{subspace} of $\\mathbb{R}^n$.\n\n\\medskip\nThe \\textbf{nullity} of $A$ is the dimension of the null space:\n\\[\n\\text{nullity}(A) = n - \\text{rank}(A).\n\\]\nThis is also the number of free variables in the solution of\n$Ax = \\mathbf{0}$."
+    "content": "The null space (or kernel) of an $m \\times n$ matrix\n$A$ is the set of all solutions to the homogeneous system $Ax = \\mathbf{0}$:\n\\[\n\\text{Null}(A) = \\{ x \\in \\mathbb{R}^n : Ax = \\mathbf{0} \\}.\n\\]\nThe null space is always a subspace of $\\mathbb{R}^n$.\n\n\\medskip\nThe nullity of $A$ is the dimension of the null space:\n\\[\n\\text{nullity}(A) = n - \\text{rank}(A).\n\\]\nThis is also the number of free variables in the solution of\n$Ax = \\mathbf{0}$."
   },
   {
     "course": "Linear Algebra",
@@ -357,7 +357,7 @@
     "section": "Null Space of a Matrix",
     "type": "keypoint",
     "title": "{Rank-Nullity Theorem:} For any $m n$",
-    "content": "\\textbf{Rank-Nullity Theorem:}\nFor any $m \\times n$ matrix $A$:\n\\[\n\\text{rank}(A) + \\text{nullity}(A) = n.\n\\]\nThe rank counts the pivot variables; the nullity counts the free variables.\nTogether they always sum to the total number of unknowns $n$.\n\n\\bigskip"
+    "content": "Rank-Nullity Theorem:\nFor any $m \\times n$ matrix $A$:\n\\[\n\\text{rank}(A) + \\text{nullity}(A) = n.\n\\]\nThe rank counts the pivot variables; the nullity counts the free variables.\nTogether they always sum to the total number of unknowns $n$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -365,7 +365,7 @@
     "section": "Null Space of a Matrix",
     "type": "example",
     "title": "Example 2.29 --- Finding the Null Space of a Matrix",
-    "content": "Find the null space and nullity of\n\\[\nA =\n\\begin{bmatrix}\n1 & 2 & -1 & 3 \\\\\n2 & 4 &  1 & 1 \\\\\n3 & 6 &  0 & 4\n\\end{bmatrix}.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\nRow reduce the augmented matrix $[A \\mid \\mathbf{0}]$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & 2 & -1 & 3 & 0 \\\\\n2 & 4 &  1 & 1 & 0 \\\\\n3 & 6 &  0 & 4 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - 3R_1$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & 2 & -1 &  3 & 0 \\\\\n0 & 0 &  3 & -5 & 0 \\\\\n0 & 0 &  3 & -5 & 0\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & 2 & -1 &  3 & 0 \\\\\n0 & 0 &  3 & -5 & 0 \\\\\n0 & 0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n\\medskip\nPivot columns: 1 and 3. Free variables: $x_2 = s$, $x_4 = t$.\n\n\\medskip\nFrom row 2: $3x_3 = 5t \\implies x_3 = \\tfrac{5t}{3}$.\n\nFrom row 1:\n\\[\nx_1 = -2s + x_3 - 3t = -2s + \\frac{5t}{3} - 3t\n= -2s - \\frac{4t}{3}.\n\\]\n\n\\medskip\nGeneral solution:\n\\[\nx = s\\begin{bmatrix}-2\\\\1\\\\0\\\\0\\end{bmatrix}\n+ t\\begin{bmatrix}-\\tfrac{4}{3}\\\\0\\\\\\tfrac{5}{3}\\\\1\\end{bmatrix},\n\\quad s, t \\in \\mathbb{R}.\n\\]\n\n\\medskip\n$\\text{Null}(A)$ is spanned by these two vectors.\n$\\text{nullity}(A) = 2$, $\\text{rank}(A) = 2$, and\n$2 + 2 = 4 = n$. \\checkmark\n\n\\bigskip"
+    "content": "Find the null space and nullity of\n\\[\nA =\n\\begin{bmatrix}\n1 & 2 & -1 & 3 \\\\\n2 & 4 &  1 & 1 \\\\\n3 & 6 &  0 & 4\n\\end{bmatrix}.\n\\]\n\nSolution:\n\n\\medskip\nRow reduce the augmented matrix $[A \\mid \\mathbf{0}]$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & 2 & -1 & 3 & 0 \\\\\n2 & 4 &  1 & 1 & 0 \\\\\n3 & 6 &  0 & 4 & 0\n\\end{array}\\right]\n\\]\n\n$R_2 \\leftarrow R_2 - 2R_1$, $R_3 \\leftarrow R_3 - 3R_1$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & 2 & -1 &  3 & 0 \\\\\n0 & 0 &  3 & -5 & 0 \\\\\n0 & 0 &  3 & -5 & 0\n\\end{array}\\right]\n\\]\n\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\left[\\begin{array}{cccc|c}\n1 & 2 & -1 &  3 & 0 \\\\\n0 & 0 &  3 & -5 & 0 \\\\\n0 & 0 &  0 &  0 & 0\n\\end{array}\\right]\n\\]\n\n\\medskip\nPivot columns: 1 and 3. Free variables: $x_2 = s$, $x_4 = t$.\n\n\\medskip\nFrom row 2: $3x_3 = 5t \\implies x_3 = \\tfrac{5t}{3}$.\n\nFrom row 1:\n\\[\nx_1 = -2s + x_3 - 3t = -2s + \\frac{5t}{3} - 3t\n= -2s - \\frac{4t}{3}.\n\\]\n\n\\medskip\nGeneral solution:\n\\[\nx = s\\begin{bmatrix}-2\\\\1\\\\0\\\\0\\end{bmatrix}\n+ t\\begin{bmatrix}-\\tfrac{4}{3}\\\\0\\\\\\tfrac{5}{3}\\\\1\\end{bmatrix},\n\\quad s, t \\in \\mathbb{R}.\n\\]\n\n\\medskip\n$\\text{Null}(A)$ is spanned by these two vectors.\n$\\text{nullity}(A) = 2$, $\\text{rank}(A) = 2$, and\n$2 + 2 = 4 = n$. ✓\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -373,7 +373,7 @@
     "section": "Null Space of a Matrix",
     "type": "example",
     "title": "Example 2.30 --- Null Space of a Square Matrix",
-    "content": "Find the null space of\n\\[\nA =\n\\begin{bmatrix}\n2 & -4 & 2 \\\\\n1 & -2 & 1 \\\\\n3 & -6 & 3\n\\end{bmatrix}.\n\\]\n\n\\textbf{Solution:}\n\n\\medskip\nAll rows are multiples of $(1, -2, 1)$, so after row reduction:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -2 & 1 & 0 \\\\\n0 &  0 & 0 & 0 \\\\\n0 &  0 & 0 & 0\n\\end{array}\\right]\n\\]\n\n\\medskip\nOne pivot variable: $x_1$. Free variables: $x_2 = s$, $x_3 = t$.\n\nFrom row 1: $x_1 = 2s - t$.\n\n\\medskip\nGeneral solution:\n\\[\nx = s\\begin{bmatrix}2\\\\1\\\\0\\end{bmatrix}\n+ t\\begin{bmatrix}-1\\\\0\\\\1\\end{bmatrix},\n\\quad s, t \\in \\mathbb{R}.\n\\]\n\n$\\text{nullity}(A) = 2$, $\\text{rank}(A) = 1$, and $1 + 2 = 3 = n$. \\checkmark\n\n\\bigskip"
+    "content": "Find the null space of\n\\[\nA =\n\\begin{bmatrix}\n2 & -4 & 2 \\\\\n1 & -2 & 1 \\\\\n3 & -6 & 3\n\\end{bmatrix}.\n\\]\n\nSolution:\n\n\\medskip\nAll rows are multiples of $(1, -2, 1)$, so after row reduction:\n\\[\n\\left[\\begin{array}{ccc|c}\n1 & -2 & 1 & 0 \\\\\n0 &  0 & 0 & 0 \\\\\n0 &  0 & 0 & 0\n\\end{array}\\right]\n\\]\n\n\\medskip\nOne pivot variable: $x_1$. Free variables: $x_2 = s$, $x_3 = t$.\n\nFrom row 1: $x_1 = 2s - t$.\n\n\\medskip\nGeneral solution:\n\\[\nx = s\\begin{bmatrix}2\\\\1\\\\0\\end{bmatrix}\n+ t\\begin{bmatrix}-1\\\\0\\\\1\\end{bmatrix},\n\\quad s, t \\in \\mathbb{R}.\n\\]\n\n$\\text{nullity}(A) = 2$, $\\text{rank}(A) = 1$, and $1 + 2 = 3 = n$. ✓\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -381,7 +381,7 @@
     "section": "Null Space of a Matrix",
     "type": "example",
     "title": "Example 2.31 --- Rank and Nullity Verification",
-    "content": "For the matrix\n\\[\nA =\n\\begin{bmatrix}\n1 & 0 & -3 & 0 & 2 \\\\\n0 & 1 &  5 & 0 & -1 \\\\\n0 & 0 &  0 & 1 & 4 \\\\\n0 & 0 &  0 & 0 & 0\n\\end{bmatrix},\n\\]\nidentify the pivot and free variables, state $\\text{rank}(A)$\nand $\\text{nullity}(A)$, and verify the Rank-Nullity Theorem.\n\n\\textbf{Solution:}\n\n\\medskip\nThe matrix is already in RREF. Pivots appear in columns 1, 2, and 4.\n\\[\n\\text{rank}(A) = 3.\n\\]\nFree variables are $x_3$ and $x_5$ (columns 3 and 5).\n\\[\n\\text{nullity}(A) = 5 - 3 = 2.\n\\]\n\nRank-Nullity check:\n\\[\n\\text{rank}(A) + \\text{nullity}(A) = 3 + 2 = 5 = n. \\;\\checkmark\n\\]\n\n\n\n\n\\newpage"
+    "content": "For the matrix\n\\[\nA =\n\\begin{bmatrix}\n1 & 0 & -3 & 0 & 2 \\\\\n0 & 1 &  5 & 0 & -1 \\\\\n0 & 0 &  0 & 1 & 4 \\\\\n0 & 0 &  0 & 0 & 0\n\\end{bmatrix},\n\\]\nidentify the pivot and free variables, state $\\text{rank}(A)$\nand $\\text{nullity}(A)$, and verify the Rank-Nullity Theorem.\n\nSolution:\n\n\\medskip\nThe matrix is already in RREF. Pivots appear in columns 1, 2, and 4.\n\\[\n\\text{rank}(A) = 3.\n\\]\nFree variables are $x_3$ and $x_5$ (columns 3 and 5).\n\\[\n\\text{nullity}(A) = 5 - 3 = 2.\n\\]\n\nRank-Nullity check:\n\\[\n\\text{rank}(A) + \\text{nullity}(A) = 3 + 2 = 5 = n. \\;\\checkmark\n\\]"
   },
   {
     "course": "Linear Algebra",

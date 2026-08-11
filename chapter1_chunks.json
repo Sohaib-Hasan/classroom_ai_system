@@ -5,7 +5,7 @@
     "section": "Matrices",
     "type": "definition",
     "title": "Matrix",
-    "content": "A \\textbf{matrix} is a rectangular array of numbers arranged in rows\nand columns, enclosed in square brackets. A matrix having $m$ rows and\n$n$ columns is called an $m \\times n$ \\textbf{matrix}. The number in\nrow $i$ and column $j$ is called the \\textbf{$(i,j)$-entry} and is\ndenoted $a_{ij}$.\n\\[\nA =\n\\begin{bmatrix}\na_{11} & a_{12} & \\cdots & a_{1n} \\\\\na_{21} & a_{22} & \\cdots & a_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m1} & a_{m2} & \\cdots & a_{mn}\n\\end{bmatrix}\n\\]\nWe write $A = [a_{ij}]$ for short and say that $A$ has\n\\textbf{order} $m \\times n$. Two matrices are \\textbf{equal} if and\nonly if they have the same order and every corresponding entry is\nequal."
+    "content": "A matrix is a rectangular array of numbers arranged in rows\nand columns, enclosed in square brackets. A matrix having $m$ rows and\n$n$ columns is called an $m \\times n$ matrix. The number in\nrow $i$ and column $j$ is called the $(i,j)$-entry and is\ndenoted $a_{ij}$.\n\\[\nA =\n\\begin{bmatrix}\na_{11} & a_{12} & \\cdots & a_{1n} \\\\\na_{21} & a_{22} & \\cdots & a_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m1} & a_{m2} & \\cdots & a_{mn}\n\\end{bmatrix}\n\\]\nWe write $A = [a_{ij}]$ for short and say that $A$ has\norder $m \\times n$. Two matrices are equal if and\nonly if they have the same order and every corresponding entry is\nequal."
   },
   {
     "course": "Linear Algebra",
@@ -37,7 +37,7 @@
     "section": "Matrices",
     "type": "definition",
     "title": "Special Types of Matrices",
-    "content": "\\begin{itemize}[leftmargin=1.8em, itemsep=5pt]\n  \\item \\textbf{Row Matrix:} A matrix having exactly one row.\n  \\item \\textbf{Column Matrix:} A matrix having exactly one column.\n  \\item \\textbf{Square Matrix:} A matrix in which the number of rows\n        equals the number of columns, i.e.\\ $m = n$.\n  \\item \\textbf{Zero Matrix $(\\mathbf{0})$:} A matrix in which every\n        entry is zero.\n  \\item \\textbf{Identity Matrix $(I_n)$:} The $n\\times n$ square\n        matrix with $1$s on the main diagonal and $0$s elsewhere:\n        \\[\n        I_2 = \\begin{bmatrix}1&0\\\\0&1\\end{bmatrix}, \\qquad\n        I_3 = \\begin{bmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}.\n        \\]\n\\end{itemize}"
+    "content": "- Row Matrix: A matrix having exactly one row.\n- Column Matrix: A matrix having exactly one column.\n- Square Matrix: A matrix in which the number of rows\n        equals the number of columns, i.e.\\ $m = n$.\n- Zero Matrix $(\\mathbf{0})$: A matrix in which every\n        entry is zero.\n- Identity Matrix $(I_n)$: The $n\\times n$ square\n        matrix with $1$s on the main diagonal and $0$s elsewhere:\n        \\[\n        I_2 = \\begin{bmatrix}1&0\\\\0&1\\end{bmatrix}, \\qquad\n        I_3 = \\begin{bmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}.\n        \\]"
   },
   {
     "course": "Linear Algebra",
@@ -45,7 +45,7 @@
     "section": "Matrices",
     "type": "example",
     "title": "Example 1.4 --- Identifying Types of Matrices",
-    "content": "Identify the type of each matrix.\n\\[\nA = \\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}, \\quad\nB = \\begin{bmatrix} 4 \\\\ -1 \\\\ 0 \\end{bmatrix}, \\quad\nC = \\begin{bmatrix} 2 & 5 \\\\ 3 & -1 \\end{bmatrix}, \\quad\nD = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix}.\n\\]\n\n\\begin{itemize}[leftmargin=1.8em, itemsep=2pt]\n  \\item $A$ is a $1\\times 3$ \\textbf{row matrix}.\n  \\item $B$ is a $3\\times 1$ \\textbf{column matrix}.\n  \\item $C$ is a $2\\times 2$ \\textbf{square matrix}.\n  \\item $D$ is a $2\\times 2$ \\textbf{zero matrix}.\n\\end{itemize}\n\n\\bigskip"
+    "content": "Identify the type of each matrix.\n\\[\nA = \\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}, \\quad\nB = \\begin{bmatrix} 4 \\\\ -1 \\\\ 0 \\end{bmatrix}, \\quad\nC = \\begin{bmatrix} 2 & 5 \\\\ 3 & -1 \\end{bmatrix}, \\quad\nD = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix}.\n\\]\n\n- $A$ is a $1\\times 3$ row matrix.\n- $B$ is a $3\\times 1$ column matrix.\n- $C$ is a $2\\times 2$ square matrix.\n- $D$ is a $2\\times 2$ zero matrix.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -53,7 +53,7 @@
     "section": "Matrices",
     "type": "example",
     "title": "Example 1.5 -Past Paper 2024 Q1(i) 2025 Q1(ix)",
-    "content": "If $B$ and $C$ are both inverses of a matrix $A$, prove that $B = C$.\n\nSince $B$ is an inverse of $A$:\\quad $BA = I$.\\\\\nSince $C$ is an inverse of $A$:\\quad $AC = I$.\\\\\nMultiply both sides of $BA = I$ on the right by $C$:\n\\[\n(BA)C = IC \\;\\Rightarrow\\; B(AC) = C \\;\\Rightarrow\\; BI = C\n\\;\\Rightarrow\\; B = C.\n\\]\nHence any matrix has \\textbf{at most one} inverse.\n\n\\bigskip"
+    "content": "If $B$ and $C$ are both inverses of a matrix $A$, prove that $B = C$.\n\nSince $B$ is an inverse of $A$:\\quad $BA = I$.\\\\\nSince $C$ is an inverse of $A$:\\quad $AC = I$.\\\\\nMultiply both sides of $BA = I$ on the right by $C$:\n\\[\n(BA)C = IC \\;\\Rightarrow\\; B(AC) = C \\;\\Rightarrow\\; BI = C\n\\;\\Rightarrow\\; B = C.\n\\]\nHence any matrix has at most one inverse.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -61,7 +61,7 @@
     "section": "Matrices",
     "type": "example",
     "title": "Example 1.6 --- Identity Matrix Check",
-    "content": "For what value of $k$ does\n$\\begin{bmatrix} k+1 & 0 \\\\ 0 & 2k-3 \\end{bmatrix} = I_2$?\n\nWe need both diagonal entries to equal $1$:\n\\[\nk + 1 = 1 \\;\\Rightarrow\\; k = 0, \\qquad\n2k - 3 = 1 \\;\\Rightarrow\\; k = 2.\n\\]\nThe two conditions give different values of $k$, so \\textbf{no}\nsingle value of $k$ makes this matrix equal to $I_2$."
+    "content": "For what value of $k$ does\n$\\begin{bmatrix} k+1 & 0 \\\\ 0 & 2k-3 \\end{bmatrix} = I_2$?\n\nWe need both diagonal entries to equal $1$:\n\\[\nk + 1 = 1 \\;\\Rightarrow\\; k = 0, \\qquad\n2k - 3 = 1 \\;\\Rightarrow\\; k = 2.\n\\]\nThe two conditions give different values of $k$, so no\nsingle value of $k$ makes this matrix equal to $I_2$."
   },
   {
     "course": "Linear Algebra",
@@ -69,7 +69,7 @@
     "section": "Algebra of Matrices",
     "type": "definition",
     "title": "Matrix Addition",
-    "content": "Let $A = [a_{ij}]$ and $B = [b_{ij}]$ be two $m\\times n$ matrices.\nTheir \\textbf{sum} $A + B$ is the $m\\times n$ matrix obtained by\nadding corresponding entries:\n\\[\n(A + B)_{ij} = a_{ij} + b_{ij}.\n\\]\nMatrix addition is defined \\textbf{only} when $A$ and $B$ have the\nsame order. The \\textbf{difference} is defined as\n$A - B = [a_{ij} - b_{ij}]$."
+    "content": "Let $A = [a_{ij}]$ and $B = [b_{ij}]$ be two $m\\times n$ matrices.\nTheir sum $A + B$ is the $m\\times n$ matrix obtained by\nadding corresponding entries:\n\\[\n(A + B)_{ij} = a_{ij} + b_{ij}.\n\\]\nMatrix addition is defined only when $A$ and $B$ have the\nsame order. The difference is defined as\n$A - B = [a_{ij} - b_{ij}]$."
   },
   {
     "course": "Linear Algebra",
@@ -85,7 +85,7 @@
     "section": "Algebra of Matrices",
     "type": "definition",
     "title": "Scalar Multiplication",
-    "content": "Let $A = [a_{ij}]$ be an $m\\times n$ matrix and let $k$ be a real\nnumber (called a \\textbf{scalar}). The \\textbf{scalar multiple} $kA$\nis the $m\\times n$ matrix obtained by multiplying every entry of $A$\nby $k$:\n\\[\n(kA)_{ij} = k \\cdot a_{ij}.\n\\]\nThe \\textbf{negative} of $A$ is defined as $-A = (-1)A$."
+    "content": "Let $A = [a_{ij}]$ be an $m\\times n$ matrix and let $k$ be a real\nnumber (called a scalar). The scalar multiple $kA$\nis the $m\\times n$ matrix obtained by multiplying every entry of $A$\nby $k$:\n\\[\n(kA)_{ij} = k \\cdot a_{ij}.\n\\]\nThe negative of $A$ is defined as $-A = (-1)A$."
   },
   {
     "course": "Linear Algebra",
@@ -117,7 +117,7 @@
     "section": "Algebra of Matrices",
     "type": "theorem",
     "title": "Properties of Matrix Addition and Scalar Multiplication",
-    "content": "Let $A$, $B$, $C$ be $m\\times n$ matrices and $k$, $\\ell$ be scalars.\nThen:\n\\begin{enumerate}[leftmargin=2em, itemsep=4pt]\n  \\item $A + B = B + A$ \\hfill\\textit{(Commutativity of Addition)}\n  \\item $(A+B)+C = A+(B+C)$\n        \\hfill\\textit{(Associativity of Addition)}\n  \\item $A + \\mathbf{0} = A$ \\hfill\\textit{(Additive Identity)}\n  \\item $A + (-A) = \\mathbf{0}$ \\hfill\\textit{(Additive Inverse)}\n  \\item $k(A+B) = kA + kB$ \\hfill\\textit{(Distributivity I)}\n  \\item $(k+\\ell)A = kA + \\ell A$ \\hfill\\textit{(Distributivity II)}\n  \\item $k(\\ell A) = (k\\ell)A$\n        \\hfill\\textit{(Associativity of Scalar Mult.)}\n  \\item $1 \\cdot A = A$ \\hfill\\textit{(Scalar Identity)}\n\\end{enumerate}"
+    "content": "Let $A$, $B$, $C$ be $m\\times n$ matrices and $k$, $\\ell$ be scalars.\nThen:\n\n1. $A + B = B + A$ \\hfill(Commutativity of Addition)\n2. $(A+B)+C = A+(B+C)$\n        \\hfill(Associativity of Addition)\n3. $A + \\mathbf{0} = A$ \\hfill(Additive Identity)\n4. $A + (-A) = \\mathbf{0}$ \\hfill(Additive Inverse)\n5. $k(A+B) = kA + kB$ \\hfill(Distributivity I)\n6. $(k+\\ell)A = kA + \\ell A$ \\hfill(Distributivity II)\n7. $k(\\ell A) = (k\\ell)A$\n        \\hfill(Associativity of Scalar Mult.)\n8. $1 \\cdot A = A$ \\hfill(Scalar Identity)"
   },
   {
     "course": "Linear Algebra",
@@ -125,7 +125,7 @@
     "section": "Algebra of Matrices",
     "type": "definition",
     "title": "Sigma (Summation) Notation",
-    "content": "For a sequence of numbers $a_1, a_2, \\ldots, a_n$, the\n\\textbf{summation notation} is defined as:\n\\[\n\\sum_{k=1}^{n} a_k = a_1 + a_2 + \\cdots + a_n,\n\\]\nwhere $k$ is the \\textbf{index of summation}, $1$ is the\n\\textbf{lower limit} and $n$ is the \\textbf{upper limit}. This\nnotation is used in the definition of matrix multiplication to\nexpress the $(i,j)$-entry of a product compactly."
+    "content": "For a sequence of numbers $a_1, a_2, \\ldots, a_n$, the\nsummation notation is defined as:\n\\[\n\\sum_{k=1}^{n} a_k = a_1 + a_2 + \\cdots + a_n,\n\\]\nwhere $k$ is the index of summation, $1$ is the\nlower limit and $n$ is the upper limit. This\nnotation is used in the definition of matrix multiplication to\nexpress the $(i,j)$-entry of a product compactly."
   },
   {
     "course": "Linear Algebra",
@@ -157,7 +157,7 @@
     "section": "Algebra of Matrices",
     "type": "definition",
     "title": "Matrix Multiplication",
-    "content": "Let $A$ be an $m\\times p$ matrix and $B$ be a $p\\times n$ matrix.\nThe \\textbf{product} $AB$ is the $m\\times n$ matrix $C = [c_{ij}]$\nwhose $(i,j)$-entry is:\n\\[\nc_{ij} = \\sum_{k=1}^{p} a_{ik}\\,b_{kj}\n= a_{i1}b_{1j} + a_{i2}b_{2j} + \\cdots + a_{ip}b_{pj}.\n\\]\n\\textbf{Compatibility Rule:} The product $AB$ is defined if and only\nif the number of \\textbf{columns of $A$} equals the number of\n\\textbf{rows of $B$}. If $A$ is $m\\times p$ and $B$ is $p\\times n$,\nthen $AB$ is $m\\times n$:\n\\[\n\\underbrace{A}_{m\\times p}\n\\;\\underbrace{B}_{p\\times n}\n\\;=\\;\n\\underbrace{AB}_{m\\times n}.\n\\]"
+    "content": "Let $A$ be an $m\\times p$ matrix and $B$ be a $p\\times n$ matrix.\nThe product $AB$ is the $m\\times n$ matrix $C = [c_{ij}]$\nwhose $(i,j)$-entry is:\n\\[\nc_{ij} = \\sum_{k=1}^{p} a_{ik}\\,b_{kj}\n= a_{i1}b_{1j} + a_{i2}b_{2j} + \\cdots + a_{ip}b_{pj}.\n\\]\nCompatibility Rule: The product $AB$ is defined if and only\nif the number of columns of $A$ equals the number of\nrows of $B$. If $A$ is $m\\times p$ and $B$ is $p\\times n$,\nthen $AB$ is $m\\times n$:\n\\[\n\\underbrace{A}_{m\\times p}\n\\;\\underbrace{B}_{p\\times n}\n\\;=\\;\n\\underbrace{AB}_{m\\times n}.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -165,7 +165,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.14 --- Product of Two $2\\times 2$ Matrices",
-    "content": "Let $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$ and\n$B = \\begin{bmatrix} 5 & 6 \\\\ 7 & 8 \\end{bmatrix}$.\nCompute $AB$.\n\nBoth are $2\\times 2$, so $AB$ is $2\\times 2$.\n\\begin{align*}\nc_{11} &= (1)(5)+(2)(7) = 5+14 = 19,\\\\\nc_{12} &= (1)(6)+(2)(8) = 6+16 = 22,\\\\\nc_{21} &= (3)(5)+(4)(7) = 15+28 = 43,\\\\\nc_{22} &= (3)(6)+(4)(8) = 18+32 = 50.\n\\end{align*}\n\\[\nAB = \\begin{bmatrix} 19 & 22 \\\\ 43 & 50 \\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Let $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$ and\n$B = \\begin{bmatrix} 5 & 6 \\\\ 7 & 8 \\end{bmatrix}$.\nCompute $AB$.\n\nBoth are $2\\times 2$, so $AB$ is $2\\times 2$.\n$$\\begin{align*}\nc_{11} &= (1)(5)+(2)(7) = 5+14 = 19,\\\\\nc_{12} &= (1)(6)+(2)(8) = 6+16 = 22,\\\\\nc_{21} &= (3)(5)+(4)(7) = 15+28 = 43,\\\\\nc_{22} &= (3)(6)+(4)(8) = 18+32 = 50.\n\\end{align*}$$\n\\[\nAB = \\begin{bmatrix} 19 & 22 \\\\ 43 & 50 \\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -173,7 +173,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.15 --- Product of Matrices of Different Sizes",
-    "content": "Let $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}$ and\n$B = \\begin{bmatrix} 7 & 8 \\\\ 9 & 10 \\\\ 11 & 12 \\end{bmatrix}$.\nCompute $AB$.\n\n$A$ is $2\\times 3$ and $B$ is $3\\times 2$, so $AB$ is $2\\times 2$.\n\\begin{align*}\nc_{11} &= (1)(7)+(2)(9)+(3)(11) = 7+18+33 = 58,\\\\\nc_{12} &= (1)(8)+(2)(10)+(3)(12) = 8+20+36 = 64,\\\\\nc_{21} &= (4)(7)+(5)(9)+(6)(11) = 28+45+66 = 139,\\\\\nc_{22} &= (4)(8)+(5)(10)+(6)(12) = 32+50+72 = 154.\n\\end{align*}\n\\[\nAB = \\begin{bmatrix} 58 & 64 \\\\ 139 & 154 \\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Let $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}$ and\n$B = \\begin{bmatrix} 7 & 8 \\\\ 9 & 10 \\\\ 11 & 12 \\end{bmatrix}$.\nCompute $AB$.\n\n$A$ is $2\\times 3$ and $B$ is $3\\times 2$, so $AB$ is $2\\times 2$.\n$$\\begin{align*}\nc_{11} &= (1)(7)+(2)(9)+(3)(11) = 7+18+33 = 58,\\\\\nc_{12} &= (1)(8)+(2)(10)+(3)(12) = 8+20+36 = 64,\\\\\nc_{21} &= (4)(7)+(5)(9)+(6)(11) = 28+45+66 = 139,\\\\\nc_{22} &= (4)(8)+(5)(10)+(6)(12) = 32+50+72 = 154.\n\\end{align*}$$\n\\[\nAB = \\begin{bmatrix} 58 & 64 \\\\ 139 & 154 \\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -181,7 +181,7 @@
     "section": "Algebra of Matrices",
     "type": "theorem",
     "title": "Properties of Matrix Multiplication",
-    "content": "Let $A$, $B$, $C$ be matrices of sizes for which the operations\nare defined and $k$ be a scalar. Then:\n\\begin{enumerate}[leftmargin=2em, itemsep=4pt]\n  \\item $(AB)C = A(BC)$ \\hfill\\textit{(Associativity)}\n  \\item $A(B+C) = AB + AC$ \\hfill\\textit{(Left Distributivity)}\n  \\item $(A+B)C = AC + BC$ \\hfill\\textit{(Right Distributivity)}\n  \\item $k(AB) = (kA)B = A(kB)$\n        \\hfill\\textit{(Scalar Associativity)}\n  \\item $AI = IA = A$ \\hfill\\textit{(Identity)}\n\\end{enumerate}\n\\textbf{The following properties do NOT hold in general:}\n\\begin{itemize}[leftmargin=1.5em, itemsep=3pt]\n  \\item $AB \\neq BA$ \\hfill\\textit{(commutative law fails)}\n  \\item $AB = \\mathbf{0} \\not\\Rightarrow A=\\mathbf{0}$\n        or $B=\\mathbf{0}$ \\hfill\\textit{(zero-product law fails)}\n  \\item $AB = AC \\not\\Rightarrow B = C$\n        \\hfill\\textit{(cancellation law fails)}\n\\end{itemize}"
+    "content": "Let $A$, $B$, $C$ be matrices of sizes for which the operations\nare defined and $k$ be a scalar. Then:\n\n1. $(AB)C = A(BC)$ \\hfill(Associativity)\n2. $A(B+C) = AB + AC$ \\hfill(Left Distributivity)\n3. $(A+B)C = AC + BC$ \\hfill(Right Distributivity)\n4. $k(AB) = (kA)B = A(kB)$\n        \\hfill(Scalar Associativity)\n5. $AI = IA = A$ \\hfill(Identity)\n\nThe following properties do NOT hold in general:\n\n- $AB \\neq BA$ \\hfill(commutative law fails)\n- $AB = \\mathbf{0} \\not\\Rightarrow A=\\mathbf{0}$\n        or $B=\\mathbf{0}$ \\hfill(zero-product law fails)\n- $AB = AC \\not\\Rightarrow B = C$\n        \\hfill(cancellation law fails)"
   },
   {
     "course": "Linear Algebra",
@@ -189,7 +189,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.16 -Past Paper 2021 Q1(ii)",
-    "content": "Which property does not hold in matrix multiplication?\nWrite one example to justify.\n\nThe \\textbf{commutative property} fails. In general $AB \\neq BA$.\n\nLet $A = \\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}$ and\n$B = \\begin{bmatrix}0&0\\\\1&1\\end{bmatrix}$.\n\\[\nAB =\n\\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}\n\\begin{bmatrix}0&0\\\\1&1\\end{bmatrix}\n=\n\\begin{bmatrix}0+1 & 0+1\\\\0 & 0\\end{bmatrix}\n=\n\\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}.\n\\]\n\\[\nBA =\n\\begin{bmatrix}0&0\\\\1&1\\end{bmatrix}\n\\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}\n=\n\\begin{bmatrix}0 & 0\\\\1 & 1\\end{bmatrix}.\n\\]\nSince $AB \\neq BA$, the commutative property does \\textbf{not} hold.\n\n\\bigskip"
+    "content": "Which property does not hold in matrix multiplication?\nWrite one example to justify.\n\nThe commutative property fails. In general $AB \\neq BA$.\n\nLet $A = \\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}$ and\n$B = \\begin{bmatrix}0&0\\\\1&1\\end{bmatrix}$.\n\\[\nAB =\n\\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}\n\\begin{bmatrix}0&0\\\\1&1\\end{bmatrix}\n=\n\\begin{bmatrix}0+1 & 0+1\\\\0 & 0\\end{bmatrix}\n=\n\\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}.\n\\]\n\\[\nBA =\n\\begin{bmatrix}0&0\\\\1&1\\end{bmatrix}\n\\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}\n=\n\\begin{bmatrix}0 & 0\\\\1 & 1\\end{bmatrix}.\n\\]\nSince $AB \\neq BA$, the commutative property does not hold.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -197,7 +197,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.17 --- Zero Product Without Zero Factors",
-    "content": "Give an example of two nonzero matrices $A$ and $B$ such that\n$AB = \\mathbf{0}$.\n\nLet $A = \\begin{bmatrix}1&0\\\\0&0\\end{bmatrix}$ and\n$B = \\begin{bmatrix}0&0\\\\0&1\\end{bmatrix}$.\n\\[\nAB =\n\\begin{bmatrix}1&0\\\\0&0\\end{bmatrix}\n\\begin{bmatrix}0&0\\\\0&1\\end{bmatrix}\n=\n\\begin{bmatrix}0&0\\\\0&0\\end{bmatrix} = \\mathbf{0}.\n\\]\nNeither $A$ nor $B$ is the zero matrix, yet $AB = \\mathbf{0}$.\nThis shows the \\textbf{zero-product law fails} for matrices.\n\n\\bigskip"
+    "content": "Give an example of two nonzero matrices $A$ and $B$ such that\n$AB = \\mathbf{0}$.\n\nLet $A = \\begin{bmatrix}1&0\\\\0&0\\end{bmatrix}$ and\n$B = \\begin{bmatrix}0&0\\\\0&1\\end{bmatrix}$.\n\\[\nAB =\n\\begin{bmatrix}1&0\\\\0&0\\end{bmatrix}\n\\begin{bmatrix}0&0\\\\0&1\\end{bmatrix}\n=\n\\begin{bmatrix}0&0\\\\0&0\\end{bmatrix} = \\mathbf{0}.\n\\]\nNeither $A$ nor $B$ is the zero matrix, yet $AB = \\mathbf{0}$.\nThis shows the zero-product law fails for matrices.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -205,7 +205,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.18 --- Cancellation Law Fails",
-    "content": "Find matrices $A$, $B$, $C$ with $A \\neq \\mathbf{0}$ such that\n$AB = AC$ but $B \\neq C$.\n\nLet\n$A = \\begin{bmatrix}1&2\\\\2&4\\end{bmatrix}$,\\;\n$B = \\begin{bmatrix}2&1\\\\0&1\\end{bmatrix}$,\\;\n$C = \\begin{bmatrix}0&3\\\\1&0\\end{bmatrix}$.\n\\[\nAB =\n\\begin{bmatrix}1&2\\\\2&4\\end{bmatrix}\n\\begin{bmatrix}2&1\\\\0&1\\end{bmatrix}\n=\n\\begin{bmatrix}2&3\\\\4&6\\end{bmatrix}.\n\\]\n\\[\nAC =\n\\begin{bmatrix}1&2\\\\2&4\\end{bmatrix}\n\\begin{bmatrix}0&3\\\\1&0\\end{bmatrix}\n=\n\\begin{bmatrix}0+2&3+0\\\\0+4&6+0\\end{bmatrix}\n=\n\\begin{bmatrix}2&3\\\\4&6\\end{bmatrix}.\n\\]\nSo $AB = AC$ yet $B \\neq C$, confirming the\n\\textbf{cancellation law fails} for matrices.\n\n\\bigskip"
+    "content": "Find matrices $A$, $B$, $C$ with $A \\neq \\mathbf{0}$ such that\n$AB = AC$ but $B \\neq C$.\n\nLet\n$A = \\begin{bmatrix}1&2\\\\2&4\\end{bmatrix}$,\\;\n$B = \\begin{bmatrix}2&1\\\\0&1\\end{bmatrix}$,\\;\n$C = \\begin{bmatrix}0&3\\\\1&0\\end{bmatrix}$.\n\\[\nAB =\n\\begin{bmatrix}1&2\\\\2&4\\end{bmatrix}\n\\begin{bmatrix}2&1\\\\0&1\\end{bmatrix}\n=\n\\begin{bmatrix}2&3\\\\4&6\\end{bmatrix}.\n\\]\n\\[\nAC =\n\\begin{bmatrix}1&2\\\\2&4\\end{bmatrix}\n\\begin{bmatrix}0&3\\\\1&0\\end{bmatrix}\n=\n\\begin{bmatrix}0+2&3+0\\\\0+4&6+0\\end{bmatrix}\n=\n\\begin{bmatrix}2&3\\\\4&6\\end{bmatrix}.\n\\]\nSo $AB = AC$ yet $B \\neq C$, confirming the\ncancellation law fails for matrices.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -213,7 +213,7 @@
     "section": "Algebra of Matrices",
     "type": "keypoint",
     "title": "{Summary --- Three Laws That Fail",
-    "content": "\\textbf{Summary --- Three Laws That Fail for Matrices:}\n\\begin{enumerate}[leftmargin=2em, itemsep=5pt]\n  \\item $AB \\neq BA$ in general \\hfill\n        \\textit{(commutative law fails)}\n  \\item $AB = \\mathbf{0}$ does \\textbf{not} imply\n        $A = \\mathbf{0}$ or $B = \\mathbf{0}$\n        \\hfill\\textit{(zero-product law fails)}\n  \\item $AB = AC$ does \\textbf{not} imply $B = C$\n        \\hfill\\textit{(cancellation law fails)}\n\\end{enumerate}"
+    "content": "Summary --- Three Laws That Fail for Matrices:\n\n1. $AB \\neq BA$ in general \\hfill\n        (commutative law fails)\n2. $AB = \\mathbf{0}$ does not imply\n        $A = \\mathbf{0}$ or $B = \\mathbf{0}$\n        \\hfill(zero-product law fails)\n3. $AB = AC$ does not imply $B = C$\n        \\hfill(cancellation law fails)"
   },
   {
     "course": "Linear Algebra",
@@ -221,7 +221,7 @@
     "section": "Algebra of Matrices",
     "type": "definition",
     "title": "Transpose of a Matrix",
-    "content": "The \\textbf{transpose} of an $m \\times n$ matrix $A = [a_{ij}]$ is\nthe $n \\times m$ matrix $A^T = [a_{ji}]$ obtained by writing the\nrows of $A$ as the columns of $A^T$. That is, the $(i,j)$-entry of\n$A^T$ equals the $(j,i)$-entry of $A$:\n\\[\n(A^T)_{ij} = a_{ji}.\n\\]"
+    "content": "The transpose of an $m \\times n$ matrix $A = [a_{ij}]$ is\nthe $n \\times m$ matrix $A^T = [a_{ji}]$ obtained by writing the\nrows of $A$ as the columns of $A^T$. That is, the $(i,j)$-entry of\n$A^T$ equals the $(j,i)$-entry of $A$:\n\\[\n(A^T)_{ij} = a_{ji}.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -229,7 +229,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.19 --- Computing the Transpose",
-    "content": "Find the transpose of\n$A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}$.\n\n\\textbf{Solution:}\n$A$ is $2\\times 3$, so $A^T$ is $3\\times 2$. Rows of $A$ become\ncolumns of $A^T$:\n\\[\nA^T =\n\\begin{bmatrix} 1 & 4 \\\\ 2 & 5 \\\\ 3 & 6 \\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Find the transpose of\n$A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}$.\n\nSolution:\n$A$ is $2\\times 3$, so $A^T$ is $3\\times 2$. Rows of $A$ become\ncolumns of $A^T$:\n\\[\nA^T =\n\\begin{bmatrix} 1 & 4 \\\\ 2 & 5 \\\\ 3 & 6 \\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -237,7 +237,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.20 --- Transpose of a Square Matrix",
-    "content": "Find $A^T$ for\n$A = \\begin{bmatrix} 5 & -3 & 0 \\\\ 2 & 1 & 7 \\\\ -1 & 4 & 6\n\\end{bmatrix}$.\n\n\\textbf{Solution:}\nWrite each row of $A$ as a column:\n\\[\nA^T =\n\\begin{bmatrix} 5 & 2 & -1 \\\\ -3 & 1 & 4 \\\\ 0 & 7 & 6\n\\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Find $A^T$ for\n$A = \\begin{bmatrix} 5 & -3 & 0 \\\\ 2 & 1 & 7 \\\\ -1 & 4 & 6\n\\end{bmatrix}$.\n\nSolution:\nWrite each row of $A$ as a column:\n\\[\nA^T =\n\\begin{bmatrix} 5 & 2 & -1 \\\\ -3 & 1 & 4 \\\\ 0 & 7 & 6\n\\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -245,7 +245,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.21 --- Past Paper 2025 Q1(ii) --- Transpose and Inverse",
-    "content": "If $A$ is a symmetric matrix, show that $(A^{-1})^T = (A^T)^{-1}$.\n\n\\textbf{Solution:}\nSince $A$ is symmetric, $A^T = A$. We need to show that $A^{-1}$\nis also symmetric, i.e.\\ $(A^{-1})^T = A^{-1}$.\n\nStart from $A A^{-1} = I$. Taking the transpose of both sides:\n\\[\n(A A^{-1})^T = I^T \\;\\Rightarrow\\; (A^{-1})^T A^T = I.\n\\]\nSince $A$ is symmetric $A^T = A$, so:\n\\[\n(A^{-1})^T A = I.\n\\]\nThis means $(A^{-1})^T$ is the inverse of $A$, i.e.\\\n$(A^{-1})^T = A^{-1} = (A^T)^{-1}$. \\hfill$\\square$\n\n\\bigskip"
+    "content": "If $A$ is a symmetric matrix, show that $(A^{-1})^T = (A^T)^{-1}$.\n\nSolution:\nSince $A$ is symmetric, $A^T = A$. We need to show that $A^{-1}$\nis also symmetric, i.e.\\ $(A^{-1})^T = A^{-1}$.\n\nStart from $A A^{-1} = I$. Taking the transpose of both sides:\n\\[\n(A A^{-1})^T = I^T \\;\\Rightarrow\\; (A^{-1})^T A^T = I.\n\\]\nSince $A$ is symmetric $A^T = A$, so:\n\\[\n(A^{-1})^T A = I.\n\\]\nThis means $(A^{-1})^T$ is the inverse of $A$, i.e.\\\n$(A^{-1})^T = A^{-1} = (A^T)^{-1}$. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -253,7 +253,7 @@
     "section": "Algebra of Matrices",
     "type": "theorem",
     "title": "Properties of the Transpose",
-    "content": "Let $A$ and $B$ be matrices and $k$ a scalar. Then:\n\\begin{enumerate}[leftmargin=2em, itemsep=4pt]\n  \\item $(A^T)^T = A$\n  \\item $(A + B)^T = A^T + B^T$\n  \\item $(kA)^T = k A^T$\n  \\item $(AB)^T = B^T A^T$ \\hfill\n        \\textit{(note the reversed order)}\n\\end{enumerate}"
+    "content": "Let $A$ and $B$ be matrices and $k$ a scalar. Then:\n\n1. $(A^T)^T = A$\n2. $(A + B)^T = A^T + B^T$\n3. $(kA)^T = k A^T$\n4. $(AB)^T = B^T A^T$ \\hfill\n        (note the reversed order)"
   },
   {
     "course": "Linear Algebra",
@@ -261,7 +261,7 @@
     "section": "Algebra of Matrices",
     "type": "definition",
     "title": "Main Diagonal and Trace",
-    "content": "In a square matrix $A$ of order $n$, the entries $a_{11}, a_{22},\n\\ldots, a_{nn}$ form the \\textbf{main diagonal}. The\n\\textbf{trace} of $A$, written $\\text{tr}(A)$, is the sum of all\nmain diagonal entries:\n\\[\n\\text{tr}(A) = a_{11} + a_{22} + \\cdots + a_{nn}\n= \\sum_{i=1}^{n} a_{ii}.\n\\]"
+    "content": "In a square matrix $A$ of order $n$, the entries $a_{11}, a_{22},\n\\ldots, a_{nn}$ form the main diagonal. The\ntrace of $A$, written $\\text{tr}(A)$, is the sum of all\nmain diagonal entries:\n\\[\n\\text{tr}(A) = a_{11} + a_{22} + \\cdots + a_{nn}\n= \\sum_{i=1}^{n} a_{ii}.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -269,7 +269,7 @@
     "section": "Algebra of Matrices",
     "type": "definition",
     "title": "Symmetric and Skew-Symmetric Matrices",
-    "content": "A square matrix $A$ is called:\n\\begin{itemize}[leftmargin=1.8em, itemsep=4pt]\n  \\item \\textbf{Symmetric} if $A^T = A$, i.e.\\ $a_{ij} = a_{ji}$\n        for all $i, j$.\n  \\item \\textbf{Skew-Symmetric} (or anti-symmetric) if\n        $A^T = -A$, i.e.\\ $a_{ij} = -a_{ji}$ for all $i, j$.\n        Note that every diagonal entry of a skew-symmetric matrix\n        must be zero.\n\\end{itemize}"
+    "content": "A square matrix $A$ is called:\n\n- Symmetric if $A^T = A$, i.e.\\ $a_{ij} = a_{ji}$\n        for all $i, j$.\n- Skew-Symmetric (or anti-symmetric) if\n        $A^T = -A$, i.e.\\ $a_{ij} = -a_{ji}$ for all $i, j$.\n        Note that every diagonal entry of a skew-symmetric matrix\n        must be zero."
   },
   {
     "course": "Linear Algebra",
@@ -277,7 +277,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.22 --- Symmetric and Skew-Symmetric Matrices",
-    "content": "Determine whether each matrix is symmetric, skew-symmetric or\nneither.\n\\[\nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 5 \\\\ 3 & 5 & 6\n\\end{bmatrix}, \\quad\nB = \\begin{bmatrix} 0 & 2 & -3 \\\\ -2 & 0 & 1 \\\\ 3 & -1 & 0\n\\end{bmatrix}, \\quad\nC = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}.\n\\]\n\n\\textbf{Solution:}\n\nFor $A$: $A^T = A$, so $A$ is \\textbf{symmetric}.\n\nFor $B$: $B^T = \\begin{bmatrix} 0&-2&3\\\\2&0&-1\\\\-3&1&0\n\\end{bmatrix} = -B$, so $B$ is \\textbf{skew-symmetric}.\n\nFor $C$: $C^T = \\begin{bmatrix}1&3\\\\2&4\\end{bmatrix} \\neq C$\nand $\\neq -C$, so $C$ is \\textbf{neither}.\n\n\\bigskip"
+    "content": "Determine whether each matrix is symmetric, skew-symmetric or\nneither.\n\\[\nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 5 \\\\ 3 & 5 & 6\n\\end{bmatrix}, \\quad\nB = \\begin{bmatrix} 0 & 2 & -3 \\\\ -2 & 0 & 1 \\\\ 3 & -1 & 0\n\\end{bmatrix}, \\quad\nC = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}.\n\\]\n\nSolution:\n\nFor $A$: $A^T = A$, so $A$ is symmetric.\n\nFor $B$: $B^T = \\begin{bmatrix} 0&-2&3\\\\2&0&-1\\\\-3&1&0\n\\end{bmatrix} = -B$, so $B$ is skew-symmetric.\n\nFor $C$: $C^T = \\begin{bmatrix}1&3\\\\2&4\\end{bmatrix} \\neq C$\nand $\\neq -C$, so $C$ is neither.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -285,7 +285,7 @@
     "section": "Algebra of Matrices",
     "type": "example",
     "title": "Example 1.23 --- Finding the Trace",
-    "content": "Find the trace of\n$A = \\begin{bmatrix} 3 & 1 & -2 \\\\ 0 & 5 & 4 \\\\ 7 & -1 & 2\n\\end{bmatrix}$.\n\n\\textbf{Solution:}\nThe main diagonal entries are $3$, $5$ and $2$:\n\\[\n\\text{tr}(A) = 3 + 5 + 2 = 10.\n\\]"
+    "content": "Find the trace of\n$A = \\begin{bmatrix} 3 & 1 & -2 \\\\ 0 & 5 & 4 \\\\ 7 & -1 & 2\n\\end{bmatrix}$.\n\nSolution:\nThe main diagonal entries are $3$, $5$ and $2$:\n\\[\n\\text{tr}(A) = 3 + 5 + 2 = 10.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -293,7 +293,7 @@
     "section": "Powers of Matrices and Polynomials in Matrices",
     "type": "definition",
     "title": "Powers of a Square Matrix",
-    "content": "Let $A$ be a square matrix of order $n$ and let $p$ be a positive\ninteger. The \\textbf{$p$-th power} of $A$ is defined as:\n\\[\nA^p = \\underbrace{A \\cdot A \\cdots A}_{p \\text{ times}}.\n\\]\nWe also define $A^0 = I_n$. If $A$ is invertible, then for any\npositive integer $p$:\n\\[\nA^{-p} = (A^{-1})^p = \\underbrace{A^{-1} \\cdot A^{-1}\n\\cdots A^{-1}}_{p \\text{ times}}.\n\\]"
+    "content": "Let $A$ be a square matrix of order $n$ and let $p$ be a positive\ninteger. The $p$-th power of $A$ is defined as:\n\\[\nA^p = \\underbrace{A \\cdot A \\cdots A}_{p \\text{ times}}.\n\\]\nWe also define $A^0 = I_n$. If $A$ is invertible, then for any\npositive integer $p$:\n\\[\nA^{-p} = (A^{-1})^p = \\underbrace{A^{-1} \\cdot A^{-1}\n\\cdots A^{-1}}_{p \\text{ times}}.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -301,7 +301,7 @@
     "section": "Powers of Matrices and Polynomials in Matrices",
     "type": "example",
     "title": "Example 1.24 --- Computing Powers of a Matrix",
-    "content": "Let $A = \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$.\nCompute $A^2$ and $A^3$.\n\n\\textbf{Solution:}\n\\[\nA^2 = AA =\n\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}\n\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}\n=\n\\begin{bmatrix}1+0 & 1+1\\\\0 & 0+1\\end{bmatrix}\n=\n\\begin{bmatrix}1&2\\\\0&1\\end{bmatrix}.\n\\]\n\\[\nA^3 = A^2 \\cdot A =\n\\begin{bmatrix}1&2\\\\0&1\\end{bmatrix}\n\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}\n=\n\\begin{bmatrix}1&3\\\\0&1\\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Let $A = \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$.\nCompute $A^2$ and $A^3$.\n\nSolution:\n\\[\nA^2 = AA =\n\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}\n\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}\n=\n\\begin{bmatrix}1+0 & 1+1\\\\0 & 0+1\\end{bmatrix}\n=\n\\begin{bmatrix}1&2\\\\0&1\\end{bmatrix}.\n\\]\n\\[\nA^3 = A^2 \\cdot A =\n\\begin{bmatrix}1&2\\\\0&1\\end{bmatrix}\n\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}\n=\n\\begin{bmatrix}1&3\\\\0&1\\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -309,7 +309,7 @@
     "section": "Powers of Matrices and Polynomials in Matrices",
     "type": "definition",
     "title": "Polynomial in a Matrix",
-    "content": "If $f(x) = a_0 + a_1 x + a_2 x^2 + \\cdots + a_m x^m$ is a\npolynomial and $A$ is a square matrix, the \\textbf{matrix\npolynomial} $f(A)$ is defined by substituting $A$ for $x$:\n\\[\nf(A) = a_0 I + a_1 A + a_2 A^2 + \\cdots + a_m A^m.\n\\]\nNote that $a_0$ becomes $a_0 I$ since we cannot add a scalar\nto a matrix."
+    "content": "If $f(x) = a_0 + a_1 x + a_2 x^2 + \\cdots + a_m x^m$ is a\npolynomial and $A$ is a square matrix, the matrix\npolynomial $f(A)$ is defined by substituting $A$ for $x$:\n\\[\nf(A) = a_0 I + a_1 A + a_2 A^2 + \\cdots + a_m A^m.\n\\]\nNote that $a_0$ becomes $a_0 I$ since we cannot add a scalar\nto a matrix."
   },
   {
     "course": "Linear Algebra",
@@ -317,7 +317,7 @@
     "section": "Powers of Matrices and Polynomials in Matrices",
     "type": "example",
     "title": "Example 1.25 --- Past Paper 2024 Q1(ix)and 2025 Q1(vii)",
-    "content": "Show that the matrix\n$A = \\begin{bmatrix} 1 & 2 \\\\ 3 & -4 \\end{bmatrix}$\nis a zero of $g(x) = x^2 + 3x - 10$.\n\n\\textbf{Solution:}\nWe need to show $g(A) = A^2 + 3A - 10I = \\mathbf{0}$.\n\nFirst compute $A^2$:\n\\[\nA^2 =\n\\begin{bmatrix}1&2\\\\3&-4\\end{bmatrix}\n\\begin{bmatrix}1&2\\\\3&-4\\end{bmatrix}\n=\n\\begin{bmatrix}1+6 & 2-8\\\\3-12 & 6+16\\end{bmatrix}\n=\n\\begin{bmatrix}7 & -6\\\\-9 & 22\\end{bmatrix}.\n\\]\n\nNow compute $3A$:\n\\[\n3A = \\begin{bmatrix}3 & 6\\\\9 & -12\\end{bmatrix}.\n\\]\n\nFinally:\n\\[\ng(A) = A^2 + 3A - 10I\n=\n\\begin{bmatrix}7&-6\\\\-9&22\\end{bmatrix}\n+\n\\begin{bmatrix}3&6\\\\9&-12\\end{bmatrix}\n-\n\\begin{bmatrix}10&0\\\\0&10\\end{bmatrix}\n=\n\\begin{bmatrix}7+3-10 & -6+6-0\\\\-9+9-0 & 22-12-10\\end{bmatrix}\n=\n\\begin{bmatrix}0&0\\\\0&0\\end{bmatrix} = \\mathbf{0}.\n\\]\nHence $A$ is a zero of $g(x)$. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Show that the matrix\n$A = \\begin{bmatrix} 1 & 2 \\\\ 3 & -4 \\end{bmatrix}$\nis a zero of $g(x) = x^2 + 3x - 10$.\n\nSolution:\nWe need to show $g(A) = A^2 + 3A - 10I = \\mathbf{0}$.\n\nFirst compute $A^2$:\n\\[\nA^2 =\n\\begin{bmatrix}1&2\\\\3&-4\\end{bmatrix}\n\\begin{bmatrix}1&2\\\\3&-4\\end{bmatrix}\n=\n\\begin{bmatrix}1+6 & 2-8\\\\3-12 & 6+16\\end{bmatrix}\n=\n\\begin{bmatrix}7 & -6\\\\-9 & 22\\end{bmatrix}.\n\\]\n\nNow compute $3A$:\n\\[\n3A = \\begin{bmatrix}3 & 6\\\\9 & -12\\end{bmatrix}.\n\\]\n\nFinally:\n\\[\ng(A) = A^2 + 3A - 10I\n=\n\\begin{bmatrix}7&-6\\\\-9&22\\end{bmatrix}\n+\n\\begin{bmatrix}3&6\\\\9&-12\\end{bmatrix}\n-\n\\begin{bmatrix}10&0\\\\0&10\\end{bmatrix}\n=\n\\begin{bmatrix}7+3-10 & -6+6-0\\\\-9+9-0 & 22-12-10\\end{bmatrix}\n=\n\\begin{bmatrix}0&0\\\\0&0\\end{bmatrix} = \\mathbf{0}.\n\\]\nHence $A$ is a zero of $g(x)$. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -325,7 +325,7 @@
     "section": "Powers of Matrices and Polynomials in Matrices",
     "type": "example",
     "title": "Example 1.26 -Past Paper 2024 Q1(x) and 2025 Q1(viii)",
-    "content": "If $A = \\begin{bmatrix}1 & -1 \\\\ a & b\\end{bmatrix}$ and\n$A^2 = \\begin{bmatrix}1&0\\\\0&1\\end{bmatrix}$, find $a$ and $b$.\n\n\\textbf{Solution:}\nCompute $A^2$:\n\\[\nA^2 =\n\\begin{bmatrix}1&-1\\\\a&b\\end{bmatrix}\n\\begin{bmatrix}1&-1\\\\a&b\\end{bmatrix}\n=\n\\begin{bmatrix}1-a & -1-b\\\\a+ab & -a+b^2\\end{bmatrix}.\n\\]\nSet equal to $I_2$ and equate entries:\n\\begin{align*}\n1 - a &= 1 \\;\\Rightarrow\\; a = 0,\\\\\n-1 - b &= 0 \\;\\Rightarrow\\; b = -1,\\\\\na + ab &= 0 \\;\\Rightarrow\\; 0 + 0 = 0 \\quad\\checkmark\\\\\n-a + b^2 &= 1 \\;\\Rightarrow\\; 0 + 1 = 1 \\quad\\checkmark\n\\end{align*}\nTherefore $\\boxed{a = 0,\\quad b = -1}$."
+    "content": "If $A = \\begin{bmatrix}1 & -1 \\\\ a & b\\end{bmatrix}$ and\n$A^2 = \\begin{bmatrix}1&0\\\\0&1\\end{bmatrix}$, find $a$ and $b$.\n\nSolution:\nCompute $A^2$:\n\\[\nA^2 =\n\\begin{bmatrix}1&-1\\\\a&b\\end{bmatrix}\n\\begin{bmatrix}1&-1\\\\a&b\\end{bmatrix}\n=\n\\begin{bmatrix}1-a & -1-b\\\\a+ab & -a+b^2\\end{bmatrix}.\n\\]\nSet equal to $I_2$ and equate entries:\n$$\\begin{align*}\n1 - a &= 1 \\;\\Rightarrow\\; a = 0,\\\\\n-1 - b &= 0 \\;\\Rightarrow\\; b = -1,\\\\\na + ab &= 0 \\;\\Rightarrow\\; 0 + 0 = 0 \\quad\\checkmark\\\\\n-a + b^2 &= 1 \\;\\Rightarrow\\; 0 + 1 = 1 \\quad\\checkmark\n\\end{align*}$$\nTherefore $\\boxed{a = 0,\\quad b = -1}$."
   },
   {
     "course": "Linear Algebra",
@@ -333,7 +333,7 @@
     "section": "Invertible (Nonsingular) Matrices",
     "type": "definition",
     "title": "Invertible Matrix",
-    "content": "A square matrix $A$ of order $n$ is called \\textbf{invertible}\n(or \\textbf{nonsingular}) if there exists a square matrix $B$ of\nthe same order such that:\n\\[\nAB = BA = I_n.\n\\]\nThe matrix $B$ is called the \\textbf{inverse} of $A$ and is denoted\n$A^{-1}$. A matrix that is not invertible is called\n\\textbf{singular}.\n\n\\medskip\n\\textbf{Formula for the inverse of a $2\\times 2$ matrix:}\nIf $A = \\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$ and\n$\\det(A) = ad - bc \\neq 0$, then:\n\\[\nA^{-1} = \\frac{1}{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}.\n\\]\nIf $\\det(A) = 0$, then $A$ has no inverse."
+    "content": "A square matrix $A$ of order $n$ is called invertible\n(or nonsingular) if there exists a square matrix $B$ of\nthe same order such that:\n\\[\nAB = BA = I_n.\n\\]\nThe matrix $B$ is called the inverse of $A$ and is denoted\n$A^{-1}$. A matrix that is not invertible is called\nsingular.\n\n\\medskip\nFormula for the inverse of a $2\\times 2$ matrix:\nIf $A = \\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$ and\n$\\det(A) = ad - bc \\neq 0$, then:\n\\[\nA^{-1} = \\frac{1}{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}.\n\\]\nIf $\\det(A) = 0$, then $A$ has no inverse."
   },
   {
     "course": "Linear Algebra",
@@ -341,7 +341,7 @@
     "section": "Invertible (Nonsingular) Matrices",
     "type": "example",
     "title": "Example 1.27 --- Finding the Inverse of a $2\\times 2$ Matrix",
-    "content": "Find the inverse of\n$A = \\begin{bmatrix}3 & 1\\\\5 & 2\\end{bmatrix}$.\n\n\\textbf{Solution:}\n$\\det(A) = (3)(2)-(1)(5) = 6-5 = 1 \\neq 0$, so $A$ is invertible.\n\\[\nA^{-1} = \\frac{1}{1}\\begin{bmatrix}2&-1\\\\-5&3\\end{bmatrix}\n=\n\\begin{bmatrix}2&-1\\\\-5&3\\end{bmatrix}.\n\\]\n\\textbf{Verification:} $AA^{-1} =\n\\begin{bmatrix}3&1\\\\5&2\\end{bmatrix}\n\\begin{bmatrix}2&-1\\\\-5&3\\end{bmatrix}\n= \\begin{bmatrix}6-5&-3+3\\\\10-10&-5+6\\end{bmatrix}\n= \\begin{bmatrix}1&0\\\\0&1\\end{bmatrix} = I$. \\checkmark\n\n\\bigskip"
+    "content": "Find the inverse of\n$A = \\begin{bmatrix}3 & 1\\\\5 & 2\\end{bmatrix}$.\n\nSolution:\n$\\det(A) = (3)(2)-(1)(5) = 6-5 = 1 \\neq 0$, so $A$ is invertible.\n\\[\nA^{-1} = \\frac{1}{1}\\begin{bmatrix}2&-1\\\\-5&3\\end{bmatrix}\n=\n\\begin{bmatrix}2&-1\\\\-5&3\\end{bmatrix}.\n\\]\nVerification: $AA^{-1} =\n\\begin{bmatrix}3&1\\\\5&2\\end{bmatrix}\n\\begin{bmatrix}2&-1\\\\-5&3\\end{bmatrix}\n= \\begin{bmatrix}6-5&-3+3\\\\10-10&-5+6\\end{bmatrix}\n= \\begin{bmatrix}1&0\\\\0&1\\end{bmatrix} = I$. ✓\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -349,7 +349,7 @@
     "section": "Invertible (Nonsingular) Matrices",
     "type": "example",
     "title": "Example 1.28 --- Finding the Inverse by Row Reduction",
-    "content": "Find the inverse of\n$A = \\begin{bmatrix}1&1&1\\\\0&1&2\\\\1&2&4\\end{bmatrix}$.\n\n\\textbf{Solution:}\nForm the augmented matrix $[A \\mid I]$ and row reduce until the left\nside becomes $I$. The right side will then be $A^{-1}$.\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&1&1&0&0\\\\\n0&1&2&0&1&0\\\\\n1&2&4&0&0&1\n\\end{array}\\right]\n\\]\n$R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&1&1&0&0\\\\\n0&1&2&0&1&0\\\\\n0&1&3&-1&0&1\n\\end{array}\\right]\n\\]\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&1&1&0&0\\\\\n0&1&2&0&1&0\\\\\n0&0&1&-1&-1&1\n\\end{array}\\right]\n\\]\n$R_2 \\leftarrow R_2 - 2R_3$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&1&1&0&0\\\\\n0&1&0&2&3&-2\\\\\n0&0&1&-1&-1&1\n\\end{array}\\right]\n\\]\n$R_1 \\leftarrow R_1 - R_3$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&0&2&1&-1\\\\\n0&1&0&2&3&-2\\\\\n0&0&1&-1&-1&1\n\\end{array}\\right]\n\\]\n$R_1 \\leftarrow R_1 - R_2$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&0&0&0&-2&1\\\\\n0&1&0&2&3&-2\\\\\n0&0&1&-1&-1&1\n\\end{array}\\right]\n\\]\nTherefore:\n\\[\nA^{-1} =\n\\begin{bmatrix}0&-2&1\\\\2&3&-2\\\\-1&-1&1\\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Find the inverse of\n$A = \\begin{bmatrix}1&1&1\\\\0&1&2\\\\1&2&4\\end{bmatrix}$.\n\nSolution:\nForm the augmented matrix $[A \\mid I]$ and row reduce until the left\nside becomes $I$. The right side will then be $A^{-1}$.\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&1&1&0&0\\\\\n0&1&2&0&1&0\\\\\n1&2&4&0&0&1\n\\end{array}\\right]\n\\]\n$R_3 \\leftarrow R_3 - R_1$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&1&1&0&0\\\\\n0&1&2&0&1&0\\\\\n0&1&3&-1&0&1\n\\end{array}\\right]\n\\]\n$R_3 \\leftarrow R_3 - R_2$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&1&1&0&0\\\\\n0&1&2&0&1&0\\\\\n0&0&1&-1&-1&1\n\\end{array}\\right]\n\\]\n$R_2 \\leftarrow R_2 - 2R_3$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&1&1&0&0\\\\\n0&1&0&2&3&-2\\\\\n0&0&1&-1&-1&1\n\\end{array}\\right]\n\\]\n$R_1 \\leftarrow R_1 - R_3$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&1&0&2&1&-1\\\\\n0&1&0&2&3&-2\\\\\n0&0&1&-1&-1&1\n\\end{array}\\right]\n\\]\n$R_1 \\leftarrow R_1 - R_2$:\n\\[\n\\left[\\begin{array}{ccc|ccc}\n1&0&0&0&-2&1\\\\\n0&1&0&2&3&-2\\\\\n0&0&1&-1&-1&1\n\\end{array}\\right]\n\\]\nTherefore:\n\\[\nA^{-1} =\n\\begin{bmatrix}0&-2&1\\\\2&3&-2\\\\-1&-1&1\\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -357,7 +357,7 @@
     "section": "Invertible (Nonsingular) Matrices",
     "type": "example",
     "title": "Example 1.29 --- Past Paper 2024 Q1(vi) and 2025 Q1(v)",
-    "content": "If $A$ is an invertible matrix and $n$ is a nonneg\\-ative integer,\nshow that $(A^n)^{-1} = (A^{-1})^n$.\n\n\\textbf{Solution:}\nWe show that $(A^{-1})^n$ is the inverse of $A^n$ by verifying\n$A^n \\cdot (A^{-1})^n = I$.\n\\begin{align*}\nA^n \\cdot (A^{-1})^n\n&= \\underbrace{A \\cdot A \\cdots A}_{n}\n   \\cdot\n   \\underbrace{A^{-1} \\cdot A^{-1} \\cdots A^{-1}}_{n}\\\\\n&= A^{n-1}\\underbrace{(A \\cdot A^{-1})}_{I}(A^{-1})^{n-1}\\\\\n&= A^{n-1}(A^{-1})^{n-1}\\\\\n&= \\cdots = AA^{-1} = I.\n\\end{align*}\nSince $A^n \\cdot (A^{-1})^n = I$, we conclude\n$(A^n)^{-1} = (A^{-1})^n$. \\hfill$\\square$"
+    "content": "If $A$ is an invertible matrix and $n$ is a nonneg\\-ative integer,\nshow that $(A^n)^{-1} = (A^{-1})^n$.\n\nSolution:\nWe show that $(A^{-1})^n$ is the inverse of $A^n$ by verifying\n$A^n \\cdot (A^{-1})^n = I$.\n$$\\begin{align*}\nA^n \\cdot (A^{-1})^n\n&= \\underbrace{A \\cdot A \\cdots A}_{n}\n   \\cdot\n   \\underbrace{A^{-1} \\cdot A^{-1} \\cdots A^{-1}}_{n}\\\\\n&= A^{n-1}\\underbrace{(A \\cdot A^{-1})}_{I}(A^{-1})^{n-1}\\\\\n&= A^{n-1}(A^{-1})^{n-1}\\\\\n&= \\cdots = AA^{-1} = I.\n\\end{align*}$$\nSince $A^n \\cdot (A^{-1})^n = I$, we conclude\n$(A^n)^{-1} = (A^{-1})^n$. \\hfill$\\square$"
   },
   {
     "course": "Linear Algebra",
@@ -365,7 +365,7 @@
     "section": "Special Types of Square Matrices",
     "type": "definition",
     "title": "Diagonal Matrix",
-    "content": "A square matrix $A$ is called a \\textbf{diagonal matrix} if all\nentries \\emph{off} the main diagonal are zero, i.e.\\\n$a_{ij} = 0$ whenever $i \\neq j$.\n\\[\nD = \\begin{bmatrix}d_1&0&\\cdots&0\\\\0&d_2&\\cdots&0\\\\\n\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&d_n\\end{bmatrix}\n= \\text{diag}(d_1, d_2, \\ldots, d_n).\n\\]\nThe inverse of a diagonal matrix (when all $d_i \\neq 0$) is:\n\\[\nD^{-1} = \\text{diag}\\!\\left(\\tfrac{1}{d_1},\\tfrac{1}{d_2},\n\\ldots,\\tfrac{1}{d_n}\\right).\n\\]"
+    "content": "A square matrix $A$ is called a diagonal matrix if all\nentries \\emph{off} the main diagonal are zero, i.e.\\\n$a_{ij} = 0$ whenever $i \\neq j$.\n\\[\nD = \\begin{bmatrix}d_1&0&\\cdots&0\\\\0&d_2&\\cdots&0\\\\\n\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&d_n\\end{bmatrix}\n= \\text{diag}(d_1, d_2, \\ldots, d_n).\n\\]\nThe inverse of a diagonal matrix (when all $d_i \\neq 0$) is:\n\\[\nD^{-1} = \\text{diag}\\!\\left(\\tfrac{1}{d_1},\\tfrac{1}{d_2},\n\\ldots,\\tfrac{1}{d_n}\\right).\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -373,7 +373,7 @@
     "section": "Special Types of Square Matrices",
     "type": "example",
     "title": "Example 1.30 --- Past Paper 2021 Q1(xv) --- Inverse of a Diagonal Matrix",
-    "content": "Write the inverse of the diagonal matrix\n$D = \\begin{bmatrix}-2&0&0\\\\0&0.25&0\\\\0&0&1\\end{bmatrix}$\nwithout any solution process.\n\n\\textbf{Solution:}\nTake the reciprocal of each diagonal entry:\n\\[\nD^{-1} =\n\\begin{bmatrix}-\\tfrac{1}{2}&0&0\\\\0&4&0\\\\0&0&1\\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Write the inverse of the diagonal matrix\n$D = \\begin{bmatrix}-2&0&0\\\\0&0.25&0\\\\0&0&1\\end{bmatrix}$\nwithout any solution process.\n\nSolution:\nTake the reciprocal of each diagonal entry:\n\\[\nD^{-1} =\n\\begin{bmatrix}-\\tfrac{1}{2}&0&0\\\\0&4&0\\\\0&0&1\\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -381,7 +381,7 @@
     "section": "Special Types of Square Matrices",
     "type": "definition",
     "title": "Triangular Matrices",
-    "content": "A square matrix $A$ is called:\n\\begin{itemize}[leftmargin=1.8em, itemsep=4pt]\n  \\item \\textbf{Upper Triangular} if all entries \\emph{below} the\n        main diagonal are zero ($a_{ij}=0$ for $i>j$).\n  \\item \\textbf{Lower Triangular} if all entries \\emph{above} the\n        main diagonal are zero ($a_{ij}=0$ for $i<j$).\n\\end{itemize}"
+    "content": "A square matrix $A$ is called:\n\n- Upper Triangular if all entries \\emph{below} the\n        main diagonal are zero ($a_{ij}=0$ for $i>j$).\n- Lower Triangular if all entries \\emph{above} the\n        main diagonal are zero ($a_{ij}=0$ for $i<j$)."
   },
   {
     "course": "Linear Algebra",
@@ -389,7 +389,7 @@
     "section": "Special Types of Square Matrices",
     "type": "example",
     "title": "Example 1.31 --- Identifying Triangular Matrices",
-    "content": "Identify each matrix as upper triangular, lower triangular or\nneither.\n\\[\nU = \\begin{bmatrix}1&2&3\\\\0&4&5\\\\0&0&6\\end{bmatrix}, \\quad\nL = \\begin{bmatrix}2&0&0\\\\1&3&0\\\\4&5&7\\end{bmatrix}, \\quad\nA = \\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}.\n\\]\n\n\\textbf{Solution:}\n$U$ has zeros below the diagonal: \\textbf{upper triangular}.\\\\\n$L$ has zeros above the diagonal: \\textbf{lower triangular}.\\\\\n$A$ has no zeros below or above the diagonal: \\textbf{neither}.\n\n\\bigskip"
+    "content": "Identify each matrix as upper triangular, lower triangular or\nneither.\n\\[\nU = \\begin{bmatrix}1&2&3\\\\0&4&5\\\\0&0&6\\end{bmatrix}, \\quad\nL = \\begin{bmatrix}2&0&0\\\\1&3&0\\\\4&5&7\\end{bmatrix}, \\quad\nA = \\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}.\n\\]\n\nSolution:\n$U$ has zeros below the diagonal: upper triangular.\\\\\n$L$ has zeros above the diagonal: lower triangular.\\\\\n$A$ has no zeros below or above the diagonal: neither.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -397,7 +397,7 @@
     "section": "Special Types of Square Matrices",
     "type": "definition",
     "title": "Orthogonal Matrix",
-    "content": "A square matrix $P$ is called \\textbf{orthogonal} if\n\\[\nP^T P = P P^T = I,\n\\]\nwhich is equivalent to saying $P^T = P^{-1}$. The rows (and\ncolumns) of an orthogonal matrix form an orthonormal set."
+    "content": "A square matrix $P$ is called orthogonal if\n\\[\nP^T P = P P^T = I,\n\\]\nwhich is equivalent to saying $P^T = P^{-1}$. The rows (and\ncolumns) of an orthogonal matrix form an orthonormal set."
   },
   {
     "course": "Linear Algebra",
@@ -405,7 +405,7 @@
     "section": "Special Types of Square Matrices",
     "type": "example",
     "title": "Example 1.32 -- Past Paper 2024 Q1(vii) and 2025 Q1(vi)",
-    "content": "Show that a matrix $P$ is orthogonal if and only if $P^T$ is\northogonal.\n\n\\textbf{Solution:}\n($\\Rightarrow$) Suppose $P$ is orthogonal, so $P^T P = I$.\n\nWe need to show $P^T$ is orthogonal, i.e.\\ $(P^T)^T P^T = I$.\n\nSince $(P^T)^T = P$, we have:\n\\[\n(P^T)^T P^T = P P^T = I.\n\\]\nThe last equality holds because $P$ orthogonal means $PP^T = I$.\nSo $P^T$ is orthogonal.\n\n($\\Leftarrow$) Suppose $P^T$ is orthogonal. Then by the same\nargument applied to $P^T$, we get $(P^T)^T = P$ is orthogonal.\n\\hfill$\\square$"
+    "content": "Show that a matrix $P$ is orthogonal if and only if $P^T$ is\northogonal.\n\nSolution:\n($\\Rightarrow$) Suppose $P$ is orthogonal, so $P^T P = I$.\n\nWe need to show $P^T$ is orthogonal, i.e.\\ $(P^T)^T P^T = I$.\n\nSince $(P^T)^T = P$, we have:\n\\[\n(P^T)^T P^T = P P^T = I.\n\\]\nThe last equality holds because $P$ orthogonal means $PP^T = I$.\nSo $P^T$ is orthogonal.\n\n($\\Leftarrow$) Suppose $P^T$ is orthogonal. Then by the same\nargument applied to $P^T$, we get $(P^T)^T = P$ is orthogonal.\n\\hfill$\\square$"
   },
   {
     "course": "Linear Algebra",
@@ -413,7 +413,7 @@
     "section": "Complex Matrices",
     "type": "definition",
     "title": "Conjugate and Hermitian Transpose",
-    "content": "Let $A = [a_{ij}]$ be a matrix with complex number entries.\n\\begin{itemize}[leftmargin=1.8em, itemsep=5pt]\n  \\item The \\textbf{conjugate} of $A$, written $\\bar{A}$, is the\n        matrix obtained by replacing each entry $a_{ij}$ with its\n        complex conjugate $\\overline{a_{ij}}$.\n  \\item The \\textbf{Hermitian transpose} (or \\textbf{conjugate\n        transpose}) of $A$, written $A^*$ or $A^H$, is defined\n        as:\n        \\[\n        A^* = \\bar{A}^T = \\overline{A^T}.\n        \\]\n        That is, take the transpose \\emph{and} conjugate every\n        entry.\n  \\item $A$ is called \\textbf{Hermitian} if $A^* = A$, i.e.\\\n        $a_{ij} = \\overline{a_{ji}}$.\n  \\item $A$ is called \\textbf{Unitary} if $A^* A = A A^* = I$,\n        i.e.\\ $A^* = A^{-1}$.\n\\end{itemize}"
+    "content": "Let $A = [a_{ij}]$ be a matrix with complex number entries.\n\n- The conjugate of $A$, written $\\bar{A}$, is the\n        matrix obtained by replacing each entry $a_{ij}$ with its\n        complex conjugate $\\overline{a_{ij}}$.\n- The Hermitian transpose (or conjugate\n        transpose) of $A$, written $A^*$ or $A^H$, is defined\n        as:\n        \\[\n        A^* = \\bar{A}^T = \\overline{A^T}.\n        \\]\n        That is, take the transpose \\emph{and} conjugate every\n        entry.\n- $A$ is called Hermitian if $A^* = A$, i.e.\\\n        $a_{ij} = \\overline{a_{ji}}$.\n- $A$ is called Unitary if $A^* A = A A^* = I$,\n        i.e.\\ $A^* = A^{-1}$."
   },
   {
     "course": "Linear Algebra",
@@ -421,7 +421,7 @@
     "section": "Complex Matrices",
     "type": "example",
     "title": "Example 1.33 - Past Paper 2021 Q1(iii) - Hermitian Transpose",
-    "content": "Find the Hermitian transpose of\n$A = \\begin{bmatrix}2+i & 3 \\\\ 1-2i & 4i\\end{bmatrix}$.\n\n\\textbf{Solution:}\nFirst take the transpose of $A$:\n\\[\nA^T = \\begin{bmatrix}2+i & 1-2i \\\\ 3 & 4i\\end{bmatrix}.\n\\]\nThen conjugate every entry (replace $i$ with $-i$):\n\\[\nA^* = \\begin{bmatrix}2-i & 1+2i \\\\ 3 & -4i\\end{bmatrix}.\n\\]\n\n\\bigskip"
+    "content": "Find the Hermitian transpose of\n$A = \\begin{bmatrix}2+i & 3 \\\\ 1-2i & 4i\\end{bmatrix}$.\n\nSolution:\nFirst take the transpose of $A$:\n\\[\nA^T = \\begin{bmatrix}2+i & 1-2i \\\\ 3 & 4i\\end{bmatrix}.\n\\]\nThen conjugate every entry (replace $i$ with $-i$):\n\\[\nA^* = \\begin{bmatrix}2-i & 1+2i \\\\ 3 & -4i\\end{bmatrix}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -429,7 +429,7 @@
     "section": "Complex Matrices",
     "type": "example",
     "title": "Example 1.34 --- Past Paper 2021 Q1(iii) and 2023 Q1(iii)",
-    "content": "Define a Hermitian matrix. Show that\n$H = \\begin{bmatrix}3 & 2-i \\\\ 2+i & 5\\end{bmatrix}$\nis Hermitian.\n\n\\textbf{Solution:}\nA matrix $H$ is \\textbf{Hermitian} if $H^* = H$.\n\nCompute $H^*$. First transpose:\n$H^T = \\begin{bmatrix}3 & 2+i \\\\ 2-i & 5\\end{bmatrix}$.\nThen conjugate every entry:\n$H^* = \\begin{bmatrix}3 & 2-i \\\\ 2+i & 5\\end{bmatrix} = H$.\n\nSince $H^* = H$, the matrix is \\textbf{Hermitian}. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Define a Hermitian matrix. Show that\n$H = \\begin{bmatrix}3 & 2-i \\\\ 2+i & 5\\end{bmatrix}$\nis Hermitian.\n\nSolution:\nA matrix $H$ is Hermitian if $H^* = H$.\n\nCompute $H^*$. First transpose:\n$H^T = \\begin{bmatrix}3 & 2+i \\\\ 2-i & 5\\end{bmatrix}$.\nThen conjugate every entry:\n$H^* = \\begin{bmatrix}3 & 2-i \\\\ 2+i & 5\\end{bmatrix} = H$.\n\nSince $H^* = H$, the matrix is Hermitian. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -437,7 +437,7 @@
     "section": "Complex Matrices",
     "type": "example",
     "title": "Example 1.35 --- Past Paper 2021 Q1(xvi) --- Unitary Matrix",
-    "content": "Define a unitary matrix. Is\n$U = \\dfrac{1}{\\sqrt{2}}\\begin{bmatrix}1 & i \\\\ i & 1\\end{bmatrix}$\nunitary?\n\n\\textbf{Solution:}\nA square matrix $U$ is \\textbf{unitary} if $U^* U = I$.\n\nCompute $U^*$:\n\\[\nU^* = \\frac{1}{\\sqrt{2}}\\begin{bmatrix}1 & -i \\\\ -i & 1\\end{bmatrix}.\n\\]\nNow compute $U^* U$:\n\\[\nU^* U =\n\\frac{1}{2}\n\\begin{bmatrix}1&-i\\\\-i&1\\end{bmatrix}\n\\begin{bmatrix}1&i\\\\i&1\\end{bmatrix}\n=\n\\frac{1}{2}\n\\begin{bmatrix}1+1 & i-i \\\\ -i+i & 1+1\\end{bmatrix}\n=\n\\frac{1}{2}\n\\begin{bmatrix}2&0\\\\0&2\\end{bmatrix}\n=\n\\begin{bmatrix}1&0\\\\0&1\\end{bmatrix} = I.\n\\]\nSince $U^* U = I$, the matrix $U$ is \\textbf{unitary}. \\hfill$\\square$"
+    "content": "Define a unitary matrix. Is\n$U = \\dfrac{1}{\\sqrt{2}}\\begin{bmatrix}1 & i \\\\ i & 1\\end{bmatrix}$\nunitary?\n\nSolution:\nA square matrix $U$ is unitary if $U^* U = I$.\n\nCompute $U^*$:\n\\[\nU^* = \\frac{1}{\\sqrt{2}}\\begin{bmatrix}1 & -i \\\\ -i & 1\\end{bmatrix}.\n\\]\nNow compute $U^* U$:\n\\[\nU^* U =\n\\frac{1}{2}\n\\begin{bmatrix}1&-i\\\\-i&1\\end{bmatrix}\n\\begin{bmatrix}1&i\\\\i&1\\end{bmatrix}\n=\n\\frac{1}{2}\n\\begin{bmatrix}1+1 & i-i \\\\ -i+i & 1+1\\end{bmatrix}\n=\n\\frac{1}{2}\n\\begin{bmatrix}2&0\\\\0&2\\end{bmatrix}\n=\n\\begin{bmatrix}1&0\\\\0&1\\end{bmatrix} = I.\n\\]\nSince $U^* U = I$, the matrix $U$ is unitary. \\hfill$\\square$"
   },
   {
     "course": "Linear Algebra",
@@ -445,7 +445,7 @@
     "section": "Complex Matrices",
     "type": "definition",
     "title": "Block (Partitioned) Matrix",
-    "content": "A matrix can be divided into smaller submatrices called\n\\textbf{blocks} by drawing horizontal and vertical dividing lines\nthrough it. The resulting matrix written in terms of its blocks is\ncalled a \\textbf{block matrix} or \\textbf{partitioned matrix}.\nBlock matrices can be added and multiplied using the same rules as\nordinary matrices, treating each block as if it were a single entry,\nprovided the block sizes are compatible."
+    "content": "A matrix can be divided into smaller submatrices called\nblocks by drawing horizontal and vertical dividing lines\nthrough it. The resulting matrix written in terms of its blocks is\ncalled a block matrix or partitioned matrix.\nBlock matrices can be added and multiplied using the same rules as\nordinary matrices, treating each block as if it were a single entry,\nprovided the block sizes are compatible."
   },
   {
     "course": "Linear Algebra",
@@ -453,7 +453,7 @@
     "section": "Complex Matrices",
     "type": "example",
     "title": "Example 1.36 --- Writing a Matrix in Block Form",
-    "content": "Partition the matrix $A$ into four blocks as indicated.\n\\[\nA =\n\\left[\\begin{array}{cc|c}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\ \\hline\n7 & 8 & 9\n\\end{array}\\right]\n= \\begin{bmatrix} A_{11} & A_{12} \\\\ A_{21} & A_{22} \\end{bmatrix}.\n\\]\nIdentify each block.\n\n\\textbf{Solution:}\nReading off from the partition lines:\n\\[\nA_{11} = \\begin{bmatrix}1&2\\\\4&5\\end{bmatrix}, \\quad\nA_{12} = \\begin{bmatrix}3\\\\6\\end{bmatrix}, \\quad\nA_{21} = \\begin{bmatrix}7&8\\end{bmatrix}, \\quad\nA_{22} = \\begin{bmatrix}9\\end{bmatrix}.\n\\]"
+    "content": "Partition the matrix $A$ into four blocks as indicated.\n\\[\nA =\n\\left[\\begin{array}{cc|c}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\ \\hline\n7 & 8 & 9\n\\end{array}\\right]\n= \\begin{bmatrix} A_{11} & A_{12} \\\\ A_{21} & A_{22} \\end{bmatrix}.\n\\]\nIdentify each block.\n\nSolution:\nReading off from the partition lines:\n\\[\nA_{11} = \\begin{bmatrix}1&2\\\\4&5\\end{bmatrix}, \\quad\nA_{12} = \\begin{bmatrix}3\\\\6\\end{bmatrix}, \\quad\nA_{21} = \\begin{bmatrix}7&8\\end{bmatrix}, \\quad\nA_{22} = \\begin{bmatrix}9\\end{bmatrix}.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -461,7 +461,7 @@
     "section": "Determinants",
     "type": "definition",
     "title": "Determinant",
-    "content": "The \\textbf{determinant} is a scalar value associated with every\nsquare matrix $A$ of order $n$, denoted $\\det(A)$ or $|A|$.\n\n\\medskip\n\\textbf{For a $1\\times 1$ matrix} $A=[a]$:\\quad $\\det(A)=a$.\n\n\\medskip\n\\textbf{For a $2\\times 2$ matrix:}\n\\[\n\\det\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix} = ad - bc.\n\\]\n\n\\textbf{For an $n\\times n$ matrix ($n\\geq 3$)}, expand along any\nrow or column using cofactors. Expanding along row $i$:\n\\[\n\\det(A) = \\sum_{j=1}^{n} a_{ij}\\,C_{ij},\n\\]\nwhere $C_{ij}=(-1)^{i+j}M_{ij}$ is the \\textbf{cofactor} and\n$M_{ij}$ is the \\textbf{minor} — the determinant of the submatrix\nobtained by deleting row $i$ and column $j$ from $A$."
+    "content": "The determinant is a scalar value associated with every\nsquare matrix $A$ of order $n$, denoted $\\det(A)$ or $|A|$.\n\n\\medskip\nFor a $1\\times 1$ matrix $A=[a]$:\\quad $\\det(A)=a$.\n\n\\medskip\nFor a $2\\times 2$ matrix:\n\\[\n\\det\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix} = ad - bc.\n\\]\n\nFor an $n\\times n$ matrix ($n\\geq 3$), expand along any\nrow or column using cofactors. Expanding along row $i$:\n\\[\n\\det(A) = \\sum_{j=1}^{n} a_{ij}\\,C_{ij},\n\\]\nwhere $C_{ij}=(-1)^{i+j}M_{ij}$ is the cofactor and\n$M_{ij}$ is the minor — the determinant of the submatrix\nobtained by deleting row $i$ and column $j$ from $A$."
   },
   {
     "course": "Linear Algebra",
@@ -469,7 +469,7 @@
     "section": "Determinants",
     "type": "definition",
     "title": "Minor and Cofactor",
-    "content": "Let $A$ be an $n\\times n$ matrix.\n\\begin{itemize}[leftmargin=1.8em,itemsep=4pt]\n  \\item The \\textbf{minor} $M_{ij}$ is the determinant of the\n        $(n-1)\\times(n-1)$ submatrix formed by deleting row $i$\n        and column $j$ from $A$.\n  \\item The \\textbf{cofactor} is $C_{ij}=(-1)^{i+j}M_{ij}$.\n  \\item The sign $(-1)^{i+j}$ follows the checkerboard pattern:\n\\[\n\\begin{bmatrix}\n+&-&+&-\\\\-&+&-&+\\\\+&-&+&-\\\\-&+&-&+\n\\end{bmatrix}.\n\\]\n\\end{itemize}"
+    "content": "Let $A$ be an $n\\times n$ matrix.\n\n- The minor $M_{ij}$ is the determinant of the\n        $(n-1)\\times(n-1)$ submatrix formed by deleting row $i$\n        and column $j$ from $A$.\n- The cofactor is $C_{ij}=(-1)^{i+j}M_{ij}$.\n- The sign $(-1)^{i+j}$ follows the checkerboard pattern:\n\\[\n\\begin{bmatrix}\n+&-&+&-\\\\-&+&-&+\\\\+&-&+&-\\\\-&+&-&+\n\\end{bmatrix}.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -477,7 +477,7 @@
     "section": "Determinants",
     "type": "example",
     "title": "Example 1.37 --- Determinant of a $2\\times 2$ Matrix",
-    "content": "Find the determinant of\n$A=\\begin{bmatrix}5&-3\\\\2&4\\end{bmatrix}$.\n\n\\textbf{Solution:}\n\\[\n\\det(A) = (5)(4)-(-3)(2) = 20+6 = 26.\n\\]\n\n\\bigskip"
+    "content": "Find the determinant of\n$A=\\begin{bmatrix}5&-3\\\\2&4\\end{bmatrix}$.\n\nSolution:\n\\[\n\\det(A) = (5)(4)-(-3)(2) = 20+6 = 26.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -485,7 +485,7 @@
     "section": "Determinants",
     "type": "example",
     "title": "Example 1.38 --- Determinant of a $3\\times 3$ Matrix",
-    "content": "Find the determinant of\n$A=\\begin{bmatrix}2&-1&3\\\\0&4&-2\\\\1&3&5\\end{bmatrix}$.\n\n\\textbf{Solution:}\nExpand along the first row:\n\\[\n\\det(A) = 2\\begin{vmatrix}4&-2\\\\3&5\\end{vmatrix}\n-(-1)\\begin{vmatrix}0&-2\\\\1&5\\end{vmatrix}\n+3\\begin{vmatrix}0&4\\\\1&3\\end{vmatrix}.\n\\]\n\\[\n= 2(20+6)+1(0+2)+3(0-4)\n= 2(26)+1(2)+3(-4)\n= 52+2-12 = 42.\n\\]\n\n\\bigskip"
+    "content": "Find the determinant of\n$A=\\begin{bmatrix}2&-1&3\\\\0&4&-2\\\\1&3&5\\end{bmatrix}$.\n\nSolution:\nExpand along the first row:\n\\[\n\\det(A) = 2\\begin{vmatrix}4&-2\\\\3&5\\end{vmatrix}\n-(-1)\\begin{vmatrix}0&-2\\\\1&5\\end{vmatrix}\n+3\\begin{vmatrix}0&4\\\\1&3\\end{vmatrix}.\n\\]\n\\[\n= 2(20+6)+1(0+2)+3(0-4)\n= 2(26)+1(2)+3(-4)\n= 52+2-12 = 42.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -493,7 +493,7 @@
     "section": "Determinants",
     "type": "example",
     "title": "Example 1.39 --- Expanding Along a Column",
-    "content": "Find $\\det(A)$ for\n$A=\\begin{bmatrix}1&0&2\\\\3&1&-1\\\\0&2&4\\end{bmatrix}$\nby expanding along column 2.\n\n\\textbf{Solution:}\nColumn 2 entries: $a_{12}=0$, $a_{22}=1$, $a_{32}=2$.\n\\[\n\\det(A) = 0\\cdot C_{12} + 1\\cdot C_{22} + 2\\cdot C_{32}.\n\\]\n\\[\nC_{22} = (+1)\\begin{vmatrix}1&2\\\\0&4\\end{vmatrix} = 4-0 = 4.\n\\]\n\\[\nC_{32} = (-1)\\begin{vmatrix}1&2\\\\3&-1\\end{vmatrix}\n= (-1)(-1-6) = 7.\n\\]\n\\[\n\\det(A) = 0 + 1(4) + 2(7) = 4+14 = 18.\n\\]\n\n\\bigskip"
+    "content": "Find $\\det(A)$ for\n$A=\\begin{bmatrix}1&0&2\\\\3&1&-1\\\\0&2&4\\end{bmatrix}$\nby expanding along column 2.\n\nSolution:\nColumn 2 entries: $a_{12}=0$, $a_{22}=1$, $a_{32}=2$.\n\\[\n\\det(A) = 0\\cdot C_{12} + 1\\cdot C_{22} + 2\\cdot C_{32}.\n\\]\n\\[\nC_{22} = (+1)\\begin{vmatrix}1&2\\\\0&4\\end{vmatrix} = 4-0 = 4.\n\\]\n\\[\nC_{32} = (-1)\\begin{vmatrix}1&2\\\\3&-1\\end{vmatrix}\n= (-1)(-1-6) = 7.\n\\]\n\\[\n\\det(A) = 0 + 1(4) + 2(7) = 4+14 = 18.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -501,7 +501,7 @@
     "section": "Determinants",
     "type": "example",
     "title": "Example 1.40 --- Determinant Using Row of Zeros",
-    "content": "Without expanding, explain why\n$\\det\\begin{bmatrix}2&-1&3\\\\4&0&-2\\\\4&-2&6\\end{bmatrix}=0$.\n\n\\textbf{Solution:}\nObserve that row 3 $= 2\\times$ row 1. When two rows are proportional\n(one is a multiple of the other), the determinant is zero. Hence\n$\\det(A)=0$.\n\n\\bigskip"
+    "content": "Without expanding, explain why\n$\\det\\begin{bmatrix}2&-1&3\\\\4&0&-2\\\\4&-2&6\\end{bmatrix}=0$.\n\nSolution:\nObserve that row 3 $= 2\\times$ row 1. When two rows are proportional\n(one is a multiple of the other), the determinant is zero. Hence\n$\\det(A)=0$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -509,7 +509,7 @@
     "section": "Determinants",
     "type": "example",
     "title": "Example 1.41 --- Past Paper 2024 Q2(a) \\& Past Paper 2025 Q2(a) --- $4\\times 4$ Determinant",
-    "content": "Compute the determinant of\n\\[\nA=\\begin{bmatrix}\n1&0&0&3\\\\\n2&7&0&6\\\\\n0&6&3&0\\\\\n7&3&1&-5\n\\end{bmatrix}.\n\\]\n\n\\textbf{Solution:}\nExpand along row 1. Since $a_{12}=0$ and $a_{13}=0$, only the\nfirst and fourth terms contribute:\n\\[\n\\det(A) = 1\\cdot C_{11} + 3\\cdot C_{14}.\n\\]\n\n\\textbf{Computing $M_{11}$:} Delete row 1 and column 1:\n\\[\nM_{11}=\\begin{vmatrix}7&0&6\\\\6&3&0\\\\3&1&-5\\end{vmatrix}.\n\\]\nExpand along row 1:\n\\[\n=7\\begin{vmatrix}3&0\\\\1&-5\\end{vmatrix}\n-0+6\\begin{vmatrix}6&3\\\\3&1\\end{vmatrix}\n=7(-15)+6(6-9)=-105-18=-123.\n\\]\n$C_{11}=(-1)^{2}(-123)=-123$.\n\n\\medskip\n\\textbf{Computing $M_{14}$:} Delete row 1 and column 4:\n\\[\nM_{14}=\\begin{vmatrix}2&7&0\\\\0&6&3\\\\7&3&1\\end{vmatrix}.\n\\]\nExpand along row 1:\n\\[\n=2\\begin{vmatrix}6&3\\\\3&1\\end{vmatrix}\n-7\\begin{vmatrix}0&3\\\\7&1\\end{vmatrix}+0\n=2(6-9)-7(0-21)\n=-6+147=141.\n\\]\n$C_{14}=(-1)^{5}(141)=-141$.\n\n\\medskip\n\\[\n\\det(A)=1(-123)+3(-141)=-123-423=\\boxed{-546}.\n\\]\n\n\\bigskip"
+    "content": "Compute the determinant of\n\\[\nA=\\begin{bmatrix}\n1&0&0&3\\\\\n2&7&0&6\\\\\n0&6&3&0\\\\\n7&3&1&-5\n\\end{bmatrix}.\n\\]\n\nSolution:\nExpand along row 1. Since $a_{12}=0$ and $a_{13}=0$, only the\nfirst and fourth terms contribute:\n\\[\n\\det(A) = 1\\cdot C_{11} + 3\\cdot C_{14}.\n\\]\n\nComputing $M_{11}$: Delete row 1 and column 1:\n\\[\nM_{11}=\\begin{vmatrix}7&0&6\\\\6&3&0\\\\3&1&-5\\end{vmatrix}.\n\\]\nExpand along row 1:\n\\[\n=7\\begin{vmatrix}3&0\\\\1&-5\\end{vmatrix}\n-0+6\\begin{vmatrix}6&3\\\\3&1\\end{vmatrix}\n=7(-15)+6(6-9)=-105-18=-123.\n\\]\n$C_{11}=(-1)^{2}(-123)=-123$.\n\n\\medskip\nComputing $M_{14}$: Delete row 1 and column 4:\n\\[\nM_{14}=\\begin{vmatrix}2&7&0\\\\0&6&3\\\\7&3&1\\end{vmatrix}.\n\\]\nExpand along row 1:\n\\[\n=2\\begin{vmatrix}6&3\\\\3&1\\end{vmatrix}\n-7\\begin{vmatrix}0&3\\\\7&1\\end{vmatrix}+0\n=2(6-9)-7(0-21)\n=-6+147=141.\n\\]\n$C_{14}=(-1)^{5}(141)=-141$.\n\n\\medskip\n\\[\n\\det(A)=1(-123)+3(-141)=-123-423=\\boxed{-546}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -517,7 +517,7 @@
     "section": "Determinants",
     "type": "example",
     "title": "Example 1.42 --- Determinant of a Triangular Matrix",
-    "content": "Find the determinant of\n$U=\\begin{bmatrix}3&1&-2\\\\0&4&5\\\\0&0&-1\\end{bmatrix}$.\n\n\\textbf{Solution:}\n$U$ is upper triangular, so the determinant equals the product of\nits diagonal entries:\n\\[\n\\det(U) = 3\\times 4\\times(-1) = -12.\n\\]"
+    "content": "Find the determinant of\n$U=\\begin{bmatrix}3&1&-2\\\\0&4&5\\\\0&0&-1\\end{bmatrix}$.\n\nSolution:\n$U$ is upper triangular, so the determinant equals the product of\nits diagonal entries:\n\\[\n\\det(U) = 3\\times 4\\times(-1) = -12.\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -525,7 +525,7 @@
     "section": "Properties of Determinants",
     "type": "theorem",
     "title": "Properties of Determinants",
-    "content": "Let $A$ and $B$ be $n\\times n$ matrices and $k$ a scalar.\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n  \\item $\\det(I)=1$.\n  \\item $\\det(A^T)=\\det(A)$.\n  \\item $\\det(AB)=\\det(A)\\cdot\\det(B)$.\n  \\item $\\det(kA)=k^n\\det(A)$.\n  \\item $\\det(A^{-1})=\\dfrac{1}{\\det(A)}$\\quad(if $A$ is invertible).\n  \\item $\\det(A^n)=[\\det(A)]^n$.\n  \\item If any row or column of $A$ is all zeros, $\\det(A)=0$.\n  \\item If two rows (or columns) are identical or proportional,\n        $\\det(A)=0$.\n  \\item Multiplying a row by $k$ multiplies $\\det(A)$ by $k$.\n  \\item Swapping two rows changes the sign of $\\det(A)$.\n  \\item Adding a multiple of one row to another leaves $\\det(A)$\n        unchanged.\n  \\item $A$ is invertible $\\Leftrightarrow$ $\\det(A)\\neq 0$.\n  \\item For triangular $A$: $\\det(A)=$ product of diagonal entries.\n\\end{enumerate}"
+    "content": "Let $A$ and $B$ be $n\\times n$ matrices and $k$ a scalar.\n\n1. $\\det(I)=1$.\n2. $\\det(A^T)=\\det(A)$.\n3. $\\det(AB)=\\det(A)\\cdot\\det(B)$.\n4. $\\det(kA)=k^n\\det(A)$.\n5. $\\det(A^{-1})=\\dfrac{1}{\\det(A)}$\\quad(if $A$ is invertible).\n6. $\\det(A^n)=[\\det(A)]^n$.\n7. If any row or column of $A$ is all zeros, $\\det(A)=0$.\n8. If two rows (or columns) are identical or proportional,\n        $\\det(A)=0$.\n9. Multiplying a row by $k$ multiplies $\\det(A)$ by $k$.\n10. Swapping two rows changes the sign of $\\det(A)$.\n11. Adding a multiple of one row to another leaves $\\det(A)$\n        unchanged.\n12. $A$ is invertible $\\Leftrightarrow$ $\\det(A)\\neq 0$.\n13. For triangular $A$: $\\det(A)=$ product of diagonal entries."
   },
   {
     "course": "Linear Algebra",
@@ -533,7 +533,7 @@
     "section": "Properties of Determinants",
     "type": "example",
     "title": "Example 1.43 --- Applying Determinant Properties",
-    "content": "Let $A$ be a $3\\times 3$ matrix with $\\det(A)=4$. Find:\\\\\n(a)~$\\det(3A)$,\\quad\n(b)~$\\det(A^{-1})$,\\quad\n(c)~$\\det(A^T)$,\\quad\n(d)~$\\det(A^3)$.\n\n\\textbf{Solution:}\n\n(a) $\\det(3A)=3^3\\det(A)=27\\times4=108$.\n\n(b) $\\det(A^{-1})=\\dfrac{1}{\\det(A)}=\\dfrac{1}{4}$.\n\n(c) $\\det(A^T)=\\det(A)=4$.\n\n(d) $\\det(A^3)=[\\det(A)]^3=4^3=64$.\n\n\\bigskip"
+    "content": "Let $A$ be a $3\\times 3$ matrix with $\\det(A)=4$. Find:\\\\\n(a)~$\\det(3A)$,\\quad\n(b)~$\\det(A^{-1})$,\\quad\n(c)~$\\det(A^T)$,\\quad\n(d)~$\\det(A^3)$.\n\nSolution:\n\n(a) $\\det(3A)=3^3\\det(A)=27\\times4=108$.\n\n(b) $\\det(A^{-1})=\\dfrac{1}{\\det(A)}=\\dfrac{1}{4}$.\n\n(c) $\\det(A^T)=\\det(A)=4$.\n\n(d) $\\det(A^3)=[\\det(A)]^3=4^3=64$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -541,7 +541,7 @@
     "section": "Properties of Determinants",
     "type": "example",
     "title": "Example 1.44 --- Effect of Row Operations on Determinant",
-    "content": "Let $\\det\\begin{bmatrix}a&b&c\\\\d&e&f\\\\g&h&i\\end{bmatrix}=6$.\nFind the determinant after swapping rows 1 and 2, then\nmultiplying the new row 3 by $-3$.\n\n\\textbf{Solution:}\nSwapping rows 1 and 2 changes the sign:\n$\\det = -6$.\n\nMultiplying row 3 by $-3$ multiplies the determinant by $-3$:\n$\\det = (-3)(-6) = 18$.\n\n\\bigskip"
+    "content": "Let $\\det\\begin{bmatrix}a&b&c\\\\d&e&f\\\\g&h&i\\end{bmatrix}=6$.\nFind the determinant after swapping rows 1 and 2, then\nmultiplying the new row 3 by $-3$.\n\nSolution:\nSwapping rows 1 and 2 changes the sign:\n$\\det = -6$.\n\nMultiplying row 3 by $-3$ multiplies the determinant by $-3$:\n$\\det = (-3)(-6) = 18$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -549,7 +549,7 @@
     "section": "Properties of Determinants",
     "type": "example",
     "title": "Example 1.45 --- Past Paper 2021 Q3 --- Determinant Equations System",
-    "content": "If $A$ and $B$ are $3\\times 3$ matrices such that\n$\\det(A^2B^3)=108$ and $\\det(A^3B^2)=72$,\nfind $\\det(2A)$ and $\\det(B^{-1})$.\n\n\\textbf{Solution:}\nLet $\\det(A)=a$ and $\\det(B)=b$.\n\\[\na^2b^3=108 \\tag{1}\n\\]\n\\[\na^3b^2=72 \\tag{2}\n\\]\nDividing (1) by (2):\n\\[\n\\frac{b}{a}=\\frac{108}{72}=\\frac{3}{2}\n\\;\\Rightarrow\\; b=\\frac{3a}{2}.\n\\]\nSubstituting into (2):\n\\[\na^3\\cdot\\frac{9a^2}{4}=72\n\\;\\Rightarrow\\; 9a^5=288\n\\;\\Rightarrow\\; a^5=32\n\\;\\Rightarrow\\; a=2.\n\\]\nSo $\\det(A)=2$ and $b=3$, i.e.\\ $\\det(B)=3$.\n\\[\n\\det(2A)=2^3\\cdot\\det(A)=8\\times2=\\boxed{16}.\n\\]\n\\[\n\\det(B^{-1})=\\frac{1}{\\det(B)}=\\frac{1}{3}=\\boxed{\\tfrac{1}{3}}.\n\\]\n\n\\bigskip"
+    "content": "If $A$ and $B$ are $3\\times 3$ matrices such that\n$\\det(A^2B^3)=108$ and $\\det(A^3B^2)=72$,\nfind $\\det(2A)$ and $\\det(B^{-1})$.\n\nSolution:\nLet $\\det(A)=a$ and $\\det(B)=b$.\n\\[\na^2b^3=108 \\tag{1}\n\\]\n\\[\na^3b^2=72 \\tag{2}\n\\]\nDividing (1) by (2):\n\\[\n\\frac{b}{a}=\\frac{108}{72}=\\frac{3}{2}\n\\;\\Rightarrow\\; b=\\frac{3a}{2}.\n\\]\nSubstituting into (2):\n\\[\na^3\\cdot\\frac{9a^2}{4}=72\n\\;\\Rightarrow\\; 9a^5=288\n\\;\\Rightarrow\\; a^5=32\n\\;\\Rightarrow\\; a=2.\n\\]\nSo $\\det(A)=2$ and $b=3$, i.e.\\ $\\det(B)=3$.\n\\[\n\\det(2A)=2^3\\cdot\\det(A)=8\\times2=\\boxed{16}.\n\\]\n\\[\n\\det(B^{-1})=\\frac{1}{\\det(B)}=\\frac{1}{3}=\\boxed{\\tfrac{1}{3}}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -557,7 +557,7 @@
     "section": "Properties of Determinants",
     "type": "example",
     "title": "Example 1.46 --- Past Paper 2023 Q3 --- Determinant Equations System",
-    "content": "If $A$ and $B$ are $6\\times 6$ matrices such that\n$\\det(AB^2)=72$ and $\\det(A^2B^2)=144$,\nfind $\\det(2A)$ and $\\det(AB^6)$.\n\n\\textbf{Solution:}\nLet $\\det(A)=a$ and $\\det(B)=b$.\n\\[\nab^2=72 \\tag{1}\n\\]\n\\[\na^2b^2=144 \\tag{2}\n\\]\nDividing (2) by (1):\n\\[\na=\\frac{144}{72}=2.\n\\]\nFrom (1): $2b^2=72\\Rightarrow b^2=36\\Rightarrow b=6$.\n\\[\n\\det(2A)=2^6\\cdot\\det(A)=64\\times2=\\boxed{128}.\n\\]\n\\[\n\\det(AB^6)=\\det(A)\\cdot[\\det(B)]^6=2\\times6^6=2\\times46656\n=\\boxed{93312}.\n\\]\n\n\\bigskip"
+    "content": "If $A$ and $B$ are $6\\times 6$ matrices such that\n$\\det(AB^2)=72$ and $\\det(A^2B^2)=144$,\nfind $\\det(2A)$ and $\\det(AB^6)$.\n\nSolution:\nLet $\\det(A)=a$ and $\\det(B)=b$.\n\\[\nab^2=72 \\tag{1}\n\\]\n\\[\na^2b^2=144 \\tag{2}\n\\]\nDividing (2) by (1):\n\\[\na=\\frac{144}{72}=2.\n\\]\nFrom (1): $2b^2=72\\Rightarrow b^2=36\\Rightarrow b=6$.\n\\[\n\\det(2A)=2^6\\cdot\\det(A)=64\\times2=\\boxed{128}.\n\\]\n\\[\n\\det(AB^6)=\\det(A)\\cdot[\\det(B)]^6=2\\times6^6=2\\times46656\n=\\boxed{93312}.\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -565,7 +565,7 @@
     "section": "Properties of Determinants",
     "type": "example",
     "title": "Example 1.47 --- Past Paper 2021 Q1(xi) --- Determinant of an Orthogonal Matrix",
-    "content": "If $A$ is an orthogonal matrix, show that $\\det(A)=\\pm1$.\n\n\\textbf{Solution:}\nSince $A$ is orthogonal, $A^TA=I$. Taking determinants:\n\\[\n\\det(A^TA)=\\det(I)=1\n\\;\\Rightarrow\\;\n\\det(A^T)\\cdot\\det(A)=1\n\\;\\Rightarrow\\;\n[\\det(A)]^2=1\n\\;\\Rightarrow\\;\n\\det(A)=\\pm1.\\quad\\square\n\\]\n\n\\bigskip"
+    "content": "If $A$ is an orthogonal matrix, show that $\\det(A)=\\pm1$.\n\nSolution:\nSince $A$ is orthogonal, $A^TA=I$. Taking determinants:\n\\[\n\\det(A^TA)=\\det(I)=1\n\\;\\Rightarrow\\;\n\\det(A^T)\\cdot\\det(A)=1\n\\;\\Rightarrow\\;\n[\\det(A)]^2=1\n\\;\\Rightarrow\\;\n\\det(A)=\\pm1.\\quad\\square\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -573,7 +573,7 @@
     "section": "Properties of Determinants",
     "type": "example",
     "title": "Example 1.48 --- Rank of a Matrix --- Past Paper 2021 Q1(xiv)",
-    "content": "Find the rank of\n$A=\\begin{bmatrix}3&0&2&2\\\\-6&42&24&54\\\\21&-21&0&-15\\end{bmatrix}$.\n\n\\textbf{Solution:}\nApply row operations to reduce to echelon form.\n\n$R_2\\leftarrow R_2+2R_1$, $R_3\\leftarrow R_3-7R_1$:\n\\[\n\\begin{bmatrix}3&0&2&2\\\\0&42&28&58\\\\0&-21&-14&-29\\end{bmatrix}.\n\\]\n$R_3\\leftarrow R_3+\\tfrac{1}{2}R_2$:\n\\[\n\\begin{bmatrix}3&0&2&2\\\\0&42&28&58\\\\0&0&0&0\\end{bmatrix}.\n\\]\nThere are 2 nonzero rows, so $\\text{rank}(A)=\\boxed{2}$.\n\n\\bigskip"
+    "content": "Find the rank of\n$A=\\begin{bmatrix}3&0&2&2\\\\-6&42&24&54\\\\21&-21&0&-15\\end{bmatrix}$.\n\nSolution:\nApply row operations to reduce to echelon form.\n\n$R_2\\leftarrow R_2+2R_1$, $R_3\\leftarrow R_3-7R_1$:\n\\[\n\\begin{bmatrix}3&0&2&2\\\\0&42&28&58\\\\0&-21&-14&-29\\end{bmatrix}.\n\\]\n$R_3\\leftarrow R_3+\\tfrac{1}{2}R_2$:\n\\[\n\\begin{bmatrix}3&0&2&2\\\\0&42&28&58\\\\0&0&0&0\\end{bmatrix}.\n\\]\nThere are 2 nonzero rows, so $\\text{rank}(A)=\\boxed{2}$.\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -581,7 +581,7 @@
     "section": "Properties of Determinants",
     "type": "example",
     "title": "Example 1.49 --- Eigenvector Cannot Have Two Eigenvalues --- Past Paper 2021 Q1(xiii)",
-    "content": "Show that an eigenvector of a square matrix cannot correspond to\ntwo distinct eigenvalues.\n\n\\textbf{Solution:}\nSuppose $\\mathbf{v}\\neq\\mathbf{0}$ is an eigenvector of $A$\ncorresponding to $\\lambda_1$ and $\\lambda_2$. Then:\n\\[\nA\\mathbf{v}=\\lambda_1\\mathbf{v} \\quad\\text{and}\\quad\nA\\mathbf{v}=\\lambda_2\\mathbf{v}.\n\\]\nSubtracting:\n\\[\n(\\lambda_1-\\lambda_2)\\mathbf{v}=\\mathbf{0}.\n\\]\nSince $\\mathbf{v}\\neq\\mathbf{0}$, we must have\n$\\lambda_1-\\lambda_2=0$, i.e.\\ $\\lambda_1=\\lambda_2$. This\ncontradicts the assumption that they are distinct. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Show that an eigenvector of a square matrix cannot correspond to\ntwo distinct eigenvalues.\n\nSolution:\nSuppose $\\mathbf{v}\\neq\\mathbf{0}$ is an eigenvector of $A$\ncorresponding to $\\lambda_1$ and $\\lambda_2$. Then:\n\\[\nA\\mathbf{v}=\\lambda_1\\mathbf{v} \\quad\\text{and}\\quad\nA\\mathbf{v}=\\lambda_2\\mathbf{v}.\n\\]\nSubtracting:\n\\[\n(\\lambda_1-\\lambda_2)\\mathbf{v}=\\mathbf{0}.\n\\]\nSince $\\mathbf{v}\\neq\\mathbf{0}$, we must have\n$\\lambda_1-\\lambda_2=0$, i.e.\\ $\\lambda_1=\\lambda_2$. This\ncontradicts the assumption that they are distinct. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -589,7 +589,7 @@
     "section": "Properties of Determinants",
     "type": "example",
     "title": "Example 1.50 --- Singular vs Invertible via Determinant",
-    "content": "Determine whether the matrix\n$A=\\begin{bmatrix}2&3&1\\\\4&6&2\\\\1&0&5\\end{bmatrix}$\nis invertible.\n\n\\textbf{Solution:}\nCompute $\\det(A)$ by expanding along row 1:\n\\[\n=2\\begin{vmatrix}6&2\\\\0&5\\end{vmatrix}\n-3\\begin{vmatrix}4&2\\\\1&5\\end{vmatrix}\n+1\\begin{vmatrix}4&6\\\\1&0\\end{vmatrix}\n\\]\n\\[\n=2(30-0)-3(20-2)+1(0-6)\n=60-54-6=0.\n\\]\nSince $\\det(A)=0$, the matrix $A$ is \\textbf{singular} (not\ninvertible).\n\n\n\\newpage"
+    "content": "Determine whether the matrix\n$A=\\begin{bmatrix}2&3&1\\\\4&6&2\\\\1&0&5\\end{bmatrix}$\nis invertible.\n\nSolution:\nCompute $\\det(A)$ by expanding along row 1:\n\\[\n=2\\begin{vmatrix}6&2\\\\0&5\\end{vmatrix}\n-3\\begin{vmatrix}4&2\\\\1&5\\end{vmatrix}\n+1\\begin{vmatrix}4&6\\\\1&0\\end{vmatrix}\n\\]\n\\[\n=2(30-0)-3(20-2)+1(0-6)\n=60-54-6=0.\n\\]\nSince $\\det(A)=0$, the matrix $A$ is singular (not\ninvertible)."
   },
   {
     "course": "Linear Algebra",
@@ -765,7 +765,7 @@
     "section": "Practice Problems",
     "type": "practice_problem",
     "title": "Practice Problem 22",
-    "content": "Show that if $A$ is an $n\\times n$ skew-symmetric matrix\n        and $n$ is odd, then $\\det(A)=0$.\n        \\textit{Hint: Use $\\det(A^T)=\\det(A)$ and $A^T=-A$.}"
+    "content": "Show that if $A$ is an $n\\times n$ skew-symmetric matrix\n        and $n$ is odd, then $\\det(A)=0$.\n        Hint: Use $\\det(A^T)=\\det(A)$ and $A^T=-A$."
   },
   {
     "course": "Linear Algebra",

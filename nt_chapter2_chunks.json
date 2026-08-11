@@ -5,7 +5,7 @@
     "section": "Fundamental Definitions",
     "type": "definition",
     "title": "Definition: Prime Integer",
-    "content": "An integer $p > 1$ is called a \\textbf{prime number} (or simply \\textbf{prime}) if its only positive divisors are 1 and $p$ itself.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Points:}}\n\\begin{itemize}[leftmargin=*]\n    \\item A prime has exactly two positive divisors: 1 and itself\n    \\item The number 1 is NOT a prime number\n    \\item The smallest prime number is 2 (also the only even prime)\n\\end{itemize}\n\n\\vspace{0.4cm}"
+    "content": "An integer $p > 1$ is called a prime number (or simply prime) if its only positive divisors are 1 and $p$ itself.\n\nKey Points:\n\n- A prime has exactly two positive divisors: 1 and itself\n- The number 1 is NOT a prime number\n- The smallest prime number is 2 (also the only even prime)"
   },
   {
     "course": "Number Theory",
@@ -13,7 +13,7 @@
     "section": "Fundamental Definitions",
     "type": "example",
     "title": "Example 1: Identifying Prime Numbers",
-    "content": "Determine which of the following numbers are prime: 2, 3, 7, 11, 13, 17.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For 2:} Divisors are 1, 2. Only two divisors. \\textcolor{green}{Prime \\checkmark}\n\n\\textbf{For 3:} Divisors are 1, 3. Only two divisors. \\textcolor{green}{Prime \\checkmark}\n\n\\textbf{For 7:} Divisors are 1, 7. Only two divisors. \\textcolor{green}{Prime \\checkmark}\n\n\\textbf{For 11:} Divisors are 1, 11. Only two divisors. \\textcolor{green}{Prime \\checkmark}\n\n\\textbf{For 13:} Divisors are 1, 13. Only two divisors. \\textcolor{green}{Prime \\checkmark}\n\n\\textbf{For 17:} Divisors are 1, 17. Only two divisors. \\textcolor{green}{Prime \\checkmark}\n\nAll of these are prime numbers.\n\n\\vspace{0.3cm}"
+    "content": "Determine which of the following numbers are prime: 2, 3, 7, 11, 13, 17.\n\nSolution:\n\nFor 2: Divisors are 1, 2. Only two divisors. Prime ✓\n\nFor 3: Divisors are 1, 3. Only two divisors. Prime ✓\n\nFor 7: Divisors are 1, 7. Only two divisors. Prime ✓\n\nFor 11: Divisors are 1, 11. Only two divisors. Prime ✓\n\nFor 13: Divisors are 1, 13. Only two divisors. Prime ✓\n\nFor 17: Divisors are 1, 17. Only two divisors. Prime ✓\n\nAll of these are prime numbers."
   },
   {
     "course": "Number Theory",
@@ -21,7 +21,7 @@
     "section": "Fundamental Definitions",
     "type": "example",
     "title": "Example 2: First Twenty Prime Numbers",
-    "content": "List the first 20 prime numbers.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nThe first 20 prime numbers are:\n\\[\n\\boxed{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71}\n\\]\n\n\\textcolor{accentorange}{\\textbf{Note:}} \n\\begin{itemize}\n    \\item 2 is the only even prime\n    \\item All other primes are odd\n    \\item Primes become less frequent as numbers get larger\n\\end{itemize}\n\n\\vspace{0.2cm}"
+    "content": "List the first 20 prime numbers.\n\nSolution:\n\nThe first 20 prime numbers are:\n\\[\n\\boxed{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71}\n\\]\n\nNote:\n\n- 2 is the only even prime\n- All other primes are odd\n- Primes become less frequent as numbers get larger"
   },
   {
     "course": "Number Theory",
@@ -29,7 +29,7 @@
     "section": "Fundamental Definitions",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Why is 1 NOT Prime?}}",
-    "content": "\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Why is 1 NOT Prime?}}\n\nThe number 1 is excluded from primes for important mathematical reasons:\n\\begin{itemize}[leftmargin=*]\n    \\item If 1 were prime, the Fundamental Theorem of Arithmetic (unique factorization) would fail\n    \\item For example: $6 = 2 \\times 3 = 1 \\times 2 \\times 3 = 1 \\times 1 \\times 2 \\times 3 = \\ldots$\n    \\item This would destroy uniqueness of prime factorization\n\\end{itemize}\n\n\\subsection*{Composite Numbers}"
+    "content": "Why is 1 NOT Prime?\n\nThe number 1 is excluded from primes for important mathematical reasons:\n\n- If 1 were prime, the Fundamental Theorem of Arithmetic (unique factorization) would fail\n- For example: $6 = 2 \\times 3 = 1 \\times 2 \\times 3 = 1 \\times 1 \\times 2 \\times 3 = \\ldots$\n- This would destroy uniqueness of prime factorization\n\n\\subsection*{Composite Numbers}"
   },
   {
     "course": "Number Theory",
@@ -37,7 +37,7 @@
     "section": "Fundamental Definitions",
     "type": "definition",
     "title": "Definition: Composite Integer",
-    "content": "An integer $n > 1$ is called \\textbf{composite} if it is not prime. In other words, $n$ is composite if it has at least one positive divisor other than 1 and $n$ itself.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Points:}}\n\\begin{itemize}[leftmargin=*]\n    \\item A composite number has at least three positive divisors\n    \\item Every composite number can be written as a product of two or more primes\n    \\item The smallest composite number is 4\n\\end{itemize}\n\n\\vspace{0.2cm}"
+    "content": "An integer $n > 1$ is called composite if it is not prime. In other words, $n$ is composite if it has at least one positive divisor other than 1 and $n$ itself.\n\nKey Points:\n\n- A composite number has at least three positive divisors\n- Every composite number can be written as a product of two or more primes\n- The smallest composite number is 4"
   },
   {
     "course": "Number Theory",
@@ -45,7 +45,7 @@
     "section": "Fundamental Definitions",
     "type": "example",
     "title": "Example 3: Identifying Composite Numbers",
-    "content": "Show that 4, 6, 8, 9, 10, 12 are composite numbers.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For 4:} $4 = 2 \\times 2$. Divisors: 1, 2, 4. \\textcolor{green}{Composite \\checkmark}\n\n\\textbf{For 6:} $6 = 2 \\times 3$. Divisors: 1, 2, 3, 6. \\textcolor{green}{Composite \\checkmark}\n\n\\textbf{For 8:} $8 = 2 \\times 4 = 2 \\times 2 \\times 2$. Divisors: 1, 2, 4, 8. \\textcolor{green}{Composite \\checkmark}\n\n\\textbf{For 9:} $9 = 3 \\times 3$. Divisors: 1, 3, 9. \\textcolor{green}{Composite \\checkmark}\n\n\\textbf{For 10:} $10 = 2 \\times 5$. Divisors: 1, 2, 5, 10. \\textcolor{green}{Composite \\checkmark}\n\n\\textbf{For 12:} $12 = 2 \\times 6 = 3 \\times 4 = 2 \\times 2 \\times 3$. Divisors: 1, 2, 3, 4, 6, 12. \\textcolor{green}{Composite \\checkmark}\n\nAll have more than two divisors, so all are composite.\n\n\\vspace{0.2cm}"
+    "content": "Show that 4, 6, 8, 9, 10, 12 are composite numbers.\n\nSolution:\n\nFor 4: $4 = 2 \\times 2$. Divisors: 1, 2, 4. Composite ✓\n\nFor 6: $6 = 2 \\times 3$. Divisors: 1, 2, 3, 6. Composite ✓\n\nFor 8: $8 = 2 \\times 4 = 2 \\times 2 \\times 2$. Divisors: 1, 2, 4, 8. Composite ✓\n\nFor 9: $9 = 3 \\times 3$. Divisors: 1, 3, 9. Composite ✓\n\nFor 10: $10 = 2 \\times 5$. Divisors: 1, 2, 5, 10. Composite ✓\n\nFor 12: $12 = 2 \\times 6 = 3 \\times 4 = 2 \\times 2 \\times 3$. Divisors: 1, 2, 3, 4, 6, 12. Composite ✓\n\nAll have more than two divisors, so all are composite."
   },
   {
     "course": "Number Theory",
@@ -53,7 +53,7 @@
     "section": "Fundamental Definitions",
     "type": "example",
     "title": "Example 4: Prime vs Composite Classification",
-    "content": "Classify the following numbers as prime or composite: 15, 17, 21, 23, 29, 30.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Number} & \\textbf{Factorization} & \\textbf{Divisors} & \\textbf{Classification} \\\\\n\\hline\n15 & $3 \\times 5$ & 1, 3, 5, 15 & \\cellcolor{red!20}Composite \\\\\n\\hline\n17 & $1 \\times 17$ & 1, 17 & \\cellcolor{green!20}Prime \\\\\n\\hline\n21 & $3 \\times 7$ & 1, 3, 7, 21 & \\cellcolor{red!20}Composite \\\\\n\\hline\n23 & $1 \\times 23$ & 1, 23 & \\cellcolor{green!20}Prime \\\\\n\\hline\n29 & $1 \\times 29$ & 1, 29 & \\cellcolor{green!20}Prime \\\\\n\\hline\n30 & $2 \\times 3 \\times 5$ & 1, 2, 3, 5, 6, 10, 15, 30 & \\cellcolor{red!20}Composite \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\vspace{0.2cm}\n\n\\begin{center}\n\\begin{tikzpicture}\n    % Title\n    \\node[align=center] at (6, 5.5) {\\textcolor{primaryblue}{\\Large\\textbf{Classification of Positive Integers}}};\n    \n    % Main box for integers > 1\n    \\draw[thick, primaryblue, fill=primaryblue!5] (0,0) rectangle (12,5);\n    \\node[align=center] at (6, 4.5) {\\textcolor{primaryblue}{\\textbf{Integers greater than 1}}};\n    \n    % Prime box\n    \\draw[thick, green!60!black, fill=green!10] (0.5,0.5) rectangle (5.5,4);\n    \\node[align=center, green!60!black] at (3, 3.5) {\\textbf{PRIME NUMBERS}};\n    \\node[align=center] at (3, 3) {Exactly 2 divisors};\n    \\node[align=center] at (3, 2.5) {(1 and itself)};\n    \\node[align=center] at (3, 1.8) {\\textbf{Examples:}};\n    \\node[align=center] at (3, 1.3) {2, 3, 5, 7, 11, 13,};\n    \\node[align=center] at (3, 0.9) {17, 19, 23, 29...};\n    \n    % Composite box\n    \\draw[thick, red!60!black, fill=red!10] (6.5,0.5) rectangle (11.5,4);\n    \\node[align=center, red!60!black] at (9, 3.5) {\\textbf{COMPOSITE NUMBERS}};\n    \\node[align=center] at (9, 3) {More than 2 divisors};\n    \\node[align=center] at (9, 2.5) {(divisible by other numbers)};\n    \\node[align=center] at (9, 1.8) {\\textbf{Examples:}};\n    \\node[align=center] at (9, 1.3) {4, 6, 8, 9, 10, 12,};\n    \\node[align=center] at (9, 0.9) {14, 15, 16, 18...};\n    \n    % Special box for 1\n    \\draw[thick, accentorange, fill=accentorange!10] (0,-1.5) rectangle (12,-0.5);\n    \\node[align=center] at (6, -1) {\\textcolor{accentorange}{\\textbf{The number 1 is NEITHER prime NOR composite}}};\n\\end{tikzpicture}\n\\end{center}\n\n\\subsection*{Co-prime (Relatively Prime) Integers}"
+    "content": "Classify the following numbers as prime or composite: 15, 17, 21, 23, 29, 30.\n\nSolution:\n\n| Number | Factorization | Divisors | Classification |\n|---|---|---|---|\n| 15 | $3 \\times 5$ | 1, 3, 5, 15 | Composite |\n| 17 | $1 \\times 17$ | 1, 17 | Prime |\n| 21 | $3 \\times 7$ | 1, 3, 7, 21 | Composite |\n| 23 | $1 \\times 23$ | 1, 23 | Prime |\n| 29 | $1 \\times 29$ | 1, 29 | Prime |\n| 30 | $2 \\times 3 \\times 5$ | 1, 2, 3, 5, 6, 10, 15, 30 | Composite |\n\n\\subsection*{Co-prime (Relatively Prime) Integers}"
   },
   {
     "course": "Number Theory",
@@ -61,7 +61,7 @@
     "section": "Fundamental Definitions",
     "type": "definition",
     "title": "Definition: Co-prime Integers",
-    "content": "Two integers $a$ and $b$ are called \\textbf{co-prime} or \\textbf{relatively prime} if their greatest common divisor is 1:\n\\[\n\\gcd(a,b) = 1\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Important Notes:}}\n\\begin{itemize}[leftmargin=*]\n    \\item Co-prime integers share no common prime factors\n    \\item The integers themselves need not be prime\n    \\item For example, 8 and 9 are co-prime, but neither is prime\n\\end{itemize}"
+    "content": "Two integers $a$ and $b$ are called co-prime or relatively prime if their greatest common divisor is 1:\n\\[\n\\gcd(a,b) = 1\n\\]\n\nImportant Notes:\n\n- Co-prime integers share no common prime factors\n- The integers themselves need not be prime\n- For example, 8 and 9 are co-prime, but neither is prime"
   },
   {
     "course": "Number Theory",
@@ -69,7 +69,7 @@
     "section": "Fundamental Definitions",
     "type": "example",
     "title": "Example 5: Co-prime Pairs",
-    "content": "Determine which pairs are co-prime.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{enumerate}[leftmargin=*]\n    \\item $(8, 15)$: $\\gcd(8, 15) = 1$ \\textcolor{green}{Co-prime \\checkmark}\n    \n    \\item $(12, 18)$: $\\gcd(12, 18) = 6 \\neq 1$ \\textcolor{red}{Not co-prime $\\times$}\n    \n    \\item $(25, 36)$: $\\gcd(25, 36) = 1$ \\textcolor{green}{Co-prime \\checkmark}\n    \n    \\item $(14, 21)$: $\\gcd(14, 21) = 7 \\neq 1$ \\textcolor{red}{Not co-prime $\\times$}\n    \n    \\item $(9, 16)$: $\\gcd(9, 16) = 1$ \\textcolor{green}{Co-prime \\checkmark}\n\\end{enumerate}\n\n\\textcolor{accentorange}{\\textbf{Observation:}} Notice that in $(9, 16)$, both 9 and 16 are composite, yet they are co-prime!"
+    "content": "Determine which pairs are co-prime.\n\nSolution:\n\n1. $(8, 15)$: $\\gcd(8, 15) = 1$ Co-prime ✓\n2. $(12, 18)$: $\\gcd(12, 18) = 6 \\neq 1$ Not co-prime $\\times$\n3. $(25, 36)$: $\\gcd(25, 36) = 1$ Co-prime ✓\n4. $(14, 21)$: $\\gcd(14, 21) = 7 \\neq 1$ Not co-prime $\\times$\n5. $(9, 16)$: $\\gcd(9, 16) = 1$ Co-prime ✓\n\nObservation: Notice that in $(9, 16)$, both 9 and 16 are composite, yet they are co-prime!"
   },
   {
     "course": "Number Theory",
@@ -77,7 +77,7 @@
     "section": "Fundamental Definitions",
     "type": "example",
     "title": "Example 6: Prime Numbers are Co-prime",
-    "content": "Show that any two distinct prime numbers are always co-prime.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nLet $p$ and $q$ be two distinct prime numbers.\n\nSince $p$ is prime, its only divisors are 1 and $p$.\n\nSince $q$ is prime, its only divisors are 1 and $q$.\n\nSince $p \\neq q$, the only common divisor is 1.\n\nTherefore, $\\gcd(p, q) = 1$.\n\nHence, any two distinct primes are co-prime. \\qed\n\n\\textbf{Examples:}\n\\begin{itemize}\n    \\item $\\gcd(3, 5) = 1$ \\textcolor{green}{\\checkmark}\n    \\item $\\gcd(7, 11) = 1$ \\textcolor{green}{\\checkmark}\n    \\item $\\gcd(13, 17) = 1$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\n\\subsection*{Twin Primes}"
+    "content": "Show that any two distinct prime numbers are always co-prime.\n\nSolution:\n\nLet $p$ and $q$ be two distinct prime numbers.\n\nSince $p$ is prime, its only divisors are 1 and $p$.\n\nSince $q$ is prime, its only divisors are 1 and $q$.\n\nSince $p \\neq q$, the only common divisor is 1.\n\nTherefore, $\\gcd(p, q) = 1$.\n\nHence, any two distinct primes are co-prime.\n\nExamples:\n\n- $\\gcd(3, 5) = 1$ ✓\n- $\\gcd(7, 11) = 1$ ✓\n- $\\gcd(13, 17) = 1$ ✓\n\n\\subsection*{Twin Primes}"
   },
   {
     "course": "Number Theory",
@@ -85,7 +85,7 @@
     "section": "Fundamental Definitions",
     "type": "definition",
     "title": "Definition: Twin Primes",
-    "content": "Two prime numbers that differ by 2 are called \\textbf{twin primes}. In other words, primes $p$ and $q$ are twin primes if:\n\\[\nq = p + 2\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Facts:}}\n\\begin{itemize}[leftmargin=*]\n    \\item The smallest twin prime pair is $(3, 5)$\n    \\item All twin prime pairs (except 3, 5) have the form $(6n-1, 6n+1)$\n    \\item It is conjectured (but not proven) that there are infinitely many twin primes\n\\end{itemize}"
+    "content": "Two prime numbers that differ by 2 are called twin primes. In other words, primes $p$ and $q$ are twin primes if:\n\\[\nq = p + 2\n\\]\n\nKey Facts:\n\n- The smallest twin prime pair is $(3, 5)$\n- All twin prime pairs (except 3, 5) have the form $(6n-1, 6n+1)$\n- It is conjectured (but not proven) that there are infinitely many twin primes"
   },
   {
     "course": "Number Theory",
@@ -93,7 +93,7 @@
     "section": "Fundamental Definitions",
     "type": "example",
     "title": "Example 7: Finding Twin Primes",
-    "content": "List all twin prime pairs less than 50.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe check consecutive odd numbers for primality:\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Twin Prime Pair} & \\textbf{Difference} \\\\\n\\hline\n$(3, 5)$ & $5 - 3 = 2$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n$(5, 7)$ & $7 - 5 = 2$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n$(11, 13)$ & $13 - 11 = 2$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n$(17, 19)$ & $19 - 17 = 2$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n$(29, 31)$ & $31 - 29 = 2$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n$(41, 43)$ & $43 - 41 = 2$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nTherefore, twin primes less than 50 are:\n\\[\n\\boxed{(3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43)}\n\\]\n\n\\vspace{0.2cm}"
+    "content": "List all twin prime pairs less than 50.\n\nSolution:\n\nWe check consecutive odd numbers for primality:\n\n| Twin Prime Pair | Difference |\n|---|---|\n| $(3, 5)$ | $5 - 3 = 2$ ✓ |\n| $(5, 7)$ | $7 - 5 = 2$ ✓ |\n| $(11, 13)$ | $13 - 11 = 2$ ✓ |\n| $(17, 19)$ | $19 - 17 = 2$ ✓ |\n| $(29, 31)$ | $31 - 29 = 2$ ✓ |\n| $(41, 43)$ | $43 - 41 = 2$ ✓ |\n\nTherefore, twin primes less than 50 are:\n\\[\n\\boxed{(3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43)}\n\\]"
   },
   {
     "course": "Number Theory",
@@ -101,7 +101,7 @@
     "section": "Fundamental Definitions",
     "type": "example",
     "title": "Example 8: Non-Twin Prime Pairs",
-    "content": "Explain why $(7, 11)$ and $(13, 17)$ are NOT twin primes even though both numbers in each pair are prime.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $(7, 11)$:}\n\\[\n11 - 7 = 4 \\neq 2\n\\]\nThe difference is 4, not 2. \\textcolor{red}{Not twin primes $\\times$}\n\n\\textbf{For $(13, 17)$:}\n\\[\n17 - 13 = 4 \\neq 2\n\\]\nThe difference is 4, not 2. \\textcolor{red}{Not twin primes $\\times$}\n\n\\textcolor{accentorange}{\\textbf{Note:}} For twin primes, the difference must be \\textbf{exactly} 2.\n\n\\vspace{0.3cm}"
+    "content": "Explain why $(7, 11)$ and $(13, 17)$ are NOT twin primes even though both numbers in each pair are prime.\n\nSolution:\n\nFor $(7, 11)$:\n\\[\n11 - 7 = 4 \\neq 2\n\\]\nThe difference is 4, not 2. Not twin primes $\\times$\n\nFor $(13, 17)$:\n\\[\n17 - 13 = 4 \\neq 2\n\\]\nThe difference is 4, not 2. Not twin primes $\\times$\n\nNote: For twin primes, the difference must be exactly 2."
   },
   {
     "course": "Number Theory",
@@ -109,7 +109,7 @@
     "section": "Fundamental Definitions",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary of Definitions}} {center} {tabular}{|p{3.5cm}|p{8cm}|}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary of Definitions}}\n\n\\begin{center}\n\\begin{tabular}{|p{3.5cm}|p{8cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Term} & \\textbf{Definition} \\\\\n\\hline\nPrime & Integer $p > 1$ with only divisors 1 and $p$ \\\\\n\\hline\nComposite & Integer $n > 1$ that is not prime \\\\\n\\hline\nCo-prime & Two integers with $\\gcd(a,b) = 1$ \\\\\n\\hline\nTwin Primes & Two primes differing by 2: $(p, p+2)$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Remember:}}\n\\begin{itemize}\n    \\item 1 is neither prime nor composite\n    \\item 2 is the only even prime\n    \\item Co-prime integers need not be prime themselves\n\\end{itemize}\n\n\\newpage\n\n\\section{Fundamental Theorems on Primes}\n\n\\subsection*{Euclid's Lemma}\n\n\\begin{definitionbox}{Theorem: Euclid's Lemma}\nIf $p$ is a prime number and $p | ab$, then:\n\\[\np | a \\quad \\text{or} \\quad p | b\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} If a prime divides a product of two integers, then it must divide at least one of them.\n\\end{definitionbox}\n\n\\begin{examplebox}{Proof: Euclid's Lemma}\n\\textcolor{accentorange}{\\textbf{Proof:}}\n\nLet $p$ be prime and $p | ab$.\n\nWe need to show that $p | a$ or $p | b$.\n\n\\textbf{Case 1:} If $p | a$, we are done.\n\n\\textbf{Case 2:} Suppose $p \\nmid a$.\n\nSince $p$ is prime, its only divisors are 1 and $p$.\n\nSince $p \\nmid a$, we have $\\gcd(p, a) \\neq p$.\n\nTherefore, $\\gcd(p, a) = 1$ (the only other option).\n\nNow we use Euclid's Lemma from Chapter 1:\n\nIf $p | ab$ and $\\gcd(p, a) = 1$, then $p | b$.\n\nTherefore, $p | b$. \\qed\n\\end{examplebox}\n\n\n\\begin{examplebox}{Example 9: Applying Euclid's Lemma}\nGiven that $7 | (6 \\times 14)$, use Euclid's Lemma to determine what 7 divides.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe have $7 | (6 \\times 14)$.\n\nSince 7 is prime, by Euclid's Lemma:\n\\[\n7 | 6 \\quad \\text{or} \\quad 7 | 14\n\\]\n\nCheck: $6 = 7(0) + 6$, so $7 \\nmid 6$ \\textcolor{red}{$\\times$}\n\nCheck: $14 = 7(2) + 0$, so $7 | 14$ \\textcolor{green}{\\checkmark}\n\nTherefore, by Euclid's Lemma, $7 | 14$.\n\n\\textbf{Verification:} $6 \\times 14 = 84 = 7 \\times 12$, so indeed $7 | 84$. \\textcolor{green}{\\checkmark}\n\\end{examplebox}\n\n\\begin{examplebox}{Example 10: Euclid's Lemma Application}\nIf $11 | (5 \\times n)$ where $n$ is an integer, what can we conclude?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince 11 is prime and $11 | (5 \\times n)$, by Euclid's Lemma:\n\\[\n11 | 5 \\quad \\text{or} \\quad 11 | n\n\\]\n\nCheck if $11 | 5$: $5 = 11(0) + 5$, so $11 \\nmid 5$ \\textcolor{red}{$\\times$}\n\nTherefore, we must have $11 | n$. \\textcolor{green}{\\checkmark}\n\n\\textbf{Conclusion:} If $11 | (5 \\times n)$, then $11 | n$.\n\\end{examplebox}\n\n\\subsection*{Corollaries of Euclid's Lemma}\n\n\\begin{definitionbox}{Corollary 1: Extended Euclid's Lemma}\nIf $p$ is prime and $p | a_1 a_2 a_3 \\cdots a_n$, then:\n\\[\np | a_k \\quad \\text{for some } k, \\; 1 \\leq k \\leq n\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} If a prime divides a product of $n$ integers, then it must divide at least one of them.\n\\end{definitionbox}\n\n\\begin{examplebox}{Proof: Corollary 1}\n\\textcolor{accentorange}{\\textbf{Proof by Induction:}}\n\n\\textbf{Base Case:} $n = 2$\n\nThis is Euclid's Lemma, which we already proved. \\textcolor{green}{\\checkmark}\n\n\\textbf{Inductive Hypothesis:} Assume the result is true for $n = k$.\n\nThat is, if $p | a_1 a_2 \\cdots a_k$, then $p | a_i$ for some $i$.\n\n\\textbf{Inductive Step:} Prove for $n = k + 1$.\n\nSuppose $p | a_1 a_2 \\cdots a_k a_{k+1}$.\n\nWe can write this as:\n\\[\np | (a_1 a_2 \\cdots a_k) \\cdot a_{k+1}\n\\]\n\nBy Euclid's Lemma (base case):\n\\[\np | (a_1 a_2 \\cdots a_k) \\quad \\text{or} \\quad p | a_{k+1}\n\\]\n\n\\textbf{Case 1:} If $p | a_{k+1}$, we are done.\n\n\\textbf{Case 2:} If $p | (a_1 a_2 \\cdots a_k)$, then by the inductive hypothesis, $p | a_i$ for some $i \\leq k$.\n\nIn either case, $p$ divides at least one of the factors.\n\nBy mathematical induction, the result holds for all $n \\geq 2$. \\qed\n\\end{examplebox}\n\n\\begin{examplebox}{Example 11: Corollary 1 Application}\nGiven that $5 | (2 \\times 3 \\times 7 \\times 10 \\times 11)$, which factor must 5 divide?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince 5 is prime and $5 | (2 \\times 3 \\times 7 \\times 10 \\times 11)$, by Corollary 1:\n\n5 must divide at least one of: 2, 3, 7, 10, 11\n\nCheck each:\n\\begin{itemize}\n    \\item $5 \\nmid 2$ \\textcolor{red}{$\\times$}\n    \\item $5 \\nmid 3$ \\textcolor{red}{$\\times$}\n    \\item $5 \\nmid 7$ \\textcolor{red}{$\\times$}\n    \\item $5 | 10$ because $10 = 5 \\times 2$ \\textcolor{green}{\\checkmark}\n    \\item $5 \\nmid 11$ \\textcolor{red}{$\\times$}\n\\end{itemize}\n\nTherefore, $5 | 10$.\n\n\\textbf{Verification:} $2 \\times 3 \\times 7 \\times 10 \\times 11 = 4620 = 5 \\times 924$ \\textcolor{green}{\\checkmark}\n\\end{examplebox}\n\n\\begin{definitionbox}{Corollary 2: Product of Primes}\nIf $p, q_1, q_2, \\ldots, q_n$ are all prime numbers and:\n\\[\np | q_1 q_2 \\cdots q_n\n\\]\nthen:\n\\[\np = q_k \\quad \\text{for some } k, \\; 1 \\leq k \\leq n\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} If a prime divides a product of primes, then it must equal one of those primes.\n\\end{definitionbox}\n\n\\begin{examplebox}{Proof: Corollary 2}\n\\textcolor{accentorange}{\\textbf{Proof:}}\n\nLet $p, q_1, q_2, \\ldots, q_n$ be primes with $p | q_1 q_2 \\cdots q_n$.\n\nBy Corollary 1, $p | q_k$ for some $k$ where $1 \\leq k \\leq n$.\n\nSince $q_k$ is prime, its only positive divisors are 1 and $q_k$.\n\nSince $p$ is also prime (so $p > 1$), we cannot have $p = 1$.\n\nTherefore, $p = q_k$. \\qed\n\\end{examplebox}\n\n\\begin{examplebox}{Example 12: Corollary 2 Application}\nIf $p$ is a prime and $p | (3 \\times 5 \\times 7 \\times 11)$, what are the possible values of $p$?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince all of 3, 5, 7, 11 are primes, by Corollary 2:\n\n$p$ must equal one of these primes.\n\nTherefore:\n\\[\n\\boxed{p \\in \\{3, 5, 7, 11\\}}\n\\]\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item If $p = 3$: $3 | (3 \\times 5 \\times 7 \\times 11)$ \\textcolor{green}{\\checkmark}\n    \\item If $p = 5$: $5 | (3 \\times 5 \\times 7 \\times 11)$ \\textcolor{green}{\\checkmark}\n    \\item If $p = 7$: $7 | (3 \\times 5 \\times 7 \\times 11)$ \\textcolor{green}{\\checkmark}\n    \\item If $p = 11$: $11 | (3 \\times 5 \\times 7 \\times 11)$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\\end{examplebox}\n\n\\subsection*{Fundamental Theorem of Arithmetic}\n\n\\begin{definitionbox}{Theorem: Fundamental Theorem of Arithmetic}\nEvery integer $n > 1$ can be expressed as a product of prime numbers. This representation is unique, except for the order of factors.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In other words:}}\n\\begin{itemize}[leftmargin=*]\n    \\item \\textbf{Existence:} Every integer greater than 1 can be factored into primes\n    \\item \\textbf{Uniqueness:} This factorization is unique (up to reordering)\n\\end{itemize}\n\\end{definitionbox}\n\n\\begin{examplebox}{Proof: Fundamental Theorem of Arithmetic}\n\\textcolor{accentorange}{\\textbf{Proof (Existence):}}\n\nWe prove by strong induction on $n$.\n\n\\textbf{Base Case:} $n = 2$\n\nSince 2 is prime, $2 = 2$ (a product of one prime). \\textcolor{green}{\\checkmark}\n\n\\textbf{Inductive Hypothesis:} Assume every integer $k$ with $2 \\leq k < n$ can be written as a product of primes.\n\n\\textbf{Inductive Step:} Consider integer $n$.\n\n\\textbf{Case 1:} If $n$ is prime, then $n$ is already a product of primes (itself).\n\n\\textbf{Case 2:} If $n$ is composite, then $n = ab$ where $1 < a < n$ and $1 < b < n$.\n\nBy the inductive hypothesis:\n\\begin{itemize}\n    \\item $a = p_1 p_2 \\cdots p_r$ (product of primes)\n    \\item $b = q_1 q_2 \\cdots q_s$ (product of primes)\n\\end{itemize}\n\nTherefore:\n\\[\nn = ab = p_1 p_2 \\cdots p_r q_1 q_2 \\cdots q_s\n\\]\n\nSo $n$ is a product of primes.\n\nBy strong induction, every integer $n > 1$ can be expressed as a product of primes. \\qed\n\n\\vspace{0.3cm}\n\n\\textcolor{accentorange}{\\textbf{Proof (Uniqueness):}}\n\nSuppose $n$ has two prime factorizations:\n\\[\nn = p_1 p_2 \\cdots p_r = q_1 q_2 \\cdots q_s\n\\]\n\nwhere all $p_i$ and $q_j$ are primes.\n\nSince $p_1 | n$, we have $p_1 | (q_1 q_2 \\cdots q_s)$.\n\nBy Corollary 2, $p_1 = q_k$ for some $k$.\n\nReorder so that $p_1 = q_1$.\n\nCancel $p_1$ from both sides:\n\\[\np_2 p_3 \\cdots p_r = q_2 q_3 \\cdots q_s\n\\]\n\nRepeat this process. Eventually, all primes on both sides must match.\n\nTherefore, $r = s$ and (after reordering) $p_i = q_i$ for all $i$.\n\nHence, the factorization is unique (up to order). \\qed\n\\end{examplebox}\n\n\n\\begin{examplebox}{Example 13: Unique Prime Factorization}\nFind the prime factorization of 360 and verify uniqueness.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{center}\n\\begin{tikzpicture}[level distance=1.2cm,\n  level 1/.style={sibling distance=4cm},\n  level 2/.style={sibling distance=2cm},\n  level 3/.style={sibling distance=1.2cm}]\n  \n  \\node[circle, draw, fill=primaryblue!20] {360}\n    child {node[circle, draw, fill=green!20] {2}\n    }\n    child {node[circle, draw, fill=primaryblue!20] {180}\n      child {node[circle, draw, fill=green!20] {2}}\n      child {node[circle, draw, fill=primaryblue!20] {90}\n        child {node[circle, draw, fill=green!20] {2}}\n        child {node[circle, draw, fill=primaryblue!20] {45}\n          child {node[circle, draw, fill=green!20] {3}}\n          child {node[circle, draw, fill=primaryblue!20] {15}\n            child {node[circle, draw, fill=green!20] {3}}\n            child {node[circle, draw, fill=green!20] {5}}\n          }\n        }\n      }\n    };\n\\end{tikzpicture}\n\\end{center}\n\nPrime factorization:\n\\[\n360 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 = 2^3 \\times 3^2 \\times 5\n\\]\n\nTherefore: $\\boxed{360 = 2^3 \\times 3^2 \\times 5}$\n\n\\textbf{Uniqueness:} No matter how we factor 360, we always get the same primes with the same exponents (though we might write them in different orders).\n\\end{examplebox}\n\n\n\\begin{examplebox}{Example 14: Different Factorization Paths}\nShow that factoring 60 by different methods gives the same prime factorization.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Method 1:} $60 = 2 \\times 30 = 2 \\times 2 \\times 15 = 2 \\times 2 \\times 3 \\times 5$\n\n\\textbf{Method 2:} $60 = 4 \\times 15 = 2 \\times 2 \\times 3 \\times 5$\n\n\\textbf{Method 3:} $60 = 6 \\times 10 = 2 \\times 3 \\times 2 \\times 5 = 2 \\times 2 \\times 3 \\times 5$\n\nAll methods give: $\\boxed{60 = 2^2 \\times 3 \\times 5}$ \\textcolor{green}{\\checkmark}\n\\end{examplebox}\n\n\\begin{definitionbox}{Corollary: Canonical Form}\nEvery positive integer $n > 1$ can be written uniquely in the form:\n\\[\nn = p_1^{k_1} p_2^{k_2} p_3^{k_3} \\cdots p_r^{k_r}\n\\]\nwhere $p_1 < p_2 < p_3 < \\cdots < p_r$ are distinct primes and $k_1, k_2, \\ldots, k_r$ are positive integers.\n\nThis is called the \\textbf{canonical form} or \\textbf{standard form} of $n$.\n\\end{definitionbox}\n\n\n\\begin{examplebox}{Example 15: Writing in Canonical Form}\nWrite the following numbers in canonical form: 72, 100, 1000, 2310.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For 72:}\n\\[\n72 = 8 \\times 9 = 2^3 \\times 3^2\n\\]\nCanonical form: $\\boxed{72 = 2^3 \\times 3^2}$\n\n\\textbf{For 100:}\n\\[\n100 = 10 \\times 10 = (2 \\times 5) \\times (2 \\times 5) = 2^2 \\times 5^2\n\\]\nCanonical form: $\\boxed{100 = 2^2 \\times 5^2}$\n\n\\textbf{For 1000:}\n\\[\n1000 = 10^3 = (2 \\times 5)^3 = 2^3 \\times 5^3\n\\]\nCanonical form: $\\boxed{1000 = 2^3 \\times 5^3}$\n\n\\textbf{For 2310:}\n\\[\n2310 = 2 \\times 1155 = 2 \\times 3 \\times 385 = 2 \\times 3 \\times 5 \\times 77 = 2 \\times 3 \\times 5 \\times 7 \\times 11\n\\]\nCanonical form: $\\boxed{2310 = 2 \\times 3 \\times 5 \\times 7 \\times 11}$\n\\end{examplebox}"
+    "content": "Summary of Definitions\n\n| Term | Definition |\n|---|---|\n| Prime | Integer $p > 1$ with only divisors 1 and $p$ |\n| Composite | Integer $n > 1$ that is not prime |\n| Co-prime | Two integers with $\\gcd(a,b) = 1$ |\n| Twin Primes | Two primes differing by 2: $(p, p+2)$ |\n\nRemember:\n\n- 1 is neither prime nor composite\n- 2 is the only even prime\n- Co-prime integers need not be prime themselves\n\n\\section{Fundamental Theorems on Primes}\n\n\\subsection*{Euclid's Lemma}\n\n\\begin{definitionbox}{Theorem: Euclid's Lemma}\nIf $p$ is a prime number and $p | ab$, then:\n\\[\np | a \\quad \\text{or} \\quad p | b\n\\]\n\nIn words: If a prime divides a product of two integers, then it must divide at least one of them.\n\\end{definitionbox}\n\n\\begin{examplebox}{Proof: Euclid's Lemma}\nProof:\n\nLet $p$ be prime and $p | ab$.\n\nWe need to show that $p | a$ or $p | b$.\n\nCase 1: If $p | a$, we are done.\n\nCase 2: Suppose $p \\nmid a$.\n\nSince $p$ is prime, its only divisors are 1 and $p$.\n\nSince $p \\nmid a$, we have $\\gcd(p, a) \\neq p$.\n\nTherefore, $\\gcd(p, a) = 1$ (the only other option).\n\nNow we use Euclid's Lemma from Chapter 1:\n\nIf $p | ab$ and $\\gcd(p, a) = 1$, then $p | b$.\n\nTherefore, $p | b$.\n\\end{examplebox}\n\n\\begin{examplebox}{Example 9: Applying Euclid's Lemma}\nGiven that $7 | (6 \\times 14)$, use Euclid's Lemma to determine what 7 divides.\n\nSolution:\n\nWe have $7 | (6 \\times 14)$.\n\nSince 7 is prime, by Euclid's Lemma:\n\\[\n7 | 6 \\quad \\text{or} \\quad 7 | 14\n\\]\n\nCheck: $6 = 7(0) + 6$, so $7 \\nmid 6$ $\\times$\n\nCheck: $14 = 7(2) + 0$, so $7 | 14$ ✓\n\nTherefore, by Euclid's Lemma, $7 | 14$.\n\nVerification: $6 \\times 14 = 84 = 7 \\times 12$, so indeed $7 | 84$. ✓\n\\end{examplebox}\n\n\\begin{examplebox}{Example 10: Euclid's Lemma Application}\nIf $11 | (5 \\times n)$ where $n$ is an integer, what can we conclude?\n\nSolution:\n\nSince 11 is prime and $11 | (5 \\times n)$, by Euclid's Lemma:\n\\[\n11 | 5 \\quad \\text{or} \\quad 11 | n\n\\]\n\nCheck if $11 | 5$: $5 = 11(0) + 5$, so $11 \\nmid 5$ $\\times$\n\nTherefore, we must have $11 | n$. ✓\n\nConclusion: If $11 | (5 \\times n)$, then $11 | n$.\n\\end{examplebox}\n\n\\subsection*{Corollaries of Euclid's Lemma}\n\n\\begin{definitionbox}{Corollary 1: Extended Euclid's Lemma}\nIf $p$ is prime and $p | a_1 a_2 a_3 \\cdots a_n$, then:\n\\[\np | a_k \\quad \\text{for some } k, \\; 1 \\leq k \\leq n\n\\]\n\nIn words: If a prime divides a product of $n$ integers, then it must divide at least one of them.\n\\end{definitionbox}\n\n\\begin{examplebox}{Proof: Corollary 1}\nProof by Induction:\n\nBase Case: $n = 2$\n\nThis is Euclid's Lemma, which we already proved. ✓\n\nInductive Hypothesis: Assume the result is true for $n = k$.\n\nThat is, if $p | a_1 a_2 \\cdots a_k$, then $p | a_i$ for some $i$.\n\nInductive Step: Prove for $n = k + 1$.\n\nSuppose $p | a_1 a_2 \\cdots a_k a_{k+1}$.\n\nWe can write this as:\n\\[\np | (a_1 a_2 \\cdots a_k) \\cdot a_{k+1}\n\\]\n\nBy Euclid's Lemma (base case):\n\\[\np | (a_1 a_2 \\cdots a_k) \\quad \\text{or} \\quad p | a_{k+1}\n\\]\n\nCase 1: If $p | a_{k+1}$, we are done.\n\nCase 2: If $p | (a_1 a_2 \\cdots a_k)$, then by the inductive hypothesis, $p | a_i$ for some $i \\leq k$.\n\nIn either case, $p$ divides at least one of the factors.\n\nBy mathematical induction, the result holds for all $n \\geq 2$.\n\\end{examplebox}\n\n\\begin{examplebox}{Example 11: Corollary 1 Application}\nGiven that $5 | (2 \\times 3 \\times 7 \\times 10 \\times 11)$, which factor must 5 divide?\n\nSolution:\n\nSince 5 is prime and $5 | (2 \\times 3 \\times 7 \\times 10 \\times 11)$, by Corollary 1:\n\n5 must divide at least one of: 2, 3, 7, 10, 11\n\nCheck each:\n\n- $5 \\nmid 2$ $\\times$\n- $5 \\nmid 3$ $\\times$\n- $5 \\nmid 7$ $\\times$\n- $5 | 10$ because $10 = 5 \\times 2$ ✓\n- $5 \\nmid 11$ $\\times$\n\nTherefore, $5 | 10$.\n\nVerification: $2 \\times 3 \\times 7 \\times 10 \\times 11 = 4620 = 5 \\times 924$ ✓\n\\end{examplebox}\n\n\\begin{definitionbox}{Corollary 2: Product of Primes}\nIf $p, q_1, q_2, \\ldots, q_n$ are all prime numbers and:\n\\[\np | q_1 q_2 \\cdots q_n\n\\]\nthen:\n\\[\np = q_k \\quad \\text{for some } k, \\; 1 \\leq k \\leq n\n\\]\n\nIn words: If a prime divides a product of primes, then it must equal one of those primes.\n\\end{definitionbox}\n\n\\begin{examplebox}{Proof: Corollary 2}\nProof:\n\nLet $p, q_1, q_2, \\ldots, q_n$ be primes with $p | q_1 q_2 \\cdots q_n$.\n\nBy Corollary 1, $p | q_k$ for some $k$ where $1 \\leq k \\leq n$.\n\nSince $q_k$ is prime, its only positive divisors are 1 and $q_k$.\n\nSince $p$ is also prime (so $p > 1$), we cannot have $p = 1$.\n\nTherefore, $p = q_k$.\n\\end{examplebox}\n\n\\begin{examplebox}{Example 12: Corollary 2 Application}\nIf $p$ is a prime and $p | (3 \\times 5 \\times 7 \\times 11)$, what are the possible values of $p$?\n\nSolution:\n\nSince all of 3, 5, 7, 11 are primes, by Corollary 2:\n\n$p$ must equal one of these primes.\n\nTherefore:\n\\[\n\\boxed{p \\in \\{3, 5, 7, 11\\}}\n\\]\n\nVerification:\n\n- If $p = 3$: $3 | (3 \\times 5 \\times 7 \\times 11)$ ✓\n- If $p = 5$: $5 | (3 \\times 5 \\times 7 \\times 11)$ ✓\n- If $p = 7$: $7 | (3 \\times 5 \\times 7 \\times 11)$ ✓\n- If $p = 11$: $11 | (3 \\times 5 \\times 7 \\times 11)$ ✓\n\n\\end{examplebox}\n\n\\subsection*{Fundamental Theorem of Arithmetic}\n\n\\begin{definitionbox}{Theorem: Fundamental Theorem of Arithmetic}\nEvery integer $n > 1$ can be expressed as a product of prime numbers. This representation is unique, except for the order of factors.\n\nIn other words:\n\n- Existence: Every integer greater than 1 can be factored into primes\n- Uniqueness: This factorization is unique (up to reordering)\n\n\\end{definitionbox}\n\n\\begin{examplebox}{Proof: Fundamental Theorem of Arithmetic}\nProof (Existence):\n\nWe prove by strong induction on $n$.\n\nBase Case: $n = 2$\n\nSince 2 is prime, $2 = 2$ (a product of one prime). ✓\n\nInductive Hypothesis: Assume every integer $k$ with $2 \\leq k < n$ can be written as a product of primes.\n\nInductive Step: Consider integer $n$.\n\nCase 1: If $n$ is prime, then $n$ is already a product of primes (itself).\n\nCase 2: If $n$ is composite, then $n = ab$ where $1 < a < n$ and $1 < b < n$.\n\nBy the inductive hypothesis:\n\n- $a = p_1 p_2 \\cdots p_r$ (product of primes)\n- $b = q_1 q_2 \\cdots q_s$ (product of primes)\n\nTherefore:\n\\[\nn = ab = p_1 p_2 \\cdots p_r q_1 q_2 \\cdots q_s\n\\]\n\nSo $n$ is a product of primes.\n\nBy strong induction, every integer $n > 1$ can be expressed as a product of primes.\n\nProof (Uniqueness):\n\nSuppose $n$ has two prime factorizations:\n\\[\nn = p_1 p_2 \\cdots p_r = q_1 q_2 \\cdots q_s\n\\]\n\nwhere all $p_i$ and $q_j$ are primes.\n\nSince $p_1 | n$, we have $p_1 | (q_1 q_2 \\cdots q_s)$.\n\nBy Corollary 2, $p_1 = q_k$ for some $k$.\n\nReorder so that $p_1 = q_1$.\n\nCancel $p_1$ from both sides:\n\\[\np_2 p_3 \\cdots p_r = q_2 q_3 \\cdots q_s\n\\]\n\nRepeat this process. Eventually, all primes on both sides must match.\n\nTherefore, $r = s$ and (after reordering) $p_i = q_i$ for all $i$.\n\nHence, the factorization is unique (up to order).\n\\end{examplebox}\n\n\\begin{examplebox}{Example 13: Unique Prime Factorization}\nFind the prime factorization of 360 and verify uniqueness.\n\nSolution:\n\nPrime factorization:\n\\[\n360 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 = 2^3 \\times 3^2 \\times 5\n\\]\n\nTherefore: $\\boxed{360 = 2^3 \\times 3^2 \\times 5}$\n\nUniqueness: No matter how we factor 360, we always get the same primes with the same exponents (though we might write them in different orders).\n\\end{examplebox}\n\n\\begin{examplebox}{Example 14: Different Factorization Paths}\nShow that factoring 60 by different methods gives the same prime factorization.\n\nSolution:\n\nMethod 1: $60 = 2 \\times 30 = 2 \\times 2 \\times 15 = 2 \\times 2 \\times 3 \\times 5$\n\nMethod 2: $60 = 4 \\times 15 = 2 \\times 2 \\times 3 \\times 5$\n\nMethod 3: $60 = 6 \\times 10 = 2 \\times 3 \\times 2 \\times 5 = 2 \\times 2 \\times 3 \\times 5$\n\nAll methods give: $\\boxed{60 = 2^2 \\times 3 \\times 5}$ ✓\n\\end{examplebox}\n\n\\begin{definitionbox}{Corollary: Canonical Form}\nEvery positive integer $n > 1$ can be written uniquely in the form:\n\\[\nn = p_1^{k_1} p_2^{k_2} p_3^{k_3} \\cdots p_r^{k_r}\n\\]\nwhere $p_1 < p_2 < p_3 < \\cdots < p_r$ are distinct primes and $k_1, k_2, \\ldots, k_r$ are positive integers.\n\nThis is called the canonical form or standard form of $n$.\n\\end{definitionbox}\n\n\\begin{examplebox}{Example 15: Writing in Canonical Form}\nWrite the following numbers in canonical form: 72, 100, 1000, 2310.\n\nSolution:\n\nFor 72:\n\\[\n72 = 8 \\times 9 = 2^3 \\times 3^2\n\\]\nCanonical form: $\\boxed{72 = 2^3 \\times 3^2}$\n\nFor 100:\n\\[\n100 = 10 \\times 10 = (2 \\times 5) \\times (2 \\times 5) = 2^2 \\times 5^2\n\\]\nCanonical form: $\\boxed{100 = 2^2 \\times 5^2}$\n\nFor 1000:\n\\[\n1000 = 10^3 = (2 \\times 5)^3 = 2^3 \\times 5^3\n\\]\nCanonical form: $\\boxed{1000 = 2^3 \\times 5^3}$\n\nFor 2310:\n\\[\n2310 = 2 \\times 1155 = 2 \\times 3 \\times 385 = 2 \\times 3 \\times 5 \\times 77 = 2 \\times 3 \\times 5 \\times 7 \\times 11\n\\]\nCanonical form: $\\boxed{2310 = 2 \\times 3 \\times 5 \\times 7 \\times 11}$\n\\end{examplebox}"
   },
   {
     "course": "Number Theory",
@@ -117,7 +117,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "definition",
     "title": "Theorem: Euclid's Lemma",
-    "content": "If $p$ is a prime number and $p | ab$, then:\n\\[\np | a \\quad \\text{or} \\quad p | b\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} If a prime divides a product of two integers, then it must divide at least one of them."
+    "content": "If $p$ is a prime number and $p | ab$, then:\n\\[\np | a \\quad \\text{or} \\quad p | b\n\\]\n\nIn words: If a prime divides a product of two integers, then it must divide at least one of them."
   },
   {
     "course": "Number Theory",
@@ -125,7 +125,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Proof: Euclid's Lemma",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof:}}\n\nLet $p$ be prime and $p | ab$.\n\nWe need to show that $p | a$ or $p | b$.\n\n\\textbf{Case 1:} If $p | a$, we are done.\n\n\\textbf{Case 2:} Suppose $p \\nmid a$.\n\nSince $p$ is prime, its only divisors are 1 and $p$.\n\nSince $p \\nmid a$, we have $\\gcd(p, a) \\neq p$.\n\nTherefore, $\\gcd(p, a) = 1$ (the only other option).\n\nNow we use Euclid's Lemma from Chapter 1:\n\nIf $p | ab$ and $\\gcd(p, a) = 1$, then $p | b$.\n\nTherefore, $p | b$. \\qed"
+    "content": "Proof:\n\nLet $p$ be prime and $p | ab$.\n\nWe need to show that $p | a$ or $p | b$.\n\nCase 1: If $p | a$, we are done.\n\nCase 2: Suppose $p \\nmid a$.\n\nSince $p$ is prime, its only divisors are 1 and $p$.\n\nSince $p \\nmid a$, we have $\\gcd(p, a) \\neq p$.\n\nTherefore, $\\gcd(p, a) = 1$ (the only other option).\n\nNow we use Euclid's Lemma from Chapter 1:\n\nIf $p | ab$ and $\\gcd(p, a) = 1$, then $p | b$.\n\nTherefore, $p | b$."
   },
   {
     "course": "Number Theory",
@@ -133,7 +133,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Example 9: Applying Euclid's Lemma",
-    "content": "Given that $7 | (6 \\times 14)$, use Euclid's Lemma to determine what 7 divides.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nWe have $7 | (6 \\times 14)$.\n\nSince 7 is prime, by Euclid's Lemma:\n\\[\n7 | 6 \\quad \\text{or} \\quad 7 | 14\n\\]\n\nCheck: $6 = 7(0) + 6$, so $7 \\nmid 6$ \\textcolor{red}{$\\times$}\n\nCheck: $14 = 7(2) + 0$, so $7 | 14$ \\textcolor{green}{\\checkmark}\n\nTherefore, by Euclid's Lemma, $7 | 14$.\n\n\\textbf{Verification:} $6 \\times 14 = 84 = 7 \\times 12$, so indeed $7 | 84$. \\textcolor{green}{\\checkmark}"
+    "content": "Given that $7 | (6 \\times 14)$, use Euclid's Lemma to determine what 7 divides.\n\nSolution:\n\nWe have $7 | (6 \\times 14)$.\n\nSince 7 is prime, by Euclid's Lemma:\n\\[\n7 | 6 \\quad \\text{or} \\quad 7 | 14\n\\]\n\nCheck: $6 = 7(0) + 6$, so $7 \\nmid 6$ $\\times$\n\nCheck: $14 = 7(2) + 0$, so $7 | 14$ ✓\n\nTherefore, by Euclid's Lemma, $7 | 14$.\n\nVerification: $6 \\times 14 = 84 = 7 \\times 12$, so indeed $7 | 84$. ✓"
   },
   {
     "course": "Number Theory",
@@ -141,7 +141,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Example 10: Euclid's Lemma Application",
-    "content": "If $11 | (5 \\times n)$ where $n$ is an integer, what can we conclude?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince 11 is prime and $11 | (5 \\times n)$, by Euclid's Lemma:\n\\[\n11 | 5 \\quad \\text{or} \\quad 11 | n\n\\]\n\nCheck if $11 | 5$: $5 = 11(0) + 5$, so $11 \\nmid 5$ \\textcolor{red}{$\\times$}\n\nTherefore, we must have $11 | n$. \\textcolor{green}{\\checkmark}\n\n\\textbf{Conclusion:} If $11 | (5 \\times n)$, then $11 | n$.\n\n\\subsection*{Corollaries of Euclid's Lemma}"
+    "content": "If $11 | (5 \\times n)$ where $n$ is an integer, what can we conclude?\n\nSolution:\n\nSince 11 is prime and $11 | (5 \\times n)$, by Euclid's Lemma:\n\\[\n11 | 5 \\quad \\text{or} \\quad 11 | n\n\\]\n\nCheck if $11 | 5$: $5 = 11(0) + 5$, so $11 \\nmid 5$ $\\times$\n\nTherefore, we must have $11 | n$. ✓\n\nConclusion: If $11 | (5 \\times n)$, then $11 | n$.\n\n\\subsection*{Corollaries of Euclid's Lemma}"
   },
   {
     "course": "Number Theory",
@@ -149,7 +149,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "definition",
     "title": "Corollary 1: Extended Euclid's Lemma",
-    "content": "If $p$ is prime and $p | a_1 a_2 a_3 \\cdots a_n$, then:\n\\[\np | a_k \\quad \\text{for some } k, \\; 1 \\leq k \\leq n\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} If a prime divides a product of $n$ integers, then it must divide at least one of them."
+    "content": "If $p$ is prime and $p | a_1 a_2 a_3 \\cdots a_n$, then:\n\\[\np | a_k \\quad \\text{for some } k, \\; 1 \\leq k \\leq n\n\\]\n\nIn words: If a prime divides a product of $n$ integers, then it must divide at least one of them."
   },
   {
     "course": "Number Theory",
@@ -157,7 +157,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Proof: Corollary 1",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof by Induction:}}\n\n\\textbf{Base Case:} $n = 2$\n\nThis is Euclid's Lemma, which we already proved. \\textcolor{green}{\\checkmark}\n\n\\textbf{Inductive Hypothesis:} Assume the result is true for $n = k$.\n\nThat is, if $p | a_1 a_2 \\cdots a_k$, then $p | a_i$ for some $i$.\n\n\\textbf{Inductive Step:} Prove for $n = k + 1$.\n\nSuppose $p | a_1 a_2 \\cdots a_k a_{k+1}$.\n\nWe can write this as:\n\\[\np | (a_1 a_2 \\cdots a_k) \\cdot a_{k+1}\n\\]\n\nBy Euclid's Lemma (base case):\n\\[\np | (a_1 a_2 \\cdots a_k) \\quad \\text{or} \\quad p | a_{k+1}\n\\]\n\n\\textbf{Case 1:} If $p | a_{k+1}$, we are done.\n\n\\textbf{Case 2:} If $p | (a_1 a_2 \\cdots a_k)$, then by the inductive hypothesis, $p | a_i$ for some $i \\leq k$.\n\nIn either case, $p$ divides at least one of the factors.\n\nBy mathematical induction, the result holds for all $n \\geq 2$. \\qed"
+    "content": "Proof by Induction:\n\nBase Case: $n = 2$\n\nThis is Euclid's Lemma, which we already proved. ✓\n\nInductive Hypothesis: Assume the result is true for $n = k$.\n\nThat is, if $p | a_1 a_2 \\cdots a_k$, then $p | a_i$ for some $i$.\n\nInductive Step: Prove for $n = k + 1$.\n\nSuppose $p | a_1 a_2 \\cdots a_k a_{k+1}$.\n\nWe can write this as:\n\\[\np | (a_1 a_2 \\cdots a_k) \\cdot a_{k+1}\n\\]\n\nBy Euclid's Lemma (base case):\n\\[\np | (a_1 a_2 \\cdots a_k) \\quad \\text{or} \\quad p | a_{k+1}\n\\]\n\nCase 1: If $p | a_{k+1}$, we are done.\n\nCase 2: If $p | (a_1 a_2 \\cdots a_k)$, then by the inductive hypothesis, $p | a_i$ for some $i \\leq k$.\n\nIn either case, $p$ divides at least one of the factors.\n\nBy mathematical induction, the result holds for all $n \\geq 2$."
   },
   {
     "course": "Number Theory",
@@ -165,7 +165,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Example 11: Corollary 1 Application",
-    "content": "Given that $5 | (2 \\times 3 \\times 7 \\times 10 \\times 11)$, which factor must 5 divide?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince 5 is prime and $5 | (2 \\times 3 \\times 7 \\times 10 \\times 11)$, by Corollary 1:\n\n5 must divide at least one of: 2, 3, 7, 10, 11\n\nCheck each:\n\\begin{itemize}\n    \\item $5 \\nmid 2$ \\textcolor{red}{$\\times$}\n    \\item $5 \\nmid 3$ \\textcolor{red}{$\\times$}\n    \\item $5 \\nmid 7$ \\textcolor{red}{$\\times$}\n    \\item $5 | 10$ because $10 = 5 \\times 2$ \\textcolor{green}{\\checkmark}\n    \\item $5 \\nmid 11$ \\textcolor{red}{$\\times$}\n\\end{itemize}\n\nTherefore, $5 | 10$.\n\n\\textbf{Verification:} $2 \\times 3 \\times 7 \\times 10 \\times 11 = 4620 = 5 \\times 924$ \\textcolor{green}{\\checkmark}"
+    "content": "Given that $5 | (2 \\times 3 \\times 7 \\times 10 \\times 11)$, which factor must 5 divide?\n\nSolution:\n\nSince 5 is prime and $5 | (2 \\times 3 \\times 7 \\times 10 \\times 11)$, by Corollary 1:\n\n5 must divide at least one of: 2, 3, 7, 10, 11\n\nCheck each:\n\n- $5 \\nmid 2$ $\\times$\n- $5 \\nmid 3$ $\\times$\n- $5 \\nmid 7$ $\\times$\n- $5 | 10$ because $10 = 5 \\times 2$ ✓\n- $5 \\nmid 11$ $\\times$\n\nTherefore, $5 | 10$.\n\nVerification: $2 \\times 3 \\times 7 \\times 10 \\times 11 = 4620 = 5 \\times 924$ ✓"
   },
   {
     "course": "Number Theory",
@@ -173,7 +173,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "definition",
     "title": "Corollary 2: Product of Primes",
-    "content": "If $p, q_1, q_2, \\ldots, q_n$ are all prime numbers and:\n\\[\np | q_1 q_2 \\cdots q_n\n\\]\nthen:\n\\[\np = q_k \\quad \\text{for some } k, \\; 1 \\leq k \\leq n\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} If a prime divides a product of primes, then it must equal one of those primes."
+    "content": "If $p, q_1, q_2, \\ldots, q_n$ are all prime numbers and:\n\\[\np | q_1 q_2 \\cdots q_n\n\\]\nthen:\n\\[\np = q_k \\quad \\text{for some } k, \\; 1 \\leq k \\leq n\n\\]\n\nIn words: If a prime divides a product of primes, then it must equal one of those primes."
   },
   {
     "course": "Number Theory",
@@ -181,7 +181,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Proof: Corollary 2",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof:}}\n\nLet $p, q_1, q_2, \\ldots, q_n$ be primes with $p | q_1 q_2 \\cdots q_n$.\n\nBy Corollary 1, $p | q_k$ for some $k$ where $1 \\leq k \\leq n$.\n\nSince $q_k$ is prime, its only positive divisors are 1 and $q_k$.\n\nSince $p$ is also prime (so $p > 1$), we cannot have $p = 1$.\n\nTherefore, $p = q_k$. \\qed"
+    "content": "Proof:\n\nLet $p, q_1, q_2, \\ldots, q_n$ be primes with $p | q_1 q_2 \\cdots q_n$.\n\nBy Corollary 1, $p | q_k$ for some $k$ where $1 \\leq k \\leq n$.\n\nSince $q_k$ is prime, its only positive divisors are 1 and $q_k$.\n\nSince $p$ is also prime (so $p > 1$), we cannot have $p = 1$.\n\nTherefore, $p = q_k$."
   },
   {
     "course": "Number Theory",
@@ -189,7 +189,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Example 12: Corollary 2 Application",
-    "content": "If $p$ is a prime and $p | (3 \\times 5 \\times 7 \\times 11)$, what are the possible values of $p$?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince all of 3, 5, 7, 11 are primes, by Corollary 2:\n\n$p$ must equal one of these primes.\n\nTherefore:\n\\[\n\\boxed{p \\in \\{3, 5, 7, 11\\}}\n\\]\n\n\\textbf{Verification:}\n\\begin{itemize}\n    \\item If $p = 3$: $3 | (3 \\times 5 \\times 7 \\times 11)$ \\textcolor{green}{\\checkmark}\n    \\item If $p = 5$: $5 | (3 \\times 5 \\times 7 \\times 11)$ \\textcolor{green}{\\checkmark}\n    \\item If $p = 7$: $7 | (3 \\times 5 \\times 7 \\times 11)$ \\textcolor{green}{\\checkmark}\n    \\item If $p = 11$: $11 | (3 \\times 5 \\times 7 \\times 11)$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\n\\subsection*{Fundamental Theorem of Arithmetic}"
+    "content": "If $p$ is a prime and $p | (3 \\times 5 \\times 7 \\times 11)$, what are the possible values of $p$?\n\nSolution:\n\nSince all of 3, 5, 7, 11 are primes, by Corollary 2:\n\n$p$ must equal one of these primes.\n\nTherefore:\n\\[\n\\boxed{p \\in \\{3, 5, 7, 11\\}}\n\\]\n\nVerification:\n\n- If $p = 3$: $3 | (3 \\times 5 \\times 7 \\times 11)$ ✓\n- If $p = 5$: $5 | (3 \\times 5 \\times 7 \\times 11)$ ✓\n- If $p = 7$: $7 | (3 \\times 5 \\times 7 \\times 11)$ ✓\n- If $p = 11$: $11 | (3 \\times 5 \\times 7 \\times 11)$ ✓\n\n\\subsection*{Fundamental Theorem of Arithmetic}"
   },
   {
     "course": "Number Theory",
@@ -197,7 +197,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "definition",
     "title": "Theorem: Fundamental Theorem of Arithmetic",
-    "content": "Every integer $n > 1$ can be expressed as a product of prime numbers. This representation is unique, except for the order of factors.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In other words:}}\n\\begin{itemize}[leftmargin=*]\n    \\item \\textbf{Existence:} Every integer greater than 1 can be factored into primes\n    \\item \\textbf{Uniqueness:} This factorization is unique (up to reordering)\n\\end{itemize}"
+    "content": "Every integer $n > 1$ can be expressed as a product of prime numbers. This representation is unique, except for the order of factors.\n\nIn other words:\n\n- Existence: Every integer greater than 1 can be factored into primes\n- Uniqueness: This factorization is unique (up to reordering)"
   },
   {
     "course": "Number Theory",
@@ -205,7 +205,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Proof: Fundamental Theorem of Arithmetic",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof (Existence):}}\n\nWe prove by strong induction on $n$.\n\n\\textbf{Base Case:} $n = 2$\n\nSince 2 is prime, $2 = 2$ (a product of one prime). \\textcolor{green}{\\checkmark}\n\n\\textbf{Inductive Hypothesis:} Assume every integer $k$ with $2 \\leq k < n$ can be written as a product of primes.\n\n\\textbf{Inductive Step:} Consider integer $n$.\n\n\\textbf{Case 1:} If $n$ is prime, then $n$ is already a product of primes (itself).\n\n\\textbf{Case 2:} If $n$ is composite, then $n = ab$ where $1 < a < n$ and $1 < b < n$.\n\nBy the inductive hypothesis:\n\\begin{itemize}\n    \\item $a = p_1 p_2 \\cdots p_r$ (product of primes)\n    \\item $b = q_1 q_2 \\cdots q_s$ (product of primes)\n\\end{itemize}\n\nTherefore:\n\\[\nn = ab = p_1 p_2 \\cdots p_r q_1 q_2 \\cdots q_s\n\\]\n\nSo $n$ is a product of primes.\n\nBy strong induction, every integer $n > 1$ can be expressed as a product of primes. \\qed\n\n\\vspace{0.3cm}\n\n\\textcolor{accentorange}{\\textbf{Proof (Uniqueness):}}\n\nSuppose $n$ has two prime factorizations:\n\\[\nn = p_1 p_2 \\cdots p_r = q_1 q_2 \\cdots q_s\n\\]\n\nwhere all $p_i$ and $q_j$ are primes.\n\nSince $p_1 | n$, we have $p_1 | (q_1 q_2 \\cdots q_s)$.\n\nBy Corollary 2, $p_1 = q_k$ for some $k$.\n\nReorder so that $p_1 = q_1$.\n\nCancel $p_1$ from both sides:\n\\[\np_2 p_3 \\cdots p_r = q_2 q_3 \\cdots q_s\n\\]\n\nRepeat this process. Eventually, all primes on both sides must match.\n\nTherefore, $r = s$ and (after reordering) $p_i = q_i$ for all $i$.\n\nHence, the factorization is unique (up to order). \\qed"
+    "content": "Proof (Existence):\n\nWe prove by strong induction on $n$.\n\nBase Case: $n = 2$\n\nSince 2 is prime, $2 = 2$ (a product of one prime). ✓\n\nInductive Hypothesis: Assume every integer $k$ with $2 \\leq k < n$ can be written as a product of primes.\n\nInductive Step: Consider integer $n$.\n\nCase 1: If $n$ is prime, then $n$ is already a product of primes (itself).\n\nCase 2: If $n$ is composite, then $n = ab$ where $1 < a < n$ and $1 < b < n$.\n\nBy the inductive hypothesis:\n\n- $a = p_1 p_2 \\cdots p_r$ (product of primes)\n- $b = q_1 q_2 \\cdots q_s$ (product of primes)\n\nTherefore:\n\\[\nn = ab = p_1 p_2 \\cdots p_r q_1 q_2 \\cdots q_s\n\\]\n\nSo $n$ is a product of primes.\n\nBy strong induction, every integer $n > 1$ can be expressed as a product of primes.\n\nProof (Uniqueness):\n\nSuppose $n$ has two prime factorizations:\n\\[\nn = p_1 p_2 \\cdots p_r = q_1 q_2 \\cdots q_s\n\\]\n\nwhere all $p_i$ and $q_j$ are primes.\n\nSince $p_1 | n$, we have $p_1 | (q_1 q_2 \\cdots q_s)$.\n\nBy Corollary 2, $p_1 = q_k$ for some $k$.\n\nReorder so that $p_1 = q_1$.\n\nCancel $p_1$ from both sides:\n\\[\np_2 p_3 \\cdots p_r = q_2 q_3 \\cdots q_s\n\\]\n\nRepeat this process. Eventually, all primes on both sides must match.\n\nTherefore, $r = s$ and (after reordering) $p_i = q_i$ for all $i$.\n\nHence, the factorization is unique (up to order)."
   },
   {
     "course": "Number Theory",
@@ -213,7 +213,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Example 13: Unique Prime Factorization",
-    "content": "Find the prime factorization of 360 and verify uniqueness.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{center}\n\\begin{tikzpicture}[level distance=1.2cm,\n  level 1/.style={sibling distance=4cm},\n  level 2/.style={sibling distance=2cm},\n  level 3/.style={sibling distance=1.2cm}]\n  \n  \\node[circle, draw, fill=primaryblue!20] {360}\n    child {node[circle, draw, fill=green!20] {2}\n    }\n    child {node[circle, draw, fill=primaryblue!20] {180}\n      child {node[circle, draw, fill=green!20] {2}}\n      child {node[circle, draw, fill=primaryblue!20] {90}\n        child {node[circle, draw, fill=green!20] {2}}\n        child {node[circle, draw, fill=primaryblue!20] {45}\n          child {node[circle, draw, fill=green!20] {3}}\n          child {node[circle, draw, fill=primaryblue!20] {15}\n            child {node[circle, draw, fill=green!20] {3}}\n            child {node[circle, draw, fill=green!20] {5}}\n          }\n        }\n      }\n    };\n\\end{tikzpicture}\n\\end{center}\n\nPrime factorization:\n\\[\n360 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 = 2^3 \\times 3^2 \\times 5\n\\]\n\nTherefore: $\\boxed{360 = 2^3 \\times 3^2 \\times 5}$\n\n\\textbf{Uniqueness:} No matter how we factor 360, we always get the same primes with the same exponents (though we might write them in different orders)."
+    "content": "Find the prime factorization of 360 and verify uniqueness.\n\nSolution:\n\nPrime factorization:\n\\[\n360 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 = 2^3 \\times 3^2 \\times 5\n\\]\n\nTherefore: $\\boxed{360 = 2^3 \\times 3^2 \\times 5}$\n\nUniqueness: No matter how we factor 360, we always get the same primes with the same exponents (though we might write them in different orders)."
   },
   {
     "course": "Number Theory",
@@ -221,7 +221,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Example 14: Different Factorization Paths",
-    "content": "Show that factoring 60 by different methods gives the same prime factorization.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Method 1:} $60 = 2 \\times 30 = 2 \\times 2 \\times 15 = 2 \\times 2 \\times 3 \\times 5$\n\n\\textbf{Method 2:} $60 = 4 \\times 15 = 2 \\times 2 \\times 3 \\times 5$\n\n\\textbf{Method 3:} $60 = 6 \\times 10 = 2 \\times 3 \\times 2 \\times 5 = 2 \\times 2 \\times 3 \\times 5$\n\nAll methods give: $\\boxed{60 = 2^2 \\times 3 \\times 5}$ \\textcolor{green}{\\checkmark}"
+    "content": "Show that factoring 60 by different methods gives the same prime factorization.\n\nSolution:\n\nMethod 1: $60 = 2 \\times 30 = 2 \\times 2 \\times 15 = 2 \\times 2 \\times 3 \\times 5$\n\nMethod 2: $60 = 4 \\times 15 = 2 \\times 2 \\times 3 \\times 5$\n\nMethod 3: $60 = 6 \\times 10 = 2 \\times 3 \\times 2 \\times 5 = 2 \\times 2 \\times 3 \\times 5$\n\nAll methods give: $\\boxed{60 = 2^2 \\times 3 \\times 5}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -229,7 +229,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "definition",
     "title": "Corollary: Canonical Form",
-    "content": "Every positive integer $n > 1$ can be written uniquely in the form:\n\\[\nn = p_1^{k_1} p_2^{k_2} p_3^{k_3} \\cdots p_r^{k_r}\n\\]\nwhere $p_1 < p_2 < p_3 < \\cdots < p_r$ are distinct primes and $k_1, k_2, \\ldots, k_r$ are positive integers.\n\nThis is called the \\textbf{canonical form} or \\textbf{standard form} of $n$."
+    "content": "Every positive integer $n > 1$ can be written uniquely in the form:\n\\[\nn = p_1^{k_1} p_2^{k_2} p_3^{k_3} \\cdots p_r^{k_r}\n\\]\nwhere $p_1 < p_2 < p_3 < \\cdots < p_r$ are distinct primes and $k_1, k_2, \\ldots, k_r$ are positive integers.\n\nThis is called the canonical form or standard form of $n$."
   },
   {
     "course": "Number Theory",
@@ -237,7 +237,7 @@
     "section": "Fundamental Theorems on Primes",
     "type": "example",
     "title": "Example 15: Writing in Canonical Form",
-    "content": "Write the following numbers in canonical form: 72, 100, 1000, 2310.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For 72:}\n\\[\n72 = 8 \\times 9 = 2^3 \\times 3^2\n\\]\nCanonical form: $\\boxed{72 = 2^3 \\times 3^2}$\n\n\\textbf{For 100:}\n\\[\n100 = 10 \\times 10 = (2 \\times 5) \\times (2 \\times 5) = 2^2 \\times 5^2\n\\]\nCanonical form: $\\boxed{100 = 2^2 \\times 5^2}$\n\n\\textbf{For 1000:}\n\\[\n1000 = 10^3 = (2 \\times 5)^3 = 2^3 \\times 5^3\n\\]\nCanonical form: $\\boxed{1000 = 2^3 \\times 5^3}$\n\n\\textbf{For 2310:}\n\\[\n2310 = 2 \\times 1155 = 2 \\times 3 \\times 385 = 2 \\times 3 \\times 5 \\times 77 = 2 \\times 3 \\times 5 \\times 7 \\times 11\n\\]\nCanonical form: $\\boxed{2310 = 2 \\times 3 \\times 5 \\times 7 \\times 11}$\n\n\\end{keypoint}\n\n\\newpage"
+    "content": "Write the following numbers in canonical form: 72, 100, 1000, 2310.\n\nSolution:\n\nFor 72:\n\\[\n72 = 8 \\times 9 = 2^3 \\times 3^2\n\\]\nCanonical form: $\\boxed{72 = 2^3 \\times 3^2}$\n\nFor 100:\n\\[\n100 = 10 \\times 10 = (2 \\times 5) \\times (2 \\times 5) = 2^2 \\times 5^2\n\\]\nCanonical form: $\\boxed{100 = 2^2 \\times 5^2}$\n\nFor 1000:\n\\[\n1000 = 10^3 = (2 \\times 5)^3 = 2^3 \\times 5^3\n\\]\nCanonical form: $\\boxed{1000 = 2^3 \\times 5^3}$\n\nFor 2310:\n\\[\n2310 = 2 \\times 1155 = 2 \\times 3 \\times 385 = 2 \\times 3 \\times 5 \\times 77 = 2 \\times 3 \\times 5 \\times 7 \\times 11\n\\]\nCanonical form: $\\boxed{2310 = 2 \\times 3 \\times 5 \\times 7 \\times 11}$\n\n\\end{keypoint}"
   },
   {
     "course": "Number Theory",
@@ -253,7 +253,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Proof of Theorem",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof:}}\n\nSuppose $n$ is composite.\n\nThen $n = ab$ where $1 < a \\leq b < n$.\n\nWe claim that $a \\leq \\sqrt{n}$.\n\n\\textbf{Proof by contradiction:}\n\nSuppose $a > \\sqrt{n}$.\n\nThen $b \\geq a > \\sqrt{n}$.\n\nTherefore:\n\\[\nn = ab > \\sqrt{n} \\cdot \\sqrt{n} = n\n\\]\n\nThis gives $n > n$, which is a contradiction.\n\nTherefore, $a \\leq \\sqrt{n}$.\n\nNow, since $a > 1$, $a$ has a prime divisor $p$ (by the Fundamental Theorem of Arithmetic).\n\nSince $p | a$ and $a | n$, by transitivity: $p | n$.\n\nAlso, $p \\leq a \\leq \\sqrt{n}$.\n\nTherefore, $n$ has a prime divisor $p$ such that $p \\leq \\sqrt{n}$. \\qed"
+    "content": "Proof:\n\nSuppose $n$ is composite.\n\nThen $n = ab$ where $1 < a \\leq b < n$.\n\nWe claim that $a \\leq \\sqrt{n}$.\n\nProof by contradiction:\n\nSuppose $a > \\sqrt{n}$.\n\nThen $b \\geq a > \\sqrt{n}$.\n\nTherefore:\n\\[\nn = ab > \\sqrt{n} \\cdot \\sqrt{n} = n\n\\]\n\nThis gives $n > n$, which is a contradiction.\n\nTherefore, $a \\leq \\sqrt{n}$.\n\nNow, since $a > 1$, $a$ has a prime divisor $p$ (by the Fundamental Theorem of Arithmetic).\n\nSince $p | a$ and $a | n$, by transitivity: $p | n$.\n\nAlso, $p \\leq a \\leq \\sqrt{n}$.\n\nTherefore, $n$ has a prime divisor $p$ such that $p \\leq \\sqrt{n}$."
   },
   {
     "course": "Number Theory",
@@ -261,7 +261,7 @@
     "section": "Prime Testing and Properties",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Practical Application}} This theorem gives",
-    "content": "\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Practical Application}}\n\nThis theorem gives us an efficient method to test if a number is prime:\n\n\\textbf{To check if $n$ is prime:}\n\\begin{enumerate}[leftmargin=*]\n    \\item Calculate $\\sqrt{n}$\n    \\item Test divisibility by all primes $p \\leq \\sqrt{n}$\n    \\item If none divide $n$, then $n$ is prime\n    \\item If any divides $n$, then $n$ is composite\n\\end{enumerate}\n\nThis significantly reduces the number of divisibility tests needed!"
+    "content": "Practical Application\n\nThis theorem gives us an efficient method to test if a number is prime:\n\nTo check if $n$ is prime:\n\n1. Calculate $\\sqrt{n}$\n2. Test divisibility by all primes $p \\leq \\sqrt{n}$\n3. If none divide $n$, then $n$ is prime\n4. If any divides $n$, then $n$ is composite\n\nThis significantly reduces the number of divisibility tests needed!"
   },
   {
     "course": "Number Theory",
@@ -269,7 +269,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Example 16: Testing if 97 is Prime",
-    "content": "Determine whether 97 is prime.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Calculate $\\sqrt{97}$\n\\[\n\\sqrt{97} \\approx 9.85\n\\]\n\n\\textbf{Step 2:} List all primes $\\leq 9.85$: $2, 3, 5, 7$\n\n\\textbf{Step 3:} Test divisibility:\n\\begin{itemize}\n    \\item $97 \\div 2 = 48.5$ (not divisible) \\textcolor{red}{$\\times$}\n    \\item $97 \\div 3 = 32.33...$ (not divisible) \\textcolor{red}{$\\times$}\n    \\item $97 \\div 5 = 19.4$ (not divisible) \\textcolor{red}{$\\times$}\n    \\item $97 \\div 7 = 13.857...$ (not divisible) \\textcolor{red}{$\\times$}\n\\end{itemize}\n\nSince 97 is not divisible by any prime $\\leq \\sqrt{97}$:\n\n\\textbf{Conclusion:} $\\boxed{\\text{97 is prime}}$ \\textcolor{green}{\\checkmark}"
+    "content": "Determine whether 97 is prime.\n\nSolution:\n\nStep 1: Calculate $\\sqrt{97}$\n\\[\n\\sqrt{97} \\approx 9.85\n\\]\n\nStep 2: List all primes $\\leq 9.85$: $2, 3, 5, 7$\n\nStep 3: Test divisibility:\n\n- $97 \\div 2 = 48.5$ (not divisible) $\\times$\n- $97 \\div 3 = 32.33...$ (not divisible) $\\times$\n- $97 \\div 5 = 19.4$ (not divisible) $\\times$\n- $97 \\div 7 = 13.857...$ (not divisible) $\\times$\n\nSince 97 is not divisible by any prime $\\leq \\sqrt{97}$:\n\nConclusion: $\\boxed{\\text{97 is prime}}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -277,7 +277,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Example 17: Testing if 101 is Prime",
-    "content": "Show that 101 is prime.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Calculate $\\sqrt{101}$\n\\[\n\\sqrt{101} \\approx 10.05\n\\]\n\n\\textbf{Step 2:} Primes $\\leq 10.05$: $2, 3, 5, 7$\n\n\\textbf{Step 3:} Test divisibility:\n\\begin{itemize}\n    \\item $101 = 2(50) + 1$ \\textcolor{red}{$\\times$}\n    \\item $101 = 3(33) + 2$ \\textcolor{red}{$\\times$}\n    \\item $101 = 5(20) + 1$ \\textcolor{red}{$\\times$}\n    \\item $101 = 7(14) + 3$ \\textcolor{red}{$\\times$}\n\\end{itemize}\n\n\\textbf{Conclusion:} $\\boxed{\\text{101 is prime}}$ \\textcolor{green}{\\checkmark}"
+    "content": "Show that 101 is prime.\n\nSolution:\n\nStep 1: Calculate $\\sqrt{101}$\n\\[\n\\sqrt{101} \\approx 10.05\n\\]\n\nStep 2: Primes $\\leq 10.05$: $2, 3, 5, 7$\n\nStep 3: Test divisibility:\n\n- $101 = 2(50) + 1$ $\\times$\n- $101 = 3(33) + 2$ $\\times$\n- $101 = 5(20) + 1$ $\\times$\n- $101 = 7(14) + 3$ $\\times$\n\nConclusion: $\\boxed{\\text{101 is prime}}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -285,7 +285,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Example 18: Testing if 509 is Prime",
-    "content": "Show that 509 is prime.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Calculate $\\sqrt{509}$\n\\[\n\\sqrt{509} \\approx 22.56\n\\]\n\n\\textbf{Step 2:} Primes $\\leq 22.56$: $2, 3, 5, 7, 11, 13, 17, 19$\n\n\\textbf{Step 3:} Test divisibility:\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Prime} & \\textbf{Division} & \\textbf{Result} \\\\\n\\hline\n2 & $509 \\div 2 = 254.5$ & Not divisible \\textcolor{red}{$\\times$} \\\\\n\\hline\n3 & $509 \\div 3 = 169.67$ & Not divisible \\textcolor{red}{$\\times$} \\\\\n\\hline\n5 & $509 \\div 5 = 101.8$ & Not divisible \\textcolor{red}{$\\times$} \\\\\n\\hline\n7 & $509 \\div 7 = 72.71$ & Not divisible \\textcolor{red}{$\\times$} \\\\\n\\hline\n11 & $509 \\div 11 = 46.27$ & Not divisible \\textcolor{red}{$\\times$} \\\\\n\\hline\n13 & $509 \\div 13 = 39.15$ & Not divisible \\textcolor{red}{$\\times$} \\\\\n\\hline\n17 & $509 \\div 17 = 29.94$ & Not divisible \\textcolor{red}{$\\times$} \\\\\n\\hline\n19 & $509 \\div 19 = 26.79$ & Not divisible \\textcolor{red}{$\\times$} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Conclusion:} $\\boxed{\\text{509 is prime}}$ \\textcolor{green}{\\checkmark}"
+    "content": "Show that 509 is prime.\n\nSolution:\n\nStep 1: Calculate $\\sqrt{509}$\n\\[\n\\sqrt{509} \\approx 22.56\n\\]\n\nStep 2: Primes $\\leq 22.56$: $2, 3, 5, 7, 11, 13, 17, 19$\n\nStep 3: Test divisibility:\n\n| Prime | Division | Result |\n|---|---|---|\n| 2 | $509 \\div 2 = 254.5$ | Not divisible $\\times$ |\n| 3 | $509 \\div 3 = 169.67$ | Not divisible $\\times$ |\n| 5 | $509 \\div 5 = 101.8$ | Not divisible $\\times$ |\n| 7 | $509 \\div 7 = 72.71$ | Not divisible $\\times$ |\n| 11 | $509 \\div 11 = 46.27$ | Not divisible $\\times$ |\n| 13 | $509 \\div 13 = 39.15$ | Not divisible $\\times$ |\n| 17 | $509 \\div 17 = 29.94$ | Not divisible $\\times$ |\n| 19 | $509 \\div 19 = 26.79$ | Not divisible $\\times$ |\n\nConclusion: $\\boxed{\\text{509 is prime}}$ ✓"
   },
   {
     "course": "Number Theory",
@@ -293,7 +293,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Example 19: Testing if 2093 is Prime",
-    "content": "Check whether 2093 is prime or composite. If composite, find its prime factorization.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} Calculate $\\sqrt{2093}$\n\\[\n\\sqrt{2093} \\approx 45.75\n\\]\n\n\\textbf{Step 2:} Test primes $\\leq 45.75$: Start with small primes\n\n\\begin{itemize}\n    \\item Test 2: $2093$ is odd \\textcolor{red}{$\\times$}\n    \\item Test 3: $2 + 0 + 9 + 3 = 14$ (not divisible by 3) \\textcolor{red}{$\\times$}\n    \\item Test 5: Doesn't end in 0 or 5 \\textcolor{red}{$\\times$}\n    \\item Test 7: $2093 \\div 7 = 299$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nSo $2093 = 7 \\times 299$\n\n\\textbf{Step 3:} Factor 299\n\n$\\sqrt{299} \\approx 17.29$\n\nTest primes $\\leq 17.29$:\n\\begin{itemize}\n    \\item Test 7: $299 \\div 7 = 42.71$ \\textcolor{red}{$\\times$}\n    \\item Test 11: $299 \\div 11 = 27.18$ \\textcolor{red}{$\\times$}\n    \\item Test 13: $299 \\div 13 = 23$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nSo $299 = 13 \\times 23$\n\nSince 23 is prime (check: $\\sqrt{23} < 5$, and 23 is not divisible by 2 or 3):\n\n\\textbf{Complete factorization:}\n\\[\n\\boxed{2093 = 7 \\times 13 \\times 23}\n\\]\n\n\\textbf{Conclusion:} 2093 is composite. \\textcolor{red}{$\\times$}"
+    "content": "Check whether 2093 is prime or composite. If composite, find its prime factorization.\n\nSolution:\n\nStep 1: Calculate $\\sqrt{2093}$\n\\[\n\\sqrt{2093} \\approx 45.75\n\\]\n\nStep 2: Test primes $\\leq 45.75$: Start with small primes\n\n- Test 2: $2093$ is odd $\\times$\n- Test 3: $2 + 0 + 9 + 3 = 14$ (not divisible by 3) $\\times$\n- Test 5: Doesn't end in 0 or 5 $\\times$\n- Test 7: $2093 \\div 7 = 299$ ✓\n\nSo $2093 = 7 \\times 299$\n\nStep 3: Factor 299\n\n$\\sqrt{299} \\approx 17.29$\n\nTest primes $\\leq 17.29$:\n\n- Test 7: $299 \\div 7 = 42.71$ $\\times$\n- Test 11: $299 \\div 11 = 27.18$ $\\times$\n- Test 13: $299 \\div 13 = 23$ ✓\n\nSo $299 = 13 \\times 23$\n\nSince 23 is prime (check: $\\sqrt{23} < 5$, and 23 is not divisible by 2 or 3):\n\nComplete factorization:\n\\[\n\\boxed{2093 = 7 \\times 13 \\times 23}\n\\]\n\nConclusion: 2093 is composite. $\\times$"
   },
   {
     "course": "Number Theory",
@@ -301,7 +301,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Example 20: Prime Factorization of 8645",
-    "content": "Find the prime factorization of 8645.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Observation:} 8645 ends in 5, so it's divisible by 5.\n\n\\[\n8645 \\div 5 = 1729\n\\]\n\nNow factor 1729: $\\sqrt{1729} \\approx 41.58$\n\nTest small primes:\n\\begin{itemize}\n    \\item Test 7: $1729 \\div 7 = 247$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nSo $1729 = 7 \\times 247$\n\nNow factor 247: $\\sqrt{247} \\approx 15.72$\n\nTest primes:\n\\begin{itemize}\n    \\item Test 7: $247 \\div 7 = 35.29$ \\textcolor{red}{$\\times$}\n    \\item Test 11: $247 \\div 11 = 22.45$ \\textcolor{red}{$\\times$}\n    \\item Test 13: $247 \\div 13 = 19$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nSo $247 = 13 \\times 19$\n\nSince 19 is prime:\n\n\\textbf{Complete factorization:}\n\\[\n\\boxed{8645 = 5 \\times 7 \\times 13 \\times 19}\n\\]\n\n\\textbf{Verification:} $5 \\times 7 \\times 13 \\times 19 = 35 \\times 247 = 8645$ \\textcolor{green}{\\checkmark}\n\n\\subsection*{Additional Theorems}"
+    "content": "Find the prime factorization of 8645.\n\nSolution:\n\nObservation: 8645 ends in 5, so it's divisible by 5.\n\n\\[\n8645 \\div 5 = 1729\n\\]\n\nNow factor 1729: $\\sqrt{1729} \\approx 41.58$\n\nTest small primes:\n\n- Test 7: $1729 \\div 7 = 247$ ✓\n\nSo $1729 = 7 \\times 247$\n\nNow factor 247: $\\sqrt{247} \\approx 15.72$\n\nTest primes:\n\n- Test 7: $247 \\div 7 = 35.29$ $\\times$\n- Test 11: $247 \\div 11 = 22.45$ $\\times$\n- Test 13: $247 \\div 13 = 19$ ✓\n\nSo $247 = 13 \\times 19$\n\nSince 19 is prime:\n\nComplete factorization:\n\\[\n\\boxed{8645 = 5 \\times 7 \\times 13 \\times 19}\n\\]\n\nVerification: $5 \\times 7 \\times 13 \\times 19 = 35 \\times 247 = 8645$ ✓\n\n\\subsection*{Additional Theorems}"
   },
   {
     "course": "Number Theory",
@@ -317,7 +317,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Proof of Theorem",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof:}}\n\nGiven: $p$ is prime and $p | a^n$\n\nSince $a^n = \\underbrace{a \\times a \\times \\cdots \\times a}_{n \\text{ times}}$\n\nand $p | a^n$, by Corollary 1 of Euclid's Lemma:\n\n$p$ divides at least one factor $a$.\n\nSo $p | a$, which means $a = pk$ for some integer $k$.\n\nTherefore:\n\\[\na^n = (pk)^n = p^n k^n\n\\]\n\nThis shows that $p^n | a^n$. \\qed"
+    "content": "Proof:\n\nGiven: $p$ is prime and $p | a^n$\n\nSince $a^n = \\underbrace{a \\times a \\times \\cdots \\times a}_{n \\text{ times}}$\n\nand $p | a^n$, by Corollary 1 of Euclid's Lemma:\n\n$p$ divides at least one factor $a$.\n\nSo $p | a$, which means $a = pk$ for some integer $k$.\n\nTherefore:\n\\[\na^n = (pk)^n = p^n k^n\n\\]\n\nThis shows that $p^n | a^n$."
   },
   {
     "course": "Number Theory",
@@ -325,7 +325,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Example 21: Prime Power Divisibility",
-    "content": "If $3 | a^4$, show that $3^4 | a^4$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nGiven: 3 is prime and $3 | a^4$\n\nBy the theorem: $3^4 | a^4$\n\nTherefore: $\\boxed{81 | a^4}$\n\n\\textbf{Verification with example:} Let $a = 6$\n\\begin{itemize}\n    \\item $a^4 = 6^4 = 1296$\n    \\item $3 | 1296$ \\textcolor{green}{\\checkmark}\n    \\item $3^4 = 81$\n    \\item $1296 \\div 81 = 16$ \\textcolor{green}{\\checkmark}\n\\end{itemize}\n\nIndeed, $81 | 1296$."
+    "content": "If $3 | a^4$, show that $3^4 | a^4$.\n\nSolution:\n\nGiven: 3 is prime and $3 | a^4$\n\nBy the theorem: $3^4 | a^4$\n\nTherefore: $\\boxed{81 | a^4}$\n\nVerification with example: Let $a = 6$\n\n- $a^4 = 6^4 = 1296$\n- $3 | 1296$ ✓\n- $3^4 = 81$\n- $1296 \\div 81 = 16$ ✓\n\nIndeed, $81 | 1296$."
   },
   {
     "course": "Number Theory",
@@ -333,7 +333,7 @@
     "section": "Prime Testing and Properties",
     "type": "definition",
     "title": "Theorem: Composite Numbers and Factorials",
-    "content": "If $n > 4$ is composite, then:\n\\[\nn | (n-1)!\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Note:}} This does NOT hold for prime numbers!"
+    "content": "If $n > 4$ is composite, then:\n\\[\nn | (n-1)!\n\\]\n\nNote: This does NOT hold for prime numbers!"
   },
   {
     "course": "Number Theory",
@@ -341,7 +341,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Proof of Theorem",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof:}}\n\nSince $n > 4$ is composite, $n = ab$ where $1 < a < n$ and $1 < b < n$.\n\n\\textbf{Case 1:} $a \\neq b$\n\nThen both $a$ and $b$ appear in the product $(n-1)! = 1 \\times 2 \\times \\cdots \\times (n-1)$\n\nTherefore, $ab = n$ divides $(n-1)!$. \\textcolor{green}{\\checkmark}\n\n\\textbf{Case 2:} $a = b$\n\nThen $n = a^2$, so $a = \\sqrt{n}$.\n\nSince $n > 4$, we have $a = \\sqrt{n} > 2$.\n\nAlso, $2a = 2\\sqrt{n} < 2 \\cdot \\frac{n}{2} = n$ (for $n > 4$)\n\nSo both $a$ and $2a$ are in $\\{1, 2, \\ldots, n-1\\}$ and both divide $(n-1)!$\n\nTherefore, $a \\times 2a = 2a^2 = 2n$ divides $(n-1)!$\n\nSince $n$ is even (as $n = a^2$ and if $a$ is odd, $2a$ would make the product even), $n | (n-1)!$. \\textcolor{green}{\\checkmark}\n\nThus, in all cases, $n | (n-1)!$. \\qed"
+    "content": "Proof:\n\nSince $n > 4$ is composite, $n = ab$ where $1 < a < n$ and $1 < b < n$.\n\nCase 1: $a \\neq b$\n\nThen both $a$ and $b$ appear in the product $(n-1)! = 1 \\times 2 \\times \\cdots \\times (n-1)$\n\nTherefore, $ab = n$ divides $(n-1)!$. ✓\n\nCase 2: $a = b$\n\nThen $n = a^2$, so $a = \\sqrt{n}$.\n\nSince $n > 4$, we have $a = \\sqrt{n} > 2$.\n\nAlso, $2a = 2\\sqrt{n} < 2 \\cdot \\frac{n}{2} = n$ (for $n > 4$)\n\nSo both $a$ and $2a$ are in $\\{1, 2, \\ldots, n-1\\}$ and both divide $(n-1)!$\n\nTherefore, $a \\times 2a = 2a^2 = 2n$ divides $(n-1)!$\n\nSince $n$ is even (as $n = a^2$ and if $a$ is odd, $2a$ would make the product even), $n | (n-1)!$. ✓\n\nThus, in all cases, $n | (n-1)!$."
   },
   {
     "course": "Number Theory",
@@ -349,7 +349,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Example 22: Composite and Factorial",
-    "content": "Show that $6 | 5!$ and $8 | 7!$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $n = 6$:}\n\n$6 = 2 \\times 3$ (composite, $6 > 4$)\n\n$5! = 1 \\times 2 \\times 3 \\times 4 \\times 5 = 120$\n\n$120 \\div 6 = 20$ \\textcolor{green}{\\checkmark}\n\nIndeed, $6 | 120$.\n\n\\textbf{For $n = 8$:}\n\n$8 = 2 \\times 4$ (composite, $8 > 4$)\n\n$7! = 1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 \\times 7 = 5040$\n\n$5040 \\div 8 = 630$ \\textcolor{green}{\\checkmark}\n\nIndeed, $8 | 5040$."
+    "content": "Show that $6 | 5!$ and $8 | 7!$.\n\nSolution:\n\nFor $n = 6$:\n\n$6 = 2 \\times 3$ (composite, $6 > 4$)\n\n$5! = 1 \\times 2 \\times 3 \\times 4 \\times 5 = 120$\n\n$120 \\div 6 = 20$ ✓\n\nIndeed, $6 | 120$.\n\nFor $n = 8$:\n\n$8 = 2 \\times 4$ (composite, $8 > 4$)\n\n$7! = 1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 \\times 7 = 5040$\n\n$5040 \\div 8 = 630$ ✓\n\nIndeed, $8 | 5040$."
   },
   {
     "course": "Number Theory",
@@ -357,7 +357,7 @@
     "section": "Prime Testing and Properties",
     "type": "example",
     "title": "Example 23: Why Primes Don't Satisfy This Property",
-    "content": "Show that $5 \\nmid 4!$ and $7 \\nmid 6!$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $p = 5$:}\n\n$4! = 1 \\times 2 \\times 3 \\times 4 = 24$\n\n$24 \\div 5 = 4.8$ (not an integer) \\textcolor{red}{$\\times$}\n\nSo $5 \\nmid 24$.\n\n\\textbf{For $p = 7$:}\n\n$6! = 1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 = 720$\n\n$720 \\div 7 = 102.857...$ (not an integer) \\textcolor{red}{$\\times$}\n\nSo $7 \\nmid 720$.\n\n\\textcolor{accentorange}{\\textbf{Observation:}} Prime numbers do NOT divide $(n-1)!$ when $n$ is the prime itself. This is actually part of Wilson's Theorem."
+    "content": "Show that $5 \\nmid 4!$ and $7 \\nmid 6!$.\n\nSolution:\n\nFor $p = 5$:\n\n$4! = 1 \\times 2 \\times 3 \\times 4 = 24$\n\n$24 \\div 5 = 4.8$ (not an integer) $\\times$\n\nSo $5 \\nmid 24$.\n\nFor $p = 7$:\n\n$6! = 1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 = 720$\n\n$720 \\div 7 = 102.857...$ (not an integer) $\\times$\n\nSo $7 \\nmid 720$.\n\nObservation: Prime numbers do NOT divide $(n-1)!$ when $n$ is the prime itself. This is actually part of Wilson's Theorem."
   },
   {
     "course": "Number Theory",
@@ -365,7 +365,7 @@
     "section": "Prime Testing and Properties",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Prime Testing and Properties}}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Prime Testing and Properties}}\n\n\\begin{enumerate}[leftmargin=*]\n    \\item To test if $n$ is prime, check divisibility by all primes $p \\leq \\sqrt{n}$\n    \\item If no prime $\\leq \\sqrt{n}$ divides $n$, then $n$ is prime\n    \\item If $p | a^n$ (where $p$ is prime), then $p^n | a^n$\n    \\item If $n > 4$ is composite, then $n | (n-1)!$\n    \\item Primes do NOT divide their predecessor factorials\n\\end{enumerate}\n\n\\newpage"
+    "content": "Summary: Prime Testing and Properties\n\n1. To test if $n$ is prime, check divisibility by all primes $p \\leq \\sqrt{n}$\n2. If no prime $\\leq \\sqrt{n}$ divides $n$, then $n$ is prime\n3. If $p | a^n$ (where $p$ is prime), then $p^n | a^n$\n4. If $n > 4$ is composite, then $n | (n-1)!$\n5. Primes do NOT divide their predecessor factorials"
   },
   {
     "course": "Number Theory",
@@ -381,7 +381,7 @@
     "section": "Infinity of Primes",
     "type": "example",
     "title": "Proof: Euclid's Theorem",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof by Contradiction:}}\n\nAssume, for the sake of contradiction, that there are only finitely many primes.\n\nLet $p_1, p_2, p_3, \\ldots, p_n$ be the complete list of all prime numbers.\n\nConsider the number:\n\\[\nN = p_1 \\cdot p_2 \\cdot p_3 \\cdots p_n + 1\n\\]\n\n\\textbf{Observation 1:} $N > 1$, so by the Fundamental Theorem of Arithmetic, $N$ is either prime or has a prime divisor.\n\n\\textbf{Case 1:} $N$ is prime\n\nThen $N$ is a prime not in our list $\\{p_1, p_2, \\ldots, p_n\\}$ (since $N > p_i$ for all $i$).\n\nThis contradicts our assumption that we listed all primes.\n\n\\textbf{Case 2:} $N$ is composite\n\nThen $N$ has a prime divisor $p$.\n\nSince our list contains all primes, $p = p_k$ for some $k$.\n\nSo $p_k | N$.\n\nBut also $p_k | (p_1 p_2 \\cdots p_n)$ (since $p_k$ is one of the factors).\n\nBy divisibility properties:\n\\[\np_k | [N - p_1 p_2 \\cdots p_n] = 1\n\\]\n\nThis means $p_k | 1$, which is impossible for a prime $p_k > 1$.\n\nThis is a contradiction.\n\n\\textbf{Conclusion:} Our assumption was wrong. There cannot be finitely many primes.\n\nTherefore, there are infinitely many primes. \\qed"
+    "content": "Proof by Contradiction:\n\nAssume, for the sake of contradiction, that there are only finitely many primes.\n\nLet $p_1, p_2, p_3, \\ldots, p_n$ be the complete list of all prime numbers.\n\nConsider the number:\n\\[\nN = p_1 \\cdot p_2 \\cdot p_3 \\cdots p_n + 1\n\\]\n\nObservation 1: $N > 1$, so by the Fundamental Theorem of Arithmetic, $N$ is either prime or has a prime divisor.\n\nCase 1: $N$ is prime\n\nThen $N$ is a prime not in our list $\\{p_1, p_2, \\ldots, p_n\\}$ (since $N > p_i$ for all $i$).\n\nThis contradicts our assumption that we listed all primes.\n\nCase 2: $N$ is composite\n\nThen $N$ has a prime divisor $p$.\n\nSince our list contains all primes, $p = p_k$ for some $k$.\n\nSo $p_k | N$.\n\nBut also $p_k | (p_1 p_2 \\cdots p_n)$ (since $p_k$ is one of the factors).\n\nBy divisibility properties:\n\\[\np_k | [N - p_1 p_2 \\cdots p_n] = 1\n\\]\n\nThis means $p_k | 1$, which is impossible for a prime $p_k > 1$.\n\nThis is a contradiction.\n\nConclusion: Our assumption was wrong. There cannot be finitely many primes.\n\nTherefore, there are infinitely many primes."
   },
   {
     "course": "Number Theory",
@@ -389,7 +389,7 @@
     "section": "Infinity of Primes",
     "type": "example",
     "title": "Example 24: Constructing New Primes",
-    "content": "Given primes 2, 3, 5, construct a number that demonstrates Euclid's method.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nUsing the first three primes: $p_1 = 2, p_2 = 3, p_3 = 5$\n\nConstruct:\n\\[\nN = 2 \\times 3 \\times 5 + 1 = 30 + 1 = 31\n\\]\n\nCheck if 31 is prime:\n\n$\\sqrt{31} \\approx 5.57$\n\nTest primes $\\leq 5.57$: 2, 3, 5\n\\begin{itemize}\n    \\item $31 \\div 2 = 15.5$ \\textcolor{red}{$\\times$}\n    \\item $31 \\div 3 = 10.33$ \\textcolor{red}{$\\times$}\n    \\item $31 \\div 5 = 6.2$ \\textcolor{red}{$\\times$}\n\\end{itemize}\n\nTherefore, 31 is prime! \\textcolor{green}{\\checkmark}\n\nThis shows that even if we thought 2, 3, 5 were all the primes, we can construct another prime (31)."
+    "content": "Given primes 2, 3, 5, construct a number that demonstrates Euclid's method.\n\nSolution:\n\nUsing the first three primes: $p_1 = 2, p_2 = 3, p_3 = 5$\n\nConstruct:\n\\[\nN = 2 \\times 3 \\times 5 + 1 = 30 + 1 = 31\n\\]\n\nCheck if 31 is prime:\n\n$\\sqrt{31} \\approx 5.57$\n\nTest primes $\\leq 5.57$: 2, 3, 5\n\n- $31 \\div 2 = 15.5$ $\\times$\n- $31 \\div 3 = 10.33$ $\\times$\n- $31 \\div 5 = 6.2$ $\\times$\n\nTherefore, 31 is prime! ✓\n\nThis shows that even if we thought 2, 3, 5 were all the primes, we can construct another prime (31)."
   },
   {
     "course": "Number Theory",
@@ -397,7 +397,7 @@
     "section": "Infinity of Primes",
     "type": "example",
     "title": "Example 25: Another Construction",
-    "content": "Use primes 2, 3, 5, 7 to construct $N$ and analyze it.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\[\nN = 2 \\times 3 \\times 5 \\times 7 + 1 = 210 + 1 = 211\n\\]\n\nCheck if 211 is prime:\n\n$\\sqrt{211} \\approx 14.53$\n\nTest primes $\\leq 14.53$: 2, 3, 5, 7, 11, 13\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Prime} & \\textbf{Division} & \\textbf{Divisible?} \\\\\n\\hline\n2 & $211 \\div 2 = 105.5$ & No \\textcolor{red}{$\\times$} \\\\\n\\hline\n3 & $211 \\div 3 = 70.33$ & No \\textcolor{red}{$\\times$} \\\\\n\\hline\n5 & $211 \\div 5 = 42.2$ & No \\textcolor{red}{$\\times$} \\\\\n\\hline\n7 & $211 \\div 7 = 30.14$ & No \\textcolor{red}{$\\times$} \\\\\n\\hline\n11 & $211 \\div 11 = 19.18$ & No \\textcolor{red}{$\\times$} \\\\\n\\hline\n13 & $211 \\div 13 = 16.23$ & No \\textcolor{red}{$\\times$} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nTherefore, 211 is prime! \\textcolor{green}{\\checkmark}\n\n\\textcolor{accentorange}{\\textbf{Note:}} $N$ doesn't have to be prime itself; it just needs to have a prime divisor not in our original list."
+    "content": "Use primes 2, 3, 5, 7 to construct $N$ and analyze it.\n\nSolution:\n\n\\[\nN = 2 \\times 3 \\times 5 \\times 7 + 1 = 210 + 1 = 211\n\\]\n\nCheck if 211 is prime:\n\n$\\sqrt{211} \\approx 14.53$\n\nTest primes $\\leq 14.53$: 2, 3, 5, 7, 11, 13\n\n| Prime | Division | Divisible? |\n|---|---|---|\n| 2 | $211 \\div 2 = 105.5$ | No $\\times$ |\n| 3 | $211 \\div 3 = 70.33$ | No $\\times$ |\n| 5 | $211 \\div 5 = 42.2$ | No $\\times$ |\n| 7 | $211 \\div 7 = 30.14$ | No $\\times$ |\n| 11 | $211 \\div 11 = 19.18$ | No $\\times$ |\n| 13 | $211 \\div 13 = 16.23$ | No $\\times$ |\n\nTherefore, 211 is prime! ✓\n\nNote: $N$ doesn't have to be prime itself; it just needs to have a prime divisor not in our original list."
   },
   {
     "course": "Number Theory",
@@ -405,7 +405,7 @@
     "section": "Infinity of Primes",
     "type": "example",
     "title": "Example 26: When N is Not Prime",
-    "content": "Use primes 2, 3, 5, 7, 11, 13 and show that $N$ might be composite.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\[\nN = 2 \\times 3 \\times 5 \\times 7 \\times 11 \\times 13 + 1 = 30030 + 1 = 30031\n\\]\n\nTest small primes:\n\n$30031 \\div 59 = 509$ \\textcolor{green}{\\checkmark}\n\nSo $30031 = 59 \\times 509$\n\nCheck if 509 is prime (we already showed this in Example 18): Yes! \\textcolor{green}{\\checkmark}\n\n\\textbf{Conclusion:} $30031 = 59 \\times 509$ (both 59 and 509 are primes)\n\nNotice that 59 and 509 are NOT in our original list $\\{2, 3, 5, 7, 11, 13\\}$.\n\nThis still proves there are more primes beyond our finite list! \\textcolor{green}{\\checkmark}"
+    "content": "Use primes 2, 3, 5, 7, 11, 13 and show that $N$ might be composite.\n\nSolution:\n\n\\[\nN = 2 \\times 3 \\times 5 \\times 7 \\times 11 \\times 13 + 1 = 30030 + 1 = 30031\n\\]\n\nTest small primes:\n\n$30031 \\div 59 = 509$ ✓\n\nSo $30031 = 59 \\times 509$\n\nCheck if 509 is prime (we already showed this in Example 18): Yes! ✓\n\nConclusion: $30031 = 59 \\times 509$ (both 59 and 509 are primes)\n\nNotice that 59 and 509 are NOT in our original list $\\{2, 3, 5, 7, 11, 13\\}$.\n\nThis still proves there are more primes beyond our finite list! ✓"
   },
   {
     "course": "Number Theory",
@@ -413,7 +413,7 @@
     "section": "Infinity of Primes",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Key Insights from Euclid's Proof}}",
-    "content": "\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Key Insights from Euclid's Proof}}\n\n\\begin{enumerate}[leftmargin=*]\n    \\item The proof doesn't construct all primes, just shows they're infinite\n    \\item The number $N = p_1 p_2 \\cdots p_n + 1$ is not divisible by any of $p_1, p_2, \\ldots, p_n$\n    \\item $N$ might be prime OR composite with new prime factors\n    \\item Either way, we get primes not in our original list\n    \\item This process can continue indefinitely\n\\end{enumerate}\n\n\\subsection*{Bound on the nth Prime}"
+    "content": "Key Insights from Euclid's Proof\n\n1. The proof doesn't construct all primes, just shows they're infinite\n2. The number $N = p_1 p_2 \\cdots p_n + 1$ is not divisible by any of $p_1, p_2, \\ldots, p_n$\n3. $N$ might be prime OR composite with new prime factors\n4. Either way, we get primes not in our original list\n5. This process can continue indefinitely\n\n\\subsection*{Bound on the nth Prime}"
   },
   {
     "course": "Number Theory",
@@ -421,7 +421,7 @@
     "section": "Infinity of Primes",
     "type": "definition",
     "title": "Theorem: Upper Bound for nth Prime",
-    "content": "If $p_n$ denotes the $n$th prime number, then:\n\\[\np_n \\leq 2^{2^{n-1}}\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} The $n$th prime is at most $2^{2^{n-1}}$."
+    "content": "If $p_n$ denotes the $n$th prime number, then:\n\\[\np_n \\leq 2^{2^{n-1}}\n\\]\n\nIn words: The $n$th prime is at most $2^{2^{n-1}}$."
   },
   {
     "course": "Number Theory",
@@ -429,7 +429,7 @@
     "section": "Infinity of Primes",
     "type": "example",
     "title": "Example 27: Verifying the Bound",
-    "content": "Verify the bound for the first few primes.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$n$ & $p_n$ & $2^{n-1}$ & $2^{2^{n-1}}$ & $p_n \\leq 2^{2^{n-1}}$? \\\\\n\\hline\n1 & 2 & $2^0 = 1$ & $2^1 = 2$ & $2 \\leq 2$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n2 & 3 & $2^1 = 2$ & $2^2 = 4$ & $3 \\leq 4$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n3 & 5 & $2^2 = 4$ & $2^4 = 16$ & $5 \\leq 16$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n4 & 7 & $2^3 = 8$ & $2^8 = 256$ & $7 \\leq 256$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n5 & 11 & $2^4 = 16$ & $2^{16} = 65536$ & $11 \\leq 65536$ \\textcolor{green}{\\checkmark} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nThe bound is quite loose (much larger than the actual prime), but it guarantees an upper limit."
+    "content": "Verify the bound for the first few primes.\n\nSolution:\n\n| $n$ | $p_n$ | $2^{n-1}$ | $2^{2^{n-1}}$ | $p_n \\leq 2^{2^{n-1}}$? |\n|---|---|---|---|---|\n| 1 | 2 | $2^0 = 1$ | $2^1 = 2$ | $2 \\leq 2$ ✓ |\n| 2 | 3 | $2^1 = 2$ | $2^2 = 4$ | $3 \\leq 4$ ✓ |\n| 3 | 5 | $2^2 = 4$ | $2^4 = 16$ | $5 \\leq 16$ ✓ |\n| 4 | 7 | $2^3 = 8$ | $2^8 = 256$ | $7 \\leq 256$ ✓ |\n| 5 | 11 | $2^4 = 16$ | $2^{16} = 65536$ | $11 \\leq 65536$ ✓ |\n\nThe bound is quite loose (much larger than the actual prime), but it guarantees an upper limit."
   },
   {
     "course": "Number Theory",
@@ -437,7 +437,7 @@
     "section": "Infinity of Primes",
     "type": "example",
     "title": "Example 28: How Fast the Bound Grows",
-    "content": "Show how rapidly $2^{2^{n-1}}$ grows.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$n$ & $2^{2^{n-1}}$ & Value \\\\\n\\hline\n1 & $2^{2^0} = 2^1$ & 2 \\\\\n\\hline\n2 & $2^{2^1} = 2^2$ & 4 \\\\\n\\hline\n3 & $2^{2^2} = 2^4$ & 16 \\\\\n\\hline\n4 & $2^{2^3} = 2^8$ & 256 \\\\\n\\hline\n5 & $2^{2^4} = 2^{16}$ & 65,536 \\\\\n\\hline\n6 & $2^{2^5} = 2^{32}$ & 4,294,967,296 \\\\\n\\hline\n7 & $2^{2^6} = 2^{64}$ & $\\approx 1.84 \\times 10^{19}$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\textbf{Observation:}} The bound grows \\textbf{doubly exponentially}, meaning it increases extremely rapidly!\n\n\\begin{center}\n\\begin{tikzpicture}\n    \\draw[thick, primaryblue, fill=primaryblue!10, rounded corners] (0,0) rectangle (12,3);\n    \\node[align=center] at (6,2.3) {\\textcolor{primaryblue}{\\Large\\textbf{Interesting Facts About Primes}}};\n    \n    \\node[align=left, anchor=west] at (0.5, 1.5) {\n        \\textcolor{darkgray}{\\faCheckCircle\\ There are infinitely many primes (Euclid, 300 BCE)}\n    };\n    \n    \\node[align=left, anchor=west] at (0.5, 1) {\n        \\textcolor{darkgray}{\\faCheckCircle\\ Primes become less frequent as numbers increase}\n    };\n    \n    \\node[align=left, anchor=west] at (0.5, 0.5) {\n        \\textcolor{darkgray}{\\faCheckCircle\\ But they never completely disappear!}\n    };\n\\end{tikzpicture}\n\\end{center}"
+    "content": "Show how rapidly $2^{2^{n-1}}$ grows.\n\nSolution:\n\n| $n$ | $2^{2^{n-1}}$ | Value |\n|---|---|---|\n| 1 | $2^{2^0} = 2^1$ | 2 |\n| 2 | $2^{2^1} = 2^2$ | 4 |\n| 3 | $2^{2^2} = 2^4$ | 16 |\n| 4 | $2^{2^3} = 2^8$ | 256 |\n| 5 | $2^{2^4} = 2^{16}$ | 65,536 |\n| 6 | $2^{2^5} = 2^{32}$ | 4,294,967,296 |\n| 7 | $2^{2^6} = 2^{64}$ | $\\approx 1.84 \\times 10^{19}$ |\n\nObservation: The bound grows doubly exponentially, meaning it increases extremely rapidly!"
   },
   {
     "course": "Number Theory",
@@ -445,7 +445,7 @@
     "section": "Infinity of Primes",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Infinity of Primes}} {Euclid's",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Infinity of Primes}}\n\n\\textbf{Euclid's Proof Strategy:}\n\\begin{enumerate}[leftmargin=*]\n    \\item Assume finitely many primes exist\n    \\item Construct $N = (\\text{product of all primes}) + 1$\n    \\item Show $N$ has a prime divisor not in the list\n    \\item Conclude: contradiction, so infinitely many primes exist\n\\end{enumerate}\n\n\\textbf{Key Points:}\n\\begin{itemize}[leftmargin=*]\n    \\item The $n$th prime $p_n \\leq 2^{2^{n-1}}$\n    \\item This bound grows extremely fast (doubly exponential)\n    \\item Actual primes grow much slower than this bound\n    \\item No largest prime exists\n\\end{itemize}\n\n\\vspace{0.3cm}"
+    "content": "Summary: Infinity of Primes\n\nEuclid's Proof Strategy:\n\n1. Assume finitely many primes exist\n2. Construct $N = (\\text{product of all primes}) + 1$\n3. Show $N$ has a prime divisor not in the list\n4. Conclude: contradiction, so infinitely many primes exist\n\nKey Points:\n\n- The $n$th prime $p_n \\leq 2^{2^{n-1}}$\n- This bound grows extremely fast (doubly exponential)\n- Actual primes grow much slower than this bound\n- No largest prime exists"
   },
   {
     "course": "Number Theory",
@@ -453,7 +453,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "definition",
     "title": "Definition: Mersenne Number",
-    "content": "A \\textbf{Mersenne number} is a number of the form:\n\\[\nM_n = 2^n - 1\n\\]\nwhere $n$ is a positive integer.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Points:}}\n\\begin{itemize}[leftmargin=*]\n    \\item Named after French monk Marin Mersenne (1588-1648)\n    \\item If $M_n$ is prime, it is called a \\textbf{Mersenne prime}\n    \\item Not all Mersenne numbers are prime\n    \\item Mersenne primes are rare and valuable in mathematics\n\\end{itemize}"
+    "content": "A Mersenne number is a number of the form:\n\\[\nM_n = 2^n - 1\n\\]\nwhere $n$ is a positive integer.\n\nKey Points:\n\n- Named after French monk Marin Mersenne (1588-1648)\n- If $M_n$ is prime, it is called a Mersenne prime\n- Not all Mersenne numbers are prime\n- Mersenne primes are rare and valuable in mathematics"
   },
   {
     "course": "Number Theory",
@@ -461,7 +461,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 29: Computing Mersenne Numbers",
-    "content": "Calculate $M_n$ for $n = 1, 2, 3, 4, 5, 6, 7, 8$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$n$ & $M_n = 2^n - 1$ & Value & Prime? \\\\\n\\hline\n1 & $2^1 - 1$ & 1 & No (1 is not prime) \\\\\n\\hline\n2 & $2^2 - 1$ & 3 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n3 & $2^3 - 1$ & 7 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n4 & $2^4 - 1$ & 15 & No ($15 = 3 \\times 5$) \\\\\n\\hline\n5 & $2^5 - 1$ & 31 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n6 & $2^6 - 1$ & 63 & No ($63 = 9 \\times 7$) \\\\\n\\hline\n7 & $2^7 - 1$ & 127 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n8 & $2^8 - 1$ & 255 & No ($255 = 5 \\times 51$) \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Mersenne Primes so far:} $M_2 = 3, M_3 = 7, M_5 = 31, M_7 = 127$"
+    "content": "Calculate $M_n$ for $n = 1, 2, 3, 4, 5, 6, 7, 8$.\n\nSolution:\n\n| $n$ | $M_n = 2^n - 1$ | Value | Prime? |\n|---|---|---|---|\n| 1 | $2^1 - 1$ | 1 | No (1 is not prime) |\n| 2 | $2^2 - 1$ | 3 | Yes ✓ |\n| 3 | $2^3 - 1$ | 7 | Yes ✓ |\n| 4 | $2^4 - 1$ | 15 | No ($15 = 3 \\times 5$) |\n| 5 | $2^5 - 1$ | 31 | Yes ✓ |\n| 6 | $2^6 - 1$ | 63 | No ($63 = 9 \\times 7$) |\n| 7 | $2^7 - 1$ | 127 | Yes ✓ |\n| 8 | $2^8 - 1$ | 255 | No ($255 = 5 \\times 51$) |\n\nMersenne Primes so far: $M_2 = 3, M_3 = 7, M_5 = 31, M_7 = 127$"
   },
   {
     "course": "Number Theory",
@@ -469,7 +469,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 30: Verifying Mersenne Primes",
-    "content": "Verify that $M_3 = 7$ is prime and $M_4 = 15$ is composite.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $M_3 = 7$:}\n\n$\\sqrt{7} \\approx 2.65$\n\nTest primes $\\leq 2.65$: only 2\n\n$7 \\div 2 = 3.5$ (not divisible) \\textcolor{red}{$\\times$}\n\nTherefore, $M_3 = 7$ is prime. \\textcolor{green}{\\checkmark}\n\n\\textbf{For $M_4 = 15$:}\n\n$15 = 3 \\times 5$\n\nTherefore, $M_4 = 15$ is composite. \\textcolor{red}{$\\times$}\n\n\\textbf{Observation:} Even though $M_3$ is prime, $M_4$ is not. Mersenne numbers are not always prime!"
+    "content": "Verify that $M_3 = 7$ is prime and $M_4 = 15$ is composite.\n\nSolution:\n\nFor $M_3 = 7$:\n\n$\\sqrt{7} \\approx 2.65$\n\nTest primes $\\leq 2.65$: only 2\n\n$7 \\div 2 = 3.5$ (not divisible) $\\times$\n\nTherefore, $M_3 = 7$ is prime. ✓\n\nFor $M_4 = 15$:\n\n$15 = 3 \\times 5$\n\nTherefore, $M_4 = 15$ is composite. $\\times$\n\nObservation: Even though $M_3$ is prime, $M_4$ is not. Mersenne numbers are not always prime!"
   },
   {
     "course": "Number Theory",
@@ -477,7 +477,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "definition",
     "title": "Theorem: Condition for Mersenne Primes",
-    "content": "If $2^n - 1$ is prime, then $n$ must be prime.\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important:}} The converse is NOT true! If $n$ is prime, $2^n - 1$ might still be composite."
+    "content": "If $2^n - 1$ is prime, then $n$ must be prime.\n\nImportant: The converse is NOT true! If $n$ is prime, $2^n - 1$ might still be composite."
   },
   {
     "course": "Number Theory",
@@ -485,7 +485,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Proof of Theorem",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof by Contrapositive:}}\n\nWe prove: If $n$ is composite, then $2^n - 1$ is composite.\n\nSuppose $n$ is composite, so $n = ab$ where $1 < a < n$ and $1 < b < n$.\n\nUsing the factorization formula:\n\\[\nx^{ab} - 1 = (x^a - 1)(x^{a(b-1)} + x^{a(b-2)} + \\cdots + x^a + 1)\n\\]\n\nApplying with $x = 2$ and $ab = n$:\n\\[\n2^n - 1 = 2^{ab} - 1 = (2^a - 1)(2^{a(b-1)} + 2^{a(b-2)} + \\cdots + 2^a + 1)\n\\]\n\nSince $1 < a < n$:\n\\begin{itemize}\n    \\item $2^a - 1 > 2^1 - 1 = 1$\n    \\item $2^a - 1 < 2^n - 1$\n\\end{itemize}\n\nSo $2^n - 1$ has a non-trivial factor $(2^a - 1)$.\n\nTherefore, $2^n - 1$ is composite. \\qed\n\nBy contrapositive: If $2^n - 1$ is prime, then $n$ must be prime."
+    "content": "Proof by Contrapositive:\n\nWe prove: If $n$ is composite, then $2^n - 1$ is composite.\n\nSuppose $n$ is composite, so $n = ab$ where $1 < a < n$ and $1 < b < n$.\n\nUsing the factorization formula:\n\\[\nx^{ab} - 1 = (x^a - 1)(x^{a(b-1)} + x^{a(b-2)} + \\cdots + x^a + 1)\n\\]\n\nApplying with $x = 2$ and $ab = n$:\n\\[\n2^n - 1 = 2^{ab} - 1 = (2^a - 1)(2^{a(b-1)} + 2^{a(b-2)} + \\cdots + 2^a + 1)\n\\]\n\nSince $1 < a < n$:\n\n- $2^a - 1 > 2^1 - 1 = 1$\n- $2^a - 1 < 2^n - 1$\n\nSo $2^n - 1$ has a non-trivial factor $(2^a - 1)$.\n\nTherefore, $2^n - 1$ is composite.\n\nBy contrapositive: If $2^n - 1$ is prime, then $n$ must be prime."
   },
   {
     "course": "Number Theory",
@@ -493,7 +493,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 31: Illustrating the Theorem",
-    "content": "Show that $M_6 = 2^6 - 1$ is composite because 6 is composite.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSince $6 = 2 \\times 3$ (composite), by the theorem, $M_6$ must be composite.\n\nDirect calculation:\n\\[\nM_6 = 2^6 - 1 = 64 - 1 = 63\n\\]\n\nFactorization:\n\\[\n63 = 9 \\times 7 = 3^2 \\times 7\n\\]\n\nIndeed, $M_6 = 63$ is composite. \\textcolor{green}{\\checkmark}\n\n\\textbf{Using the proof formula with $n = 6 = 2 \\times 3$:}\n\\[\n2^6 - 1 = (2^2 - 1)(2^4 + 2^2 + 1) = 3 \\times 21 = 3 \\times 21 = 63\n\\]"
+    "content": "Show that $M_6 = 2^6 - 1$ is composite because 6 is composite.\n\nSolution:\n\nSince $6 = 2 \\times 3$ (composite), by the theorem, $M_6$ must be composite.\n\nDirect calculation:\n\\[\nM_6 = 2^6 - 1 = 64 - 1 = 63\n\\]\n\nFactorization:\n\\[\n63 = 9 \\times 7 = 3^2 \\times 7\n\\]\n\nIndeed, $M_6 = 63$ is composite. ✓\n\nUsing the proof formula with $n = 6 = 2 \\times 3$:\n\\[\n2^6 - 1 = (2^2 - 1)(2^4 + 2^2 + 1) = 3 \\times 21 = 3 \\times 21 = 63\n\\]"
   },
   {
     "course": "Number Theory",
@@ -501,7 +501,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 32: Converse is Not True",
-    "content": "Show that even though 11 is prime, $M_{11}$ is composite.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nCalculate $M_{11} = 2^{11} - 1 = 2048 - 1 = 2047$\n\nTest for primality: $\\sqrt{2047} \\approx 45.24$\n\nTry small primes:\n\\[\n2047 \\div 23 = 89\n\\]\n\nSo $2047 = 23 \\times 89$\n\nBoth 23 and 89 are prime, so:\n\\[\nM_{11} = 2047 = 23 \\times 89\n\\]\n\n\\textbf{Conclusion:} Even though 11 is prime, $M_{11}$ is composite. \\textcolor{red}{$\\times$}\n\nThis shows the converse is FALSE!"
+    "content": "Show that even though 11 is prime, $M_{11}$ is composite.\n\nSolution:\n\nCalculate $M_{11} = 2^{11} - 1 = 2048 - 1 = 2047$\n\nTest for primality: $\\sqrt{2047} \\approx 45.24$\n\nTry small primes:\n\\[\n2047 \\div 23 = 89\n\\]\n\nSo $2047 = 23 \\times 89$\n\nBoth 23 and 89 are prime, so:\n\\[\nM_{11} = 2047 = 23 \\times 89\n\\]\n\nConclusion: Even though 11 is prime, $M_{11}$ is composite. $\\times$\n\nThis shows the converse is FALSE!"
   },
   {
     "course": "Number Theory",
@@ -509,7 +509,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Mersenne Numbers}} {center} {tabular}{|c|c|}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Mersenne Numbers}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Property} & \\textbf{Statement} \\\\\n\\hline\nDefinition & $M_n = 2^n - 1$ \\\\\n\\hline\nFirst Mersenne Primes & $M_2 = 3, M_3 = 7, M_5 = 31, M_7 = 127$ \\\\\n\\hline\nNecessary Condition & If $M_n$ is prime, then $n$ is prime \\\\\n\\hline\nNOT Sufficient & $n$ prime does NOT guarantee $M_n$ prime \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Remember:}}\n\\begin{itemize}\n    \\item $n$ prime is necessary but NOT sufficient for $M_n$ to be prime\n    \\item As of 2024, only 51 Mersenne primes are known\n    \\item Largest known prime is often a Mersenne prime\n\\end{itemize}\n\n\\newpage\n\\subsection*{Fermat Numbers}"
+    "content": "Summary: Mersenne Numbers\n\n| Property | Statement |\n|---|---|\n| Definition | $M_n = 2^n - 1$ |\n| First Mersenne Primes | $M_2 = 3, M_3 = 7, M_5 = 31, M_7 = 127$ |\n| Necessary Condition | If $M_n$ is prime, then $n$ is prime |\n| NOT Sufficient | $n$ prime does NOT guarantee $M_n$ prime |\n\nRemember:\n\n- $n$ prime is necessary but NOT sufficient for $M_n$ to be prime\n- As of 2024, only 51 Mersenne primes are known\n- Largest known prime is often a Mersenne prime\n\n\\subsection*{Fermat Numbers}"
   },
   {
     "course": "Number Theory",
@@ -517,7 +517,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "definition",
     "title": "Definition: Fermat Number",
-    "content": "A \\textbf{Fermat number} is a number of the form:\n\\[\nF_n = 2^{2^n} + 1\n\\]\nwhere $n$ is a non-negative integer.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Key Points:}}\n\\begin{itemize}[leftmargin=*]\n    \\item Named after Pierre de Fermat (1607-1665)\n    \\item If $F_n$ is prime, it is called a \\textbf{Fermat prime}\n    \\item Fermat conjectured all $F_n$ are prime (later proven FALSE)\n    \\item Only 5 known Fermat primes: $F_0, F_1, F_2, F_3, F_4$\n\\end{itemize}"
+    "content": "A Fermat number is a number of the form:\n\\[\nF_n = 2^{2^n} + 1\n\\]\nwhere $n$ is a non-negative integer.\n\nKey Points:\n\n- Named after Pierre de Fermat (1607-1665)\n- If $F_n$ is prime, it is called a Fermat prime\n- Fermat conjectured all $F_n$ are prime (later proven FALSE)\n- Only 5 known Fermat primes: $F_0, F_1, F_2, F_3, F_4$"
   },
   {
     "course": "Number Theory",
@@ -525,7 +525,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 33: Computing Fermat Numbers",
-    "content": "Calculate $F_n$ for $n = 0, 1, 2, 3, 4, 5$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$n$ & $2^n$ & $F_n = 2^{2^n} + 1$ & Value & Prime? \\\\\n\\hline\n0 & $2^0 = 1$ & $2^1 + 1$ & 3 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n1 & $2^1 = 2$ & $2^2 + 1$ & 5 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n2 & $2^2 = 4$ & $2^4 + 1$ & 17 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n3 & $2^3 = 8$ & $2^8 + 1$ & 257 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n4 & $2^4 = 16$ & $2^{16} + 1$ & 65,537 & \\cellcolor{green!20}Yes \\textcolor{green}{\\checkmark} \\\\\n\\hline\n5 & $2^5 = 32$ & $2^{32} + 1$ & 4,294,967,297 & \\cellcolor{red!20}No \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Known Fermat Primes:} $F_0 = 3, F_1 = 5, F_2 = 17, F_3 = 257, F_4 = 65537$"
+    "content": "Calculate $F_n$ for $n = 0, 1, 2, 3, 4, 5$.\n\nSolution:\n\n| $n$ | $2^n$ | $F_n = 2^{2^n} + 1$ | Value | Prime? |\n|---|---|---|---|---|\n| 0 | $2^0 = 1$ | $2^1 + 1$ | 3 | Yes ✓ |\n| 1 | $2^1 = 2$ | $2^2 + 1$ | 5 | Yes ✓ |\n| 2 | $2^2 = 4$ | $2^4 + 1$ | 17 | Yes ✓ |\n| 3 | $2^3 = 8$ | $2^8 + 1$ | 257 | Yes ✓ |\n| 4 | $2^4 = 16$ | $2^{16} + 1$ | 65,537 | Yes ✓ |\n| 5 | $2^5 = 32$ | $2^{32} + 1$ | 4,294,967,297 | No |\n\nKnown Fermat Primes: $F_0 = 3, F_1 = 5, F_2 = 17, F_3 = 257, F_4 = 65537$"
   },
   {
     "course": "Number Theory",
@@ -533,7 +533,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 34: Verifying Fermat Primes",
-    "content": "Verify that $F_0 = 3$, $F_1 = 5$, and $F_2 = 17$ are prime.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $F_0 = 3$:}\n\n3 is prime (divisible only by 1 and 3). \\textcolor{green}{\\checkmark}\n\n\\textbf{For $F_1 = 5$:}\n\n5 is prime (divisible only by 1 and 5). \\textcolor{green}{\\checkmark}\n\n\\textbf{For $F_2 = 17$:}\n\n$\\sqrt{17} \\approx 4.12$\n\nTest primes $\\leq 4.12$: 2, 3\n\n\\begin{itemize}\n    \\item $17 \\div 2 = 8.5$ \\textcolor{red}{$\\times$}\n    \\item $17 \\div 3 = 5.67$ \\textcolor{red}{$\\times$}\n\\end{itemize}\n\nTherefore, $F_2 = 17$ is prime. \\textcolor{green}{\\checkmark}"
+    "content": "Verify that $F_0 = 3$, $F_1 = 5$, and $F_2 = 17$ are prime.\n\nSolution:\n\nFor $F_0 = 3$:\n\n3 is prime (divisible only by 1 and 3). ✓\n\nFor $F_1 = 5$:\n\n5 is prime (divisible only by 1 and 5). ✓\n\nFor $F_2 = 17$:\n\n$\\sqrt{17} \\approx 4.12$\n\nTest primes $\\leq 4.12$: 2, 3\n\n- $17 \\div 2 = 8.5$ $\\times$\n- $17 \\div 3 = 5.67$ $\\times$\n\nTherefore, $F_2 = 17$ is prime. ✓"
   },
   {
     "course": "Number Theory",
@@ -541,7 +541,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 35: Fermat's Mistake",
-    "content": "Show that $F_5 = 2^{32} + 1$ is composite, disproving Fermat's conjecture.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\[\nF_5 = 2^{32} + 1 = 4,294,967,297\n\\]\n\nEuler discovered (in 1732) that:\n\\[\nF_5 = 641 \\times 6,700,417\n\\]\n\n\\textbf{Verification that 641 divides $F_5$:}\n\nNote that $641 = 5 \\times 2^7 + 1 = 640 + 1$\n\nAlso $641 = 5^4 + 2^4 = 625 + 16$\n\nThrough modular arithmetic (beyond our scope), we can verify:\n\\[\n2^{32} \\equiv -1 \\pmod{641}\n\\]\n\nThis means $641 | (2^{32} + 1) = F_5$.\n\n\\textbf{Conclusion:} $F_5$ is composite, so Fermat's conjecture that all $F_n$ are prime is FALSE. \\textcolor{red}{$\\times$}\n\n\\subsection*{Theorems on Fermat Numbers}"
+    "content": "Show that $F_5 = 2^{32} + 1$ is composite, disproving Fermat's conjecture.\n\nSolution:\n\n\\[\nF_5 = 2^{32} + 1 = 4,294,967,297\n\\]\n\nEuler discovered (in 1732) that:\n\\[\nF_5 = 641 \\times 6,700,417\n\\]\n\nVerification that 641 divides $F_5$:\n\nNote that $641 = 5 \\times 2^7 + 1 = 640 + 1$\n\nAlso $641 = 5^4 + 2^4 = 625 + 16$\n\nThrough modular arithmetic (beyond our scope), we can verify:\n\\[\n2^{32} \\equiv -1 \\pmod{641}\n\\]\n\nThis means $641 | (2^{32} + 1) = F_5$.\n\nConclusion: $F_5$ is composite, so Fermat's conjecture that all $F_n$ are prime is FALSE. $\\times$\n\n\\subsection*{Theorems on Fermat Numbers}"
   },
   {
     "course": "Number Theory",
@@ -549,7 +549,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "definition",
     "title": "Theorem 1: Recursive Formula for Fermat Numbers",
-    "content": "For $m \\geq 0$:\n\\[\nF_{m+1} = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_m + 2\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} Each Fermat number equals the product of all previous Fermat numbers plus 2."
+    "content": "For $m \\geq 0$:\n\\[\nF_{m+1} = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_m + 2\n\\]\n\nIn words: Each Fermat number equals the product of all previous Fermat numbers plus 2."
   },
   {
     "course": "Number Theory",
@@ -557,7 +557,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Proof of Theorem 1",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof by Induction:}}\n\nWe need to show: $F_{m+1} = \\prod_{k=0}^{m} F_k + 2$\n\nFirst, note that $F_k = 2^{2^k} + 1$, so $F_k - 1 = 2^{2^k}$\n\n\\textbf{Key Identity:}\n\\[\n2^{2^{m+1}} - 1 = (2^{2^m})^2 - 1 = (2^{2^m} - 1)(2^{2^m} + 1)\n\\]\n\nContinuing:\n\\[\n2^{2^m} - 1 = (2^{2^{m-1}} - 1)(2^{2^{m-1}} + 1)\n\\]\n\nBy repeated application:\n\\[\n2^{2^{m+1}} - 1 = (2^1 - 1)(2^1 + 1)(2^2 + 1)(2^4 + 1) \\cdots (2^{2^m} + 1)\n\\]\n\\[\n= 1 \\cdot F_0 \\cdot F_1 \\cdot F_2 \\cdots F_m\n\\]\n\nTherefore:\n\\[\n2^{2^{m+1}} = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_m + 1\n\\]\n\nAdding 1 to both sides:\n\\[\nF_{m+1} = 2^{2^{m+1}} + 1 = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_m + 2\n\\]\n\nThis completes the proof. \\qed"
+    "content": "Proof by Induction:\n\nWe need to show: $F_{m+1} = \\prod_{k=0}^{m} F_k + 2$\n\nFirst, note that $F_k = 2^{2^k} + 1$, so $F_k - 1 = 2^{2^k}$\n\nKey Identity:\n\\[\n2^{2^{m+1}} - 1 = (2^{2^m})^2 - 1 = (2^{2^m} - 1)(2^{2^m} + 1)\n\\]\n\nContinuing:\n\\[\n2^{2^m} - 1 = (2^{2^{m-1}} - 1)(2^{2^{m-1}} + 1)\n\\]\n\nBy repeated application:\n\\[\n2^{2^{m+1}} - 1 = (2^1 - 1)(2^1 + 1)(2^2 + 1)(2^4 + 1) \\cdots (2^{2^m} + 1)\n\\]\n\\[\n= 1 \\cdot F_0 \\cdot F_1 \\cdot F_2 \\cdots F_m\n\\]\n\nTherefore:\n\\[\n2^{2^{m+1}} = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_m + 1\n\\]\n\nAdding 1 to both sides:\n\\[\nF_{m+1} = 2^{2^{m+1}} + 1 = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_m + 2\n\\]\n\nThis completes the proof."
   },
   {
     "course": "Number Theory",
@@ -565,7 +565,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 36: Verifying the Recursive Formula",
-    "content": "Verify the formula for $F_3$ and $F_4$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $F_3$:}\n\\[\nF_0 \\cdot F_1 \\cdot F_2 + 2 = 3 \\times 5 \\times 17 + 2 = 255 + 2 = 257 = F_3\n\\]\n\\textcolor{green}{\\checkmark}\n\n\\textbf{For $F_4$:}\n\\[\nF_0 \\cdot F_1 \\cdot F_2 \\cdot F_3 + 2 = 3 \\times 5 \\times 17 \\times 257 + 2\n\\]\n\\[\n= 255 \\times 257 + 2 = 65535 + 2 = 65537 = F_4\n\\]\n\\textcolor{green}{\\checkmark}"
+    "content": "Verify the formula for $F_3$ and $F_4$.\n\nSolution:\n\nFor $F_3$:\n\\[\nF_0 \\cdot F_1 \\cdot F_2 + 2 = 3 \\times 5 \\times 17 + 2 = 255 + 2 = 257 = F_3\n\\]\n✓\n\nFor $F_4$:\n\\[\nF_0 \\cdot F_1 \\cdot F_2 \\cdot F_3 + 2 = 3 \\times 5 \\times 17 \\times 257 + 2\n\\]\n\\[\n= 255 \\times 257 + 2 = 65535 + 2 = 65537 = F_4\n\\]\n✓"
   },
   {
     "course": "Number Theory",
@@ -573,7 +573,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "definition",
     "title": "Theorem 2: Divisibility Property",
-    "content": "If $m < n$, then:\n\\[\nF_m | (F_n - 2)\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} Any Fermat number divides two less than any later Fermat number."
+    "content": "If $m < n$, then:\n\\[\nF_m | (F_n - 2)\n\\]\n\nIn words: Any Fermat number divides two less than any later Fermat number."
   },
   {
     "course": "Number Theory",
@@ -581,7 +581,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Proof of Theorem 2",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof:}}\n\nFrom Theorem 1, we have:\n\\[\nF_n = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_{n-1} + 2\n\\]\n\nThis can be rewritten as:\n\\[\nF_n - 2 = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_{n-1}\n\\]\n\nSince $m < n$, $F_m$ appears in the product on the right side.\n\nTherefore, $F_m | (F_n - 2)$. \\qed"
+    "content": "Proof:\n\nFrom Theorem 1, we have:\n\\[\nF_n = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_{n-1} + 2\n\\]\n\nThis can be rewritten as:\n\\[\nF_n - 2 = F_0 \\cdot F_1 \\cdot F_2 \\cdots F_{n-1}\n\\]\n\nSince $m < n$, $F_m$ appears in the product on the right side.\n\nTherefore, $F_m | (F_n - 2)$."
   },
   {
     "course": "Number Theory",
@@ -589,7 +589,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 37: Verifying Theorem 2",
-    "content": "Verify that $F_1 | (F_3 - 2)$ and $F_2 | (F_4 - 2)$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $F_1 | (F_3 - 2)$:}\n\n$F_1 = 5$ and $F_3 - 2 = 257 - 2 = 255$\n\n$255 \\div 5 = 51$ \\textcolor{green}{\\checkmark}\n\nIndeed, $5 | 255$.\n\n\\textbf{For $F_2 | (F_4 - 2)$:}\n\n$F_2 = 17$ and $F_4 - 2 = 65537 - 2 = 65535$\n\n$65535 \\div 17 = 3855$ \\textcolor{green}{\\checkmark}\n\nIndeed, $17 | 65535$."
+    "content": "Verify that $F_1 | (F_3 - 2)$ and $F_2 | (F_4 - 2)$.\n\nSolution:\n\nFor $F_1 | (F_3 - 2)$:\n\n$F_1 = 5$ and $F_3 - 2 = 257 - 2 = 255$\n\n$255 \\div 5 = 51$ ✓\n\nIndeed, $5 | 255$.\n\nFor $F_2 | (F_4 - 2)$:\n\n$F_2 = 17$ and $F_4 - 2 = 65537 - 2 = 65535$\n\n$65535 \\div 17 = 3855$ ✓\n\nIndeed, $17 | 65535$."
   },
   {
     "course": "Number Theory",
@@ -597,7 +597,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "definition",
     "title": "Theorem 3: Pairwise Coprimality",
-    "content": "For $m \\neq n$:\n\\[\n\\gcd(F_m, F_n) = 1\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} Any two distinct Fermat numbers are relatively prime (coprime)."
+    "content": "For $m \\neq n$:\n\\[\n\\gcd(F_m, F_n) = 1\n\\]\n\nIn words: Any two distinct Fermat numbers are relatively prime (coprime)."
   },
   {
     "course": "Number Theory",
@@ -605,7 +605,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Proof of Theorem 3",
-    "content": "\\textcolor{accentorange}{\\textbf{Proof:}}\n\nWithout loss of generality, assume $m < n$.\n\nLet $d = \\gcd(F_m, F_n)$.\n\nFrom Theorem 2: $F_m | (F_n - 2)$\n\nSo there exists integer $k$ such that $F_n - 2 = F_m \\cdot k$.\n\nThis gives: $F_n = F_m \\cdot k + 2$\n\nSince $d | F_m$ and $d | F_n$:\n\\[\nd | (F_n - F_m \\cdot k) = 2\n\\]\n\nSo $d | 2$, which means $d \\in \\{1, 2\\}$.\n\nBut all Fermat numbers $F_n = 2^{2^n} + 1$ are odd (even power of 2 plus 1).\n\nSince both $F_m$ and $F_n$ are odd, their GCD cannot be 2.\n\nTherefore, $d = 1$.\n\nHence, $\\gcd(F_m, F_n) = 1$. \\qed"
+    "content": "Proof:\n\nWithout loss of generality, assume $m < n$.\n\nLet $d = \\gcd(F_m, F_n)$.\n\nFrom Theorem 2: $F_m | (F_n - 2)$\n\nSo there exists integer $k$ such that $F_n - 2 = F_m \\cdot k$.\n\nThis gives: $F_n = F_m \\cdot k + 2$\n\nSince $d | F_m$ and $d | F_n$:\n\\[\nd | (F_n - F_m \\cdot k) = 2\n\\]\n\nSo $d | 2$, which means $d \\in \\{1, 2\\}$.\n\nBut all Fermat numbers $F_n = 2^{2^n} + 1$ are odd (even power of 2 plus 1).\n\nSince both $F_m$ and $F_n$ are odd, their GCD cannot be 2.\n\nTherefore, $d = 1$.\n\nHence, $\\gcd(F_m, F_n) = 1$."
   },
   {
     "course": "Number Theory",
@@ -613,7 +613,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "example",
     "title": "Example 38: Verifying Coprimality",
-    "content": "Verify that $\\gcd(F_0, F_1) = 1$ and $\\gcd(F_1, F_2) = 1$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $\\gcd(F_0, F_1) = \\gcd(3, 5)$:}\n\nDivisors of 3: 1, 3\n\nDivisors of 5: 1, 5\n\nCommon divisors: 1\n\nTherefore, $\\gcd(3, 5) = 1$ \\textcolor{green}{\\checkmark}\n\n\\textbf{For $\\gcd(F_1, F_2) = \\gcd(5, 17)$:}\n\nSince both are prime and distinct:\n\n$\\gcd(5, 17) = 1$ \\textcolor{green}{\\checkmark}"
+    "content": "Verify that $\\gcd(F_0, F_1) = 1$ and $\\gcd(F_1, F_2) = 1$.\n\nSolution:\n\nFor $\\gcd(F_0, F_1) = \\gcd(3, 5)$:\n\nDivisors of 3: 1, 3\n\nDivisors of 5: 1, 5\n\nCommon divisors: 1\n\nTherefore, $\\gcd(3, 5) = 1$ ✓\n\nFor $\\gcd(F_1, F_2) = \\gcd(5, 17)$:\n\nSince both are prime and distinct:\n\n$\\gcd(5, 17) = 1$ ✓"
   },
   {
     "course": "Number Theory",
@@ -621,7 +621,7 @@
     "section": "Special Prime-Related Numbers",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Fermat Numbers}} {center} {tabular}{|p{5cm}|p{7cm}|}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Fermat Numbers}}\n\n\\begin{center}\n\\begin{tabular}{|p{5cm}|p{7cm}|}\n\\hline\n\\rowcolor{primaryblue!20}\n\\textbf{Property} & \\textbf{Statement} \\\\\n\\hline\nDefinition & $F_n = 2^{2^n} + 1$ \\\\\n\\hline\nKnown Fermat Primes & $F_0 = 3, F_1 = 5, F_2 = 17, F_3 = 257, F_4 = 65537$ \\\\\n\\hline\nRecursive Formula & $F_{m+1} = F_0 F_1 \\cdots F_m + 2$ \\\\\n\\hline\nDivisibility & If $m < n$, then $F_m | (F_n - 2)$ \\\\\n\\hline\nCoprimality & $\\gcd(F_m, F_n) = 1$ for $m \\neq n$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textcolor{accentorange}{\\faExclamationTriangle\\ \\textbf{Important Facts:}}\n\\begin{itemize}\n    \\item Only 5 Fermat primes are known\n    \\item $F_5$ and beyond are all known to be composite\n    \\item Fermat numbers grow extremely rapidly\n    \\item Any two Fermat numbers are coprime\n\\end{itemize}\n\n\\newpage"
+    "content": "Summary: Fermat Numbers\n\n| Property | Statement |\n|---|---|\n| Definition | $F_n = 2^{2^n} + 1$ |\n| Known Fermat Primes | $F_0 = 3, F_1 = 5, F_2 = 17, F_3 = 257, F_4 = 65537$ |\n| Recursive Formula | $F_{m+1} = F_0 F_1 \\cdots F_m + 2$ |\n| Divisibility | If $m < n$, then $F_m | (F_n - 2)$ |\n| Coprimality | $\\gcd(F_m, F_n) = 1$ for $m \\neq n$ |\n\nImportant Facts:\n\n- Only 5 Fermat primes are known\n- $F_5$ and beyond are all known to be composite\n- Fermat numbers grow extremely rapidly\n- Any two Fermat numbers are coprime"
   },
   {
     "course": "Number Theory",
@@ -629,7 +629,7 @@
     "section": "The Sieve of Eratosthenes",
     "type": "definition",
     "title": "The Sieve of Eratosthenes",
-    "content": "The \\textbf{Sieve of Eratosthenes} is an ancient algorithm for finding all prime numbers up to a given limit $n$. It was developed by the Greek mathematician Eratosthenes of Cyrene (276-194 BCE).\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Algorithm Steps:}}\n\\begin{enumerate}[leftmargin=*]\n    \\item List all integers from 2 to $n$\n    \\item Start with the first number (2), mark it as prime\n    \\item Cross out all multiples of 2 (except 2 itself)\n    \\item Move to the next unmarked number, mark it as prime\n    \\item Cross out all its multiples\n    \\item Repeat until you reach $\\sqrt{n}$\n    \\item All remaining unmarked numbers are prime\n\\end{enumerate}"
+    "content": "The Sieve of Eratosthenes is an ancient algorithm for finding all prime numbers up to a given limit $n$. It was developed by the Greek mathematician Eratosthenes of Cyrene (276-194 BCE).\n\nAlgorithm Steps:\n\n1. List all integers from 2 to $n$\n2. Start with the first number (2), mark it as prime\n3. Cross out all multiples of 2 (except 2 itself)\n4. Move to the next unmarked number, mark it as prime\n5. Cross out all its multiples\n6. Repeat until you reach $\\sqrt{n}$\n7. All remaining unmarked numbers are prime"
   },
   {
     "course": "Number Theory",
@@ -637,7 +637,7 @@
     "section": "The Sieve of Eratosthenes",
     "type": "example",
     "title": "Example 39: Sieve of Eratosthenes for n = 30",
-    "content": "Find all primes up to 30 using the Sieve of Eratosthenes.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{Step 1:} List numbers from 2 to 30.\n\n\\textbf{Step 2:} Mark 2 as prime, cross out multiples of 2:\n\\[\n\\textcolor{green}{2}, 3, \\textcolor{red}{\\cancel{4}}, 5,\n\\textcolor{red}{\\cancel{6}}, 7, \\textcolor{red}{\\cancel{8}}, 9,\n\\textcolor{red}{\\cancel{10}}, 11, \\textcolor{red}{\\cancel{12}}, 13,\n\\textcolor{red}{\\cancel{14}}, 15, \\textcolor{red}{\\cancel{16}}, 17,\n\\textcolor{red}{\\cancel{18}}, 19, \\textcolor{red}{\\cancel{20}}, 21,\n\\textcolor{red}{\\cancel{22}}, 23, \\textcolor{red}{\\cancel{24}}, 25,\n\\textcolor{red}{\\cancel{26}}, 27, \\textcolor{red}{\\cancel{28}}, 29,\n\\textcolor{red}{\\cancel{30}}\n\\]\n\n\\textbf{Step 3:} Mark 3 as prime, cross out multiples of 3:\n\\[\n\\textcolor{green}{2}, \\textcolor{green}{3},\n\\textcolor{red}{\\cancel{4}}, 5,\n\\textcolor{red}{\\cancel{6}}, 7,\n\\textcolor{red}{\\cancel{8}}, \\textcolor{red}{\\cancel{9}},\n\\textcolor{red}{\\cancel{10}}, 11,\n\\textcolor{red}{\\cancel{12}}, 13,\n\\textcolor{red}{\\cancel{14}}, \\textcolor{red}{\\cancel{15}},\n\\textcolor{red}{\\cancel{16}}, 17,\n\\textcolor{red}{\\cancel{18}}, 19,\n\\textcolor{red}{\\cancel{20}}, \\textcolor{red}{\\cancel{21}},\n\\textcolor{red}{\\cancel{22}}, 23,\n\\textcolor{red}{\\cancel{24}}, 25,\n\\textcolor{red}{\\cancel{26}}, \\textcolor{red}{\\cancel{27}},\n\\textcolor{red}{\\cancel{28}}, 29,\n\\textcolor{red}{\\cancel{30}}\n\\]\n\n\\textbf{Step 4:} Mark 5 as prime, cross out multiples of 5:\n\\[\n\\textcolor{green}{2}, \\textcolor{green}{3},\n\\textcolor{red}{\\cancel{4}}, \\textcolor{green}{5},\n\\textcolor{red}{\\cancel{6}}, 7,\n\\textcolor{red}{\\cancel{8}}, \\textcolor{red}{\\cancel{9}},\n\\textcolor{red}{\\cancel{10}}, 11,\n\\textcolor{red}{\\cancel{12}}, 13,\n\\textcolor{red}{\\cancel{14}}, \\textcolor{red}{\\cancel{15}},\n\\textcolor{red}{\\cancel{16}}, 17,\n\\textcolor{red}{\\cancel{18}}, 19,\n\\textcolor{red}{\\cancel{20}}, \\textcolor{red}{\\cancel{21}},\n\\textcolor{red}{\\cancel{22}}, 23,\n\\textcolor{red}{\\cancel{24}}, \\textcolor{red}{\\cancel{25}},\n\\textcolor{red}{\\cancel{26}}, \\textcolor{red}{\\cancel{27}},\n\\textcolor{red}{\\cancel{28}}, 29,\n\\textcolor{red}{\\cancel{30}}\n\\]\n\n\\textbf{Step 5:} Since $\\sqrt{30} \\approx 5.48$, we stop here.\nAll remaining unmarked numbers are prime.\n\n\\textbf{Primes up to 30:}\n\\[\n\\boxed{2, 3, 5, 7, 11, 13, 17, 19, 23, 29}\n\\]\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    \\node[align=center] at (6, 6.5) {\\textcolor{primaryblue}{\\Large\\textbf{Visual Sieve: Primes up to 50}}};\n    \n    % Draw grid\n    \\foreach \\x in {0,...,9} {\n        \\foreach \\y in {0,...,4} {\n            \\pgfmathtruncatemacro{\\num}{\\x + \\y*10 + 1}\n            \\ifnum\\num<51\n                \\ifnum\\num=1\n                    \\draw[fill=gray!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y);\n                    \\node at (\\x+0.45, 5.45-\\y) {\\num};\n                \\else\n                    \\ifnum\\num=2 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=3 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=5 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=7 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=11 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=13 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=17 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=19 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=23 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=29 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=31 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=37 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=41 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=43 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num=47 \\draw[fill=green!30] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y); \\node at (\\x+0.45, 5.45-\\y) {\\textbf{\\num}}; \\fi\n                    \\ifnum\\num>3\n                        \\pgfmathtruncatemacro{\\isp}{0}\n                        \\ifnum\\num=5 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=7 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=11 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=13 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=17 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=19 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=23 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=29 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=31 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=37 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=41 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=43 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\num=47 \\pgfmathtruncatemacro{\\isp}{1} \\fi\n                        \\ifnum\\isp=0\n                            \\draw[fill=red!20] (\\x, 5-\\y) rectangle (\\x+0.9, 5.9-\\y);\n                            \\node[gray] at (\\x+0.45, 5.45-\\y) {\\num};\n                        \\fi\n                    \\fi\n                \\fi\n            \\fi\n        }\n    }\n    \n    % Legend\n    \\draw[fill=green!30] (10.5, 5) rectangle (11, 5.5);\n    \\node[anchor=west] at (11.2, 5.25) {Prime};\n    \\draw[fill=red!20] (10.5, 4.3) rectangle (11, 4.8);\n    \\node[anchor=west] at (11.2, 4.55) {Composite};\n    \\draw[fill=gray!30] (10.5, 3.6) rectangle (11, 4.1);\n    \\node[anchor=west] at (11.2, 3.85) {Neither};\n\\end{tikzpicture}\n\\end{center}"
+    "content": "Find all primes up to 30 using the Sieve of Eratosthenes.\n\nSolution:\n\nStep 1: List numbers from 2 to 30.\n\nStep 2: Mark 2 as prime, cross out multiples of 2:\n\\[\n\\textcolor{green}{2}, 3, \\textcolor{red}{\\cancel{4}}, 5,\n\\textcolor{red}{\\cancel{6}}, 7, \\textcolor{red}{\\cancel{8}}, 9,\n\\textcolor{red}{\\cancel{10}}, 11, \\textcolor{red}{\\cancel{12}}, 13,\n\\textcolor{red}{\\cancel{14}}, 15, \\textcolor{red}{\\cancel{16}}, 17,\n\\textcolor{red}{\\cancel{18}}, 19, \\textcolor{red}{\\cancel{20}}, 21,\n\\textcolor{red}{\\cancel{22}}, 23, \\textcolor{red}{\\cancel{24}}, 25,\n\\textcolor{red}{\\cancel{26}}, 27, \\textcolor{red}{\\cancel{28}}, 29,\n\\textcolor{red}{\\cancel{30}}\n\\]\n\nStep 3: Mark 3 as prime, cross out multiples of 3:\n\\[\n\\textcolor{green}{2}, \\textcolor{green}{3},\n\\textcolor{red}{\\cancel{4}}, 5,\n\\textcolor{red}{\\cancel{6}}, 7,\n\\textcolor{red}{\\cancel{8}}, \\textcolor{red}{\\cancel{9}},\n\\textcolor{red}{\\cancel{10}}, 11,\n\\textcolor{red}{\\cancel{12}}, 13,\n\\textcolor{red}{\\cancel{14}}, \\textcolor{red}{\\cancel{15}},\n\\textcolor{red}{\\cancel{16}}, 17,\n\\textcolor{red}{\\cancel{18}}, 19,\n\\textcolor{red}{\\cancel{20}}, \\textcolor{red}{\\cancel{21}},\n\\textcolor{red}{\\cancel{22}}, 23,\n\\textcolor{red}{\\cancel{24}}, 25,\n\\textcolor{red}{\\cancel{26}}, \\textcolor{red}{\\cancel{27}},\n\\textcolor{red}{\\cancel{28}}, 29,\n\\textcolor{red}{\\cancel{30}}\n\\]\n\nStep 4: Mark 5 as prime, cross out multiples of 5:\n\\[\n\\textcolor{green}{2}, \\textcolor{green}{3},\n\\textcolor{red}{\\cancel{4}}, \\textcolor{green}{5},\n\\textcolor{red}{\\cancel{6}}, 7,\n\\textcolor{red}{\\cancel{8}}, \\textcolor{red}{\\cancel{9}},\n\\textcolor{red}{\\cancel{10}}, 11,\n\\textcolor{red}{\\cancel{12}}, 13,\n\\textcolor{red}{\\cancel{14}}, \\textcolor{red}{\\cancel{15}},\n\\textcolor{red}{\\cancel{16}}, 17,\n\\textcolor{red}{\\cancel{18}}, 19,\n\\textcolor{red}{\\cancel{20}}, \\textcolor{red}{\\cancel{21}},\n\\textcolor{red}{\\cancel{22}}, 23,\n\\textcolor{red}{\\cancel{24}}, \\textcolor{red}{\\cancel{25}},\n\\textcolor{red}{\\cancel{26}}, \\textcolor{red}{\\cancel{27}},\n\\textcolor{red}{\\cancel{28}}, 29,\n\\textcolor{red}{\\cancel{30}}\n\\]\n\nStep 5: Since $\\sqrt{30} \\approx 5.48$, we stop here.\nAll remaining unmarked numbers are prime.\n\nPrimes up to 30:\n\\[\n\\boxed{2, 3, 5, 7, 11, 13, 17, 19, 23, 29}\n\\]"
   },
   {
     "course": "Number Theory",
@@ -645,7 +645,7 @@
     "section": "The Sieve of Eratosthenes",
     "type": "example",
     "title": "Example 40: Why Stop at $\\sqrt{n",
-    "content": "$?}\nExplain why we only need to check primes up to $\\sqrt{n}$ in the Sieve.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSuppose $n$ is composite. Then $n = ab$ where $1 < a \\leq b < n$.\n\nIf both $a > \\sqrt{n}$ and $b > \\sqrt{n}$, then:\n\\[\nn = ab > \\sqrt{n} \\cdot \\sqrt{n} = n\n\\]\n\nThis is a contradiction.\n\nTherefore, at least one factor must be $\\leq \\sqrt{n}$.\n\nThis means: if $n$ is composite, it will be crossed out when we eliminate multiples of some prime $p \\leq \\sqrt{n}$.\n\n\\textbf{Example for $n = 50$:}\n\n$\\sqrt{50} \\approx 7.07$\n\nWe only need to check primes: 2, 3, 5, 7\n\nAll composites up to 50 will be eliminated by removing multiples of these primes. \\textcolor{green}{\\checkmark}"
+    "content": "$?}\nExplain why we only need to check primes up to $\\sqrt{n}$ in the Sieve.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nSuppose $n$ is composite. Then $n = ab$ where $1 < a \\leq b < n$.\n\nIf both $a > \\sqrt{n}$ and $b > \\sqrt{n}$, then:\n\u0000MATH0\u0000\n\nThis is a contradiction.\n\nTherefore, at least one factor must be $\\leq \\sqrt{n}$.\n\nThis means: if $n$ is composite, it will be crossed out when we eliminate multiples of some prime $p \\leq \\sqrt{n}$.\n\n\\textbf{Example for $n = 50$:}\n\n$\\sqrt{50} \\approx 7.07$\n\nWe only need to check primes: 2, 3, 5, 7\n\nAll composites up to 50 will be eliminated by removing multiples of these primes. ✓"
   },
   {
     "course": "Number Theory",
@@ -653,7 +653,7 @@
     "section": "The Sieve of Eratosthenes",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Efficiency of the Sieve}} {Advantages:}",
-    "content": "\\textcolor{primaryblue}{\\faLightbulb\\ \\textbf{Efficiency of the Sieve}}\n\n\\textbf{Advantages:}\n\\begin{itemize}[leftmargin=*]\n    \\item Very efficient for finding many primes at once\n    \\item Simple to implement\n    \\item Requires only basic arithmetic operations\n    \\item No division needed (only marking multiples)\n\\end{itemize}\n\n\\textbf{Time Complexity:} $O(n \\log \\log n)$ - very efficient!\n\n\\textbf{Space Complexity:} $O(n)$ - need to store all numbers up to $n$"
+    "content": "Efficiency of the Sieve\n\nAdvantages:\n\n- Very efficient for finding many primes at once\n- Simple to implement\n- Requires only basic arithmetic operations\n- No division needed (only marking multiples)\n\nTime Complexity: $O(n \\log \\log n)$ - very efficient!\n\nSpace Complexity: $O(n)$ - need to store all numbers up to $n$"
   },
   {
     "course": "Number Theory",
@@ -661,7 +661,7 @@
     "section": "The Sieve of Eratosthenes",
     "type": "example",
     "title": "Example 41: Count Primes up to 100",
-    "content": "How many primes are there up to 100?\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nUsing the Sieve of Eratosthenes, we find all primes up to 100:\n\n\\begin{center}\n\\begin{tabular}{cccccccccc}\n2 & 3 & 5 & 7 & 11 & 13 & 17 & 19 & 23 & 29 \\\\\n31 & 37 & 41 & 43 & 47 & 53 & 59 & 61 & 67 & 71 \\\\\n73 & 79 & 83 & 89 & 97 & & & & & \\\\\n\\end{tabular}\n\\end{center}\n\n\\textbf{Count:} There are \\boxed{25} primes up to 100.\n\n\\textcolor{accentorange}{\\textbf{Observation:}} Primes make up 25\\% of integers up to 100, but this percentage decreases as numbers get larger."
+    "content": "How many primes are there up to 100?\n\nSolution:\n\nUsing the Sieve of Eratosthenes, we find all primes up to 100:\n\n| 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 |\n|---|---|---|---|---|---|---|---|---|---|\n| 31 | 37 | 41 | 43 | 47 | 53 | 59 | 61 | 67 | 71 |\n| 73 | 79 | 83 | 89 | 97 |  |  |  |  |  |\n\nCount: There are \\boxed{25} primes up to 100.\n\nObservation: Primes make up 25\\% of integers up to 100, but this percentage decreases as numbers get larger."
   },
   {
     "course": "Number Theory",
@@ -669,7 +669,7 @@
     "section": "Prime Distribution",
     "type": "definition",
     "title": "Prime Counting Function",
-    "content": "The \\textbf{prime counting function} $\\pi(n)$ is defined as the number of primes less than or equal to $n$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Examples:}}\n\\begin{itemize}[leftmargin=*]\n    \\item $\\pi(10) = 4$ (primes: 2, 3, 5, 7)\n    \\item $\\pi(20) = 8$ (primes: 2, 3, 5, 7, 11, 13, 17, 19)\n    \\item $\\pi(100) = 25$\n\\end{itemize}"
+    "content": "The prime counting function $\\pi(n)$ is defined as the number of primes less than or equal to $n$.\n\nExamples:\n\n- $\\pi(10) = 4$ (primes: 2, 3, 5, 7)\n- $\\pi(20) = 8$ (primes: 2, 3, 5, 7, 11, 13, 17, 19)\n- $\\pi(100) = 25$"
   },
   {
     "course": "Number Theory",
@@ -677,7 +677,7 @@
     "section": "Prime Distribution",
     "type": "example",
     "title": "Example 42: Computing $\\pi(n)$",
-    "content": "Find $\\pi(30)$ and $\\pi(50)$.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\textbf{For $\\pi(30)$:}\n\nPrimes $\\leq 30$: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29\n\nCount: $\\boxed{\\pi(30) = 10}$\n\n\\textbf{For $\\pi(50)$:}\n\nPrimes $\\leq 50$: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47\n\nCount: $\\boxed{\\pi(50) = 15}$"
+    "content": "Find $\\pi(30)$ and $\\pi(50)$.\n\nSolution:\n\nFor $\\pi(30)$:\n\nPrimes $\\leq 30$: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29\n\nCount: $\\boxed{\\pi(30) = 10}$\n\nFor $\\pi(50)$:\n\nPrimes $\\leq 50$: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47\n\nCount: $\\boxed{\\pi(50) = 15}$"
   },
   {
     "course": "Number Theory",
@@ -685,7 +685,7 @@
     "section": "Prime Distribution",
     "type": "definition",
     "title": "Prime Number Theorem (Informal)",
-    "content": "The \\textbf{Prime Number Theorem} states that the number of primes less than or equal to $n$ is approximately:\n\\[\n\\pi(n) \\approx \\frac{n}{\\ln n}\n\\]\n\nwhere $\\ln n$ is the natural logarithm of $n$.\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{In words:}} Primes become less frequent as numbers get larger, at a rate inversely proportional to the logarithm."
+    "content": "The Prime Number Theorem states that the number of primes less than or equal to $n$ is approximately:\n\\[\n\\pi(n) \\approx \\frac{n}{\\ln n}\n\\]\n\nwhere $\\ln n$ is the natural logarithm of $n$.\n\nIn words: Primes become less frequent as numbers get larger, at a rate inversely proportional to the logarithm."
   },
   {
     "course": "Number Theory",
@@ -693,7 +693,7 @@
     "section": "Prime Distribution",
     "type": "example",
     "title": "Example 43: Approximating Prime Count",
-    "content": "Use the Prime Number Theorem to approximate $\\pi(100)$ and compare with the actual value.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\nUsing the approximation:\n\\[\n\\pi(100) \\approx \\frac{100}{\\ln 100} = \\frac{100}{4.605} \\approx 21.7\n\\]\n\n\\textbf{Actual value:} $\\pi(100) = 25$\n\n\\textbf{Error:} $|25 - 21.7| = 3.3$\n\n\\textbf{Percentage error:} $\\frac{3.3}{25} \\times 100\\% = 13.2\\%$\n\nThe approximation is reasonably close! The accuracy improves for larger values of $n$."
+    "content": "Use the Prime Number Theorem to approximate $\\pi(100)$ and compare with the actual value.\n\nSolution:\n\nUsing the approximation:\n\\[\n\\pi(100) \\approx \\frac{100}{\\ln 100} = \\frac{100}{4.605} \\approx 21.7\n\\]\n\nActual value: $\\pi(100) = 25$\n\nError: $|25 - 21.7| = 3.3$\n\nPercentage error: $\\frac{3.3}{25} \\times 100\\% = 13.2\\%$\n\nThe approximation is reasonably close! The accuracy improves for larger values of $n$."
   },
   {
     "course": "Number Theory",
@@ -701,7 +701,7 @@
     "section": "Prime Distribution",
     "type": "keypoint",
     "title": "{primaryblue}{\\ {Summary: Prime Distribution}} {center} {tabular}{|c|c|c|c|}",
-    "content": "\\textcolor{primaryblue}{\\faCheckCircle\\ \\textbf{Summary: Prime Distribution}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$n$ & $\\pi(n)$ (actual) & $\\frac{n}{\\ln n}$ (approx) & Ratio of primes \\\\\n\\hline\n10 & 4 & 4.3 & 40\\% \\\\\n\\hline\n100 & 25 & 21.7 & 25\\% \\\\\n\\hline\n1,000 & 168 & 144.8 & 16.8\\% \\\\\n\\hline\n10,000 & 1,229 & 1,085.7 & 12.3\\% \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Key Observation:} As $n$ increases, primes become less dense, but they never disappear!"
+    "content": "Summary: Prime Distribution\n\n| $n$ | $\\pi(n)$ (actual) | $\\frac{n}{\\ln n}$ (approx) | Ratio of primes |\n|---|---|---|---|\n| 10 | 4 | 4.3 | 40\\% |\n| 100 | 25 | 21.7 | 25\\% |\n| 1,000 | 168 | 144.8 | 16.8\\% |\n| 10,000 | 1,229 | 1,085.7 | 12.3\\% |\n\nKey Observation: As $n$ increases, primes become less dense, but they never disappear!"
   },
   {
     "course": "Number Theory",
@@ -709,7 +709,7 @@
     "section": "Prime Distribution",
     "type": "definition",
     "title": "Prime Gaps",
-    "content": "The \\textbf{gap} between consecutive primes $p_n$ and $p_{n+1}$ is defined as:\n\\[\ng_n = p_{n+1} - p_n\n\\]\n\n\\textcolor{primaryblue}{\\faInfoCircle\\ \\textbf{Facts about gaps:}}\n\\begin{itemize}[leftmargin=*]\n    \\item The only gap of size 1 is between 2 and 3\n    \\item All other gaps are even numbers (since all other primes are odd)\n    \\item Prime gaps can be arbitrarily large\n    \\item Small gaps occur infinitely often (Twin Prime Conjecture - unproven)\n\\end{itemize}"
+    "content": "The gap between consecutive primes $p_n$ and $p_{n+1}$ is defined as:\n\\[\ng_n = p_{n+1} - p_n\n\\]\n\nFacts about gaps:\n\n- The only gap of size 1 is between 2 and 3\n- All other gaps are even numbers (since all other primes are odd)\n- Prime gaps can be arbitrarily large\n- Small gaps occur infinitely often (Twin Prime Conjecture - unproven)"
   },
   {
     "course": "Number Theory",
@@ -717,7 +717,7 @@
     "section": "Prime Distribution",
     "type": "example",
     "title": "Example 44: Computing Prime Gaps",
-    "content": "Find the gaps between the first 10 primes.\n\n\\textcolor{primaryblue}{\\textbf{Solution:}}\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\n\\rowcolor{primaryblue!20}\n$p_n$ & $p_{n+1}$ & Gap $g_n = p_{n+1} - p_n$ \\\\\n\\hline\n2 & 3 & 1 \\\\\n\\hline\n3 & 5 & 2 \\\\\n\\hline\n5 & 7 & 2 \\\\\n\\hline\n7 & 11 & 4 \\\\\n\\hline\n11 & 13 & 2 \\\\\n\\hline\n13 & 17 & 4 \\\\\n\\hline\n17 & 19 & 2 \\\\\n\\hline\n19 & 23 & 4 \\\\\n\\hline\n23 & 29 & 6 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\textbf{Observations:}\n\\begin{itemize}\n    \\item Smallest gap: 1 (between 2 and 3)\n    \\item Most common gap so far: 2 (twin primes)\n    \\item Gaps are increasing on average\n\\end{itemize}\n\n\\newpage"
+    "content": "Find the gaps between the first 10 primes.\n\nSolution:\n\n| $p_n$ | $p_{n+1}$ | Gap $g_n = p_{n+1} - p_n$ |\n|---|---|---|\n| 2 | 3 | 1 |\n| 3 | 5 | 2 |\n| 5 | 7 | 2 |\n| 7 | 11 | 4 |\n| 11 | 13 | 2 |\n| 13 | 17 | 4 |\n| 17 | 19 | 2 |\n| 19 | 23 | 4 |\n| 23 | 29 | 6 |\n\nObservations:\n\n- Smallest gap: 1 (between 2 and 3)\n- Most common gap so far: 2 (twin primes)\n- Gaps are increasing on average"
   },
   {
     "course": "Number Theory",

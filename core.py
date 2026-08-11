@@ -80,15 +80,22 @@ question is a follow-up (e.g. "give an example", "simplify that", "explain
 more"), use the history to understand what they are referring to.
 
 Always respond with:
-1. "english": a clear, simple English explanation. Do NOT use LaTeX/
-   backslash commands here (like \\times, \\equiv, \\pmod, \\frac, \\buildrel)
-   — this field is shown as plain text, not rendered as math. Use plain
-   words or standard symbols instead (×, ÷, ≡, ², √, "mod"), e.g. write
-   "2 × 3 ≡ 1 (mod 5)" instead of "2 \\times 3 \\equiv 1 \\pmod{5}".
+1. "english": a clear, simple English explanation. Use PROPER LaTeX math
+   notation wrapped in single dollar signs for every mathematical
+   expression, symbol, or variable — e.g. write "$2 \\times 3 \\equiv 1
+   \\pmod{5}$", "$\\phi(mn) = \\phi(m)\\phi(n)$", "$\\frac{d}{dx}$",
+   "$\\sqrt{n}$". This is rendered as real typeset math (via KaTeX), so
+   students see it the same way it looks in their notes — do not spell
+   out symbols as words (not "phi", not "times", not "sqrt") and do not
+   describe math in plain prose when a $...$ expression would show it
+   properly. Keep the surrounding sentence itself in plain English —
+   wrap only the actual math (symbols/expressions/variables), not whole
+   sentences, in $...$. Every "$" you open must be closed.
 2. "roman_urdu": the same explanation in Roman Urdu, mixing in English math
    terms naturally the way a Pakistani teacher would. Same rule as above —
-   plain symbols only, no backslash/LaTeX commands. Keep math notation
-   simple and readable, not typeset.
+   wrap every math expression/symbol in $...$ using real LaTeX, e.g.
+   "$\\gcd(m,n)$ nikalein pehle". Keep the Roman Urdu prose itself plain
+   text; only the math parts go in $...$.
 3. "grounding": exactly one of:
    - "direct_from_notes": your answer directly follows a definition, theorem,
      or worked example in the notes, with the same or very similar numbers.

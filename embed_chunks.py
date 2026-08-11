@@ -29,6 +29,7 @@ knowledge base bana degi.
 
 import argparse
 import glob
+import hashlib
 import json
 import os
 import time
@@ -58,8 +59,18 @@ def load_all_chunks():
 
 
 def chunk_id(chunk):
-    """Har tukde ki apni unique pehchan — resume karte waqt yehi check hoti hai."""
-    return f"{chunk.get('course','')}|{chunk['chapter']}|{chunk['title']}"
+    """Har tukde ki apni unique pehchan — resume/skip karte waqt yehi check hoti hai.
+
+    FIX (quota-saving): pehle sirf course|chapter|title par based tha —
+    matlab agar kisi chunk ka SIRF content badle (jaise LaTeX-cleaning se),
+    title wahi rehta hai, to ye "already done" samajh kar skip ho jata
+    (purana, dirty content wala embedding hi reh jata — content-fix kabhi
+    apply hi nahi hota). Ab ek content-hash bhi shamil hai, is liye:
+      - Content badla  -> naya hash -> "naya" chunk samjha jayega -> re-embed hoga
+      - Content same   -> wahi hash -> "already done" -> skip (purana embedding safe)
+    """
+    content_hash = hashlib.sha256(chunk.get("content", "").encode("utf-8")).hexdigest()[:16]
+    return f"{chunk.get('course','')}|{chunk['chapter']}|{chunk['title']}|{content_hash}"
 
 
 def load_existing_knowledge_base():

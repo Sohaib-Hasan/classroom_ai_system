@@ -213,7 +213,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 14: Another Power Calculation",
-    "content": "Find $3^{50} \\pmod{8}$.\n\nSolution:\n\nFirst find a pattern:\n$$\\begin{align*}\n3^1 &= 3 \\equiv 3 \\pmod{8}\\\\\n3^2 &= 9 \\equiv 1 \\pmod{8}\n\\end{align*}$$\n\nSince $3^2 \\equiv 1 \\pmod{8}$, we can use the power property:\n\\[\n3^{50} = (3^2)^{25} \\equiv 1^{25} \\pmod{8}\n\\]\n\\[\n3^{50} \\equiv 1 \\pmod{8}\n\\]\n\nTherefore: $\\boxed{3^{50} \\equiv 1 \\pmod{8}}$"
+    "content": "Find $3^{50} \\pmod{8}$.\n\nSolution:\n\nFirst find a pattern:\n$$$$\\begin{align*}\n3^1 &= 3 \\equiv 3 \\pmod{8}\\\\\n3^2 &= 9 \\equiv 1 \\pmod{8}\n\\end{align*}$$$$\n\nSince $3^2 \\equiv 1 \\pmod{8}$, we can use the power property:\n\\[\n3^{50} = (3^2)^{25} \\equiv 1^{25} \\pmod{8}\n\\]\n\\[\n3^{50} \\equiv 1 \\pmod{8}\n\\]\n\nTherefore: $\\boxed{3^{50} \\equiv 1 \\pmod{8}}$"
   },
   {
     "course": "Number Theory",
@@ -301,7 +301,7 @@
     "section": "Properties and Operations on Congruences",
     "type": "example",
     "title": "Example 19: GCD Preservation",
-    "content": "Given $23 \\equiv 8 \\pmod{5}$, verify that $\\gcd(23, 5) = \\gcd(8, 5)$.\n\nSolution:\n\nCalculate both GCDs:\n\n$\\gcd(23, 5)$:\n$$\\begin{align*}\n23 &= 5(4) + 3\\\\\n5 &= 3(1) + 2\\\\\n3 &= 2(1) + 1\\\\\n2 &= 1(2) + 0\n\\end{align*}$$\nSo $\\gcd(23, 5) = 1$\n\n$\\gcd(8, 5)$:\n$$\\begin{align*}\n8 &= 5(1) + 3\\\\\n5 &= 3(1) + 2\\\\\n3 &= 2(1) + 1\\\\\n2 &= 1(2) + 0\n\\end{align*}$$\nSo $\\gcd(8, 5) = 1$\n\nIndeed, $\\gcd(23, 5) = \\gcd(8, 5) = 1$ ✓"
+    "content": "Given $23 \\equiv 8 \\pmod{5}$, verify that $\\gcd(23, 5) = \\gcd(8, 5)$.\n\nSolution:\n\nCalculate both GCDs:\n\n$\\gcd(23, 5)$:\n$$$$\\begin{align*}\n23 &= 5(4) + 3\\\\\n5 &= 3(1) + 2\\\\\n3 &= 2(1) + 1\\\\\n2 &= 1(2) + 0\n\\end{align*}$$$$\nSo $\\gcd(23, 5) = 1$\n\n$\\gcd(8, 5)$:\n$$$$\\begin{align*}\n8 &= 5(1) + 3\\\\\n5 &= 3(1) + 2\\\\\n3 &= 2(1) + 1\\\\\n2 &= 1(2) + 0\n\\end{align*}$$$$\nSo $\\gcd(8, 5) = 1$\n\nIndeed, $\\gcd(23, 5) = \\gcd(8, 5) = 1$ ✓"
   },
   {
     "course": "Number Theory",
@@ -517,7 +517,7 @@
     "section": "Divisibility Tests",
     "type": "proof",
     "title": "Proof: Divisibility by 11",
-    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + a_{k-1} \\cdot 10^{k-1} + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv -1 \\pmod{11}$.\n\nBy the power property:\n$$\\begin{align*}\n10^0 &\\equiv 1 \\pmod{11}\\\\\n10^1 &\\equiv -1 \\pmod{11}\\\\\n10^2 &\\equiv (-1)^2 = 1 \\pmod{11}\\\\\n10^3 &\\equiv (-1)^3 = -1 \\pmod{11}\\\\\n&\\vdots\\\\\n10^i &\\equiv (-1)^i \\pmod{11}\n\\end{align*}$$\n\nTherefore:\n\\[\nn \\equiv a_k(-1)^k + a_{k-1}(-1)^{k-1} + \\cdots + a_1(-1) + a_0(1) \\pmod{11}\n\\]\n\\[\nn \\equiv a_0 - a_1 + a_2 - a_3 + \\cdots \\pmod{11}\n\\]\n\nThus, $11 | n$ if and only if $11 | (a_0 - a_1 + a_2 - a_3 + \\cdots)$."
+    "content": "Proof:\n\nLet $n = a_k \\cdot 10^k + a_{k-1} \\cdot 10^{k-1} + \\cdots + a_1 \\cdot 10 + a_0$.\n\nNote that $10 \\equiv -1 \\pmod{11}$.\n\nBy the power property:\n$$$$\\begin{align*}\n10^0 &\\equiv 1 \\pmod{11}\\\\\n10^1 &\\equiv -1 \\pmod{11}\\\\\n10^2 &\\equiv (-1)^2 = 1 \\pmod{11}\\\\\n10^3 &\\equiv (-1)^3 = -1 \\pmod{11}\\\\\n&\\vdots\\\\\n10^i &\\equiv (-1)^i \\pmod{11}\n\\end{align*}$$$$\n\nTherefore:\n\\[\nn \\equiv a_k(-1)^k + a_{k-1}(-1)^{k-1} + \\cdots + a_1(-1) + a_0(1) \\pmod{11}\n\\]\n\\[\nn \\equiv a_0 - a_1 + a_2 - a_3 + \\cdots \\pmod{11}\n\\]\n\nThus, $11 | n$ if and only if $11 | (a_0 - a_1 + a_2 - a_3 + \\cdots)$."
   },
   {
     "course": "Number Theory",
@@ -877,7 +877,7 @@
     "section": "Linear Diophantine Equations",
     "type": "example",
     "title": "Example 52: Solving Using Extended Euclidean Algorithm",
-    "content": "Solve $12x + 18y = 30$.\n\nSolution:\n\nStep 1: Check solvability\n\n$d = \\gcd(12, 18)$\n\nUsing Euclidean Algorithm:\n$$\\begin{align*}\n18 &= 12(1) + 6\\\\\n12 &= 6(2) + 0\n\\end{align*}$$\n\nSo $d = 6$.\n\nCheck: $30 = 6(5)$, so $6 | 30$ ✓\n\nStep 2: Simplify equation\n\nDivide by $d = 6$:\n\\[\n\\frac{12x + 18y}{6} = \\frac{30}{6}\n\\]\n\\[\n2x + 3y = 5\n\\]\n\nStep 3: Find particular solution to simplified equation\n\nNow $\\gcd(2, 3) = 1$.\n\nBy Bezout's Identity (working backwards from Euclidean Algorithm):\n\nFrom $18 = 12(1) + 6$:\n\\[\n6 = 18 - 12(1)\n\\]\n\nExpress 1 in terms of 2 and 3:\n\\[\n3 = 2(1) + 1\n\\]\n\\[\n1 = 3 - 2(1)\n\\]\n\nSo $2(-1) + 3(1) = 1$.\n\nMultiply by 5:\n\\[\n2(-5) + 3(5) = 5\n\\]\n\nParticular solution to $2x + 3y = 5$: $(x_0, y_0) = (-5, 5)$\n\nVerification: $2(-5) + 3(5) = -10 + 15 = 5$ ✓\n\nStep 4: General solution\n\nWith $d = \\gcd(2, 3) = 1$:\n\\[\nx = -5 + \\frac{3}{1}t = -5 + 3t\n\\]\n\\[\ny = 5 - \\frac{2}{1}t = 5 - 2t\n\\]\n\nGeneral Solution: $\\boxed{(x, y) = (-5 + 3t, 5 - 2t) \\text{ for } t \\in \\mathbb{Z}}$\n\nSome solutions:\n\n| $t$ | $x = -5 + 3t$ | $y = 5 - 2t$ |\n|---|---|---|\n| $0$ | $-5$ | $5$ |\n| $1$ | $-2$ | $3$ |\n| $2$ | $1$ | $1$ |\n| $3$ | $4$ | $-1$ |\n\nVerification for original equation with $t = 2$:\n\\[\n12(1) + 18(1) = 12 + 18 = 30\n\\]\n✓"
+    "content": "Solve $12x + 18y = 30$.\n\nSolution:\n\nStep 1: Check solvability\n\n$d = \\gcd(12, 18)$\n\nUsing Euclidean Algorithm:\n$$$$\\begin{align*}\n18 &= 12(1) + 6\\\\\n12 &= 6(2) + 0\n\\end{align*}$$$$\n\nSo $d = 6$.\n\nCheck: $30 = 6(5)$, so $6 | 30$ ✓\n\nStep 2: Simplify equation\n\nDivide by $d = 6$:\n\\[\n\\frac{12x + 18y}{6} = \\frac{30}{6}\n\\]\n\\[\n2x + 3y = 5\n\\]\n\nStep 3: Find particular solution to simplified equation\n\nNow $\\gcd(2, 3) = 1$.\n\nBy Bezout's Identity (working backwards from Euclidean Algorithm):\n\nFrom $18 = 12(1) + 6$:\n\\[\n6 = 18 - 12(1)\n\\]\n\nExpress 1 in terms of 2 and 3:\n\\[\n3 = 2(1) + 1\n\\]\n\\[\n1 = 3 - 2(1)\n\\]\n\nSo $2(-1) + 3(1) = 1$.\n\nMultiply by 5:\n\\[\n2(-5) + 3(5) = 5\n\\]\n\nParticular solution to $2x + 3y = 5$: $(x_0, y_0) = (-5, 5)$\n\nVerification: $2(-5) + 3(5) = -10 + 15 = 5$ ✓\n\nStep 4: General solution\n\nWith $d = \\gcd(2, 3) = 1$:\n\\[\nx = -5 + \\frac{3}{1}t = -5 + 3t\n\\]\n\\[\ny = 5 - \\frac{2}{1}t = 5 - 2t\n\\]\n\nGeneral Solution: $\\boxed{(x, y) = (-5 + 3t, 5 - 2t) \\text{ for } t \\in \\mathbb{Z}}$\n\nSome solutions:\n\n| $t$ | $x = -5 + 3t$ | $y = 5 - 2t$ |\n|---|---|---|\n| $0$ | $-5$ | $5$ |\n| $1$ | $-2$ | $3$ |\n| $2$ | $1$ | $1$ |\n| $3$ | $4$ | $-1$ |\n\nVerification for original equation with $t = 2$:\n\\[\n12(1) + 18(1) = 12 + 18 = 30\n\\]\n✓"
   },
   {
     "course": "Number Theory",

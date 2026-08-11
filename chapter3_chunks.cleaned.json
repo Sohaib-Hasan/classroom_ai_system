@@ -13,7 +13,7 @@
     "section": "Vector Spaces",
     "type": "example",
     "title": "Example 3.1 --- Verifying the Zero Vector Space",
-    "content": "Show that $V=\\{0\\}$ consisting of a single element $0$ with\n$0+0=0$ and $k0=0$ for every scalar $k$ is a vector space.\n\nSolution:\nAll eight axioms reduce to trivial statements involving only $0$:\n$$\\begin{align*}\n(0+0)+0 &= 0+(0+0) = 0\\\\\n0+0 &= 0 \\quad \\text{(so } 0 \\text{ is the zero vector)}\\\\\n0+(-0) &= 0+0 = 0 \\quad \\text{(so } -0=0\\text{)}\\\\\na(0+0) &= a0+a0 = 0\n\\end{align*}$$\nEvery axiom is satisfied since there is only one vector and it behaves\nconsistently under all operations. Hence $V=\\{0\\}$ is a vector space,\ncalled the zero vector space. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Show that $V=\\{0\\}$ consisting of a single element $0$ with\n$0+0=0$ and $k0=0$ for every scalar $k$ is a vector space.\n\nSolution:\nAll eight axioms reduce to trivial statements involving only $0$:\n$$$$\\begin{align*}\n(0+0)+0 &= 0+(0+0) = 0\\\\\n0+0 &= 0 \\quad \\text{(so } 0 \\text{ is the zero vector)}\\\\\n0+(-0) &= 0+0 = 0 \\quad \\text{(so } -0=0\\text{)}\\\\\na(0+0) &= a0+a0 = 0\n\\end{align*}$$$$\nEvery axiom is satisfied since there is only one vector and it behaves\nconsistently under all operations. Hence $V=\\{0\\}$ is a vector space,\ncalled the zero vector space. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -21,7 +21,7 @@
     "section": "Vector Spaces",
     "type": "example",
     "title": "Example 3.2 --- Verifying $\\mathbb{R",
-    "content": "^n$ as a Vector Space}\nShow that $\\mathbb{R}^3$ with the usual componentwise addition and\nscalar multiplication satisfies the vector space axioms, using\n$u=(1,2,3)$, $v=(0,-1,4)$, $w=(2,0,1)$ and scalar $a=2$.\n\n\\textbf{Solution:}\n\\textbf{Commutativity:}\n\u0000MATH0\u0000\n\u0000MATH1\u0000\nSo $u+v=v+u$. \\checkmark\n\n\\textbf{Zero vector:} $0=(0,0,0)$ satisfies $u+0=(1,2,3)+(0,0,0)=(1,2,3)=u$. \\checkmark\n\n\\textbf{Distributivity:}\n\\begin{align*}\na(u+v) &= 2(1,1,7) = (2,2,14)\\\\\nau+av &= 2(1,2,3)+2(0,-1,4) = (2,4,6)+(0,-2,8) = (2,2,14)\n\\end{align*}\nSo $a(u+v)=au+av$. \\checkmark\n\nSince all axioms hold for arbitrary vectors under the standard\noperations, $\\mathbb{R}^3$ (and in general $\\mathbb{R}^n$) is a vector\nspace over $\\mathbb{R}$. \\hfill$\\square$\n\n\\bigskip"
+    "content": "^n$ as a Vector Space}\nShow that $\\mathbb{R}^3$ with the usual componentwise addition and\nscalar multiplication satisfies the vector space axioms, using\n$u=(1,2,3)$, $v=(0,-1,4)$, $w=(2,0,1)$ and scalar $a=2$.\n\nSolution:\nCommutativity:\n\u0000MATH0\u0000\n\u0000MATH1\u0000\nSo $u+v=v+u$. \\checkmark\n\nZero vector: $0=(0,0,0)$ satisfies $u+0=(1,2,3)+(0,0,0)=(1,2,3)=u$. \\checkmark\n\nDistributivity:\n\\begin{align*}\na(u+v) &= 2(1,1,7) = (2,2,14)\\\\\nau+av &= 2(1,2,3)+2(0,-1,4) = (2,4,6)+(0,-2,8) = (2,2,14)\n\\end{align*}\nSo $a(u+v)=au+av$. \\checkmark\n\nSince all axioms hold for arbitrary vectors under the standard\noperations, $\\mathbb{R}^3$ (and in general $\\mathbb{R}^n$) is a vector\nspace over $\\mathbb{R}$. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -77,7 +77,7 @@
     "section": "Examples of Vector Spaces",
     "type": "example",
     "title": "Example 3.6 --- Operations in \\texorpdfstring{$P_2(t)$",
-    "content": "{P2(t)}}\nLet $p(t) = 2t^2-3t+1$ and $q(t) = -t^2+4t+5$ in $P_2(t)$. Find\n$p(t)+q(t)$ and $3p(t)$.\n\nSolution:\n$$\\begin{align*}\np(t)+q(t) &= (2t^2-3t+1)+(-t^2+4t+5)\\\\\n&= (2-1)t^2+(-3+4)t+(1+5)\\\\\n&= t^2+t+6.\n\\end{align*}$$\n\\[\n3p(t) = 3(2t^2-3t+1) = 6t^2-9t+3.\n\\]\n\\[\np(t)+q(t) = \\boxed{t^2+t+6}, \\qquad 3p(t)=\\boxed{6t^2-9t+3}\n\\]\n\n\\subsection*{Matrix Space}"
+    "content": "{P2(t)}}\nLet $p(t) = 2t^2-3t+1$ and $q(t) = -t^2+4t+5$ in $P_2(t)$. Find\n$p(t)+q(t)$ and $3p(t)$.\n\nSolution:\n$$$$\\begin{align*}\np(t)+q(t) &= (2t^2-3t+1)+(-t^2+4t+5)\\\\\n&= (2-1)t^2+(-3+4)t+(1+5)\\\\\n&= t^2+t+6.\n\\end{align*}$$$$\n\\[\n3p(t) = 3(2t^2-3t+1) = 6t^2-9t+3.\n\\]\n\\[\np(t)+q(t) = \\boxed{t^2+t+6}, \\qquad 3p(t)=\\boxed{6t^2-9t+3}\n\\]\n\n\\subsection*{Matrix Space}"
   },
   {
     "course": "Linear Algebra",
@@ -133,7 +133,7 @@
     "section": "Linear Combinations and Spanning Sets",
     "type": "example",
     "title": "Example 3.9 --- Expressing a Vector as a Linear Combination",
-    "content": "Write $v=(4,9)$ as a linear combination of $u_1=(1,2)$ and\n$u_2=(2,3)$.\n\nSolution:\nWe seek scalars $a,b$ such that $v = au_1+bu_2$:\n$$\\begin{align*}\na(1,2)+b(2,3) &= (4,9)\\\\\na+2b &= 4\\\\\n2a+3b &= 9\n\\end{align*}$$\nMultiply the first equation by $2$ and subtract from the second:\n$$\\begin{align*}\n(2a+3b)-(2a+4b) &= 9-8\\\\\n-b &= 1 \\implies b=-1\n\\end{align*}$$\nSubstitute back: $a+2(-1)=4 \\implies a=6$.\n\nVerification: $6(1,2)-1(2,3) = (6,12)+(-2,-3) = (4,9)$. ✓\n\\[\nv = \\boxed{6u_1 - u_2}\n\\]\n\n\\bigskip"
+    "content": "Write $v=(4,9)$ as a linear combination of $u_1=(1,2)$ and\n$u_2=(2,3)$.\n\nSolution:\nWe seek scalars $a,b$ such that $v = au_1+bu_2$:\n$$$$\\begin{align*}\na(1,2)+b(2,3) &= (4,9)\\\\\na+2b &= 4\\\\\n2a+3b &= 9\n\\end{align*}$$$$\nMultiply the first equation by $2$ and subtract from the second:\n$$$$\\begin{align*}\n(2a+3b)-(2a+4b) &= 9-8\\\\\n-b &= 1 \\implies b=-1\n\\end{align*}$$$$\nSubstitute back: $a+2(-1)=4 \\implies a=6$.\n\nVerification: $6(1,2)-1(2,3) = (6,12)+(-2,-3) = (4,9)$. ✓\n\\[\nv = \\boxed{6u_1 - u_2}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -141,7 +141,7 @@
     "section": "Linear Combinations and Spanning Sets",
     "type": "example",
     "title": "Example 3.10 --- Past Paper 2024 Q1(iii) \\& 2025 Q1(iii)",
-    "content": "For what value of $k$ is the vector $(1,-2,k)$ in $\\mathbb{R}^3$ a\nlinear combination of $(3,0,-2)$ and $(2,-1,-5)$?\n\nSolution:\nWe require scalars $a,b$ such that\n\\[\na(3,0,-2)+b(2,-1,-5) = (1,-2,k).\n\\]\nThis gives the system:\n$$\\begin{align*}\n3a+2b &= 1\\\\\n-b &= -2\\\\\n-2a-5b &= k\n\\end{align*}$$\nFrom the second equation, $b=2$. Substituting into the first:\n\\[\n3a+2(2) = 1 \\implies 3a=-3 \\implies a=-1.\n\\]\nSubstitute $a=-1$, $b=2$ into the third equation:\n\\[\nk = -2(-1)-5(2) = 2-10 = -8.\n\\]\n\\[\nk = \\boxed{-8}\n\\]\n\n\\bigskip"
+    "content": "For what value of $k$ is the vector $(1,-2,k)$ in $\\mathbb{R}^3$ a\nlinear combination of $(3,0,-2)$ and $(2,-1,-5)$?\n\nSolution:\nWe require scalars $a,b$ such that\n\\[\na(3,0,-2)+b(2,-1,-5) = (1,-2,k).\n\\]\nThis gives the system:\n$$$$\\begin{align*}\n3a+2b &= 1\\\\\n-b &= -2\\\\\n-2a-5b &= k\n\\end{align*}$$$$\nFrom the second equation, $b=2$. Substituting into the first:\n\\[\n3a+2(2) = 1 \\implies 3a=-3 \\implies a=-1.\n\\]\nSubstitute $a=-1$, $b=2$ into the third equation:\n\\[\nk = -2(-1)-5(2) = 2-10 = -8.\n\\]\n\\[\nk = \\boxed{-8}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -149,7 +149,7 @@
     "section": "Linear Combinations and Spanning Sets",
     "type": "example",
     "title": "Example 3.11 --- Past Paper 2024 Q3(a)",
-    "content": "Determine whether $v=(3,3,-4)$ is a linear combination of\n$x=(1,2,3)$, $y=(2,3,7)$, and $z=(3,5,6)$.\n\nSolution:\nSeek scalars $a,b,c$ such that $ax+by+cz=v$:\n$$\\begin{align*}\na+2b+3c &= 3 \\tag{1}\\\\\n2a+3b+5c &= 3 \\tag{2}\\\\\n3a+7b+6c &= -4 \\tag{3}\n\\end{align*}$$\nCompute $(2)-2(1)$:\n\\[\n-b-c = -3 \\implies b+c=3 \\tag{4}\n\\]\nCompute $(3)-3(1)$:\n\\[\nb-3c = -13 \\tag{5}\n\\]\nFrom (4), $b=3-c$. Substitute into (5):\n$$\\begin{align*}\n(3-c)-3c &= -13\\\\\n3-4c &= -13\\\\\nc &= 4\n\\end{align*}$$\nThen $b=3-4=-1$, and from (1): $a=3-2(-1)-3(4) = 3+2-12=-7$.\n\nVerification (Eq. 3): $3(-7)+7(-1)+6(4) = -21-7+24=-4$. ✓\n\nSince a consistent solution exists, $v$ is a linear\ncombination of $x,y,z$:\n\\[\nv = \\boxed{-7x - y + 4z}\n\\]\n\n\\subsection*{Spanning Sets}"
+    "content": "Determine whether $v=(3,3,-4)$ is a linear combination of\n$x=(1,2,3)$, $y=(2,3,7)$, and $z=(3,5,6)$.\n\nSolution:\nSeek scalars $a,b,c$ such that $ax+by+cz=v$:\n$$$$\\begin{align*}\na+2b+3c &= 3 \\tag{1}\\\\\n2a+3b+5c &= 3 \\tag{2}\\\\\n3a+7b+6c &= -4 \\tag{3}\n\\end{align*}$$$$\nCompute $(2)-2(1)$:\n\\[\n-b-c = -3 \\implies b+c=3 \\tag{4}\n\\]\nCompute $(3)-3(1)$:\n\\[\nb-3c = -13 \\tag{5}\n\\]\nFrom (4), $b=3-c$. Substitute into (5):\n$$$$\\begin{align*}\n(3-c)-3c &= -13\\\\\n3-4c &= -13\\\\\nc &= 4\n\\end{align*}$$$$\nThen $b=3-4=-1$, and from (1): $a=3-2(-1)-3(4) = 3+2-12=-7$.\n\nVerification (Eq. 3): $3(-7)+7(-1)+6(4) = -21-7+24=-4$. ✓\n\nSince a consistent solution exists, $v$ is a linear\ncombination of $x,y,z$:\n\\[\nv = \\boxed{-7x - y + 4z}\n\\]\n\n\\subsection*{Spanning Sets}"
   },
   {
     "course": "Linear Algebra",
@@ -165,7 +165,7 @@
     "section": "Linear Combinations and Spanning Sets",
     "type": "example",
     "title": "Example 3.12 --- Verifying a Spanning Set of \\texorpdfstring{$\\mathbb{R",
-    "content": "^3$}{R3}}\nShow that $S=\\{(1,1,1),(1,1,0),(1,0,0)\\}$ spans $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nLet $(a,b,c)$ be an arbitrary vector in $\\mathbb{R}^3$. We must find\nscalars $x,y,z$ such that\n\u0000MATH0\u0000\nThis gives the system:\n\\begin{align*}\nx+y+z &= a\\\\\nx+y &= b\\\\\nx &= c\n\\end{align*}\nFrom the third equation, $x=c$. Substituting into the second:\n$y=b-c$. Substituting both into the first: $z=a-b$.\n\nSince we obtained a solution for \\textbf{arbitrary} $(a,b,c)$:\n\u0000MATH1\u0000\nevery vector in $\\mathbb{R}^3$ is a linear combination of $S$.\nHence $S$ spans $\\mathbb{R}^3$. \\hfill$\\square$\n\n\\bigskip"
+    "content": "^3$}{R3}}\nShow that $S=\\{(1,1,1),(1,1,0),(1,0,0)\\}$ spans $\\mathbb{R}^3$.\n\nSolution:\nLet $(a,b,c)$ be an arbitrary vector in $\\mathbb{R}^3$. We must find\nscalars $x,y,z$ such that\n\u0000MATH0\u0000\nThis gives the system:\n\\begin{align*}\nx+y+z &= a\\\\\nx+y &= b\\\\\nx &= c\n\\end{align*}\nFrom the third equation, $x=c$. Substituting into the second:\n$y=b-c$. Substituting both into the first: $z=a-b$.\n\nSince we obtained a solution for arbitrary $(a,b,c)$:\n\u0000MATH1\u0000\nevery vector in $\\mathbb{R}^3$ is a linear combination of $S$.\nHence $S$ spans $\\mathbb{R}^3$. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -181,7 +181,7 @@
     "section": "Linear Combinations and Spanning Sets",
     "type": "example",
     "title": "Example 3.14 --- A Set That Does Not Span \\texorpdfstring{$\\mathbb{R",
-    "content": "^3$}{R3}}\nDetermine whether $S=\\{(1,2,3),(0,1,4)\\}$ spans $\\mathbb{R}^3$.\n\n\\textbf{Solution:}\nTest whether the vector $(0,0,1)$ can be written as a linear\ncombination of $S$:\n\u0000MATH0\u0000\nThis gives:\n\\begin{align*}\na &= 0\\\\\n2a+b &= 0 \\implies b=0\\\\\n3a+4b &= 1\n\\end{align*}\nSubstituting $a=0$, $b=0$ into the third equation gives\n$0=1$, which is a contradiction. Hence $(0,0,1) \\notin\n\\operatorname{span}(S)$, so $S$ does \\textbf{not} span\n$\\mathbb{R}^3$."
+    "content": "^3$}{R3}}\nDetermine whether $S=\\{(1,2,3),(0,1,4)\\}$ spans $\\mathbb{R}^3$.\n\nSolution:\nTest whether the vector $(0,0,1)$ can be written as a linear\ncombination of $S$:\n\u0000MATH0\u0000\nThis gives:\n\\begin{align*}\na &= 0\\\\\n2a+b &= 0 \\implies b=0\\\\\n3a+4b &= 1\n\\end{align*}\nSubstituting $a=0$, $b=0$ into the third equation gives\n$0=1$, which is a contradiction. Hence $(0,0,1) \\notin\n\\operatorname{span}(S)$, so $S$ does not span\n$\\mathbb{R}^3$."
   },
   {
     "course": "Linear Algebra",
@@ -213,7 +213,7 @@
     "section": "Subspaces",
     "type": "example",
     "title": "Example 3.15 --- Past Paper 2023 Q1(vi)",
-    "content": "Check whether\n$W=\\{(x,y,z) \\in \\mathbb{R}^3 : 2x+3y-4z=0\\}$\nis a subspace of $\\mathbb{R}^3$.\n\nSolution:\nZero vector: $2(0)+3(0)-4(0)=0$, so $0=(0,0,0) \\in W$. ✓\n\nClosure under addition: Let $u=(x_1,y_1,z_1)$ and\n$v=(x_2,y_2,z_2)$ be in $W$, so $2x_1+3y_1-4z_1=0$ and\n$2x_2+3y_2-4z_2=0$. Then\n$$\\begin{align*}\n2(x_1+x_2)+3(y_1+y_2)-4(z_1+z_2)\n&= (2x_1+3y_1-4z_1)+(2x_2+3y_2-4z_2)\\\\\n&= 0+0 = 0.\n\\end{align*}$$\nSo $u+v \\in W$. ✓\n\nClosure under scalar multiplication: For $k \\in \\mathbb{R}$,\n\\[\n2(kx_1)+3(ky_1)-4(kz_1) = k(2x_1+3y_1-4z_1) = k(0) = 0.\n\\]\nSo $ku \\in W$. ✓\n\nAll three conditions hold, so $W$ is a subspace of\n$\\mathbb{R}^3$. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Check whether\n$W=\\{(x,y,z) \\in \\mathbb{R}^3 : 2x+3y-4z=0\\}$\nis a subspace of $\\mathbb{R}^3$.\n\nSolution:\nZero vector: $2(0)+3(0)-4(0)=0$, so $0=(0,0,0) \\in W$. ✓\n\nClosure under addition: Let $u=(x_1,y_1,z_1)$ and\n$v=(x_2,y_2,z_2)$ be in $W$, so $2x_1+3y_1-4z_1=0$ and\n$2x_2+3y_2-4z_2=0$. Then\n$$$$\\begin{align*}\n2(x_1+x_2)+3(y_1+y_2)-4(z_1+z_2)\n&= (2x_1+3y_1-4z_1)+(2x_2+3y_2-4z_2)\\\\\n&= 0+0 = 0.\n\\end{align*}$$$$\nSo $u+v \\in W$. ✓\n\nClosure under scalar multiplication: For $k \\in \\mathbb{R}$,\n\\[\n2(kx_1)+3(ky_1)-4(kz_1) = k(2x_1+3y_1-4z_1) = k(0) = 0.\n\\]\nSo $ku \\in W$. ✓\n\nAll three conditions hold, so $W$ is a subspace of\n$\\mathbb{R}^3$. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -285,7 +285,7 @@
     "section": "Linear Spans and Row Space of a Matrix",
     "type": "example",
     "title": "Example 3.21 --- Equation of a Span in \\texorpdfstring{$\\mathbb{R",
-    "content": "^3$}{R3}}\nFind an equation of the subspace spanned by $(1,1,0)$ and $(0,1,1)$.\n\n\\textbf{Solution:}\nSet $a(1,1,0)+b(0,1,1)=(x,y,z)$:\n\u0000MATH0\u0000\n$R_2 \\leftarrow R_2-R_1$:\n\u0000MATH1\u0000\n$R_3 \\leftarrow R_3-R_2$:\n\u0000MATH2\u0000\nSetting the last row to zero: $z-y+x=0$.\n\\[\nW: \\boxed{x-y+z=0}\n\\]"
+    "content": "^3$}{R3}}\nFind an equation of the subspace spanned by $(1,1,0)$ and $(0,1,1)$.\n\nSolution:\nSet $a(1,1,0)+b(0,1,1)=(x,y,z)$:\n\u0000MATH0\u0000\n$R_2 \\leftarrow R_2-R_1$:\n\u0000MATH1\u0000\n$R_3 \\leftarrow R_3-R_2$:\n\u0000MATH2\u0000\nSetting the last row to zero: $z-y+x=0$.\n\\[\nW: \\boxed{x-y+z=0}\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -325,7 +325,7 @@
     "section": "Linear Spans and Row Space of a Matrix",
     "type": "example",
     "title": "Example 3.24 --- Testing Membership in a Row Space",
-    "content": "Determine whether $v=(4,1,5)$ belongs to the row space of\n$A=\\begin{bmatrix}1&2&1\\\\2&3&2\\end{bmatrix}$.\n\nSolution:\nSeek $a,b$ such that $a(1,2,1)+b(2,3,2)=(4,1,5)$:\n$$\\begin{align*}\na+2b &= 4 \\tag{1}\\\\\n2a+3b &= 1 \\tag{2}\\\\\na+2b &= 5 \\tag{3}\n\\end{align*}$$\nEquations (1) and (3) both equal $a+2b$, but they require\n$a+2b=4$ and $a+2b=5$ simultaneously --- a direct contradiction.\nHence no such $a,b$ exist.\n\\[\nv=(4,1,5) \\ \\boxed{\\text{does NOT belong to } \\operatorname{rowsp}(A)}\n\\]"
+    "content": "Determine whether $v=(4,1,5)$ belongs to the row space of\n$A=\\begin{bmatrix}1&2&1\\\\2&3&2\\end{bmatrix}$.\n\nSolution:\nSeek $a,b$ such that $a(1,2,1)+b(2,3,2)=(4,1,5)$:\n$$$$\\begin{align*}\na+2b &= 4 \\tag{1}\\\\\n2a+3b &= 1 \\tag{2}\\\\\na+2b &= 5 \\tag{3}\n\\end{align*}$$$$\nEquations (1) and (3) both equal $a+2b$, but they require\n$a+2b=4$ and $a+2b=5$ simultaneously --- a direct contradiction.\nHence no such $a,b$ exist.\n\\[\nv=(4,1,5) \\ \\boxed{\\text{does NOT belong to } \\operatorname{rowsp}(A)}\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -341,7 +341,7 @@
     "section": "Linear Dependence and Independence",
     "type": "example",
     "title": "Example 3.25 --- Testing for Linear Dependence",
-    "content": "Determine whether $u_1=(1,1,2)$, $u_2=(2,-1,1)$, $u_3=(4,1,5)$ are\nlinearly dependent in $\\mathbb{R}^3$.\n\nSolution:\nTest whether $u_3$ is a linear combination of $u_1,u_2$: set\n$au_1+bu_2=u_3$:\n$$\\begin{align*}\na+2b &= 4\\\\\na-b &= 1\\\\\n2a+b &= 5\n\\end{align*}$$\nFrom the second equation, $a=1+b$. Substitute into the first:\n$(1+b)+2b=4 \\implies 3b=3 \\implies b=1$, so $a=2$.\n\nVerification (third equation): $2(2)+1(1)=5$. ✓\n\nSince $u_3 = 2u_1+u_2$, we have $2u_1+u_2-u_3=0$ with not all\ncoefficients zero. Hence $u_1,u_2,u_3$ are linearly\ndependent. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Determine whether $u_1=(1,1,2)$, $u_2=(2,-1,1)$, $u_3=(4,1,5)$ are\nlinearly dependent in $\\mathbb{R}^3$.\n\nSolution:\nTest whether $u_3$ is a linear combination of $u_1,u_2$: set\n$au_1+bu_2=u_3$:\n$$$$\\begin{align*}\na+2b &= 4\\\\\na-b &= 1\\\\\n2a+b &= 5\n\\end{align*}$$$$\nFrom the second equation, $a=1+b$. Substitute into the first:\n$(1+b)+2b=4 \\implies 3b=3 \\implies b=1$, so $a=2$.\n\nVerification (third equation): $2(2)+1(1)=5$. ✓\n\nSince $u_3 = 2u_1+u_2$, we have $2u_1+u_2-u_3=0$ with not all\ncoefficients zero. Hence $u_1,u_2,u_3$ are linearly\ndependent. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -349,7 +349,7 @@
     "section": "Linear Dependence and Independence",
     "type": "example",
     "title": "Example 3.26 --- Past Paper 2024 Q4(b)",
-    "content": "Determine whether the vectors in $\\mathbb{R}^4$\n$(1,3,-1,-4)$, $(3,8,-5,7)$, $(2,9,4,23)$\nare linearly independent or linearly dependent.\n\nSolution:\nSet $a(1,3,-1,-4)+b(3,8,-5,7)+c(2,9,4,23)=0$:\n$$\\begin{align*}\na+3b+2c &= 0 \\tag{1}\\\\\n3a+8b+9c &= 0 \\tag{2}\\\\\n-a-5b+4c &= 0 \\tag{3}\\\\\n-4a+7b+23c &= 0 \\tag{4}\n\\end{align*}$$\nFrom (1): $a=-3b-2c$. Substitute into (2):\n\\[\n3(-3b-2c)+8b+9c = -b+3c = 0 \\implies b=3c.\n\\]\nThen $a=-3(3c)-2c=-11c$.\n\nCheck (3): $-(-11c)-5(3c)+4c = 11c-15c+4c=0$. ✓\n(automatically satisfied)\n\nCheck (4): $-4(-11c)+7(3c)+23c = 44c+21c+23c=88c$.\n\nSetting (4)$=0$: $88c=0 \\implies c=0$, which forces $b=0$ and\n$a=0$.\n\nSince only the trivial solution exists, the vectors are\nlinearly independent. \\hfill$\\square$"
+    "content": "Determine whether the vectors in $\\mathbb{R}^4$\n$(1,3,-1,-4)$, $(3,8,-5,7)$, $(2,9,4,23)$\nare linearly independent or linearly dependent.\n\nSolution:\nSet $a(1,3,-1,-4)+b(3,8,-5,7)+c(2,9,4,23)=0$:\n$$$$\\begin{align*}\na+3b+2c &= 0 \\tag{1}\\\\\n3a+8b+9c &= 0 \\tag{2}\\\\\n-a-5b+4c &= 0 \\tag{3}\\\\\n-4a+7b+23c &= 0 \\tag{4}\n\\end{align*}$$$$\nFrom (1): $a=-3b-2c$. Substitute into (2):\n\\[\n3(-3b-2c)+8b+9c = -b+3c = 0 \\implies b=3c.\n\\]\nThen $a=-3(3c)-2c=-11c$.\n\nCheck (3): $-(-11c)-5(3c)+4c = 11c-15c+4c=0$. ✓\n(automatically satisfied)\n\nCheck (4): $-4(-11c)+7(3c)+23c = 44c+21c+23c=88c$.\n\nSetting (4)$=0$: $88c=0 \\implies c=0$, which forces $b=0$ and\n$a=0$.\n\nSince only the trivial solution exists, the vectors are\nlinearly independent. \\hfill$\\square$"
   },
   {
     "course": "Linear Algebra",
@@ -389,7 +389,7 @@
     "section": "Linear Dependence and Independence",
     "type": "example",
     "title": "Example 3.29 --- Past Paper 2024 Q1(v) \\& 2025 Q1(iv)",
-    "content": "Use the Wronskian to show that $f_1=1$, $f_2=e^x$, $f_3=e^{2x}$ are\nlinearly independent.\n\nSolution:\n\\[\nW(x) = \\det\n\\begin{bmatrix}\n1 & e^x & e^{2x}\\\\\n0 & e^x & 2e^{2x}\\\\\n0 & e^x & 4e^{2x}\n\\end{bmatrix}\n\\]\nExpanding along the first column:\n$$\\begin{align*}\nW(x) &= 1 \\cdot \\det\\begin{bmatrix}e^x & 2e^{2x}\\\\ e^x & 4e^{2x}\\end{bmatrix}\\\\\n&= 1 \\cdot \\big(e^x \\cdot 4e^{2x} - 2e^{2x}\\cdot e^x\\big)\\\\\n&= 4e^{3x}-2e^{3x} = 2e^{3x}.\n\\end{align*}$$\nSince $W(x)=2e^{3x} \\neq 0$ for every real $x$, by the Wronskian\ntest $f_1,f_2,f_3$ are linearly independent. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Use the Wronskian to show that $f_1=1$, $f_2=e^x$, $f_3=e^{2x}$ are\nlinearly independent.\n\nSolution:\n\\[\nW(x) = \\det\n\\begin{bmatrix}\n1 & e^x & e^{2x}\\\\\n0 & e^x & 2e^{2x}\\\\\n0 & e^x & 4e^{2x}\n\\end{bmatrix}\n\\]\nExpanding along the first column:\n$$$$\\begin{align*}\nW(x) &= 1 \\cdot \\det\\begin{bmatrix}e^x & 2e^{2x}\\\\ e^x & 4e^{2x}\\end{bmatrix}\\\\\n&= 1 \\cdot \\big(e^x \\cdot 4e^{2x} - 2e^{2x}\\cdot e^x\\big)\\\\\n&= 4e^{3x}-2e^{3x} = 2e^{3x}.\n\\end{align*}$$$$\nSince $W(x)=2e^{3x} \\neq 0$ for every real $x$, by the Wronskian\ntest $f_1,f_2,f_3$ are linearly independent. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -573,7 +573,7 @@
     "section": "Coordinates",
     "type": "example",
     "title": "Example 3.43 --- Past Paper 2024 Q1(iv)",
-    "content": "Let $S=\\{u=(1,2,1),\\ v=(2,9,0),\\ w=(3,3,4)\\}$ be a basis for\n$\\mathbb{R}^3$. Find the vector in $\\mathbb{R}^3$ whose coordinate\nvector relative to $S$ is $(-1,3,2)$.\n\nSolution:\nThe required vector is the linear combination:\n$$\\begin{align*}\n-1u+3v+2w\n&= -1(1,2,1)+3(2,9,0)+2(3,3,4)\\\\\n&= (-1,-2,-1)+(6,27,0)+(6,6,8)\\\\\n&= (-1+6+6,\\ -2+27+6,\\ -1+0+8)\\\\\n&= (11,\\ 31,\\ 7).\n\\end{align*}$$\n\\[\n\\boxed{(11,\\ 31,\\ 7)}\n\\]\n\n\\bigskip"
+    "content": "Let $S=\\{u=(1,2,1),\\ v=(2,9,0),\\ w=(3,3,4)\\}$ be a basis for\n$\\mathbb{R}^3$. Find the vector in $\\mathbb{R}^3$ whose coordinate\nvector relative to $S$ is $(-1,3,2)$.\n\nSolution:\nThe required vector is the linear combination:\n$$$$\\begin{align*}\n-1u+3v+2w\n&= -1(1,2,1)+3(2,9,0)+2(3,3,4)\\\\\n&= (-1,-2,-1)+(6,27,0)+(6,6,8)\\\\\n&= (-1+6+6,\\ -2+27+6,\\ -1+0+8)\\\\\n&= (11,\\ 31,\\ 7).\n\\end{align*}$$$$\n\\[\n\\boxed{(11,\\ 31,\\ 7)}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -581,7 +581,7 @@
     "section": "Coordinates",
     "type": "example",
     "title": "Example 3.44 --- Finding a Coordinate Vector",
-    "content": "Let $S=\\{(1,1),(1,-1)\\}$ be a basis of $\\mathbb{R}^2$. Find the\ncoordinate vector of $v=(5,1)$ relative to $S$.\n\nSolution:\nWrite $v=a(1,1)+b(1,-1)$:\n$$\\begin{align*}\na+b &= 5\\\\\na-b &= 1\n\\end{align*}$$\nAdding the equations: $2a=6 \\implies a=3$, so $b=5-3=2$.\n\nVerification: $3(1,1)+2(1,-1) = (3,3)+(2,-2)=(5,1)$.\n✓\n\\[\n[v]_S = \\boxed{(3,2)}\n\\]\n\n\\bigskip"
+    "content": "Let $S=\\{(1,1),(1,-1)\\}$ be a basis of $\\mathbb{R}^2$. Find the\ncoordinate vector of $v=(5,1)$ relative to $S$.\n\nSolution:\nWrite $v=a(1,1)+b(1,-1)$:\n$$$$\\begin{align*}\na+b &= 5\\\\\na-b &= 1\n\\end{align*}$$$$\nAdding the equations: $2a=6 \\implies a=3$, so $b=5-3=2$.\n\nVerification: $3(1,1)+2(1,-1) = (3,3)+(2,-2)=(5,1)$.\n✓\n\\[\n[v]_S = \\boxed{(3,2)}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",

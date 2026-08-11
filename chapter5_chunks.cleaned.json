@@ -45,7 +45,7 @@
     "section": "Examples of Inner Product Spaces",
     "type": "definition",
     "title": "Weighted Inner Product on \\texorpdfstring{$\\mathbb{R",
-    "content": "^n$}{Rn}}\nGiven fixed positive weights $w_1,w_2,\\dots,w_n$, the function\n\u0000MATH0\u0000\ndefines a valid inner product on $\\mathbb{R}^n$, called a\n\\textbf{weighted Euclidean inner product}. Choosing all weights\nequal to $1$ recovers the standard (unweighted) inner product."
+    "content": "^n$}{Rn}}\nGiven fixed positive weights $w_1,w_2,\\dots,w_n$, the function\n\u0000MATH0\u0000\ndefines a valid inner product on $\\mathbb{R}^n$, called a\nweighted Euclidean inner product. Choosing all weights\nequal to $1$ recovers the standard (unweighted) inner product."
   },
   {
     "course": "Linear Algebra",
@@ -197,7 +197,7 @@
     "section": "Orthogonality",
     "type": "example",
     "title": "Example 5.14 --- Past Paper 2023 Q1(xii)",
-    "content": "Find a vector orthogonal to $u_1=\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}$\nand $u_2=\\begin{bmatrix}2\\\\1\\\\-4\\end{bmatrix}$.\n\nSolution:\nA vector orthogonal to both $u_1$ and $u_2$ can be found using the\ncross product $u_1 \\times u_2$:\n\\[\nu_1 \\times u_2 =\n\\begin{vmatrix}\n\\mathbf{i} & \\mathbf{j} & \\mathbf{k}\\\\\n1 & 2 & 1\\\\\n2 & 1 & -4\n\\end{vmatrix}\n\\]\n$$\\begin{align*}\n&= \\mathbf{i}\\big((2)(-4)-(1)(1)\\big) - \\mathbf{j}\\big((1)(-4)-(1)(2)\\big) + \\mathbf{k}\\big((1)(1)-(2)(2)\\big)\\\\\n&= \\mathbf{i}(-8-1) - \\mathbf{j}(-4-2) + \\mathbf{k}(1-4)\\\\\n&= -9\\mathbf{i}+6\\mathbf{j}-3\\mathbf{k}.\n\\end{align*}$$\nSo $w=(-9,6,-3)$, or dividing by $-3$, the simplified vector\n$w=(3,-2,1)$.\n\nVerification: $\\langle u_1,w \\rangle = 3-4+1=0$. ✓\\quad\n$\\langle u_2,w \\rangle = 6-2-4=0$. ✓\n\\[\nw = \\boxed{(3,\\ -2,\\ 1)}\n\\]\n\n\\bigskip"
+    "content": "Find a vector orthogonal to $u_1=\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}$\nand $u_2=\\begin{bmatrix}2\\\\1\\\\-4\\end{bmatrix}$.\n\nSolution:\nA vector orthogonal to both $u_1$ and $u_2$ can be found using the\ncross product $u_1 \\times u_2$:\n\\[\nu_1 \\times u_2 =\n\\begin{vmatrix}\n\\mathbf{i} & \\mathbf{j} & \\mathbf{k}\\\\\n1 & 2 & 1\\\\\n2 & 1 & -4\n\\end{vmatrix}\n\\]\n$$$$\\begin{align*}\n&= \\mathbf{i}\\big((2)(-4)-(1)(1)\\big) - \\mathbf{j}\\big((1)(-4)-(1)(2)\\big) + \\mathbf{k}\\big((1)(1)-(2)(2)\\big)\\\\\n&= \\mathbf{i}(-8-1) - \\mathbf{j}(-4-2) + \\mathbf{k}(1-4)\\\\\n&= -9\\mathbf{i}+6\\mathbf{j}-3\\mathbf{k}.\n\\end{align*}$$$$\nSo $w=(-9,6,-3)$, or dividing by $-3$, the simplified vector\n$w=(3,-2,1)$.\n\nVerification: $\\langle u_1,w \\rangle = 3-4+1=0$. ✓\\quad\n$\\langle u_2,w \\rangle = 6-2-4=0$. ✓\n\\[\nw = \\boxed{(3,\\ -2,\\ 1)}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -325,7 +325,7 @@
     "section": "Orthogonal Sets and Bases",
     "type": "example",
     "title": "Example 5.24 --- Fourier Coefficients Relative to an Orthogonal Basis",
-    "content": "Express $v=(2,3,-1)$ as a linear combination of the orthogonal basis\n$S=\\{(1,1,1),(1,-2,1),(1,0,-1)\\}$ using Fourier coefficients.\n\nSolution:\nCompute each Fourier coefficient $c_i = \\dfrac{\\langle v,v_i\n\\rangle}{\\|v_i\\|^2}$, reusing $\\|v_1\\|^2=3$, $\\|v_2\\|^2=6$,\n$\\|v_3\\|^2=2$ from Example 5.21:\n\\[\n\\langle v,v_1 \\rangle = 2+3-1 = 4, \\qquad c_1 = \\frac{4}{3}.\n\\]\n\\[\n\\langle v,v_2 \\rangle = 2-6-1 = -5, \\qquad c_2 = \\frac{-5}{6}.\n\\]\n\\[\n\\langle v,v_3 \\rangle = 2+0+1 = 3, \\qquad c_3 = \\frac{3}{2}.\n\\]\nVerification:\n$$\\begin{align*}\nc_1v_1+c_2v_2+c_3v_3\n&= \\tfrac{4}{3}(1,1,1)+\\left(-\\tfrac{5}{6}\\right)(1,-2,1)+\\tfrac{3}{2}(1,0,-1)\\\\\n&= \\left(\\tfrac{8}{6}-\\tfrac{5}{6}+\\tfrac{9}{6},\\ \\tfrac{8}{6}+\\tfrac{10}{6}+0,\\ \\tfrac{8}{6}-\\tfrac{5}{6}-\\tfrac{9}{6}\\right)\\\\\n&= \\left(\\tfrac{12}{6},\\ \\tfrac{18}{6},\\ \\tfrac{-6}{6}\\right) = (2,3,-1) = v. \\quad\\checkmark\n\\end{align*}$$\n\\[\nv = \\boxed{\\tfrac{4}{3}v_1 - \\tfrac{5}{6}v_2 + \\tfrac{3}{2}v_3}\n\\]\n\n\\bigskip"
+    "content": "Express $v=(2,3,-1)$ as a linear combination of the orthogonal basis\n$S=\\{(1,1,1),(1,-2,1),(1,0,-1)\\}$ using Fourier coefficients.\n\nSolution:\nCompute each Fourier coefficient $c_i = \\dfrac{\\langle v,v_i\n\\rangle}{\\|v_i\\|^2}$, reusing $\\|v_1\\|^2=3$, $\\|v_2\\|^2=6$,\n$\\|v_3\\|^2=2$ from Example 5.21:\n\\[\n\\langle v,v_1 \\rangle = 2+3-1 = 4, \\qquad c_1 = \\frac{4}{3}.\n\\]\n\\[\n\\langle v,v_2 \\rangle = 2-6-1 = -5, \\qquad c_2 = \\frac{-5}{6}.\n\\]\n\\[\n\\langle v,v_3 \\rangle = 2+0+1 = 3, \\qquad c_3 = \\frac{3}{2}.\n\\]\nVerification:\n$$$$\\begin{align*}\nc_1v_1+c_2v_2+c_3v_3\n&= \\tfrac{4}{3}(1,1,1)+\\left(-\\tfrac{5}{6}\\right)(1,-2,1)+\\tfrac{3}{2}(1,0,-1)\\\\\n&= \\left(\\tfrac{8}{6}-\\tfrac{5}{6}+\\tfrac{9}{6},\\ \\tfrac{8}{6}+\\tfrac{10}{6}+0,\\ \\tfrac{8}{6}-\\tfrac{5}{6}-\\tfrac{9}{6}\\right)\\\\\n&= \\left(\\tfrac{12}{6},\\ \\tfrac{18}{6},\\ \\tfrac{-6}{6}\\right) = (2,3,-1) = v. \\quad\\checkmark\n\\end{align*}$$$$\n\\[\nv = \\boxed{\\tfrac{4}{3}v_1 - \\tfrac{5}{6}v_2 + \\tfrac{3}{2}v_3}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",

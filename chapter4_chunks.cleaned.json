@@ -21,7 +21,7 @@
     "section": "Mappings and Functions",
     "type": "example",
     "title": "Example 4.2 --- A Mapping Between Vector Spaces",
-    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^3$ be defined by\n$F(x,y)=(x+y,\\ x-y,\\ 2x)$. Find $F(3,1)$.\n\nSolution:\nSubstitute $x=3$, $y=1$ into each component:\n$$\\begin{align*}\nx+y &= 3+1 = 4\\\\\nx-y &= 3-1 = 2\\\\\n2x &= 2(3) = 6\n\\end{align*}$$\n\\[\nF(3,1) = \\boxed{(4,\\ 2,\\ 6)}\n\\]\n\n\\bigskip"
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^3$ be defined by\n$F(x,y)=(x+y,\\ x-y,\\ 2x)$. Find $F(3,1)$.\n\nSolution:\nSubstitute $x=3$, $y=1$ into each component:\n$$$$\\begin{align*}\nx+y &= 3+1 = 4\\\\\nx-y &= 3-1 = 2\\\\\n2x &= 2(3) = 6\n\\end{align*}$$$$\n\\[\nF(3,1) = \\boxed{(4,\\ 2,\\ 6)}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -53,7 +53,7 @@
     "section": "Linear Mappings",
     "type": "example",
     "title": "Example 4.4 --- Verifying a Linear Mapping",
-    "content": "Show that $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ defined by\n$F(x,y,z)=(2x-y,\\ y+3z)$ is a linear mapping.\n\nSolution:\nLet $u=(x_1,y_1,z_1)$ and $v=(x_2,y_2,z_2)$ be arbitrary vectors in\n$\\mathbb{R}^3$, and let $a,b \\in \\mathbb{R}$.\n\nCompute $F(au+bv)$:\n$$\\begin{align*}\nau+bv &= (ax_1+bx_2,\\ ay_1+by_2,\\ az_1+bz_2)\\\\\nF(au+bv) &= \\big(2(ax_1+bx_2)-(ay_1+by_2),\\ (ay_1+by_2)+3(az_1+bz_2)\\big)\\\\\n&= \\big(a(2x_1-y_1)+b(2x_2-y_2),\\ a(y_1+3z_1)+b(y_2+3z_2)\\big).\n\\end{align*}$$\n\nCompute $aF(u)+bF(v)$:\n$$\\begin{align*}\naF(u)+bF(v) &= a(2x_1-y_1,\\ y_1+3z_1)+b(2x_2-y_2,\\ y_2+3z_2)\\\\\n&= \\big(a(2x_1-y_1)+b(2x_2-y_2),\\ a(y_1+3z_1)+b(y_2+3z_2)\\big).\n\\end{align*}$$\n\nSince $F(au+bv)=aF(u)+bF(v)$ for arbitrary $u,v,a,b$, $F$ is a\nlinear mapping. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Show that $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ defined by\n$F(x,y,z)=(2x-y,\\ y+3z)$ is a linear mapping.\n\nSolution:\nLet $u=(x_1,y_1,z_1)$ and $v=(x_2,y_2,z_2)$ be arbitrary vectors in\n$\\mathbb{R}^3$, and let $a,b \\in \\mathbb{R}$.\n\nCompute $F(au+bv)$:\n$$$$\\begin{align*}\nau+bv &= (ax_1+bx_2,\\ ay_1+by_2,\\ az_1+bz_2)\\\\\nF(au+bv) &= \\big(2(ax_1+bx_2)-(ay_1+by_2),\\ (ay_1+by_2)+3(az_1+bz_2)\\big)\\\\\n&= \\big(a(2x_1-y_1)+b(2x_2-y_2),\\ a(y_1+3z_1)+b(y_2+3z_2)\\big).\n\\end{align*}$$$$\n\nCompute $aF(u)+bF(v)$:\n$$$$\\begin{align*}\naF(u)+bF(v) &= a(2x_1-y_1,\\ y_1+3z_1)+b(2x_2-y_2,\\ y_2+3z_2)\\\\\n&= \\big(a(2x_1-y_1)+b(2x_2-y_2),\\ a(y_1+3z_1)+b(y_2+3z_2)\\big).\n\\end{align*}$$$$\n\nSince $F(au+bv)=aF(u)+bF(v)$ for arbitrary $u,v,a,b$, $F$ is a\nlinear mapping. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -93,7 +93,7 @@
     "section": "Linear Mappings",
     "type": "example",
     "title": "Example 4.8 --- Determining F from Its Action on a Basis",
-    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be linear with\n$F(1,0)=(2,3)$ and $F(0,1)=(-1,4)$. Find $F(5,-2)$.\n\nSolution:\nWrite $(5,-2)$ in terms of the standard basis:\n\\[\n(5,-2) = 5(1,0)+(-2)(0,1).\n\\]\nBy linearity:\n$$\\begin{align*}\nF(5,-2) &= 5F(1,0)+(-2)F(0,1)\\\\\n&= 5(2,3)+(-2)(-1,4)\\\\\n&= (10,15)+(2,-8)\\\\\n&= (12,\\ 7).\n\\end{align*}$$\n\\[\nF(5,-2) = \\boxed{(12,\\ 7)}\n\\]"
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be linear with\n$F(1,0)=(2,3)$ and $F(0,1)=(-1,4)$. Find $F(5,-2)$.\n\nSolution:\nWrite $(5,-2)$ in terms of the standard basis:\n\\[\n(5,-2) = 5(1,0)+(-2)(0,1).\n\\]\nBy linearity:\n$$$$\\begin{align*}\nF(5,-2) &= 5F(1,0)+(-2)F(0,1)\\\\\n&= 5(2,3)+(-2)(-1,4)\\\\\n&= (10,15)+(2,-8)\\\\\n&= (12,\\ 7).\n\\end{align*}$$$$\n\\[\nF(5,-2) = \\boxed{(12,\\ 7)}\n\\]"
   },
   {
     "course": "Linear Algebra",
@@ -117,7 +117,7 @@
     "section": "Kernel and Image of a Linear Mapping",
     "type": "example",
     "title": "Example 4.9 --- Finding the Kernel of a Linear Mapping",
-    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n$F(x,y,z)=(x+y+z,\\ x-y-z)$. Find $\\ker(F)$.\n\nSolution:\nWe need all $(x,y,z)$ such that $F(x,y,z)=(0,0)$:\n$$\\begin{align*}\nx+y+z &= 0\\\\\nx-y-z &= 0\n\\end{align*}$$\nAdding the two equations: $2x=0 \\implies x=0$. Substituting into\nthe first equation: $y+z=0 \\implies y=-z$.\n\nSo every vector in $\\ker(F)$ has the form $(0,-z,z)=z(0,-1,1)$ for\n$z \\in \\mathbb{R}$.\n\\[\n\\ker(F) = \\boxed{\\operatorname{span}\\{(0,-1,1)\\}}, \\qquad\n\\text{nullity}(F) = 1\n\\]\n\n\\bigskip"
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n$F(x,y,z)=(x+y+z,\\ x-y-z)$. Find $\\ker(F)$.\n\nSolution:\nWe need all $(x,y,z)$ such that $F(x,y,z)=(0,0)$:\n$$$$\\begin{align*}\nx+y+z &= 0\\\\\nx-y-z &= 0\n\\end{align*}$$$$\nAdding the two equations: $2x=0 \\implies x=0$. Substituting into\nthe first equation: $y+z=0 \\implies y=-z$.\n\nSo every vector in $\\ker(F)$ has the form $(0,-z,z)=z(0,-1,1)$ for\n$z \\in \\mathbb{R}$.\n\\[\n\\ker(F) = \\boxed{\\operatorname{span}\\{(0,-1,1)\\}}, \\qquad\n\\text{nullity}(F) = 1\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -125,7 +125,7 @@
     "section": "Kernel and Image of a Linear Mapping",
     "type": "example",
     "title": "Example 4.10 --- Finding the Image of a Linear Mapping",
-    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ be defined by\n$F(x,y,z)=(x+y,\\ y+z,\\ x+2y+z)$. Find $\\operatorname{Im}(F)$.\n\nSolution:\nWrite $F(x,y,z)$ as a linear combination of vectors formed from the\ncoefficients of $x$, $y$, $z$:\n\\[\nF(x,y,z) = x(1,0,1)+y(1,1,2)+z(0,1,1).\n\\]\nSo $\\operatorname{Im}(F) = \\operatorname{span}\\{(1,0,1),(1,1,2),(0,1,1)\\}$.\nCheck for dependence: is $(1,1,2)=a(1,0,1)+b(0,1,1)$?\n$$\\begin{align*}\na &= 1\\\\\nb &= 1\\\\\na+b &= 1+1 = 2 \\quad \\checkmark\n\\end{align*}$$\nSince $(1,1,2)=(1,0,1)+(0,1,1)$, the third spanning vector is\nredundant. A basis for $\\operatorname{Im}(F)$ is\n$\\{(1,0,1),(0,1,1)\\}$, which are independent (not proportional).\n\\[\n\\operatorname{Im}(F) = \\boxed{\\operatorname{span}\\{(1,0,1),(0,1,1)\\}}, \\qquad\n\\text{rank}(F) = 2\n\\]\n\n\\bigskip"
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ be defined by\n$F(x,y,z)=(x+y,\\ y+z,\\ x+2y+z)$. Find $\\operatorname{Im}(F)$.\n\nSolution:\nWrite $F(x,y,z)$ as a linear combination of vectors formed from the\ncoefficients of $x$, $y$, $z$:\n\\[\nF(x,y,z) = x(1,0,1)+y(1,1,2)+z(0,1,1).\n\\]\nSo $\\operatorname{Im}(F) = \\operatorname{span}\\{(1,0,1),(1,1,2),(0,1,1)\\}$.\nCheck for dependence: is $(1,1,2)=a(1,0,1)+b(0,1,1)$?\n$$$$\\begin{align*}\na &= 1\\\\\nb &= 1\\\\\na+b &= 1+1 = 2 \\quad \\checkmark\n\\end{align*}$$$$\nSince $(1,1,2)=(1,0,1)+(0,1,1)$, the third spanning vector is\nredundant. A basis for $\\operatorname{Im}(F)$ is\n$\\{(1,0,1),(0,1,1)\\}$, which are independent (not proportional).\n\\[\n\\operatorname{Im}(F) = \\boxed{\\operatorname{span}\\{(1,0,1),(0,1,1)\\}}, \\qquad\n\\text{rank}(F) = 2\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -173,7 +173,7 @@
     "section": "Singular and Nonsingular Linear Mappings",
     "type": "example",
     "title": "Example 4.14 --- Testing for Nonsingularity",
-    "content": "Determine whether $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ defined by\n$F(x,y,z)=(x+y,\\ y+z,\\ x+z)$ is nonsingular.\n\nSolution:\nFind $\\ker(F)$ by solving $F(x,y,z)=(0,0,0)$:\n$$\\begin{align*}\nx+y &= 0 \\tag{1}\\\\\ny+z &= 0 \\tag{2}\\\\\nx+z &= 0 \\tag{3}\n\\end{align*}$$\nFrom (1): $y=-x$. From (2): $z=-y=x$. Check (3): $x+z=x+x=2x=0\n\\implies x=0$. Then $y=0$, $z=0$.\n\nSince the only solution is $(0,0,0)$, $\\ker(F)=\\{0\\}$. Hence $F$ is\nnonsingular. \\hfill$\\square$\n\n\\bigskip"
+    "content": "Determine whether $F:\\mathbb{R}^3 \\to \\mathbb{R}^3$ defined by\n$F(x,y,z)=(x+y,\\ y+z,\\ x+z)$ is nonsingular.\n\nSolution:\nFind $\\ker(F)$ by solving $F(x,y,z)=(0,0,0)$:\n$$$$\\begin{align*}\nx+y &= 0 \\tag{1}\\\\\ny+z &= 0 \\tag{2}\\\\\nx+z &= 0 \\tag{3}\n\\end{align*}$$$$\nFrom (1): $y=-x$. From (2): $z=-y=x$. Check (3): $x+z=x+x=2x=0\n\\implies x=0$. Then $y=0$, $z=0$.\n\nSince the only solution is $(0,0,0)$, $\\ker(F)=\\{0\\}$. Hence $F$ is\nnonsingular. \\hfill$\\square$\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -189,7 +189,7 @@
     "section": "Singular and Nonsingular Linear Mappings",
     "type": "example",
     "title": "Example 4.16 --- Verifying an Isomorphism",
-    "content": "Let $F:\\mathbb{R}^2 \\to P_1(t)$ be defined by\n$F(a,b) = a+bt$. Show that $F$ is an isomorphism.\n\nSolution:\nLinearity: for $(a_1,b_1),(a_2,b_2) \\in \\mathbb{R}^2$ and\nscalars $c_1,c_2$:\n$$\\begin{align*}\nF\\big(c_1(a_1,b_1)+c_2(a_2,b_2)\\big)\n&= F(c_1a_1+c_2a_2,\\ c_1b_1+c_2b_2)\\\\\n&= (c_1a_1+c_2a_2)+(c_1b_1+c_2b_2)t\\\\\n&= c_1(a_1+b_1t)+c_2(a_2+b_2t)\\\\\n&= c_1F(a_1,b_1)+c_2F(a_2,b_2).\n\\end{align*}$$\nSo $F$ is linear.\n\nNonsingular (injective): if $F(a,b)=0$, then $a+bt=0$,\nwhich forces $a=0$ and $b=0$ (a polynomial is zero only when all\ncoefficients are zero). So $\\ker(F)=\\{(0,0)\\}$, and $F$ is\nnonsingular, hence injective.\n\nSurjective: every polynomial $p(t)=a+bt \\in P_1(t)$ is the\nimage of $(a,b) \\in \\mathbb{R}^2$, since $F(a,b)=a+bt=p(t)$.\n\nSince $F$ is linear, injective, and surjective, $F$ is an\nisomorphism, so $\\mathbb{R}^2 \\cong P_1(t)$. This agrees\nwith the fact that $\\dim(\\mathbb{R}^2)=2=\\dim(P_1(t))$. \\hfill$\\square$"
+    "content": "Let $F:\\mathbb{R}^2 \\to P_1(t)$ be defined by\n$F(a,b) = a+bt$. Show that $F$ is an isomorphism.\n\nSolution:\nLinearity: for $(a_1,b_1),(a_2,b_2) \\in \\mathbb{R}^2$ and\nscalars $c_1,c_2$:\n$$$$\\begin{align*}\nF\\big(c_1(a_1,b_1)+c_2(a_2,b_2)\\big)\n&= F(c_1a_1+c_2a_2,\\ c_1b_1+c_2b_2)\\\\\n&= (c_1a_1+c_2a_2)+(c_1b_1+c_2b_2)t\\\\\n&= c_1(a_1+b_1t)+c_2(a_2+b_2t)\\\\\n&= c_1F(a_1,b_1)+c_2F(a_2,b_2).\n\\end{align*}$$$$\nSo $F$ is linear.\n\nNonsingular (injective): if $F(a,b)=0$, then $a+bt=0$,\nwhich forces $a=0$ and $b=0$ (a polynomial is zero only when all\ncoefficients are zero). So $\\ker(F)=\\{(0,0)\\}$, and $F$ is\nnonsingular, hence injective.\n\nSurjective: every polynomial $p(t)=a+bt \\in P_1(t)$ is the\nimage of $(a,b) \\in \\mathbb{R}^2$, since $F(a,b)=a+bt=p(t)$.\n\nSince $F$ is linear, injective, and surjective, $F$ is an\nisomorphism, so $\\mathbb{R}^2 \\cong P_1(t)$. This agrees\nwith the fact that $\\dim(\\mathbb{R}^2)=2=\\dim(P_1(t))$. \\hfill$\\square$"
   },
   {
     "course": "Linear Algebra",
@@ -221,7 +221,7 @@
     "section": "Operations with Linear Mappings",
     "type": "example",
     "title": "Example 4.17 --- Sum and Scalar Multiple of Linear Mappings",
-    "content": "Let $F,G:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(x+y,\\ x)$ and $G(x,y)=(2x,\\ y-x)$. Find $(F+G)(x,y)$ and\n$(3F)(x,y)$.\n\nSolution:\n$$\\begin{align*}\n(F+G)(x,y) &= F(x,y)+G(x,y) = (x+y,\\ x)+(2x,\\ y-x)\\\\\n&= (x+y+2x,\\ x+y-x) = (3x+y,\\ y).\n\\end{align*}$$\n\\[\n(3F)(x,y) = 3(x+y,\\ x) = (3x+3y,\\ 3x)\n\\]\n\\[\n(F+G)(x,y) = \\boxed{(3x+y,\\ y)}, \\qquad (3F)(x,y) = \\boxed{(3x+3y,\\ 3x)}\n\\]\n\n\\bigskip"
+    "content": "Let $F,G:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(x+y,\\ x)$ and $G(x,y)=(2x,\\ y-x)$. Find $(F+G)(x,y)$ and\n$(3F)(x,y)$.\n\nSolution:\n$$$$\\begin{align*}\n(F+G)(x,y) &= F(x,y)+G(x,y) = (x+y,\\ x)+(2x,\\ y-x)\\\\\n&= (x+y+2x,\\ x+y-x) = (3x+y,\\ y).\n\\end{align*}$$$$\n\\[\n(3F)(x,y) = 3(x+y,\\ x) = (3x+3y,\\ 3x)\n\\]\n\\[\n(F+G)(x,y) = \\boxed{(3x+y,\\ y)}, \\qquad (3F)(x,y) = \\boxed{(3x+3y,\\ 3x)}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -237,7 +237,7 @@
     "section": "Operations with Linear Mappings",
     "type": "example",
     "title": "Example 4.19 --- Proving F+G Is Linear",
-    "content": "Let $F,G:V \\to U$ be linear mappings. Prove that $F+G$ is also a\nlinear mapping.\n\nSolution:\nLet $v_1,v_2 \\in V$ and $a,b \\in K$. By definition of $F+G$ and the\nlinearity of $F$ and $G$ separately:\n$$\\begin{align*}\n(F+G)(av_1+bv_2) &= F(av_1+bv_2)+G(av_1+bv_2)\\\\\n&= \\big(aF(v_1)+bF(v_2)\\big)+\\big(aG(v_1)+bG(v_2)\\big)\\\\\n&= a\\big(F(v_1)+G(v_1)\\big)+b\\big(F(v_2)+G(v_2)\\big)\\\\\n&= a(F+G)(v_1)+b(F+G)(v_2).\n\\end{align*}$$\nSince $(F+G)(av_1+bv_2)=a(F+G)(v_1)+b(F+G)(v_2)$ for arbitrary\n$v_1,v_2,a,b$, the mapping $F+G$ is linear. \\hfill$\\square$"
+    "content": "Let $F,G:V \\to U$ be linear mappings. Prove that $F+G$ is also a\nlinear mapping.\n\nSolution:\nLet $v_1,v_2 \\in V$ and $a,b \\in K$. By definition of $F+G$ and the\nlinearity of $F$ and $G$ separately:\n$$$$\\begin{align*}\n(F+G)(av_1+bv_2) &= F(av_1+bv_2)+G(av_1+bv_2)\\\\\n&= \\big(aF(v_1)+bF(v_2)\\big)+\\big(aG(v_1)+bG(v_2)\\big)\\\\\n&= a\\big(F(v_1)+G(v_1)\\big)+b\\big(F(v_2)+G(v_2)\\big)\\\\\n&= a(F+G)(v_1)+b(F+G)(v_2).\n\\end{align*}$$$$\nSince $(F+G)(av_1+bv_2)=a(F+G)(v_1)+b(F+G)(v_2)$ for arbitrary\n$v_1,v_2,a,b$, the mapping $F+G$ is linear. \\hfill$\\square$"
   },
   {
     "course": "Linear Algebra",
@@ -261,7 +261,7 @@
     "section": "Algebra A(V) of Linear Operators",
     "type": "example",
     "title": "Example 4.20 --- Computing Powers of a Linear Operator",
-    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(y,\\ -x)$. Find $F^2(x,y)$ and identify the operator\n$F^2$.\n\nSolution:\n$$\\begin{align*}\nF^2(x,y) &= F\\big(F(x,y)\\big) = F(y,-x)\\\\\n&= (-x,\\ -y) = -1(x,y).\n\\end{align*}$$\nSince $F^2(x,y)=-(x,y)$ for every $(x,y)$, the operator $F^2$ is\nsimply $-1$ times the identity operator:\n\\[\nF^2 = \\boxed{-I}\n\\]\n\n\\bigskip"
+    "content": "Let $F:\\mathbb{R}^2 \\to \\mathbb{R}^2$ be defined by\n$F(x,y)=(y,\\ -x)$. Find $F^2(x,y)$ and identify the operator\n$F^2$.\n\nSolution:\n$$$$\\begin{align*}\nF^2(x,y) &= F\\big(F(x,y)\\big) = F(y,-x)\\\\\n&= (-x,\\ -y) = -1(x,y).\n\\end{align*}$$$$\nSince $F^2(x,y)=-(x,y)$ for every $(x,y)$, the operator $F^2$ is\nsimply $-1$ times the identity operator:\n\\[\nF^2 = \\boxed{-I}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",
@@ -301,7 +301,7 @@
     "section": "Matrices and Linear Mappings",
     "type": "example",
     "title": "Example 4.23 --- Matrix Representation Relative to Standard Bases",
-    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n$F(x,y,z)=(2x-y+z,\\ x+3y-z)$. Find the matrix representation of\n$F$ relative to the standard bases.\n\nSolution:\nApply $F$ to each standard basis vector of $\\mathbb{R}^3$:\n$$\\begin{align*}\nF(1,0,0) &= (2,1)\\\\\nF(0,1,0) &= (-1,3)\\\\\nF(0,0,1) &= (1,-1)\n\\end{align*}$$\nUsing these images as the columns of the matrix:\n\\[\n[F] = \\boxed{\\begin{bmatrix}2&-1&1\\\\1&3&-1\\end{bmatrix}}\n\\]\n\n\\bigskip"
+    "content": "Let $F:\\mathbb{R}^3 \\to \\mathbb{R}^2$ be defined by\n$F(x,y,z)=(2x-y+z,\\ x+3y-z)$. Find the matrix representation of\n$F$ relative to the standard bases.\n\nSolution:\nApply $F$ to each standard basis vector of $\\mathbb{R}^3$:\n$$$$\\begin{align*}\nF(1,0,0) &= (2,1)\\\\\nF(0,1,0) &= (-1,3)\\\\\nF(0,0,1) &= (1,-1)\n\\end{align*}$$$$\nUsing these images as the columns of the matrix:\n\\[\n[F] = \\boxed{\\begin{bmatrix}2&-1&1\\\\1&3&-1\\end{bmatrix}}\n\\]\n\n\\bigskip"
   },
   {
     "course": "Linear Algebra",

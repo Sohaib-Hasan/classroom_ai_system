@@ -131,8 +131,13 @@ def parse_tex_notes(filepath, course_name, chapter_name):
 
     # Teen tarah ke "landmarks" dhoondo: \section{...}, titled boxes, aur untitled boxes
     section_pattern = re.compile(r"\\section\{([^}]*)\}")
+    # Title group allows ONE level of nested {...} (e.g. \pmod{4} inside a
+    # title's math). Plain [^}]* used to stop at the FIRST inner }, which
+    # truncated any title containing braced LaTeX mid-way and left the
+    # remainder ($, closing brace, etc.) leaking into the chunk's content
+    # instead — reproduced against real chunks (nt_chapter4, ~8 titles).
     titled_box_pattern = re.compile(
-        r"\\begin\{(" + "|".join(TITLED_BOX_TYPES) + r")\}\{([^}]*)\}(.*?)\\end\{\1\}",
+        r"\\begin\{(" + "|".join(TITLED_BOX_TYPES) + r")\}\{((?:[^{}]|\{[^{}]*\})*)\}(.*?)\\end\{\1\}",
         re.DOTALL,
     )
     untitled_box_pattern = re.compile(

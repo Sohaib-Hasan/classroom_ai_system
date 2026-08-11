@@ -69,10 +69,17 @@ BRACE_ARG = r"\{(?:[^{}]|\{[^{}]*\})*\}"  # one {...} allowing one level of nest
 
 
 def clean_latex_formatting(text: str) -> str:
-    text, saved = _protect_math(text)
-
     # TikZ diagrams: pure drawing code, no textual value for a Q&A system.
+    # MUST run before _protect_math(): tikz node/style code sometimes has
+    # stray or unbalanced $ signs (e.g. in node labels), which would
+    # otherwise confuse the $...$ pairing regex below into spanning past
+    # the block and swallowing the closing \end{tikzpicture} tag itself
+    # into a bogus "math" placeholder (verified: this was silently
+    # leaving whole tikzpicture blocks, including \end{tikzpicture},
+    # un-stripped in production).
     text = re.sub(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", "", text, flags=re.DOTALL)
+
+    text, saved = _protect_math(text)
 
     # Tables -> markdown tables
     def _tabular_to_md(m):
@@ -122,6 +129,17 @@ def clean_latex_formatting(text: str) -> str:
     text = re.sub(r"\\checkmark", "✓", text)
 
     text = _restore_math(text, saved)
+
+    # \textcolor/\textbf sometimes appear INSIDE real math too (e.g.
+    # \textcolor{green}{\checkmark} marking a verification step, or a
+    # custom document color like \textcolor{primaryblue}{...} that KaTeX
+    # doesn't recognize). The earlier passes skip these since math was
+    # protected above. Safe to unwrap here regardless of position: color
+    # and bold are purely decorative and never change what an expression
+    # means, so this can't corrupt real math.
+    for _ in range(4):
+        text = textbf_re.sub(r"\1", text)
+        text = textcolor_re.sub(r"\1", text)
 
     text = re.sub(r"[ \t]+\n", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text)

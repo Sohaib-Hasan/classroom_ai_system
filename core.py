@@ -63,9 +63,15 @@ class TutorAnswer(BaseModel):
     visual_expressions: Optional[list[str]] = None
     visual_x_min: Optional[float] = None
     visual_x_max: Optional[float] = None
-    visual_vectors: Optional[list[list[float]]] = None
+    # NOTE: visual_vectors/visual_edges are flat strings, not nested
+    # arrays (e.g. "3,4" / "A1->B1"). Gemini's structured-output mode is
+    # documented as unreliable with array-of-arrays fields ("flatten
+    # nested arrays" is Google's own recommended fix) — the earlier
+    # list[list[...]] version was the confirmed cause of graphs silently
+    # failing to render for vector/graph_network types.
+    visual_vectors: Optional[list[str]] = None
     visual_nodes: Optional[list[str]] = None
-    visual_edges: Optional[list[list[str]]] = None
+    visual_edges: Optional[list[str]] = None
 
 
 SYSTEM_INSTRUCTION = """You are a patient teaching assistant for undergraduate
@@ -127,9 +133,12 @@ Always respond with:
      expressions in terms of x, e.g. ["x**2 - 3*x + 2"]), and "visual_x_min"/
      "visual_x_max" (a sensible domain, e.g. -10 to 10 unless the question
      implies otherwise).
-   - "vector": provide "visual_vectors" as a list of [x, y] pairs.
+   - "vector": provide "visual_vectors" as a list of strings, each
+     formatted exactly as "x,y" (e.g. ["3,4", "-2,1"]).
    - "graph_network": provide "visual_nodes" (list of labels) and
-     "visual_edges" (list of [node, node] pairs) for a graph-theory diagram.
+     "visual_edges" as a list of strings, each formatted exactly as
+     "NodeA->NodeB" (e.g. ["A1->B1", "A1->B2"]) for a graph-theory
+     diagram.
    Always also provide "visual_title". You may generate a visual even if it
    is not present in the notes — a well-defined mathematical graph is not
    "invented content" the way a fabricated fact would be. If no visual is
@@ -492,10 +501,23 @@ def render_visual(answer):
             return fig
 
         elif answer.visual_type == "vector" and answer.visual_vectors:
+            # visual_vectors ab flat strings hain ("x,y"), nested [x,y]
+            # pairs nahi — parse karo, koi bhi malformed entry skip karo
+            # taake ek galat entry poore graph ko crash na kare.
+            vectors = []
+            for v in answer.visual_vectors:
+                parts = str(v).split(",")
+                if len(parts) == 2:
+                    try:
+                        vectors.append((float(parts[0]), float(parts[1])))
+                    except ValueError:
+                        continue
+            if not vectors:
+                return None
             fig, ax = plt.subplots(figsize=(5, 5))
-            for i, v in enumerate(answer.visual_vectors):
-                ax.quiver(0, 0, v[0], v[1], angles="xy", scale_units="xy", scale=1, label=f"v{i+1}")
-            flat = [c for v in answer.visual_vectors for c in v] or [1, -1]
+            for i, (vx, vy) in enumerate(vectors):
+                ax.quiver(0, 0, vx, vy, angles="xy", scale_units="xy", scale=1, label=f"v{i+1}")
+            flat = [c for v in vectors for c in v] or [1, -1]
             lim = max(abs(min(flat)), abs(max(flat))) * 1.3 or 5
             ax.set_xlim(-lim, lim)
             ax.set_ylim(-lim, lim)
@@ -508,9 +530,16 @@ def render_visual(answer):
             return fig
 
         elif answer.visual_type == "graph_network" and answer.visual_nodes:
+            # visual_edges ab flat strings hain ("NodeA->NodeB"), nested
+            # [node, node] pairs nahi — same wajah se (parsing reliability).
+            edges = []
+            for e in answer.visual_edges or []:
+                parts = str(e).split("->")
+                if len(parts) == 2:
+                    edges.append((parts[0].strip(), parts[1].strip()))
             G = nx.Graph()
             G.add_nodes_from(answer.visual_nodes)
-            G.add_edges_from(answer.visual_edges or [])
+            G.add_edges_from(edges)
             fig, ax = plt.subplots(figsize=(5, 5))
             pos = nx.spring_layout(G, seed=42)
             nx.draw(G, pos, ax=ax, with_labels=True, node_color="#a8d5ff", node_size=800, font_size=10)

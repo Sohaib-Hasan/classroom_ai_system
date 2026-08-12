@@ -2,7 +2,7 @@
 
 A Streamlit-based doubt-clearing assistant for undergraduate math courses.
 It answers strictly from your own course notes (retrieval-augmented
-generation) — it does not answer from the model's general knowledge — and
+generation); it does not answer from the model's general knowledge and
 gives teachers visibility into what students are actually struggling with.
 
 The system is two separate apps sharing one knowledge base and one
@@ -13,7 +13,7 @@ activity log:
 | Student assistant | Students, PIN-gated | `app.py` |
 | Teacher dashboard | Teacher, password-gated | `dashboard.py` |
 
-## How it works, end to end
+## How it works, end-to-end
 
 ```
  .tex course notes

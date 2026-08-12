@@ -67,8 +67,17 @@ class GeminiEmbeddingBackend(EmbeddingBackend):
     name = "gemini"
     dimensions = 3072  # default; agar output_dimensionality set kiya to badal sakta hai
 
-    def __init__(self, client, model: str = "gemini-embedding-001", retries: int = 2, timeout: float = 15):
-        self._client = client
+    def __init__(self, client=None, clients=None, model: str = "gemini-embedding-001", retries: int = 2, timeout: float = 15):
+        # FIX (quota-scaling): ab ek se zyada API keys (alag Google
+        # accounts se, isi liye alag quota pools) rotate kar sakte hain.
+        # `client=` (purana, singular) ab bhi chalta hai — sirf 1-item
+        # list ban jati hai, taake purana code/tests na tootein.
+        if clients:
+            self._clients = list(clients)
+        elif client is not None:
+            self._clients = [client]
+        else:
+            raise ValueError("GeminiEmbeddingBackend ke liye 'client' ya 'clients' chahiye.")
         self._model = model
         self._retries = retries
         self._timeout = timeout
@@ -85,18 +94,23 @@ class GeminiEmbeddingBackend(EmbeddingBackend):
             pass
 
         last_error = None
-        for attempt in range(self._retries):
-            try:
-                result = self._client.models.embed_content(
-                    model=self._model,
-                    contents=text,
-                    config=types.EmbedContentConfig(task_type=task_type),
-                )
-                return list(result.embeddings[0].values)
-            except Exception as e:  # noqa: BLE001 — retry loop, phir raise
-                last_error = e
-                if attempt < self._retries - 1:
-                    time.sleep(2)
+        # FIX (quota-scaling): har client (= har API key/quota-pool) ko
+        # apne retries mil jate hain; agar EK key ka quota khatam ho
+        # jaye, agli key try hoti hai — student ko koi farq nazar nahi
+        # aata, jab tak sab keys ka quota ek sath khatam na ho jaye.
+        for client in self._clients:
+            for attempt in range(self._retries):
+                try:
+                    result = client.models.embed_content(
+                        model=self._model,
+                        contents=text,
+                        config=types.EmbedContentConfig(task_type=task_type),
+                    )
+                    return list(result.embeddings[0].values)
+                except Exception as e:  # noqa: BLE001 — retry loop, phir raise
+                    last_error = e
+                    if attempt < self._retries - 1:
+                        time.sleep(2)
         raise last_error
 
     def embed_query(self, text: str) -> list[float]:
@@ -151,15 +165,15 @@ class LocalEmbeddingBackend(EmbeddingBackend):
         return vec.tolist()
 
 
-def get_backend(provider: str, client=None, **kwargs) -> EmbeddingBackend:
+def get_backend(provider: str, client=None, clients=None, **kwargs) -> EmbeddingBackend:
     """Factory function. `provider` config.py se aata hai ("gemini" ya
-    "local"). Gemini backend ke liye `client` (genai.Client instance)
-    zaroori hai."""
+    "local"). Gemini backend ke liye `client` (ek) ya `clients` (list —
+    quota-rotation ke liye, dekhein GeminiEmbeddingBackend) chahiye."""
     provider = (provider or "gemini").lower().strip()
     if provider == "gemini":
-        if client is None:
-            raise ValueError("GeminiEmbeddingBackend ke liye ek genai.Client instance chahiye (client=...).")
-        return GeminiEmbeddingBackend(client=client, **kwargs)
+        if client is None and not clients:
+            raise ValueError("GeminiEmbeddingBackend ke liye ek genai.Client instance chahiye (client=... ya clients=[...]).")
+        return GeminiEmbeddingBackend(client=client, clients=clients, **kwargs)
     elif provider == "local":
         return LocalEmbeddingBackend(**kwargs)
     else:

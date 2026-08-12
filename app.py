@@ -58,6 +58,11 @@ from question_log_store import QuestionLogStore
 try:
     # Streamlit Cloud pe deploy hone par yahan se milega (Secrets settings mein set karna hai)
     GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+    # FIX (quota-scaling): optional 2nd/3rd keys — alag Google accounts se
+    # banayein (quota PROJECT-level hoti hai, isliye alag account = alag
+    # quota pool). Na dein to bilkul pehle jaisa (1 key) behavior chalega.
+    GEMINI_API_KEY_2 = st.secrets.get("GEMINI_API_KEY_2", None)
+    GEMINI_API_KEY_3 = st.secrets.get("GEMINI_API_KEY_3", None)
     CLASS_PIN = st.secrets["CLASS_PIN"]
     EMBEDDING_PROVIDER = st.secrets.get("EMBEDDING_PROVIDER", "gemini")
     GENERATION_FALLBACK_PROVIDER = st.secrets.get("GENERATION_FALLBACK_PROVIDER", None)
@@ -73,6 +78,8 @@ except (FileNotFoundError, KeyError):
     from config import GEMINI_API_KEY, CLASS_PIN
     import config as _config
 
+    GEMINI_API_KEY_2 = getattr(_config, "GEMINI_API_KEY_2", None)
+    GEMINI_API_KEY_3 = getattr(_config, "GEMINI_API_KEY_3", None)
     EMBEDDING_PROVIDER = getattr(_config, "EMBEDDING_PROVIDER", "gemini")
     GENERATION_FALLBACK_PROVIDER = getattr(_config, "GENERATION_FALLBACK_PROVIDER", None)
     GENERATION_FALLBACK_API_KEY = getattr(_config, "GENERATION_FALLBACK_API_KEY", None)
@@ -83,7 +90,10 @@ except (FileNotFoundError, KeyError):
 CACHE_DB_FILE = "cache/qa_cache.db"
 
 logger = get_logger()
-client = genai.Client(api_key=GEMINI_API_KEY)
+# FIX (quota-scaling): sirf wahi keys jo actually set hain (empty/None
+# chhod di gayi 2nd/3rd key ko ignore karte hain) — taake purana 1-key
+# setup bilkul pehle jaisa hi chale.
+GEMINI_CLIENTS = [genai.Client(api_key=k) for k in (GEMINI_API_KEY, GEMINI_API_KEY_2, GEMINI_API_KEY_3) if k]
 
 
 # ------------------------------------------------------------------
@@ -102,12 +112,12 @@ def get_shared_db_connection():
 
 @st.cache_resource
 def get_embedding_backend():
-    return get_embedding_backend_impl(EMBEDDING_PROVIDER, client=client)
+    return get_embedding_backend_impl(EMBEDDING_PROVIDER, clients=GEMINI_CLIENTS)
 
 
 @st.cache_resource
 def get_primary_generation_backend():
-    return get_generation_backend("gemini", client=client)
+    return get_generation_backend("gemini", clients=GEMINI_CLIENTS)
 
 
 @st.cache_resource
@@ -334,97 +344,117 @@ for turn in st.session_state.messages:
 
 question = st.chat_input("Type your question here...")
 
+# FIX (quota-scaling): koi bhi ek session bohat tezi se sawaal poochta
+# rahe (ghalti se double-click, ya jaan-boojh kar script) to koi hard
+# cap nahi tha — chahe kitni bhi Gemini keys rotate ho rahi hon, phir
+# bhi ek session sab kharch kar sakta tha. Simple per-session window:
+# max QUESTION_RATE_LIMIT sawaal har QUESTION_RATE_WINDOW seconds mein.
+QUESTION_RATE_LIMIT = 8
+QUESTION_RATE_WINDOW_SECONDS = 60
+
 if question:
-    with st.chat_message("user"):
-        st.markdown(question)
+    now = time.time()
+    recent = st.session_state.setdefault("_question_timestamps", [])
+    recent[:] = [t for t in recent if now - t < QUESTION_RATE_WINDOW_SECONDS]
 
-    with st.chat_message("assistant"):
-        try:
-            with st.spinner("Searching your notes..."):
-                history = st.session_state.messages
-                search_text = question if not history else history[-1]["question"] + " " + question
-                query_vec = embed_query_safe(search_text)
+    if len(recent) >= QUESTION_RATE_LIMIT:
+        with st.chat_message("user"):
+            st.markdown(question)
+        with st.chat_message("assistant"):
+            st.warning("Thoda ruk kar dobara poochein — ek dam mein bohat zyada sawaal aa gaye hain. Kuch second baad try karein.")
+        st.stop()
+    else:
+        recent.append(now)
+        with st.chat_message("user"):
+            st.markdown(question)
 
-                chunks = top_chunks_from_vector(query_vec, kb, embeddings_matrix, course_filter=selected_course)
-                best_sim = chunks[0]["similarity"] if chunks else 0
-
-                # Apne course mein confidence kam ho to doosre courses bhi check karo
-                cross_course = None
-                cross_best_sim = 0
-                if best_sim < FALLBACK_THRESHOLD:
-                    all_chunks = top_chunks_from_vector(query_vec, kb, embeddings_matrix, course_filter=None)
-                    other = next((c for c in all_chunks if c["course"] != selected_course), None)
-                    if other:
-                        cross_course = other["course"]
-                        cross_best_sim = other["similarity"]
-
-                repeated = check_repeated_confusion(query_vec, history)
-                strategy, extra = decide_retrieval_strategy(best_sim, cross_best_sim, cross_course)
-
-                cross_suggestion = None
-                cached_hit = None
-
-                if strategy == "not_found":
-                    answer = TutorAnswer(
-                        english="I couldn't find this in your course notes. Please check with your teacher, or try rephrasing your question.",
-                        roman_urdu="Ye mujhe aapke course notes mein nahi mila. Apne teacher se poochein, ya sawal ko dobara likh kar try karein.",
-                        grounding="not_found",
-                    )
-                    verified = None
-
-                elif strategy == "cross_course_redirect":
-                    # FIX (bug jo review mein mila tha): pehle is case mein
-                    # bhi AI ko apne (kam-confidence) course ke chunks bhej
-                    # diye jate the — quota waste hoti thi aur context bhi
-                    # galat hota tha. Ab AI ko call hi nahi karte.
-                    answer = TutorAnswer(
-                        english=extra,
-                        roman_urdu=extra,
-                        grounding="cross_course_redirect",
-                    )
-                    verified = None
-                    chunks = []
-
-                else:  # "answer"
-                    cross_suggestion = extra
-                    if not history:  # follow-up par cache use nahi karte, context-dependent hota hai
-                        cached_hit = cache.find_cached_answer(selected_course, question, query_vec)
-
-                    if cached_hit:
-                        answer = TutorAnswer(**cached_hit["answer"])
-                        chunks = cached_hit["chunks"]
-                    else:
-                        answer = generate_answer(question, chunks, history)
-                        cache.save_to_cache(selected_course, question, answer, chunks, query_vec)
-
-                    verified = verify_computation(answer.computation_expression, answer.computation_result)
-
-            # FIX (bug jo review mein mila tha): log_question() pehle isi
-            # try block mein tha jo answer dikhata hai — matlab agar
-            # sirf LOGGING fail ho (jaise Turso ka koi transient masla),
-            # to already-generated answer bhi kabhi student ko dikhta hi
-            # nahi tha, sirf generic "system busy" error milta tha. Ab
-            # logging apni alag try/except mein hai — fail ho to bhi
-            # answer zaroor dikhega, sirf ek chhota warning log hoga.
+        with st.chat_message("assistant"):
             try:
-                log_question(question, selected_course, chunks, answer, verified, repeated, cached_hit is not None)
-            except Exception:
-                logger.exception(f"log_question failed (answer still shown): course={selected_course!r}, question={question!r}")
+                with st.spinner("Searching your notes..."):
+                    history = st.session_state.messages
+                    search_text = question if not history else history[-1]["question"] + " " + question
+                    query_vec = embed_query_safe(search_text)
 
-            show_answer(answer, lang_pref)
-            if cross_suggestion:
-                st.info(f"Related content found in **{cross_suggestion}** — you may want to check there too.")
-            if answer.grounding not in ("not_found", "cross_course_redirect"):
-                with st.expander("Sources used from notes"):
-                    for c in chunks:
-                        st.markdown(f"- **{c['title']}** — *{c['chapter']}, {c['section']}*")
-        except Exception:
-            # FIX (bug jo review mein mila tha): pehle yahan exception
-            # silently gum ho jati thi — koi log, koi traceback nahi. Ab
-            # poora traceback logs/error.log mein likha jata hai.
-            logger.exception(f"Failed to answer question in course={selected_course!r}: {question!r}")
-            st.error("The system is busy right now — please wait a few seconds and try again.")
-            st.stop()
+                    chunks = top_chunks_from_vector(query_vec, kb, embeddings_matrix, course_filter=selected_course)
+                    best_sim = chunks[0]["similarity"] if chunks else 0
+
+                    # Apne course mein confidence kam ho to doosre courses bhi check karo
+                    cross_course = None
+                    cross_best_sim = 0
+                    if best_sim < FALLBACK_THRESHOLD:
+                        all_chunks = top_chunks_from_vector(query_vec, kb, embeddings_matrix, course_filter=None)
+                        other = next((c for c in all_chunks if c["course"] != selected_course), None)
+                        if other:
+                            cross_course = other["course"]
+                            cross_best_sim = other["similarity"]
+
+                    repeated = check_repeated_confusion(query_vec, history)
+                    strategy, extra = decide_retrieval_strategy(best_sim, cross_best_sim, cross_course)
+
+                    cross_suggestion = None
+                    cached_hit = None
+
+                    if strategy == "not_found":
+                        answer = TutorAnswer(
+                            english="I couldn't find this in your course notes. Please check with your teacher, or try rephrasing your question.",
+                            roman_urdu="Ye mujhe aapke course notes mein nahi mila. Apne teacher se poochein, ya sawal ko dobara likh kar try karein.",
+                            grounding="not_found",
+                        )
+                        verified = None
+
+                    elif strategy == "cross_course_redirect":
+                        # FIX (bug jo review mein mila tha): pehle is case mein
+                        # bhi AI ko apne (kam-confidence) course ke chunks bhej
+                        # diye jate the — quota waste hoti thi aur context bhi
+                        # galat hota tha. Ab AI ko call hi nahi karte.
+                        answer = TutorAnswer(
+                            english=extra,
+                            roman_urdu=extra,
+                            grounding="cross_course_redirect",
+                        )
+                        verified = None
+                        chunks = []
+
+                    else:  # "answer"
+                        cross_suggestion = extra
+                        if not history:  # follow-up par cache use nahi karte, context-dependent hota hai
+                            cached_hit = cache.find_cached_answer(selected_course, question, query_vec)
+
+                        if cached_hit:
+                            answer = TutorAnswer(**cached_hit["answer"])
+                            chunks = cached_hit["chunks"]
+                        else:
+                            answer = generate_answer(question, chunks, history)
+                            cache.save_to_cache(selected_course, question, answer, chunks, query_vec)
+
+                        verified = verify_computation(answer.computation_expression, answer.computation_result)
+
+                # FIX (bug jo review mein mila tha): log_question() pehle isi
+                # try block mein tha jo answer dikhata hai — matlab agar
+                # sirf LOGGING fail ho (jaise Turso ka koi transient masla),
+                # to already-generated answer bhi kabhi student ko dikhta hi
+                # nahi tha, sirf generic "system busy" error milta tha. Ab
+                # logging apni alag try/except mein hai — fail ho to bhi
+                # answer zaroor dikhega, sirf ek chhota warning log hoga.
+                try:
+                    log_question(question, selected_course, chunks, answer, verified, repeated, cached_hit is not None)
+                except Exception:
+                    logger.exception(f"log_question failed (answer still shown): course={selected_course!r}, question={question!r}")
+
+                show_answer(answer, lang_pref)
+                if cross_suggestion:
+                    st.info(f"Related content found in **{cross_suggestion}** — you may want to check there too.")
+                if answer.grounding not in ("not_found", "cross_course_redirect"):
+                    with st.expander("Sources used from notes"):
+                        for c in chunks:
+                            st.markdown(f"- **{c['title']}** — *{c['chapter']}, {c['section']}*")
+            except Exception:
+                # FIX (bug jo review mein mila tha): pehle yahan exception
+                # silently gum ho jati thi — koi log, koi traceback nahi. Ab
+                # poora traceback logs/error.log mein likha jata hai.
+                logger.exception(f"Failed to answer question in course={selected_course!r}: {question!r}")
+                st.error("The system is busy right now — please wait a few seconds and try again.")
+                st.stop()
 
     st.session_state.messages.append(
         {"question": question, "answer": answer, "chunks": chunks, "query_vec": query_vec}

@@ -69,33 +69,50 @@ class GeminiGenerationBackend(GenerationBackend):
 
     name = "gemini"
 
-    def __init__(self, client, model: str = "gemini-3.6-flash"):
-        self._client = client
+    def __init__(self, client=None, clients=None, model: str = "gemini-3.6-flash"):
+        # FIX (quota-scaling): dekhein embedding_backend.py mein wahi
+        # comment — yahan bhi 'client' (purana) aur 'clients' (naya,
+        # rotation ke liye list) dono chalte hain.
+        if clients:
+            self._clients = list(clients)
+        elif client is not None:
+            self._clients = [client]
+        else:
+            raise ValueError("GeminiGenerationBackend ke liye 'client' ya 'clients' chahiye.")
         self._model = model
 
     def generate(self, system_instruction: str, prompt: str, response_schema: Type[T]) -> T:
-        interaction = self._client.interactions.create(
-            model=self._model,
-            system_instruction=system_instruction,
-            input=prompt,
-            # FIX: Gemini docs ke mutabiq response_format ek list honi
-            # chahiye jismein {"type","mime_type","schema"} keys hon —
-            # pehle raw schema seedha pass ho rahi thi.
-            response_format=[
-                {
-                    "type": "text",
-                    "mime_type": "application/json",
-                    "schema": response_schema.model_json_schema(),
-                }
-            ],
-        )
-        # FIX (production bug, Aug 2026): Gemini kabhi LaTeX commands
-        # (\times, \buildrel, waghera) mein backslash double-escape
-        # karna bhool jata hai — is se jawab corrupt ho jata hai (kabhi
-        # silently, kabhi crash ke saath). Parse karne se pehle repair
-        # karte hain — dekhein core.repair_json_escaping().
-        repaired_text = repair_json_escaping(interaction.output_text)
-        return response_schema.model_validate_json(repaired_text)
+        last_error = None
+        # FIX (quota-scaling): agar ek key ka quota khatam ho jaye, agli
+        # key try hoti hai — sirf tab error dikhta hai jab SAB keys fail
+        # ho jayein.
+        for client in self._clients:
+            try:
+                interaction = client.interactions.create(
+                    model=self._model,
+                    system_instruction=system_instruction,
+                    input=prompt,
+                    # FIX: Gemini docs ke mutabiq response_format ek list honi
+                    # chahiye jismein {"type","mime_type","schema"} keys hon —
+                    # pehle raw schema seedha pass ho rahi thi.
+                    response_format=[
+                        {
+                            "type": "text",
+                            "mime_type": "application/json",
+                            "schema": response_schema.model_json_schema(),
+                        }
+                    ],
+                )
+                # FIX (production bug, Aug 2026): Gemini kabhi LaTeX commands
+                # (\times, \buildrel, waghera) mein backslash double-escape
+                # karna bhool jata hai — is se jawab corrupt ho jata hai (kabhi
+                # silently, kabhi crash ke saath). Parse karne se pehle repair
+                # karte hain — dekhein core.repair_json_escaping().
+                repaired_text = repair_json_escaping(interaction.output_text)
+                return response_schema.model_validate_json(repaired_text)
+            except Exception as e:  # noqa: BLE001 — agli client try karni hai
+                last_error = e
+        raise last_error
 
 
 class OpenAICompatibleGenerationBackend(GenerationBackend):
@@ -182,7 +199,11 @@ KNOWN_GATEWAYS = {
 def get_generation_backend(provider: str, **kwargs) -> GenerationBackend:
     provider = (provider or "gemini").lower().strip()
     if provider == "gemini":
-        return GeminiGenerationBackend(client=kwargs["client"], model=kwargs.get("model", "gemini-3.6-flash"))
+        return GeminiGenerationBackend(
+            client=kwargs.get("client"),
+            clients=kwargs.get("clients"),
+            model=kwargs.get("model", "gemini-3.6-flash"),
+        )
 
     base_url = kwargs.get("base_url") or KNOWN_GATEWAYS.get(provider)
     if base_url is None:

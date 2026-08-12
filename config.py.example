@@ -19,6 +19,16 @@ GEMINI_API_KEY = "your-gemini-api-key-here"       # https://aistudio.google.com/
 CLASS_PIN = "1234"                                 # students isse app open karne ke liye use karenge
 TEACHER_PASSWORD = "change-me-to-something-strong"  # sirf dashboard.py ke liye
 
+# --- Optional: quota-scaling (2-3 keys tak rotate kar sakte hain) ---
+# Gemini ka quota PROJECT-level hota hai, KEY-level nahi — matlab alag
+# Google accounts se banayi gayi keys ki alag-alag quota pools hoti hain.
+# Yahan 2-3 keys (alag accounts se) de dein to app khud rotate karega:
+# ek key ka quota khatam ho to agli try hoti hai, students ko kuch nazar
+# nahi aata. Chhod dein khaali agar sirf 1 key chahiye (default, pehle
+# jaisa behavior).
+GEMINI_API_KEY_2 = None
+GEMINI_API_KEY_3 = None
+
 # --- Optional: embedding provider ---
 # "gemini" (default) ya "local" (free, apne machine par chalta hai, koi
 # API key/quota nahi chahiye — dekhein embedding_backend.py aur README.md

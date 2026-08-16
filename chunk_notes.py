@@ -23,7 +23,7 @@ import sys
 
 
 # Ye "known" content box-types hain jinke andar Title hota hai: \begin{examplebox}{Title}...
-TITLED_BOX_TYPES = ["definitionbox", "examplebox", "theorembox", "proofbox"]
+TITLED_BOX_TYPES = ["definitionbox", "examplebox", "theorembox", "proofbox", "algorithmbox"]
 # Ye box-types bina title ke hote hain: \begin{keypoint}...\end{keypoint}
 # (tcolorbox jaisi kuch boxes ke saath [styling options] bhi aa sakte hain,
 # jinhe hum content mein shamil nahi karte)
@@ -33,7 +33,7 @@ UNTITLED_BOX_TYPES = ["keypoint", "tcolorbox"]
 KNOWN_NON_CONTENT_ENVS = {
     "array", "bmatrix", "pmatrix", "vmatrix", "cases", "center", "enumerate",
     "itemize", "tabular", "align", "align*", "equation", "equation*",
-    "split", "matrix", "document", "tikzpicture", "scope", "verbatim",
+    "split", "matrix", "document", "tikzpicture", "scope", "verbatim", "axis",
 }
 
 

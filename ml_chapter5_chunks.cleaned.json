@@ -1,0 +1,362 @@
+[
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "definition",
+    "title": "Ensemble Learning",
+    "content": "Ensemble learning combines the predictions of several individual models called base learners into one combined prediction. Instead of relying on a single classifier, a committee of base learners is trained, and their outputs are combined by majority vote for classification or by averaging for regression, to produce a final prediction that is usually more accurate than any single base learner alone.\n\nThis is the same idea as asking several people for their opinion and going with the majority answer, rather than trusting only one person's judgment."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "example",
+    "title": "Example 5.1 --- Majority Vote with Three Classifiers",
+    "content": "Three trained classifiers predict the class of a new patient as: $M_1=$ Sick, $M_2=$ Sick, $M_3=$ Healthy. Combine these using majority vote.\n\nSolution:\nCount the votes for each class.\n$$\\begin{align*}\n\\text{Votes for Sick} &= 2 \\\\\n\\text{Votes for Healthy} &= 1\n\\end{align*}$$\nSick has more votes.\n\\boxed{\\text{Final prediction: Sick}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "example",
+    "title": "Example 5.2 --- Majority Vote with Five Classifiers",
+    "content": "Five trained classifiers predict the class of a new email as: Spam, NotSpam, Spam, Spam, NotSpam. Combine these using majority vote.\n\nSolution:\n$$\\begin{align*}\n\\text{Votes for Spam} &= 3 \\\\\n\\text{Votes for NotSpam} &= 2\n\\end{align*}$$\nSpam has more votes.\n\\boxed{\\text{Final prediction: Spam}}\nAn odd number of classifiers is often chosen for a two-class problem, for the same reason an odd $k$ is preferred in k-NN (Section 3.4): it prevents an exact tie in the vote."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "example",
+    "title": "Example 5.3 --- Averaging Predictions for Regression",
+    "content": "Three regression models predict the price of a house (in lakhs) as: $M_1=50$, $M_2=54$, $M_3=52$. Combine these using averaging.\n\nSolution:\n$$\\begin{align*}\n\\text{Combined prediction} &= \\frac{M_1+M_2+M_3}{3} \\\\\n&= \\frac{50+54+52}{3} = \\frac{156}{3}\n\\end{align*}$$\n\\boxed{\\text{Final prediction} = 52 \\text{ lakhs}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "keypoint",
+    "title": "Combining Rules: enumerate[leftmargin=2em,itemsep=4pt] Classification: combine by",
+    "content": "Combining Rules:\n\n1. Classification: combine by majority vote (the class chosen by the most base learners), as in Examples 5.1 and 5.2\n2. Regression: combine by averaging the numeric predictions, as in Example 5.3\n3. Every base learner contributes equally in a simple vote or average; some advanced ensembles instead use a weighted vote, giving more trusted learners more influence\n\n\\subsection{Why Ensembles Work}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "theorem",
+    "title": "Conditions for an Ensemble to Improve on a Single Classifier",
+    "content": "1. Each base learner must be better than random guessing on its own \\hfill(accuracy $p>0.5$ for a two-class problem)\n2. The base learners' mistakes should be as independent (diverse) as possible \\hfill(errors should not all happen on the same examples)\n3. If both conditions hold, combining by majority vote gives higher accuracy than any single base learner\n\nThis connects directly to probability: if each of 3 independent classifiers is correct with probability $p$, the ensemble is correct whenever a majority (2 or more) is correct, which is a binomial probability calculation."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "example",
+    "title": "Example 5.4 --- Ensemble Accuracy When Base Learners Beat Random Guessing",
+    "content": "Three independent classifiers each have accuracy $p=0.7$. Assuming their errors are independent, compute the accuracy of the majority-vote ensemble.\n\nSolution:\nThe ensemble is correct if all 3 are correct, or exactly 2 out of 3 are correct.\n$$\\begin{align*}\nP(\\text{all 3 correct}) &= p^3 = (0.7)^3 = 0.343 \\\\\nP(\\text{exactly 2 correct}) &= \\binom{3}{2}p^2(1-p) = 3(0.49)(0.3) = 0.441 \\\\[4pt]\nP(\\text{ensemble correct}) &= 0.343+0.441\n\\end{align*}$$\n\\boxed{P(\\text{ensemble correct}) = 0.784}\nThe ensemble's accuracy ($78.4\\%$) is higher than any single classifier's accuracy ($70\\%$)."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "example",
+    "title": "Example 5.5 --- Smaller Improvement",
+    "content": "Three independent classifiers each have accuracy $p=0.6$. Compute the accuracy of the majority-vote ensemble.\n\nSolution:\n$$\\begin{align*}\nP(\\text{all 3 correct}) &= (0.6)^3 = 0.216 \\\\\nP(\\text{exactly 2 correct}) &= \\binom{3}{2}(0.6)^2(0.4) = 3(0.36)(0.4) = 0.432 \\\\[4pt]\nP(\\text{ensemble correct}) &= 0.216+0.432\n\\end{align*}$$\n\\boxed{P(\\text{ensemble correct}) = 0.648}\nThe improvement is smaller here ($60\\%\\to64.8\\%$) than in Example 5.4 ($70\\%\\to78.4\\%$), showing that stronger base learners give the ensemble more to work with."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "example",
+    "title": "Example 5.6 --- Ensembling Classifiers Worse than Random Guessing",
+    "content": "Three independent classifiers each have accuracy $p=0.4$ (worse than random guessing). Compute the accuracy of the majority-vote ensemble.\n\nSolution:\n$$\\begin{align*}\nP(\\text{all 3 correct}) &= (0.4)^3 = 0.064 \\\\\nP(\\text{exactly 2 correct}) &= \\binom{3}{2}(0.4)^2(0.6) = 3(0.16)(0.6) = 0.288 \\\\[4pt]\nP(\\text{ensemble correct}) &= 0.064+0.288\n\\end{align*}$$\n\\boxed{P(\\text{ensemble correct}) = 0.352}\nHere the ensemble accuracy ($35.2\\%$) is even worse than a single classifier's accuracy ($40\\%$). This confirms Property 1 of the theorembox above: if the base learners are not better than random guessing, combining them does not help and can make things worse. ✓"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Introduction to Ensemble Learning",
+    "type": "keypoint",
+    "title": "The Two Ingredients an Ensemble Needs:",
+    "content": "The Two Ingredients an Ensemble Needs:\n\n1. Accuracy: each base learner must individually beat random guessing (Examples 5.4 to 5.6 show the ensemble amplifies whatever the base learners already have — good or bad)\n2. Diversity: the base learners should make different mistakes; if every base learner is wrong on exactly the same examples, majority vote gives no benefit at all, since diversity is what allows correct learners to outvote a mistaken one\n3. The next two sections cover two different strategies for building a diverse committee of base learners: Bagging (Section 5.2) trains learners in parallel on different random samples of the data, and Boosting (Section 5.3) trains learners in sequence, each one focusing on the previous learner's mistakes"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "definition",
+    "title": "Bootstrap Sample",
+    "content": "A bootstrap sample is formed by drawing $n$ examples with replacement from an original training set of size $n$. Because the same example can be picked more than once, a bootstrap sample usually contains repeated examples and leaves some original examples out entirely, even though its total size still equals $n$.\n\nThis is the same \"draw, note it down, put it back, draw again\" idea as drawing a card from a deck, recording it, and returning it before the next draw."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "example",
+    "title": "Example 5.7 --- Drawing a Bootstrap Sample",
+    "content": "An original training set has 5 examples: $X_1,X_2,X_3,X_4,X_5$. A bootstrap sample is drawn and turns out to be $X_2,X_2,X_4,X_1,X_4$. Identify which original examples are repeated and which are left out.\n\nSolution:\nCount how many times each original example appears in the bootstrap sample.\n| \\toprule Example | Times Selected |\n|---|---|\n| \\midrule $X_1$ | 1 |\n| $X_2$ | 2 |\n| $X_3$ | 0 |\n| $X_4$ | 2 |\n| $X_5$ | 0 |\n| \\bottomrule |  |\n\\boxed{\\text{Repeated: } X_2, X_4 \\qquad \\text{Left out: } X_3, X_5}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "example",
+    "title": "Example 5.8 --- Probability a Point Is Left Out (n=4)",
+    "content": "An original training set has $n=4$ examples. One example, $X_1$, is drawn from this set 4 times, with replacement, to build one bootstrap sample. Compute the probability that $X_1$ is never selected.\n\nSolution:\nEach single draw avoids $X_1$ with probability $\\dfrac{n-1}{n}=\\dfrac{3}{4}$, and the 4 draws are independent.\n$$\\begin{align*}\nP(X_1 \\text{ never selected}) &= \\left(\\frac{3}{4}\\right)^4 \\\\\n&= \\frac{81}{256}\n\\end{align*}$$\n\\boxed{P \\approx 0.316}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "example",
+    "title": "Example 5.9 --- Probability a Point Is Left Out (n=5)",
+    "content": "Repeat Example 5.8 for an original training set of size $n=5$, drawn 5 times with replacement.\n\nSolution:\n$$\\begin{align*}\nP(X_1 \\text{ never selected}) &= \\left(\\frac{4}{5}\\right)^5 \\\\\n&= \\frac{1024}{3125}\n\\end{align*}$$\n\\boxed{P \\approx 0.328}\nComparing Examples 5.8 and 5.9, the probability is rising slowly toward a fixed value as $n$ grows. In fact $\\left(1-\\frac{1}{n}\\right)^n \\to e^{-1} \\approx 0.368$ as $n$ becomes large."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "keypoint",
+    "title": "The 63.2 / 36.8 Rule: enumerate[leftmargin=2em,itemsep=4pt]",
+    "content": "The 63.2 / 36.8 Rule:\n\n1. As $n$ grows large, about $63.2\\%$ of the original examples appear at least once in a bootstrap sample\n2. The remaining $36.8\\%$ are left out of that particular bootstrap sample entirely\n3. These left-out examples are called out-of-bag (OOB) examples for that sample, and are used again in Section 5.2.2\n\n\\subsection{The Bagging Algorithm}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "definition",
+    "title": "Bagging",
+    "content": "Bagging (short for Bootstrap Aggregating) trains $B$ base learners independently, each on its own separate bootstrap sample drawn from the same original training set. The $B$ trained models are then combined exactly as in Section 5.1: by majority vote for classification, or by averaging for regression."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "algorithm",
+    "title": "Bagging Algorithm",
+    "content": "Input: training set of $n$ examples, number of bootstrap samples $B$, a base learning algorithm\n\nOutput: $B$ trained models and a combined prediction rule\n\n1. For $b=1$ to $B$: draw a bootstrap sample $S_b$ of size $n$, with replacement, from the training set.\n2. Train a base learner $M_b$ using only $S_b$.\n3. Repeat steps 1 to 2 until all $B$ models are trained.\n4. For a new test point, obtain a prediction from every model $M_1,\\ldots,M_B$.\n5. Combine the $B$ predictions by majority vote (classification) or by averaging (regression).\n6. Return the combined prediction."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "example",
+    "title": "Example 5.10 --- Combining Bagged Classifiers",
+    "content": "Five decision trees, each trained on a different bootstrap sample, predict the class of a new patient as: Sick, Sick, Healthy, Sick, Healthy. Give the bagging prediction.\n\nSolution:\n$$\\begin{align*}\n\\text{Votes for Sick} &= 3 \\\\\n\\text{Votes for Healthy} &= 2\n\\end{align*}$$\nSick has the majority.\n\\boxed{\\text{Bagging prediction: Sick}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "example",
+    "title": "Example 5.11 --- Combining Bagged Regression Trees",
+    "content": "Four regression trees, each trained on a different bootstrap sample, predict a house price (lakhs) as: 48, 52, 50, 54. Give the bagging prediction.\n\nSolution:\n$$\\begin{align*}\n\\text{Combined prediction} &= \\frac{48+52+50+54}{4} \\\\\n&= \\frac{204}{4}\n\\end{align*}$$\n\\boxed{52 \\text{ lakhs}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "example",
+    "title": "Example 5.12 --- Identifying Out-of-Bag Points",
+    "content": "An original training set has 6 examples $X_1,\\ldots,X_6$. One bootstrap sample drawn for model $M_1$ is: $X_3,X_1,X_3,X_6,X_1,X_3$. List the out-of-bag examples for $M_1$.\n\nSolution:\nSelected examples: $X_1$ (yes), $X_2$ (no), $X_3$ (yes), $X_4$ (no), $X_5$ (no), $X_6$ (yes).\n\\boxed{\\text{OOB for } M_1: X_2, X_4, X_5}\nThese 3 out-of-bag points can be used to test $M_1$'s accuracy without needing a separate validation set, since $M_1$ never saw them during training."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Bagging",
+    "type": "keypoint",
+    "title": "Why Bagging Helps: enumerate[leftmargin=2em,itemsep=4pt] Each bootstrap",
+    "content": "Why Bagging Helps:\n\n1. Each bootstrap sample is slightly different, so the $B$ trained models make different mistakes — the diversity condition from Section 5.1.2\n2. Bagging works best with unstable, high-variance base learners such as deep, unpruned decision trees, since small changes in the training set noticeably change such a tree\n3. Random Forest is bagging applied to decision trees, with one extra twist: at each split, only a random subset of attributes is even considered, which further increases diversity between the trees"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "definition",
+    "title": "Boosting",
+    "content": "Boosting trains base learners sequentially, one after another, rather than independently in parallel like bagging. Each new base learner is trained to pay more attention to the examples that previous learners got wrong, by increasing the weight of misclassified examples. The final prediction is a weighted vote of all the base learners, where more accurate learners get a bigger say.\n\nUnlike bagging, where every bootstrap sample is drawn independently and every model counts equally, boosting builds each model specifically to fix the previous model's mistakes, and trusts more accurate models more when voting.\n\n\\subsection{Example Weights and Model Weight (AdaBoost-Style)}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "definition",
+    "title": "Example Weight Update",
+    "content": "Every training example starts with equal weight $w_i = \\frac{1}{n}$. After each base learner $M_t$ is trained, examples it misclassified have their weight increased, and examples it classified correctly have their weight decreased (or left relatively smaller after renormalizing), so the next learner is forced to focus more on the hard, previously misclassified examples."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "definition",
+    "title": "Model (Voting) Weight",
+    "content": "Each trained base learner $M_t$ is given a voting weight $\\alpha_t$ based on its (weighted) error rate $\\epsilon_t$ on the data it was trained on:\n\\[\n\\alpha_t = \\frac{1}{2}\\ln\\left(\\frac{1-\\epsilon_t}{\\epsilon_t}\\right)\n\\]\nA lower error rate $\\epsilon_t$ produces a larger $\\alpha_t$, meaning a more accurate base learner gets more say in the final weighted vote.\n\nThis mirrors the ensemble-accuracy calculations of Section 5.1.2: a base learner that is far better than random guessing ($\\epsilon_t$ close to $0$) deserves much more influence than one that is barely better than a coin flip ($\\epsilon_t$ close to $0.5$)."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "algorithm",
+    "title": "Boosting Algorithm (AdaBoost-Style)",
+    "content": "Input: training set of $n$ examples, number of rounds $T$, a base learning algorithm\n\nOutput: $T$ trained models $M_1,\\ldots,M_T$ with voting weights $\\alpha_1,\\ldots,\\alpha_T$\n\n1. Initialize every example's weight to $w_i = \\dfrac{1}{n}$.\n2. For $t=1$ to $T$: train base learner $M_t$ on the training set using the current example weights.\n3. Compute $M_t$'s weighted error rate $\\epsilon_t$ (the total weight of the examples it misclassified).\n4. Compute the model's voting weight $\\alpha_t = \\dfrac{1}{2}\\ln\\left(\\dfrac{1-\\epsilon_t}{\\epsilon_t}\\right)$.\n5. Increase the weight of every example $M_t$ misclassified, and decrease the weight of every example it classified correctly; then renormalize all weights to sum to $1$.\n6. Repeat steps 2 to 5 for all $T$ rounds.\n7. For a new test point, combine all $T$ predictions using a weighted vote: $\\displaystyle\\sum_t \\alpha_t \\cdot [\\text{prediction of } M_t]$.\n8. Return the combined prediction."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "example",
+    "title": "Example 5.13 --- Computing Voting Weight from Error Rate",
+    "content": "A base learner $M_1$ has weighted error rate $\\epsilon_1=0.2$. Compute its voting weight $\\alpha_1$. (Use $\\ln 4 \\approx 1.386$.)\n\nSolution:\n$$\\begin{align*}\n\\alpha_1 &= \\frac{1}{2}\\ln\\left(\\frac{1-0.2}{0.2}\\right) = \\frac{1}{2}\\ln\\left(\\frac{0.8}{0.2}\\right) = \\frac{1}{2}\\ln(4)\n\\end{align*}$$\n\\boxed{\\alpha_1 \\approx 0.693}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "example",
+    "title": "Example 5.14 --- Voting Weight for a Weaker Learner",
+    "content": "A base learner $M_2$ has weighted error rate $\\epsilon_2=0.4$. Compute its voting weight $\\alpha_2$. (Use $\\ln 1.5 \\approx 0.405$.)\n\nSolution:\n$$\\begin{align*}\n\\alpha_2 &= \\frac{1}{2}\\ln\\left(\\frac{1-0.4}{0.4}\\right) = \\frac{1}{2}\\ln\\left(\\frac{0.6}{0.4}\\right) = \\frac{1}{2}\\ln(1.5)\n\\end{align*}$$\n\\boxed{\\alpha_2 \\approx 0.203}\nComparing to Example 5.13: $M_1$ (error $0.2$) receives a much higher voting weight $\\alpha_1\\approx0.693$ than $M_2$ (error $0.4$) with $\\alpha_2\\approx0.203$, exactly as expected from the definition — the more accurate learner earns more influence."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "example",
+    "title": "Example 5.15 --- Combining Weighted Votes",
+    "content": "Three trained learners predict the class of a new example as: $M_1=+1$ (with $\\alpha_1=0.8$), $M_2=-1$ (with $\\alpha_2=0.5$), $M_3=+1$ (with $\\alpha_3=0.3$). Compute the final weighted-vote prediction.\n\nSolution:\nSum the voting weights separately for each predicted class.\n$$\\begin{align*}\n\\text{Weight for } +1 &= \\alpha_1+\\alpha_3 = 0.8+0.3 = 1.1 \\\\\n\\text{Weight for } -1 &= \\alpha_2 = 0.5\n\\end{align*}$$\nSince $1.1 > 0.5$:\n\\boxed{\\text{Final prediction: } +1}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "keypoint",
+    "title": "Bagging vs Boosting: center tabular@p2.6cmp4.6cmp4.6cm@ Aspect",
+    "content": "Bagging vs Boosting:\n| \\toprule Aspect | Bagging | Boosting |\n|---|---|---|\n| \\midrule Training order | Parallel, independent | Sequential, each depends on the last |\n| Sampling | Bootstrap (random, with replacement) | Full data, but example weights change each round |\n| Combining | Simple majority vote / average | Weighted vote using each $\\alpha_t$ |\n| Main goal | Reduce variance | Reduce bias (and variance) |\n| Best base learner | High-variance (deep trees) | Weak learner (shallow trees, \"stumps\") |\n| Risk | Less prone to overfitting | Can overfit if run for too many rounds |\n| \\bottomrule |  |  |"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Boosting",
+    "type": "example",
+    "title": "Example 5.16 --- Tracing Example Weight Changes Across One Round",
+    "content": "Four training examples start with equal weight $w_i=0.25$. Base learner $M_1$ misclassifies $X_2$ and $X_4$, and correctly classifies $X_1$ and $X_3$. If misclassified examples have their weight doubled and correctly classified examples have their weight halved, find the new weights before renormalization, and then the renormalized weights.\n\nSolution:\n$$\\begin{align*}\nw_1' &= 0.25\\times0.5 = 0.125 \\ (\\text{correct}) \\\\\nw_2' &= 0.25\\times2 = 0.5 \\ (\\text{misclassified}) \\\\\nw_3' &= 0.25\\times0.5 = 0.125 \\ (\\text{correct}) \\\\\nw_4' &= 0.25\\times2 = 0.5 \\ (\\text{misclassified}) \\\\[4pt]\n\\text{Sum} &= 0.125+0.5+0.125+0.5 = 1.25\n\\end{align*}$$\nRenormalize by dividing each weight by the sum $1.25$:\n$$\\begin{align*}\nw_1'' &= \\frac{0.125}{1.25}=0.1, \\quad w_2'' = \\frac{0.5}{1.25}=0.4, \\quad w_3'' = \\frac{0.125}{1.25}=0.1, \\quad w_4'' = \\frac{0.5}{1.25}=0.4\n\\end{align*}$$\n\\boxed{\\text{New weights: } w_1=0.1,\\ w_2=0.4,\\ w_3=0.1,\\ w_4=0.4}\n$X_2$ and $X_4$ (misclassified) now carry far more weight ($0.4$ each) than $X_1$ and $X_3$ ($0.1$ each), so the next base learner $M_2$ will be trained to focus much more heavily on getting $X_2$ and $X_4$ correct."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 0",
+    "content": "Three trained classifiers predict a new example's class as: Yes, No, Yes. Combine these predictions using majority vote.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "Five regression models predict a car's price (lakhs) as: 12, 14, 13, 15, 11. Combine these predictions using averaging.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "Explain in 2 to 3 lines why an ensemble of classifiers, each with individual accuracy below 50\\%, can end up performing worse than any single classifier.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "Three independent classifiers each have accuracy $p=0.8$. Compute the accuracy of the majority-vote ensemble (correct when all 3, or exactly 2 of 3, are correct).\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "Three independent classifiers each have accuracy $p=0.5$. Compute the accuracy of the majority-vote ensemble, and explain what this result shows about the accuracy condition needed for ensembles to help.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "An original training set has 6 examples $Y_1,\\ldots,Y_6$. A bootstrap sample drawn is: $Y_2,Y_5,Y_2,Y_2,Y_6,Y_5$. List which examples are repeated and which are left out (out-of-bag).\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "For an original training set of size $n=6$, drawn 6 times with replacement to build one bootstrap sample, compute the probability that a specific example $Y_1$ is never selected.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "Four decision trees, each trained on a separate bootstrap sample, predict a new patient's class as: Sick, Healthy, Sick, Sick. Give the bagging prediction.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "Five regression trees trained via bagging predict a house price (lakhs) as: 60, 58, 62, 61, 59. Give the bagging prediction.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "Explain in 2 to 3 lines why bagging works best with high-variance base learners such as deep, unpruned decision trees rather than with already-stable models.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "A base learner has weighted error rate $\\epsilon=0.1$. Compute its voting weight $\\alpha$. (Use $\\ln 9 \\approx 2.197$.)\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "A base learner has weighted error rate $\\epsilon=0.5$. Compute its voting weight $\\alpha$, and explain in one line what this result means for how much this learner should be trusted in the final vote.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "Four boosted learners predict a new example's class with the following (prediction, voting weight) pairs: $(+1, 0.6)$, $(-1, 0.9)$, $(+1, 0.4)$, $(-1, 0.3)$. Compute the final weighted-vote prediction.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "Three training examples start with equal weight $w_i=\\frac{1}{3}$. A base learner misclassifies only $X_2$. If the misclassified example's weight is tripled and the correctly classified examples' weights are left unchanged, find the renormalized weights for all three examples.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 5 - Ensemble Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "List three differences between Bagging and Boosting, covering training order, how each new base learner is influenced by earlier ones, and how their final predictions are combined."
+  }
+]

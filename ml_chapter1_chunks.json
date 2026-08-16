@@ -1,0 +1,442 @@
+[
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "definition",
+    "title": "Machine Learning",
+    "content": "Machine Learning is the field of study that gives computer programs the ability to learn patterns directly from data and improve their performance on a task through experience, rather than being explicitly programmed with a fixed set of rules. Formally, a program is said to \\textbf{learn} from experience $E$ with respect to a task $T$ and a performance measure $P$, if its performance on $T$, as measured by $P$, improves with experience $E$.\n\nThis is similar to fitting a curve through a set of sample points in algebra: the ``curve\" (model) is not fixed in advance, it is shaped by the data points (experience) themselves.\n\n\\begin{center}\n\\begin{tikzpicture}[\n  every node/.style={font=\\small},\n  box/.style={rectangle,rounded corners,draw=primaryblue,thick,fill=primaryblue!8,minimum width=2.4cm,minimum height=0.9cm,align=center}\n]\n\\node[box] (data) at (0,0) {Experience\\\\ (Data)};\n\\node[box] (algo) at (3.6,0) {Learning\\\\ Algorithm};\n\\node[box] (model) at (7.2,0) {Model};\n\\node[box] (pred) at (10.8,0) {Predictions};\n\\draw[->,thick] (data) -- (algo);\n\\draw[->,thick] (algo) -- (model);\n\\draw[->,thick] (model) -- (pred);\n\\draw[->,thick] (pred.south) .. controls (10.8,-1.3) and (0,-1.3) .. node[below,font=\\scriptsize]{performance feedback improves the model} (data.south);\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.1 --- A Fixed Celsius to Fahrenheit Conversion",
+    "content": "A program always converts temperature using the fixed formula $F = \\frac{9}{5}C+32$, regardless of any data it is given. Is this program an example of Machine Learning?\n\n\\textbf{Solution:}\nThe program applies the same fixed rule every time and never changes its behaviour based on experience. There is no data-driven improvement in performance.\\\\\n\\boxed{\\text{No, this is traditional programming, not Machine Learning}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.2 --- Predicting House Prices from Past Sales",
+    "content": "A program studies thousands of past house sale records (size, location, price) and uses the patterns found in them to predict the price of a new house; its predictions get more accurate as more sale records are added. Is this program an example of Machine Learning?\n\n\\textbf{Solution:}\nThe program has an experience $E$ (past sale records), a task $T$ (predicting price), and a performance measure $P$ (prediction accuracy), and $P$ improves as $E$ grows.\n\\boxed{\\text{Yes, this satisfies the formal definition of Machine Learning}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.3 --- A Spam Filter That Learns from User Feedback",
+    "content": "An email program starts by flagging very few emails as spam. Every time a user manually marks an email as spam or not-spam, the program updates itself, and over time it correctly flags spam more often. Is this program an example of Machine Learning?\n\n\\textbf{Solution:}\nThe program's experience $E$ is the set of user-marked emails, its task $T$ is classifying new emails, and its performance $P$ (fraction of emails correctly classified) improves as $E$ grows.\n\\boxed{\\text{Yes, this is Machine Learning}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "keypoint",
+    "title": "Traditional Programming vs Machine Learning: enumerate[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{Traditional Programming vs Machine Learning:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item \\textbf{Traditional programming:} a human writes explicit rules; the same input always produces the same output through the same fixed logic (Example 1.1)\n\\item \\textbf{Machine Learning:} the program is shown data (experience) and learns the rules or patterns itself; performance improves as more data is seen (Examples 1.2, 1.3)\n\\item The key test is always the same: is there an experience $E$ that, when increased, improves a measurable performance $P$ on a task $T$?\n\\end{enumerate}\n\n\\subsection{Well-Posed Learning Problems}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "definition",
+    "title": "Well-Posed Learning Problem",
+    "content": "A learning problem is precisely defined, or \\textbf{well-posed}, once three components are clearly identified:\n\\begin{itemize}[leftmargin=1.5em]\n\\item \\textbf{Task $T$:} the specific job the program is learning to perform.\n\\item \\textbf{Performance measure $P$:} a measurable quantity that tells us how well the program is doing at $T$.\n\\item \\textbf{Experience $E$:} the data or interaction the program learns from.\n\\end{itemize}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.4 --- Formulating T P E for a Handwriting Recognizer",
+    "content": "A program is being built to recognize hand-written digits (0 to 9) from scanned images, and it is given a large collection of digit images that are already labeled with the correct digit. Identify $T$, $P$, and $E$.\n\n\\textbf{Solution:}\n\\begin{align*}\nT &: \\text{recognizing and classifying hand-written digits in new images} \\\\\nP &: \\text{percentage of digits correctly classified} \\\\\nE &: \\text{a collection of digit images with known correct labels}\n\\end{align*}\n\\boxed{T,P,E \\text{ identified as above}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.5 --- Formulating T P E for a Checkers-Playing Program",
+    "content": "A program is being built to play the game of checkers, and it improves by playing many practice games against itself and recording which moves led to wins. Identify $T$, $P$, and $E$.\n\n\\textbf{Solution:}\n\\begin{align*}\nT &: \\text{choosing which move to play in a game of checkers} \\\\\nP &: \\text{percentage of games won against opponents} \\\\\nE &: \\text{a large number of self-played practice games}\n\\end{align*}\n\\boxed{T,P,E \\text{ identified as above}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.6 --- Formulating T P E for a Customer Support Chatbot",
+    "content": "A chatbot is being built to answer customer questions, and it is given a large set of past conversations along with a rating (helpful or not helpful) that customers gave to each chatbot reply. Identify $T$, $P$, and $E$.\n\n\\textbf{Solution:}\n\\begin{align*}\nT &: \\text{generating a reply to a customer's question} \\\\\nP &: \\text{percentage of replies rated helpful by customers} \\\\\nE &: \\text{past conversations together with their helpfulness ratings}\n\\end{align*}\n\\boxed{T,P,E \\text{ identified as above}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "keypoint",
+    "title": "Quick Checklist for T P E:",
+    "content": "\\textbf{Quick Checklist for T P E:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item $T$ is always an \\textbf{action or decision} the program performs (classify, predict, choose a move, generate a reply)\n\\item $P$ is always something you could actually \\textbf{count or measure} (a percentage, an error rate, a score)\n\\item $E$ is always the \\textbf{raw material} the program is trained on (labeled data, self-play games, past interactions)\n\\end{enumerate}\n\n\\subsection{Types of Machine Learning}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "theorem",
+    "title": "Types of Machine Learning",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item \\textbf{Supervised Learning:} trained on examples that already have the correct output (label) attached; the goal is to predict the output for new, unseen inputs \\hfill\\textit{(labeled data, Chapter 2)}\n\\item \\textbf{Unsupervised Learning:} trained on examples with no labels at all; the goal is to discover natural structure or groupings in the data \\hfill\\textit{(no labels, Chapter 3)}\n\\item \\textbf{Reinforcement Learning:} an agent learns by interacting with an environment and receiving reward signals for its actions, rather than being shown correct answers directly \\hfill\\textit{(reward-driven, Chapter 4)}\n\\item \\textbf{Semi-Supervised Learning:} trained on a small labeled set together with a larger unlabeled set, combining ideas from both supervised and unsupervised learning \\hfill\\textit{(partial labels, Chapter 4)}\n\\end{enumerate}\n\n\\begin{center}\n\\begin{tikzpicture}[\n  every node/.style={font=\\small},\n  root/.style={rectangle,rounded corners,draw=primaryblue,thick,fill=primaryblue!8,minimum width=2.6cm,minimum height=0.9cm,align=center},\n  leaf/.style={rectangle,rounded corners,draw=accentorange,thick,fill=accentorange!10,minimum width=2.4cm,minimum height=0.8cm,align=center,font=\\scriptsize}\n]\n\\node[root] (ml) at (5,2.4) {Machine Learning};\n\\node[leaf] (sup) at (0,0)   {Supervised\\\\ (labeled data)};\n\\node[leaf] (uns) at (3.4,0) {Unsupervised\\\\ (no labels)};\n\\node[leaf] (rl)  at (6.8,0) {Reinforcement\\\\ (reward signal)};\n\\node[leaf] (semi) at (10.2,0) {Semi-Supervised\\\\ (partial labels)};\n\\draw[->,thick] (ml) -- (sup);\n\\draw[->,thick] (ml) -- (uns);\n\\draw[->,thick] (ml) -- (rl);\n\\draw[->,thick] (ml) -- (semi);\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.7 --- Classifying a Learning Scenario (Labeled Emails)",
+    "content": "A dataset contains 500 emails, and every single email is already marked Spam or NotSpam. A program is trained on this dataset to classify future emails. Which type of Machine Learning is this?\n\n\\textbf{Solution:}\nEvery example has a known label (Spam or NotSpam) attached, and the program is trained directly on these input-output pairs.\n\\boxed{\\text{Supervised Learning}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.8 --- Classifying a Learning Scenario (Unlabeled Purchases)",
+    "content": "A store has 10,000 customer purchase records with no labels of any kind, and wants to discover natural groups of customers with similar buying habits. Which type of Machine Learning is this?\n\n\\textbf{Solution:}\nThere are no labels anywhere in the data; the goal is purely to discover structure (groups) in the data itself.\n\\boxed{\\text{Unsupervised Learning}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "example",
+    "title": "Example 1.9 --- Classifying a Learning Scenario (A Game-Playing Robot)",
+    "content": "A robot arm learns to stack blocks by trying different movements; it receives a positive reward when a block is stacked successfully and a negative reward when a block falls, with no example of the \"correct\" movement ever given directly. Which type of Machine Learning is this?\n\n\\textbf{Solution:}\nThe robot learns purely through trial-and-error interaction with its environment, guided only by reward and penalty signals, not by labeled examples.\n\\boxed{\\text{Reinforcement Learning}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Introduction to Machine Learning",
+    "type": "keypoint",
+    "title": "Distinguishing the Four Types at a",
+    "content": "\\textbf{Distinguishing the Four Types at a Glance:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Ask first: \\textbf{does every example have a label?} If yes $\\to$ Supervised. If none do $\\to$ Unsupervised.\n\\item Ask: \\textbf{are only some examples labeled?} If a small labeled portion is combined with a larger unlabeled portion $\\to$ Semi-Supervised.\n\\item Ask: \\textbf{is there an agent taking actions and receiving rewards over time}, rather than a fixed dataset at all? If yes $\\to$ Reinforcement Learning.\n\\item These four categories map directly onto Chapters 2 through 4 of these notes, and set up exactly the kind of learning problem studied in the rest of this chapter: Concept Learning (Section 1.2) is a form of supervised learning.\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "definition",
+    "title": "Concept Learning",
+    "content": "Concept learning is the task of inferring a boolean-valued target function (a \\textbf{concept}, such as \"EnjoySport = Yes\") from a set of training examples, each described by attribute values and labeled as a positive or negative instance of the concept. The learner searches through a space of candidate \\textbf{hypotheses} to find one that best explains the training examples."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "definition",
+    "title": "Hypothesis Representation",
+    "content": "A hypothesis $h$ is written as a conjunction (AND) of constraints on each attribute, $h = \\langle c_1, c_2, \\ldots, c_n \\rangle$, where each constraint $c_i$ is one of:\n\\begin{itemize}[leftmargin=1.5em]\n\\item a \\textbf{specific value} (e.g. Sunny) --- the attribute must equal exactly this value\n\\item \\textbf{\"?\"} --- any value of this attribute is acceptable\n\\item \\textbf{\"$\\varnothing$\"} --- no value of this attribute is acceptable (this hypothesis rejects every instance)\n\\end{itemize}\nAn instance $x$ \\textbf{satisfies} $h$ if, for every attribute, $x$'s value matches $h$'s constraint or the constraint is \"?\".\n\nThis is the same idea as a compound logical condition with AND, where each attribute either must match exactly, is left unrestricted, or makes the whole condition impossible to satisfy."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.10 --- Checking Instance Satisfaction (Specific Hypothesis)",
+    "content": "Let $h = \\langle \\text{Sunny}, \\text{Warm} \\rangle$ over attributes $\\langle \\text{Sky}, \\text{AirTemp} \\rangle$. Does the instance $x=(\\text{Sunny},\\text{Warm})$ satisfy $h$? Does $x=(\\text{Rainy},\\text{Warm})$ satisfy $h$?\n\n\\textbf{Solution:}\nFor $x=(\\text{Sunny},\\text{Warm})$: Sky matches (Sunny = Sunny) and AirTemp matches (Warm = Warm).\n\\boxed{x=(\\text{Sunny},\\text{Warm}) \\text{ satisfies } h}\nFor $x=(\\text{Rainy},\\text{Warm})$: Sky does not match (Rainy $\\ne$ Sunny).\n\\boxed{x=(\\text{Rainy},\\text{Warm}) \\text{ does not satisfy } h}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.11 --- Checking Instance Satisfaction (Hypothesis with a \"?\")",
+    "content": "Let $h = \\langle \\text{Sunny}, ? \\rangle$. Does $x=(\\text{Sunny},\\text{Cold})$ satisfy $h$? Does $x=(\\text{Rainy},\\text{Cold})$ satisfy $h$?\n\n\\textbf{Solution:}\nFor $x=(\\text{Sunny},\\text{Cold})$: Sky matches (Sunny = Sunny); AirTemp constraint is \"?\", so any value is accepted.\n\\boxed{x=(\\text{Sunny},\\text{Cold}) \\text{ satisfies } h}\nFor $x=(\\text{Rainy},\\text{Cold})$: Sky does not match (Rainy $\\ne$ Sunny), so the \"?\" on AirTemp does not matter.\n\\boxed{x=(\\text{Rainy},\\text{Cold}) \\text{ does not satisfy } h}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.12 --- Checking Instance Satisfaction",
+    "content": "Let $h_1 = \\langle ?, ? \\rangle$ and $h_2 = \\langle \\varnothing, \\varnothing \\rangle$. Does $x=(\\text{Rainy},\\text{Cold})$ satisfy $h_1$? Does it satisfy $h_2$?\n\n\\textbf{Solution:}\nFor $h_1 = \\langle ?, ? \\rangle$: every attribute constraint is \"?\", so every instance is accepted.\n\\boxed{x \\text{ satisfies } h_1 \\text{ (in fact every possible instance satisfies } h_1\\text{)}}\nFor $h_2 = \\langle \\varnothing, \\varnothing \\rangle$: the constraint $\\varnothing$ rejects every value.\n\\boxed{x \\text{ does not satisfy } h_2 \\text{ (no instance ever satisfies } h_2\\text{)}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "keypoint",
+    "title": "Reading Hypothesis Constraints: enumerate[leftmargin=2em,itemsep=4pt] A specific",
+    "content": "\\textbf{Reading Hypothesis Constraints:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item A \\textbf{specific value} constraint accepts only instances matching that exact value\n\\item \\textbf{\"?\"} accepts every value of that attribute --- the least restrictive constraint\n\\item \\textbf{\"$\\varnothing$\"} accepts no value of that attribute --- the most restrictive constraint, making the whole hypothesis reject everything\n\\item $h = \\langle ?, ?, \\ldots, ? \\rangle$ is the \\textbf{most general} hypothesis (accepts every instance); $h = \\langle \\varnothing, \\varnothing, \\ldots, \\varnothing \\rangle$ is the \\textbf{most specific} hypothesis (accepts no instance)\n\\end{enumerate}\n\n\\subsection{General-to-Specific Ordering of Hypotheses}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "definition",
+    "title": "More-General-Than-Or-Equal-To Relation",
+    "content": "For two hypotheses $h_j$ and $h_k$ defined over the same attributes, $h_j$ is more-general-than-or-equal-to $h_k$, written $h_j \\ge_g h_k$, if every instance that satisfies $h_k$ also satisfies $h_j$. If in addition some instance satisfies $h_j$ but not $h_k$, then $h_j$ is \\textbf{strictly} more general than $h_k$, written $h_j >_g h_k$.\n\nThis is the same idea as a subset relation: $h_j \\ge_g h_k$ means the set of instances accepted by $h_k$ is a subset of the set of instances accepted by $h_j$."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "theorem",
+    "title": "Properties of the General-to-Specific Ordering",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item The relation $\\ge_g$ is a \\textbf{partial order}: not every pair of hypotheses is comparable \\hfill\\textit{(some pairs are incomparable)}\n\\item $\\langle ?,?,\\ldots,? \\rangle$ is more general than (or equal to) every hypothesis in $H$ \\hfill\\textit{(top of the ordering)}\n\\item $\\langle \\varnothing,\\varnothing,\\ldots,\\varnothing \\rangle$ is more specific than (or equal to) every hypothesis in $H$ \\hfill\\textit{(bottom of the ordering)}\n\\item Replacing a \"?\" with a specific value, or a specific value with \"$\\varnothing$\", always produces a \\textbf{more specific} hypothesis \\hfill\\textit{(specialization step)}\n\\end{enumerate}\n\n\\begin{center}\n\\begin{tikzpicture}[\n  every node/.style={rectangle,rounded corners,draw=primaryblue,thick,fill=primaryblue!8,align=center,font=\\small,inner sep=5pt},\n  arr/.style={draw,thick,-{Stealth[length=2.5mm]}}\n]\n\\node (top) at (3,3) {$\\langle ?, ? \\rangle$};\n\\node (left) at (0,1.2) {$\\langle \\text{Sunny}, ? \\rangle$};\n\\node (right) at (6,1.2) {$\\langle ?, \\text{Warm} \\rangle$};\n\\node (bot) at (3,-0.6) {$\\langle \\text{Sunny}, \\text{Warm} \\rangle$};\n\\draw[arr] (top) -- (left);\n\\draw[arr] (top) -- (right);\n\\draw[arr] (left) -- (bot);\n\\draw[arr] (right) -- (bot);\n\\node[draw=none,fill=none,font=\\scriptsize] at (8.6,3) {more general};\n\\node[draw=none,fill=none,font=\\scriptsize] at (8.6,-0.6) {more specific};\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.13 --- Comparing a General and a Specific Hypothesis",
+    "content": "Let $h_1 = \\langle \\text{Sunny}, ? \\rangle$ and $h_2 = \\langle \\text{Sunny}, \\text{Warm} \\rangle$, over $\\text{Sky}\\in\\{\\text{Sunny},\\text{Rainy}\\}$ and $\\text{AirTemp}\\in\\{\\text{Warm},\\text{Cold}\\}$. Determine whether $h_1 \\ge_g h_2$.\n\n\\textbf{Solution:}\nList instances satisfying each hypothesis.\n\\begin{align*}\n\\text{Instances satisfying } h_2 &= \\{(\\text{Sunny},\\text{Warm})\\} \\\\\n\\text{Instances satisfying } h_1 &= \\{(\\text{Sunny},\\text{Warm}),\\ (\\text{Sunny},\\text{Cold})\\}\n\\end{align*}\nEvery instance satisfying $h_2$ also satisfies $h_1$.\n\\boxed{h_1 \\ge_g h_2 \\quad (\\text{in fact } h_1 >_g h_2)}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.14 --- Comparing a Hypothesis with \"?\" in a Different Position",
+    "content": "Let $h_1 = \\langle ?, \\text{Warm} \\rangle$ and $h_2 = \\langle \\text{Sunny}, \\text{Warm} \\rangle$. Determine whether $h_1 \\ge_g h_2$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{Instances satisfying } h_2 &= \\{(\\text{Sunny},\\text{Warm})\\} \\\\\n\\text{Instances satisfying } h_1 &= \\{(\\text{Sunny},\\text{Warm}),\\ (\\text{Rainy},\\text{Warm})\\}\n\\end{align*}\nEvery instance satisfying $h_2$ also satisfies $h_1$.\n\\boxed{h_1 \\ge_g h_2 \\quad (\\text{in fact } h_1 >_g h_2)}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.15 --- Two Incomparable Hypotheses",
+    "content": "Let $h_1 = \\langle \\text{Sunny}, ? \\rangle$ and $h_2 = \\langle ?, \\text{Warm} \\rangle$. Determine whether $h_1 \\ge_g h_2$ or $h_2 \\ge_g h_1$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{Instances satisfying } h_1 &= \\{(\\text{Sunny},\\text{Warm}),\\ (\\text{Sunny},\\text{Cold})\\} \\\\\n\\text{Instances satisfying } h_2 &= \\{(\\text{Sunny},\\text{Warm}),\\ (\\text{Rainy},\\text{Warm})\\}\n\\end{align*}\nNeither set contains the other: $(\\text{Sunny},\\text{Cold})$ satisfies $h_1$ but not $h_2$, and $(\\text{Rainy},\\text{Warm})$ satisfies $h_2$ but not $h_1$.\n\\boxed{h_1 \\text{ and } h_2 \\text{ are incomparable --- neither is more general than the other}}\nThis confirms Property 1 of the theorembox above: the ordering is only a \\textit{partial} order, since not every pair of hypotheses can be compared. \\checkmark"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "keypoint",
+    "title": "How to Compare Two Hypotheses: enumerate[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{How to Compare Two Hypotheses:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item List (or imagine) the instances each hypothesis accepts\n\\item If every instance accepted by $h_2$ is also accepted by $h_1$, then $h_1 \\ge_g h_2$\n\\item If neither hypothesis's accepted set contains the other, the two hypotheses are \\textbf{incomparable}\n\\item This ordering is exactly what guides a search through hypothesis space: moving up means generalizing, moving down means specializing\n\\end{enumerate}\n\n\\subsection{The Find-S Algorithm}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "definition",
+    "title": "Find-S",
+    "content": "Find-S is a concept learning algorithm that searches the hypothesis space and outputs the \\textbf{most specific} hypothesis that is consistent with all the \\textbf{positive} training examples. It starts from the most specific hypothesis $\\langle \\varnothing,\\ldots,\\varnothing \\rangle$ and generalizes it, one attribute at a time, only when a positive example is not yet satisfied. Negative examples are completely ignored."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "algorithm",
+    "title": "Find-S Algorithm",
+    "content": "\\textbf{Input:} a set of training examples, each labeled positive or negative\n\n\\textbf{Output:} the most specific hypothesis $h$ consistent with all positive examples\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Initialize $h$ to the most specific hypothesis in $H$: $h = \\langle \\varnothing,\\varnothing,\\ldots,\\varnothing \\rangle$.\n\\item For each training example $x$: if $x$ is negative, ignore it and move to the next example.\n\\item If $x$ is positive, check every attribute constraint in $h$ against $x$.\n\\item For each constraint not satisfied by $x$: if the constraint is $\\varnothing$, replace it with $x$'s value for that attribute; if it is a specific value different from $x$'s value, replace it with \"?\".\n\\item Repeat steps 2 to 4 for every remaining training example.\n\\item Output the final hypothesis $h$.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.16 --- Tracing Find-S on a Weather Dataset",
+    "content": "\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nSky & AirTemp & EnjoySport \\\\\n\\midrule\nSunny & Warm & Yes \\\\\nSunny & Warm & Yes \\\\\nRainy & Cold & No \\\\\nSunny & Cold & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nTrace Find-S on this dataset and give the final hypothesis.\n\n\\textbf{Solution:}\n\\[\nh_0 = \\langle \\varnothing, \\varnothing \\rangle \\quad \\text{(initial, most specific)}\n\\]\n\\textbf{Example 1 (Sunny, Warm, Yes) --- positive:} both constraints are $\\varnothing$, so update each to match.\n\\[\nh_1 = \\langle \\text{Sunny}, \\text{Warm} \\rangle\n\\]\n\\textbf{Example 2 (Sunny, Warm, Yes) --- positive:} already matches $h_1$, no change.\n\\[\nh_2 = \\langle \\text{Sunny}, \\text{Warm} \\rangle\n\\]\n\\textbf{Example 3 (Rainy, Cold, No) --- negative:} Find-S ignores negative examples.\n\\[\nh_3 = h_2 = \\langle \\text{Sunny}, \\text{Warm} \\rangle\n\\]\n\\textbf{Example 4 (Sunny, Cold, Yes) --- positive:} Sky matches (Sunny), but AirTemp does not (Warm $\\ne$ Cold), so generalize AirTemp to \"?\".\n\\[\nh_4 = \\langle \\text{Sunny}, \\, ? \\rangle\n\\]\n\\boxed{\\text{Final hypothesis: } h = \\langle \\text{Sunny}, \\, ? \\rangle}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.17 --- Tracing Find-S on a Fruit Ripeness Dataset",
+    "content": "\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nColor & Size & Ripe \\\\\n\\midrule\nRed & Big & Yes \\\\\nRed & Big & Yes \\\\\nGreen & Small & No \\\\\nRed & Small & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nTrace Find-S on this dataset and give the final hypothesis.\n\n\\textbf{Solution:}\n\\[\nh_0 = \\langle \\varnothing, \\varnothing \\rangle\n\\]\n\\textbf{Example 1 (Red, Big, Yes) --- positive:} update both constraints from $\\varnothing$ to match.\n\\[\nh_1 = \\langle \\text{Red}, \\text{Big} \\rangle\n\\]\n\\textbf{Example 2 (Red, Big, Yes) --- positive:} already matches, no change.\n\\[\nh_2 = \\langle \\text{Red}, \\text{Big} \\rangle\n\\]\n\\textbf{Example 3 (Green, Small, No) --- negative:} ignored.\n\\[\nh_3 = h_2 = \\langle \\text{Red}, \\text{Big} \\rangle\n\\]\n\\textbf{Example 4 (Red, Small, Yes) --- positive:} Color matches (Red), but Size does not (Big $\\ne$ Small), so generalize Size to \"?\".\n\\[\nh_4 = \\langle \\text{Red}, \\, ? \\rangle\n\\]\n\\boxed{\\text{Final hypothesis: } h = \\langle \\text{Red}, \\, ? \\rangle}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "example",
+    "title": "Example 1.18 --- Tracing Find-S to the Most General Hypothesis",
+    "content": "\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nShape & Color & Target \\\\\n\\midrule\nRound & Red & Yes \\\\\nRound & Green & Yes \\\\\nSquare & Red & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nTrace Find-S on this dataset and give the final hypothesis.\n\n\\textbf{Solution:}\n\\[\nh_0 = \\langle \\varnothing, \\varnothing \\rangle\n\\]\n\\textbf{Example 1 (Round, Red, Yes) --- positive:} update both constraints from $\\varnothing$ to match.\n\\[\nh_1 = \\langle \\text{Round}, \\text{Red} \\rangle\n\\]\n\\textbf{Example 2 (Round, Green, Yes) --- positive:} Shape matches (Round), but Color does not (Red $\\ne$ Green), so generalize Color to \"?\".\n\\[\nh_2 = \\langle \\text{Round}, \\, ? \\rangle\n\\]\n\\textbf{Example 3 (Square, Red, Yes) --- positive:} Shape does not match (Round $\\ne$ Square), so generalize Shape to \"?\"; Color is already \"?\", so it stays.\n\\[\nh_3 = \\langle \\, ?, \\, ? \\rangle\n\\]\n\\boxed{\\text{Final hypothesis: } h = \\langle \\, ?, \\, ? \\rangle}\nSince every positive example forced a generalization, Find-S was pushed all the way to the most general hypothesis --- meaning no attribute in this small dataset was restrictive enough to separate positive from negative examples. \\checkmark"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Concept Learning and General-to-Specific Ordering of Hypotheses",
+    "type": "keypoint",
+    "title": "Limitations of Find-S: enumerate[leftmargin=2em,itemsep=4pt] Find-S ignores",
+    "content": "\\textbf{Limitations of Find-S:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Find-S \\textbf{ignores negative examples entirely}, so it cannot detect if the training data is inconsistent (e.g. two identical instances labeled differently)\n\\item Find-S outputs only \\textbf{one} hypothesis (the most specific one consistent with the positives); it cannot tell us whether this was the \\textit{only} consistent hypothesis or one of many\n\\item Find-S has no way to know if it has converged to the true target concept, since it never checks negative examples for consistency\n\\item These limitations are exactly what motivate the \\textbf{Candidate Elimination Algorithm} (Section 1.3), which tracks \\textit{all} hypotheses consistent with \\textit{both} positive and negative examples at once\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Version Spaces and the Candidate Elimination Algorithm",
+    "type": "definition",
+    "title": "Version Space",
+    "content": "Given a hypothesis space $H$ and a set of training examples $D$, the version space $VS_{H,D}$ is the subset of all hypotheses in $H$ that are consistent with every training example in $D$ --- that is, every hypothesis that correctly classifies every positive example as positive and every negative example as negative.\n\nFind-S (Section 1.2.3) returns only \\textbf{one} member of this set (the most specific one); the version space is the \\textbf{entire} set of hypotheses that fit the data equally well."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Version Spaces and the Candidate Elimination Algorithm",
+    "type": "definition",
+    "title": "Specific and General Boundary Sets",
+    "content": "Rather than listing every hypothesis in the (possibly huge) version space one by one, it is represented compactly using two boundary sets:\n\\begin{itemize}[leftmargin=1.5em]\n\\item \\textbf{Specific boundary $S$:} the set of most specific hypotheses in the version space.\n\\item \\textbf{General boundary $G$:} the set of most general hypotheses in the version space.\n\\end{itemize}\nEvery hypothesis $h$ satisfying $S \\le_g h \\le_g G$ for some member of each boundary is guaranteed to be in the version space, without needing to be listed individually.\n\n\\subsection{The Candidate Elimination Algorithm}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Version Spaces and the Candidate Elimination Algorithm",
+    "type": "algorithm",
+    "title": "Candidate Elimination Algorithm",
+    "content": "\\textbf{Input:} a set of training examples, each labeled positive or negative\n\n\\textbf{Output:} the boundary sets $S$ and $G$ describing the final version space\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Initialize $S$ to the most specific hypothesis in $H$: $S = \\{\\langle \\varnothing,\\ldots,\\varnothing \\rangle\\}$.\n\\item Initialize $G$ to the most general hypothesis in $H$: $G = \\{\\langle ?,\\ldots,? \\rangle\\}$.\n\\item For each training example $d$:\n\\item[] \\textbf{If $d$ is positive:}\n\\begin{enumerate}[leftmargin=1.5em,itemsep=3pt]\n\\item Remove from $G$ any hypothesis inconsistent with $d$ (any hypothesis that rejects $d$).\n\\item For each hypothesis $s$ in $S$ inconsistent with $d$: remove $s$, and replace it with all of its minimal generalizations that are consistent with $d$ and are more specific than some hypothesis in $G$.\n\\item Remove from $S$ any hypothesis that is more general than another hypothesis in $S$.\n\\end{enumerate}\n\\item[] \\textbf{If $d$ is negative:}\n\\begin{enumerate}[leftmargin=1.5em,itemsep=3pt]\n\\item Remove from $S$ any hypothesis inconsistent with $d$ (any hypothesis that accepts $d$).\n\\item For each hypothesis $g$ in $G$ inconsistent with $d$: remove $g$, and replace it with all of its minimal specializations that are consistent with $d$ and are more general than some hypothesis in $S$.\n\\item Remove from $G$ any hypothesis that is more specific than another hypothesis in $G$.\n\\end{enumerate}\n\\item Repeat step 3 for every remaining training example.\n\\item Return the final $S$ and $G$.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Version Spaces and the Candidate Elimination Algorithm",
+    "type": "example",
+    "title": "Example 1.19 --- Full Trace Converging to a Single Hypothesis",
+    "content": "\\begin{center}\n\\begin{tabular}{cccc}\n\\toprule\n\\# & Sky & AirTemp & EnjoySport \\\\\n\\midrule\n1 & Sunny & Warm & Yes \\\\\n2 & Sunny & Cold & No \\\\\n3 & Rainy & Warm & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nTrace the Candidate Elimination Algorithm on this dataset.\n\n\\textbf{Solution:}\n\\[\nS_0 = \\{\\langle \\varnothing,\\varnothing \\rangle\\}, \\qquad G_0 = \\{\\langle ?,? \\rangle\\}\n\\]\n\\textbf{Example 1 (Sunny, Warm, Yes) --- positive:} generalize $S_0$ minimally to cover it.\n\\[\nS_1 = \\{\\langle \\text{Sunny},\\text{Warm} \\rangle\\}, \\qquad G_1 = \\{\\langle ?,? \\rangle\\} \\ \\text{(already accepts it, unchanged)}\n\\]\n\\textbf{Example 2 (Sunny, Cold, No) --- negative:} $S_1$ already rejects it (unchanged). Specialize $G_1$ minimally to exclude it, keeping every result more general than $S_1$.\n\\begin{align*}\n\\text{Try Sky} &\\to \\text{Rainy}: \\langle \\text{Rainy},? \\rangle \\ \\text{---rejects positive example 1, discard} \\\\\n\\text{Try AirTemp} &\\to \\text{Warm}: \\langle ?,\\text{Warm} \\rangle \\ \\text{---accepts positive example 1, keep}\n\\end{align*}\n\\[\nS_2 = \\{\\langle \\text{Sunny},\\text{Warm} \\rangle\\}, \\qquad G_2 = \\{\\langle ?,\\text{Warm} \\rangle\\}\n\\]\n\\textbf{Example 3 (Rainy, Warm, Yes) --- positive:} $S_2$ does not accept it (Sky mismatch); generalize minimally.\n\\[\nS_3 = \\{\\langle ?,\\text{Warm} \\rangle\\}\n\\]\n$G_2$ already accepts $(\\text{Rainy},\\text{Warm})$ (AirTemp matches Warm), so it is unchanged: $G_3=\\{\\langle ?,\\text{Warm} \\rangle\\}$.\n\\boxed{S_3 = G_3 = \\{\\langle ?,\\text{Warm} \\rangle\\}}\nSince $S$ and $G$ have converged to a single, identical hypothesis, the version space contains exactly one hypothesis --- the target concept has been fully learned."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Version Spaces and the Candidate Elimination Algorithm",
+    "type": "example",
+    "title": "Example 1.20 --- A Trace with a Branching General Boundary",
+    "content": "\\begin{center}\n\\begin{tabular}{cccc}\n\\toprule\n\\# & Sky & Wind & Target \\\\\n\\midrule\n1 & Sunny & Weak & Yes \\\\\n2 & Rainy & Strong & No \\\\\n3 & Sunny & Strong & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nTrace the Candidate Elimination Algorithm on this dataset.\n\n\\textbf{Solution:}\n\\[\nS_0 = \\{\\langle \\varnothing,\\varnothing \\rangle\\}, \\qquad G_0 = \\{\\langle ?,? \\rangle\\}\n\\]\n\\textbf{Example 1 (Sunny, Weak, Yes) --- positive:}\n\\[\nS_1 = \\{\\langle \\text{Sunny},\\text{Weak} \\rangle\\}, \\qquad G_1 = \\{\\langle ?,? \\rangle\\}\n\\]\n\\textbf{Example 2 (Rainy, Strong, No) --- negative:} specialize $G_1$ minimally; both single-attribute specializations remain consistent with the positive example seen so far.\n\\begin{align*}\n\\text{Sky} &\\to \\text{Sunny}: \\langle \\text{Sunny},? \\rangle \\ \\text{---accepts example 1, keep} \\\\\n\\text{Wind} &\\to \\text{Weak}: \\langle ?,\\text{Weak} \\rangle \\ \\text{---accepts example 1, keep}\n\\end{align*}\n\\[\nS_2 = \\{\\langle \\text{Sunny},\\text{Weak} \\rangle\\}, \\qquad G_2 = \\{\\langle \\text{Sunny},? \\rangle,\\ \\langle ?,\\text{Weak} \\rangle\\}\n\\]\n\\textbf{Example 3 (Sunny, Strong, Yes) --- positive:} $S_2$ does not accept it (Wind mismatch); generalize minimally.\n\\[\nS_3 = \\{\\langle \\text{Sunny},? \\rangle\\}\n\\]\nCheck each member of $G_2$ against this positive example:\n\\begin{align*}\n\\langle \\text{Sunny},? \\rangle &: \\text{accepts (Sunny,Strong)} \\Rightarrow \\text{keep} \\\\\n\\langle ?,\\text{Weak} \\rangle &: \\text{Wind=Weak} \\ne \\text{Strong} \\Rightarrow \\text{rejects positive} \\Rightarrow \\text{discard}\n\\end{align*}\n\\[\nG_3 = \\{\\langle \\text{Sunny},? \\rangle\\}\n\\]\n\\boxed{S_3 = G_3 = \\{\\langle \\text{Sunny},? \\rangle\\}}\nThe negative example first caused $G$ to \\textbf{branch} into two candidate hypotheses; the next positive example then eliminated the branch inconsistent with it, and $S$ and $G$ converged together."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Version Spaces and the Candidate Elimination Algorithm",
+    "type": "example",
+    "title": "Example 1.21 --- Enumerating the Full Version Space from Boundaries",
+    "content": "\\begin{center}\n\\begin{tabular}{cccc}\n\\toprule\n\\# & Taste & Size & Target \\\\\n\\midrule\n1 & Sweet & Big & No \\\\\n2 & Sour & Small & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nTrace the Candidate Elimination Algorithm and list every hypothesis in the final version space.\n\n\\textbf{Solution:}\n\\[\nS_0 = \\{\\langle \\varnothing,\\varnothing \\rangle\\}, \\qquad G_0 = \\{\\langle ?,? \\rangle\\}\n\\]\n\\textbf{Example 1 (Sweet, Big, No) --- negative:} $S_0$ already rejects everything (unchanged). Specialize $G_0$ minimally.\n\\begin{align*}\n\\text{Taste} &\\to \\text{Sour}: \\langle \\text{Sour},? \\rangle \\\\\n\\text{Size} &\\to \\text{Small}: \\langle ?,\\text{Small} \\rangle\n\\end{align*}\n(No positive example has been seen yet, so both specializations are valid.)\n\\[\nS_1 = \\{\\langle \\varnothing,\\varnothing \\rangle\\}, \\qquad G_1 = \\{\\langle \\text{Sour},? \\rangle,\\ \\langle ?,\\text{Small} \\rangle\\}\n\\]\n\\textbf{Example 2 (Sour, Small, Yes) --- positive:} generalize $S_1$ minimally to cover it.\n\\[\nS_2 = \\{\\langle \\text{Sour},\\text{Small} \\rangle\\}\n\\]\nCheck each member of $G_1$: both accept (Sour,Small), so both are kept.\n\\[\nG_2 = \\{\\langle \\text{Sour},? \\rangle,\\ \\langle ?,\\text{Small} \\rangle\\}\n\\]\n\\boxed{\\text{Final: } S = \\{\\langle \\text{Sour},\\text{Small} \\rangle\\}, \\quad G = \\{\\langle \\text{Sour},? \\rangle,\\ \\langle ?,\\text{Small} \\rangle\\}}\nEvery hypothesis $h$ between $S$ and some member of $G$ belongs to the version space:\n\\[\n\\text{Version Space} = \\big\\{\\ \\langle \\text{Sour},\\text{Small} \\rangle,\\ \\ \\langle \\text{Sour},? \\rangle,\\ \\ \\langle ?,\\text{Small} \\rangle\\ \\big\\}\n\\]"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Version Spaces and the Candidate Elimination Algorithm",
+    "type": "keypoint",
+    "title": "Reading the Boundary Sets: enumerate[leftmargin=2em,itemsep=4pt] $S$",
+    "content": "\\textbf{Reading the Boundary Sets:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item $S$ always generalizes on \\textbf{positive} examples only; $G$ always specializes on \\textbf{negative} examples only\n\\item If $S=G$ and both contain exactly one hypothesis, the target concept has been \\textbf{uniquely} identified (Examples 1.19, 1.20)\n\\item If $S$ and $G$ have not converged, \\textbf{every} hypothesis lying between them (more general than $S$, more specific than $G$) is still a valid candidate, as enumerated in Example 1.21\n\\item Unlike Find-S, Candidate Elimination uses \\textbf{both} positive and negative examples, so it can detect an inconsistent training set: this happens if $S$ or $G$ ever becomes empty\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 0",
+    "content": "A program is built to recommend movies to users, and it improves its recommendations by studying which past recommendations users actually watched versus skipped. Identify $T$, $P$, and $E$ for this learning problem.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "A program is built to detect fraudulent credit card transactions, trained on a large history of past transactions each labeled Fraud or NotFraud. Identify $T$, $P$, and $E$ for this learning problem.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "A fitness app groups 5{,}000 users into activity patterns using only their step-count and heart-rate data, with no labels of any kind provided. Which type of Machine Learning is this, and why?\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "A self-driving car's obstacle-avoidance module learns by taking actions in a simulated environment and receiving a penalty every time it comes too close to an obstacle. Which type of Machine Learning is this, and why?\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "Let $h = \\langle \\text{Rainy}, \\text{Cold} \\rangle$ over $\\text{Sky}\\in\\{\\text{Sunny},\\text{Rainy}\\}$ and $\\text{AirTemp}\\in\\{\\text{Warm},\\text{Cold}\\}$. Does the instance $x=(\\text{Rainy},\\text{Cold})$ satisfy $h$? Does $x=(\\text{Sunny},\\text{Cold})$ satisfy $h$?\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "Let $h_1 = \\langle \\text{Rainy}, ? \\rangle$ and $h_2 = \\langle ?, \\text{Cold} \\rangle$. Determine whether $h_1 \\ge_g h_2$, $h_2 \\ge_g h_1$, or the two are incomparable.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "Let $h_1 = \\langle ?, \\text{Cold} \\rangle$ and $h_2 = \\langle \\text{Rainy}, \\text{Cold} \\rangle$. Determine whether $h_1 \\ge_g h_2$, and state whether the relation is strict.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "Trace the Find-S algorithm on the dataset below and give the final hypothesis.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nColor & Shape & Target \\\\\n\\midrule\nRed & Round & Yes \\\\\nGreen & Round & No \\\\\nRed & Square & Yes \\\\\nRed & Round & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "Trace the Find-S algorithm on the dataset below and give the final hypothesis.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nTexture & Temperature & Target \\\\\n\\midrule\nSmooth & Hot & Yes \\\\\nSmooth & Cold & Yes \\\\\nRough & Hot & No \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "In one or two lines, explain why the version space can be represented using only the boundary sets $S$ and $G$ instead of listing every consistent hypothesis individually.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "Trace the Candidate Elimination Algorithm on the dataset below, showing $S$ and $G$ after every example, and give the final version space.\n\\begin{center}\n\\begin{tabular}{cccc}\n\\toprule\n\\# & Size & Color & Target \\\\\n\\midrule\n1 & Big & Red & Yes \\\\\n2 & Small & Red & No \\\\\n3 & Big & Blue & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "Trace the Candidate Elimination Algorithm on the dataset below, showing $S$ and $G$ after every example, and give the final version space.\n\\begin{center}\n\\begin{tabular}{cccc}\n\\toprule\n\\# & Humidity & Wind & Target \\\\\n\\midrule\n1 & High & Weak & No \\\\\n2 & Normal & Weak & Yes \\\\\n3 & Normal & Strong & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "After processing some training examples, a learner has $S=\\{\\langle \\text{Red},? \\rangle\\}$ and $G=\\{\\langle \\text{Red},? \\rangle,\\ \\langle ?,\\text{Big} \\rangle\\}$. List every hypothesis contained in this version space.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "Given $S=\\{\\langle \\text{Sunny},\\text{Warm} \\rangle\\}$ and $G=\\{\\langle \\text{Sunny},? \\rangle,\\ \\langle ?,\\text{Warm} \\rangle\\}$, a new negative example $(\\text{Sunny},\\text{Cold})$ is observed. Update $S$ and $G$ accordingly.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 1 - Introduction to Machine Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "In two or three lines, explain one key advantage the Candidate Elimination Algorithm has over Find-S, and one situation in which their final specific-boundary hypothesis $S$ would come out identical."
+  }
+]

@@ -1,0 +1,466 @@
+[
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "definition",
+    "title": "Semi-Supervised Learning",
+    "content": "Semi-supervised learning trains a model using a small labeled set \\\\\n$L=\\{(x_1,y_1),\\ldots,(x_m,y_m)\\}$ together with a much larger unlabeled set \\\\\n$U=\\{x_{m+1},\\ldots,x_{m+n}\\}$ whose true class $y$ is unknown. The goal is to use the pattern found in both sets together to build a better classifier than the labeled data alone could produce.\n\nThis sits exactly between the supervised setting of Chapter 2 (every example labeled) and the unsupervised setting of Chapter 3 (no example labeled)."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "example",
+    "title": "Example 4.1 --- Recognizing a Semi-Supervised Dataset",
+    "content": "A dataset has 100 emails: 15 are marked Spam or NotSpam by a human, and the remaining 85 have no label at all. Is this a semi-supervised learning problem?\n\nSolution:\nLabeled count $=15$, Unlabeled count $=85$. Since both a nonzero labeled set and a nonzero unlabeled set exist together in the same training data: \\\\\n\\boxed{\\text{Yes, this is a semi-supervised learning problem}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "example",
+    "title": "Example 4.2 --- Recognizing a Fully Supervised Dataset",
+    "content": "A dataset has 50 patient records, and every single record has a confirmed Disease/NoDisease label. Is this a semi-supervised learning problem?\n\nSolution:\nLabeled count $=50$, Unlabeled count $=0$. Since there is no unlabeled portion at all:\n\\boxed{\\text{No, this is an ordinary (fully) supervised learning problem}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "example",
+    "title": "Example 4.3 --- Recognizing an Unsupervised Dataset",
+    "content": "A dataset has 200 customer purchase records, and none of them have any class label attached. Is this a semi-supervised learning problem?\n\nSolution:\nLabeled count $=0$, Unlabeled count $=200$. Since there is no labeled portion at all to anchor the classes:\n\\boxed{\\text{No, this is an unsupervised learning problem (clustering, Chapter 3)}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "keypoint",
+    "title": "Where Semi-Supervised Learning Fits: enumerate[leftmargin=2em,itemsep=4pt] Supervised",
+    "content": "Where Semi-Supervised Learning Fits:\n\n1. Supervised (Chapter 2): $L$ only, $U=\\varnothing$\n2. Unsupervised (Chapter 3): $U$ only, $L=\\varnothing$\n3. Semi-supervised (this section): both $L\\neq\\varnothing$ and $U\\neq\\varnothing$ used together\n4. Semi-supervised learning is valuable because labeling data (by a human) is expensive, while unlabeled data is often cheap and plentiful\n\n\\subsection{The Expectation-Maximization Framework}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "definition",
+    "title": "Expectation-Maximization (EM) Algorithm",
+    "content": "EM is an iterative procedure for estimating model parameters when some data is incomplete (here, the missing piece is the class label $y$ of the unlabeled examples). It alternates between two steps until the parameters stop changing:\n\n- E-step (Expectation): using the current parameters, compute the probability of each possible class for every unlabeled example — a soft (fractional) label rather than a hard 0/1 label.\n- M-step (Maximization): using the labeled data together with these fractional soft labels, recompute the parameters that best fit all the data.\n\nThis is the same \"guess, then refine, then guess again\" idea as k-Means (Section 3.2): k-Means alternates Assign and Update; EM alternates E-step and M-step, except EM assigns fractional membership instead of putting each point in exactly one cluster."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "theorem",
+    "title": "Properties of the EM Algorithm",
+    "content": "1. Each round of E-step followed by M-step never decreases how well the parameters fit the data \\hfill(monotonic improvement)\n2. EM is guaranteed to converge, but only to a local optimum, not necessarily the best possible parameters \\hfill(local convergence, same caution as k-Means)\n3. The E-step produces soft (fractional, e.g. 0.3/0.7) class probabilities for unlabeled points, not hard single-class labels \\hfill(soft assignment)\n4. The initial parameters (estimated from $L$ alone) affect where EM converges \\hfill(initialization sensitivity)\n\n\\subsection{EM for Semi-Supervised Naive Bayes Classification}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "algorithm",
+    "title": "EM Algorithm for Semi-Supervised Naive Bayes",
+    "content": "Input: labeled examples $L$ with known class and attribute values, unlabeled examples $U$ with only attribute values\n\nOutput: class priors $P(C_k)$, attribute likelihoods $P(A_i\\mid C_k)$, and soft labels for $U$\n\n1. Using only $L$, estimate initial priors $P(C_k)$ and likelihoods $P(A_i\\mid C_k)$ exactly as in ordinary Naive Bayes (Section 2.2).\n2. E-step: for every unlabeled example $x\\in U$, compute the (unnormalized) score $P(C_k)\\prod_i P(A_i\\mid C_k)$ for each class $C_k$, then normalize these scores to sum to $1$ — this gives the soft label $P(C_k\\mid x)$.\n3. M-step: recompute every prior and likelihood using both the labeled data (weight $1$ per example) and every unlabeled example (weighted by its soft label from step 2) as fractional counts.\n4. If the parameters changed from the previous round, go back to step 2; otherwise stop.\n5. Return the final parameters and the final soft labels for $U$."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "example",
+    "title": "Example 4.4 --- Initializing Parameters from Labeled Data",
+    "content": "The labeled set $L$ below records Weather and whether cricket was played.\n| \\toprule Weather | PlayCricket |\n|---|---|\n| \\midrule Sunny | Yes |\n| Sunny | Yes |\n| Rainy | Yes |\n| Rainy | No |\n| Rainy | No |\n| Sunny | No |\n| \\bottomrule |  |\nCompute the initial Naive Bayes parameters $P(\\text{Yes})$, $P(\\text{No})$, $P(\\text{Sunny}\\mid\\text{Yes})$, $P(\\text{Rainy}\\mid\\text{Yes})$, $P(\\text{Sunny}\\mid\\text{No})$, $P(\\text{Rainy}\\mid\\text{No})$.\n\nSolution:\n$$\\begin{align*}\nP(\\text{Yes}) &= \\frac{3}{6} = 0.5, \\qquad P(\\text{No}) = \\frac{3}{6} = 0.5 \\\\[4pt]\nP(\\text{Sunny}\\mid\\text{Yes}) &= \\frac{2}{3} \\approx 0.667, \\qquad P(\\text{Rainy}\\mid\\text{Yes}) = \\frac{1}{3} \\approx 0.333 \\\\\nP(\\text{Sunny}\\mid\\text{No}) &= \\frac{1}{3} \\approx 0.333, \\qquad P(\\text{Rainy}\\mid\\text{No}) = \\frac{2}{3} \\approx 0.667\n\\end{align*}$$\n\\boxed{\\text{Initial parameters computed exactly as ordinary Naive Bayes on } L \\text{ alone}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "example",
+    "title": "Example 4.5 --- E-step: Soft-Labeling an Unlabeled Example",
+    "content": "An unlabeled example $U_1$ has Weather $=$ Rainy. Using the parameters from Example 4.4, compute the soft label $P(\\text{Yes}\\mid U_1)$ and $P(\\text{No}\\mid U_1)$.\n\nSolution:\n$$\\begin{align*}\n\\text{score}(\\text{Yes}) &= P(\\text{Yes})\\cdot P(\\text{Rainy}\\mid\\text{Yes}) = (0.5)(0.333) \\approx 0.1667 \\\\\n\\text{score}(\\text{No}) &= P(\\text{No})\\cdot P(\\text{Rainy}\\mid\\text{No}) = (0.5)(0.667) \\approx 0.3333 \\\\[4pt]\n\\text{Total} &= 0.1667+0.3333 = 0.5 \\\\[4pt]\nP(\\text{Yes}\\mid U_1) &= \\frac{0.1667}{0.5} \\approx 0.333, \\qquad P(\\text{No}\\mid U_1) = \\frac{0.3333}{0.5} \\approx 0.667\n\\end{align*}$$\n\\boxed{U_1 \\text{ is soft-labeled } 33.3\\%\\text{ Yes and } 66.7\\%\\text{ No (not a hard 0/1 label)}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "example",
+    "title": "Example 4.6 --- M-step: Updating Parameters with Fractional Counts",
+    "content": "Using the labeled set $L$ from Example 4.4 and the soft-labeled $U_1$ (Weather $=$ Rainy) from Example 4.5, recompute $P(\\text{Yes})$, $P(\\text{No})$, $P(\\text{Rainy}\\mid\\text{Yes})$, and $P(\\text{Rainy}\\mid\\text{No})$.\n\nSolution:\n$U_1$ contributes a fractional count of $0.333$ toward the Yes class and $0.667$ toward the No class.\n$$\\begin{align*}\n\\text{New Yes count} &= 3 + 0.333 = 3.333, \\qquad \\text{New No count} = 3 + 0.667 = 3.667 \\\\\n\\text{New total} &= 3.333+3.667 = 7 \\\\[4pt]\nP(\\text{Yes}) &= \\frac{3.333}{7} \\approx 0.476, \\qquad P(\\text{No}) = \\frac{3.667}{7} \\approx 0.524\n\\end{align*}$$\nFor the attribute likelihood, $U_1$'s Rainy value adds $0.333$ to the Yes-Rainy count and $0.667$ to the No-Rainy count:\n$$\\begin{align*}\n\\text{New Yes-Rainy count} &= 1+0.333 = 1.333, \\qquad \\text{New Yes total} = 3.333 \\\\\nP(\\text{Rainy}\\mid\\text{Yes}) &= \\frac{1.333}{3.333} = 0.4 \\\\[6pt]\n\\text{New No-Rainy count} &= 2+0.667 = 2.667, \\qquad \\text{New No total} = 3.667 \\\\\nP(\\text{Rainy}\\mid\\text{No}) &= \\frac{2.667}{3.667} \\approx 0.727\n\\end{align*}$$\n\\boxed{P(\\text{Yes})\\approx0.476,\\ P(\\text{No})\\approx0.524,\\ P(\\text{Rainy}\\mid\\text{Yes})=0.4,\\ P(\\text{Rainy}\\mid\\text{No})\\approx0.727}\nThese updated parameters would now be used to redo the E-step, and the cycle repeats until the parameters stop changing (convergence)."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Semi-Supervised Learning with the EM Algorithm",
+    "type": "keypoint",
+    "title": "Why EM Helps Here: enumerate[leftmargin=2em,itemsep=4pt] Using",
+    "content": "Why EM Helps Here:\n\n1. Using $L$ alone (Example 4.4) gives parameters based on only 6 examples\n2. EM lets the unlabeled example $U_1$ contribute information too, proportional to how confident the model currently is about its class (Example 4.5), rather than guessing a hard label\n3. After the M-step (Example 4.6), the parameters shift slightly — toward whichever class the soft label favored more (here, No shifted up because $U_1$ was $66.7\\%$ likely No)\n4. With a large unlabeled set $U$, this fractional-counting process can noticeably sharpen a classifier trained from only a small labeled set $L$"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "definition",
+    "title": "Reinforcement Learning",
+    "content": "Reinforcement Learning (RL) is a learning setting in which an agent interacts with an environment over a sequence of time steps. At each step the agent observes the current state, chooses an action, and receives a numerical reward along with the next state. The agent learns, purely through this trial-and-error interaction, a policy (a rule for choosing actions) that maximizes the total reward it collects over time.\n\nUnlike every algorithm in Chapters 2 and 3, RL has no fixed dataset at all — the agent generates its own training data by acting and observing the consequences."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "keypoint",
+    "title": "Core RL Terminology: enumerate[leftmargin=2em,itemsep=4pt] Agent the",
+    "content": "Core RL Terminology:\n\n1. Agent the learner or decision maker\n2. Environment everything the agent interacts with and that responds to its actions\n3. State $s_t$ a description of the situation at time $t$\n4. Action $a_t$ a choice the agent makes at time $t$\n5. Reward $r_t$ a numerical signal received after taking an action, indicating how good or bad the outcome was\n6. Policy the agent's strategy for choosing an action given a state"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "definition",
+    "title": "Discounted Return",
+    "content": "The return $G_t$ is the total reward the agent collects from time $t$ onward, with rewards further in the future counted for less using a discount factor $\\gamma$ where $0 \\le \\gamma < 1$:\n\\[\nG_t = r_{t+1} + \\gamma r_{t+2} + \\gamma^2 r_{t+3} + \\cdots = \\sum_{k=0}^{\\infty} \\gamma^k r_{t+k+1}\n\\]\n\nThis is the same geometric-series idea used in compound interest, just applied to rewards shrinking into the future instead of money growing."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "algorithm",
+    "title": "Computing Discounted Return",
+    "content": "Input: a sequence of rewards $r_1,r_2,\\ldots,r_n$ received after time $t$, discount factor $\\gamma$\n\nOutput: the discounted return $G_t$\n\n1. Multiply the first reward $r_1$ by $\\gamma^0=1$.\n2. Multiply the second reward $r_2$ by $\\gamma^1$.\n3. Continue multiplying each subsequent reward $r_k$ by $\\gamma^{k-1}$.\n4. Sum all the discounted rewards to obtain $G_t$."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.7 --- Discounted Return with a High Discount Factor",
+    "content": "An agent receives rewards $4,3,2$ over three consecutive steps. Compute $G_0$ using $\\gamma=0.9$.\n\nSolution:\n$$\\begin{align*}\nG_0 &= 4 + (0.9)(3) + (0.9)^2(2) \\\\\n&= 4 + 2.7 + (0.81)(2) \\\\\n&= 4 + 2.7 + 1.62\n\\end{align*}$$\n\\boxed{G_0 = 8.32}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.8 --- Same Rewards with a Low Discount Factor",
+    "content": "Using the same rewards as Example 4.7 ($4,3,2$), compute $G_0$ using $\\gamma=0.5$.\n\nSolution:\n$$\\begin{align*}\nG_0 &= 4 + (0.5)(3) + (0.5)^2(2) \\\\\n&= 4 + 1.5 + (0.25)(2) \\\\\n&= 4 + 1.5 + 0.5\n\\end{align*}$$\n\\boxed{G_0 = 6}\nComparing Examples 4.7 and 4.8: the closer $\\gamma$ is to $1$, the more the later rewards ($3$ and $2$) count toward the total; the closer $\\gamma$ is to $0$, the more the agent behaves as if only the immediate reward mattered."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.9 --- Delayed Large Reward",
+    "content": "An agent receives rewards $-1,-1,10$ over three steps (two small penalties followed by a large reward). Compute $G_0$ using $\\gamma=0.9$.\n\nSolution:\n$$\\begin{align*}\nG_0 &= -1 + (0.9)(-1) + (0.9)^2(10) \\\\\n&= -1 - 0.9 + (0.81)(10) \\\\\n&= -1 - 0.9 + 8.1\n\\end{align*}$$\n\\boxed{G_0 = 6.2}\nEven though the immediate reward is negative, the large discounted future reward makes the overall return positive — this is exactly why an RL agent must plan for delayed consequences rather than just the next single reward."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "keypoint",
+    "title": "Reading the Discount Factor $$: enumerate[leftmargin=2em,itemsep=4pt]",
+    "content": "Reading the Discount Factor $\\gamma$:\n\n1. $\\gamma$ close to $0$: the agent is short-sighted and cares mainly about the immediate reward\n2. $\\gamma$ close to $1$: the agent is far-sighted and gives future rewards nearly as much weight as immediate ones\n3. $\\gamma$ must satisfy $0\\le\\gamma<1$ so that the infinite sum $G_t$ stays finite for an ongoing task\n\n\\subsection{Markov Chains}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "definition",
+    "title": "Markov Chain",
+    "content": "A Markov chain is a system that moves between a fixed set of states over time, where the transition to the next state depends only on probabilities attached to the current state. Every possible transition is described by a transition probability $P(s_{t+1}=j \\mid s_t=i)$."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "definition",
+    "title": "Markov Property",
+    "content": "The Markov property states that the future state depends only on the present state, not on the sequence of states that preceded it:\n\\[\nP(s_{t+1} \\mid s_t, s_{t-1}, \\ldots, s_1) = P(s_{t+1} \\mid s_t)\n\\]\nThis is what makes the system \"memoryless\" beyond the current state."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "theorem",
+    "title": "Properties of a Transition Matrix",
+    "content": "1. Every transition probability satisfies $0 \\le P(j\\mid i) \\le 1$ \\hfill(valid probability)\n2. The probabilities leaving any single state must sum to exactly $1$ \\hfill(row sums to 1)\n3. The probability of an entire path is the product of the transition probabilities along that path \\hfill(chain rule under the Markov property)"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "algorithm",
+    "title": "Computing the Probability of a State Sequence",
+    "content": "Input: a transition probability table, a known starting state, an ordered sequence of future states\n\nOutput: the probability of observing exactly that sequence of states\n\n1. Start with probability $1$ at the given starting state.\n2. For each step in the sequence, multiply the running probability by the transition probability from the current state to the next state in the sequence.\n3. Move to the next state and repeat step 2 until the sequence ends.\n4. Return the final product as the probability of the sequence."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.10 --- Probability of a Weather Sequence",
+    "content": "Using the transition probabilities in the diagram above (Sunny$\\to$Sunny $0.8$, Sunny$\\to$Rainy $0.2$, Rainy$\\to$Rainy $0.6$, Rainy$\\to$Sunny $0.4$), find the probability of the sequence Sunny, Sunny, Rainy given that day 1 is known to be Sunny.\n\nSolution:\n$$\\begin{align*}\nP(\\text{Sunny},\\text{Sunny},\\text{Rainy}) &= P(S_1=\\text{Sunny}) \\cdot P(\\text{Sunny}\\to\\text{Sunny}) \\cdot P(\\text{Sunny}\\to\\text{Rainy}) \\\\\n&= 1 \\times 0.8 \\times 0.2\n\\end{align*}$$\n\\boxed{P = 0.16}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.11 --- Probability of a Longer Sequence",
+    "content": "Using the same transition probabilities, find the probability of the sequence Rainy, Rainy, Sunny, Sunny given that day 1 is known to be Rainy.\n\nSolution:\n$$\\begin{align*}\nP(\\text{Rainy},\\text{Rainy},\\text{Sunny},\\text{Sunny}) &= 1 \\times P(\\text{Rainy}\\to\\text{Rainy}) \\times P(\\text{Rainy}\\to\\text{Sunny}) \\times P(\\text{Sunny}\\to\\text{Sunny}) \\\\\n&= 1 \\times 0.6 \\times 0.4 \\times 0.8\n\\end{align*}$$\n\\boxed{P = 0.192}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.12 --- Two-Step Transition Probability",
+    "content": "Using the same transition probabilities, find the probability that day 3 is Sunny given that day 1 is known to be Sunny (day 2 can be either state).\n\nSolution:\nSince day 2 is unknown, sum over both possibilities for day 2 (law of total probability):\n$$\\begin{align*}\nP(S_3=\\text{Sunny}\\mid S_1=\\text{Sunny}) &= P(S\\to S)P(S\\to S) + P(S\\to R)P(R\\to S) \\\\\n&= (0.8)(0.8) + (0.2)(0.4) \\\\\n&= 0.64 + 0.08\n\\end{align*}$$\n\\boxed{P(S_3=\\text{Sunny}\\mid S_1=\\text{Sunny}) = 0.72}\nNotice the difference from Example 4.10: here the in-between state is not fixed, so every possible path to the destination must be added together, rather than following one single specified path."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "keypoint",
+    "title": "Single-Path vs Marginal Probability: enumerate[leftmargin=2em,itemsep=4pt] If",
+    "content": "Single-Path vs Marginal Probability:\n\n1. If every intermediate state in the sequence is specified, simply multiply the transition probabilities along that one path (Examples 4.10, 4.11)\n2. If an intermediate state is not specified, sum the products over every possible value it could take (Example 4.12)\n3. This is the same \"multiply along a branch, add across branches\" rule used in probability trees\n\n\\subsection{Hidden Markov Models}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "definition",
+    "title": "Hidden Markov Model (HMM)",
+    "content": "A Hidden Markov Model extends a Markov chain to situations where the true states are not directly observable. Instead, at each time step the hidden state probabilistically produces a visible observation. An HMM is defined by three components: the transition probabilities $A$ between hidden states, the emission probabilities $B$ of each hidden state producing each observation, and the initial probabilities $\\pi$ of starting in each hidden state.\n\n{\\small Solid arrows: hidden state transitions ($A$). Dashed arrows: emission probabilities ($B$) to observations.}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "algorithm",
+    "title": "Computing the Joint Probability of a Hidden State Path and an Observation Sequence",
+    "content": "Input: initial probabilities $\\pi$, transition probabilities $A$, emission probabilities $B$, a specific hidden state sequence, an observation sequence of the same length\n\nOutput: the joint probability $P(\\text{states, observations})$\n\n1. Start with $\\pi(\\text{first state})$.\n2. Multiply by the emission probability of the first observation given the first state.\n3. For every following time step, multiply by the transition probability from the previous state to the current state, then multiply by the emission probability of the current observation given the current state.\n4. Return the final product."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.13 --- Joint Probability for a Two-Step Path",
+    "content": "An HMM has $\\pi(\\text{Sunny})=0.6$, $\\pi(\\text{Rainy})=0.4$. Transitions: Sunny$\\to$Sunny $0.7$, Sunny$\\to$Rainy $0.3$, Rainy$\\to$Rainy $0.6$, Rainy$\\to$Sunny $0.4$. Emissions: $P(\\text{Walk}\\mid\\text{Sunny})=0.6$, $P(\\text{Shop}\\mid\\text{Sunny})=0.3$, $P(\\text{Walk}\\mid\\text{Rainy})=0.1$, $P(\\text{Shop}\\mid\\text{Rainy})=0.4$.\nCompute $P(\\text{states}=\\text{Sunny},\\text{Sunny};\\ \\text{obs}=\\text{Walk},\\text{Shop})$.\n\nSolution:\n$$\\begin{align*}\nP &= \\pi(\\text{Sunny}) \\cdot P(\\text{Walk}\\mid\\text{Sunny}) \\cdot P(\\text{Sunny}\\to\\text{Sunny}) \\cdot P(\\text{Shop}\\mid\\text{Sunny}) \\\\\n&= (0.6)(0.6) \\times (0.7)(0.3) \\\\\n&= 0.36 \\times 0.21\n\\end{align*}$$\n\\boxed{P = 0.0756}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.14 --- Joint Probability for a Different Path",
+    "content": "Using the same HMM as Example 4.13, compute $P(\\text{states}=\\text{Sunny},\\text{Rainy};\\ \\text{obs}=\\text{Walk},\\text{Clean})$ where $P(\\text{Clean}\\mid\\text{Rainy})=0.5$.\n\nSolution:\n$$\\begin{align*}\nP &= \\pi(\\text{Sunny}) \\cdot P(\\text{Walk}\\mid\\text{Sunny}) \\cdot P(\\text{Sunny}\\to\\text{Rainy}) \\cdot P(\\text{Clean}\\mid\\text{Rainy}) \\\\\n&= (0.6)(0.6) \\times (0.3)(0.5) \\\\\n&= 0.36 \\times 0.15\n\\end{align*}$$\n\\boxed{P = 0.054}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "example",
+    "title": "Example 4.15 --- Joint Probability for a Three-Step Path",
+    "content": "Using the same HMM as Examples 4.13 and 4.14, compute \\\\\n$P(\\text{states}=\\text{Rainy},\\text{Rainy},\\text{Sunny};\\ \\text{obs}=\\text{Shop},\\text{Clean},\\text{Walk})$.\n\nSolution:\n$$\\begin{align*}\nP &= \\pi(\\text{Rainy}) \\cdot P(\\text{Shop}\\mid\\text{Rainy}) \\cdot P(\\text{Rainy}\\to\\text{Rainy}) \\cdot P(\\text{Clean}\\mid\\text{Rainy}) \\cdot P(\\text{Rainy}\\to\\text{Sunny})\\\\ \\cdot P(\\text{Walk}\\mid\\text{Sunny}) \\\\\n&= (0.4)(0.4) \\times (0.6)(0.5) \\times (0.4)(0.6) \\\\\n&= 0.16 \\times 0.3 \\times 0.24\n\\end{align*}$$\n\\boxed{P = 0.01152}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Reinforcement Learning and Hidden Markov Models",
+    "type": "keypoint",
+    "title": "Markov Chain vs Hidden Markov Model:",
+    "content": "Markov Chain vs Hidden Markov Model:\n| \\toprule Aspect | Markov Chain | Hidden Markov Model |\n|---|---|---|\n| \\midrule States | Directly observed | Hidden (not observed) |\n| What we see | The state sequence itself | Only an observation sequence |\n| Parameters needed | Transition probabilities | Transition and emission probabilities |\n| Typical question | Probability of a state path | Probability of an observation sequence |\n| \\bottomrule |  |  |"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "definition",
+    "title": "Markov Decision Process (MDP)",
+    "content": "A Markov Decision Process formally models an RL environment using five components $(S,A,P,R,\\gamma)$: a set of states $S$, a set of actions $A$, transition probabilities $P(s'\\mid s,a)$ of reaching state $s'$ after taking action $a$ in state $s$, a reward function $R(s,a,s')$, and a discount factor $\\gamma$. The Markov property (Section 4.2.2) applies here too: the next state depends only on the current state and action, not on the full history.\n\nThis combines the Markov chain of Section 4.2.2 (states and transitions) with the actions and rewards of reinforcement learning (Section 4.2.1) into one formal framework."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "definition",
+    "title": "Policy",
+    "content": "A policy $\\pi$ is a rule that specifies which action the agent takes in each state, written $\\pi(s)=a$ for a deterministic policy. Solving an MDP means finding the policy that maximizes the expected discounted return from every state.\n\n\\subsection{Value Functions and the Bellman Equation}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "definition",
+    "title": "State-Value Function",
+    "content": "The value $V^\\pi(s)$ of a state $s$ under policy $\\pi$ is the expected discounted return obtained by starting in $s$ and following $\\pi$ thereafter. For a deterministic environment (each action leads to exactly one next state), it satisfies the Bellman equation:\n\\[\nV^\\pi(s) = R(s,\\pi(s),s') + \\gamma\\, V^\\pi(s')\n\\]\nwhere $s'$ is the state reached from $s$ by taking action $\\pi(s)$.\n\nThis is simply the discounted-return idea from Section 4.2.1 written recursively: the value of a state is this step's reward plus the (discounted) value of wherever you land next."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "theorem",
+    "title": "Properties of Value Functions",
+    "content": "1. A goal / terminal state has value $V(s)=0$, since no further reward is collected after reaching it \\hfill(base case)\n2. Values can be computed backward from the goal state toward earlier states \\hfill(backward induction)\n3. The optimal policy $\\pi^\\ast$ at each state chooses the action leading to the highest $R(s,a,s')+\\gamma V(s')$ \\hfill(greedy w.r.t.\\ the value function)"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "algorithm",
+    "title": "Computing State Values by Backward Induction (Deterministic MDP)",
+    "content": "Input: states, one deterministic transition and reward per action, discount factor $\\gamma$, a known terminal state\n\nOutput: $V(s)$ for every state\n\n1. Set $V(\\text{terminal state}) = 0$.\n2. Identify a state $s$ whose next state's value is already known.\n3. Compute $V(s) = R(s,a,s') + \\gamma V(s')$ for the action $a$ that will be taken from $s$.\n4. Repeat steps 2 to 3, working backward, until every state has a computed value.\n5. Return all computed values."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "example",
+    "title": "Example 4.22 --- Backward Value Computation on a Three-State Chain",
+    "content": "Using the diagram above ($S_1 \\xrightarrow{a_1,r=-1} S_2 \\xrightarrow{a_1,r=+10} S_3$, with $S_3$ terminal), compute $V(S_3)$, $V(S_2)$, and $V(S_1)$ using $\\gamma=0.9$.\n\nSolution:\n$$\\begin{align*}\nV(S_3) &= 0 \\quad \\text{(terminal state)} \\\\[4pt]\nV(S_2) &= R(S_2,a_1,S_3) + \\gamma V(S_3) = 10 + (0.9)(0) = 10 \\\\[4pt]\nV(S_1) &= R(S_1,a_1,S_2) + \\gamma V(S_2) = -1 + (0.9)(10) = -1+9\n\\end{align*}$$\n\\boxed{V(S_3)=0,\\quad V(S_2)=10,\\quad V(S_1)=8}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "example",
+    "title": "Example 4.23 --- Choosing Between Two Actions Using Values",
+    "content": "In state $S_1$ from Example 4.22, action $a_1$ leads to $S_2$ (reward $-1$) and action $a_2$ leads back to $S_1$ itself (reward $0$, i.e.\\ staying put, so its \"next value\" is $V(S_1)$ again). Using $V(S_2)=10$ from Example 4.22 and $\\gamma=0.9$, which action should the optimal policy choose at $S_1$: $a_1$ or $a_2$?\n\nSolution:\n$$\\begin{align*}\n\\text{Value of taking } a_1 &= R(S_1,a_1,S_2)+\\gamma V(S_2) = -1+(0.9)(10) = 8 \\\\\n\\text{Value of taking } a_2 &= R(S_1,a_2,S_1)+\\gamma V(S_1) = 0 + (0.9)(0) = 0 \\quad (\\text{using an initial guess } V(S_1)=0)\n\\end{align*}$$\nSince $8 > 0$:\n\\boxed{\\text{Optimal action at } S_1 \\text{ is } a_1 \\text{ (move toward the goal, not stay in place)}}\nThis matches the general rule from the theorembox: the optimal policy always picks the action with the higher $R(s,a,s')+\\gamma V(s')$. ✓"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "example",
+    "title": "Example 4.24 --- Backward Value Computation on a Four-State Chain",
+    "content": "A chain has $S_1 \\xrightarrow{r=2} S_2 \\xrightarrow{r=3} S_3 \\xrightarrow{r=5} S_4$(terminal). Compute $V(S_4)$, $V(S_3)$, $V(S_2)$, $V(S_1)$ using $\\gamma=0.5$.\n\nSolution:\n$$\\begin{align*}\nV(S_4) &= 0 \\\\\nV(S_3) &= 5+(0.5)(0) = 5 \\\\\nV(S_2) &= 3+(0.5)(5) = 3+2.5 = 5.5 \\\\\nV(S_1) &= 2+(0.5)(5.5) = 2+2.75\n\\end{align*}$$\n\\boxed{V(S_4)=0,\\ V(S_3)=5,\\ V(S_2)=5.5,\\ V(S_1)=4.75}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Markov Decision Processes",
+    "type": "keypoint",
+    "title": "MDP Summary — How Everything in",
+    "content": "MDP Summary — How Everything in This Chapter Connects:\n\n1. The discounted return $G_t$ (Section 4.2.1) is what a value function $V(s)$ tries to predict in expectation from state $s$ onward\n2. The Bellman equation rewrites that return recursively, one step at a time, instead of summing the whole future at once\n3. Monte Carlo (Section 4.3) estimates $V(s)$ by averaging actual sampled returns; backward induction here computes $V(s)$ exactly when the model (transitions and rewards) is fully known\n4. The exploration-exploitation trade-off (Section 4.4) arises precisely because an agent usually does not know $P$, $R$, or the true value function in advance, and must learn them through interaction"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 0",
+    "content": "A dataset has 40 labeled examples and 160 unlabeled examples. State whether this is a supervised, unsupervised, or semi-supervised learning problem, and justify your answer in one line.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "A labeled set $L$ for predicting Umbrella use contains: Cloudy$\\to$Yes, Cloudy$\\to$Yes, Clear$\\to$No, Clear$\\to$No, Cloudy$\\to$No. Compute the initial Naive Bayes parameters $P(\\text{Yes})$, $P(\\text{No})$, $P(\\text{Cloudy}\\mid\\text{Yes})$, $P(\\text{Cloudy}\\mid\\text{No})$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "Using the parameters from the previous question, perform the E-step to compute the soft label $P(\\text{Yes}\\mid U_1)$ and $P(\\text{No}\\mid U_1)$ for an unlabeled example $U_1$ with Weather $=$ Cloudy.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "Using the soft label found in the previous question, perform the M-step to recompute $P(\\text{Yes})$ and $P(\\text{No})$ (treat $U_1$'s soft label as a fractional addition to the 5 labeled examples).\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "An agent receives rewards $5,4,3,2$ over four consecutive steps. Compute the discounted return $G_0$ using $\\gamma=0.8$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "Using the same rewards as the previous question, compute $G_0$ using $\\gamma=1$ (no discounting), and explain in one line why this case is only valid for episodes that are guaranteed to end.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "A Markov chain has states Hot and Cold with transitions: Hot$\\to$Hot $0.6$, Hot$\\to$Cold $0.4$, Cold$\\to$Cold $0.7$, Cold$\\to$Hot $0.3$. Given day 1 is Hot, find the probability of the sequence Hot, Cold, Cold.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "Using the same Markov chain as the previous question, find the probability that day 3 is Hot given that day 1 is Hot (day 2 unknown).\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "An HMM has $\\pi(\\text{Hot})=0.5$, $\\pi(\\text{Cold})=0.5$; transitions as in Question 7; emissions $P(\\text{IceCream}\\mid\\text{Hot})=0.7$, $P(\\text{Soup}\\mid\\text{Hot})=0.3$, $P(\\text{IceCream}\\mid\\text{Cold})=0.2$, $P(\\text{Soup}\\mid\\text{Cold})=0.8$. Compute $P(\\text{states}=\\text{Hot},\\text{Cold};\\ \\text{obs}=\\text{IceCream},\\text{Soup})$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "From a fixed starting state $s$, three episodes give total returns $G^{(1)}=10$, $G^{(2)}=8$, $G^{(3)}=6$. Estimate $V(s)$ using Monte Carlo.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "Two episodes are run from state $s$ with $\\gamma=0.5$. Episode 1 rewards: $6,4$. Episode 2 rewards: $2,8$. Estimate $V(s)$ using Monte Carlo.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "An agent uses $\\epsilon=0.15$. State, for each of the following random draws, whether the agent explores or exploits: (a) $p=0.10$ (b) $p=0.50$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "An agent has estimated values $Q(\\text{Up})=4$, $Q(\\text{Down})=9$, $Q(\\text{Left})=6$, $Q(\\text{Right})=2$, with $\\epsilon=0.25$. A random draw gives $p=0.9$. Which action is chosen, and why?\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "A chain has $S_1 \\xrightarrow{r=1} S_2 \\xrightarrow{r=4} S_3$(terminal). Compute $V(S_3)$, $V(S_2)$, and $V(S_1)$ using $\\gamma=0.9$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 4 - Semi-Supervised Learning and Reinforcement Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "In a state $S$, action $a_1$ leads to a state with value $12$ and reward $-2$, while action $a_2$ leads to a state with value $5$ and reward $+3$. Using $\\gamma=0.8$, compute the value of taking each action and determine which action the optimal policy should choose."
+  }
+]

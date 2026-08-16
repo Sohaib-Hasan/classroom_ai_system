@@ -1,0 +1,498 @@
+[
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "definition",
+    "title": "Clustering",
+    "content": "Clustering is an \\textbf{unsupervised learning} task in which examples are grouped into clusters based purely on how similar or close they are to one another, without using any class labels. Unlike classification, the algorithm is never told the correct group for any example; it must discover the natural groupings on its own using distance or similarity.\n\nThis is the opposite setting from Naive Bayes or Decision Trees, where every training example came with a known class label attached."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.1 --- Identifying Clusters by Eye",
+    "content": "The scatter plot below shows 6 students plotted by (Study Hours, Sleep Hours). By visual inspection, how many natural groups do you see?\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n\\draw[->,thick] (-0.5,0) -- (6,0) node[right]{\\small Study Hours};\n\\draw[->,thick] (0,-0.5) -- (0,5.5) node[above]{\\small Sleep Hours};\n\\filldraw[primaryblue] (1,4.5) circle (3pt);\n\\filldraw[primaryblue] (1.4,4.8) circle (3pt);\n\\filldraw[primaryblue] (0.8,4.2) circle (3pt);\n\\filldraw[accentorange] (4.5,1.2) circle (3pt);\n\\filldraw[accentorange] (5,1.5) circle (3pt);\n\\filldraw[accentorange] (4.8,0.9) circle (3pt);\n\\end{tikzpicture}\n\\end{center}\n\n\\textbf{Solution:}\nThe three blue points near the top-left are all close to one another, and the three orange points near the bottom-right are all close to one another, but the two groups are far apart from each other.\n\\boxed{\\text{2 clusters: \\{top-left group\\}, \\{bottom-right group\\}}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.2 --- Identifying Three Clusters",
+    "content": "The scatter plot below shows 6 shops plotted by (Location X, Location Y). How many natural groups do you see?\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n\\draw[->,thick] (-0.5,0) -- (6,0) node[right]{\\small X};\n\\draw[->,thick] (0,-0.5) -- (0,5.5) node[above]{\\small Y};\n\\filldraw[primaryblue] (0.8,0.8) circle (3pt);\n\\filldraw[primaryblue] (1.2,0.5) circle (3pt);\n\\filldraw[accentorange] (5,0.8) circle (3pt);\n\\filldraw[accentorange] (5.3,1.1) circle (3pt);\n\\filldraw[darkgreen] (2.8,4.8) circle (3pt);\n\\filldraw[darkgreen] (3.2,4.5) circle (3pt);\n\\end{tikzpicture}\n\\end{center}\n\n\\textbf{Solution:}\nThree separate pairs of points are visible, each pair close together but far from the other pairs: one pair near the bottom-left, one pair near the bottom-right, and one pair near the top-middle.\n\\boxed{\\text{3 clusters, 2 points each}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.3 --- No Clear Separation",
+    "content": "The scatter plot below shows 5 points spaced almost evenly along a line. How many natural clusters do you see?\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n\\draw[->,thick] (-0.5,0) -- (6,0) node[right]{\\small X};\n\\draw[->,thick] (0,-0.5) -- (0,2) node[above]{\\small Y};\n\\filldraw[primaryblue] (1,1) circle (3pt);\n\\filldraw[primaryblue] (2,1) circle (3pt);\n\\filldraw[primaryblue] (3,1) circle (3pt);\n\\filldraw[primaryblue] (4,1) circle (3pt);\n\\filldraw[primaryblue] (5,1) circle (3pt);\n\\end{tikzpicture}\n\\end{center}\n\n\\textbf{Solution:}\nEvery point is roughly equally spaced from its neighbours, so there is no clear gap separating one group from another.\n\\boxed{\\text{No clear natural clusters --- the points form one continuous chain}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "keypoint",
+    "title": "Supervised vs Unsupervised Learning: enumerate[leftmargin=2em,itemsep=4pt] Supervised",
+    "content": "\\textbf{Supervised vs Unsupervised Learning:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item \\textbf{Supervised} (Decision Trees, Naive Bayes, SVM, Regression): training data has known class labels\n\\item \\textbf{Unsupervised} (Clustering): training data has \\textbf{no} labels; the algorithm groups examples by similarity alone\n\\item A good clustering keeps points within the same cluster close together while keeping different clusters far apart, as seen in Examples 3.1 and 3.2\n\\end{enumerate}\n\n\\subsection{Distance Measures}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "definition",
+    "title": "Euclidean Distance",
+    "content": "The Euclidean distance between two points $x=(x_1,x_2)$ and $y=(y_1,y_2)$ measures straight-line closeness:\n\\[\nd(x,y) = \\sqrt{(x_1-y_1)^2 + (x_2-y_2)^2}\n\\]\n\nThis is exactly the Pythagorean theorem: the distance is the hypotenuse of a right triangle formed by the horizontal gap and the vertical gap between the two points.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n\\draw[->,thick] (-0.5,0) -- (5,0) node[right]{\\small $x_1$};\n\\draw[->,thick] (0,-0.5) -- (0,4) node[above]{\\small $x_2$};\n\\filldraw[primaryblue] (0.5,0.5) circle (2.5pt) node[below left,font=\\scriptsize]{$x$};\n\\filldraw[primaryblue] (3.5,3.2) circle (2.5pt) node[above right,font=\\scriptsize]{$y$};\n\\draw[accentorange,thick] (0.5,0.5) -- (3.5,3.2);\n\\draw[darkgray,dashed] (0.5,0.5) -- (3.5,0.5) node[midway,below,font=\\scriptsize]{$|x_1-y_1|$};\n\\draw[darkgray,dashed] (3.5,0.5) -- (3.5,3.2) node[midway,right,font=\\scriptsize]{$|x_2-y_2|$};\n\\node[accentorange,font=\\scriptsize] at (1.6,2.3) {$d(x,y)$};\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.4 --- Distance Between Two Simple Points",
+    "content": "Compute the Euclidean distance between $(1,2)$ and $(4,6)$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd &= \\sqrt{(1-4)^2+(2-6)^2} = \\sqrt{(-3)^2+(-4)^2} = \\sqrt{9+16} = \\sqrt{25}\n\\end{align*}\n\\boxed{d = 5}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.5 --- Distance from the Origin",
+    "content": "Compute the Euclidean distance between $(0,0)$ and $(6,8)$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd &= \\sqrt{(0-6)^2+(0-8)^2} = \\sqrt{36+64} = \\sqrt{100}\n\\end{align*}\n\\boxed{d = 10}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.6 --- Distance Along a Vertical Line",
+    "content": "Compute the Euclidean distance between $(2,3)$ and $(2,7)$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd &= \\sqrt{(2-2)^2+(3-7)^2} = \\sqrt{0+16} = \\sqrt{16}\n\\end{align*}\n\\boxed{d = 4}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "keypoint",
+    "title": "Distance Facts: enumerate[leftmargin=2em,itemsep=4pt] $d(x,y) = 0$",
+    "content": "\\textbf{Distance Facts:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item $d(x,y) = 0$ only when $x$ and $y$ are the same point\n\\item $d(x,y) = d(y,x)$ always \\hfill\\textit{(symmetry)}\n\\item Smaller distance means the two points are more similar; clustering always groups the smallest-distance points first\n\\end{enumerate}\n\n\\subsection{Linkage Methods Between Clusters}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "theorem",
+    "title": "Linkage Distance Formulas",
+    "content": "Given two clusters $A$ and $B$, the distance between them can be defined in three ways:\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item \\textbf{Single Linkage:} $d(A,B) = \\min\\limits_{a\\in A,\\,b\\in B} d(a,b)$ \\hfill\\textit{(closest pair)}\n\\item \\textbf{Complete Linkage:} $d(A,B) = \\max\\limits_{a\\in A,\\,b\\in B} d(a,b)$ \\hfill\\textit{(farthest pair)}\n\\item \\textbf{Average Linkage:} $d(A,B) = \\dfrac{1}{|A||B|}\\sum\\limits_{a\\in A,\\,b\\in B} d(a,b)$ \\hfill\\textit{(mean of all pairs)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.7 --- Single Linkage Between Two Clusters",
+    "content": "Cluster $A=\\{(1,1),(3,2)\\}$ and Cluster $B=\\{(6,1),(7,3)\\}$. Compute the single linkage distance $d(A,B)$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd((1,1),(6,1)) &= \\sqrt{25+0} = 5 \\\\\nd((1,1),(7,3)) &= \\sqrt{36+4} = \\sqrt{40} \\approx 6.325 \\\\\nd((3,2),(6,1)) &= \\sqrt{9+1} = \\sqrt{10} \\approx 3.162 \\\\\nd((3,2),(7,3)) &= \\sqrt{16+1} = \\sqrt{17} \\approx 4.123\n\\end{align*}\nSingle linkage takes the \\textbf{minimum} of these four values:\n\\boxed{d(A,B) \\approx 3.162}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.8 --- Complete Linkage Between Two Clusters",
+    "content": "Cluster $A=\\{(0,0),(1,2)\\}$ and Cluster $B=\\{(4,0),(5,3)\\}$. Compute the complete linkage distance $d(A,B)$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd((0,0),(4,0)) &= 4 \\\\\nd((0,0),(5,3)) &= \\sqrt{25+9} = \\sqrt{34} \\approx 5.831 \\\\\nd((1,2),(4,0)) &= \\sqrt{9+4} = \\sqrt{13} \\approx 3.606 \\\\\nd((1,2),(5,3)) &= \\sqrt{16+1} = \\sqrt{17} \\approx 4.123\n\\end{align*}\nComplete linkage takes the \\textbf{maximum} of these four values:\n\\boxed{d(A,B) \\approx 5.831}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.9 --- Average Linkage Between Two Clusters",
+    "content": "Cluster $A=\\{(2,2),(3,4)\\}$ and Cluster $B=\\{(6,2),(7,5)\\}$. Compute the average linkage distance $d(A,B)$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd((2,2),(6,2)) &= 4 \\\\\nd((2,2),(7,5)) &= \\sqrt{25+9} = \\sqrt{34} \\approx 5.831 \\\\\nd((3,4),(6,2)) &= \\sqrt{9+4} = \\sqrt{13} \\approx 3.606 \\\\\nd((3,4),(7,5)) &= \\sqrt{16+1} = \\sqrt{17} \\approx 4.123 \\\\[4pt]\nd(A,B) &= \\frac{4+5.831+3.606+4.123}{4} = \\frac{17.560}{4}\n\\end{align*}\n\\boxed{d(A,B) \\approx 4.390}\n\n\\subsection{The Agglomerative Clustering Algorithm}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "definition",
+    "title": "Hierarchical Agglomerative Clustering",
+    "content": "Agglomerative clustering builds a hierarchy of clusters bottom-up: it starts with every point as its own cluster, and repeatedly merges the two closest clusters (using a chosen linkage rule) until only one cluster remains. The resulting merge history is displayed as a tree diagram called a \\textbf{dendrogram}, where the height of each merge shows the distance at which it happened."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "algorithm",
+    "title": "Agglomerative Clustering Algorithm",
+    "content": "\\textbf{Input:} a set of $n$ points, a linkage method (single, complete, or average)\n\n\\textbf{Output:} a dendrogram showing the full merge history\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Start with $n$ clusters, one for each point.\n\\item Compute the pairwise distance between every pair of clusters.\n\\item Find the two clusters with the smallest distance and merge them into one cluster.\n\\item Record the distance at which this merge happened (this becomes a height on the dendrogram).\n\\item Recompute the distance from the newly merged cluster to every remaining cluster using the chosen linkage rule.\n\\item Repeat steps 3 to 5 until only one cluster remains.\n\\item Return the full sequence of merges as a dendrogram.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.10 --- Full Trace Using Single Linkage",
+    "content": "Cluster the points $P_1=(1,1)$, $P_2=(2,1)$, $P_3=(5,1)$, $P_4=(6.5,1)$ using single linkage. Show every merge and draw the dendrogram.\n\n\\textbf{Solution:}\nSince all points lie on the line $y=1$, distance is just the difference in $x$-coordinates.\n\\begin{center}\n\\begin{tabular}{ccccc}\n\\toprule\n & $P_1$ & $P_2$ & $P_3$ & $P_4$ \\\\\n\\midrule\n$P_1$ & -- & 1 & 4 & 5.5 \\\\\n$P_2$ & 1 & -- & 3 & 4.5 \\\\\n$P_3$ & 4 & 3 & -- & 1.5 \\\\\n$P_4$ & 5.5 & 4.5 & 1.5 & -- \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\\textbf{Step 1:} Smallest distance is $d(P_1,P_2)=1$. Merge into $\\{P_1,P_2\\}$.\n\\begin{align*}\nd(\\{P_1,P_2\\},P_3) &= \\min(4,3) = 3 \\\\\nd(\\{P_1,P_2\\},P_4) &= \\min(5.5,4.5) = 4.5 \\\\\nd(P_3,P_4) &= 1.5\n\\end{align*}\n\\textbf{Step 2:} Smallest distance is now $d(P_3,P_4)=1.5$. Merge into $\\{P_3,P_4\\}$.\n\\[\nd(\\{P_1,P_2\\},\\{P_3,P_4\\}) = \\min(4,5.5,3,4.5) = 3\n\\]\n\\textbf{Step 3:} Only two clusters remain; merge them at height $3$.\n\n\\begin{center}\n\\begin{tikzpicture}[yscale=1]\n\\foreach \\x/\\lab in {1/$P_1$,2/$P_2$,3/$P_3$,4/$P_4$}\n  \\node[below,font=\\small] at (\\x,0) {\\lab};\n\\draw[thick] (1,0) -- (1,1) -- (2,1) -- (2,0);\n\\node[above,font=\\scriptsize] at (1.5,1) {1};\n\\draw[thick] (3,0) -- (3,1.5) -- (4,1.5) -- (4,0);\n\\node[above,font=\\scriptsize] at (3.5,1.5) {1.5};\n\\draw[thick] (1.5,1) -- (1.5,3) -- (3.5,3) -- (3.5,1.5);\n\\node[above,font=\\scriptsize] at (2.5,3) {3};\n\\draw[->,thick] (0,0) -- (0,3.5) node[above,font=\\scriptsize]{Distance};\n\\end{tikzpicture}\n\\end{center}\n\\boxed{\\text{Merge order: } (P_1,P_2)\\text{ at }1,\\ (P_3,P_4)\\text{ at }1.5,\\ \\text{root at }3}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.11 --- Full Trace Using Complete Linkage",
+    "content": "Cluster the points $Q_1=(1,1)$, $Q_2=(2,3)$, $Q_3=(6,2)$, $Q_4=(7,5)$ using complete linkage. Show every merge and draw the dendrogram.\n\n\\textbf{Solution:}\n\\begin{align*}\nd(Q_1,Q_2) &= \\sqrt{1+4}\\approx 2.236, & d(Q_1,Q_3) &= \\sqrt{25+1}\\approx 5.099 \\\\\nd(Q_1,Q_4) &= \\sqrt{36+16}\\approx 7.211, & d(Q_2,Q_3) &= \\sqrt{16+1}\\approx 4.123 \\\\\nd(Q_2,Q_4) &= \\sqrt{25+4}\\approx 5.385, & d(Q_3,Q_4) &= \\sqrt{1+9}\\approx 3.162\n\\end{align*}\n\\textbf{Step 1:} Smallest distance is $d(Q_1,Q_2)\\approx 2.236$. Merge into $\\{Q_1,Q_2\\}$.\n\\begin{align*}\nd(\\{Q_1,Q_2\\},Q_3) &= \\max(5.099,4.123) = 5.099 \\\\\nd(\\{Q_1,Q_2\\},Q_4) &= \\max(7.211,5.385) = 7.211 \\\\\nd(Q_3,Q_4) &= 3.162\n\\end{align*}\n\\textbf{Step 2:} Smallest distance is now $d(Q_3,Q_4)\\approx 3.162$. Merge into $\\{Q_3,Q_4\\}$.\n\\[\nd(\\{Q_1,Q_2\\},\\{Q_3,Q_4\\}) = \\max(5.099,7.211,4.123,5.385) = 7.211\n\\]\n\\textbf{Step 3:} Only two clusters remain; merge them at height $\\approx 7.211$.\n\n\\begin{center}\n\\begin{tikzpicture}[yscale=0.45]\n\\foreach \\x/\\lab in {1/$Q_1$,2/$Q_2$,3/$Q_3$,4/$Q_4$}\n  \\node[below,font=\\small] at (\\x,0) {\\lab};\n\\draw[thick] (1,0) -- (1,2.236) -- (2,2.236) -- (2,0);\n\\node[above,font=\\scriptsize] at (1.5,2.236) {2.236};\n\\draw[thick] (3,0) -- (3,3.162) -- (4,3.162) -- (4,0);\n\\node[above,font=\\scriptsize] at (3.5,3.162) {3.162};\n\\draw[thick] (1.5,2.236) -- (1.5,7.211) -- (3.5,7.211) -- (3.5,3.162);\n\\node[above,font=\\scriptsize] at (2.5,7.211) {7.211};\n\\draw[->,thick] (0,0) -- (0,8) node[above,font=\\scriptsize]{Distance};\n\\end{tikzpicture}\n\\end{center}\n\\boxed{\\text{Merge order: } (Q_1,Q_2)\\text{ at }2.236,\\ (Q_3,Q_4)\\text{ at }3.162,\\ \\text{root at }7.211}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "example",
+    "title": "Example 3.12 --- Full Trace Using Average Linkage",
+    "content": "Cluster the points $R_1=(0,0)$, $R_2=(1,1)$, $R_3=(4,0)$, $R_4=(5,2)$ using average linkage. Show every merge and draw the dendrogram.\n\n\\textbf{Solution:}\n\\begin{align*}\nd(R_1,R_2) &= \\sqrt{1+1}\\approx 1.414, & d(R_1,R_3) &= 4 \\\\\nd(R_1,R_4) &= \\sqrt{25+4}\\approx 5.385, & d(R_2,R_3) &= \\sqrt{9+1}\\approx 3.162 \\\\\nd(R_2,R_4) &= \\sqrt{16+1}\\approx 4.123, & d(R_3,R_4) &= \\sqrt{1+4}\\approx 2.236\n\\end{align*}\n\\textbf{Step 1:} Smallest distance is $d(R_1,R_2)\\approx 1.414$. Merge into $\\{R_1,R_2\\}$.\n\\begin{align*}\nd(\\{R_1,R_2\\},R_3) &= \\frac{4+3.162}{2} = 3.581 \\\\\nd(\\{R_1,R_2\\},R_4) &= \\frac{5.385+4.123}{2} = 4.754 \\\\\nd(R_3,R_4) &= 2.236\n\\end{align*}\n\\textbf{Step 2:} Smallest distance is now $d(R_3,R_4)\\approx 2.236$. Merge into $\\{R_3,R_4\\}$.\n\\[\nd(\\{R_1,R_2\\},\\{R_3,R_4\\}) = \\frac{4+5.385+3.162+4.123}{4} = \\frac{16.670}{4} \\approx 4.168\n\\]\n\\textbf{Step 3:} Only two clusters remain; merge them at height $\\approx 4.168$.\n\n\\begin{center}\n\\begin{tikzpicture}[yscale=0.75]\n\\foreach \\x/\\lab in {1/$R_1$,2/$R_2$,3/$R_3$,4/$R_4$}\n  \\node[below,font=\\small] at (\\x,0) {\\lab};\n\\draw[thick] (1,0) -- (1,1.414) -- (2,1.414) -- (2,0);\n\\node[above,font=\\scriptsize] at (1.5,1.414) {1.414};\n\\draw[thick] (3,0) -- (3,2.236) -- (4,2.236) -- (4,0);\n\\node[above,font=\\scriptsize] at (3.5,2.236) {2.236};\n\\draw[thick] (1.5,1.414) -- (1.5,4.168) -- (3.5,4.168) -- (3.5,2.236);\n\\node[above,font=\\scriptsize] at (2.5,4.168) {4.168};\n\\draw[->,thick] (0,0) -- (0,5) node[above,font=\\scriptsize]{Distance};\n\\end{tikzpicture}\n\\end{center}\n\\boxed{\\text{Merge order: } (R_1,R_2)\\text{ at }1.414,\\ (R_3,R_4)\\text{ at }2.236,\\ \\text{root at }4.168}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Hierarchical Agglomerative Clustering",
+    "type": "keypoint",
+    "title": "Reading a Dendrogram and Comparing Linkages:",
+    "content": "\\textbf{Reading a Dendrogram and Comparing Linkages:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item The \\textbf{height} of a merge shows how far apart the two clusters were when they joined; lower merges happened first\n\\item Cutting the dendrogram at any height gives a clustering: cut low for many small clusters, cut high for fewer large clusters\n\\item \\textbf{Single linkage} can produce long chained clusters since it only needs one close pair\n\\item \\textbf{Complete linkage} produces tighter, more compact clusters since it is controlled by the farthest pair\n\\item \\textbf{Average linkage} balances between the two, using the mean of all cross-cluster distances\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "definition",
+    "title": "k-Means Clustering",
+    "content": "k-Means is a \\textbf{partitional} clustering algorithm that divides $n$ points into exactly $k$ clusters, where $k$ is chosen in advance. Each cluster is represented by its \\textbf{centroid} (the mean position of all points currently in that cluster), and every point is assigned to the cluster whose centroid is nearest to it."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "theorem",
+    "title": "Properties of k-Means",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item k-Means minimizes the \\textbf{within-cluster sum of squared distances} between points and their cluster centroid \\hfill\\textit{(objective)}\n\\item The number of clusters $k$ must be chosen before running the algorithm \\hfill\\textit{(fixed $k$)}\n\\item k-Means always converges (the assignments eventually stop changing), but only to a \\textbf{local} optimum, not necessarily the best possible clustering \\hfill\\textit{(local convergence)}\n\\item The final clustering depends on the \\textbf{initial choice of centroids}; different starting points can give different results \\hfill\\textit{(initialization sensitivity)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "algorithm",
+    "title": "k-Means Algorithm (Lloyd's Algorithm)",
+    "content": "\\textbf{Input:} a set of $n$ points, the number of clusters $k$, initial centroids $c_1,\\ldots,c_k$\n\n\\textbf{Output:} $k$ clusters with their final centroids\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Choose $k$ initial centroids (often $k$ of the data points themselves).\n\\item Assign every point to the cluster whose centroid is nearest, using Euclidean distance.\n\\item Recompute each centroid as the mean of all points currently assigned to that cluster.\n\\item If any point changed cluster in step 2, or any centroid moved in step 3, go back to step 2.\n\\item Otherwise (no reassignment and no centroid movement) stop; the clustering has converged.\n\\item Return the final clusters and centroids.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "example",
+    "title": "Example 3.13 --- k-Means with Well-Separated Initial Centroids",
+    "content": "Cluster the points $A(1,1)$, $B(2,1)$, $C(4,3)$, $D(5,4)$ using $k=2$ with initial centroids $c_1=(1,1)$ and $c_2=(5,4)$.\n\n\\textbf{Solution:}\n\\textbf{Iteration 1 — Assign:}\n\\begin{align*}\nd(A,c_1)=0,\\ d(A,c_2)=5 &\\ \\Rightarrow\\ A\\to c_1 \\\\\nd(B,c_1)=1,\\ d(B,c_2)\\approx4.243 &\\ \\Rightarrow\\ B\\to c_1 \\\\\nd(C,c_1)\\approx3.606,\\ d(C,c_2)\\approx1.414 &\\ \\Rightarrow\\ C\\to c_2 \\\\\nd(D,c_1)=5,\\ d(D,c_2)=0 &\\ \\Rightarrow\\ D\\to c_2\n\\end{align*}\n\\textbf{Update:}\n\\[\nc_1=\\left(\\frac{1+2}{2},\\frac{1+1}{2}\\right)=(1.5,1), \\qquad c_2=\\left(\\frac{4+5}{2},\\frac{3+4}{2}\\right)=(4.5,3.5)\n\\]\n\\textbf{Iteration 2 — Assign:} Checking distances to the new centroids, $A$ and $B$ remain closest to $c_1$, and $C$ and $D$ remain closest to $c_2$. No point changes cluster, so the centroids do not move again.\n\\boxed{\\text{Converged: }\\{A,B\\}\\to(1.5,1),\\ \\{C,D\\}\\to(4.5,3.5)}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.85]\n\\draw[->,thick] (-0.5,0) -- (6.5,0) node[right]{\\small $x_1$};\n\\draw[->,thick] (0,-0.5) -- (0,5) node[above]{\\small $x_2$};\n\\filldraw[primaryblue] (1,1) circle (3pt) node[below,font=\\scriptsize]{$A$};\n\\filldraw[primaryblue] (2,1) circle (3pt) node[below,font=\\scriptsize]{$B$};\n\\filldraw[accentorange] (4,3) circle (3pt) node[below,font=\\scriptsize]{$C$};\n\\filldraw[accentorange] (5,4) circle (3pt) node[above,font=\\scriptsize]{$D$};\n\\draw[primaryblue,thick] (1.5,1) circle (5pt);\n\\node[primaryblue,font=\\scriptsize] at (1.5,1.6) {$c_1$};\n\\draw[accentorange,thick] (4.5,3.5) circle (5pt);\n\\node[accentorange,font=\\scriptsize] at (4.5,4.1) {$c_2$};\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "example",
+    "title": "Example 3.14 --- k-Means with Poorly Chosen Initial Centroids",
+    "content": "Cluster the points $A(1,1)$, $B(2,2)$, $C(3,3)$, $D(8,8)$, $E(9,9)$ using $k=2$ with initial centroids $c_1=(1,1)$ and $c_2=(2,2)$.\n\n\\textbf{Solution:}\n\\textbf{Iteration 1 — Assign:}\n\\begin{align*}\nA\\to c_1\\ (d=0<1.414),\\quad B\\to c_2\\ (d=0<1.414),\\quad C\\to c_2\\ (1.414<2.828) \\\\\nD\\to c_2\\ (8.485<9.899),\\quad E\\to c_2\\ (9.899<11.314)\n\\end{align*}\n\\textbf{Update:} $c_1=(1,1)$ (only $A$); $c_2=\\left(\\frac{2+3+8+9}{4},\\frac{2+3+8+9}{4}\\right)=(5.5,5.5)$\n\n\\textbf{Iteration 2 — Assign (using new centroids):}\n\\begin{align*}\nA\\to c_1\\ (0<6.364),\\quad B\\to c_1\\ (1.414<4.950)\\ \\textbf{[flipped]},\\quad C\\to c_1\\ (2.828<3.536)\\ \\textbf{[flipped]} \\\\\nD\\to c_2\\ (9.899>3.536),\\quad E\\to c_2\\ (11.314>4.950)\n\\end{align*}\n\\textbf{Update:} $c_1=\\left(\\frac{1+2+3}{3},\\frac{1+2+3}{3}\\right)=(2,2)$; $c_2=(8.5,8.5)$\n\n\\textbf{Iteration 3 — Assign (using new centroids):} $A,B,C$ all remain closest to $c_1$; $D,E$ remain closest to $c_2$. No further changes.\n\\boxed{\\text{Converged: }\\{A,B,C\\}\\to(2,2),\\ \\{D,E\\}\\to(8.5,8.5)}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n\\draw[->,thick] (-0.5,0) -- (10.5,0) node[right]{\\small $x_1$};\n\\draw[->,thick] (0,-0.5) -- (0,10) node[above]{\\small $x_2$};\n\\filldraw[primaryblue] (1,1) circle (3pt) node[below,font=\\scriptsize]{$A$};\n\\filldraw[primaryblue] (2,2) circle (3pt) node[below,font=\\scriptsize]{$B$};\n\\filldraw[primaryblue] (3,3) circle (3pt) node[below,font=\\scriptsize]{$C$};\n\\filldraw[accentorange] (8,8) circle (3pt) node[below,font=\\scriptsize]{$D$};\n\\filldraw[accentorange] (9,9) circle (3pt) node[above,font=\\scriptsize]{$E$};\n\\draw[primaryblue,thick] (2,2) circle (6pt);\n\\node[primaryblue,font=\\scriptsize] at (2,1.2) {final $c_1$};\n\\draw[accentorange,thick] (8.5,8.5) circle (6pt);\n\\node[accentorange,font=\\scriptsize] at (8.5,9.3) {final $c_2$};\n\\end{tikzpicture}\n\\end{center}\nNotice how the poor initial choice ($c_1,c_2$ starting right next to each other) caused $B$ and $C$ to be misassigned in Iteration 1 and only get corrected in later iterations — this is exactly the initialization sensitivity described in the theorembox above. \\checkmark"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "example",
+    "title": "Example 3.15 --- k-Means with Three Clusters",
+    "content": "Cluster the points $A(1,1)$, $B(1,2)$, $C(8,1)$, $D(8,2)$, $E(4,8)$, $F(5,9)$ using $k=3$ with initial centroids $c_1=(1,1)$, $c_2=(8,1)$, $c_3=(4,8)$.\n\n\\textbf{Solution:}\n\\textbf{Iteration 1 — Assign:}\n\\begin{align*}\nA\\to c_1\\ (0),\\quad B\\to c_1\\ (1<7.071,6.708),\\quad C\\to c_2\\ (0),\\quad D\\to c_2\\ (1<7.211) \\\\\nE\\to c_3\\ (0),\\quad F\\to c_3\\ (1.414<8.944,8.544)\n\\end{align*}\n\\textbf{Update:}\n\\[\nc_1=(1,1.5),\\qquad c_2=(8,1.5),\\qquad c_3=(4.5,8.5)\n\\]\n\\textbf{Iteration 2 — Assign (using new centroids):} Every point remains closest to its own cluster's new centroid (each point is only $0.5$ or $0.707$ from its own centroid, while the nearest other centroid is several units away). No further changes.\\\\\n\\boxed{\\text{Converged: }\\{A,B\\}\\to(1,1.5),\\ \\{C,D\\}\\to(8,1.5),\\ \\{E,F\\}\\to(4.5,8.5)}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.68]\n\\draw[->,thick] (-0.5,0) -- (9.5,0) node[right]{\\small $x_1$};\n\\draw[->,thick] (0,-0.5) -- (0,10) node[above]{\\small $x_2$};\n\\filldraw[primaryblue] (1,1) circle (3pt) node[below,font=\\scriptsize]{$A$};\n\\filldraw[primaryblue] (1,2) circle (3pt) node[above,font=\\scriptsize]{$B$};\n\\filldraw[accentorange] (8,1) circle (3pt) node[below,font=\\scriptsize]{$C$};\n\\filldraw[accentorange] (8,2) circle (3pt) node[above,font=\\scriptsize]{$D$};\n\\filldraw[darkgreen] (4,8) circle (3pt) node[below,font=\\scriptsize]{$E$};\n\\filldraw[darkgreen] (5,9) circle (3pt) node[above,font=\\scriptsize]{$F$};\n\\draw[primaryblue,thick] (1,1.5) circle (5pt);\n\\draw[accentorange,thick] (8,1.5) circle (5pt);\n\\draw[darkgreen,thick] (4.5,8.5) circle (5pt);\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "keypoint",
+    "title": "Practical Notes on k-Means: enumerate[leftmargin=2em,itemsep=4pt] At",
+    "content": "\\textbf{Practical Notes on k-Means:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item At every iteration, check \\textbf{both} whether any point changed cluster \\textbf{and} whether centroids moved — stop only when neither happens\n\\item Poorly chosen initial centroids (Example 3.14) can cause extra iterations or a worse final clustering; k-Means is often run several times with different random starts and the best result kept\n\\item Unlike Decision Trees or Naive Bayes, k-Means never uses class labels — the \"correct\" grouping is discovered purely from distances\n\\end{enumerate}\n\n\\subsection{Sum of Squared Errors and Choosing k}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "definition",
+    "title": "Sum of Squared Errors (SSE)",
+    "content": "The Sum of Squared Errors measures how tightly the points fit their assigned clusters:\n\\[\nSSE = \\sum_{j=1}^{k}\\sum_{x \\in \\text{Cluster}_j} d(x,c_j)^2\n\\]\nwhere $c_j$ is the centroid of Cluster $j$. A \\textbf{lower} SSE means the points are, on average, closer to their own cluster's centroid — a tighter, better clustering.\n\nThis is simply the squared-distance idea from Section 3.1.2, summed over every point in every cluster."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "example",
+    "title": "Example 3.16 --- SSE of the Clustering from Example 3.13",
+    "content": "Using the final clusters from Example 3.13 — $\\{A(1,1),B(2,1)\\}\\to c_1=(1.5,1)$ and $\\{C(4,3),D(5,4)\\}\\to c_2=(4.5,3.5)$ — compute the total SSE.\n\n\\textbf{Solution:}\n\\begin{align*}\nd(A,c_1)^2 &= (1-1.5)^2+(1-1)^2 = 0.25 \\\\\nd(B,c_1)^2 &= (2-1.5)^2+(1-1)^2 = 0.25 \\\\\nd(C,c_2)^2 &= (4-4.5)^2+(3-3.5)^2 = 0.5 \\\\\nd(D,c_2)^2 &= (5-4.5)^2+(4-3.5)^2 = 0.5 \\\\[4pt]\nSSE &= 0.25+0.25+0.5+0.5\n\\end{align*}\n\\boxed{SSE = 1.5}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "example",
+    "title": "Example 3.17 --- SSE of a Single Cluster",
+    "content": "A cluster contains the points $(0,0)$, $(2,0)$, $(1,3)$. Compute the centroid and the SSE for this cluster.\n\n\\textbf{Solution:}\n\\begin{align*}\nc &= \\left(\\frac{0+2+1}{3},\\frac{0+0+3}{3}\\right) = (1,1) \\\\[4pt]\nd((0,0),c)^2 &= 1+1 = 2 \\\\\nd((2,0),c)^2 &= 1+1 = 2 \\\\\nd((1,3),c)^2 &= 0+4 = 4 \\\\[4pt]\nSSE &= 2+2+4\n\\end{align*}\n\\boxed{SSE = 8}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "example",
+    "title": "Example 3.18 --- Comparing SSE for k=1 versus k=2",
+    "content": "For the points $(1,1)$, $(1,2)$, $(5,5)$, $(5,6)$, compute the SSE when using $k=1$ (one cluster containing all points) and compare it to the SSE when using $k=2$ (clusters $\\{(1,1),(1,2)\\}$ and $\\{(5,5),(5,6)\\}$).\n\n\\textbf{Solution:}\n\\textbf{Case $k=1$:} centroid $=\\left(\\frac{1+1+5+5}{4},\\frac{1+2+5+6}{4}\\right)=(3,3.5)$\n\\begin{align*}\nSSE_{k=1} &= [(1-3)^2+(1-3.5)^2]+[(1-3)^2+(2-3.5)^2]+[(5-3)^2+(5-3.5)^2]+[(5-3)^2+(6-3.5)^2] \\\\\n&= [4+6.25]+[4+2.25]+[4+2.25]+[4+6.25]\n\\end{align*}\n\\boxed{SSE_{k=1} = 33}\n\n\\textbf{Case $k=2$:} centroids $(1,1.5)$ and $(5,5.5)$\n\\begin{align*}\nSSE_{k=2} &= [(1-1)^2+(1-1.5)^2]+[(1-1)^2+(2-1.5)^2]+[(5-5)^2+(5-5.5)^2]+[(5-5)^2+(6-5.5)^2] \\\\\n&= 0.25+0.25+0.25+0.25\n\\end{align*}\n\\boxed{SSE_{k=2} = 1}\nIncreasing $k$ from 1 to 2 dropped the SSE sharply, from 33 down to 1, because each point now sits much closer to its own (smaller) cluster's centroid.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\begin{axis}[\n    width=8cm,height=5.5cm,\n    xlabel={Number of Clusters $k$},\n    ylabel={SSE},\n    xmin=0,xmax=5,ymin=0,ymax=35,\n    xtick={1,2,3,4},\n    axis lines=left,\n    ymajorgrids=true,\n]\n\\addplot[primaryblue,thick,mark=*,mark size=2pt] coordinates {(1,33)(2,1)(3,0.6)(4,0.3)};\n\\draw[darkgreen,dashed,thick] (axis cs:2,0) -- (axis cs:2,33);\n\\node[darkgreen,font=\\scriptsize] at (axis cs:2.7,30) {elbow point};\n\\end{axis}\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Means Partitional Clustering",
+    "type": "keypoint",
+    "title": "The Elbow Method for Choosing k:",
+    "content": "\\textbf{The Elbow Method for Choosing k:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item SSE always \\textbf{decreases} as $k$ increases (more clusters means points sit closer to their centroids), reaching $SSE=0$ when $k=n$\n\\item Plot SSE against $k$: the curve drops sharply at first, then flattens out\n\\item The \\textbf{elbow point} — where the drop suddenly slows down, as at $k=2$ in Example 3.18 — is chosen as a good balance between simplicity (few clusters) and tightness (low SSE)\n\\item Choosing $k$ too large just to minimize SSE defeats the purpose of clustering, since $k=n$ trivially gives $SSE=0$ with every point in its own cluster\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Self-Organizing Maps (SOM)",
+    "type": "definition",
+    "title": "Self-Organizing Map (SOM)",
+    "content": "A Self-Organizing Map is an unsupervised neural network that arranges a grid of \\textbf{neurons} (each holding a weight vector of the same dimension as the input) so that neurons which are close together on the grid end up responding to similar input patterns. Unlike k-Means, which produces unordered clusters, a SOM preserves \\textbf{topology} — nearby neurons on the map represent nearby regions of the input space.\n\nThis is similar in spirit to k-Means (each neuron's weight vector acts like a centroid), except the neurons also influence their grid-neighbours during training, which keeps similar patterns mapped near each other.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.85]\n\\foreach \\i in {0,1,2}\n  \\foreach \\j in {0,1,2}\n    \\filldraw[primaryblue] (\\i*1.3,\\j*1.3) circle (4pt);\n\\foreach \\i in {0,1,2}\n  \\foreach \\j in {0,1}\n    \\draw[thick,darkgray] (\\i*1.3,\\j*1.3) -- (\\i*1.3,\\j*1.3+1.3);\n\\foreach \\i in {0,1}\n  \\foreach \\j in {0,1,2}\n    \\draw[thick,darkgray] (\\i*1.3,\\j*1.3) -- (\\i*1.3+1.3,\\j*1.3);\n\\node[font=\\scriptsize] at (1.3,-0.6) {$3\\times3$ grid of neurons, each with a weight vector};\n\\end{tikzpicture}\n\\end{center}\n\n\\subsection{Best Matching Unit and Weight Update}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Self-Organizing Maps (SOM)",
+    "type": "definition",
+    "title": "Best Matching Unit (BMU)",
+    "content": "For a given input vector $x$, the Best Matching Unit is the neuron whose weight vector $w_j$ is closest to $x$ (using Euclidean distance):\n\\[\n\\text{BMU} = \\arg\\min_j \\; d(x, w_j)\n\\]"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Self-Organizing Maps (SOM)",
+    "type": "definition",
+    "title": "SOM Weight Update Rule",
+    "content": "After finding the BMU for input $x$, every neuron $j$ within the BMU's neighbourhood updates its weight vector to move slightly closer to $x$:\n\\[\nw_j^{\\text{new}} = w_j^{\\text{old}} + \\eta \\cdot \\left(x - w_j^{\\text{old}}\\right)\n\\]\nwhere $\\eta$ is the learning rate ($0<\\eta\\le1$). Neurons outside the neighbourhood are left unchanged.\n\nThis update rule is just \"move a fraction $\\eta$ of the way from the old weight toward the input\" — the same kind of small-step adjustment used in gradient-based learning."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Self-Organizing Maps (SOM)",
+    "type": "algorithm",
+    "title": "Self-Organizing Map Training (Simplified)",
+    "content": "\\textbf{Input:} training points, a grid of neurons with initial weight vectors, learning rate $\\eta$, neighbourhood radius $r$\n\n\\textbf{Output:} trained neuron weight vectors\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Pick a training input $x$.\n\\item Compute the distance from $x$ to every neuron's weight vector and find the BMU (smallest distance).\n\\item Identify all neurons within radius $r$ of the BMU on the grid (the neighbourhood).\n\\item Update the weight vector of the BMU and every neuron in its neighbourhood using $w_j^{\\text{new}} = w_j^{\\text{old}} + \\eta(x-w_j^{\\text{old}})$.\n\\item Repeat steps 1 to 4 for every training input (one full pass is called an epoch).\n\\item Optionally shrink $\\eta$ and $r$ slightly and repeat for more epochs.\n\\item Return the final weight vectors.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Self-Organizing Maps (SOM)",
+    "type": "example",
+    "title": "Example 3.19 --- Finding the Best Matching Unit",
+    "content": "Three neurons have weight vectors $w_1=(1,1)$, $w_2=(4,4)$, $w_3=(8,1)$. For input $x=(5,3)$, find the BMU.\n\n\\textbf{Solution:}\n\\begin{align*}\nd(x,w_1) &= \\sqrt{(5-1)^2+(3-1)^2} = \\sqrt{16+4} = \\sqrt{20} \\approx 4.472 \\\\\nd(x,w_2) &= \\sqrt{(5-4)^2+(3-4)^2} = \\sqrt{1+1} = \\sqrt{2} \\approx 1.414 \\\\\nd(x,w_3) &= \\sqrt{(5-8)^2+(3-1)^2} = \\sqrt{9+4} = \\sqrt{13} \\approx 3.606\n\\end{align*}\nThe smallest distance is $d(x,w_2)\\approx1.414$.\n\\boxed{\\text{BMU} = w_2}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Self-Organizing Maps (SOM)",
+    "type": "example",
+    "title": "Example 3.20 --- Updating the BMU's Weight Vector",
+    "content": "Using the BMU $w_2=(4,4)$ found in Example 3.19 and input $x=(5,3)$, update $w_2$ with learning rate $\\eta=0.5$.\n\n\\textbf{Solution:}\n\\begin{align*}\nw_2^{\\text{new}} &= w_2^{\\text{old}} + \\eta(x-w_2^{\\text{old}}) \\\\\n&= (4,4) + 0.5\\big[(5,3)-(4,4)\\big] \\\\\n&= (4,4) + 0.5(1,-1) \\\\\n&= (4,4) + (0.5,-0.5)\n\\end{align*}\n\\boxed{w_2^{\\text{new}} = (4.5, 3.5)}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Self-Organizing Maps (SOM)",
+    "type": "example",
+    "title": "Example 3.21 --- Updating a Neighbour Neuron",
+    "content": "Using the same setup as Example 3.20, suppose neuron $w_3=(8,1)$ is also inside the BMU's neighbourhood. Update $w_3$ with the same input $x=(5,3)$ and learning rate $\\eta=0.5$.\n\n\\textbf{Solution:}\n\\begin{align*}\nw_3^{\\text{new}} &= w_3^{\\text{old}} + \\eta(x-w_3^{\\text{old}}) \\\\\n&= (8,1) + 0.5\\big[(5,3)-(8,1)\\big] \\\\\n&= (8,1) + 0.5(-3,2) \\\\\n&= (8,1) + (-1.5,1)\n\\end{align*}\n\\boxed{w_3^{\\text{new}} = (6.5, 2)}\nNotice that $w_3$ still moves toward $x$, but starts farther away and so remains farther from $x$ than the BMU does — this is expected since it is only a neighbour, not the BMU itself."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Self-Organizing Maps (SOM)",
+    "type": "keypoint",
+    "title": "SOM vs k-Means: enumerate[leftmargin=2em,itemsep=4pt] Both find",
+    "content": "\\textbf{SOM vs k-Means:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Both find a \"closest representative vector\" for each input, exactly like a BMU (SOM) or nearest centroid (k-Means)\n\\item k-Means updates \\textbf{only} the winning centroid; SOM updates the winning neuron \\textbf{and} its grid neighbours, which is what creates the topology-preserving map\n\\item In SOM, neurons that are close on the grid end up with similar weight vectors after training, so the map can be visualized to show which regions of input space are related\n\\item A larger learning rate $\\eta$ makes each update move the weight vector further toward the input, exactly as seen by comparing the update sizes in Examples 3.20 and 3.21\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Nearest Neighbor Algorithm",
+    "type": "definition",
+    "title": "k-Nearest Neighbor (k-NN)",
+    "content": "k-Nearest Neighbor is an \\textbf{instance-based} (lazy) learning algorithm. It stores all the training examples and performs no explicit training phase. To classify a new point, it finds the $k$ training points closest to it (using a distance measure such as Euclidean distance) and assigns the \\textbf{majority class} among those $k$ neighbors.\n\nUnlike Decision Trees or Naive Bayes, which build a model in advance, k-NN waits until a new point actually needs to be classified — this is why it is called a \\textit{lazy} learner.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.85]\n\\draw[->,thick] (-0.5,0) -- (6,0) node[right]{\\small $x_1$};\n\\draw[->,thick] (0,-0.5) -- (0,5.5) node[above]{\\small $x_2$};\n\\filldraw[primaryblue] (1,4) circle (3pt);\n\\filldraw[primaryblue] (1.5,4.5) circle (3pt);\n\\filldraw[primaryblue] (2,3.8) circle (3pt);\n\\filldraw[accentorange] (4.5,1) circle (3pt);\n\\filldraw[accentorange] (5,1.5) circle (3pt);\n\\filldraw[accentorange] (4.2,0.5) circle (3pt);\n\\filldraw[darkgreen] (3,2.5) circle (3pt) node[right,font=\\scriptsize,darkgreen]{New point $q$};\n\\draw[darkgreen,dashed,thick] (3,2.5) circle (1.6cm);\n\\end{tikzpicture}\n\\end{center}\n\n\\subsection{The k-NN Algorithm}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Nearest Neighbor Algorithm",
+    "type": "algorithm",
+    "title": "k-Nearest Neighbor Algorithm",
+    "content": "\\textbf{Input:} training points with known class labels, a test point $q$, the number of neighbors $k$\n\n\\textbf{Output:} predicted class label for $q$\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute the distance from $q$ to every training point.\n\\item Sort the training points by distance to $q$ in increasing order.\n\\item Select the $k$ closest training points (the $k$ nearest neighbors).\n\\item Count how many of these $k$ neighbors belong to each class.\n\\item Assign $q$ the class that appears most often among the $k$ neighbors (majority vote).\n\\item Return the predicted class.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Nearest Neighbor Algorithm",
+    "type": "example",
+    "title": "Example 3.22 --- Classifying with k=3",
+    "content": "\\begin{center}\n\\begin{tabular}{cccc}\n\\toprule\nPoint & $x_1$ & $x_2$ & Class \\\\\n\\midrule\n$P_1$ & 1 & 1 & A \\\\\n$P_2$ & 2 & 1 & A \\\\\n$P_3$ & 1 & 2 & A \\\\\n$P_4$ & 6 & 6 & B \\\\\n$P_5$ & 7 & 6 & B \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nClassify the query point $q=(2,2)$ using k-NN with $k=3$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd(q,P_1) &= \\sqrt{1+1} = \\sqrt{2} \\approx 1.414 \\\\\nd(q,P_2) &= \\sqrt{0+1} = 1 \\\\\nd(q,P_3) &= \\sqrt{1+0} = 1 \\\\\nd(q,P_4) &= \\sqrt{16+16} \\approx 5.657 \\\\\nd(q,P_5) &= \\sqrt{25+16} \\approx 6.403\n\\end{align*}\nSorted by distance: $P_2(1), P_3(1), P_1(1.414), P_4(5.657), P_5(6.403)$. The 3 nearest neighbors are $P_2, P_3, P_1$ — all class A.\n\\boxed{\\text{Predicted class} = A}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Nearest Neighbor Algorithm",
+    "type": "example",
+    "title": "Example 3.23 --- Classifying with k=1 (Nearest Neighbor)",
+    "content": "Using the same dataset as Example 3.22, classify $q=(6,5)$ using k-NN with $k=1$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd(q,P_1) &= \\sqrt{25+16} \\approx 6.403 \\\\\nd(q,P_2) &= \\sqrt{16+16} \\approx 5.657 \\\\\nd(q,P_3) &= \\sqrt{25+9} \\approx 5.831 \\\\\nd(q,P_4) &= \\sqrt{0+1} = 1 \\\\\nd(q,P_5) &= \\sqrt{1+1} \\approx 1.414\n\\end{align*}\nThe single nearest neighbor is $P_4$ (distance $1$), which is class B.\n\\boxed{\\text{Predicted class} = B}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Nearest Neighbor Algorithm",
+    "type": "example",
+    "title": "Example 3.24 --- Classifying with a Tie Broken by Closer Points",
+    "content": "\\begin{center}\n\\begin{tabular}{cccc}\n\\toprule\nPoint & $x_1$ & $x_2$ & Class \\\\\n\\midrule\n$P_1$ & 1 & 1 & A \\\\\n$P_2$ & 2 & 2 & A \\\\\n$P_3$ & 5 & 1 & B \\\\\n$P_4$ & 6 & 2 & B \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nClassify the query point $q=(3.5,1.5)$ using k-NN with $k=4$.\n\n\\textbf{Solution:}\n\\begin{align*}\nd(q,P_1) &= \\sqrt{6.25+0.25} = \\sqrt{6.5} \\approx 2.550 \\\\\nd(q,P_2) &= \\sqrt{2.25+0.25} = \\sqrt{2.5} \\approx 1.581 \\\\\nd(q,P_3) &= \\sqrt{2.25+0.25} = \\sqrt{2.5} \\approx 1.581 \\\\\nd(q,P_4) &= \\sqrt{6.25+0.25} = \\sqrt{6.5} \\approx 2.550\n\\end{align*}\nWith $k=4$, all four points are neighbors: 2 of class A ($P_1,P_2$) and 2 of class B ($P_3,P_4$) — an exact tie.\n\\boxed{\\text{Tie between A and B: an odd } k \\text{ (e.g. } k=3\\text{) should be used instead to avoid this}}\nThis illustrates exactly why $k$ is usually chosen to be odd for two-class problems, so majority voting cannot tie. \\checkmark"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Nearest Neighbor Algorithm",
+    "type": "keypoint",
+    "title": "Choosing k in k-NN: enumerate[leftmargin=2em,itemsep=4pt] A",
+    "content": "\\textbf{Choosing k in k-NN:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item A \\textbf{small} $k$ (e.g. $k=1$) is sensitive to noise — one mislabeled nearby point can flip the prediction\n\\item A \\textbf{large} $k$ smooths out noise but risks pulling in points from a different, more distant class\n\\item $k$ is usually chosen \\textbf{odd} for two-class problems specifically to avoid ties, as seen in Example 3.24\n\\item k-NN needs no explicit training phase, but classifying each new point requires computing its distance to \\textbf{every} training point, which is why it is called \"lazy\" learning\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "k-Nearest Neighbor Algorithm",
+    "type": "example",
+    "title": "Example 3.25 --- Effect of Increasing k",
+    "content": "\\begin{center}\n\\begin{tabular}{cccc}\n\\toprule\nPoint & $x_1$ & $x_2$ & Class \\\\\n\\midrule\n$P_1$ & 1 & 1 & A \\\\\n$P_2$ & 2 & 1 & A \\\\\n$P_3$ & 2 & 3 & B \\\\\n$P_4$ & 8 & 8 & B \\\\\n$P_5$ & 9 & 9 & B \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nClassify $q=(2,2)$ using k-NN with (a) $k=1$ and (b) $k=3$, and compare the results.\n\n\\textbf{Solution:}\n\\begin{align*}\nd(q,P_1) &= \\sqrt{1+1} \\approx 1.414 \\\\\nd(q,P_2) &= \\sqrt{0+1} = 1 \\\\\nd(q,P_3) &= \\sqrt{0+1} = 1 \\\\\nd(q,P_4) &= \\sqrt{36+36} \\approx 8.485 \\\\\nd(q,P_5) &= \\sqrt{49+49} \\approx 9.899\n\\end{align*}\n\\textbf{(a) $k=1$:} There is a tie for nearest between $P_2$ (distance 1, class A) and $P_3$ (distance 1, class B); assuming $P_2$ is selected first, the prediction is A.\n\\textbf{(b) $k=3$:} The 3 nearest neighbors are $P_2(A)$, $P_3(B)$, $P_1(A)$ — majority is 2 A's vs 1 B.\n\\boxed{k=1 \\Rightarrow A \\text{ (tie-sensitive)}, \\qquad k=3 \\Rightarrow A \\text{ (clear majority)}}\nHere both choices happen to agree, but $k=3$ reaches its answer through a clear majority vote rather than a distance tie, making it the more robust choice.\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 0",
+    "content": "Compute the Euclidean distance between the points $(3,4)$ and $(7,1)$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "Cluster $A=\\{(1,1),(2,3)\\}$ and Cluster $B=\\{(5,1),(6,4)\\}$. Compute the single linkage distance $d(A,B)$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "Using the same clusters as the previous question, compute the complete linkage distance $d(A,B)$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "Using the same clusters as the previous two questions, compute the average linkage distance $d(A,B)$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "Cluster the points $P_1=(1,1)$, $P_2=(2,2)$, $P_3=(9,1)$, $P_4=(10,2)$ using hierarchical agglomerative clustering with single linkage. Show every merge step and draw the resulting dendrogram.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "Cluster the points $Q_1=(0,0)$, $Q_2=(1,0)$, $Q_3=(0,5)$, $Q_4=(1,5)$ using hierarchical agglomerative clustering with complete linkage. Show every merge step and draw the resulting dendrogram.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "Using k-Means with $k=2$ and initial centroids $c_1=(0,0)$ and $c_2=(10,10)$, perform one full iteration (assign and update) for the points $(1,1)$, $(2,1)$, $(9,9)$, $(8,10)$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "For the clusters obtained in the previous question, compute the total Sum of Squared Errors (SSE).\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "Explain, using a small example of your own with at least 4 points, why choosing $k$ too large defeats the purpose of the SSE-based elbow method.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "Three neurons in a Self-Organizing Map have weight vectors $w_1=(2,2)$, $w_2=(6,2)$, $w_3=(4,8)$. For input $x=(5,3)$, find the Best Matching Unit (BMU).\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "Using the BMU found in the previous question, update its weight vector with learning rate $\\eta=0.4$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "If a neighboring neuron has weight vector $w=(4,8)$ and the same input $x=(5,3)$ is applied with learning rate $\\eta=0.2$, compute its updated weight vector.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "Given the training points $(1,1,A)$, $(1,2,A)$, $(2,1,A)$, $(8,8,B)$, $(9,8,B)$ (format: $x_1,x_2,\\text{Class}$), classify the query point $q=(2,2)$ using k-NN with $k=3$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "Using the same dataset as the previous question, classify $q=(8,7)$ using k-NN with $k=1$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 3 - Unsupervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "Explain, using a short example, why an odd value of $k$ is generally preferred over an even value of $k$ in k-NN for a two-class classification problem."
+  }
+]

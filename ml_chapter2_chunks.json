@@ -1,0 +1,898 @@
+[
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "definition",
+    "title": "Decision Tree",
+    "content": "A decision tree is a tree-shaped classification model in which every internal node tests one attribute of the input, every branch represents the outcome of that test, and every leaf node assigns a class label. To classify a new example, start at the root and follow the branch matching the example's attribute values, node after node, until a leaf is reached.\n\nThis is nothing more than a nested sequence of if-else questions applied to the attributes of an example."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.1 --- Classifying an Instance from a Cricket Tree",
+    "content": "The table below shows whether Ali played cricket based on the weather.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nWeather & Temperature & PlayCricket \\\\\n\\midrule\nSunny & Hot & No \\\\\nSunny & Cold & Yes \\\\\nRainy & Hot & Yes \\\\\nRainy & Cold & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nThe decision tree built from this data is shown below.\n\\begin{center}\n\\begin{tikzpicture}[\n  grow=down,\n  level distance=1.6cm,\n  level 1/.style={sibling distance=3.4cm},\n  every node/.style={rectangle,rounded corners,draw=primaryblue,thick,fill=primaryblue!8,align=center,font=\\small,inner sep=4pt},\n  every child/.style={edge from parent/.style={draw,thick,->}}\n]\n\\node {Weather}\n  child { node {Temperature}\n    child { node {No} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Hot} }\n    child { node {Yes} edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Cold} }\n    edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Sunny} }\n  child { node {Yes} edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Rainy} };\n\\end{tikzpicture}\n\\end{center}\nUse this tree to classify a new instance: Weather = Sunny Temperature = Cold.\n\n\\textbf{Solution:}\nStart at the root. Weather = Sunny, so move to the Temperature node. Temperature = Cold, so move to the right branch, which is a leaf labeled Yes. \\\\\nPredicted class: \\boxed{\\text{Yes}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.2 --- Classifying a New Loan Applicant",
+    "content": "The table below shows loan approval decisions.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nIncome & CreditScore & LoanApproved \\\\\n\\midrule\nHigh & Good & Yes \\\\\nHigh & Bad & Yes \\\\\nLow & Good & Yes \\\\\nLow & Bad & No \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nThe decision tree built from this data is shown below.\n\\begin{center}\n\\begin{tikzpicture}[\n  grow=down,\n  level distance=1.6cm,\n  level 1/.style={sibling distance=3.4cm},\n  every node/.style={rectangle,rounded corners,draw=primaryblue,thick,fill=primaryblue!8,align=center,font=\\small,inner sep=4pt},\n  every child/.style={edge from parent/.style={draw,thick,->}}\n]\n\\node {Income}\n  child { node {Yes} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {High} }\n  child { node {CreditScore}\n    child { node {Yes} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Good} }\n    child { node {No} edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Bad} }\n    edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Low} };\n\\end{tikzpicture}\n\\end{center}\nUse this tree to classify a new applicant: Income = Low CreditScore = Good.\n\n\\textbf{Solution:}\nStart at the root. Income = Low, so move to the CreditScore node. CreditScore = Good, so move to the left branch, which is a leaf labeled Yes. \\\\\nPredicted class: \\boxed{\\text{Yes (Approved)}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.3 --- Classifying a New Email",
+    "content": "The table below shows whether emails are spam.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nContainsLink & Sender & Class \\\\\n\\midrule\nYes & Unknown & Spam \\\\\nYes & Known & NotSpam \\\\\nNo & Unknown & NotSpam \\\\\nNo & Known & NotSpam \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nThe decision tree built from this data is shown below.\n\\begin{center}\n\\begin{tikzpicture}[\n  grow=down,\n  level distance=1.6cm,\n  level 1/.style={sibling distance=3.4cm},\n  every node/.style={rectangle,rounded corners,draw=primaryblue,thick,fill=primaryblue!8,align=center,font=\\small,inner sep=4pt},\n  every child/.style={edge from parent/.style={draw,thick,->}}\n]\n\\node {ContainsLink}\n  child { node {Sender}\n    child { node {Spam} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Unknown} }\n    child { node {NotSpam} edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Known} }\n    edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Yes} }\n  child { node {NotSpam} edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {No} };\n\\end{tikzpicture}\n\\end{center}\nUse this tree to classify a new email: ContainsLink = Yes Sender = Known.\n\n\\textbf{Solution:}\nStart at the root. ContainsLink = Yes, so move to the Sender node. Sender = Known, so move to the right branch, which is a leaf labeled NotSpam. \\\\\nPredicted class: \\boxed{\\text{NotSpam}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "keypoint",
+    "title": "Decision Tree Terminology: enumerate[leftmargin=2em,itemsep=4pt] Root node",
+    "content": "\\textbf{Decision Tree Terminology:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item \\textbf{Root node} the topmost node where classification always begins\n\\item \\textbf{Internal node} a node that tests one attribute and branches on its values\n\\item \\textbf{Branch (edge)} represents one possible value of the tested attribute\n\\item \\textbf{Leaf node} a terminal node that outputs a class label with no further test\n\\end{enumerate}\n\n\\subsection{Entropy and Impurity}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "definition",
+    "title": "Entropy",
+    "content": "For a set $S$ containing examples from $c$ classes, entropy measures how mixed or impure the set is:\n\\[\nH(S) = -\\sum_{i=1}^{c} p_i \\log_2 p_i\n\\]\nwhere $p_i$ is the proportion of examples in $S$ belonging to class $i$.\n\nThis is the same weighted-average-of-surprise idea used in information theory."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "theorem",
+    "title": "Properties of Entropy",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item $H(S) = 0$ when every example in $S$ belongs to the same class \\hfill\\textit{(pure set)}\n\\item $H(S)$ is largest when the classes are split as evenly as possible \\hfill\\textit{(maximum impurity)}\n\\item $0 \\le H(S) \\le \\log_2 c$ for a set with $c$ classes \\hfill\\textit{(bounds)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.4 --- Entropy of a Mixed Exam Result Set",
+    "content": "A dataset $S$ of 6 students contains 4 examples labeled Pass and 2 examples labeled Fail. Compute $H(S)$.\n\n\\textbf{Solution:}\n\\begin{align*}\np(\\text{Pass}) &= \\frac{4}{6} = \\frac{2}{3}, \\qquad p(\\text{Fail}) = \\frac{2}{6} = \\frac{1}{3} \\\\\nH(S) &= -\\frac{2}{3}\\log_2\\frac{2}{3} - \\frac{1}{3}\\log_2\\frac{1}{3} \\\\\n&= -\\frac{2}{3}(-0.585) - \\frac{1}{3}(-1.585) \\\\\n&= 0.390 + 0.528\n\\end{align*}\n\\boxed{H(S) \\approx 0.918}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.5 --- Entropy of a Pure Fruit Set",
+    "content": "A dataset $S$ of 5 fruits contains 5 examples all labeled Mango. Compute $H(S)$.\n\n\\textbf{Solution:}\n\\begin{align*}\np(\\text{Mango}) &= \\frac{5}{5} = 1 \\\\\nH(S) &= -(1)\\log_2(1) = -(1)(0)\n\\end{align*}\n\\boxed{H(S) = 0}\nSince every example belongs to one class, the set is completely pure, matching Property 1 above. \\checkmark"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.6 --- Entropy of a Balanced Coin Toss Set",
+    "content": "A dataset $S$ of 6 coin tosses contains 3 examples labeled Heads and 3 examples labeled Tails. Compute $H(S)$.\n\n\\textbf{Solution:}\n\\begin{align*}\np(\\text{Heads}) &= \\frac{3}{6} = \\frac{1}{2}, \\qquad p(\\text{Tails}) = \\frac{3}{6} = \\frac{1}{2} \\\\\nH(S) &= -\\frac{1}{2}\\log_2\\frac{1}{2} - \\frac{1}{2}\\log_2\\frac{1}{2} \\\\\n&= -\\frac{1}{2}(-1) - \\frac{1}{2}(-1) \\\\\n&= 0.5 + 0.5\n\\end{align*}\n\\boxed{H(S) = 1}\nThis is the largest possible entropy for a two-class set, matching Property 2 above. \\checkmark"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "keypoint",
+    "title": "Quick Reference: enumerate[leftmargin=2em,itemsep=4pt] $_2 2 =",
+    "content": "\\textbf{Quick Reference:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item $\\log_2 2 = 1$ and $\\log_2 3 \\approx 1.585$ (values needed for almost every entropy calculation in this chapter)\n\\item $H(S) = 0$ means pure and $H(S) = 1$ means maximum impurity for a two-class set\n\\item Lower entropy is always better for building compact decision trees\n\\end{enumerate}\n\n\\subsection{Information Gain}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "definition",
+    "title": "Information Gain",
+    "content": "Information Gain measures how much entropy is reduced by splitting a set $S$ on attribute $A$:\n\\[\n\\text{Gain}(S,A) = H(S) - \\sum_{v \\in Values(A)} \\frac{|S_v|}{|S|} H(S_v)\n\\]\nwhere $S_v$ is the subset of $S$ for which attribute $A$ has value $v$.\n\nThink of it as the total entropy minus a weighted average of the entropies of the resulting pieces."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.7 --- Information Gain of Weather",
+    "content": "Consider the dataset below.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nWeather & Temperature & PlayCricket \\\\\n\\midrule\nSunny & Hot & No \\\\\nSunny & Cold & No \\\\\nSunny & Hot & Yes \\\\\nRainy & Cold & Yes \\\\\nRainy & Cold & Yes \\\\\nRainy & Hot & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nCompute $\\text{Gain}(S,\\text{Weather})$.\n\n\\textbf{Solution:}\nThe set has 4 Yes and 2 No, the same proportion as Example 2.4, so $H(S) \\approx 0.918$.\n\\begin{align*}\nS_{\\text{Sunny}} &= \\{\\text{No,No,Yes}\\}: \\ 1 \\text{ Yes}, 2 \\text{ No} \\Rightarrow H(S_{\\text{Sunny}}) \\approx 0.918 \\\\\nS_{\\text{Rainy}} &= \\{\\text{Yes,Yes,Yes}\\}: \\ \\text{pure} \\Rightarrow H(S_{\\text{Rainy}}) = 0 \\\\\n\\text{Weighted entropy} &= \\frac{3}{6}(0.918) + \\frac{3}{6}(0) = 0.459 \\\\\n\\text{Gain}(S,\\text{Weather}) &= 0.918 - 0.459\n\\end{align*}\n\\boxed{\\text{Gain}(S,\\text{Weather}) \\approx 0.459}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.8 --- Information Gain of Temperature",
+    "content": "Using the same dataset as Example 2.7, compute $\\text{Gain}(S,\\text{Temperature})$.\n\n\\textbf{Solution:}\n\\begin{align*}\nS_{\\text{Hot}} &= \\{\\text{No,Yes,Yes}\\}: \\ 2 \\text{ Yes}, 1 \\text{ No} \\Rightarrow H(S_{\\text{Hot}}) \\approx 0.918 \\\\\nS_{\\text{Cold}} &= \\{\\text{No,Yes,Yes}\\}: \\ 2 \\text{ Yes}, 1 \\text{ No} \\Rightarrow H(S_{\\text{Cold}}) \\approx 0.918 \\\\\n\\text{Weighted entropy} &= \\frac{3}{6}(0.918) + \\frac{3}{6}(0.918) = 0.918 \\\\\n\\text{Gain}(S,\\text{Temperature}) &= 0.918 - 0.918\n\\end{align*}\n\\boxed{\\text{Gain}(S,\\text{Temperature}) = 0}\nSince Gain(Weather) $\\approx 0.459 >$ Gain(Temperature) $= 0$, Weather is the better attribute to split on first."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.9 --- Information Gain of Sky Condition",
+    "content": "Consider a dataset about carrying an umbrella.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nSky & Humidity & TakeUmbrella \\\\\n\\midrule\nCloudy & High & Yes \\\\\nCloudy & Low & Yes \\\\\nCloudy & High & Yes \\\\\nClear & Low & No \\\\\nClear & Low & No \\\\\nClear & High & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nCompute $\\text{Gain}(S,\\text{Sky})$.\n\n\\textbf{Solution:}\nThe set has 4 Yes and 2 No, so $H(S) \\approx 0.918$.\n\\begin{align*}\nS_{\\text{Cloudy}} &= \\{\\text{Yes,Yes,Yes}\\}: \\ \\text{pure} \\Rightarrow H(S_{\\text{Cloudy}}) = 0 \\\\\nS_{\\text{Clear}} &= \\{\\text{No,No,Yes}\\}: \\ 1 \\text{ Yes}, 2 \\text{ No} \\Rightarrow H(S_{\\text{Clear}}) \\approx 0.918 \\\\\n\\text{Weighted entropy} &= \\frac{3}{6}(0) + \\frac{3}{6}(0.918) = 0.459 \\\\\n\\text{Gain}(S,\\text{Sky}) &= 0.918 - 0.459\n\\end{align*}\n\\boxed{\\text{Gain}(S,\\text{Sky}) \\approx 0.459}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "keypoint",
+    "title": "Choosing the Splitting Attribute: enumerate[leftmargin=2em,itemsep=4pt] Compute",
+    "content": "\\textbf{Choosing the Splitting Attribute:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute $H(S)$ for the current set\n\\item Compute the weighted entropy after splitting on each candidate attribute\n\\item The attribute with the \\textbf{highest} Information Gain is chosen for the node\n\\item An attribute giving Gain $= 0$ tells us nothing new about the class, so it is never chosen over a better one\n\\end{enumerate}\n\n\\subsection{The ID3 Algorithm}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "algorithm",
+    "title": "ID3 Algorithm",
+    "content": "\\textbf{Input:} A set of training examples $S$ a target class attribute and a set of candidate attributes $A$\n\n\\textbf{Output:} A decision tree that classifies the training examples\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Create a root node for the tree.\n\\item If all examples in $S$ belong to the same class $c$ label the root with $c$ and stop.\n\\item If the attribute set $A$ is empty label the root with the majority class in $S$ and stop.\n\\item Otherwise compute Information Gain for every remaining attribute in $A$ and select the attribute $A^\\ast$ with the highest gain as the decision attribute for the root.\n\\item For each possible value $v$ of $A^\\ast$ add a new branch below the root for $A^\\ast = v$ and let $S_v$ be the subset of examples with $A^\\ast = v$.\n\\item If $S_v$ is empty attach a leaf labeled with the majority class of $S$ below this branch.\n\\item Otherwise attach the subtree obtained by recursively applying steps 2 to 6 to $S_v$ using $A - \\{A^\\ast\\}$ as the remaining attribute set.\n\\item Return the root node.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.10 --- Building a Tree for the Walk Dataset",
+    "content": "Build the ID3 decision tree for the dataset below.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nWeather & Wind & Walk \\\\\n\\midrule\nSunny & Weak & Yes \\\\\nSunny & Weak & Yes \\\\\nSunny & Strong & Yes \\\\\nRainy & Weak & No \\\\\nRainy & Weak & No \\\\\nRainy & Strong & No \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solution:}\nThe set has 3 Yes and 3 No, so $H(S) = 1$ (Example 2.6 pattern).\n\\begin{align*}\nS_{\\text{Sunny}} &= \\{\\text{Yes,Yes,Yes}\\}: \\ \\text{pure} \\Rightarrow H = 0 \\\\\nS_{\\text{Rainy}} &= \\{\\text{No,No,No}\\}: \\ \\text{pure} \\Rightarrow H = 0 \\\\\n\\text{Gain}(S,\\text{Weather}) &= 1 - \\left[\\frac{3}{6}(0) + \\frac{3}{6}(0)\\right] = 1\n\\end{align*}\n\\begin{align*}\nS_{\\text{Weak}} &= \\{\\text{Yes,Yes,No,No}\\}: \\ 2/2 \\Rightarrow H = 1 \\\\\nS_{\\text{Strong}} &= \\{\\text{Yes,No}\\}: \\ 1/1 \\Rightarrow H = 1 \\\\\n\\text{Gain}(S,\\text{Wind}) &= 1 - \\left[\\frac{4}{6}(1) + \\frac{2}{6}(1)\\right] = 0\n\\end{align*}\nSince Gain(Weather) $= 1 >$ Gain(Wind) $= 0$, Weather is chosen as the root. Both resulting subsets are already pure, so ID3 stops immediately (step 2).\n\\begin{center}\n\\begin{tikzpicture}[\n  grow=down,\n  level distance=1.6cm,\n  level 1/.style={sibling distance=3.4cm},\n  every node/.style={rectangle,rounded corners,draw=darkgreen,thick,fill=darkgreen!8,align=center,font=\\small,inner sep=4pt},\n  every child/.style={edge from parent/.style={draw,thick,->}}\n]\n\\node {Weather}\n  child { node {Yes} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Sunny} }\n  child { node {No} edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Rainy} };\n\\end{tikzpicture}\n\\end{center}\n\\boxed{\\text{Final Tree: Weather} \\to \\{\\text{Sunny}: \\text{Yes}, \\ \\text{Rainy}: \\text{No}\\}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.11 --- Building a Tree for Loan Approval",
+    "content": "Build the ID3 decision tree for the dataset below.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nIncome & CreditScore & LoanApproved \\\\\n\\midrule\nHigh & Good & Approve \\\\\nHigh & Bad & Approve \\\\\nHigh & Bad & Approve \\\\\nLow & Good & Approve \\\\\nLow & Bad & Deny \\\\\nLow & Bad & Deny \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solution:}\nThe set has 4 Approve and 2 Deny, so $H(S) \\approx 0.918$.\n\\begin{align*}\nS_{\\text{High}} &= \\{\\text{Approve,Approve,Approve}\\}: \\ \\text{pure} \\Rightarrow H = 0 \\\\\nS_{\\text{Low}} &= \\{\\text{Approve,Deny,Deny}\\}: \\ 1/3, 2/3 \\Rightarrow H \\approx 0.918 \\\\\n\\text{Gain}(S,\\text{Income}) &= 0.918 - \\left[\\frac{3}{6}(0) + \\frac{3}{6}(0.918)\\right] = 0.459\n\\end{align*}\n\\begin{align*}\nS_{\\text{Good}} &= \\{\\text{Approve,Approve}\\}: \\ \\text{pure} \\Rightarrow H = 0 \\\\\nS_{\\text{Bad}} &= \\{\\text{Approve,Approve,Deny,Deny}\\}: \\ 2/2 \\Rightarrow H = 1 \\\\\n\\text{Gain}(S,\\text{CreditScore}) &= 0.918 - \\left[\\frac{2}{6}(0) + \\frac{4}{6}(1)\\right] = 0.251\n\\end{align*}\nSince Gain(Income) $\\approx 0.459 >$ Gain(CreditScore) $\\approx 0.251$, Income is chosen as the root.\nIncome = High is already pure (Approve). Income = Low is not pure and must be split further using the only remaining attribute, CreditScore:\n\\begin{align*}\n\\text{Low, Good} &\\to \\{\\text{Approve}\\}: \\ \\text{pure} \\Rightarrow \\text{leaf } = \\text{Approve} \\\\\n\\text{Low, Bad} &\\to \\{\\text{Deny,Deny}\\}: \\ \\text{pure} \\Rightarrow \\text{leaf } = \\text{Deny}\n\\end{align*}\n\\begin{center}\n\\begin{tikzpicture}[\n  grow=down,\n  level distance=1.6cm,\n  level 1/.style={sibling distance=4.2cm},\n  level 2/.style={sibling distance=2.3cm},\n  every node/.style={rectangle,rounded corners,draw=darkgreen,thick,fill=darkgreen!8,align=center,font=\\small,inner sep=4pt},\n  every child/.style={edge from parent/.style={draw,thick,->}}\n]\n\\node {Income}\n  child { node {Approve} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {High} }\n  child { node {CreditScore}\n    child { node {Approve} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Good} }\n    child { node {Deny} edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Bad} }\n    edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Low} };\n\\end{tikzpicture}\n\\end{center}\n\\boxed{\\text{Final Tree: Income} \\to \\{\\text{High}: \\text{Approve}, \\ \\text{Low} \\to \\text{CreditScore} \\to \\{\\text{Good}: \\text{Approve}, \\text{Bad}: \\text{Deny}\\}\\}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "example",
+    "title": "Example 2.12 --- Building a Tree for Exam Result Prediction",
+    "content": "Build the ID3 decision tree for the dataset below.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nStudy & Sleep & Result \\\\\n\\midrule\nYes & Enough & Pass \\\\\nYes & Enough & Pass \\\\\nYes & Little & Pass \\\\\nNo & Enough & Fail \\\\\nNo & Enough & Fail \\\\\nNo & Little & Pass \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\textbf{Solution:}\nThe set has 4 Pass and 2 Fail, so $H(S) \\approx 0.918$.\n\\begin{align*}\nS_{\\text{Study=Yes}} &= \\{\\text{Pass,Pass,Pass}\\}: \\ \\text{pure} \\Rightarrow H = 0 \\\\\nS_{\\text{Study=No}} &= \\{\\text{Fail,Fail,Pass}\\}: \\ 1/3, 2/3 \\Rightarrow H \\approx 0.918 \\\\\n\\text{Gain}(S,\\text{Study}) &= 0.918 - \\left[\\frac{3}{6}(0) + \\frac{3}{6}(0.918)\\right] = 0.459\n\\end{align*}\n\\begin{align*}\nS_{\\text{Sleep=Enough}} &= \\{\\text{Pass,Pass,Fail,Fail}\\}: \\ 2/2 \\Rightarrow H = 1 \\\\\nS_{\\text{Sleep=Little}} &= \\{\\text{Pass,Pass}\\}: \\ \\text{pure} \\Rightarrow H = 0 \\\\\n\\text{Gain}(S,\\text{Sleep}) &= 0.918 - \\left[\\frac{4}{6}(1) + \\frac{2}{6}(0)\\right] = 0.251\n\\end{align*}\nSince Gain(Study) $\\approx 0.459 >$ Gain(Sleep) $\\approx 0.251$, Study is chosen as the root.\nStudy = Yes is already pure (Pass). Study = No is not pure and must be split further using the only remaining attribute, Sleep:\n\\begin{align*}\n\\text{No, Enough} &\\to \\{\\text{Fail,Fail}\\}: \\ \\text{pure} \\Rightarrow \\text{leaf } = \\text{Fail} \\\\\n\\text{No, Little} &\\to \\{\\text{Pass}\\}: \\ \\text{pure} \\Rightarrow \\text{leaf } = \\text{Pass}\n\\end{align*}\n\\begin{center}\n\\begin{tikzpicture}[\n  grow=down,\n  level distance=1.6cm,\n  level 1/.style={sibling distance=4.2cm},\n  level 2/.style={sibling distance=2.3cm},\n  every node/.style={rectangle,rounded corners,draw=darkgreen,thick,fill=darkgreen!8,align=center,font=\\small,inner sep=4pt},\n  every child/.style={edge from parent/.style={draw,thick,->}}\n]\n\\node {Study}\n  child { node {Pass} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Yes} }\n  child { node {Sleep}\n    child { node {Fail} edge from parent node[left,draw=none,fill=none,font=\\scriptsize] {Enough} }\n    child { node {Pass} edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {Little} }\n    edge from parent node[right,draw=none,fill=none,font=\\scriptsize] {No} };\n\\end{tikzpicture}\n\\end{center}\n\\boxed{\\text{Final Tree: Study} \\to \\{\\text{Yes}: \\text{Pass}, \\ \\text{No} \\to \\text{Sleep} \\to \\{\\text{Enough}: \\text{Fail}, \\text{Little}: \\text{Pass}\\}\\}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Decision Trees",
+    "type": "keypoint",
+    "title": "ID3 Stopping Conditions (Base Cases): enumerate[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{ID3 Stopping Conditions (Base Cases):}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item All remaining examples belong to the same class $\\Rightarrow$ create a leaf with that class\n\\item No attributes are left to split on $\\Rightarrow$ create a leaf with the majority class\n\\item A branch has no matching examples $\\Rightarrow$ create a leaf with the majority class of the parent set\n\\item Otherwise pick the attribute with the highest Information Gain and recurse\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "definition",
+    "title": "Bayes' Theorem",
+    "content": "Bayes' Theorem relates the probability of a hypothesis $H$ given evidence $E$ to the reverse conditional probability:\n\\[\nP(H \\mid E) = \\frac{P(E \\mid H)\\,P(H)}{P(E)}\n\\]\nwhere $P(H)$ is the \\textbf{prior}, $P(E \\mid H)$ is the \\textbf{likelihood}, $P(E)$ is the \\textbf{evidence probability}, and $P(H \\mid E)$ is the \\textbf{posterior}.\n\nThis is simply the definition of conditional probability rearranged and applied in the reverse direction."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "example",
+    "title": "Example 2.13 --- Medical Test Diagnosis",
+    "content": "Given:\n\\begin{itemize}[leftmargin=2em]\n\\item $P(\\text{Disease}) = 0.01$\n\\item $P(\\text{Positive} \\mid \\text{Disease}) = 0.9$\n\\item $P(\\text{Positive} \\mid \\text{NoDisease}) = 0.05$\n\\end{itemize}\nFind $P(\\text{Disease} \\mid \\text{Positive})$.\n\n\\textbf{Solution:}\n\\begin{align*}\nP(\\text{Positive}) &= P(\\text{Positive}|\\text{Disease})P(\\text{Disease}) + P(\\text{Positive}|\\text{NoDisease})P(\\text{NoDisease}) \\\\\n&= (0.9)(0.01) + (0.05)(0.99) \\\\\n&= 0.009 + 0.0495 = 0.0585 \\\\[4pt]\nP(\\text{Disease}|\\text{Positive}) &= \\frac{0.009}{0.0585}\n\\end{align*}\n\\boxed{P(\\text{Disease}\\mid\\text{Positive}) \\approx 0.154}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "example",
+    "title": "Example 2.14 --- Choosing a Bag of Balls",
+    "content": "Bag A has 3 red and 2 blue balls. Bag B has 1 red and 4 blue balls. A bag is chosen at random (equal probability) and a red ball is drawn. Find $P(\\text{Bag A} \\mid \\text{Red})$.\n\n\\textbf{Solution:}\n\\begin{align*}\nP(A) = P(B) &= 0.5 \\\\\nP(\\text{Red}|A) &= \\frac{3}{5} = 0.6, \\qquad P(\\text{Red}|B) = \\frac{1}{5} = 0.2 \\\\\nP(\\text{Red}) &= (0.6)(0.5) + (0.2)(0.5) = 0.3 + 0.1 = 0.4 \\\\[4pt]\nP(A|\\text{Red}) &= \\frac{0.3}{0.4}\n\\end{align*}\n\\boxed{P(\\text{Bag A}\\mid\\text{Red}) = 0.75}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "example",
+    "title": "Example 2.15 --- Predicting Rain from Cloud Cover",
+    "content": "Given:\n\\begin{itemize}[leftmargin=2em]\n\\item $P(\\text{Rain}) = 0.3$\n\\item $P(\\text{Cloudy} \\mid \\text{Rain}) = 0.8$\n\\item $P(\\text{Cloudy} \\mid \\text{NoRain}) = 0.4$\n\\end{itemize}\nFind $P(\\text{Rain} \\mid \\text{Cloudy})$.\n\n\\textbf{Solution:}\n\\begin{align*}\nP(\\text{Cloudy}) &= (0.8)(0.3) + (0.4)(0.7) = 0.24 + 0.28 = 0.52 \\\\[4pt]\nP(\\text{Rain}|\\text{Cloudy}) &= \\frac{0.24}{0.52}\n\\end{align*}\n\\boxed{P(\\text{Rain}\\mid\\text{Cloudy}) \\approx 0.462}\n\n\\subsection{The Naive Bayes Assumption}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "definition",
+    "title": "Naive Bayes Assumption (Conditional Independence)",
+    "content": "Given the class label $C$, the naive Bayes classifier assumes that all attributes $A_1, A_2, \\ldots, A_n$ are conditionally independent of one another:\n\\[\nP(A_1, A_2, \\ldots, A_n \\mid C) = \\prod_{i=1}^{n} P(A_i \\mid C)\n\\]\nThis means that once the class is known, each attribute's probability can be computed on its own, without needing to know the values of the other attributes.\n\nThe diagram below shows this assumption as a simple graphical model: the class $C$ independently influences each attribute, and there are no direct connections between attributes themselves.\n\n\\begin{center}\n\\begin{tikzpicture}[\n  every node/.style={circle,draw=primaryblue,thick,fill=primaryblue!8,minimum size=1.1cm,font=\\small},\n  every path/.style={draw,thick,-{Stealth[length=2.5mm]}}\n]\n\\node (C) at (0,2.2) {$C$};\n\\node (A1) at (-2.6,0) {$A_1$};\n\\node (A2) at (0,0) {$A_2$};\n\\node (A3) at (2.6,0) {$A_3$};\n\\draw (C) -- (A1);\n\\draw (C) -- (A2);\n\\draw (C) -- (A3);\n\\end{tikzpicture}\n\\end{center}\n\nThis is the same \"product of independent probabilities\" idea used when multiplying probabilities of independent events.\n\n\\subsection{Naive Bayes Classification}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "theorem",
+    "title": "Naive Bayes Classification Rule",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute a score $P(C_k)\\prod_{i} P(A_i \\mid C_k)$ for every class $C_k$ \\hfill\\textit{(posterior score)}\n\\item Predict the class with the \\textbf{maximum} score \\hfill\\textit{(MAP decision rule)}\n\\item $P(E)$ is the same for every class comparison, so it can be dropped \\hfill\\textit{(normalization not needed)}\n\\end{enumerate}\n\\[\n\\hat{C} = \\arg\\max_{C_k} \\; P(C_k)\\prod_{i=1}^{n} P(A_i \\mid C_k)\n\\]"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "algorithm",
+    "title": "Naive Bayes Classifier Algorithm",
+    "content": "\\textbf{Input:} A training set with attributes $A_1,\\ldots,A_n$, a class attribute $C$, and one test instance\n\n\\textbf{Output:} The predicted class label for the test instance\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item For each class $C_k$, compute the prior $P(C_k) = \\dfrac{\\text{count}(C_k)}{\\text{total examples}}$.\n\\item For each attribute $A_i$ and each class $C_k$, compute the likelihood $P(A_i \\mid C_k)$ from the training data.\n\\item For the test instance, compute the score $P(C_k)\\prod_i P(A_i \\mid C_k)$ for every class $C_k$ using the instance's attribute values.\n\\item Predict the class $C_k$ with the highest score.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "example",
+    "title": "Example 2.16 --- Predicting PlayCricket",
+    "content": "\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nWeather & Wind & PlayCricket \\\\\n\\midrule\nSunny & Weak & Yes \\\\\nSunny & Strong & No \\\\\nRainy & Weak & Yes \\\\\nRainy & Strong & Yes \\\\\nSunny & Weak & Yes \\\\\nRainy & Strong & No \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nClassify a new instance: Weather = Sunny Wind = Strong.\n\n\\textbf{Solution:}\n\\begin{align*}\nP(\\text{Yes}) &= \\frac{4}{6} = \\frac{2}{3}, \\qquad P(\\text{No}) = \\frac{2}{6} = \\frac{1}{3} \\\\[4pt]\nP(\\text{Sunny}|\\text{Yes}) &= \\frac{2}{4} = 0.5, \\qquad P(\\text{Strong}|\\text{Yes}) = \\frac{1}{4} = 0.25 \\\\\nP(\\text{Sunny}|\\text{No}) &= \\frac{1}{2} = 0.5, \\qquad P(\\text{Strong}|\\text{No}) = \\frac{2}{2} = 1\n\\end{align*}\n\\begin{align*}\n\\text{Score}(\\text{Yes}) &= \\frac{2}{3}(0.5)(0.25) \\approx 0.0833 \\\\\n\\text{Score}(\\text{No}) &= \\frac{1}{3}(0.5)(1) \\approx 0.1667\n\\end{align*}\nSince $\\text{Score}(\\text{No}) > \\text{Score}(\\text{Yes})$:\n\\boxed{\\text{Predicted class: No}}\n\n\\begin{center}\n\\begin{tikzpicture}\n\\begin{axis}[\n    ybar,\n    bar width=28pt,\n    width=7cm,height=5cm,\n    symbolic x coords={Yes,No},\n    xtick=data,\n    ylabel={Score},\n    ymin=0,\n    nodes near coords,\n    every node near coord/.append style={font=\\small},\n    axis lines=left,\n    ymajorgrids=true,\n]\n\\addplot[fill=accentorange!60,draw=accentorange] coordinates {(Yes,0.0833) (No,0.1667)};\n\\end{axis}\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "example",
+    "title": "Example 2.17 --- Classifying a Fruit",
+    "content": "\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nColor & Size & Fruit \\\\\n\\midrule\nRed & Large & Apple \\\\\nGreen & Small & Grape \\\\\nRed & Small & Grape \\\\\nRed & Large & Apple \\\\\nGreen & Small & Grape \\\\\nRed & Large & Apple \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nClassify a new instance: Color = Red Size = Small.\n\n\\textbf{Solution:}\n\\begin{align*}\nP(\\text{Apple}) &= \\frac{3}{6} = 0.5, \\qquad P(\\text{Grape}) = \\frac{3}{6} = 0.5 \\\\[4pt]\nP(\\text{Red}|\\text{Apple}) &= \\frac{3}{3} = 1, \\qquad P(\\text{Small}|\\text{Apple}) = \\frac{0}{3} = 0 \\\\\nP(\\text{Red}|\\text{Grape}) &= \\frac{1}{3}, \\qquad P(\\text{Small}|\\text{Grape}) = \\frac{3}{3} = 1\n\\end{align*}\n\\begin{align*}\n\\text{Score}(\\text{Apple}) &= (0.5)(1)(0) = 0 \\\\\n\\text{Score}(\\text{Grape}) &= (0.5)\\left(\\frac{1}{3}\\right)(1) \\approx 0.1667\n\\end{align*}\nSince $\\text{Score}(\\text{Grape}) > \\text{Score}(\\text{Apple})$:\n\\boxed{\\text{Predicted class: Grape}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "example",
+    "title": "Example 2.18 --- Classifying an Email",
+    "content": "\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nContainsMoney & ContainsFree & Class \\\\\n\\midrule\nYes & Yes & Spam \\\\\nYes & No & Spam \\\\\nNo & No & NotSpam \\\\\nNo & Yes & NotSpam \\\\\nYes & Yes & Spam \\\\\nNo & No & NotSpam \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nClassify a new instance: ContainsMoney = Yes ContainsFree = No.\n\n\\textbf{Solution:}\n\\begin{align*}\nP(\\text{Spam}) &= \\frac{3}{6} = 0.5, \\qquad P(\\text{NotSpam}) = \\frac{3}{6} = 0.5 \\\\[4pt]\nP(\\text{Money=Yes}|\\text{Spam}) &= \\frac{3}{3} = 1, \\qquad P(\\text{Free=No}|\\text{Spam}) = \\frac{1}{3} \\\\\nP(\\text{Money=Yes}|\\text{NotSpam}) &= \\frac{0}{3} = 0, \\qquad P(\\text{Free=No}|\\text{NotSpam}) = \\frac{2}{3}\n\\end{align*}\n\\begin{align*}\n\\text{Score}(\\text{Spam}) &= (0.5)(1)\\left(\\frac{1}{3}\\right) \\approx 0.1667 \\\\\n\\text{Score}(\\text{NotSpam}) &= (0.5)(0)\\left(\\frac{2}{3}\\right) = 0\n\\end{align*}\nSince $\\text{Score}(\\text{Spam}) > \\text{Score}(\\text{NotSpam})$:\n\\boxed{\\text{Predicted class: Spam}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Naive Bayes Classifier",
+    "type": "keypoint",
+    "title": "The Zero-Probability Problem: enumerate[leftmargin=2em,itemsep=4pt] If an",
+    "content": "\\textbf{The Zero-Probability Problem:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item If an attribute value never occurs with a class in training data, its likelihood is $0$\n\\item A single zero likelihood forces the entire product (and hence the score) to $0$, as seen for Apple in Example 2.17\n\\item This can wrongly rule out a class even when the other evidence supports it\n\\item Fix: \\textbf{Laplace smoothing} adds a small count to every likelihood so no probability is ever exactly zero\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "definition",
+    "title": "Artificial Neural Network",
+    "content": "An artificial neural network (ANN) is a computational model inspired by the brain, made of simple processing units called neurons that are connected together. Each connection carries a weight, and the network learns by adjusting these weights so that a given input produces the desired output."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "definition",
+    "title": "Perceptron",
+    "content": "A perceptron is the simplest artificial neuron. It takes input values $x_1,x_2,\\ldots,x_n$, multiplies each by a weight $w_1,w_2,\\ldots,w_n$, adds a bias term $b$, and passes the result through an activation function $f$ to produce the output:\n\\[\n\\text{net} = \\sum_{i=1}^{n} w_i x_i + b, \\qquad y = f(\\text{net})\n\\]\n\nThis is nothing more than a dot product of the weight vector and the input vector, shifted by a constant and passed through a function.\n\n\\begin{center}\n\\begin{tikzpicture}[\n  every node/.style={font=\\small},\n  input/.style={circle,draw=primaryblue,thick,fill=primaryblue!8,minimum size=0.9cm},\n  sum/.style={circle,draw=accentorange,thick,fill=accentorange!10,minimum size=1cm},\n  act/.style={circle,draw=darkgreen,thick,fill=darkgreen!10,minimum size=1cm}\n]\n\\node[input] (x1) at (0,2) {$x_1$};\n\\node[input] (x2) at (0,0) {$x_2$};\n\\node[input] (b) at (0,-2) {$1$};\n\\node[sum] (s) at (3,1) {$\\sum$};\n\\node[act] (f) at (5.7,1) {$f$};\n\\node (y) at (7.6,1) {$y$};\n\\draw[->,thick] (x1) -- node[above,sloped]{\\scriptsize $w_1$} (s);\n\\draw[->,thick] (x2) -- node[above,sloped]{\\scriptsize $w_2$} (s);\n\\draw[->,thick] (b) -- node[below,sloped]{\\scriptsize $b$} (s);\n\\draw[->,thick] (s) -- node[above]{\\scriptsize net} (f);\n\\draw[->,thick] (f) -- (y);\n\\end{tikzpicture}\n\\end{center}\n\n\\subsection{Activation Functions}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "theorem",
+    "title": "Common Activation Functions",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item \\textbf{Step (threshold) function} \\hfill\\textit{(hard decision)}\n\\[\nf(\\text{net}) = \\begin{cases} 1 & \\text{if net} \\ge 0 \\\\ 0 & \\text{if net} < 0 \\end{cases}\n\\]\n\\item \\textbf{Sigmoid function} \\hfill\\textit{(smooth 0 to 1 output)}\n\\[\nf(\\text{net}) = \\dfrac{1}{1+e^{-\\text{net}}}\n\\]\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "algorithm",
+    "title": "Perceptron Output Computation",
+    "content": "\\textbf{Input:} input values $x_1,\\ldots,x_n$, weights $w_1,\\ldots,w_n$, bias $b$, an activation function $f$\n\n\\textbf{Output:} the perceptron's output $y$\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute the weighted sum $\\text{net} = \\sum_i w_i x_i + b$.\n\\item Apply the activation function: $y = f(\\text{net})$.\n\\item Return $y$.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.19 --- Perceptron with Step Activation",
+    "content": "A perceptron has weights $w_1=0.6$, $w_2=0.6$, bias $b=-0.5$, and step activation. Compute its output for $x_1=1, x_2=0$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (0.6)(1) + (0.6)(0) + (-0.5) = 0.1 \\\\\ny &= f(0.1) = 1 \\quad (\\text{since } 0.1 \\ge 0)\n\\end{align*}\n\\boxed{y = 1}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.20 --- Same Perceptron a Different Input",
+    "content": "Using the same perceptron as Example 2.19, compute the output for $x_1=0, x_2=0$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (0.6)(0) + (0.6)(0) + (-0.5) = -0.5 \\\\\ny &= f(-0.5) = 0 \\quad (\\text{since } -0.5 < 0)\n\\end{align*}\n\\boxed{y = 0}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.21 --- Same Perceptron a Third Input",
+    "content": "Using the same perceptron as Example 2.19, compute the output for $x_1=1, x_2=1$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (0.6)(1) + (0.6)(1) + (-0.5) = 0.7 \\\\\ny &= f(0.7) = 1 \\quad (\\text{since } 0.7 \\ge 0)\n\\end{align*}\n\\boxed{y = 1}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "keypoint",
+    "title": "Observation from Examples 2.19 to 2.21:",
+    "content": "\\textbf{Observation from Examples 2.19 to 2.21:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item The output is $1$ whenever at least one input is $1$, and $0$ only when both inputs are $0$\n\\item This perceptron has learned the logical \\textbf{OR} function\n\\item A single perceptron can only represent \\textbf{linearly separable} functions (like AND, OR); it cannot represent XOR, which is why hidden layers are needed (Section 2.3.3)\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.22 --- Perceptron with Sigmoid Activation",
+    "content": "A perceptron has weights $w_1=0.4$, $w_2=0.3$, bias $b=-0.2$, and sigmoid activation. Compute its output for $x_1=2, x_2=1$. (Use $e^{-0.9} \\approx 0.4066$.)\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (0.4)(2) + (0.3)(1) + (-0.2) = 0.8+0.3-0.2 = 0.9 \\\\\ny &= \\frac{1}{1+e^{-0.9}} = \\frac{1}{1+0.4066} = \\frac{1}{1.4066}\n\\end{align*}\n\\boxed{y \\approx 0.711}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.23 --- Sigmoid Perceptron a Different Input",
+    "content": "A perceptron has weights $w_1=0.5$, $w_2=-0.5$, bias $b=0.3$, and sigmoid activation. Compute its output for $x_1=0, x_2=2$. (Use $e^{0.7} \\approx 2.0138$.)\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (0.5)(0) + (-0.5)(2) + 0.3 = 0 - 1 + 0.3 = -0.7 \\\\\ny &= \\frac{1}{1+e^{0.7}} = \\frac{1}{1+2.0138} = \\frac{1}{3.0138}\n\\end{align*}\n\\boxed{y \\approx 0.332}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.24 --- Sigmoid Perceptron a Third Input",
+    "content": "A perceptron has weights $w_1=-0.2$, $w_2=0.6$, bias $b=0$, and sigmoid activation. Compute its output for $x_1=3, x_2=0$. (Use $e^{0.6} \\approx 1.8221$.)\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (-0.2)(3) + (0.6)(0) + 0 = -0.6 \\\\\ny &= \\frac{1}{1+e^{0.6}} = \\frac{1}{1+1.8221} = \\frac{1}{2.8221}\n\\end{align*}\n\\boxed{y \\approx 0.354}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "keypoint",
+    "title": "Step vs Sigmoid: enumerate[leftmargin=2em,itemsep=4pt] Step activation",
+    "content": "\\textbf{Step vs Sigmoid:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Step activation gives a hard $0$ or $1$ output only\n\\item Sigmoid activation gives a smooth value strictly between $0$ and $1$, useful as a \"confidence\" score\n\\item As net $\\to +\\infty$, sigmoid $\\to 1$; as net $\\to -\\infty$, sigmoid $\\to 0$\n\\end{enumerate}\n\n\\subsection{Multilayer Neural Networks and Forward Propagation}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "definition",
+    "title": "Multilayer Perceptron (MLP)",
+    "content": "A multilayer perceptron is a network with one or more \\textbf{hidden layers} placed between the input layer and the output layer. Every neuron in one layer connects to every neuron in the next layer, each connection has its own weight, and information flows forward from input to output through the hidden neurons.\n\n\\begin{center}\n\\begin{tikzpicture}[\n  every node/.style={font=\\small},\n  input/.style={circle,draw=primaryblue,thick,fill=primaryblue!8,minimum size=0.9cm},\n  hidden/.style={circle,draw=darkgreen,thick,fill=darkgreen!8,minimum size=0.9cm},\n  outp/.style={circle,draw=accentorange,thick,fill=accentorange!10,minimum size=0.9cm}\n]\n\\node[input] (x1) at (0,2) {$x_1$};\n\\node[input] (x2) at (0,0) {$x_2$};\n\\node[hidden] (h1) at (3,2.6) {$h_1$};\n\\node[hidden] (h2) at (3,-0.6) {$h_2$};\n\\node[outp] (o) at (6,1) {$y$};\n\\draw[->,thick] (x1) -- (h1);\n\\draw[->,thick] (x1) -- (h2);\n\\draw[->,thick] (x2) -- (h1);\n\\draw[->,thick] (x2) -- (h2);\n\\draw[->,thick] (h1) -- (o);\n\\draw[->,thick] (h2) -- (o);\n\\end{tikzpicture}\n\\end{center}\n\\begin{center}\n{\\small Input Layer $\\to$ Hidden Layer $\\to$ Output Layer}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "algorithm",
+    "title": "Forward Propagation Algorithm",
+    "content": "\\textbf{Input:} input vector $x_1,\\ldots,x_n$, weights and biases for the hidden layer and the output layer, an activation function $f$\n\n\\textbf{Output:} the network's final output $y$\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item For each hidden neuron $h_j$, compute $\\text{net}_{h_j} = \\sum_i w_{ij}x_i + b_j$ and then $h_j = f(\\text{net}_{h_j})$.\n\\item Using the hidden outputs $h_j$ as inputs, compute $\\text{net}_{y} = \\sum_j v_j h_j + b_{\\text{out}}$.\n\\item Compute the final output $y = f(\\text{net}_y)$.\n\\item Return $y$.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.25 --- Forward Pass Through a Two Layer Network",
+    "content": "A network has two hidden neurons and one output neuron, all with step activation:\n\\[\nh_1 = f(x_1+x_2-0.5), \\qquad h_2 = f(x_1+x_2-1.5), \\qquad y = f(h_1-h_2-0.5)\n\\]\nCompute the output for $x_1=1, x_2=0$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net}_{h_1} &= 1+0-0.5 = 0.5 \\ \\Rightarrow\\ h_1 = f(0.5) = 1 \\\\\n\\text{net}_{h_2} &= 1+0-1.5 = -0.5 \\ \\Rightarrow\\ h_2 = f(-0.5) = 0 \\\\\n\\text{net}_y &= h_1-h_2-0.5 = 1-0-0.5 = 0.5 \\ \\Rightarrow\\ y = f(0.5) = 1\n\\end{align*}\n\\boxed{y = 1}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.26 --- Forward Pass Through the Same Network",
+    "content": "Using the same network as Example 2.25, compute the output for $x_1=1, x_2=1$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net}_{h_1} &= 1+1-0.5 = 1.5 \\ \\Rightarrow\\ h_1 = f(1.5) = 1 \\\\\n\\text{net}_{h_2} &= 1+1-1.5 = 0.5 \\ \\Rightarrow\\ h_2 = f(0.5) = 1 \\\\\n\\text{net}_y &= h_1-h_2-0.5 = 1-1-0.5 = -0.5 \\ \\Rightarrow\\ y = f(-0.5) = 0\n\\end{align*}\n\\boxed{y = 0}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "example",
+    "title": "Example 2.27 --- Forward Pass Through the Same Network",
+    "content": "Using the same network as Example 2.25, compute the output for $x_1=0, x_2=0$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net}_{h_1} &= 0+0-0.5 = -0.5 \\ \\Rightarrow\\ h_1 = f(-0.5) = 0 \\\\\n\\text{net}_{h_2} &= 0+0-1.5 = -1.5 \\ \\Rightarrow\\ h_2 = f(-1.5) = 0 \\\\\n\\text{net}_y &= h_1-h_2-0.5 = 0-0-0.5 = -0.5 \\ \\Rightarrow\\ y = f(-0.5) = 0\n\\end{align*}\n\\boxed{y = 0}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Artificial Neural Networks",
+    "type": "keypoint",
+    "title": "Why This Network Matters: enumerate[leftmargin=2em,itemsep=4pt] Checking",
+    "content": "\\textbf{Why This Network Matters:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Checking all four input combinations gives outputs $0,1,1,0$ for $(0,0),(1,0),(0,1),(1,1)$\n\\item This is exactly the \\textbf{XOR} function, which a single perceptron can never compute (see the keypoint after Example 2.21)\n\\item $h_1$ behaves like an OR gate and $h_2$ behaves like an AND gate; the output combines them as \"$h_1$ true AND $h_2$ false\"\n\\item This is the classic illustration of why \\textbf{hidden layers} give neural networks more power than a single perceptron\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "definition",
+    "title": "Hyperplane",
+    "content": "A hyperplane is the decision boundary that separates two classes in feature space. In two dimensions it is simply a line, defined by:\n\\[\nw \\cdot x + b = 0\n\\]\nwhere $w$ is the weight vector (normal to the hyperplane) and $b$ is the bias term."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "definition",
+    "title": "Margin and Support Vectors",
+    "content": "The \\textbf{margin} is the distance between the hyperplane and the closest training points from either class. The \\textbf{support vectors} are exactly those closest points — they are the only points that determine the position of the hyperplane. The Support Vector Machine (SVM) chooses the hyperplane that makes this margin as large as possible.\n\nThis is the same idea as finding a line that keeps the maximum possible distance from the nearest point on either side, using distance formulas already familiar from coordinate geometry.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n\\draw[->,thick] (-0.5,0) -- (6,0) node[right]{\\small $x_1$};\n\\draw[->,thick] (0,-0.5) -- (0,5.5) node[above]{\\small $x_2$};\n\n\\draw[primaryblue,thick] (-0.3,0.2) -- (5.5,5.2);\n\\draw[primaryblue,dashed] (-0.3,1.0) -- (5.0,5.5);\n\\draw[primaryblue,dashed] (0.3,-0.5) -- (5.9,4.5);\n\n\\filldraw[accentorange] (1,3.6) circle (3pt);\n\\filldraw[accentorange] (2,4.5) circle (3pt);\n\\filldraw[accentorange] (1.5,4.7) circle (3pt);\n\\draw[darkgreen,thick] (1,3.6) circle (6pt);\n\n\\draw[fill=secondaryblue] (3.5,0.6) rectangle +(0.25,0.25);\n\\draw[fill=secondaryblue] (4.5,1.3) rectangle +(0.25,0.25);\n\\draw[fill=secondaryblue] (5,2.2) rectangle +(0.25,0.25);\n\\draw[darkgreen,thick] (3.42,0.52) rectangle +(0.42,0.42);\n\n\\node[font=\\scriptsize] at (5.7,5.0) {Class $+1$};\n\\node[font=\\scriptsize] at (5.6,0.3) {Class $-1$};\n\\node[font=\\scriptsize,primaryblue] at (2.7,3.0) {hyperplane};\n\\end{tikzpicture}\n\\end{center}\n\nThe circled points touching the dashed margin lines are the support vectors — every other point could be removed without changing the hyperplane at all.\n\n\\subsection{The SVM Decision Function}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "theorem",
+    "title": "Properties of the SVM Decision Function",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item A point is classified using $f(x) = \\text{sign}(w \\cdot x + b)$ \\hfill\\textit{(decision rule)}\n\\item $w \\cdot x + b > 0$ places the point on the $+1$ side \\hfill\\textit{(positive class)}\n\\item $w \\cdot x + b < 0$ places the point on the $-1$ side \\hfill\\textit{(negative class)}\n\\item $w \\cdot x + b = 0$ means the point lies exactly on the hyperplane \\hfill\\textit{(boundary case)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "algorithm",
+    "title": "SVM Classification Algorithm",
+    "content": "\\textbf{Input:} weight vector $w$, bias $b$, and a test point $x$\n\n\\textbf{Output:} predicted class label $+1$ or $-1$ for $x$\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute the dot product $w \\cdot x$.\n\\item Add the bias: $\\text{score} = w \\cdot x + b$.\n\\item If $\\text{score} > 0$ predict class $+1$; if $\\text{score} < 0$ predict class $-1$; if $\\text{score} = 0$ the point lies on the hyperplane.\n\\item Return the predicted class.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "example",
+    "title": "Example 2.28 --- Classifying a Point (Positive Side)",
+    "content": "A trained SVM has $w = (2,-1)$ and $b = -1$. Classify the point $x = (3,1)$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{score} &= w \\cdot x + b = (2)(3) + (-1)(1) + (-1) \\\\\n&= 6 - 1 - 1 = 4\n\\end{align*}\nSince $4 > 0$:\n\\boxed{\\text{Predicted class: } +1}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "example",
+    "title": "Example 2.29 --- Classifying a Point (Negative Side)",
+    "content": "Using the same SVM as Example 2.28 ($w=(2,-1)$, $b=-1$), classify the point $x = (0,3)$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{score} &= (2)(0) + (-1)(3) + (-1) \\\\\n&= 0 - 3 - 1 = -4\n\\end{align*}\nSince $-4 < 0$:\n\\boxed{\\text{Predicted class: } -1}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "example",
+    "title": "Example 2.30 --- Classifying a Point on the Boundary",
+    "content": "Using the same SVM as Example 2.28 ($w=(2,-1)$, $b=-1$), classify the point $x = (1,1)$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{score} &= (2)(1) + (-1)(1) + (-1) \\\\\n&= 2 - 1 - 1 = 0\n\\end{align*}\nSince $\\text{score} = 0$, the point lies exactly on the hyperplane, so it is a \\textbf{support vector}.\\\\\n\\boxed{x=(1,1) \\text{ lies on the decision boundary}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "keypoint",
+    "title": "Reading the Score: enumerate[leftmargin=2em,itemsep=4pt] The sign",
+    "content": "\\textbf{Reading the Score:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item The sign of $w\\cdot x+b$ gives the predicted class\n\\item The magnitude of $w\\cdot x+b$ (before normalizing by $\\|w\\|$) hints at how far the point is from the boundary — larger magnitude means the model is more confident\n\\item Example 2.30 shows a point exactly on the hyperplane, which is precisely what defines a support vector\n\\end{enumerate}\n\n\\subsection{Computing the Margin}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "definition",
+    "title": "Margin Width Formula",
+    "content": "Once the SVM has found the optimal $w$, the width of the margin (distance between the two dashed boundary lines) is:\n\\[\n\\text{Margin} = \\frac{2}{\\|w\\|}, \\qquad \\|w\\| = \\sqrt{w_1^2 + w_2^2 + \\cdots + w_n^2}\n\\]"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "definition",
+    "title": "Distance from a Point to the Hyperplane",
+    "content": "The perpendicular distance from any point $x$ to the hyperplane $w\\cdot x + b = 0$ is:\n\\[\nd = \\frac{|w \\cdot x + b|}{\\|w\\|}\n\\]\n\nThis is simply the point-to-line distance formula the students already know from coordinate geometry, extended to vector notation."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "example",
+    "title": "Example 2.31 --- Margin Width for a Given Weight Vector",
+    "content": "An SVM has weight vector $w = (2,-1)$. Compute the margin width.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\|w\\| &= \\sqrt{2^2+(-1)^2} = \\sqrt{4+1} = \\sqrt{5} \\\\\n\\text{Margin} &= \\frac{2}{\\sqrt{5}}\n\\end{align*}\n\\boxed{\\text{Margin} \\approx 0.894}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "example",
+    "title": "Example 2.32 --- Margin Width for a Simpler Weight Vector",
+    "content": "An SVM has weight vector $w = (3,4)$. Compute the margin width.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\|w\\| &= \\sqrt{3^2+4^2} = \\sqrt{9+16} = \\sqrt{25} = 5 \\\\\n\\text{Margin} &= \\frac{2}{5}\n\\end{align*}\n\\boxed{\\text{Margin} = 0.4}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "example",
+    "title": "Example 2.33 --- Distance from a Point to the Hyperplane",
+    "content": "An SVM has $w = (1,1)$ and $b = -2$. Find the distance from the point $x=(4,4)$ to the hyperplane.\n\n\\textbf{Solution:}\n\\begin{align*}\nw\\cdot x + b &= (1)(4) + (1)(4) + (-2) = 6 \\\\\n\\|w\\| &= \\sqrt{1^2+1^2} = \\sqrt{2} \\\\\nd &= \\frac{|6|}{\\sqrt{2}}\n\\end{align*}\n\\boxed{d \\approx 4.243}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Support Vector Machines",
+    "type": "keypoint",
+    "title": "SVM Summary: enumerate[leftmargin=2em,itemsep=4pt] A smaller $\\|w\\|$",
+    "content": "\\textbf{SVM Summary:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item A \\textbf{smaller} $\\|w\\|$ gives a \\textbf{larger} margin — this is exactly what SVM training optimizes for\n\\item Only the support vectors (score $=0$ direction, i.e. the closest points) affect $w$ and $b$; all other points can change freely without moving the hyperplane\n\\item For data that is \\textbf{not} linearly separable in its original features, the \\textbf{kernel trick} maps points into a higher-dimensional space where a separating hyperplane does exist — the calculations themselves stay the same dot-product-and-sign process shown above, just in the transformed space\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "definition",
+    "title": "Overfitting",
+    "content": "A model overfits when it fits the training data too closely including its noise and random fluctuations so that it performs very well on training data but poorly on new unseen data. In decision trees, this happens when the tree grows too many branches trying to perfectly classify every single training example."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "definition",
+    "title": "Noise",
+    "content": "Noise refers to errors or random variation in the training data, such as mislabeled examples or incorrect attribute values, that do not reflect the true underlying pattern. A tree that tries to perfectly fit noisy examples ends up learning the noise itself rather than the real pattern.\n\nThe graph below shows the classic pattern: as tree size (number of nodes) increases, training error keeps falling, but test error falls only up to a point and then rises again — that turning point is where overfitting begins.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\begin{axis}[\n    width=9cm,height=6cm,\n    xlabel={Tree Size (Number of Nodes)},\n    ylabel={Error Rate},\n    xmin=0,xmax=10,\n    ymin=0,ymax=0.5,\n    legend pos=north east,\n    axis lines=left,\n    ymajorgrids=true,\n    legend style={font=\\scriptsize}\n]\n\\addplot[primaryblue,thick,mark=*,mark size=1.5pt] coordinates {\n(1,0.42) (2,0.32) (3,0.24) (4,0.17) (5,0.11) (6,0.07) (7,0.04) (8,0.02) (9,0.01)\n};\n\\addlegendentry{Training Error}\n\\addplot[accentorange,thick,mark=square*,mark size=1.5pt] coordinates {\n(1,0.44) (2,0.34) (3,0.26) (4,0.19) (5,0.15) (6,0.17) (7,0.21) (8,0.27) (9,0.34)\n};\n\\addlegendentry{Test Error}\n\\draw[darkgreen,dashed,thick] (axis cs:5,0) -- (axis cs:5,0.5);\n\\node[darkgreen,font=\\scriptsize] at (axis cs:5.9,0.46) {best stopping point};\n\\end{axis}\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "example",
+    "title": "Example 2.34 --- Identifying the Point of Overfitting",
+    "content": "A decision tree is trained to different depths, giving the following accuracies:\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nDepth & Training Accuracy & Testing Accuracy \\\\\n\\midrule\n2 & 70\\% & 68\\% \\\\\n4 & 85\\% & 80\\% \\\\\n6 & 95\\% & 78\\% \\\\\n8 & 99\\% & 70\\% \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nAt which depth does the tree start to overfit?\n\n\\textbf{Solution:}\nTraining accuracy keeps rising at every depth (70\\%,85\\%,95\\%,99\\%), but testing accuracy rises only up to Depth 4 (80\\%) and then falls at Depth 6 (78\\%) and Depth 8 (70\\%). Overfitting begins exactly where testing accuracy turns downward while training accuracy keeps climbing.\n\\boxed{\\text{Overfitting begins after Depth 4 (i.e. from Depth 6 onward)}}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "example",
+    "title": "Example 2.35 --- Choosing the Best Depth to Stop",
+    "content": "Using the table from Example 2.34, which depth should be chosen as the final tree depth?\n\n\\textbf{Solution:}\nThe best depth is the one with the \\textbf{highest testing accuracy}, since testing accuracy estimates performance on new data. From the table, the maximum testing accuracy is 80\\% at Depth 4.\n\\boxed{\\text{Best depth} = 4}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "example",
+    "title": "Example 2.36 --- Computing the Generalization Gap",
+    "content": "Using the table from Example 2.34, compute the generalization gap (Training Accuracy $-$ Testing Accuracy) at each depth and identify which depth is most overfit.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{Depth 2:} \\quad &70\\%-68\\% = 2\\% \\\\\n\\text{Depth 4:} \\quad &85\\%-80\\% = 5\\% \\\\\n\\text{Depth 6:} \\quad &95\\%-78\\% = 17\\% \\\\\n\\text{Depth 8:} \\quad &99\\%-70\\% = 29\\%\n\\end{align*}\nThe gap grows steadily and is largest at Depth 8, showing the training accuracy has become disconnected from real performance.\n\\boxed{\\text{Depth 8 is the most overfit (gap} = 29\\%)}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "keypoint",
+    "title": "Signs of Overfitting: enumerate[leftmargin=2em,itemsep=4pt] Training accuracy",
+    "content": "\\textbf{Signs of Overfitting:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Training accuracy is very high (often near 100\\%) while testing accuracy is much lower\n\\item The gap between training and testing accuracy keeps growing as the model grows more complex\n\\item The tree has very deep branches or leaves covering only one or two training examples\n\\end{enumerate}\n\n\\subsection{Pruning}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "definition",
+    "title": "Pruning",
+    "content": "Pruning is the process of removing branches or subtrees from a decision tree that add complexity without improving (or that even hurt) accuracy on unseen data. \\textbf{Pre-pruning} stops tree growth early using a stopping condition. \\textbf{Post-pruning} grows the full tree first and then removes subtrees afterward, checking accuracy on a separate validation set.\n\nThis is the same \"simplify the model, don't just fit every last training point\" idea behind avoiding an unnecessarily high-degree curve fit in regression."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "algorithm",
+    "title": "Reduced Error Pruning",
+    "content": "\\textbf{Input:} a fully grown decision tree $T$, a validation dataset $V$ separate from the training data\n\n\\textbf{Output:} a pruned decision tree $T'$\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute the accuracy of $T$ on $V$.\n\\item For each internal node $n$ (starting near the leaves and working upward), temporarily replace the subtree rooted at $n$ with a leaf labeled by the majority class of the training examples reaching $n$.\n\\item Evaluate the accuracy of this modified tree on $V$.\n\\item If the accuracy on $V$ does not decrease, keep the replacement permanently (prune the subtree); otherwise restore the original subtree.\n\\item Repeat steps 2 to 4 for every internal node until no further pruning improves or maintains validation accuracy.\n\\item Return the final pruned tree $T'$.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "example",
+    "title": "Example 2.37 --- Deciding Whether to Prune (Accuracy Improves)",
+    "content": "Before pruning a subtree at node $X$, validation accuracy is 82\\%. After replacing the subtree at $X$ with a leaf, validation accuracy becomes 85\\%. Should node $X$'s subtree be pruned?\n\n\\textbf{Solution:}\nCompare accuracies: $85\\% > 82\\%$, so accuracy does not decrease after pruning; in fact it improves.\n\\boxed{\\text{Yes, prune the subtree at } X}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "example",
+    "title": "Example 2.38 --- Deciding Whether to Prune (Accuracy Drops)",
+    "content": "Before pruning a subtree at node $Y$, validation accuracy is 90\\%. After replacing the subtree at $Y$ with a leaf, validation accuracy becomes 88\\%. Should node $Y$'s subtree be pruned?\n\n\\textbf{Solution:}\nCompare accuracies: $88\\% < 90\\%$, so accuracy decreases after pruning.\n\\boxed{\\text{No, keep the subtree at } Y}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "example",
+    "title": "Example 2.39 --- Deciding Whether to Prune (Accuracy Unchanged)",
+    "content": "Before pruning a subtree at node $Z$, validation accuracy is 78\\%. After replacing the subtree at $Z$ with a leaf, validation accuracy remains 78\\%. Should node $Z$'s subtree be pruned?\n\n\\textbf{Solution:}\nCompare accuracies: $78\\% = 78\\%$, accuracy does not decrease. Reduced Error Pruning prefers the simpler tree whenever accuracy does not get worse.\n\\boxed{\\text{Yes, prune the subtree at } Z}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Overfitting Noisy Data and Pruning",
+    "type": "keypoint",
+    "title": "Pre-Pruning vs Post-Pruning: enumerate[leftmargin=2em,itemsep=4pt] Pre-pruning is",
+    "content": "\\textbf{Pre-Pruning vs Post-Pruning:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item \\textbf{Pre-pruning} is faster since the tree never grows too large, but risks stopping too early (underfitting)\n\\item \\textbf{Post-pruning} is more reliable since it evaluates the effect of removing each subtree directly on validation data\n\\item Pruning always trades a small amount of training accuracy for better generalization to new data\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Measuring Classifier Accuracy",
+    "type": "definition",
+    "title": "Confusion Matrix",
+    "content": "A confusion matrix is a table that summarizes a classifier's predictions against the true labels for a binary classification problem. It has four counts: \\textbf{True Positives (TP)}, \\textbf{False Positives (FP)}, \\textbf{False Negatives (FN)}, and \\textbf{True Negatives (TN)}.\n\n\\begin{center}\n\\begin{tabular}{cc|cc}\n\\toprule\n& & \\multicolumn{2}{c}{\\textbf{Actual}} \\\\\n& & Positive & Negative \\\\\n\\midrule\n\\multirow{2}{*}{\\textbf{Predicted}} & Positive & TP & FP \\\\\n& Negative & FN & TN \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\subsection{Accuracy, Precision, Recall, and F1-Score}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Measuring Classifier Accuracy",
+    "type": "theorem",
+    "title": "Classifier Evaluation Metrics",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item $\\text{Accuracy} = \\dfrac{TP+TN}{TP+TN+FP+FN}$ \\hfill\\textit{(overall correctness)}\n\\item $\\text{Precision} = \\dfrac{TP}{TP+FP}$ \\hfill\\textit{(of predicted positives, how many were right)}\n\\item $\\text{Recall} = \\dfrac{TP}{TP+FN}$ \\hfill\\textit{(of actual positives, how many were found)}\n\\item $\\text{F1-score} = \\dfrac{2 \\times \\text{Precision} \\times \\text{Recall}}{\\text{Precision}+\\text{Recall}}$ \\hfill\\textit{(harmonic mean of Precision and Recall)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Measuring Classifier Accuracy",
+    "type": "algorithm",
+    "title": "Computing Classifier Metrics",
+    "content": "\\textbf{Input:} confusion matrix counts $TP$, $FP$, $FN$, $TN$\n\n\\textbf{Output:} Accuracy, Precision, Recall, F1-score\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute $\\text{Accuracy} = \\dfrac{TP+TN}{TP+TN+FP+FN}$.\n\\item Compute $\\text{Precision} = \\dfrac{TP}{TP+FP}$.\n\\item Compute $\\text{Recall} = \\dfrac{TP}{TP+FN}$.\n\\item Compute $\\text{F1-score} = \\dfrac{2\\times\\text{Precision}\\times\\text{Recall}}{\\text{Precision}+\\text{Recall}}$.\n\\item Return all four values.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Measuring Classifier Accuracy",
+    "type": "example",
+    "title": "Example 2.40 --- Metrics from a Balanced Confusion Matrix",
+    "content": "A classifier gives the confusion matrix below.\n\\begin{center}\n\\begin{tabular}{cc|cc}\n\\toprule\n& & \\multicolumn{2}{c}{Actual} \\\\\n& & Positive & Negative \\\\\n\\midrule\n\\multirow{2}{*}{Predicted} & Positive & 40 & 10 \\\\\n& Negative & 5 & 45 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nCompute Accuracy, Precision, Recall, and F1-score.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{Accuracy} &= \\frac{40+45}{40+45+10+5} = \\frac{85}{100} = 0.85 \\\\\n\\text{Precision} &= \\frac{40}{40+10} = \\frac{40}{50} = 0.8 \\\\\n\\text{Recall} &= \\frac{40}{40+5} = \\frac{40}{45} \\approx 0.889 \\\\\n\\text{F1} &= \\frac{2(0.8)(0.889)}{0.8+0.889} = \\frac{1.422}{1.689}\n\\end{align*}\n\\boxed{\\text{Accuracy}=0.85,\\ \\text{Precision}=0.8,\\ \\text{Recall}\\approx0.889,\\ F1\\approx0.842}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Measuring Classifier Accuracy",
+    "type": "example",
+    "title": "Example 2.41 --- Metrics from a Small Balanced Matrix",
+    "content": "A classifier gives the confusion matrix below.\n\\begin{center}\n\\begin{tabular}{cc|cc}\n\\toprule\n& & \\multicolumn{2}{c}{Actual} \\\\\n& & Positive & Negative \\\\\n\\midrule\n\\multirow{2}{*}{Predicted} & Positive & 8 & 2 \\\\\n& Negative & 2 & 8 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nCompute Accuracy, Precision, Recall, and F1-score.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{Accuracy} &= \\frac{8+8}{8+8+2+2} = \\frac{16}{20} = 0.8 \\\\\n\\text{Precision} &= \\frac{8}{8+2} = 0.8 \\\\\n\\text{Recall} &= \\frac{8}{8+2} = 0.8 \\\\\n\\text{F1} &= \\frac{2(0.8)(0.8)}{0.8+0.8} = \\frac{1.28}{1.6}\n\\end{align*}\n\\boxed{\\text{Accuracy}=\\text{Precision}=\\text{Recall}=F1=0.8}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Measuring Classifier Accuracy",
+    "type": "example",
+    "title": "Example 2.42 --- Metrics from an Imbalanced Confusion Matrix",
+    "content": "A classifier gives the confusion matrix below.\n\\begin{center}\n\\begin{tabular}{cc|cc}\n\\toprule\n& & \\multicolumn{2}{c}{Actual} \\\\\n& & Positive & Negative \\\\\n\\midrule\n\\multirow{2}{*}{Predicted} & Positive & 5 & 15 \\\\\n& Negative & 0 & 80 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nCompute Accuracy, Precision, Recall, and F1-score.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{Accuracy} &= \\frac{5+80}{5+80+15+0} = \\frac{85}{100} = 0.85 \\\\\n\\text{Precision} &= \\frac{5}{5+15} = \\frac{5}{20} = 0.25 \\\\\n\\text{Recall} &= \\frac{5}{5+0} = \\frac{5}{5} = 1.0 \\\\\n\\text{F1} &= \\frac{2(0.25)(1.0)}{0.25+1.0} = \\frac{0.5}{1.25}\n\\end{align*}\n\\boxed{\\text{Accuracy}=0.85,\\ \\text{Precision}=0.25,\\ \\text{Recall}=1.0,\\ F1=0.4}\nAlthough accuracy looks high (85\\%), the very low precision reveals the classifier is predicting \"Positive\" far too often — this is exactly why accuracy alone can be misleading. \\checkmark"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Measuring Classifier Accuracy",
+    "type": "keypoint",
+    "title": "Choosing the Right Metric: enumerate[leftmargin=2em,itemsep=4pt] Accuracy",
+    "content": "\\textbf{Choosing the Right Metric:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item \\textbf{Accuracy} can be misleading when classes are imbalanced, as seen in Example 2.42\n\\item \\textbf{Precision} matters most when false positives are costly (e.g. spam filtering)\n\\item \\textbf{Recall} matters most when false negatives are costly (e.g. disease detection)\n\\item \\textbf{F1-score} is used when a single balance between Precision and Recall is needed\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Linear Regression",
+    "type": "definition",
+    "title": "Linear Regression",
+    "content": "Linear regression models the relationship between one input attribute $x$ and a continuous output $y$ by fitting a straight line:\n\\[\n\\hat{y} = b_0 + b_1 x\n\\]\nwhere $b_1$ is the slope (how much $y$ changes per unit change in $x$) and $b_0$ is the intercept (the predicted value when $x=0$)."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Linear Regression",
+    "type": "definition",
+    "title": "Least Squares Method",
+    "content": "The best-fitting line is the one that minimizes the sum of squared differences between the actual values $y_i$ and the predicted values $\\hat{y}_i$. The coefficients that achieve this minimum are:\n\\[\nb_1 = \\frac{\\sum_i (x_i-\\bar{x})(y_i-\\bar{y})}{\\sum_i (x_i-\\bar{x})^2}, \\qquad b_0 = \\bar{y} - b_1\\bar{x}\n\\]\nwhere $\\bar{x}$ and $\\bar{y}$ are the means of the $x$ and $y$ values.\n\nThis is the same mean-and-deviation idea used when computing variance, just applied to two variables together instead of one."
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Linear Regression",
+    "type": "algorithm",
+    "title": "Simple Linear Regression (Least Squares)",
+    "content": "\\textbf{Input:} training points $(x_1,y_1),\\ldots,(x_n,y_n)$, and a new value $x_{\\text{new}}$ to predict\n\n\\textbf{Output:} coefficients $b_0$, $b_1$, and the predicted value $\\hat{y}_{\\text{new}}$\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute the means $\\bar{x} = \\frac{1}{n}\\sum_i x_i$ and $\\bar{y} = \\frac{1}{n}\\sum_i y_i$.\n\\item Compute $\\sum_i (x_i-\\bar{x})(y_i-\\bar{y})$ and $\\sum_i (x_i-\\bar{x})^2$.\n\\item Compute the slope $b_1 = \\dfrac{\\sum_i (x_i-\\bar{x})(y_i-\\bar{y})}{\\sum_i (x_i-\\bar{x})^2}$.\n\\item Compute the intercept $b_0 = \\bar{y} - b_1\\bar{x}$.\n\\item Form the regression equation $\\hat{y} = b_0 + b_1 x$.\n\\item Substitute $x_{\\text{new}}$ into the equation to get $\\hat{y}_{\\text{new}}$.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Linear Regression",
+    "type": "example",
+    "title": "Example 2.43 --- Predicting Exam Score from Study Hours",
+    "content": "\\begin{center}\n\\begin{tabular}{cccccc}\n\\toprule\nHours Studied ($x$) & 1 & 2 & 3 & 4 & 5 \\\\\nScore /10 ($y$) & 2 & 3 & 5 & 4 & 6 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nFind the regression line and predict the score for a student who studies 6 hours.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\bar{x} &= \\frac{1+2+3+4+5}{5} = 3, \\qquad \\bar{y} = \\frac{2+3+5+4+6}{5} = 4 \\\\[4pt]\n\\sum(x_i-\\bar{x})(y_i-\\bar{y}) &= (-2)(-2)+(-1)(-1)+(0)(1)+(1)(0)+(2)(2) = 4+1+0+0+4 = 9 \\\\\n\\sum(x_i-\\bar{x})^2 &= 4+1+0+1+4 = 10 \\\\[4pt]\nb_1 &= \\frac{9}{10} = 0.9, \\qquad b_0 = 4-(0.9)(3) = 1.3\n\\end{align*}\n\\[\n\\hat{y} = 1.3 + 0.9x\n\\]\nPredicting for $x=6$: $\\hat{y} = 1.3+0.9(6) = 1.3+5.4$\n\\boxed{\\hat{y}(6) = 6.7}\n\n\\begin{center}\n\\begin{tikzpicture}\n\\begin{axis}[\n    width=8cm,height=6cm,\n    xlabel={Hours Studied},\n    ylabel={Score},\n    xmin=0,xmax=7,ymin=0,ymax=8,\n    axis lines=left,\n    ymajorgrids=true,\n]\n\\addplot[only marks,mark=*,mark size=2.2pt,primaryblue] coordinates {(1,2)(2,3)(3,5)(4,4)(5,6)};\n\\addplot[accentorange,thick,domain=0:7,samples=2] {1.3+0.9*x};\n\\addplot[only marks,mark=triangle*,mark size=3pt,darkgreen] coordinates {(6,6.7)};\n\\legend{Data Points,Regression Line,Prediction}\n\\end{axis}\n\\end{tikzpicture}\n\\end{center}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Linear Regression",
+    "type": "example",
+    "title": "Example 2.44 --- Predicting Sales from Advertising Spend",
+    "content": "\\begin{center}\n\\begin{tabular}{cccccc}\n\\toprule\nSpend (\\$1000s) ($x$) & 1 & 2 & 3 & 4 & 5 \\\\\nUnits Sold (100s) ($y$) & 3 & 4 & 2 & 5 & 6 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nFind the regression line and predict units sold for a spend of 7 (\\$1000s).\n\n\\textbf{Solution:}\n\\begin{align*}\n\\bar{x} &= 3, \\qquad \\bar{y} = \\frac{3+4+2+5+6}{5} = 4 \\\\[4pt]\n\\sum(x_i-\\bar{x})(y_i-\\bar{y}) &= (-2)(-1)+(-1)(0)+(0)(-2)+(1)(1)+(2)(2) = 2+0+0+1+4 = 7 \\\\\n\\sum(x_i-\\bar{x})^2 &= 10 \\\\[4pt]\nb_1 &= \\frac{7}{10} = 0.7, \\qquad b_0 = 4-(0.7)(3) = 1.9\n\\end{align*}\n\\[\n\\hat{y} = 1.9 + 0.7x\n\\]\nPredicting for $x=7$: $\\hat{y} = 1.9+0.7(7) = 1.9+4.9$\n\\boxed{\\hat{y}(7) = 6.8}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Linear Regression",
+    "type": "example",
+    "title": "Example 2.45 --- Predicting Plant Height Growth",
+    "content": "\\begin{center}\n\\begin{tabular}{ccccc}\n\\toprule\nWeeks Grown ($x$) & 1 & 2 & 3 & 4 \\\\\nHeight Growth cm ($y$) & 1 & 2 & 2 & 3 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nFind the regression line and predict the growth after 5 weeks.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\bar{x} &= \\frac{1+2+3+4}{4} = 2.5, \\qquad \\bar{y} = \\frac{1+2+2+3}{4} = 2 \\\\[4pt]\n\\sum(x_i-\\bar{x})(y_i-\\bar{y}) &= (-1.5)(-1)+(-0.5)(0)+(0.5)(0)+(1.5)(1) = 1.5+0+0+1.5 = 3 \\\\\n\\sum(x_i-\\bar{x})^2 &= 2.25+0.25+0.25+2.25 = 5 \\\\[4pt]\nb_1 &= \\frac{3}{5} = 0.6, \\qquad b_0 = 2-(0.6)(2.5) = 0.5\n\\end{align*}\n\\[\n\\hat{y} = 0.5 + 0.6x\n\\]\nPredicting for $x=5$: $\\hat{y} = 0.5+0.6(5) = 0.5+3$\n\\boxed{\\hat{y}(5) = 3.5}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Linear Regression",
+    "type": "keypoint",
+    "title": "Reading a Regression Line: enumerate[leftmargin=2em,itemsep=4pt] $b_1$",
+    "content": "\\textbf{Reading a Regression Line:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item $b_1$ (slope) tells us how much $y$ increases for every one-unit increase in $x$\n\\item $b_0$ (intercept) is only meaningful as the predicted $y$ when $x=0$\n\\item Predictions far outside the range of the original $x$ values (extrapolation) are less reliable\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Logistic Regression",
+    "type": "definition",
+    "title": "Logistic Regression",
+    "content": "Logistic regression is a classification algorithm (despite the name) that models the probability of a binary class label $y \\in \\{0,1\\}$ using the sigmoid of a linear combination of the attributes:\n\\[\nP(y=1\\mid x) = \\frac{1}{1+e^{-(w\\cdot x + b)}}\n\\]\n\nThis is the same weighted-sum idea used in the perceptron (Section 2.3.1), but the sigmoid output is now interpreted directly as a probability rather than just a squashed activation value.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\begin{axis}[\n    width=8.5cm,height=5.5cm,\n    xlabel={net $=w\\cdot x+b$},\n    ylabel={$P(y=1\\mid x)$},\n    xmin=-6,xmax=6,ymin=0,ymax=1,\n    axis lines=left,\n    ymajorgrids=true,\n    xtick={-6,-3,0,3,6},\n    ytick={0,0.5,1},\n]\n\\addplot[primaryblue,thick,domain=-6:6,samples=100] {1/(1+exp(-x))};\n\\draw[darkgray,dashed] (axis cs:-6,0.5) -- (axis cs:6,0.5);\n\\draw[darkgray,dashed] (axis cs:0,0) -- (axis cs:0,1);\n\\node[font=\\scriptsize] at (axis cs:2.3,0.42) {threshold $=0.5$};\n\\end{axis}\n\\end{tikzpicture}\n\\end{center}\n\n\\subsection{The Logistic Regression Decision Rule}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Logistic Regression",
+    "type": "theorem",
+    "title": "Logistic Regression Decision Rule",
+    "content": "\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item If $P(y=1\\mid x) \\ge 0.5$ predict class $1$ otherwise predict class $0$ \\hfill\\textit{(threshold rule)}\n\\item $P(y=1\\mid x) \\ge 0.5$ is equivalent to $\\text{net}=w\\cdot x+b \\ge 0$ \\hfill\\textit{(shortcut check)}\n\\item The decision boundary is the hyperplane $w\\cdot x+b=0$ \\hfill\\textit{(same linear boundary idea as SVM)}\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Logistic Regression",
+    "type": "algorithm",
+    "title": "Logistic Regression Classification",
+    "content": "\\textbf{Input:} weights $w$, bias $b$, a test point $x$, decision threshold (default $0.5$)\n\n\\textbf{Output:} predicted class label ($0$ or $1$) and probability $P$\n\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Compute $\\text{net} = w\\cdot x + b$.\n\\item Compute $P = \\dfrac{1}{1+e^{-\\text{net}}}$.\n\\item If $P \\ge 0.5$ predict class $1$; otherwise predict class $0$.\n\\item Return the predicted class and $P$.\n\\end{enumerate}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Logistic Regression",
+    "type": "example",
+    "title": "Example 2.46 --- Logistic Regression Prediction (Net Positive)",
+    "content": "A model has $w=(0.8,-0.5)$, $b=-0.1$. Classify $x=(2,1)$. (Use $e^{-1}\\approx0.3679$.)\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (0.8)(2)+(-0.5)(1)+(-0.1) = 1.6-0.5-0.1 = 1.0 \\\\\nP &= \\frac{1}{1+e^{-1}} = \\frac{1}{1+0.3679} = \\frac{1}{1.3679}\n\\end{align*}\n\\[\nP \\approx 0.731\n\\]\nSince $P \\ge 0.5$:\n\\boxed{\\text{Predicted class} = 1}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Logistic Regression",
+    "type": "example",
+    "title": "Example 2.47 --- Logistic Regression Prediction (Net Negative)",
+    "content": "A model has $w=(0.3,0.3)$, $b=-1.5$. Classify $x=(1,1)$. (Use $e^{0.9}\\approx2.4596$.)\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (0.3)(1)+(0.3)(1)+(-1.5) = 0.3+0.3-1.5 = -0.9 \\\\\nP &= \\frac{1}{1+e^{0.9}} = \\frac{1}{1+2.4596} = \\frac{1}{3.4596}\n\\end{align*}\n\\[\nP \\approx 0.289\n\\]\nSince $P < 0.5$:\n\\boxed{\\text{Predicted class} = 0}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Logistic Regression",
+    "type": "example",
+    "title": "Example 2.48 --- Logistic Regression Prediction (Net Zero)",
+    "content": "A model has $w=(1,-1)$, $b=0$. Classify $x=(2,2)$.\n\n\\textbf{Solution:}\n\\begin{align*}\n\\text{net} &= (1)(2)+(-1)(2)+0 = 2-2 = 0 \\\\\nP &= \\frac{1}{1+e^{0}} = \\frac{1}{1+1} = 0.5\n\\end{align*}\nSince $P = 0.5$ meets the threshold $\\ge 0.5$:\n\\boxed{\\text{Predicted class} = 1 \\ (\\text{point lies exactly on the decision boundary})}"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Logistic Regression",
+    "type": "keypoint",
+    "title": "Linear Regression vs Logistic Regression: enumerate[leftmargin=2em,itemsep=4pt]",
+    "content": "\\textbf{Linear Regression vs Logistic Regression:}\n\\begin{enumerate}[leftmargin=2em,itemsep=4pt]\n\\item Linear regression predicts a \\textbf{continuous} value directly as $b_0+b_1x$\n\\item Logistic regression predicts a \\textbf{probability} between $0$ and $1$ by passing $w\\cdot x+b$ through the sigmoid function\n\\item Both are built from the same linear combination of attributes; only the final step (identity vs sigmoid) differs\n\\item Logistic regression is used for classification, not for predicting numeric quantities\n\\end{enumerate}\n\n\\newpage"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 0",
+    "content": "A dataset $S$ of 8 training examples has 5 examples labeled Win and 3 examples labeled Lose. Compute the entropy $H(S)$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 1",
+    "content": "A dataset of 8 examples for predicting Class based on Humidity is given below.\n\\begin{center}\n\\begin{tabular}{cc}\n\\toprule\nHumidity & Class \\\\\n\\midrule\nHigh & No \\\\\nHigh & No \\\\\nHigh & Yes \\\\\nNormal & Yes \\\\\nNormal & Yes \\\\\nNormal & No \\\\\nHigh & No \\\\\nNormal & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nCompute $\\text{Gain}(S,\\text{Humidity})$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 2",
+    "content": "Using the ID3 algorithm, determine the root attribute and construct the complete decision tree for the dataset below.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nOutlook & Wind & Play \\\\\n\\midrule\nOvercast & Weak & Yes \\\\\nOvercast & Strong & Yes \\\\\nOvercast & Weak & Yes \\\\\nSunny & Weak & Yes \\\\\nSunny & Strong & No \\\\\nSunny & Strong & No \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 3",
+    "content": "Using Naive Bayes, classify a new instance with Cough = No Fever = Yes given the training data below.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nCough & Fever & Flu \\\\\n\\midrule\nYes & Yes & Yes \\\\\nYes & No & Yes \\\\\nNo & Yes & No \\\\\nNo & No & No \\\\\nYes & Yes & Yes \\\\\nNo & No & No \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 4",
+    "content": "A bank uses fraud-alert software where $P(\\text{Fraud})=0.02$, $P(\\text{Alert}\\mid\\text{Fraud})=0.95$, and $P(\\text{Alert}\\mid\\text{NoFraud})=0.1$. Using Bayes' Theorem, find $P(\\text{Fraud}\\mid\\text{Alert})$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 5",
+    "content": "A perceptron has weights $w_1=1$, $w_2=1$, bias $b=-1.5$, and step activation. Compute its output for all four input combinations $(0,0),(0,1),(1,0),(1,1)$, and state which logical function this perceptron represents.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 6",
+    "content": "A two-layer network with step activation is defined by $h_1=f(x_1+x_2-1.5)$, $h_2=f(x_1-x_2-0.5)$, and $y=f(h_1+h_2-0.5)$. Compute the network's output for $x_1=1, x_2=1$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 7",
+    "content": "An SVM has weight vector $w=(1,2)$ and bias $b=-3$. Classify the points $x=(2,1)$ and $x=(0,0)$.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 8",
+    "content": "An SVM has weight vector $w=(3,-4)$. Compute the margin width. If the bias is $b=-5$, also compute the perpendicular distance from the point $x=(2,3)$ to the hyperplane.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 9",
+    "content": "A decision tree is trained to different depths, giving the accuracies below.\n\\begin{center}\n\\begin{tabular}{ccc}\n\\toprule\nDepth & Training Accuracy & Testing Accuracy \\\\\n\\midrule\n2 & 65\\% & 63\\% \\\\\n4 & 80\\% & 77\\% \\\\\n6 & 93\\% & 74\\% \\\\\n8 & 98\\% & 65\\% \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nIdentify the depth at which the tree begins to overfit and state which depth should be chosen as final.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 10",
+    "content": "Before pruning a subtree at node $M$, validation accuracy is 84\\%. After replacing the subtree with a leaf, validation accuracy remains 84\\%. Using the Reduced Error Pruning rule, should the subtree at $M$ be pruned? Justify your answer.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 11",
+    "content": "A classifier produces $TP=30$, $FP=5$, $FN=10$, $TN=55$. Compute Accuracy, Precision, Recall, and F1-score.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 12",
+    "content": "A classifier produces $TP=2$, $FP=1$, $FN=18$, $TN=79$. Compute Accuracy, Precision, Recall, and F1-score, and briefly state which metric best reveals a weakness in this classifier.\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 13",
+    "content": "The table below shows advertisement budget and units sold.\n\\begin{center}\n\\begin{tabular}{cccccc}\n\\toprule\nBudget (\\$100s) ($x$) & 1 & 2 & 3 & 4 & 5 \\\\\nUnits Sold ($y$) & 3 & 4 & 6 & 5 & 7 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nFind the regression line and predict units sold for a budget of 7 (\\$100s).\n\n\\item"
+  },
+  {
+    "course": "Machine Learning",
+    "chapter": "Chapter 2 - Supervised Learning",
+    "section": "Practice Problems",
+    "type": "practice_problem",
+    "title": "Practice Problem 14",
+    "content": "A logistic regression model has $w=(0.5,0.5)$ and $b=-1.2$. Compute $\\text{net}$, the probability $P(y=1\\mid x)$, and the predicted class for $x=(1,1)$. (Use $e^{0.2}\\approx1.2214$.)"
+  }
+]
